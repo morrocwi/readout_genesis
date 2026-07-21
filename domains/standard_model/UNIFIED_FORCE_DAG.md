@@ -84,4 +84,23 @@ action-stationarity, cross-term, cubic, coercivity and backreaction pieces are a
 **Honest status:** the unified-action *sectors* are mostly forced/attempted; the *single assembled
 action*, the *gauge-from-root* step, the *four projections*, and all downstream physics (chirality,
 anomaly, spin-statistics, generations, constants, full nonlinear GR) are **Open**. End-to-end
-root-derived unified force = **0%** as a closed claim.
+root-derived *physical* unified force = **0%** as a closed claim.
+
+## Unified Force Closure v0.1 — INTERNALLY CLOSED (finite), physical OPEN
+[`unified_force_closure_v0_1.py`](unified_force_closure_v0_1.py) (PASS) witnesses the architecture at the
+finite/typed level: **ONE action, ONE block master equation, and the four forces as orthogonal
+projection readouts** `F_all = F_G + F_EM + F_W + F_S + F_res`, with a **falsifiable completeness score
+χ4** (`χ4 = 1` on a strong⊕weak `so(3)` fixture with `Σ*=e_3`; `χ4 < 1` the moment a hidden fifth
+interaction leaks outside the four sectors). Witnessed exactly (`Fraction`, each with a failing control):
+the automorphism group `A = {h : O h = O, hF = Fh, hᵀGh = G}`; the connection law `U' = h_j U h_i⁻¹`
+*derived* from transport-commutation; holonomy `tr/det` class-invariants; the order defect `[X,Y]` with
+Jacobi from associativity; covariant retained-Laplacian covariance `L_{U',Θ}Φ' = h(L_{U,Θ}Φ)`; and the
+selected-state `h/m` split (unbroken `W_z Σ* = 0` vs broken `W_x,W_y Σ* ≠ 0`).
+
+This is **not** physical four-force unification. Still **Open** and *must not be faked*: the
+gauge-from-root step (`UF-0`/`SM-G0`), whether the emergent algebra is really `SU(3)×SU(2)×U(1)`,
+chirality/anomaly/spin-statistics, three generations, every coupling constant (`α` rejected-not-faked),
+confinement, full nonlinear GR, and experimental matching. The four are **not added together** — they
+are made *orthogonal readouts of one generalized force* with a residual `F_res` that can refute the
+"exactly four" claim. Root-derived **physical** unification = **0%** as a closed claim; the finite
+architecture is **INTERNALLY CLOSED**.
