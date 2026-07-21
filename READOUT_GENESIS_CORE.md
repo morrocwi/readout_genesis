@@ -49,6 +49,7 @@ Read top to bottom for the full arc, or jump by Part.
 
 **Appendix**
 - [Appendix A — v0.11 Turbulence-Integrated carry-forward](#appendix-a-v011-carry-forward--turbulence-integrated-equations-preserved-verbatim) — 13 equations/lists from the earlier turbulence-integrated snapshot, preserved verbatim with honest tiers (memory kernel, DRL→RTPE bridge, LP/NS residual, readability, modal audit, cost, theorem regimes, continuum map, scalar-reduction gate, runtime protocol, open items)
+- [Appendix B — External-paper integration (2026-07-21)](#appendix-b-external-paper-integration-2026-07-21--carried-at-honest-tier-provenance-tagged) — conserved (Φ,Ψ) pairing charge + linear-pair caveat from Paper I ([Dr], coqc-pending), and Paper VI's ×4-doubling / spin-statistics-sign / d=3-selector as [Dr]/[Open] frontier candidates awaiting independent review
 
 **Tier legend:** `[Th_coqc]` machine-checked axiom-free · `[finite_diagnostic]` measured/computed ·
 `[Dr]` declared bridge · `[DeclaredFormula]` restated in Coq, not proved · `[Ax]` definitional ·
@@ -593,11 +594,16 @@ Read it slowly, because every symbol in it is load-bearing for the rest of the b
   modes. See II.6 for how that error is being closed.
 - `D_s = D · Δθ` is the *discretized* diffusion coefficient — diffusion strength scaled by the tick
   size, so that the stepper's behavior converges as `Δθ → 0` without blowing up.
-- The **CFL condition** is not decoration. It is the fail-closed gate on the stepper itself: pick `Δθ`
-  too large relative to `γ`, `λ_max`, and `D_s`, and the discrete stepper is *unconditionally* unstable
-  — the machine-level analogue of "you injected an infinity you can't afford." Respecting this bound is
-  part of what keeps MQ.08 a genuinely finite, computable object rather than a continuum equation in
-  disguise.
+- The **CFL condition** is not decoration. Respecting this bound provides a conservative *sufficient*
+  stability gate — a fail-closed check the stepper can run before every step. Violating it removes the
+  guarantee but does not by itself prove instability; the exact modal spectral condition may permit a
+  larger step for a particular finite operator `L_R`, and the bound above is a worst-case (`λ_max`)
+  scalar reduction, not a tight per-operator threshold. Respecting the conservative bound is part of
+  what keeps MQ.08 a genuinely finite, computable object rather than a continuum equation in disguise;
+  claiming that exceeding it is "unconditionally unstable" would be the necessity direction, which is
+  not established. *(2026-07-21: a founder hand-calc on a 4-node instance — verified independently —
+  found the exact per-operator boundary ~60.8% larger than this bound: Δθ=0.55 violates the bound yet
+  decays stably, while Δθ=0.75, past the true spectral threshold, blows up. See Part XII guard 11.)*
 
 / — no top-level derivation from anything "more fundamental" is offered here, by design. MQ.08 *is*
 ROOT-3 in the ladder. Everything else in this PART is a controlled readout built on top of it.
@@ -4311,8 +4317,10 @@ STREAM HEADER
     [MQ.08]
 
 13. Δθ ≤ 2 / (γ + √(γ² + 4 λ_max D_s))
-    Stability gate. Step too large → breakdown.
-    [CFL bound — Th_coqc for the energy face]
+    Sufficient stability gate (conservative). Step too large removes the guarantee — not proof of breakdown.
+    [CFL bound — finite_diagnostic algebra; Th_coqc covers only the downstream energy-non-increase
+     direction (energy_nonincreasing/energy_strict_decay in RDL_SpineStability.v), not this bound's
+     necessity or its discrete-Δθ derivation]
 
 ── LAYER 3: TELEGRAPH READOUT ───────────────────────────────────────────────
 
@@ -4524,9 +4532,11 @@ of telling two things apart.
   everything a system *is* at tick `n+1` is what it was at tick `n` plus what its velocity carried
   forward. **Continuity →** an update rule iterated forever is only meaningful if it does not blow
   up — hence the stability gate, step 13.
-- **Step 13** `Δθ ≤ 2/(γ + √(γ² + 4λ_max D_s))` — the CFL-type stability bound; take a step larger
-  than this and the discrete stepper diverges rather than approximates anything. Tagged
-  `Th_coqc` for the energy face specifically — **[2026-07-21 caution, per the hollow-tag audit]**:
+- **Step 13** `Δθ ≤ 2/(γ + √(γ² + 4λ_max D_s))` — the CFL-type stability bound; it is a conservative
+  *sufficient* condition — respecting it guarantees the energy-non-increase behavior below, but taking
+  a step larger than this does not by itself prove divergence, only that the guarantee no longer
+  applies. Tagged `Th_coqc` for the energy face specifically — **[2026-07-21 caution, per the
+  hollow-tag audit, extended here to the necessity direction]**:
   this tag certifies the *energy-monotonicity proof* built on top of this bound is axiom-free, not
   that the bound's numeric value has been independently cross-checked against every domain
   instantiation; treat the bound itself as `finite_diagnostic` until it is exercised against a
@@ -5299,6 +5309,23 @@ python scripts/skew_lr_wellposed_probe.py --fixtures chemostat_linearized,lv_lin
 #     lacking a constructed failing control, and blocks any PR that adds a
 #     new gate without one.
 python scripts/failable_gate_audit.py --suite scripts/
+
+# 12. CFL sufficiency-not-necessity control (Type-P, added 2026-07-21) — proves
+#     the II.1 / step-13 CFL bound is a CONSERVATIVE SUFFICIENT gate, not a tight
+#     instability threshold. On the 4-node fixture W=[[0,1,.5,0],[1,0,1,.5],
+#     [.5,1,0,1],[0,.5,1,0]] (L_R=D_W−W, λ_max=3.618034, γ=0.4, D=3):
+#       PASSING control Δθ=0.55 — VIOLATES the file bound (Δθ_CFL=0.4244865) yet
+#         stays stable: per-mode update spectral radius ρ=0.883176 < 1, energy
+#         non-increasing, ‖X‖ decays 3.162→1.1e-3 over 50 ticks. (0.55 < the true
+#         per-operator boundary h_exact=0.6827093.)
+#       FAILING control Δθ=0.75 — past the true spectral threshold: ρ=2.610975,
+#         ‖X_50‖≈2.6e21, blows up. So the bound is not vacuous either.
+#     Together they falsify "exceeding the bound ⇒ unconditionally unstable" while
+#     leaving "respecting the bound ⇒ stable" intact. h_exact is a spectral/
+#     asymptotic boundary (transient growth as Δθ→h_exact via the non-normal
+#     update matrix), NOT a safe operating point — keep a margin.
+python scripts/cfl_sufficiency_guard.py --passing 0.55 --failing 0.75 \
+  --check energy-non-increasing --check spectral-radius
 ```
 
 ---
@@ -5957,6 +5984,77 @@ Source: v0.11 §19, "Proposed/open," reproduced verbatim. [Open].
 - external DNS/experimental validation and component ablation;
 - full chemostat, Lotka–Volterra and MHD derivations from native RD dynamics;
 - a unified hybrid action deriving discovery, admissibility, tape and turbulence together.
+
+---
+
+## APPENDIX B (EXTERNAL-PAPER INTEGRATION, 2026-07-21) — carried at honest tier, provenance-tagged
+
+> **Provenance.** A 2026-07-21 audit read six companion papers (paperI_drl, paperII_ladder,
+> paperIII_rhd, paperIV_ladder2, paperVI_universal_readout_closure, paper_davies_locus) against this
+> core. Most content was either already present, out of scope, or downstream physics application.
+> Two papers carried material the core genuinely lacks; it is folded in **here**, at the tier the
+> evidence supports — never above it. Papers II, III, IV and davies_locus contributed nothing that was
+> both valid and stronger/newer than the core (Paper III's (G,Ω)-uniqueness answers a weaker question
+> than the open test T1 and is noted below as a footnote only).
+
+### APP-B.1 — Conserved pairing charge of the (Φ,Ψ) reader–record system (Paper I)
+
+The core's DRL two-field apparatus (II.8a) carries **no conservation law** for the (Φ,Ψ) pair today.
+Paper I supplies one: a conserved pairing charge
+
+```
+H = Σ_k ( Φ_k · π^Ψ_k − Ψ_k · π^Φ_k )        conserved along the DRL flow
+```
+
+built from the antisymmetric (η/ω) pairing already posited in the core (lines ~1005-1011). Paper I
+claims an **axiom-free, full-generality Legendre D-cancellation proof** (`DRL_General_Legendre.v`) and
+a **discrete Euler–Lagrange equivalence** machine-checked over ℚ for a **3-ring scope**
+(`DRL_Discrete.v`), which if verified would upgrade the core's current `[Dr]` stepper-equivalence
+label to `[Th_coqc]` *for that scope* (general-N stays `[Open]`, matching Paper I's own §VIII
+non-claims).
+
+**Tier as folded in here: `[Dr]`, verification-pending.** The two `.v` files are cited in
+paperI_drl.pdf but are **not present in this repo** (`research_universal_solver/formal/` has no DRL
+`.v` as of 2026-07-21). Per the project rule that a `Th_coqc` tag must point at a real, locally
+`coqc`-checkable object, the pairing charge and the discrete EL-equivalence are carried at `[Dr]`
+until `DRL_General_Legendre.v` / `DRL_Discrete.v` are added here and compile clean. Do **not** tag
+either `[Th_coqc]` before that.
+
+### APP-B.2 — Linear-pair honesty caveat (Paper I §, one line, folds a guard in)
+
+In the **linear** case the record field decouples: `Ψ ≡ 0 ⇒ H ≡ 0`. So the narrative "the record
+absorbs exactly what the reader loses" is **`[Open]`** in the linear regime — it has content only once
+nonlinear coupling is retained. This guards the core's existing (Φ,Ψ) wording against an overclaim
+in the very regime most examples use. **Tier: `[Ax]` (a scope caveat on when APP-B.1's charge is
+non-trivial).**
+
+### APP-B.3 — Frontier candidates from Paper VI (unreviewed, same-author) — `[Dr]`/`[Open]`
+
+Paper VI ("Universal Readout Closure") states three "Gates" that are **absent from this core** and
+that fill gaps the core **explicitly flags as open** (II.4 disclaims deriving coupling constants, the
+graviton's spin-2 structure, and why space is 3-dimensional):
+
+1. **Self-interaction curvature unit → ×4 doubling** — a geometric-unit argument (Weitzenböck-type)
+   yielding a factor-4 doubling. `[Open]`
+2. **Spin-statistics exchange sign `(−1)^{2s}`** — recovered from finite framed dynamics rather than
+   from a relativistic field-theory axiom. `[Open]`
+3. **`d = 3` selector** — a local-directional-feedback criterion selecting three spatial dimensions.
+   `[Open]`
+
+**Status: candidate frontier, NOT canon.** These are recorded as pointers because they are genuinely
+new and on-target, **but** Paper VI is a same-author, non-peer-reviewed self-closeout; it uses `Th`
+(explicitly weaker than `Th_coqc`) and disclaims proof-assistant formalization. Consistent with the
+2026-07-21 interpretation-card retrenchment (six of eight cards downgraded to `[Open]`), these three
+gates enter the book only as `[Dr]`-declared / `[Open]` **candidates awaiting independent review**.
+They do **not** supersede the core's own (broader, epistemic) readout closure, and none may be
+promoted above `[Dr]`/`DeclaredFormula` without an independent (non-author) verification pass. A
+future reviewer who confirms any gate should record it in the relevant Part, not here.
+
+> **Footnote (Paper III, for completeness).** Paper III's `[Th_sym]` uniqueness result for the (G,Ω)
+> pairing tensors matches the core's posited η/ω matrices in *form*, but answers a formal-uniqueness
+> question, not the open **empirical** falsifier T1 (does skew-`L_R`/metric-`G` reproduce linearized
+> two-field coupling). Paper IV's own referee response further conditions it on four unjustified
+> axioms. It is therefore **not** a T1 resolution and is noted here as `[Dr]` context only.
 
 ---
 
