@@ -994,7 +994,20 @@ a **geometric mixing current** or silently lose information:
 ```
 
 Dropping the second term — the basis-motion contribution — requires a proof or a stated defect
-bound; it is not a free simplification.
+bound; it is not a free simplification. The **defect bound is computable** — the geometry-dominance
+ratio
+
+```
+R_geo = |(V_{n+1} − V_n) φ_n| / |ΔΦ_n|                              [finite_diagnostic]
+```
+
+measures how much of the true step is basis-motion that a fixed-basis approximation would discard.
+When `R_geo ≳ 1` the discarded term is comparable to or larger than the whole retained step, and the
+drop-the-second-term approximation must be **auto-rejected**, not silently taken — the omission can
+flip even the *sign* of the change, not merely its magnitude. *(2026-07-21 [SimulatedData] control:
+`V_n=I`, `V_{n+1}` a 3–4–5 rotation, `φ_n=(2,1)`, `Δφ_n=(1/2,−1/4)` give the true
+`ΔΦ_n=(−11/10, 29/20)`, but dropping the basis-motion term gives a first component of `+1/2` —
+opposite sign — at `R_geo = 8/√53 ≈ 1.099`, a 109.89% relative error. Part XII guard 15.)*
 
 **The DRL action.** The reader/record recurrence below is not asserted by hand; it is the
 stationarity condition of an explicit discrete action, built from finite differences
@@ -1585,6 +1598,25 @@ claim is equally important to state at this face's tier boundary: it has not yet
 chemostat data — that run is pre-registered as future work, not yet performed — so its status stays
 `finite_diagnostic` on synthetic adversarial tapes, not `Dr` or higher on any real biological
 domain.
+
+**Identifiability gate — a required precondition on (c) [added 2026-07-21, per a [SimulatedData]
+tester report].** "Minimal exact law" is only well-posed when the discovered law is *uniquely*
+determined by the tape. Before reporting any exact law, the engine must check the design matrix `A`
+of the declared candidate basis against the observed rows:
+
+```
+rank(A) = (number of candidate coefficients)   →  law is identifiable — report it
+rank(A) < (number of candidate coefficients)   →  UNDERDETERMINED — abstain          [finite_diagnostic]
+```
+
+If the search grammar is undeclared, or the tape supplies fewer independent rows than candidate
+coefficients, infinitely many laws fit the same tape exactly; choosing one and calling it "discovered"
+is precisely the guess the three-valued admissibility gate (`⊥ = unresolved → do not guess`) forbids.
+The honest output is `UNDERDETERMINED — abstain`, with the missing rank recorded — never a single law
+presented as the unique closure. *(In the `N·S/8` battery case the declared basis
+`{1, N, S, N², N·S, S²}` has six coefficients and the six tape rows give a full-rank design matrix, so
+the law is identifiable; drop a row, or leave the grammar implicit, and the same engine must abstain.
+Part XII guard 14.)*
 
 **Threading the bR cross-domain lineage ledger.** The same face is where the year's cross-domain
 translation architecture belongs, again explicitly tagged `[finite_diagnostic]` and explicitly
@@ -5422,6 +5454,27 @@ python scripts/cfl_sufficiency_guard.py --passing 0.55 --failing 0.75 \
 #       must return INVALID_COMPARISON/OPEN, and must NOT return FAIL or PASS.
 python scripts/bh_gateway_lane_check.py --reject-unmapped-compare \
   --require-metadata observer_class,normalization_point,redshift_map,semantic_lane
+
+# 14. Domain-discovery identifiability gate (added 2026-07-21) — the discovery engine's
+#     concrete realization of the three-valued admissibility gate (⊥ = do not guess): before
+#     reporting any "minimal exact law", require rank(design_matrix) == n_candidate_coefficients
+#     over ℚ, else abstain. NOT a new root rule — the finite_diagnostic instance of the
+#     state-sufficiency / ⊥-unresolved principle already in A.13/VI, applied to the tool.
+#     PASSING control: the N·S/8 tape, declared basis {1,N,S,N²,N·S,S²} (6 rows, rank 6)
+#       — identifiable, law reported.
+#     FAILING control: the same basis with any row removed (rank 5 < 6) — MUST return
+#       UNDERDETERMINED/abstain, NOT a guessed law.
+python scripts/discovery_identifiability_gate.py --require-full-rank --abstain-on-deficient
+
+# 15. Geometry-dominance diagnostic (added 2026-07-21) — the computable defect bound the
+#     living-geometry mixing current (II.8a) already demands: for a moving-basis step
+#     Φ_n=V_n φ_n, R_geo = |(V_{n+1}−V_n)φ_n| / |ΔΦ_n|; reject a fixed-basis (drop-the-
+#     basis-motion-term) approximation when R_geo ≳ 1. This is a diagnostic ON an existing
+#     master-equation term, not an imported rule.
+#     PASSING control: V_{n+1}=V_n (no basis motion) → R_geo=0, fixed-basis allowed.
+#     FAILING control: V_n=I, V_{n+1}=3–4–5 rotation, φ_n=(2,1) → R_geo≈1.099 + sign-flip;
+#       fixed-basis approximation MUST be rejected.
+python scripts/geometry_dominance_check.py --reject-above 1.0
 ```
 
 ---
