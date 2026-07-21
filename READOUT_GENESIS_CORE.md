@@ -1957,6 +1957,89 @@ covers the acceptance tests of the calculator itself (unit-ledger consistency, t
 scales from 1 nat to Planck energy all producing a well-formed `α_QG` regime label) — not a claim
 that quantum gravity has been solved, computed, or derived.
 
+**SEMANTIC-LANE & OBSERVER GUARD — SCHWARZSCHILD/UNRUH** *(added 2026-07-21, per an external-tester
+report of a real, easily-repeated AI failure mode at this exact gateway).*
+
+The two `τ_c` written above live in **different semantic lanes** and must **not** be identified by
+symbol alone. Where this book writes a bare `τ_c`, it means the energy/mass-memory lane `τ_c^(E)`; the
+Unruh lane is always the explicitly-observer-relative `τ_c^(U)`:
+
+```
+τ_c^(E) = ħ / 2E            energy / mass-memory lane          [DeclaredFormula]  (IV.1)
+τ_c^(U) = π c / a_local     Unruh / acceleration lane          [DeclaredFormula]  (this gateway)
+
+τ_c^(E)  =?  τ_c^(U)        — [OpenBridge], NOT an identity. Open until an observer/redshift
+                              translation map is supplied and passes the commuting-square test (X.4).
+```
+
+**Symbol equality is not semantic equality.** `τ_c^(E)` is the correlation time read out from an
+energy/mass; `τ_c^(U)` is the correlation time of a thermal/acceleration readout *for a specific
+observer*. They share a glyph and a dimension; that licenses nothing. Likewise three accelerations that
+look comparable are not one quantity:
+
+- `a_local` — local (Unruh-type) proper acceleration of a specific observer;
+- `κ = c⁴/4GM` — Schwarzschild surface gravity, normalized for the **asymptotic** observer;
+- an asymptotic / redshifted acceleration readout.
+
+They differ by observer-normalization (redshift) factors: `a_local ≠_direct κ`.
+
+**Forbidden worked example — a failing control (learn the shape so you catch it).** An AI that unifies
+the two `τ_c` by symbol produces:
+
+```
+τ_c^(E) = τ_c^(U)  ⇒  ħ/2E = πc/a  ⇒  a = 2πMc³/ħ      (using E = Mc²)
+then compares:        κ = c⁴/4GM
+observes:             a ∝ M  but  κ ∝ 1/M    (ratio a/κ = 8πGM²/(ħc) ∝ M²)  → scaling mismatch
+WRONG verdict:        "Unruh–horizon bridge: FAIL"
+```
+
+Every arithmetic step is correct; the **composition of meaning** is not. The honest verdict is:
+
+```
+verdict  = INVALID_COMPARISON            (equivalently OPEN_MISSING_TRANSLATION)
+reason   = semantic-lane collision — a_local and κ compared with no observer/redshift quotient
+missing  = the observer-normalization translation map
+status   = OPEN, not REFUTED — no licensed bridge was tested; an ill-posed identity was
+NOT      = FAIL   and   NOT = PASS
+```
+
+A `FAIL` requires a **well-posed** test that a *licensed* bridge failed. Here no licensed bridge was
+ever posed, so the result is `INVALID_COMPARISON`/`OPEN` — the same distinction II.1's CFL guard draws
+between "guarantee withdrawn" and "proven unstable," applied to bridges instead of steppers. The
+project's verdict vocabulary therefore carries at least four states, not two:
+`PASS · FAIL · OPEN · INVALID_COMPARISON` (with `OPEN_MISSING_TRANSLATION` a labelled subcase of OPEN).
+
+**AI GUARD — SCHWARZSCHILD/UNRUH** *(this file is a storyteller for AI as well as humans — obey
+verbatim):*
+
+```
+1. Never unify quantities solely because they share the symbol τ_c (or any symbol).
+2. Never compare local acceleration with surface gravity without an observer-normalization map.
+3. DeclaredFormula means available for CALCULATION, not licensed for COMPOSITION.
+4. A missing translation map ⇒ OPEN or INVALID_COMPARISON, never FAIL.
+5. Before composing two adapters, print their semantic lanes and observer contexts first.
+```
+
+**Claim-boundary addendum for this gateway.** Each formula here is individually available as a declared
+calculator identity. Their *composition* is not licensed unless the intermediate semantic and observer
+maps are supplied and tested. **Arithmetic closure does not imply physical bridge closure.**
+
+**Bridge ledger — Schwarzschild ↔ Unruh (status: OPEN).**
+
+```yaml
+bridge:
+  source: energy_memory            # τ_c^(E) = ħ/2E
+  target: unruh_acceleration       # τ_c^(U) = πc/a_local
+  proposed_map: null
+  observer_map: null               # redshift / normalization not supplied
+  commuting_square_tested: false
+  status: OPEN
+  forbidden_shortcut:
+    - "τ_c^(E) == τ_c^(U)"          # symbol unification across lanes
+    - "a_local == κ"               # local acceleration == surface gravity
+```
+
+
 ---
 
 
@@ -5326,6 +5409,19 @@ python scripts/failable_gate_audit.py --suite scripts/
 #     update matrix), NOT a safe operating point — keep a margin.
 python scripts/cfl_sufficiency_guard.py --passing 0.55 --failing 0.75 \
   --check energy-non-increasing --check spectral-radius
+
+# 13. Schwarzschild/Unruh semantic-lane type-checker (added 2026-07-21, external-tester
+#     report) — refuses any compare(LocalAcceleration, SurfaceGravity) not mediated by a
+#     declared, tested ObserverMap. Acceleration readouts must carry mandatory metadata;
+#     a bare scalar `a` is rejected at the gateway:
+#       AccelerationReadout = {value, observer_class, normalization_point,
+#                              local_or_asymptotic, redshift_map, semantic_lane}
+#     PASSING control: a comparison mediated by SurfaceGravity = ObserverMap(LocalAcceleration)
+#       with a supplied, checked redshift map — allowed.
+#     FAILING control: the tau_c^(E)=tau_c^(U) => a=kappa identification with NO ObserverMap —
+#       must return INVALID_COMPARISON/OPEN, and must NOT return FAIL or PASS.
+python scripts/bh_gateway_lane_check.py --reject-unmapped-compare \
+  --require-metadata observer_class,normalization_point,redshift_map,semantic_lane
 ```
 
 ---
