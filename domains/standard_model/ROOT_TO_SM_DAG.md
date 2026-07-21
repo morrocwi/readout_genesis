@@ -107,7 +107,7 @@ Prove six things, closing the borrowed premises that currently prop up AP20:
 - **G0.3 Localization** — each node may change internal representative while observable transport still factors through the quotient.
 - **G0.4 Connection transformation** — DERIVE `U_{ji} ↦ h_j U_{ji} h_i⁻¹` from transport-commutation (not posit it). *(the connection itself is already `Th_coqc`.)*
 - **G0.5 Holonomy invariant** — loop readout independent of internal representative (conjugacy-invariants of `H_C`). *(SO(3) holonomy is already `Th_coqc`.)*
-- **G0.6 Order-defect / self-carrier gate** — build the commutator FROM the ordered product (ordered composition → exchange defect → commutator algebra, with Jacobi following algebraically), then wire it to AP20 so `c_self/c_geo=1` is lifted from **borrowed commutator** to **root-derived order defect**.
+- **G0.6 Order-defect / self-carrier gate** — build the commutator FROM the ordered product (ordered composition → exchange defect → commutator algebra, with Jacobi following algebraically), then wire it to AP20 so `c_self/c_geo=1` is lifted from **borrowed commutator** to **root-derived order defect**. **🟩 Th_coqc (done, for the commutator):** [`InfoOrderDefectFromComposition.v`](InfoOrderDefectFromComposition.v) (Closed over ℚ) — plain 2×2 rational matrix composition (no non-commuting term written in), associativity a theorem, `K(X,Y)=XY−YX` bilinear+antisymmetric, **Jacobi derived from associativity**, non-commutativity emergent, commuting ⇒ zero defect. This **reduces AP20 borrow #2** (grounds the commutator *form* — Jacobi/antisymmetry become theorems) **but does not remove it**: the self-force still needs a *non-commuting* pair, here hand-exhibited (not root-forced), so the non-abelian *input* is relocated, not eliminated. Self-carrier closure (#3) and the common load A4 (#4) are **still fully borrowed/OPEN**; `c_self/c_geo=1` is **not** root-derived.
 
 ### First failing controls (the gate must be able to fail)
 - **F1** a transformation with `O(hz) ≠ O(z)` → rejected, NOT a gauge transformation.
@@ -122,7 +122,8 @@ Prove six things, closing the borrowed premises that currently prop up AP20:
 | connection · holonomy · curvature (R5–R7) | 🟩 **Th_coqc** |
 | non-abelian group seed (Heisenberg) · SO(3) · Noether · a proven gauge invariance | 🟩/🟨 present |
 | **gauge = readout-preserving automorphism (R3 / SM-G0)** | 🟥 **the first gate — not yet built** |
-| localized-connection-from-root · order-defect-from-root | 🟥 |
+| localized-connection-from-root | 🟥 |
+| order-defect-from-root (G0.6, the commutator) | 🟩 Th_coqc — `InfoOrderDefectFromComposition.v` (AP20 borrow #2 *form* grounded — Jacobi/antisym now theorems — but non-abelian input still un-forced; self-carrier #3 + load A4 #4 still borrowed) |
 | gauge self-interaction relative weight (AP20) | 🟨 conditional (premises borrowed) |
 | representation counting | 🟨 (only when SM content is input) |
 | gauge-group discovery · matter reps · chirality/anomaly · generations/mixing · SU(3) · constants | 🟥 |

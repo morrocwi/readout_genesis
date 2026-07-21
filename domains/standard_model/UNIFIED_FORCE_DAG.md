@@ -104,3 +104,71 @@ confinement, full nonlinear GR, and experimental matching. The four are **not ad
 are made *orthogonal readouts of one generalized force* with a residual `F_res` that can refute the
 "exactly four" claim. Root-derived **physical** unification = **0%** as a closed claim; the finite
 architecture is **INTERNALLY CLOSED**.
+
+## SM-G0 / G0.6 — order-defect from ordered composition (Th_coqc: AP20 borrow #2 discharged)
+[`InfoOrderDefectFromComposition.v`](InfoOrderDefectFromComposition.v) (`Print Assumptions` **Closed over
+ℚ**) closes the one piece the whole corpus left borrowed. AP20 gets `c_self/c_geo=1` on three borrowed
+premises; its premise #2 states verbatim that *"the noncommutative/Lie-algebraic input remains borrowed;
+AP20 does not derive it from RD4"*, and `InfoDiscreteRiemannCommutator` only **posits** a Heisenberg
+product with the non-commuting term written in by hand. Here the ordered composition is **plain 2×2
+rational matrix product** — the concrete form of "compose transport X then transport Y" for linear
+readout-transports, with **no non-commuting term written in**. Then: composition is **associative** (a
+theorem), the order defect `K(X,Y)=XY−YX` is bilinear + antisymmetric, **Jacobi is DERIVED from
+associativity** (the gap that previously existed only as a numeric check in AP20), non-commutativity is
+**emergent** (a witness pair fails to commute — not put in by hand), and **commuting transports ⇒ zero
+defect** (AP20's own failing control, now derived). This **REDUCES AP20 borrow #2 in status** — its
+*form* is now theorem-level (Jacobi/antisymmetry **derived**, not an imported Lie-algebra axiom) — **but
+does not remove it**: the self-force needs a *non-commuting* pair, here **hand-exhibited (X0,Y0), not
+root-forced** (`diagonal_commute_zero_defect` proves K=0 for every commuting pair), so the non-abelian
+*input* is relocated to "the root emits a non-commuting pair", not eliminated — consistent with AP20's own
+note that it *"does not remove the Lie-algebra/commutator borrow."* **Still fully OPEN:** self-carrier
+closure (#3), the common quadratic load A4 (#4), whether the transports are *forced* by the root, and
+everything downstream. `SM-G0/G0.6 (commutator FORM): 🟩 Th_coqc` (was 🟥); the non-abelian input: still 🟥.
+
+## Four-Force Circulation v0.2 (fixture scheme) — [SimulatedData / FiniteFormalWitness]
+[`four_force_circulation_v0_2.py`](four_force_circulation_v0_2.py) (PASS) and
+[`InfoFourForceCirculationRecovery.v`](InfoFourForceCirculationRecovery.v) (**Closed over ℚ**) go past
+"one force → another": they compute the **full four-sector response and split it**. On a four-sector
+ring fixture `A = H + Ω` (`H` symmetric reciprocal load, `Ω` antisymmetric circulation load), with
+`χ = A⁻¹`:
+- **stability gate** (not instability-driven): `spec(H)={6,4,4,2}>0`, `spec(A)={6,2,4±i}`, `Re λ(A)>0`;
+- **exact directed-response identity** `χ − χᵀ = −2 χᵀ Ω χ` (proven, not approximated) — this is the
+  non-trivial content: the *measurable nonreciprocity* of the response equals the planted circulation
+  conjugated by the full susceptibility;
+- **circulation read-back** `Ω_recovered = Ω_planted` as the unique **antisymmetric part** of `χ⁻¹`
+  (`Ω = ½(χ⁻¹−χ⁻ᵀ)`) — exact **by construction** (the unique symmetric/antisymmetric split), a scheme on
+  a **known** fixture, *not* tomography of an unknown system;
+- **failing controls:** reciprocal (`Ω=0 ⇒ χ=χᵀ ⇒ Ω_rec=0`, no directed cycle manufactured) and
+  missing-edge (cut `S–G` ⇒ recovered `|Ω_SG|≈0` while real edges survive — no hallucinated structure);
+- scalar readout `C_F = ½‖χ−χᵀ‖_F` (`C_F²=2/289` exact; `=0` when `Ω=0`).
+
+**Honest fence.** `(G,EM,W,S)` are **decoder labels in a fixture**, NOT forces calibrated to nature.
+Closed = a finite tomography *scheme* (response identity + exact recovery + controls). OPEN = that the
+labels are the real forces, a physical separable per-force source, the true susceptibility, the quantum
+measurement layer, unit calibration, the gauge group, and empirical novelty. Baseline lineage: `Ω=0`
+recovers **Onsager reciprocity** (symmetric χ); `Ω≠0` is the nonreciprocal/non-equilibrium response.
+
+## Unified Force v0.3 — CALIBRATED ELECTROWEAK DECODER (EM↔Weak), the first real-observable bridge
+[`electroweak_decoder_v0_3.py`](electroweak_decoder_v0_3.py) (PASS) +
+[`InfoElectroweakNullDirection.v`](InfoElectroweakNullDirection.v) (**Closed over ℚ**) take the EM and
+weak sectors from *decoder labels* to a decoder **bound to real observables that can fail**. Two halves,
+kept strictly apart:
+- **Structural core (exact, ours).** The neutral selected-state obstruction
+  `M²_neutral = (v²/4)·outer((g,−g'),(g,−g'))` is a **rank-1 outer product**, so `det M²=0` **identically
+  (all g,g',v)** ⇒ **exactly one massless + one massive** neutral direction, and **the photon's
+  masslessness EMERGES** — it is never imported as a premise. Massless (photon) `~ (g',g) =
+  sinθ_W W³ + cosθ_W B`, eigenvalue `0`; massive (Z) `~ (g,−g')`, eigenvalue `m_Z²=(v²/4)(g²+g'²)`;
+  charged `m_W²=g²v²/4`. **Failing control** `FAIL_NO_MASSLESS_ABELIAN_DIRECTION`: a generic rank-2
+  obstruction has `det≠0` ⇒ no massless direction. Gates EW-P1..P5 (rank / null-vector / orthogonal
+  massive / charge-universality / held-out mass) each carry a control.
+- **Calibration (float, real constants — CONSISTENCY, not prediction).** With CODATA 2022 + PDG 2025:
+  `v=246.21965 GeV`, `g'/g=tanθ_W=0.535802`, `g=0.652824`, `g'=0.349784`, `α₂=0.033914`, `α_Y=0.009736`.
+  On-shell `sin²θ_W` is *defined* via the mass ratio, so this is a **calibration-consistency** check, not
+  an independent prediction. The one honest **held-out** check (EW-P5): fit `{G_F→v, θ_W, M_W}` and
+  predict `M_Z=M_W/cosθ_W = 91.178 GeV` vs PDG `91.188` (**0.011%** at tree level; the **radiative layer
+  is OPEN** before any "precision prediction").
+
+**Honest label:** `CALIBRATED ELECTROWEAK DECODER`, **not** "Standard Model derived from the root." The
+gauge algebra `SU(2)×U(1)`, chirality, matter representations, the *value* of `θ_W`, three generations,
+and radiative corrections are **OPEN and must not be imported as premises**. What is genuinely ours is
+the **rank-1 ⇒ (massless photon + massive W/Z) structure** — a real, fail-able target.

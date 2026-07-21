@@ -33,7 +33,32 @@ readout**: `Aut(F,O) = { h : O∘h = O, h∘F = F∘h }` — the weld of core §
   Higgs mechanism, and every coupling constant (`α` is *rejected-not-faked*). The Quantum domain
   (§V.18) is a prerequisite.
 
+## Progress on SM-G0 (the kernel) + v0.2 circulation + v0.3 electroweak decoder
+- 🟩 **SM-G0 / G0.6 order-defect from ordered composition** — `Th_coqc`
+  ([`InfoOrderDefectFromComposition.v`](InfoOrderDefectFromComposition.v), Closed over ℚ). The
+  commutator is derived from **plain 2×2 rational matrix composition** (no non-commuting term written
+  in); associativity + **Jacobi** are theorems; commuting ⇒ zero defect. This **reduces AP20's borrow #2**
+  (the commutator): its *form* is now theorem-level (Jacobi/antisymmetry derived), **but does not remove
+  it** — the non-abelian input still rests on an un-forced non-commuting pair. Self-carrier closure (#3)
+  and the common load A4 (#4) are **still fully borrowed/OPEN**; `c_self/c_geo=1` is **not** root-derived.
+- 🟦 **Four-Force Circulation v0.2 (fixture scheme)** — `[SimulatedData/FiniteFormalWitness]`
+  ([`four_force_circulation_v0_2.py`](four_force_circulation_v0_2.py) PASS +
+  [`InfoFourForceCirculationRecovery.v`](InfoFourForceCirculationRecovery.v) Closed). On a **known**
+  four-sector ring fixture `A=H+Ω`: the non-trivial exact identity `χ−χᵀ=−2χᵀΩχ` (measurable
+  nonreciprocity = circulation conjugated by χ), and `Ω_recovered=Ω_planted` as the unique **antisymmetric
+  part** of `χ⁻¹` — exact **by construction** (sym/antisym split), *not* tomography of an unknown — with
+  reciprocal + missing-edge controls. Labels `(G,EM,W,S)` are decoder names, not calibrated forces.
+- 🟩/🟦 **v0.3 CALIBRATED ELECTROWEAK DECODER (EM↔Weak)** — `Th_coqc` structural core + calibration
+  ([`electroweak_decoder_v0_3.py`](electroweak_decoder_v0_3.py) PASS +
+  [`InfoElectroweakNullDirection.v`](InfoElectroweakNullDirection.v) Closed). The neutral obstruction is
+  **rank-1** ⇒ `det=0` identically ⇒ **the photon's masslessness EMERGES** (photon `~(g',g)`, `Z~(g,−g')`
+  with `m_Z²=(v²/4)(g²+g'²)`), failing control = generic rank-2 ⇒ no massless direction. Calibrated to
+  CODATA2022/PDG2025 (`v=246.21965 GeV`, `g=0.652824`, `g'=0.349784`); held-out tree-level
+  `M_Z=91.178` vs PDG `91.188` (0.011%). **Label: CALIBRATED ELECTROWEAK DECODER, not SM-from-root** —
+  gauge algebra, chirality, `θ_W` value, radiative corrections OPEN.
+
 ## Next step
-Close **SM-G0**: prove gauge redundancy, the connection transform, and curvature grow from retained
-readout-equivalence, and lift AP20's borrowed commutator to a root-derived order defect. Only then
-does the rest of the DAG have a real root to stand on.
+Close the rest of **SM-G0**: gauge redundancy + the connection transform + curvature from retained
+readout-equivalence as one Coq kernel (G0.1–G0.5), and discharge AP20's remaining borrows (#3
+self-carrier, #4 the common quadratic load). Only then does the rest of the DAG have a real root to
+stand on.

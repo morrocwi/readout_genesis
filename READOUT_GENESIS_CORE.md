@@ -3047,6 +3047,47 @@ constants, confinement, full nonlinear GR, and experimental matching all remain 
 **not added together** — they are made orthogonal readouts of one generalized force, with a residual
 that can be refuted. Root-derived *physical* unification = **0%** as a closed claim.
 
+**SM-G0 / G0.6 — order-defect from ordered composition (`Th_coqc`, borrow #2 discharged).**
+`InfoOrderDefectFromComposition.v` (`Print Assumptions` Closed over ℚ) closes the one piece the whole
+corpus left borrowed. AP20 gets `c_self/c_geo=1` on three borrowed premises; premise #2 says verbatim
+*"the noncommutative/Lie-algebraic input remains borrowed; AP20 does not derive it from RD4,"* and
+`InfoDiscreteRiemannCommutator` only **posits** a Heisenberg product with the non-commuting term written
+in by hand. Here the ordered composition is **plain 2×2 rational matrix product** — "compose transport X
+then transport Y" for linear readout-transports, **no non-commuting term written in**. Then associativity
+is a theorem, `K(X,Y)=XY−YX` is bilinear + antisymmetric, **Jacobi is DERIVED from associativity**,
+non-commutativity is **emergent** (a witness pair fails to commute), and commuting transports ⇒ zero
+defect (AP20's own control, now derived). This **reduces AP20 borrow #2 in status** — its *form* is now
+theorem-level (Jacobi/antisymmetry **derived**, not an imported Lie-algebra axiom) — **but does not
+remove it**: the self-force needs a *non-commuting* pair, here hand-exhibited (not root-forced), so the
+non-abelian *input* is relocated, not eliminated. Self-carrier closure (#3) and the common load A4 (#4)
+remain fully **OPEN**; `c_self/c_geo=1` is **not** root-derived.
+
+**Four-Force Circulation v0.2 (fixture scheme) — `[SimulatedData / FiniteFormalWitness]`.**
+`four_force_circulation_v0_2.py` (PASS) + `InfoFourForceCirculationRecovery.v` (Closed over ℚ) go past
+"one force → another" to the **full four-sector response and its inversion**. On a four-sector ring
+fixture `A = H + Ω` (`H` symmetric reciprocal load, `Ω` antisymmetric circulation load), `χ = A⁻¹`:
+`spec(H)={6,4,4,2}>0`, `spec(A)={6,2,4±i}`, `Re λ(A)>0` (directionality is not instability); the **exact
+directed-response identity** `χ−χᵀ=−2χᵀΩχ` (the non-trivial content: *measurable nonreciprocity of the
+response = planted circulation conjugated by the full susceptibility*); and `Ω_recovered=Ω_planted` read
+as the unique **antisymmetric part** of `χ⁻¹` — exact **by construction** (the unique sym/antisym split),
+a scheme on a **known** fixture, not tomography of an unknown — with reciprocal (`Ω=0⇒χ=χᵀ⇒Ω_rec=0`) and
+missing-edge failing controls. `(G,EM,W,S)` are **decoder
+labels in a fixture**, NOT forces calibrated to nature; the closed object is a finite tomography *scheme*.
+Baseline: `Ω=0` recovers **Onsager reciprocity** (symmetric χ); `Ω≠0` is the nonreciprocal response.
+
+**Unified Force v0.3 — CALIBRATED ELECTROWEAK DECODER (EM↔Weak, the first real-observable bridge).**
+`electroweak_decoder_v0_3.py` (PASS) + `InfoElectroweakNullDirection.v` (Closed over ℚ) take EM and weak
+from *decoder labels* to a decoder **bound to real observables that can fail**. **Structural core (exact,
+ours):** the neutral obstruction `M²=(v²/4)·outer((g,−g'),(g,−g'))` is **rank-1**, so `det M²=0`
+identically ⇒ **exactly one massless + one massive** direction and **the photon's masslessness EMERGES**
+(never imported): photon `~(g',g)=sinθ_W W³+cosθ_W B` (eigenvalue 0), `Z~(g,−g')` with
+`m_Z²=(v²/4)(g²+g'²)`, `m_W²=g²v²/4`; failing control = a generic rank-2 obstruction has `det≠0` ⇒ no
+massless direction. **Calibration (CODATA2022+PDG2025, consistency not prediction):** `v=246.21965 GeV`,
+`g'/g=0.535802`, `g=0.652824`, `g'=0.349784`; held-out tree-level `M_Z=M_W/cosθ_W=91.178` vs PDG `91.188`
+(0.011%, radiative layer OPEN). **Honest label: CALIBRATED ELECTROWEAK DECODER, not "Standard Model from
+the root"** — the algebra `SU(2)×U(1)`, chirality, representations, the value of `θ_W`, and radiative
+corrections stay OPEN and are not imported.
+
 ---
 
 ## PART V-A — DOMAIN EMERGENCE AND TRANSLATION SUFFICIENCY
