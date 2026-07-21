@@ -1,0 +1,9 @@
+{
+  "version": "0.901",
+  "base_dag": "ICHEM_ROOT_DAG_0_901",
+  "added_nodes": [],
+  "removed_nodes": [],
+  "retyped_nodes": [],
+  "added_edges": [],
+  "purpose": "Proof-layer release freezes the initial master DAG; no domain-law nodes are activated."
+}

@@ -1,0 +1,47 @@
+{
+  "data_class": "FINITE_FORMAL_WITNESSES",
+  "obligations": [
+    {
+      "id": "C1",
+      "rule_id": "RT-FCM-008",
+      "target": "PROVED_FINITE_AXIOMS_AND_SYMBOLIC_IDENTITY"
+    },
+    {
+      "id": "C2",
+      "rule_id": "RT-COUNT-HOM-009",
+      "target": "PROVED_EXACT"
+    },
+    {
+      "id": "C3",
+      "rule_id": "RT-PERM-GATE-010",
+      "target": "PASS_POSITIVE_AND_OBSTRUCT_NEGATIVE"
+    },
+    {
+      "id": "C4",
+      "rule_id": "RT-DECOMP-011",
+      "target": "PROVED_CONDITIONAL_WITH_ALIAS_COUNTERMODEL"
+    },
+    {
+      "id": "C5",
+      "rule_id": "RT-REFINE-COMP-012",
+      "target": "PROVED_AND_BAD_MAP_REJECTED"
+    },
+    {
+      "id": "C6",
+      "rule_id": "RT-LINEAGE-013",
+      "target": "PROVED_MARKED_DISTINCTION_AND_ERASURE_COUNTERCONTROL"
+    },
+    {
+      "id": "C7",
+      "rule_id": "PR-GENERATOR-002",
+      "target": "DRIFT_AND_CLAIM_BOUNDARY_PASS"
+    }
+  ],
+  "scope_exclusion": [
+    "No atom, molecule, element, bond, reaction, formula, mass, mole, concentration, or chemical law is established.",
+    "No empirical chemistry tape is used.",
+    "The count quotient is admitted only for the declared finite profiles.",
+    "Source commutativity is never inferred from the commutative carrier alone."
+  ],
+  "version": "0.910"
+}

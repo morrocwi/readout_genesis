@@ -1,0 +1,9 @@
+{
+  "dag_sha256": "7c5f99214491510bd2e9927d2fff57dd29152596bbe02dd2e9a979908c63c180",
+  "decision": "PASS",
+  "errors": [],
+  "imported_token_hits": [],
+  "missing_standalone_files": [],
+  "rule_registry_sha256": "f271662b5f369fd83284a19a6991f269df3b20ed96039a9a41fed6bfca4df299",
+  "version": "0.901"
+}

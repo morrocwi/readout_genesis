@@ -36,7 +36,7 @@ Read top to bottom for the full arc, or jump by Part.
 2. [PART II — The Universal Equation](#part-ii--the-universal-equation) — the spine PDE, term-by-term tiers, the three layers, and the DRL–Telegraph two-field (Φ,Ψ) apparatus
 3. [PART III — The Twelve Faces of the Spine](#part-iii--the-twelve-faces-of-the-spine)
 4. [PART IV — The τ_c Scale Bus](#part-iv--the-τ_c-scale-bus) — τ_c prior to mass; the PGFT-RDU native-unit gateway
-5. [PART V — Domain Leaves (domain = translation)](#part-v--domain-leaves-domain--translation) — all leaves incl. the reserved Neuron/Connectome TBD slots; the Scalar-Eigenmode Reduction Error; **V.16 registered domain: Chemistry** (`domains/chem/`, the first leaf to pass the [Domain Registration Standard](domains/DOMAIN_REGISTRATION_STANDARD.md))
+5. [PART V — Domain Leaves (domain = translation)](#part-v--domain-leaves-domain--translation) — all leaves incl. the reserved Neuron/Connectome TBD slots; the Scalar-Eigenmode Reduction Error
 6. [PART V-A — Domain Emergence and Translation Sufficiency](#part-v-a--domain-emergence-and-translation-sufficiency) — the exact-quotient gate and the **seven general gates**
 7. [PART VI-A — Domain-Neutral Extraction and the Maker–Checker Epistemic Firewall](#part-vi-a--domain-neutral-extraction-and-the-makerchecker-epistemic-firewall)
 8. [PART VI — The Epistemic Nuclear Core](#part-vi--the-epistemic-nuclear-core)
@@ -473,50 +473,6 @@ discipline exists to prevent.
   everything from Part II onward is the beginning of `Structure → Domain-translation`, and is held, from
   its first line, to the commuting-square admissibility test the ontology requires before any domain
   name is allowed to attach to it.
-
-### I.2a The inverse arrow — the spine is *discoverable*, not only *derived*
-
-The Root-to-Trunk progression above runs one way: axioms → structure → spine, a **derivation**. The
-same object can be reached from the other end — from a raw transition tape, with no axioms and no law
-handed to the engine — by the domain-discovery machinery (Version-Reconciliation item 5). This
-**inverse arrow** is not a second, separate result: it terminates at the *same* `MQ.08` / `L_R` node.
-That convergence is the strongest evidence in this book that `ROOT-3` is a genuinely discoverable
-feature of retained-difference data, not merely a convenient assumption the next arrow needs.
-
-```
-     FORWARD  (derivation — axioms downward)          INVERSE  (discovery — data upward)
-
- P0: ∃ a,b : a ≠ b                               raw transition tape   (N,S) → (N′,S′)
-   └ distinguishability → asymmetry → ordering          │  [no domain name, no law handed in]
-      └ retention   τ_c > 0                              ▼
-         └ finite causal graph  L_R                domain-discovery engine
-              └ ROOT-3: stepper MQ.08 ◄══════╗      ├ law-DSL: candidate-basis grammar
-                   └ telegraph coarse-grain  ║      │        { 1, N, S, N², N·S, S², … }
-                        └ UNIVERSAL SPINE PDE ║      ├ identifiability gate  (guard 14)
-                                              ║      │    rank(A) = #coeff   else  ⊥ = abstain
-                    ONE convergence node:     ║      ├ interaction test  (mixed 2nd difference ≠ 0)
-                    MQ.08 = L_R, reached      ║      ├ exact closure over ℚ  +  conservation
-                    from BOTH directions      ║      ▼
-                                              ╚══ minimal exact update law
-                                                  e.g.  N′ = N + N·S/8 ,   C = N + S  conserved
-                                                  — the SAME MQ.08 / L_R object, recovered
-                                                    from data, never fabricated   [finite_diagnostic]
-```
-
-Read the two columns together. The **left** column is Part I's derivation (`[Ax]`/`[Th]` down to the
-spine). The **right** column is the discovery engine reconstructing a stepper *of the same character*
-from data alone (`[finite_diagnostic]`), passing through its own **law-DSL** — the candidate-basis
-grammar it searches — and the identifiability gate (`rank(A) = #coefficients`, else `⊥ = abstain`,
-guard 14) so it never fabricates a law the tape does not uniquely determine. The **convergence at
-`MQ.08` / `L_R`** is the claim; each column keeps its own tier, and neither borrows the other's.
-
-What the inverse arrow does **not** upgrade: the discovered law is `[finite_diagnostic]` on the tape
-it saw — not a `Dr`-or-higher statement about any real physical, chemical, or biological domain until
-a domain translation gate is supplied (I.3; Part V). Discoverability of the *form* is not truth of the
-*content*. The law-DSL is a grammar for *expressing* candidate closures, not a new root object: it
-sits entirely inside the already-`[finite_diagnostic]` discovery tool, and the only thing it adds to
-the lineage graph is a visible second arrow into a node (`MQ.08` / `L_R`) that Part I had already
-placed.
 
 ### I.3 What Part I does not yet claim
 
@@ -1038,20 +994,7 @@ a **geometric mixing current** or silently lose information:
 ```
 
 Dropping the second term — the basis-motion contribution — requires a proof or a stated defect
-bound; it is not a free simplification. The **defect bound is computable** — the geometry-dominance
-ratio
-
-```
-R_geo = |(V_{n+1} − V_n) φ_n| / |ΔΦ_n|                              [finite_diagnostic]
-```
-
-measures how much of the true step is basis-motion that a fixed-basis approximation would discard.
-When `R_geo ≳ 1` the discarded term is comparable to or larger than the whole retained step, and the
-drop-the-second-term approximation must be **auto-rejected**, not silently taken — the omission can
-flip even the *sign* of the change, not merely its magnitude. *(2026-07-21 [SimulatedData] control:
-`V_n=I`, `V_{n+1}` a 3–4–5 rotation, `φ_n=(2,1)`, `Δφ_n=(1/2,−1/4)` give the true
-`ΔΦ_n=(−11/10, 29/20)`, but dropping the basis-motion term gives a first component of `+1/2` —
-opposite sign — at `R_geo = 8/√53 ≈ 1.099`, a 109.89% relative error. Part XII guard 15.)*
+bound; it is not a free simplification.
 
 **The DRL action.** The reader/record recurrence below is not asserted by hand; it is the
 stationarity condition of an explicit discrete action, built from finite differences
@@ -1643,25 +1586,6 @@ chemostat data — that run is pre-registered as future work, not yet performed 
 `finite_diagnostic` on synthetic adversarial tapes, not `Dr` or higher on any real biological
 domain.
 
-**Identifiability gate — a required precondition on (c) [added 2026-07-21, per a [SimulatedData]
-tester report].** "Minimal exact law" is only well-posed when the discovered law is *uniquely*
-determined by the tape. Before reporting any exact law, the engine must check the design matrix `A`
-of the declared candidate basis against the observed rows:
-
-```
-rank(A) = (number of candidate coefficients)   →  law is identifiable — report it
-rank(A) < (number of candidate coefficients)   →  UNDERDETERMINED — abstain          [finite_diagnostic]
-```
-
-If the search grammar is undeclared, or the tape supplies fewer independent rows than candidate
-coefficients, infinitely many laws fit the same tape exactly; choosing one and calling it "discovered"
-is precisely the guess the three-valued admissibility gate (`⊥ = unresolved → do not guess`) forbids.
-The honest output is `UNDERDETERMINED — abstain`, with the missing rank recorded — never a single law
-presented as the unique closure. *(In the `N·S/8` battery case the declared basis
-`{1, N, S, N², N·S, S²}` has six coefficients and the six tape rows give a full-rank design matrix, so
-the law is identifiable; drop a row, or leave the grammar implicit, and the same engine must abstain.
-Part XII guard 14.)*
-
 **Threading the bR cross-domain lineage ledger.** The same face is where the year's cross-domain
 translation architecture belongs, again explicitly tagged `[finite_diagnostic]` and explicitly
 *not* first-principles. The ledger tracks a lineage of records across four domain-translations —
@@ -2032,89 +1956,6 @@ softened: **the gateway is a calculator. It does not prove quantum gravity.** It
 covers the acceptance tests of the calculator itself (unit-ledger consistency, the six benchmark
 scales from 1 nat to Planck energy all producing a well-formed `α_QG` regime label) — not a claim
 that quantum gravity has been solved, computed, or derived.
-
-**SEMANTIC-LANE & OBSERVER GUARD — SCHWARZSCHILD/UNRUH** *(added 2026-07-21, per an external-tester
-report of a real, easily-repeated AI failure mode at this exact gateway).*
-
-The two `τ_c` written above live in **different semantic lanes** and must **not** be identified by
-symbol alone. Where this book writes a bare `τ_c`, it means the energy/mass-memory lane `τ_c^(E)`; the
-Unruh lane is always the explicitly-observer-relative `τ_c^(U)`:
-
-```
-τ_c^(E) = ħ / 2E            energy / mass-memory lane          [DeclaredFormula]  (IV.1)
-τ_c^(U) = π c / a_local     Unruh / acceleration lane          [DeclaredFormula]  (this gateway)
-
-τ_c^(E)  =?  τ_c^(U)        — [OpenBridge], NOT an identity. Open until an observer/redshift
-                              translation map is supplied and passes the commuting-square test (X.4).
-```
-
-**Symbol equality is not semantic equality.** `τ_c^(E)` is the correlation time read out from an
-energy/mass; `τ_c^(U)` is the correlation time of a thermal/acceleration readout *for a specific
-observer*. They share a glyph and a dimension; that licenses nothing. Likewise three accelerations that
-look comparable are not one quantity:
-
-- `a_local` — local (Unruh-type) proper acceleration of a specific observer;
-- `κ = c⁴/4GM` — Schwarzschild surface gravity, normalized for the **asymptotic** observer;
-- an asymptotic / redshifted acceleration readout.
-
-They differ by observer-normalization (redshift) factors: `a_local ≠_direct κ`.
-
-**Forbidden worked example — a failing control (learn the shape so you catch it).** An AI that unifies
-the two `τ_c` by symbol produces:
-
-```
-τ_c^(E) = τ_c^(U)  ⇒  ħ/2E = πc/a  ⇒  a = 2πMc³/ħ      (using E = Mc²)
-then compares:        κ = c⁴/4GM
-observes:             a ∝ M  but  κ ∝ 1/M    (ratio a/κ = 8πGM²/(ħc) ∝ M²)  → scaling mismatch
-WRONG verdict:        "Unruh–horizon bridge: FAIL"
-```
-
-Every arithmetic step is correct; the **composition of meaning** is not. The honest verdict is:
-
-```
-verdict  = INVALID_COMPARISON            (equivalently OPEN_MISSING_TRANSLATION)
-reason   = semantic-lane collision — a_local and κ compared with no observer/redshift quotient
-missing  = the observer-normalization translation map
-status   = OPEN, not REFUTED — no licensed bridge was tested; an ill-posed identity was
-NOT      = FAIL   and   NOT = PASS
-```
-
-A `FAIL` requires a **well-posed** test that a *licensed* bridge failed. Here no licensed bridge was
-ever posed, so the result is `INVALID_COMPARISON`/`OPEN` — the same distinction II.1's CFL guard draws
-between "guarantee withdrawn" and "proven unstable," applied to bridges instead of steppers. The
-project's verdict vocabulary therefore carries at least four states, not two:
-`PASS · FAIL · OPEN · INVALID_COMPARISON` (with `OPEN_MISSING_TRANSLATION` a labelled subcase of OPEN).
-
-**AI GUARD — SCHWARZSCHILD/UNRUH** *(this file is a storyteller for AI as well as humans — obey
-verbatim):*
-
-```
-1. Never unify quantities solely because they share the symbol τ_c (or any symbol).
-2. Never compare local acceleration with surface gravity without an observer-normalization map.
-3. DeclaredFormula means available for CALCULATION, not licensed for COMPOSITION.
-4. A missing translation map ⇒ OPEN or INVALID_COMPARISON, never FAIL.
-5. Before composing two adapters, print their semantic lanes and observer contexts first.
-```
-
-**Claim-boundary addendum for this gateway.** Each formula here is individually available as a declared
-calculator identity. Their *composition* is not licensed unless the intermediate semantic and observer
-maps are supplied and tested. **Arithmetic closure does not imply physical bridge closure.**
-
-**Bridge ledger — Schwarzschild ↔ Unruh (status: OPEN).**
-
-```yaml
-bridge:
-  source: energy_memory            # τ_c^(E) = ħ/2E
-  target: unruh_acceleration       # τ_c^(U) = πc/a_local
-  proposed_map: null
-  observer_map: null               # redshift / normalization not supplied
-  commuting_square_tested: false
-  status: OPEN
-  forbidden_shortcut:
-    - "τ_c^(E) == τ_c^(U)"          # symbol unification across lanes
-    - "a_local == κ"               # local acceleration == surface gravity
-```
-
 
 ---
 
@@ -2591,58 +2432,6 @@ only ever reports success is not being tested. The τ_c scale bus and its twelve
 one root — retention, translated twelve ways — and this Part's discipline is to say, leaf by leaf
 and bridge by bridge, exactly how far the translation has actually been checked to commute, and to
 leave the rest honestly blank until it has.
-
-### V.16 REGISTERED DOMAIN — Chemistry (`domains/chem/`, Information Chemistry v0.910)
-
-The first domain leaf to pass the full **Domain Registration Standard**
-([`domains/DOMAIN_REGISTRATION_STANDARD.md`](domains/DOMAIN_REGISTRATION_STANDARD.md)) — not a sketch
-bridge like V.10–V.12, and not a blank TBD slot like Neuron/Connectome, but a *released*, dual-checker
-`PASS`, adversarially peer-reviewed readout of this same root, held at an explicit formal tier. The
-full release (proof kernel, tests, drift contract, immutable anchors, source-root snapshot) lives in
-[`domains/chem/`](domains/chem/); the core keeps only the connective node and the honest tier.
-
-```
-              THIS ROOT                            CHEMISTRY LEAF   q_chem   (domains/chem/)
-  δ_R = R0 retained distinction  ───────────────►  R1 identity / history / lineage / context
-       │                                                │
-       ▼        source_root snapshot                    ▼
-  typed state + boundary  ◄──── anchors chem ────  R2 typed state + boundary
-       │                        back to this core       ├─► ledger  A(n₁−n₀)=0   (conservation)
-       ▼                                                ├─► kernel → extent → positivity/capacity
-  quotient sufficiency                                  │
-  (domain = translation)                                ├─► FROZEN generator registry (P2)
-       │                                                │      └─► free carrier  ℕ^G
-       ▼                                                │           (free commutative monoid)
-  R0-native discovery chain                             ├─► permutation-sufficiency GATE
-  T0 tape → D0(frozen grammar) →                        │      No-Free-Commutativity: source
-  holdout → calibrated → bounded claim                  │      structure NOT read free off ℕ^G
-       │                                                ├─► structural ⟂ marked (lineage sidecar)
-       └───────────── same discipline ─────────────►    ▼
-                                          bounded claim:  FORMAL_COMPOSITION_QUOTIENT_ONLY
-                                          [FiniteFormalWitnesses]   ✅ dual-checker + peer review PASS
-```
-
-- **Tier:** `FORMAL_COMPOSITION_QUOTIENT_ONLY`. **Established** (exact-rational `FINITE_FORMAL_WITNESSES`):
-  the free structural carrier `ℕ^G` under a frozen registry, the exact source-word count homomorphism,
-  the finite permutation-sufficiency gate, conditional decomposition uniqueness, refinement/coarsening
-  commutation, and structural sharing without lineage erasure.
-- **NOT established** (verbatim from the release's claim boundary, never softened): chemical
-  composition semantics · periodic-table identity · formula / molecular identity · reaction occurrence
-  · physical permutation invariance outside registered profiles · empirical generalization.
-- **`No-Free-<D>-Law` instance:** `ℕ^G` is commutative by construction, but the *source* domain is
-  **not** commutative for free — a source→count quotient is admitted only when every same-count pair
-  has identical readout + successor signatures under every frozen profile, else `OBSTRUCTED`. This is
-  the chemistry instance of the No-Free-Domain-Law general gate (A.13).
-- **Open obstruction (honest):** a real chemistry claim still needs a *calibrated encoding* from
-  retained states to the generator registry; v0.910 proves the structural layer conditional on that
-  encoding — it does **not** establish chemistry semantics, and stays formal until the encoding is
-  supplied and independently checked.
-- **Why it matters to the root:** chemistry is exactly the domain whose specifics (`carbon`,
-  `valence-4`, molecular formulas, per-sample calibration) the founder ontology forbids from entering
-  the root. This registration is the proof-of-discipline — an entire "chemistry" built as a bounded
-  readout of the one retained structure with **none** of those specifics touching the master equation:
-  the folder holds the domain, the core holds only the edge (this section) and its return anchor (the
-  folder's `source_root/` snapshot of this file).
 
 ---
 
@@ -5537,40 +5326,6 @@ python scripts/failable_gate_audit.py --suite scripts/
 #     update matrix), NOT a safe operating point — keep a margin.
 python scripts/cfl_sufficiency_guard.py --passing 0.55 --failing 0.75 \
   --check energy-non-increasing --check spectral-radius
-
-# 13. Schwarzschild/Unruh semantic-lane type-checker (added 2026-07-21, external-tester
-#     report) — refuses any compare(LocalAcceleration, SurfaceGravity) not mediated by a
-#     declared, tested ObserverMap. Acceleration readouts must carry mandatory metadata;
-#     a bare scalar `a` is rejected at the gateway:
-#       AccelerationReadout = {value, observer_class, normalization_point,
-#                              local_or_asymptotic, redshift_map, semantic_lane}
-#     PASSING control: a comparison mediated by SurfaceGravity = ObserverMap(LocalAcceleration)
-#       with a supplied, checked redshift map — allowed.
-#     FAILING control: the tau_c^(E)=tau_c^(U) => a=kappa identification with NO ObserverMap —
-#       must return INVALID_COMPARISON/OPEN, and must NOT return FAIL or PASS.
-python scripts/bh_gateway_lane_check.py --reject-unmapped-compare \
-  --require-metadata observer_class,normalization_point,redshift_map,semantic_lane
-
-# 14. Domain-discovery identifiability gate (added 2026-07-21) — the discovery engine's
-#     concrete realization of the three-valued admissibility gate (⊥ = do not guess): before
-#     reporting any "minimal exact law", require rank(design_matrix) == n_candidate_coefficients
-#     over ℚ, else abstain. NOT a new root rule — the finite_diagnostic instance of the
-#     state-sufficiency / ⊥-unresolved principle already in A.13/VI, applied to the tool.
-#     PASSING control: the N·S/8 tape, declared basis {1,N,S,N²,N·S,S²} (6 rows, rank 6)
-#       — identifiable, law reported.
-#     FAILING control: the same basis with any row removed (rank 5 < 6) — MUST return
-#       UNDERDETERMINED/abstain, NOT a guessed law.
-python scripts/discovery_identifiability_gate.py --require-full-rank --abstain-on-deficient
-
-# 15. Geometry-dominance diagnostic (added 2026-07-21) — the computable defect bound the
-#     living-geometry mixing current (II.8a) already demands: for a moving-basis step
-#     Φ_n=V_n φ_n, R_geo = |(V_{n+1}−V_n)φ_n| / |ΔΦ_n|; reject a fixed-basis (drop-the-
-#     basis-motion-term) approximation when R_geo ≳ 1. This is a diagnostic ON an existing
-#     master-equation term, not an imported rule.
-#     PASSING control: V_{n+1}=V_n (no basis motion) → R_geo=0, fixed-basis allowed.
-#     FAILING control: V_n=I, V_{n+1}=3–4–5 rotation, φ_n=(2,1) → R_geo≈1.099 + sign-flip;
-#       fixed-basis approximation MUST be rejected.
-python scripts/geometry_dominance_check.py --reject-above 1.0
 ```
 
 ---

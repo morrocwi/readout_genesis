@@ -1,0 +1,17 @@
+{
+  "version": "0.901",
+  "release_name": "Information Chemistry v0.901 Standalone Root Proof Layer",
+  "date": "2026-07-21",
+  "status": "formal-foundation release",
+  "active_scientific_claim": "none",
+  "proof_obligations": 7,
+  "dag_policy": "full DAG embedded in this and every descendant release",
+  "standalone": true,
+  "historical_anchors": [
+    "v0.1",
+    "v0.900"
+  ],
+  "source_snapshot_included": true,
+  "checker_label": "INTERNAL_DUAL_IMPLEMENTATION_CHECKER",
+  "next_release": "v0.910 constructive composition quotient"
+}

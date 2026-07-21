@@ -1,0 +1,35 @@
+{
+  "clean_extract_command": "python run_all_tests_v0_910.py",
+  "forbidden_packaged_paths": [
+    "__pycache__",
+    "*.pyc"
+  ],
+  "network_required": false,
+  "required_paths": [
+    "README.md",
+    "INFORMATION_CHEMISTRY_CANON_v0_910_STANDALONE.json",
+    "INFORMATION_CHEMISTRY_CANON_v0_910_STANDALONE.md",
+    "ROOT_DAG_MASTER_v0_910.json",
+    "ROOT_DAG_MASTER_v0_910.md",
+    "ROOT_DAG_DELTA_v0_910.json",
+    "RULE_REGISTRY_v0_910.json",
+    "DRIFT_CONTRACT_v0_910.json",
+    "FUTURE_RELEASE_REQUIRED_FILES_v0_910.json",
+    "PROOF_OBLIGATIONS_v0_910.json",
+    "CLAIM_BOUNDARY_v0_910.json",
+    "composition_kernel_v0_910.py",
+    "make_proof_receipt_v0_910.py",
+    "drift_validator_v0_910.py",
+    "checker_v0_910.py",
+    "run_all_tests_v0_910.py",
+    "anchor_v0_901",
+    "anchor_v0_1",
+    "anchor_v0_900",
+    "source_root"
+  ],
+  "runtime_dependencies": [
+    "Python standard library"
+  ],
+  "standalone": true,
+  "version": "0.910"
+}

@@ -1,0 +1,43 @@
+{
+  "contract_version": "0.901",
+  "master_dag_file": "ROOT_DAG_MASTER_v0_901.json",
+  "master_dag_policy": "embed full DAG in every release; changes require explicit delta",
+  "hard_fail_conditions": [
+    "missing required release-control file",
+    "DAG cycle",
+    "silent node deletion, retyping, or rename",
+    "ROOT_THEOREM depending on EMPIRICAL_TAPE, DISCOVERED_DOMAIN_LAW, CALIBRATED_READOUT, or NUMERICAL_PROCEDURE",
+    "PROTOCOL described as a law of nature",
+    "NUMERICAL_PROCEDURE used as evidence of a domain law",
+    "unregistered active equation",
+    "absolute or unresolved external runtime path",
+    "network dependency",
+    "missing anchor or source snapshot",
+    "claim stronger than rule registry permits"
+  ],
+  "active_files_scanned_for_imported_laws": [
+    "proof_kernel_v0_901.py",
+    "INFORMATION_CHEMISTRY_CANON_v0_901_STANDALONE.json",
+    "RULE_REGISTRY_v0_901.json"
+  ],
+  "prohibited_active_domain_tokens": [
+    "mass_action",
+    "henderson_hasselbalch",
+    "nernst_equation",
+    "ideal_gas_law",
+    "rigid_rotor",
+    "inertia_tensor",
+    "arrhenius_equation",
+    "gibbs_free_energy_law"
+  ],
+  "allowed_rule_classes": [
+    "ROOT_THEOREM",
+    "PROTOCOL",
+    "EMPIRICAL_TAPE",
+    "DISCOVERED_DOMAIN_LAW",
+    "CALIBRATED_READOUT",
+    "NUMERICAL_PROCEDURE",
+    "UNRESOLVED",
+    "OBSTRUCTED"
+  ]
+}

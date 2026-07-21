@@ -1,0 +1,47 @@
+{
+  "version": "0.901",
+  "steps": [
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "make_proof_receipt_v0_901.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"decision\": \"PASS\", \"receipt\": \"PROOF_RECEIPT_v0_901.json\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "drift_validator_v0_901.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"dag_sha256\": \"7c5f99214491510bd2e9927d2fff57dd29152596bbe02dd2e9a979908c63c180\",\n  \"decision\": \"PASS\",\n  \"errors\": [],\n  \"imported_token_hits\": [],\n  \"missing_standalone_files\": [],\n  \"rule_registry_sha256\": \"f271662b5f369fd83284a19a6991f269df3b20ed96039a9a41fed6bfca4df299\",\n  \"version\": \"0.901\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "checker_v0_901.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"checker_type\": \"INTERNAL_DUAL_IMPLEMENTATION_CHECKER\",\n  \"checks\": {\n    \"P1\": true,\n    \"P2\": true,\n    \"P3\": true,\n    \"P4\": true,\n    \"P5\": true,\n    \"P6\": true,\n    \"P7\": true,\n    \"claim_is_foundational_only\": true,\n    \"drift_contract\": true,\n    \"receipt_agreement\": true\n  },\n  \"decision\": \"PASS\",\n  \"independence_boundary\": \"Different implementation, same release authoring environment; not external peer review.\",\n  \"version\": \"0.901\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_proof_kernel_v0_901.py",
+        "test_drift_contract_v0_901.py",
+        "test_release_integrity_v0_901.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_empty_positivity_region (test_proof_kernel_v0_901.ProofKernelTests.test_empty_positivity_region) ... ok\ntest_full_suite (test_proof_kernel_v0_901.ProofKernelTests.test_full_suite) ... ok\ntest_hidden_motion_counterexample (test_proof_kernel_v0_901.ProofKernelTests.test_hidden_motion_counterexample) ... ok\ntest_ledger_failure_detected (test_proof_kernel_v0_901.ProofKernelTests.test_ledger_failure_detected) ... ok\ntest_no_free_additivity (test_proof_kernel_v0_901.ProofKernelTests.test_no_free_additivity) ... ok\ntest_non_kernel_basis_detected (test_proof_kernel_v0_901.ProofKernelTests.test_non_kernel_basis_detected) ... ok\ntest_refinement_splits_hidden_readout (test_proof_kernel_v0_901.ProofKernelTests.test_refinement_splits_hidden_readout) ... ok\ntest_contract (test_drift_contract_v0_901.DriftTests.test_contract) ... ok\ntest_checksums (test_release_integrity_v0_901.IntegrityTests.test_checksums) ... ok\ntest_source_locks (test_release_integrity_v0_901.IntegrityTests.test_source_locks) ... ok\ntest_standalone_manifest (test_release_integrity_v0_901.IntegrityTests.test_standalone_manifest) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.007s\n\nOK\n"
+    }
+  ],
+  "decision": "PASS"
+}

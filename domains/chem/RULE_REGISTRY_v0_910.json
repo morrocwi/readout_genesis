@@ -1,0 +1,295 @@
+{
+  "inherited_registry": "anchor_v0_901/RULE_REGISTRY_v0_901.json",
+  "registry_version": "0.910",
+  "rules": [
+    {
+      "assumptions": [
+        "declared closed boundary",
+        "fixed typed ledger map A",
+        "no unrecorded import/export/creation/erasure"
+      ],
+      "class": "ROOT_THEOREM",
+      "forbidden_claims": [
+        "reaction occurrence",
+        "chemical mechanism",
+        "energetic favorability"
+      ],
+      "name": "closed-boundary retained-ledger conservation",
+      "parents": [
+        "R1",
+        "R2",
+        "R4"
+      ],
+      "rule_id": "RT-LEDGER-001",
+      "statement": "If the declared closed boundary preserves ledger L(n)=A n, then A(n1-n0)=0."
+    },
+    {
+      "assumptions": [
+        "linear ledger map over the declared quantity domain"
+      ],
+      "class": "ROOT_THEOREM",
+      "forbidden_claims": [
+        "every kernel direction is physically realized"
+      ],
+      "name": "kernel characterization",
+      "parents": [
+        "R5",
+        "R6"
+      ],
+      "rule_id": "RT-KERNEL-002",
+      "statement": "A change delta preserves the ledger iff delta is in ker(A)."
+    },
+    {
+      "assumptions": [
+        "basis completeness is independently certified"
+      ],
+      "class": "ROOT_THEOREM",
+      "forbidden_claims": [
+        "basis vectors are actual reactions without compatibility evidence"
+      ],
+      "name": "extent coordinates from a declared kernel basis",
+      "parents": [
+        "R6",
+        "R7"
+      ],
+      "rule_id": "RT-EXTENT-003",
+      "statement": "If columns of N form a basis for the admitted kernel subspace, every admitted change has coordinates xi with delta=N xi."
+    },
+    {
+      "assumptions": [
+        "nonnegative retained quantities",
+        "declared capacity constraints"
+      ],
+      "class": "ROOT_THEOREM",
+      "forbidden_claims": [
+        "the boundary is reached dynamically"
+      ],
+      "name": "positivity and capacity region",
+      "parents": [
+        "R7",
+        "R8"
+      ],
+      "rule_id": "RT-ADMISSIBLE-004",
+      "statement": "Admitted coordinates satisfy n0+N xi >= 0 and all declared capacity/boundary inequalities."
+    },
+    {
+      "assumptions": [
+        "finite state set",
+        "deterministic declared dynamics",
+        "finite readout signatures"
+      ],
+      "class": "ROOT_THEOREM",
+      "forbidden_claims": [
+        "the resulting quotient is chemistry without semantic calibration"
+      ],
+      "name": "finite quotient counterexample refinement",
+      "parents": [
+        "R2",
+        "R3"
+      ],
+      "rule_id": "RT-REFINE-005",
+      "statement": "For a finite state set, repeatedly splitting cells by declared readout and successor-cell signatures terminates in an exact closed refinement."
+    },
+    {
+      "assumptions": [
+        "free commutative composition",
+        "homomorphism gate passed"
+      ],
+      "class": "ROOT_THEOREM",
+      "forbidden_claims": [
+        "retention alone forces readout additivity"
+      ],
+      "name": "conditional additive-readout representation",
+      "parents": [
+        "R2",
+        "R9"
+      ],
+      "rule_id": "RT-ADD-COND-006",
+      "statement": "If composition is a free commutative monoid and R is a monoid homomorphism, then R(c)=sum_i c_i R(e_i)."
+    },
+    {
+      "assumptions": [
+        "non-injective quotient is permitted"
+      ],
+      "class": "ROOT_THEOREM",
+      "forbidden_claims": [
+        "fixed quotient state implies thermodynamic equilibrium"
+      ],
+      "name": "observational stationarity is weaker than source equilibrium",
+      "parents": [
+        "R3",
+        "R10"
+      ],
+      "rule_id": "RT-STATIONARY-007",
+      "statement": "A quotient fixed point can hide source-state cycles or currents; therefore fixed quotient readout alone establishes only observational stationarity."
+    },
+    {
+      "assumptions": [],
+      "class": "PROTOCOL",
+      "forbidden_claims": [
+        "grammar families are root theorems"
+      ],
+      "name": "discovery grammar declaration",
+      "parents": [
+        "P0"
+      ],
+      "rule_id": "PR-GRAMMAR-001",
+      "statement": "Candidate mathematical languages must be frozen and reported before held-out evidence is opened."
+    },
+    {
+      "assumptions": [
+        "finite rational witnesses"
+      ],
+      "class": "NUMERICAL_PROCEDURE",
+      "forbidden_claims": [
+        "proof of arbitrary real-valued numerical stability"
+      ],
+      "name": "exact rational finite witness checker",
+      "parents": [
+        "N0"
+      ],
+      "rule_id": "NP-EXACT-001",
+      "statement": "Use integer/Fraction arithmetic for the finite proof witnesses in v0.901."
+    },
+    {
+      "assumptions": [],
+      "class": "PROTOCOL",
+      "forbidden_claims": [
+        "the registry is a periodic table",
+        "the chosen generators are ontologically fundamental"
+      ],
+      "name": "frozen typed generator registry",
+      "parents": [
+        "P2"
+      ],
+      "rule_id": "PR-GENERATOR-002",
+      "statement": "Freeze generator identities, aliases, source profiles, contexts, and permitted transformations before quotient admission."
+    },
+    {
+      "assumptions": [
+        "finite identity-locked generator registry",
+        "nonnegative integer occupation coordinates"
+      ],
+      "class": "ROOT_THEOREM",
+      "forbidden_claims": [
+        "source interactions are commutative",
+        "a chemical formula has been established"
+      ],
+      "name": "free structural composition carrier",
+      "parents": [
+        "R11",
+        "R12"
+      ],
+      "rule_id": "RT-FCM-008",
+      "statement": "For a frozen finite generator registry G, N^G with coordinatewise addition and zero is a free commutative monoid."
+    },
+    {
+      "assumptions": [
+        "every source token resolves to exactly one registered generator",
+        "unknown or aliased tokens obstruct the map"
+      ],
+      "class": "ROOT_THEOREM",
+      "forbidden_claims": [
+        "token order is physically irrelevant"
+      ],
+      "name": "source-word occupation homomorphism",
+      "parents": [
+        "R11",
+        "R12",
+        "R13"
+      ],
+      "rule_id": "RT-COUNT-HOM-009",
+      "statement": "Counting registered generators maps empty source word to zero and concatenation to coordinatewise addition."
+    },
+    {
+      "assumptions": [
+        "finite registered source panel",
+        "complete frozen profile list for the claim",
+        "exact signature comparison at declared resolution"
+      ],
+      "class": "ROOT_THEOREM",
+      "forbidden_claims": [
+        "unregistered observables are permutation invariant",
+        "commutativity is universal"
+      ],
+      "name": "finite permutation sufficiency theorem",
+      "parents": [
+        "R3",
+        "R13",
+        "R14",
+        "P2"
+      ],
+      "rule_id": "RT-PERM-GATE-010",
+      "statement": "If equal occupation vectors imply equal registered readout and successor signatures in every frozen profile, the count quotient exactly factors those profiles."
+    },
+    {
+      "assumptions": [
+        "identity-locked independent generator coordinates",
+        "no unresolved alias or generator relation"
+      ],
+      "class": "ROOT_THEOREM",
+      "forbidden_claims": [
+        "source-state factorization is unique without an encoding certificate",
+        "uniqueness survives registry changes without a refinement map"
+      ],
+      "name": "conditional decomposition uniqueness",
+      "parents": [
+        "R11",
+        "R12",
+        "R15"
+      ],
+      "rule_id": "RT-DECOMP-011",
+      "statement": "Within N^G and a frozen independent generator basis, occupation coordinates uniquely specify structural decomposition."
+    },
+    {
+      "assumptions": [
+        "typed dimension-compatible refinement map",
+        "each refined generator has a declared parent contribution"
+      ],
+      "class": "ROOT_THEOREM",
+      "forbidden_claims": [
+        "the refinement is empirically correct without profile validation"
+      ],
+      "name": "refinement/coarsening composition theorem",
+      "parents": [
+        "R11",
+        "R12",
+        "R16"
+      ],
+      "rule_id": "RT-REFINE-COMP-012",
+      "statement": "A declared nonnegative-integer coarsening map P commutes with composition: P(c+d)=Pc+Pd."
+    },
+    {
+      "assumptions": [
+        "lineage identifiers are immutable and collision-checked within the release scope"
+      ],
+      "class": "ROOT_THEOREM",
+      "forbidden_claims": [
+        "occupation vectors alone preserve history"
+      ],
+      "name": "structural sharing without lineage erasure",
+      "parents": [
+        "R1",
+        "R13",
+        "R17"
+      ],
+      "rule_id": "RT-LINEAGE-013",
+      "statement": "The marked quotient stores structural occupation separately from an append-only lineage sidecar; equal structural projections need not identify marked histories."
+    },
+    {
+      "assumptions": [
+        "finite panel and exact values"
+      ],
+      "class": "NUMERICAL_PROCEDURE",
+      "forbidden_claims": [
+        "proof for unenumerated states or profiles"
+      ],
+      "name": "finite exact profile gate implementation",
+      "parents": [
+        "N0"
+      ],
+      "rule_id": "NP-FINITE-GATE-002",
+      "statement": "Enumerate all registered same-count pairs and compare exact frozen signatures."
+    }
+  ]
+}

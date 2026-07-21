@@ -1,0 +1,326 @@
+document:
+  title: "Information Chemistry Canon v0.1"
+  subtitle: "Retention-first foundations, exact structural identity, reaction ledgers, and epistemic firewalls"
+  status: "standalone foundational canon; computationally instantiated; not a complete empirical chemistry"
+  language: "English canonical specification with equations"
+  date: "2026-07-21"
+  native_unit: "one retained distinction (RD)"
+
+mission:
+  statement: >-
+    Information Chemistry studies persistent unit classes, finite interaction
+    capacities, admissible connection structures, lineage-preserving rewrites,
+    and readouts that later acquire chemical names and physical units.
+  ordering: >-
+    Retention precedes unit type; unit type precedes capacity; capacity and
+    compatibility precede synthesis; structure precedes formula readout;
+    dynamics precede macroscopic report.
+  central_boundary: >-
+    Retention alone entails distinction preservation but does not select the
+    contingent compatibility, geometry, energy, or rate laws of real chemistry.
+
+three_layers:
+  ontology:
+    content: "retained distinctions, histories, interaction events, lineages, tape"
+  translation:
+    content: "state proposal, sufficiency, unit classes, graphs, quotients, readouts, calibrated units"
+  epistemology:
+    content: "registrar, maker, prediction freeze, checker, auditor, bounded report"
+
+native_objects:
+  retained_distinction:
+    symbol: "delta_R = (a sharp b)"
+    meaning: "a difference occurred and remains distinguishable in global retained state"
+  history:
+    symbol: "Gamma_n = (e_0, ..., e_{n-1})"
+  global_state:
+    symbol: "S_n = (G_n, Lambda_n, T_n)"
+    fields:
+      G_n: "admissible synthesis graph"
+      Lambda_n: "lineage ledger"
+      T_n: "append-only interaction and residue tape"
+  candidate_state:
+    symbol: "Z_alpha^cand = E_alpha(S)"
+    warning: "a representation proposal is not a discovered chemical domain"
+  interaction_profile:
+    symbol: "I_i = (admissions_i, obstructions_i, returns_i, context_i)"
+  unit_class:
+    symbol: "U_a = [i]_{I,alpha,rho}"
+    meaning: "an equivalence class of persistent interaction profiles at declared resolution"
+  capacity:
+    symbol: "kappa_a = max admitted incident interaction count before the first closed obstruction"
+  compatibility:
+    symbol: "C_ab^(r) in {admitted, obstructed, unresolved}"
+    meaning: "empirical or derived admissibility of relation order r between unit classes"
+  molecular_graph:
+    symbol: "g = (V, tau, B, Lambda_g)"
+    fields:
+      V: "retained unit instances"
+      tau: "unit-class labels"
+      B: "typed adjacency or bond-order tensor"
+      Lambda_g: "lineage carried by the structure"
+  composition_readout:
+    symbol: "c_a(g) = sum_i [tau(i)=a]"
+  structural_identity:
+    symbol: "g ==_S g' iff a type-preserving graph isomorphism exists"
+  reaction:
+    symbol: "R: (g_in, Lambda_in, T_n) -> (g_out, Lambda_out, T_{n+1})"
+    meaning: "an admissible lineage-preserving graph rewrite"
+
+axioms_and_disciplines:
+  IC0_retention:
+    equation: "Gamma != Gamma' => R(Gamma) != R(Gamma')"
+  IC1_no_free_erasure:
+    statement: "a distinction may leave active readout only if residue, lineage, or tape retains it"
+  IC2_no_free_copy:
+    equation: "!_kappa A -> A^(tensor m), m <= kappa"
+  IC3_empirical_unit_induction:
+    statement: "unit types are induced from stable interaction profiles; names are later interpretations"
+  IC4_finite_admissibility:
+    statement: "every declared connection must pass capacity, compatibility, identity-lock, and obstruction gates"
+  IC5_structure_before_formula:
+    equation: "O_comp(g)=O_comp(g') does not imply g ==_S g'"
+  IC6_lineage_before_sharing:
+    statement: "isomorphic structures may share computation while their labelled histories remain distinct"
+  IC7_reaction_ledger:
+    statement: "a native rewrite must preserve every retained unit token unless creation, export, or obstruction is explicitly recorded"
+  IC8_state_sufficiency:
+    statement: "domain discovery is invalid when the candidate state omits distinctions that affect future declared readout"
+  IC9_exact_quotient:
+    equations:
+      - "q_{n+1} o F_n = F_n^sharp o q_n"
+      - "O_alpha = O_alpha^sharp o q_n"
+  IC10_contingent_chemistry:
+    statement: "compatibility, geometry, energetic ordering, and rate structure require retained empirical interaction content or additional postulates"
+  IC11_readout_separation:
+    equation: "S != O_alpha(S) != Y_alpha != P_alpha"
+  IC12_bounded_claim:
+    statement: "computed, checked, interpreted, and claimed are distinct statuses"
+
+canonical_constraints:
+  capacity:
+    equation: "sum_{j,r} r * B_{ij}^{(r)} <= kappa_{tau(i)}"
+  compatibility:
+    equation: "B_{ij}^{(r)} > 0 => C_{tau(i),tau(j)}^{(r)} = admitted"
+  saturation_defect:
+    equation: "d_sat(g) = sum_i max(0, kappa_{tau(i)} - sum_{j,r} r B_{ij}^{(r)})"
+    warning: "saturation is query-relative and is not universally required for every real chemical state"
+  composition:
+    equation: "c(g) = (c_1(g), ..., c_m(g))"
+  stoichiometric_ledger:
+    equation: "A nu = 0"
+    derivation: "A is the retained-type occupation matrix; nu is the signed reaction multiplicity vector"
+  normal_form:
+    equation: "NF(g) = canonical representative of [g] under type-preserving relabelling"
+  reaction_admissibility:
+    equation: "Adm_R = token_lock AND capacity_lock AND compatibility_lock AND boundary_lock AND [obstruction=0]"
+  informational_cost:
+    equation: "Omega(g) = lex(invalid_edges, unrecorded_loss, saturation_defect, disconnected_defect, empirical_obstruction_cost)"
+    warning: >-
+      Omega is an audit ordering. It is not physical energy unless an explicit,
+      checked calibration establishes that readout.
+  dynamics:
+    equation: >-
+      M delta_t^2 Phi + D delta_t^c Phi + K G Phi + grad V(Phi) - J
+      = J_cut + J_syn
+    interpretation: >-
+      Phi is the active structural/occupation realization; Psi is the retained
+      record partner; G is built from the admitted reaction-state graph.
+
+derived_results:
+  DR1_stoichiometry:
+    statement: "primitive integer reaction coefficients are positive null vectors of the retained-type ledger"
+  DR2_formula_insufficiency:
+    statement: "one occupation vector may support multiple non-isomorphic structural normal forms"
+    witness: "anonymous four-capacity X and one-capacity Y yield two X4Y10 normal forms"
+  DR3_structure_sharing:
+    statement: "multiple labelled connection histories may map to one structural normal form without reducing lineage count"
+  DR4_reaction_feasibility:
+    statement: "a proposed reaction with nonzero unrecorded ledger residual is inadmissible"
+  DR5_no_free_chemistry:
+    status: "constructive theorem inside the finite kernel"
+    statement: >-
+      Retention plus equal finite capacity does not uniquely determine
+      compatibility. For inventory A2B2 with monovalent A and B, both
+      {A2,B2} and {AB,AB} preserve retention under different compatibility
+      relations. Therefore empirical compatibility is independent required
+      content.
+  DR6_domain_relativity:
+    statement: "chemical domain is the coarsest dynamically closed quotient that preserves a declared chemical readout"
+
+no_free_chemistry_theorem:
+  premises:
+    - "initial retained inventory is A2B2"
+    - "capacity(A)=capacity(B)=1"
+    - "every token must appear exactly once in the output"
+  model_1:
+    compatibility: "same-type only"
+    output: "A2 + B2"
+  model_2:
+    compatibility: "cross-type only"
+    output: "AB + AB"
+  result: >-
+    Both models satisfy retention and capacity but disagree on product
+    structure. Hence retention cannot derive real chemistry without an
+    interaction/compatibility tape.
+
+domain_construction:
+  definition: >-
+    D_alpha is the minimal sufficient dynamically closed quotient of candidate
+    state Z_alpha for query Q_alpha and readout O_alpha.
+  equations:
+    - "P_alpha = FixRefine(Z_alpha, F, O_alpha, Q_alpha)"
+    - "D_alpha = Z_alpha / P_alpha"
+    - "q_{n+1} F_n = F_n^sharp q_n"
+    - "O_alpha = O_alpha^sharp q_n"
+  precondition: "Suff_{alpha,L}(Z_alpha^cand)=1"
+  repair: "if sufficiency fails, expand state before changing the report"
+
+cross_domain_translation:
+  signature:
+    symbol: "Xi_alpha = (P_alpha, F_alpha^sharp, C_alpha, B_alpha, T_alpha, O_alpha^sharp)"
+  bridge:
+    symbol: "K_{beta<-alpha}: D_alpha -> D_beta"
+  exact_conditions:
+    - "K F_alpha^sharp = F_beta^sharp K"
+    - "O_beta^sharp K = D_{beta<-alpha} O_alpha^sharp"
+  approximate_defects:
+    - "epsilon_dyn = d(K F_alpha^sharp z, F_beta^sharp K z)"
+    - "epsilon_read = d(O_beta^sharp K z, D_{beta<-alpha} O_alpha^sharp z)"
+  caution: "similar formulae or vocabulary do not establish a cross-domain bridge"
+
+native_to_known_units:
+  native_result: "r_RD in U_RD"
+  decoder: "y_alpha = U_alpha(r_RD; calibration_alpha)"
+  requirements:
+    - "calibration provenance"
+    - "validity range"
+    - "uncertainty"
+    - "dimensional consistency after decoding"
+  prohibition: "a unit decoder may not inject an unacknowledged predictive mechanism"
+
+maker_checker_firewall:
+  registrar:
+    freezes:
+      - "query and claim boundary"
+      - "allowed and forbidden inputs"
+      - "state family and discovery rules"
+      - "metrics, controls, thresholds, and failure conditions"
+  maker:
+    mapping: "Maker(protocol, allowed_inputs) -> state, partition, operators, predictions, proof_trace"
+    forbidden:
+      - "held-out outcomes"
+      - "answer-equivalent mechanism flags"
+      - "post-outcome score orientation or threshold changes"
+  freeze:
+    content: "hash(source, dependencies, configuration, operators, predictions, protocol)"
+  checker:
+    mapping: "Checker(frozen_artifact, checker_only_information, protocol) -> verdict"
+    duties:
+      - "hash and coverage audit"
+      - "ledger and quotient audit"
+      - "baseline, control, uncertainty, and scope audit"
+    prohibited:
+      - "model redesign"
+      - "parameter tuning"
+      - "selective reporting"
+  deviation_tape:
+    rule: "append deviations before restricted information is opened; never overwrite the original protocol"
+  caution: "separation reduces epistemic contamination but does not prove theoretical truth"
+
+canonical_workflow:
+  steps:
+    - "capture retained events without domain names"
+    - "strip domain vocabulary into unit, relation, transition, boundary, memory, and readout roles"
+    - "declare query, horizon, interventions, resolution, tolerance, and claim boundary"
+    - "propose candidate state"
+    - "audit state sufficiency"
+    - "induce unit classes from interaction profiles"
+    - "discover capacity and compatibility boundaries"
+    - "construct admitted typed graphs"
+    - "normalize under type-preserving isomorphism while retaining lineage"
+    - "construct reaction rewrites and enforce the retained-type ledger"
+    - "build reaction-state dynamics and memory"
+    - "discover the query-relative chemical quotient"
+    - "freeze maker output"
+    - "independently check"
+    - "decode native RD results into known observables and units"
+    - "issue a bounded report and append the audit tape"
+
+failure_taxonomy:
+  F_state: "candidate state omits future-relevant distinctions"
+  F_unit: "interaction profiles do not support the proposed unit partition"
+  F_capacity: "admission/obstruction boundary is incomplete or context-dependent"
+  F_compatibility: "declared connection relation is unsupported"
+  F_structure: "composition quotient merges distinct structural normal forms"
+  F_reaction: "rewrite violates token, capacity, compatibility, or boundary locks"
+  F_dynamics: "transition operator fails closure or prediction"
+  F_readout: "decoder or calibration does not preserve the declared observable"
+  F_bridge: "cross-domain diagram fails to commute"
+  F_leakage: "restricted answer information entered maker construction"
+
+scope_ladder:
+  L0_exact_now:
+    - "finite retained-type ledgers"
+    - "capacity inference from closed tapes"
+    - "finite labelled graph normal forms"
+    - "structural lineage sharing"
+    - "constructive underdetermination proofs"
+  L1_requires_data:
+    - "real unit interaction profiles"
+    - "real compatibility and bond-order relations"
+    - "context-dependent obstruction and rewrite data"
+  L2_requires_calibration:
+    - "physical energies, lengths, times, concentrations, and rates"
+    - "thermodynamic and spectroscopic readouts"
+  L3_open_research:
+    - "emergence of real periodicity"
+    - "electronic and quantum bridge"
+    - "geometry and stereochemistry from retained dynamics"
+    - "general product and pathway discovery"
+    - "multiscale chemistry-to-biology closure"
+
+curriculum_from_zero:
+  chapter_0: "Why chemistry cannot be obtained from retention alone"
+  chapter_1: "Retained distinctions and interaction tapes"
+  chapter_2: "Inducing unit classes without element names"
+  chapter_3: "Capacity, compatibility, and obstruction"
+  chapter_4: "Typed graphs, composition, and structural identity"
+  chapter_5: "Normal forms, isomers, and lineage"
+  chapter_6: "Reaction rewrites and stoichiometric null ledgers"
+  chapter_7: "Open systems, cut currents, memory, and catalysis as path structure"
+  chapter_8: "Informational cost versus calibrated physical energy"
+  chapter_9: "DRL reaction-state dynamics and telegraph memory"
+  chapter_10: "Readout into conventional chemistry and units"
+  chapter_11: "Maker-checker discipline and falsifiable chemical inference"
+  chapter_12: "Quantum, thermodynamic, biological, and cognitive bridges"
+
+prohibitions:
+  - "do not call a semantic relabelling a derivation"
+  - "do not call composition structural identity"
+  - "do not call informational audit cost physical energy without calibration"
+  - "do not infer empirical compatibility from retention alone"
+  - "do not force a multi-field state into a single-field reduction"
+  - "do not erase lineage when sharing structure"
+  - "do not call approximate equivalence exact"
+  - "do not enumerate possible worlds when an exact quotient or constraint solution exists"
+  - "do not claim a complete chemistry, periodic table, or ab initio solver from this canon"
+
+standalone_implementation:
+  kernel: "information_chemistry_kernel.py"
+  result: "information_chemistry_kernel_result.json"
+  tests: "test_information_chemistry_kernel.py"
+  external_scientific_dependencies: "none"
+  execution: "python information_chemistry_kernel.py"
+
+canonical_summary:
+  equation: >-
+    delta_R -> interaction tape -> unit classes -> capacity + compatibility ->
+    admissible typed graphs -> structural normal forms + lineage -> retained
+    reaction ledger -> reaction-state dynamics -> query-relative quotient ->
+    independent check -> calibrated chemical readout -> bounded report
+  final_statements:
+    - "Chemical names are readouts; retained interaction structure comes first."
+    - "Formula is an occupation readout, not complete chemical identity."
+    - "Stoichiometry follows from retention; empirical compatibility does not."
+    - "Real Information Chemistry begins where contingent interaction history constrains admissible structure and change."

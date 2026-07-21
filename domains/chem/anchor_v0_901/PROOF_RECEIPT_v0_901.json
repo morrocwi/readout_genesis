@@ -1,0 +1,189 @@
+{
+  "proof_kernel_sha256": "2e82bf5820e8595fad839b6e463e0dc8da89f6cb3ce39daef7eac776c50bc43c",
+  "result": {
+    "claim_boundary": "Formal conditional root layer only; no empirical chemistry law.",
+    "data_status": "FINITE_FORMAL_WITNESSES",
+    "decision": "PASS",
+    "proofs": {
+      "P1": {
+        "after": [
+          "2",
+          "2"
+        ],
+        "algebraic_identity_holds": true,
+        "before": [
+          "2",
+          "2"
+        ],
+        "closed_boundary_holds": true,
+        "delta": [
+          "-1",
+          "1",
+          "-1"
+        ],
+        "residual": [
+          "0",
+          "0"
+        ]
+      },
+      "P2": {
+        "all_basis_in_kernel": true,
+        "basis_residuals": [
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "combination_in_kernel": true,
+        "delta": [
+          "-1",
+          "1",
+          "-1"
+        ],
+        "residual": [
+          "0",
+          "0"
+        ]
+      },
+      "P3": {
+        "basis_completeness_assumed_not_proved_by_this_instance": true,
+        "change_preserves_ledger": true,
+        "coordinates_reconstruct_change": true,
+        "delta": [
+          "-1",
+          "1",
+          "-1"
+        ],
+        "reconstructed": [
+          "-1",
+          "1",
+          "-1"
+        ]
+      },
+      "P4": {
+        "admissible": true,
+        "constraints": [
+          [
+            0,
+            "<=",
+            "2"
+          ],
+          [
+            1,
+            ">=",
+            "0"
+          ],
+          [
+            2,
+            "<=",
+            "2"
+          ]
+        ],
+        "lower": "0",
+        "upper": "2"
+      },
+      "P5": {
+        "cell_count_le_state_count": true,
+        "exact_readout_and_dynamics_closure": true,
+        "partition": [
+          [
+            "a"
+          ],
+          [
+            "c"
+          ],
+          [
+            "b"
+          ],
+          [
+            "d"
+          ]
+        ],
+        "steps": [
+          {
+            "cell_count_after": 3,
+            "cell_count_before": 1
+          },
+          {
+            "cell_count_after": 4,
+            "cell_count_before": 3
+          },
+          {
+            "cell_count_after": 4,
+            "cell_count_before": 4
+          }
+        ],
+        "terminated": true
+      },
+      "P6": {
+        "conditional_representation_value": "23",
+        "no_free_countermodel": {
+          "additive_map": {
+            "0": 0,
+            "1": 1,
+            "2": 2,
+            "3": 3,
+            "4": 4
+          },
+          "additive_passes": true,
+          "conclusion": "Retention alone does not select additive readout semantics.",
+          "nonadditive_fails": true,
+          "nonadditive_map": {
+            "0": 0,
+            "1": 1,
+            "2": 4,
+            "3": 9,
+            "4": 16
+          },
+          "shared_retained_states": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "witness": [
+            1,
+            1
+          ]
+        }
+      },
+      "P7": {
+        "conclusion": "Quotient fixed point establishes observational stationarity only.",
+        "quotient": {
+          "a": "z",
+          "b": "z"
+        },
+        "quotient_is_fixed": true,
+        "quotient_successors": [
+          "z"
+        ],
+        "readout": {
+          "a": 0,
+          "b": 0
+        },
+        "readout_is_stationary": true,
+        "source_dynamics": {
+          "a": "b",
+          "b": "a"
+        },
+        "source_has_hidden_motion": true,
+        "source_states": [
+          "a",
+          "b"
+        ]
+      }
+    },
+    "statuses": {
+      "P1": true,
+      "P2": true,
+      "P3": true,
+      "P4": true,
+      "P5": true,
+      "P6": true,
+      "P7": true
+    },
+    "version": "0.901"
+  },
+  "version": "0.901"
+}

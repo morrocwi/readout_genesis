@@ -1,0 +1,122 @@
+{
+  "added_edges": [
+    [
+      "R2",
+      "P2"
+    ],
+    [
+      "P2",
+      "R11"
+    ],
+    [
+      "R11",
+      "R12"
+    ],
+    [
+      "R12",
+      "R13"
+    ],
+    [
+      "R3",
+      "R14"
+    ],
+    [
+      "R13",
+      "R14"
+    ],
+    [
+      "P2",
+      "R14"
+    ],
+    [
+      "R12",
+      "R15"
+    ],
+    [
+      "R11",
+      "R15"
+    ],
+    [
+      "R11",
+      "R16"
+    ],
+    [
+      "R12",
+      "R16"
+    ],
+    [
+      "R13",
+      "R17"
+    ],
+    [
+      "R14",
+      "R17"
+    ],
+    [
+      "R15",
+      "R17"
+    ],
+    [
+      "R16",
+      "R17"
+    ],
+    [
+      "R17",
+      "R4"
+    ],
+    [
+      "R17",
+      "R9"
+    ]
+  ],
+  "added_nodes": [
+    {
+      "id": "P2",
+      "label": "frozen generator registry and profile card",
+      "type": "PROTOCOL"
+    },
+    {
+      "id": "R11",
+      "label": "finite typed generator registry",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R12",
+      "label": "free structural composition carrier N^G",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R13",
+      "label": "source-to-occupation homomorphism",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R14",
+      "label": "permutation sufficiency and commutativity admission theorem",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R15",
+      "label": "decomposition uniqueness under a frozen independent generator registry",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R16",
+      "label": "refinement/coarsening commuting map",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R17",
+      "label": "marked structural quotient with non-erased lineage sidecar",
+      "type": "ROOT_THEOREM"
+    }
+  ],
+  "base_dag_id": "ICHEM_ROOT_DAG_0_901",
+  "base_version": "0.901",
+  "purpose": "Construct an abstract composition quotient without importing chemical semantics or free commutativity.",
+  "removed_edges": [],
+  "removed_nodes": [],
+  "renamed_nodes": [],
+  "retyped_nodes": [],
+  "version": "0.910"
+}

@@ -1,0 +1,23 @@
+{
+  "checker_label": "INTERNAL_DUAL_IMPLEMENTATION_CHECKER",
+  "established": [
+    "free structural occupation carrier under a frozen generator registry",
+    "exact source-word count homomorphism when token resolution is total and unambiguous",
+    "finite permutation sufficiency gate for declared profiles",
+    "conditional coordinate decomposition uniqueness",
+    "refinement/coarsening composition commutation",
+    "structural sharing without lineage erasure"
+  ],
+  "not_established": [
+    "chemical composition semantics",
+    "periodic-table identity",
+    "formula semantics",
+    "molecular identity",
+    "reaction occurrence",
+    "physical permutation invariance outside registered profiles",
+    "empirical generalization"
+  ],
+  "public_label": "[FiniteFormalWitnesses] root-native abstract composition layer",
+  "tier": "FORMAL_COMPOSITION_QUOTIENT_ONLY",
+  "version": "0.910"
+}

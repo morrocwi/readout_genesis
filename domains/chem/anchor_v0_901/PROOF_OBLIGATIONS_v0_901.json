@@ -1,0 +1,45 @@
+{
+  "version": "0.901",
+  "obligations": [
+    {
+      "id": "P1",
+      "rule_id": "RT-LEDGER-001",
+      "target": "PROVED_CONDITIONAL"
+    },
+    {
+      "id": "P2",
+      "rule_id": "RT-KERNEL-002",
+      "target": "PROVED"
+    },
+    {
+      "id": "P3",
+      "rule_id": "RT-EXTENT-003",
+      "target": "PROVED_CONDITIONAL"
+    },
+    {
+      "id": "P4",
+      "rule_id": "RT-ADMISSIBLE-004",
+      "target": "PROVED_CONDITIONAL"
+    },
+    {
+      "id": "P5",
+      "rule_id": "RT-REFINE-005",
+      "target": "PROVED_FINITE"
+    },
+    {
+      "id": "P6",
+      "rule_id": "RT-ADD-COND-006",
+      "target": "PROVED_CONDITIONAL_AND_NO_FREE_COUNTERMODEL"
+    },
+    {
+      "id": "P7",
+      "rule_id": "RT-STATIONARY-007",
+      "target": "PROVED_BY_COUNTEREXAMPLE"
+    }
+  ],
+  "scope_exclusion": [
+    "No empirical chemistry law is proved in v0.901.",
+    "No named chemistry observable is calibrated in v0.901.",
+    "No equilibrium, pH, energy, gas, orbital, or kinetic formula is active."
+  ]
+}

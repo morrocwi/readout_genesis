@@ -1,0 +1,27 @@
+{
+  "contract_version": "0.901",
+  "required_in_every_descendant_release": [
+    "ROOT_DAG_MASTER_<version>.json",
+    "ROOT_DAG_MASTER_<version>.md",
+    "ROOT_DAG_DELTA_<version>.json",
+    "RULE_REGISTRY_<version>.json",
+    "DRIFT_CONTRACT_<version>.json",
+    "DRIFT_AUDIT_<version>.json",
+    "CLAIM_BOUNDARY_<version>.json",
+    "SOURCE_LOCKS_<version>.json",
+    "STANDALONE_MANIFEST_<version>.json",
+    "RELEASE_MANIFEST_<version>.json",
+    "CHECKSUMS_SHA256_<version>.txt",
+    "README.md",
+    "run_all_tests_<version>.py"
+  ],
+  "standalone_definition": [
+    "all active source code is included",
+    "all anchors named by the release are included",
+    "all source snapshots required to interpret root claims are included",
+    "tests run with Python standard library only",
+    "no network access is needed",
+    "all file references are relative and resolve inside the package",
+    "a clean extraction can regenerate proof/checker receipts"
+  ]
+}

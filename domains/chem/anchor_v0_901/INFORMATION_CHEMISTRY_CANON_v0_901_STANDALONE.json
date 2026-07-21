@@ -1,0 +1,23 @@
+{
+  "document": {
+    "title": "Information Chemistry Canon v0.901",
+    "subtitle": "Standalone Root Proof Layer with frozen DAG and anti-drift contract",
+    "version": "0.901",
+    "date": "2026-07-21",
+    "status": "standalone formal-foundation release; no empirical chemistry claim",
+    "dependencies": "Python standard library only; no network required"
+  },
+  "immutable_requirements": {
+    "standalone": true,
+    "full_dag_in_every_release": true,
+    "rule_registry_in_every_release": true,
+    "drift_audit_in_every_release": true,
+    "historical_anchors_retained": true,
+    "no_silent_rule_retyping": true
+  },
+  "root_dag": "ROOT_DAG_MASTER_v0_901.json",
+  "rule_registry": "RULE_REGISTRY_v0_901.json",
+  "proof_obligations": "PROOF_OBLIGATIONS_v0_901.json",
+  "claim_boundary": "CLAIM_BOUNDARY_v0_901.json",
+  "canonical_command": "Retain the full root DAG in every release; type every rule; derive root theorems explicitly; route contingent facts through typed tape; distinguish discovery, readout, and numerical procedure; fail on drift; preserve anchors; and ship every release as a clean-extract standalone package."
+}

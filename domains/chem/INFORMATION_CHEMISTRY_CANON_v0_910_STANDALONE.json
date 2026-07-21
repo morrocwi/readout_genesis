@@ -1,0 +1,42 @@
+{
+  "active_anchor": "v0.901 standalone root proof layer",
+  "active_equations": [
+    {
+      "class": "ROOT_THEOREM",
+      "expression": "c ⊕ d = c + d in N^G",
+      "id": "EQ-COMP-1",
+      "rule_id": "RT-FCM-008"
+    },
+    {
+      "class": "ROOT_THEOREM",
+      "expression": "q(uv)=q(u)+q(v)",
+      "id": "EQ-COMP-2",
+      "rule_id": "RT-COUNT-HOM-009"
+    },
+    {
+      "class": "ROOT_THEOREM",
+      "expression": "q(s)=q(t) => Sigma_p(s)=Sigma_p(t) for all frozen profiles p",
+      "id": "EQ-COMP-3",
+      "rule_id": "RT-PERM-GATE-010"
+    },
+    {
+      "class": "ROOT_THEOREM",
+      "expression": "P(c+d)=Pc+Pd",
+      "id": "EQ-COMP-4",
+      "rule_id": "RT-REFINE-COMP-012"
+    }
+  ],
+  "canonical_command": "Freeze generator identity and profiles; construct the carrier; prove count homomorphism; admit permutation quotient only after exact profile gates; freeze decomposition coordinates; require refinement maps; preserve lineage; retain the full DAG; fail on drift; remain standalone.",
+  "claim_boundary": "CLAIM_BOUNDARY_v0_910.json",
+  "core_claim": "A structural occupation carrier can be constructed from a frozen typed generator registry. Source permutations may be identified only when exact registered-profile sufficiency gates pass. Structural sharing never erases lineage.",
+  "dag": "ROOT_DAG_MASTER_v0_910.json",
+  "delta": "ROOT_DAG_DELTA_v0_910.json",
+  "document": {
+    "status": "standalone formal composition layer",
+    "subtitle": "Constructive Composition Quotient",
+    "title": "Information Chemistry Canon v0.910",
+    "version": "0.910"
+  },
+  "rule_registry": "RULE_REGISTRY_v0_910.json",
+  "standalone": true
+}

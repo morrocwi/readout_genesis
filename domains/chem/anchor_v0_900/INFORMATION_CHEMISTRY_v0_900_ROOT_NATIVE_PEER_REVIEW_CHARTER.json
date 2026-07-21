@@ -1,0 +1,70 @@
+{
+  "version": "0.900",
+  "title": "Root-Native Peer-Review Charter and Curriculum DAG",
+  "status": "preregistration_draft",
+  "current_dag_review": "MAJOR_REVISION",
+  "law_types": [
+    "ROOT_THEOREM",
+    "DISCOVERED_DOMAIN_LAW",
+    "CALIBRATED_READOUT",
+    "NUMERICAL_PROCEDURE",
+    "UNRESOLVED",
+    "OBSTRUCTED"
+  ],
+  "accepted_root_candidates": [
+    "retained ledger conservation under a declared closed boundary",
+    "kernel membership of ledger-preserving changes",
+    "kernel-basis extent coordinates",
+    "positivity and capacity admissibility",
+    "identity lineage provenance",
+    "quotient refinement",
+    "three-valued admissibility"
+  ],
+  "unresolved_current_nodes": [
+    "constructive chemistry quotient",
+    "commutative composition",
+    "additive readout",
+    "quantity ratios",
+    "candidate grammar",
+    "complexity ordering",
+    "chemical meaning of fixed points",
+    "effective-coordinate semantics",
+    "pH calibration",
+    "root completeness",
+    "real empirical independence"
+  ],
+  "curriculum_tiers": {
+    "secondary": [
+      "formula representation",
+      "stoichiometry",
+      "solutions",
+      "acid/base equilibrium",
+      "gas and energy as separate discovery modules"
+    ],
+    "undergraduate": [
+      "general",
+      "physical",
+      "organic",
+      "analytical",
+      "inorganic/material"
+    ],
+    "masters": [
+      "multiscale inference",
+      "experiment design",
+      "causal intervention",
+      "uncertainty",
+      "mechanistic discovery"
+    ],
+    "doctoral": [
+      "novel law/observable",
+      "external laboratory test",
+      "independent replication",
+      "publication-grade evidence"
+    ]
+  },
+  "next_release": {
+    "version": "0.901",
+    "scope": "formal root theorem proofs and proof checker",
+    "implementation_blocked_until": "v0.900 charter is frozen"
+  }
+}

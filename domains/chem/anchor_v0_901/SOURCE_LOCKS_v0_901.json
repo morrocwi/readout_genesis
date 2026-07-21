@@ -1,0 +1,31 @@
+{
+  "version": "0.901",
+  "files": [
+    {
+      "path": "anchor_v0_1/INFORMATION_CHEMISTRY_CANON_v0_1_STANDALONE.yaml",
+      "bytes": 15184,
+      "sha256": "8847513f7a0ec132334f4d3436ff9704e4924feb309fd0543221cf657b1f0055"
+    },
+    {
+      "path": "anchor_v0_1/information_chemistry_kernel_v0_1.py",
+      "bytes": 12648,
+      "sha256": "14335c4096351f756cb79e638c6ff7f6c078c13c458c3cc01c712e9eb689f2a6"
+    },
+    {
+      "path": "anchor_v0_900/INFORMATION_CHEMISTRY_v0_900_ROOT_NATIVE_PEER_REVIEW_CHARTER_TH.md",
+      "bytes": 13058,
+      "sha256": "0509475585b3353708ab16574b7bb8c368b48f9fe2615ee4f4672f431821f14d"
+    },
+    {
+      "path": "anchor_v0_900/INFORMATION_CHEMISTRY_v0_900_ROOT_NATIVE_PEER_REVIEW_CHARTER.json",
+      "bytes": 1864,
+      "sha256": "5551345b5ec4b1c2c247652da1e83843a195f16fcef59641ca2e70aef4867ab5"
+    },
+    {
+      "path": "source_root/READOUT_GENESIS_CORE_SNAPSHOT.md",
+      "bytes": 386482,
+      "sha256": "0ac4331d0780dc64ff0084026cd7b7c79dfe3569d7156918cb3d2828b42c4eca"
+    }
+  ],
+  "note": "Locks identify the exact included snapshots; they do not claim these snapshots are the latest external versions."
+}

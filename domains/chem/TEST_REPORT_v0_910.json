@@ -1,0 +1,22 @@
+{
+  "decision": "PASS",
+  "steps": [
+    {
+      "name": "drift_audit",
+      "returncode": 0
+    },
+    {
+      "name": "proof_receipt",
+      "returncode": 0
+    },
+    {
+      "name": "checker",
+      "returncode": 0
+    },
+    {
+      "name": "unit_tests",
+      "returncode": 0
+    }
+  ],
+  "version": "0.910"
+}

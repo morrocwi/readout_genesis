@@ -1,0 +1,95 @@
+{
+  "data_class": "FINITE_FORMAL_WITNESSES",
+  "decision": "PASS",
+  "receipts": {
+    "C1": {
+      "associative": true,
+      "closure": true,
+      "commutative_carrier": true,
+      "identity": true
+    },
+    "C2": {
+      "concatenated": [
+        1,
+        2,
+        1
+      ],
+      "concatenation_to_addition": true,
+      "empty_to_zero": true,
+      "left": [
+        1,
+        1,
+        0
+      ],
+      "right": [
+        0,
+        1,
+        1
+      ]
+    },
+    "C3_negative": {
+      "checked_same_count_pairs": 1,
+      "decision": "OBSTRUCTED_COMMUTATIVE_QUOTIENT",
+      "violations": [
+        {
+          "kind": "readout",
+          "pair": [
+            "uv-A",
+            "vu-B"
+          ],
+          "profile": "order-sensitive-control",
+          "reason": "signature mismatch"
+        }
+      ]
+    },
+    "C3_positive": {
+      "checked_same_count_pairs": 1,
+      "decision": "ADMITTED_FOR_REGISTERED_PROFILES",
+      "violations": []
+    },
+    "C4": {
+      "coordinatewise_equal_if_same": true,
+      "registry_frozen": true,
+      "same_structural_element": true
+    },
+    "C4_alias": {
+      "conclusion": "uniqueness requires identity-locked coordinates",
+      "duplicate_alias_rejected": true
+    },
+    "C5": {
+      "commutes": true,
+      "lhs": [
+        5,
+        4
+      ],
+      "rhs": [
+        5,
+        4
+      ]
+    },
+    "C5_bad": {
+      "all_bad_maps_rejected": true,
+      "cases": [
+        true,
+        true
+      ]
+    },
+    "C6": {
+      "composition_structural_projection_commutes": true,
+      "count_only_would_erase_lineage": true,
+      "lineage_bundle_not_silently_commuted": true,
+      "marked_states_distinct": true,
+      "same_structural_projection": true
+    }
+  },
+  "statuses": {
+    "C1": true,
+    "C2": true,
+    "C3": true,
+    "C4": true,
+    "C5": true,
+    "C6": true,
+    "C7": true
+  },
+  "version": "0.910"
+}

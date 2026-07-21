@@ -1,0 +1,17 @@
+{
+  "every_descendant_must_embed": [
+    "complete current ROOT_DAG_MASTER JSON and Markdown",
+    "machine-readable DAG delta",
+    "complete current rule registry",
+    "drift contract and generated audit",
+    "claim boundary",
+    "source locks",
+    "standalone and release manifests",
+    "checksums",
+    "recursive immutable anchor",
+    "source root snapshot",
+    "clean-extract test runner"
+  ],
+  "next_release": "v0.920 Ledger/Kernel Quantitative Core built on admitted composition quotient",
+  "version": "0.910"
+}

@@ -1,0 +1,11 @@
+{
+  "active_anchor": "anchor_v0_901",
+  "checker": "INTERNAL_DUAL_IMPLEMENTATION_CHECKER",
+  "claim_tier": "FORMAL_COMPOSITION_QUOTIENT_ONLY",
+  "data_class": "FINITE_FORMAL_WITNESSES",
+  "expected_test_decision": "PASS",
+  "standalone": true,
+  "status": "release candidate",
+  "title": "Information Chemistry v0.910 Constructive Composition Quotient",
+  "version": "0.910"
+}

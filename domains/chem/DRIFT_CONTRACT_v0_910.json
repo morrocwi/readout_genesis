@@ -1,0 +1,52 @@
+{
+  "active_files_scanned_for_imported_laws": [
+    "composition_kernel_v0_910.py",
+    "INFORMATION_CHEMISTRY_CANON_v0_910_STANDALONE.json",
+    "RULE_REGISTRY_v0_910.json",
+    "ROOT_DAG_MASTER_v0_910.json"
+  ],
+  "allowed_rule_classes": [
+    "ROOT_THEOREM",
+    "PROTOCOL",
+    "EMPIRICAL_TAPE",
+    "DISCOVERED_DOMAIN_LAW",
+    "CALIBRATED_READOUT",
+    "NUMERICAL_PROCEDURE",
+    "UNRESOLVED",
+    "OBSTRUCTED"
+  ],
+  "base_contract": "anchor_v0_901/DRIFT_CONTRACT_v0_901.json",
+  "contract_version": "0.910",
+  "delta_file": "ROOT_DAG_DELTA_v0_910.json",
+  "hard_fail_conditions": [
+    "any inherited v0.901 node missing, renamed, or retyped",
+    "any inherited v0.901 edge removed",
+    "DAG cycle",
+    "missing full DAG, rule registry, delta, anchors, source snapshot, tests, or checksums",
+    "ROOT_THEOREM depends on empirical, discovered-law, calibrated-readout, or numerical node",
+    "source commutativity inferred solely from coordinatewise commutativity of N^G",
+    "count-only representation used as the sole lineage record",
+    "generator aliases silently resolved",
+    "registry refinement without a typed coarsening map",
+    "unregistered active equation or rule",
+    "named chemistry law or named chemistry object activated",
+    "network or third-party runtime dependency",
+    "claim stronger than FORMAL_COMPOSITION_QUOTIENT_ONLY"
+  ],
+  "master_dag_file": "ROOT_DAG_MASTER_v0_910.json",
+  "prohibited_active_domain_tokens": [
+    "mass_action",
+    "henderson_hasselbalch",
+    "nernst_equation",
+    "ideal_gas_law",
+    "rigid_rotor",
+    "inertia_tensor",
+    "arrhenius_equation",
+    "gibbs_free_energy_law",
+    "periodic_table",
+    "chemical_bond",
+    "molar_mass",
+    "acid_dissociation",
+    "reaction_rate_law"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "checker_type": "INTERNAL_DUAL_IMPLEMENTATION_CHECKER",
+  "checks": {
+    "C1": true,
+    "C2": true,
+    "C3": true,
+    "C4": true,
+    "C5": true,
+    "C6": true,
+    "C7": true,
+    "claim_boundary": true,
+    "drift_contract": true,
+    "receipt_agreement": true
+  },
+  "decision": "PASS",
+  "independence_boundary": "Different implementation, same release authoring environment; not external peer review.",
+  "version": "0.910"
+}

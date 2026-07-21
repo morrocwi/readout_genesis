@@ -1,0 +1,227 @@
+{
+  "dag_id": "ICHEM_ROOT_DAG_0_901",
+  "version": "0.901",
+  "status": "FROZEN_FOR_DESCENDANTS",
+  "interpretation": "Root nodes constrain admissible structures. Empirical content may enter only through typed tape. Specific domain laws require discovery and validation; readouts and numerical methods remain separately typed.",
+  "node_types": [
+    "ROOT_PRIMITIVE",
+    "ROOT_THEOREM",
+    "PROTOCOL",
+    "EMPIRICAL_TAPE",
+    "DISCOVERED_DOMAIN_LAW",
+    "CALIBRATED_READOUT",
+    "NUMERICAL_PROCEDURE",
+    "UNRESOLVED",
+    "OBSTRUCTED"
+  ],
+  "nodes": [
+    {
+      "id": "R0",
+      "label": "retained distinction",
+      "type": "ROOT_PRIMITIVE"
+    },
+    {
+      "id": "R1",
+      "label": "identity, history, lineage, context",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R2",
+      "label": "typed retained state and declared boundary",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R3",
+      "label": "candidate quotient with sufficiency and refinement gates",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R4",
+      "label": "retained ledger map L(n)=A n",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R5",
+      "label": "closed-boundary ledger conservation",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R6",
+      "label": "kernel of ledger-preserving changes",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R7",
+      "label": "extent coordinates in a declared kernel basis",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R8",
+      "label": "positivity and capacity admissible region",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R9",
+      "label": "conditional additive-readout theorem",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "R10",
+      "label": "observational stationarity hierarchy",
+      "type": "ROOT_THEOREM"
+    },
+    {
+      "id": "P0",
+      "label": "preregistered discovery grammar",
+      "type": "PROTOCOL"
+    },
+    {
+      "id": "P1",
+      "label": "complexity and tie protocol",
+      "type": "PROTOCOL"
+    },
+    {
+      "id": "T0",
+      "label": "typed empirical interaction tape",
+      "type": "EMPIRICAL_TAPE"
+    },
+    {
+      "id": "D0",
+      "label": "candidate domain-law discovery",
+      "type": "DISCOVERED_DOMAIN_LAW"
+    },
+    {
+      "id": "D1",
+      "label": "holdout, intervention, and transport validation",
+      "type": "DISCOVERED_DOMAIN_LAW"
+    },
+    {
+      "id": "O0",
+      "label": "calibrated observable readout",
+      "type": "CALIBRATED_READOUT"
+    },
+    {
+      "id": "N0",
+      "label": "rank/root-certified numerical procedure",
+      "type": "NUMERICAL_PROCEDURE"
+    },
+    {
+      "id": "C0",
+      "label": "bounded claim and provenance gate",
+      "type": "ROOT_THEOREM"
+    }
+  ],
+  "edges": [
+    [
+      "R0",
+      "R1"
+    ],
+    [
+      "R1",
+      "R2"
+    ],
+    [
+      "R2",
+      "R3"
+    ],
+    [
+      "R2",
+      "R4"
+    ],
+    [
+      "R4",
+      "R5"
+    ],
+    [
+      "R5",
+      "R6"
+    ],
+    [
+      "R6",
+      "R7"
+    ],
+    [
+      "R7",
+      "R8"
+    ],
+    [
+      "R2",
+      "R9"
+    ],
+    [
+      "R3",
+      "R10"
+    ],
+    [
+      "R3",
+      "D0"
+    ],
+    [
+      "T0",
+      "D0"
+    ],
+    [
+      "P0",
+      "D0"
+    ],
+    [
+      "P1",
+      "D0"
+    ],
+    [
+      "D0",
+      "D1"
+    ],
+    [
+      "D1",
+      "O0"
+    ],
+    [
+      "D1",
+      "N0"
+    ],
+    [
+      "R8",
+      "N0"
+    ],
+    [
+      "R9",
+      "O0"
+    ],
+    [
+      "R10",
+      "C0"
+    ],
+    [
+      "O0",
+      "C0"
+    ],
+    [
+      "N0",
+      "C0"
+    ]
+  ],
+  "forbidden_shortcuts": [
+    {
+      "from": "R0",
+      "to": "D0",
+      "reason": "retention alone cannot select contingent chemistry"
+    },
+    {
+      "from": "R0",
+      "to": "O0",
+      "reason": "a named physical readout requires calibration"
+    },
+    {
+      "from": "P0",
+      "to": "C0",
+      "reason": "a hypothesis grammar is not evidence"
+    },
+    {
+      "from": "N0",
+      "to": "D0",
+      "reason": "a numerical solution method is not a domain law"
+    }
+  ],
+  "descendant_requirement": "Every descendant release must embed this full DAG or an exact byte-identical copy, plus a machine-readable delta. Deleting or silently retyping a node is a release obstruction."
+}

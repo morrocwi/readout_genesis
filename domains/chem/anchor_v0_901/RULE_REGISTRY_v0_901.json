@@ -1,0 +1,154 @@
+{
+  "registry_version": "0.901",
+  "rules": [
+    {
+      "rule_id": "RT-LEDGER-001",
+      "name": "closed-boundary retained-ledger conservation",
+      "class": "ROOT_THEOREM",
+      "parents": [
+        "R1",
+        "R2",
+        "R4"
+      ],
+      "statement": "If the declared closed boundary preserves ledger L(n)=A n, then A(n1-n0)=0.",
+      "assumptions": [
+        "declared closed boundary",
+        "fixed typed ledger map A",
+        "no unrecorded import/export/creation/erasure"
+      ],
+      "forbidden_claims": [
+        "reaction occurrence",
+        "chemical mechanism",
+        "energetic favorability"
+      ]
+    },
+    {
+      "rule_id": "RT-KERNEL-002",
+      "name": "kernel characterization",
+      "class": "ROOT_THEOREM",
+      "parents": [
+        "R5",
+        "R6"
+      ],
+      "statement": "A change delta preserves the ledger iff delta is in ker(A).",
+      "assumptions": [
+        "linear ledger map over the declared quantity domain"
+      ],
+      "forbidden_claims": [
+        "every kernel direction is physically realized"
+      ]
+    },
+    {
+      "rule_id": "RT-EXTENT-003",
+      "name": "extent coordinates from a declared kernel basis",
+      "class": "ROOT_THEOREM",
+      "parents": [
+        "R6",
+        "R7"
+      ],
+      "statement": "If columns of N form a basis for the admitted kernel subspace, every admitted change has coordinates xi with delta=N xi.",
+      "assumptions": [
+        "basis completeness is independently certified"
+      ],
+      "forbidden_claims": [
+        "basis vectors are actual reactions without compatibility evidence"
+      ]
+    },
+    {
+      "rule_id": "RT-ADMISSIBLE-004",
+      "name": "positivity and capacity region",
+      "class": "ROOT_THEOREM",
+      "parents": [
+        "R7",
+        "R8"
+      ],
+      "statement": "Admitted coordinates satisfy n0+N xi >= 0 and all declared capacity/boundary inequalities.",
+      "assumptions": [
+        "nonnegative retained quantities",
+        "declared capacity constraints"
+      ],
+      "forbidden_claims": [
+        "the boundary is reached dynamically"
+      ]
+    },
+    {
+      "rule_id": "RT-REFINE-005",
+      "name": "finite quotient counterexample refinement",
+      "class": "ROOT_THEOREM",
+      "parents": [
+        "R2",
+        "R3"
+      ],
+      "statement": "For a finite state set, repeatedly splitting cells by declared readout and successor-cell signatures terminates in an exact closed refinement.",
+      "assumptions": [
+        "finite state set",
+        "deterministic declared dynamics",
+        "finite readout signatures"
+      ],
+      "forbidden_claims": [
+        "the resulting quotient is chemistry without semantic calibration"
+      ]
+    },
+    {
+      "rule_id": "RT-ADD-COND-006",
+      "name": "conditional additive-readout representation",
+      "class": "ROOT_THEOREM",
+      "parents": [
+        "R2",
+        "R9"
+      ],
+      "statement": "If composition is a free commutative monoid and R is a monoid homomorphism, then R(c)=sum_i c_i R(e_i).",
+      "assumptions": [
+        "free commutative composition",
+        "homomorphism gate passed"
+      ],
+      "forbidden_claims": [
+        "retention alone forces readout additivity"
+      ]
+    },
+    {
+      "rule_id": "RT-STATIONARY-007",
+      "name": "observational stationarity is weaker than source equilibrium",
+      "class": "ROOT_THEOREM",
+      "parents": [
+        "R3",
+        "R10"
+      ],
+      "statement": "A quotient fixed point can hide source-state cycles or currents; therefore fixed quotient readout alone establishes only observational stationarity.",
+      "assumptions": [
+        "non-injective quotient is permitted"
+      ],
+      "forbidden_claims": [
+        "fixed quotient state implies thermodynamic equilibrium"
+      ]
+    },
+    {
+      "rule_id": "PR-GRAMMAR-001",
+      "name": "discovery grammar declaration",
+      "class": "PROTOCOL",
+      "parents": [
+        "P0"
+      ],
+      "statement": "Candidate mathematical languages must be frozen and reported before held-out evidence is opened.",
+      "assumptions": [],
+      "forbidden_claims": [
+        "grammar families are root theorems"
+      ]
+    },
+    {
+      "rule_id": "NP-EXACT-001",
+      "name": "exact rational finite witness checker",
+      "class": "NUMERICAL_PROCEDURE",
+      "parents": [
+        "N0"
+      ],
+      "statement": "Use integer/Fraction arithmetic for the finite proof witnesses in v0.901.",
+      "assumptions": [
+        "finite rational witnesses"
+      ],
+      "forbidden_claims": [
+        "proof of arbitrary real-valued numerical stability"
+      ]
+    }
+  ]
+}

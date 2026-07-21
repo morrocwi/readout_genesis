@@ -1,0 +1,29 @@
+{
+  "version": "0.901",
+  "standalone": true,
+  "runtime_dependencies": [
+    "Python standard library"
+  ],
+  "network_required": false,
+  "required_paths": [
+    "README.md",
+    "INFORMATION_CHEMISTRY_CANON_v0_901_STANDALONE.json",
+    "INFORMATION_CHEMISTRY_CANON_v0_901_STANDALONE.md",
+    "ROOT_DAG_MASTER_v0_901.json",
+    "ROOT_DAG_MASTER_v0_901.md",
+    "ROOT_DAG_DELTA_v0_901.json",
+    "RULE_REGISTRY_v0_901.json",
+    "DRIFT_CONTRACT_v0_901.json",
+    "FUTURE_RELEASE_REQUIRED_FILES_v0_901.json",
+    "PROOF_OBLIGATIONS_v0_901.json",
+    "proof_kernel_v0_901.py",
+    "make_proof_receipt_v0_901.py",
+    "drift_validator_v0_901.py",
+    "checker_v0_901.py",
+    "run_all_tests_v0_901.py",
+    "anchor_v0_1",
+    "anchor_v0_900",
+    "source_root"
+  ],
+  "clean_extract_command": "python run_all_tests_v0_901.py"
+}

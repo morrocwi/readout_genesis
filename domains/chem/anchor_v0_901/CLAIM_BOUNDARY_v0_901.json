@@ -1,0 +1,24 @@
+{
+  "version": "0.901",
+  "tier": "FORMAL_FOUNDATION_ONLY",
+  "established": [
+    "conditional ledger conservation identity",
+    "kernel characterization of ledger-preserving changes",
+    "conditional extent coordinates",
+    "positivity/capacity feasible-region construction",
+    "finite quotient refinement termination and closure",
+    "conditional additive-readout representation",
+    "counterexample showing additivity is not free",
+    "counterexample showing quotient fixed point can hide source dynamics"
+  ],
+  "not_established": [
+    "any contingent chemistry law",
+    "reaction occurrence",
+    "chemical equilibrium",
+    "molar mass calibration",
+    "concentration, activity, pH, energy, rate, gas, orbital, or spectroscopy law",
+    "external independent peer review",
+    "doctoral-level chemistry competence"
+  ],
+  "next_gate": "v0.910 constructive composition quotient"
+}
