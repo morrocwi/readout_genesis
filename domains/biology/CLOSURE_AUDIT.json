@@ -1,0 +1,86 @@
+{
+  "version": "0.1",
+  "denominator_note": "The 36 nodes are the Minimal Root-Native Biology DAG constructed for THIS closure exercise (ROOT_DAG_MASTER.md, matching biology_closure_v0_1.py's hard-coded counts exactly). Percentages below are of THIS 36-node LINE-1 root-native DAG only -- not of 'all of biology', not of the LINE-2 textbook 45/45 checklist, and not a claim about coverage of the real domain.",
+  "status_taxonomy": {
+    "green": "structurally closed -- ROOT_THEOREM with an exact-rational finite witness (biology_closure_v0_1.py) with BOTH a passing and a failing control, OR a re-verified axiom-clean Coq theorem (Th_coqc, no Admitted/admit/Axiom/Parameter).",
+    "yellow": "PARTIAL_UNCALIBRATED or YELLOW_BRIDGE_PARTIAL -- theorem/witness closed but the real-biology semantic bridge is open. Never promoted to green.",
+    "red": "OPEN -- no closing witness/gate exists yet, or the node is a destination that must not be reached by import (e.g. fitness, DNA, cell as premises).",
+    "gray": "measured/calibration adapter. None active in this domain yet -- this is exactly the gap B-X1 names as the central open bottleneck."
+  },
+  "layers": {
+    "layer_1_root_and_floor": [
+      {"node": "B-R0 retained distinction (root)", "rule_id": "B-R0", "status": "green"},
+      {"node": "B-R1 ordered transitions / retention", "rule_id": "B-R1", "status": "green"},
+      {"node": "B-R2 discrete ticks / ordered tape carrier G*", "rule_id": "B-R2", "status": "green"},
+      {"node": "B-R3 count-carrier N^G obstruction (finite diagnostic)", "rule_id": "B-R3", "status": "green"},
+      {"node": "BIO-G1 ordered sequence q_seq closes", "rule_id": "BIO-G1", "status": "green", "note": "STRUCTURALLY_CLOSED; state change Open->Closed"}
+    ],
+    "layer_2_dynamic_substrate": [
+      {"node": "B-SUB1 homeostasis substrate", "rule_id": "B-SUB1", "status": "green", "note": "Th_coqc, InfoBioHomeostasis_attempt.v"},
+      {"node": "B-SUB2 relaxation substrate", "rule_id": "B-SUB2", "status": "green", "note": "Th_coqc, InfoHealthCausalRelax_attempt.v"},
+      {"node": "B-SUB3 cusp-fold substrate", "rule_id": "B-SUB3", "status": "green", "note": "Th_coqc, InfoHealthCuspFold_attempt.v"},
+      {"node": "B-SUB4 coupled EP-3 substrate", "rule_id": "B-SUB4", "status": "green", "note": "Th_coqc, InfoCoupledCuspEP3_attempt.v"},
+      {"node": "B-Y6 homeostasis -> real physiological bridge", "rule_id": "B-Y6", "status": "yellow", "note": "Dr, clinical reading declared not derived"},
+      {"node": "B-Y7 relaxation -> real recovery/relapse bridge", "rule_id": "B-Y7", "status": "yellow", "note": "Dr, clinical reading declared not derived"},
+      {"node": "B-Y8 cusp-fold -> real disease-state bridge", "rule_id": "B-Y8", "status": "yellow", "note": "Dr, clinical reading declared not derived"},
+      {"node": "B-Y9 EP-3 -> real physiological coupling bridge", "rule_id": "B-Y9", "status": "yellow", "note": "Dr, clinical reading declared not derived"},
+      {"node": "T2 endogenous operator L_R[Theta] augmented", "rule_id": "T2", "status": "green", "note": "CLOSED_BY_AUGMENTATION; state change Open->Closed"},
+      {"node": "B-IONLY I-only quotient fails (diagnostic)", "rule_id": "B-IONLY", "status": "green"}
+    ],
+    "layer_3_chem_to_protein": [
+      {"node": "BIO-G2 functional quotient q_F, order != function", "rule_id": "BIO-G2", "status": "green", "note": "CLOSED as function; state change Open->Partial(protein word)->here counted green for the quotient itself"},
+      {"node": "B-Y1 protein-semantic bridge", "rule_id": "B-Y1", "status": "yellow", "note": "PARTIAL_UNCALIBRATED"},
+      {"node": "B-X5 enzyme/catalytic-kinetics real semantics", "rule_id": "B-X5", "status": "red", "note": "destination only, Michaelis-Menten never a premise"},
+      {"node": "B-X3 DNA/genome real semantics", "rule_id": "B-X3", "status": "red", "note": "destination only"}
+    ],
+    "layer_4_living_unit": [
+      {"node": "B-Z boundary-conditioned state z_A", "rule_id": "B-Z", "status": "green"},
+      {"node": "BIO-G3 living-unit closure V_A fixed point", "rule_id": "BIO-G3", "status": "green", "note": "CONDITIONALLY_CLOSED; state change Partial->Closed"},
+      {"node": "B-MORT mortality = irreversible exit from V_A", "rule_id": "B-MORT", "status": "green"},
+      {"node": "B-Y2 living-unit -> real-cell bridge", "rule_id": "B-Y2", "status": "yellow", "note": "PARTIAL_UNCALIBRATED"},
+      {"node": "B-Y3 reproduction R_kappa branch", "rule_id": "B-Y3", "status": "yellow", "note": "declared, not derived"},
+      {"node": "B-X4 cell/organelle real semantics", "rule_id": "B-X4", "status": "red", "note": "destination only"}
+    ],
+    "layer_5_reproduction_evolution_ecology": [
+      {"node": "BIO-G4 heredity q_H structural closure", "rule_id": "BIO-G4", "status": "green", "note": "STRUCTURALLY_CLOSED; state change Open->Closed"},
+      {"node": "B-LIN lineage counts -> frequency", "rule_id": "B-LIN", "status": "green"},
+      {"node": "B-Y4 heredity -> biological-selection bridge", "rule_id": "B-Y4", "status": "yellow", "note": "PARTIAL_UNCALIBRATED, no fitness variable used"},
+      {"node": "B-Y5 evolution readout", "rule_id": "B-Y5", "status": "yellow", "note": "SEMANTIC PARTIAL"},
+      {"node": "B-X6 fitness/natural-selection as root var", "rule_id": "B-X6", "status": "red", "note": "explicitly forbidden as premise, destination only"},
+      {"node": "B-X7 ecology/population-level real dynamics", "rule_id": "B-X7", "status": "red", "note": "Lotka-Volterra never a premise"},
+      {"node": "B-Y10 domain-discovery battery (synthetic tapes)", "rule_id": "B-Y10", "status": "yellow", "note": "real+runnable battery, PASS, SYNTHETIC data only"},
+      {"node": "B-Y11 bR lineage ledger (architecture-only)", "rule_id": "B-Y11", "status": "yellow", "note": "no real event-resolved run"},
+      {"node": "B-X1 calibrated encoding retained-state -> biological observables", "rule_id": "B-X1", "status": "red", "note": "CENTRAL OPEN BOTTLENECK"},
+      {"node": "B-X2 end-to-end root -> real biology via event-resolved data", "rule_id": "B-X2", "status": "red", "note": "0%"},
+      {"node": "B-X8 LINE-2 textbook 45/45 -> root-native promotion", "rule_id": "B-X8", "status": "red", "note": "permanently red, checker-only, never promoted"}
+    ]
+  },
+  "totals": {
+    "green": 17,
+    "yellow": 11,
+    "red": 8,
+    "gray": 0,
+    "denominator": 36,
+    "strict": "17/36=47.2%",
+    "weighted": "22.5/36=62.5%",
+    "weighted_formula": "(green + yellow/2) / total = (17 + 5.5) / 36 = 22.5/36"
+  },
+  "lift": {
+    "baseline": "founder pre-closure: 13 closed / 11 partial / 12 open = 36.1% strict / 51.4% weighted",
+    "current": "post-closure: 17 closed / 11 partial / 8 open = 47.2% strict / 62.5% weighted",
+    "state_changes": [
+      "ordered-sequence carrier (BIO-G1): Open -> Closed",
+      "functional quotient (BIO-G2): Open -> Partial (order != function established; 'protein' word stays Partial via B-Y1)",
+      "living-unit closure (BIO-G3): Partial -> Closed (conditional on boundary contract)",
+      "heredity (BIO-G4): Open -> Closed (structural; biological-selection semantics stay uncalibrated via B-Y4)",
+      "endogenous operator (T2): Open -> Closed (by augmentation, (I,Theta) not I alone)"
+    ]
+  },
+  "end_to_end_real": "0%",
+  "excluded_hollow_gates": [
+    "EGFR C797S same-ligand Jaccard gate -- retracted Type-U (Gate Typing Law, readout_universe); excluded from all counts above",
+    "EGFR contact-residue-count 'rescue' gate -- retracted Type-U; excluded",
+    "PSII near-vs-far OEC gate -- zero-biology control matched the signal; excluded"
+  ],
+  "line_2_note": "The LINE-2 textbook curriculum solver's 45/45 checklist (tier textbook_closure/finite_diagnostic, no Th_coqc) is NOT a node counted in this 36-node denominator anywhere -- it is represented only by the permanently-red boundary marker B-X8, whose sole purpose is to make its exclusion explicit and auditable."
+}

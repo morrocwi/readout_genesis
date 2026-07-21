@@ -1,0 +1,59 @@
+{
+  "contract_version": "0.1",
+  "active_files_scanned_for_imported_laws": [
+    "biology_closure_v0_1.py",
+    "RULE_REGISTRY.json",
+    "ROOT_DAG_MASTER.md",
+    "CLAIM_BOUNDARY.json",
+    "CLOSURE_AUDIT.json"
+  ],
+  "allowed_rule_classes": [
+    "ROOT_BACKBONE",
+    "ROOT_THEOREM",
+    "FINITE_DIAGNOSTIC",
+    "PARTIAL_UNCALIBRATED",
+    "YELLOW_BRIDGE_PARTIAL",
+    "DECLARED_FORMULA",
+    "OPEN"
+  ],
+  "master_dag_file": "ROOT_DAG_MASTER.md",
+  "hard_fail_conditions": [
+    "any of {DNA, gene, cell, enzyme, protein-as-premise, fitness, hodgkin_huxley, michaelis_menten, lotka_volterra, hardy_weinberg} used as a PREMISE anywhere in the active files -- see prohibited_active_domain_tokens below; each may appear only as the label of a still-red/OPEN destination node or an explicit yellow bridge-partial connective",
+    "mixing LINE-2 textbook results (the curriculum 45/45 checklist, InfoEpidemicThreshold_attempt.v which imports the SIR model as a premise) into the LINE-1 root-native score -- LINE-1 and LINE-2 must NEVER be mixed; B-X8 exists solely to keep this boundary explicit and permanently red",
+    "citing InfoEpidemicThreshold_attempt.v as root-native anywhere -- it imports the SIR model as a premise and is REFUSED for LINE-1, checker-only",
+    "counting the retracted EGFR C797S same-ligand Jaccard gate, the EGFR contact-residue-count 'rescue' gate, or the PSII near-vs-far OEC gate as biology evidence anywhere -- all three are excluded, retracted Type-U (Gate Typing Law, readout_universe) or matched-by-a-zero-biology-control",
+    "claiming real biology, a real amino-acid/nucleotide sequence, a real protein/enzyme, a real cell, real heredity/fitness, or a calibrated encoding without independently-checked event-resolved (not synthetic) data",
+    "any gate in RULE_REGISTRY.json -> gates claimed status:green or status:closed WITHOUT both a passing_control and a failing_control present and machine-derived (Type-U convention) -- BG-CAL in particular must stay red with its 'NOT YET CONSTRUCTED' controls stated honestly, never silently upgraded",
+    "any RED (OPEN) node in ROOT_DAG_MASTER.md / CLOSURE_AUDIT.json claimed closed, upgraded to yellow or green, or claimed to have a passing witness that does not exist in biology_closure_v0_1.py",
+    "any YELLOW node (B-Y1..B-Y11) promoted to green without a new machine-derived witness with both controls, or without the calibrated-encoding gate (BG-CAL / B-X1) closing first",
+    "presenting B-Y10 (domain-discovery battery, SYNTHETIC tapes only) or B-Y11 (bR lineage ledger, architecture-only) as evidence of a real event-resolved run",
+    "a claim stronger than the declared tier BIOLOGY_ROOT_NATIVE_PARTIAL (see CLAIM_BOUNDARY.json)",
+    "the 36-node denominator in CLOSURE_AUDIT.json presented as coverage of 'all of biology' or of the LINE-2 textbook curriculum rather than of this specific Minimal Root-Native Biology DAG",
+    "the strict/weighted percentages (47.2% / 62.5%) recomputed by moving any red node (B-X1..B-X8) into yellow or green without a new machine-derived witness with both controls",
+    "a DAG cycle in ROOT_DAG_MASTER.md",
+    "missing verifier (biology_closure_v0_1.py), source_root snapshot, CLAIM_BOUNDARY.json, RULE_REGISTRY.json, ROOT_DAG_MASTER.md, CLOSURE_AUDIT.json, or run_tests.py",
+    "biology_closure_v0_1.py modified from its shipped exact-rational form (e.g. floats introduced, checks removed, network calls added) -- it is the immutable v0.1 anchor and must keep returning DECISION: PASS unmodified",
+    "unregistered active rule (a claim or equation appearing in code/docs with no corresponding rule_id in RULE_REGISTRY.json)",
+    "network or third-party runtime dependency introduced anywhere in the verification path",
+    "asserting that BIO-G1/G2/G3/G4/T2's structural closures alone license 'sequence'='amino-acid chain', 'function'='protein', 'living unit'='cell', or 'heredity'='real inheritance/fitness' without the corresponding calibrated encoding (B-X1) in the same breath"
+  ],
+  "prohibited_active_domain_tokens": [
+    "dna",
+    "gene",
+    "cell_biology",
+    "enzyme",
+    "protein_structure",
+    "fitness",
+    "hodgkin_huxley",
+    "michaelis_menten",
+    "lotka_volterra",
+    "hardy_weinberg",
+    "natural_selection",
+    "genome",
+    "allele",
+    "mitosis",
+    "meiosis",
+    "sir_model"
+  ],
+  "note_on_tokens": "These names may appear in prose ONLY as explicit comparisons/disclaimers (e.g. 'this is not a real cell') or as the label of a still-RED/OPEN destination node (e.g. B-X4 'cell/organelle real semantics (OPEN)'). They fail the contract if activated as an imported PREMISE that any derivation or witness in biology_closure_v0_1.py or RULE_REGISTRY.json depends on."
+}

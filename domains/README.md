@@ -26,6 +26,7 @@
 | [`chem/`](chem/) | Information Chemistry v0.910 | `FORMAL_COMPOSITION_QUOTIENT_ONLY` | ✅ `PASS` (dual-checker + peer review) | chemical semantics · periodic-table identity · formula/molecular identity · reaction occurrence |
 | [`relativity/`](relativity/) | Relativity finite-internal-closure v0.3 | `FINITE_INTERNAL_CLOSURE` | ⏳ `79.2%` strict / `89.6%` weighted (exact-rational verifier PASS; connection/curvature Th_coqc via causal-quantum-gravity) | real physics · v=c · surface gravity · stress-energy · full GR/QFT · root-native Γ_R (still Proposed) |
 | [`quantum/`](quantum/) | Quantum root-closure-partial v0.1 | `QUANTUM_ROOT_CLOSURE_PARTIAL` | ⏳ `43.75%` strict green / `53.1%` weighted (verifier PASS; oscillation≠quantum) | real QM · i/ψ/Hilbert/Born/tensor/spin as fundamental · Born uniqueness · measurement · composition · entanglement · spin · QFT (all RED) |
+| [`biology/`](biology/) | Biology root-native-partial v0.1 | `BIOLOGY_ROOT_NATIVE_PARTIAL` | ⏳ `47.2%` strict / `62.5%` weighted root-native (verifier PASS); real end-to-end `0%` | real biology · DNA/cell/enzyme/fitness as premise · protein/cell semantics · biological selection · calibrated encoding · (textbook 45/45 is LINE-2 checker, NOT counted) |
 
 ## How to read a domain folder
 

@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "tier": "BIOLOGY_ROOT_NATIVE_PARTIAL",
+  "checker_label": "INTERNAL_EXACT_RATIONAL_WITNESS",
+  "public_label": "[FiniteRootWitnesses] root-native biology readout — 5 structural closures, real biology stays OPEN",
+  "two_lines": {
+    "discipline": "TWO LINES THAT MUST NEVER BE MIXED (founder, 2026-07-21).",
+    "line_1_root_native": "LINE-1 ROOT-NATIVE biology = grown from the retained-difference root; NO DNA / cell / enzyme / fitness / external biology equation as a premise. This is the ONLY line counted in the 47.2%/62.5% score below. Verifier: biology_closure_v0_1.py. Green Coq substrate: InfoBioHomeostasis_attempt.v, InfoHealthCausalRelax_attempt.v, InfoHealthCuspFold_attempt.v, InfoCoupledCuspEP3_attempt.v (axiom-clean, root-native, back already-counted substrate nodes -- they do NOT raise the 47.2%).",
+      "line_2_textbook_checker": "LINE-2 TEXTBOOK biology solver = a calculator for existing biology formulas (curriculum 45/45 checklist, tier textbook_closure/finite_diagnostic, NO Th_coqc; 5 declared-[Open] items: full Hodgkin-Huxley, MD/protein-folding, Luria-Delbrück, Turing selection, ML phylogeny). Used ONLY as a checker/calibration reference, NEVER fed back as if root-derived. InfoEpidemicThreshold_attempt.v imports the SIR model as a premise and is REFUSED for LINE-1 -- checker-only. The textbook 45/45 is explicitly NOT counted toward the 47.2%/62.5% root-native score.",
+    "mixing_would_cause": "If LINE-1 and LINE-2 are mixed, the project would look like it 'closed biology 100%' when it only 'computes imported formulas.' This is the exact failure mode this file exists to block."
+  },
+  "established": [
+    "BIO-G1 Ordered Sequence Carrier: the count carrier N^G FAILS (nu(ab)=nu(ba)=(1,1) but nu(F(ab))=(2,0)!=nu(F(ba))=(0,2)); the ordered quotient q_seq CLOSES exact. STRUCTURALLY_CLOSED. 'sequence' != amino-acid chain until calibrated.",
+    "BIO-G2 Functional Quotient q_F: order != function (intervention-response equivalence, swap-invariant O; failing keep-first-letter control breaks output factorization). CLOSED as function. The word 'protein' is PARTIAL/UNCALIBRATED (needs a semantic card).",
+    "BIO-G3 Living-Unit Closure: conditional input-state-output; self-maintaining fixed point V_A=Gamma(V_A); no-free-repair ledger x'+e'=x+e+j-d; passing (1,1) in V_A, failing (1,0) not in V_A; mortality = irreversible exit from V_A. CONDITIONALLY_CLOSED. Not a real cell until calibrated.",
+    "BIO-G4 Heredity + lineage: q_H via descendant signatures; frequency p_{j,n+1} from lineage counts B (fixture B=diag(2,1), N0=(1,1) -> p1=(2/3,1/3)); NO fitness as a root variable. Heredity-count STRUCTURALLY_CLOSED; biological-selection semantics UNCALIBRATED.",
+    "T2 endogenous operator L_R[Theta]: operator-memory augmentation; I-only quotient fails (z1=(1,1,0), z2=(1,1,1) same q_I before, differ after), augmented (I,Theta) closes exact. CLOSED_BY_AUGMENTATION.",
+    "Green Coq substrate (root-native, axiom-clean, re-compiled 2026-07-21): InfoBioHomeostasis_attempt.v (decay_geometric, homeostasis_balance, turnover_is_production), InfoHealthCausalRelax_attempt.v (setpoint / one-step / n-step error), InfoHealthCuspFold_attempt.v (bistable window, critical slowing), InfoCoupledCuspEP3_attempt.v (coupling energy, locked-iff-energy-zero, one-way-breaks-conservation). These back the living-unit/homeostasis/relaxation SUBSTRATE nodes already counted above (quality evidence); they do NOT raise the 47.2% strict score.",
+    "36-node Minimal Root-Native Biology DAG closure audit: closed 17/36, partial 11/36, open 8/36; strict 17/36=47.2%, weighted (17+11/2)/36=22.5/36=62.5%; lift from the founder's pre-closure 13/11/12=36.1%/51.4% baseline",
+    "domain-discovery battery (readout_genesis/scripts/domain_discovery_battery.py) is real and runnable, PASS -- but has run only on SYNTHETIC tapes, never event-resolved real data"
+  ],
+  "not_established": [
+    "real biology of any kind -- no DNA, cell, enzyme, protein, or fitness semantics beyond the abstract carriers named above",
+    "that a 'sequence' (BIO-G1) is a real amino-acid chain, nucleotide chain, or any real polymer",
+    "that a 'functional quotient' (BIO-G2) reading is a real protein, enzyme, or catalytic function",
+    "that a 'living unit' (BIO-G3) fixed point is a real cell, organism, or biological metabolism",
+    "that 'heredity' (BIO-G4) or the lineage frequency readout constitutes real biological selection, fitness, or Darwinian evolution",
+    "a calibrated encoding from retained root state to any real biological observable -- this is the single OPEN gap that would license real-domain semantics; until supplied and independently checked, the release stays at BIOLOGY_ROOT_NATIVE_PARTIAL",
+    "end-to-end root -> real biology through event-resolved data (measured, not synthetic) -- this is 0%",
+    "the textbook curriculum solver's 45/45 checklist as root-derived in any sense -- it is a LINE-2 TEXTBOOK CHECKER only (tier textbook_closure/finite_diagnostic, no Th_coqc) and must NEVER be read as raising the LINE-1 47.2%/62.5% score",
+    "InfoEpidemicThreshold_attempt.v (imports the SIR model as a premise) as root-native -- LINE-2 checker-only, REFUSED for LINE-1",
+    "the EGFR C797S same-ligand Jaccard gate -- excluded, retracted Type-U (Gate Typing Law, readout_universe)",
+    "the EGFR contact-residue-count 'rescue' gate -- excluded, retracted Type-U",
+    "the PSII near-vs-far OEC gate -- excluded, zero-biology control matched the signal",
+    "the bR lineage ledger as run on real event-resolved data -- architecture-only, no real run exists",
+    "DNA, gene, cell, enzyme, protein, fitness, Hodgkin-Huxley, Michaelis-Menten, Lotka-Volterra, or Hardy-Weinberg used as a PREMISE anywhere in the root-native (LINE-1) chain",
+    "any claim stronger than BIOLOGY_ROOT_NATIVE_PARTIAL"
+  ]
+}

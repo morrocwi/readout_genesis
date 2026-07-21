@@ -1,0 +1,411 @@
+{
+  "registry_version": "0.1",
+  "discipline_note": "Founder discipline (2026-07-21), TWO LINES THAT MUST NEVER BE MIXED: LINE-1 ROOT-NATIVE biology (this registry) grows only from the retained-difference root -- NO DNA/cell/enzyme/fitness/external biology equation as a premise anywhere below. LINE-2 TEXTBOOK biology solver (curriculum 45/45) is a calculator for existing formulas used only as a checker, never fed back as if root-derived, and carries NO rule_id in this registry. Every rule that claims closure lists forbidden_claims; every gate that claims closure ships BOTH a passing and a failing control -- a gate without both is a Type-U convention and must never be claimed closed.",
+  "rules": [
+    {
+      "rule_id": "B-R0",
+      "name": "retained distinction (master root)",
+      "class": "ROOT_BACKBONE",
+      "assumptions": ["a != b is retained (master core root, source_root/READOUT_GENESIS_CORE_SNAPSHOT.md)"],
+      "parents": [],
+      "statement": "a!=b is retained as a distinction; the distinction is asymmetric, giving an ordering direction. The same shared root as relativity/ and quantum/, not a new axiom.",
+      "forbidden_claims": ["this is a biological state", "this asserts DNA, a cell, or any biological carrier"]
+    },
+    {
+      "rule_id": "B-R1",
+      "name": "ordered transitions and retention",
+      "class": "ROOT_BACKBONE",
+      "assumptions": ["B-R0"],
+      "parents": ["B-R0"],
+      "statement": "The asymmetric ordering yields ordered transitions with a positive retention time tau_c>0.",
+      "forbidden_claims": ["tau_c is a measured biological turnover/relaxation time"]
+    },
+    {
+      "rule_id": "B-R2",
+      "name": "discrete ticks / ordered tape carrier G*",
+      "class": "ROOT_BACKBONE",
+      "assumptions": ["B-R1"],
+      "parents": ["B-R1"],
+      "statement": "Retention discretizes into ticks; the ordered-tape carrier G* keeps order (ab != ba), giving the finite carrier the BIO-G1 gate operates on.",
+      "forbidden_claims": ["G* is a physical polymer, DNA, or RNA strand"]
+    },
+    {
+      "rule_id": "B-R3",
+      "name": "count-carrier N^G obstruction (finite diagnostic)",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["B-R2"],
+      "parents": ["B-R2"],
+      "statement": "The count carrier N^G (multiset/count quotient of G*) FAILS to keep dynamics well-defined: nu(ab)=nu(ba)=(1,1) but nu(F(ab))=(2,0) != nu(F(ba))=(0,2) under the future-response signature F. Exact witness in biology_closure_v0_1.py section BIO-G1.",
+      "forbidden_claims": ["N^G is a real biochemical counting process", "this failure alone constructs q_seq (see BIO-G1)"]
+    },
+    {
+      "rule_id": "BIO-G1",
+      "name": "Ordered Sequence Carrier -- q_seq closes",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["B-R3"],
+      "parents": ["B-R3"],
+      "statement": "Because the count carrier N^G loses the distinction the future-response signature F needs, the ORDERED quotient q_seq (which keeps ab != ba) closes exact: dynamics are unambiguous under q_seq where they are ambiguous under N^G. STRUCTURALLY_CLOSED. 'sequence' is a carrier property, not yet a real amino-acid or nucleotide chain.",
+      "forbidden_claims": ["q_seq is a real amino-acid or nucleotide sequence", "this closure licenses any DNA/RNA/protein-primary-structure semantics without a calibrated encoding"]
+    },
+    {
+      "rule_id": "BIO-G2",
+      "name": "Functional Quotient q_F -- order != function",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["BIO-G1"],
+      "parents": ["BIO-G1"],
+      "statement": "The intervention-response equivalence class q_F(w) = O(w) (order-of-positions readout) is invariant under the swap intervention for the passing case, while the coarser keep-first-letter quotient q_first breaks output factorization (a failing control). q_F CLOSES as function; order and function are demonstrably distinct quotients.",
+      "forbidden_claims": ["q_F is a real protein or enzymatic function", "the word 'protein' is licensed by this closure alone -- see B-Y1"]
+    },
+    {
+      "rule_id": "B-Z",
+      "name": "boundary-conditioned state z_A=(x,e) under a repair contract",
+      "class": "ROOT_BACKBONE",
+      "assumptions": ["BIO-G2"],
+      "parents": ["BIO-G2"],
+      "statement": "A two-component state (integrity x, reserve e) updates under a no-free-repair ledger x'+e'=x+e+j-d for contract (d,j) and repair policy a, setting up the fixed-point search for BIO-G3.",
+      "forbidden_claims": ["z_A is a real cell's biochemical state", "x, e are measured physiological quantities"]
+    },
+    {
+      "rule_id": "BIO-G3",
+      "name": "Living-Unit Closure -- self-maintaining fixed point V_A",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["B-Z"],
+      "parents": ["B-Z"],
+      "statement": "A self-maintaining fixed point V_A=Gamma(V_A) exists under the no-free-repair ledger: exact witness (1,1) with contract {(0,0),(1,1)}, policy a=d, stays (1,1) and remains in V_A (PASSING); a sustained deficit contract (d,j)=(1,0) drives integrity to 0, exiting V_A (FAILING). CONDITIONALLY_CLOSED on the boundary contract.",
+      "forbidden_claims": ["V_A is a real cell or organism", "this closure holds unconditionally, independent of the boundary contract (d,j)"]
+    },
+    {
+      "rule_id": "B-MORT",
+      "name": "mortality = irreversible exit from V_A (finite diagnostic)",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["BIO-G3"],
+      "parents": ["BIO-G3"],
+      "statement": "The failing control of BIO-G3 (sustained (d,j)=(1,0)) exhibits integrity x -> 0 with no return path in the finite fixture, licensing 'mortality' as a structural READOUT: irreversible exit from V_A. Exact witness x2==0.",
+      "forbidden_claims": ["this is real biological death, senescence, or a clinical mortality model"]
+    },
+    {
+      "rule_id": "BIO-G4",
+      "name": "Heredity q_H via descendant signatures + lineage counts",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["BIO-G3"],
+      "parents": ["BIO-G3"],
+      "statement": "A heredity quotient q_H (descendant-signature equivalence) closes structurally: a coarse parent-quotient that merges classes with different licensed replication counts breaks the successor-count function (FAILING control, 2 != 1), while descendant-signature q_H keeps successor counts well-defined (PASSING). NO fitness term is introduced as a root variable anywhere in this rule.",
+      "forbidden_claims": ["q_H licenses 'fitness' or Darwinian selection as a root-derived quantity", "this is a real genetic-inheritance mechanism (DNA, alleles, genes)"]
+    },
+    {
+      "rule_id": "B-LIN",
+      "name": "lineage counts B -> frequency p_{j,n+1} (finite diagnostic)",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["BIO-G4"],
+      "parents": ["BIO-G4"],
+      "statement": "From licensed replication-count matrix B and initial counts N0, N1=B*N0 gives a frequency readout p1=N1/sum(N1) purely from lineage counts. Exact witness B=diag(2,1), N0=(1,1) -> N1=(2,1) -> p1=(2/3,1/3). No external evolution law used.",
+      "forbidden_claims": ["p1 is a real allele or genotype frequency", "this frequency change constitutes natural selection or fitness"]
+    },
+    {
+      "rule_id": "T2",
+      "name": "endogenous operator L_R[Theta] -- augmented closure",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["B-R2"],
+      "parents": ["B-R2"],
+      "statement": "The I-only quotient q_I fails to distinguish z1=(1,1,0) and z2=(1,1,1) BEFORE the endogenous step (q_I identical), but their images differ AFTER (z1'=(1,1,0), z2'=(2,0,1)) -- q_I loses a distinction the dynamics needs. The augmented quotient q_aug=(I,Theta) distinguishes z1,z2 exactly and CLOSES. CLOSED_BY_AUGMENTATION.",
+      "forbidden_claims": ["Theta is a real biological regulatory/epigenetic variable without a calibrated encoding", "this closure holds for the I-only quotient (it explicitly does not -- augmentation is required)"]
+    },
+    {
+      "rule_id": "B-IONLY",
+      "name": "I-only quotient failure (finite diagnostic supporting T2)",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["B-R2"],
+      "parents": ["B-R2"],
+      "statement": "Exact witness: tstep(1,1,0)=(1,1,0), tstep(1,1,1)=(2,0,1); q_I(z1)=q_I(z2)=(1,1) before, but (1,1,0)_{1:2} != (2,0,1)_{1:2} after -- the I-only quotient loses the distinction that forces the T2 augmentation.",
+      "forbidden_claims": ["this failure alone constructs the augmented closure (see T2)"]
+    },
+    {
+      "rule_id": "B-SUB1",
+      "name": "homeostasis substrate: decay/turnover/balance",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["BIO-G3"],
+      "parents": ["BIO-G3"],
+      "statement": "Geometric decay, turnover-is-production, and homeostasis-balance theorems compile axiom-clean and root-native, backing the BIO-G3 living-unit substrate with a discrete-algebra homeostasis model.",
+      "forbidden_claims": ["this is real physiological homeostasis or a clinical reading (Dr, not root-derived)", "this raises the 47.2% strict score -- it backs the already-counted BIO-G3 node, it is not an independent semantic closure"],
+      "coq_backing": {
+        "status": "green (Th_coqc), re-compiled axiom-clean 2026-07-21",
+        "source": "research_universal_solver/formal/InfoBioHomeostasis_attempt.v",
+        "theorems": ["decay_geometric", "homeostasis_balance", "turnover_is_production"],
+        "note": "Backs BIO-G3 (living-unit) substrate quality; part of LINE-1 root-native GREEN Coq backing. See PROVENANCE.md."
+      }
+    },
+    {
+      "rule_id": "B-SUB2",
+      "name": "relaxation substrate: setpoint one-step / n-step error",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["BIO-G3"],
+      "parents": ["BIO-G3"],
+      "statement": "Setpoint relaxation (one-step and n-step error decay toward a fixed setpoint) theorems compile axiom-clean and root-native, backing the BIO-G3 living-unit substrate's dynamic-response quality.",
+      "forbidden_claims": ["this is a real physiological relaxation/recovery process or a clinical reading", "this raises the 47.2% strict score"],
+      "coq_backing": {
+        "status": "green (Th_coqc), re-compiled axiom-clean 2026-07-21",
+        "source": "research_universal_solver/formal/InfoHealthCausalRelax_attempt.v",
+        "theorems": ["setpoint one-step error relaxation", "n-step error relaxation"],
+        "note": "Backs BIO-G3 substrate quality. See PROVENANCE.md."
+      }
+    },
+    {
+      "rule_id": "B-SUB3",
+      "name": "cusp-fold substrate: bistable window / critical slowing",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["BIO-G3"],
+      "parents": ["BIO-G3"],
+      "statement": "A bistable window and critical-slowing-down theorem compile axiom-clean and root-native, backing the BIO-G3 living-unit substrate's stability-boundary quality.",
+      "forbidden_claims": ["this is a real bistable disease state or a clinical reading", "this raises the 47.2% strict score"],
+      "coq_backing": {
+        "status": "green (Th_coqc), re-compiled axiom-clean 2026-07-21",
+        "source": "research_universal_solver/formal/InfoHealthCuspFold_attempt.v",
+        "theorems": ["bistable window", "critical slowing down"],
+        "note": "Backs BIO-G3 substrate quality. See PROVENANCE.md."
+      }
+    },
+    {
+      "rule_id": "B-SUB4",
+      "name": "coupled EP-3 substrate: coupling energy / locked-iff-zero / one-way-breaks-conservation",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["T2"],
+      "parents": ["T2"],
+      "statement": "Coupling-energy, locked-iff-energy-zero, and one-way-coupling-breaks-conservation theorems compile axiom-clean and root-native, backing the T2 endogenous-operator substrate's coupling quality.",
+      "forbidden_claims": ["this is a real physiological coupling (e.g. hormonal, neural) or a clinical reading", "this raises the 47.2% strict score"],
+      "coq_backing": {
+        "status": "green (Th_coqc), re-compiled axiom-clean 2026-07-21",
+        "source": "research_universal_solver/formal/InfoCoupledCuspEP3_attempt.v",
+        "theorems": ["coupling energy", "locked-iff-energy-zero", "one-way-breaks-conservation"],
+        "note": "Backs T2 substrate quality. See PROVENANCE.md."
+      }
+    },
+    {
+      "rule_id": "B-Y1",
+      "name": "protein-semantic bridge (uncalibrated)",
+      "class": "PARTIAL_UNCALIBRATED",
+      "assumptions": ["BIO-G2"],
+      "parents": ["BIO-G2"],
+      "statement": "BIO-G2 closes q_F as an abstract functional quotient; whether q_F corresponds to a real protein, enzyme, or catalytic function requires a calibrated encoding from retained state to biochemical observables. No such encoding exists yet.",
+      "forbidden_claims": ["q_F is a real protein or enzyme", "this bridge has been constructed"]
+    },
+    {
+      "rule_id": "B-Y2",
+      "name": "living-unit -> real-cell semantic bridge (uncalibrated)",
+      "class": "PARTIAL_UNCALIBRATED",
+      "assumptions": ["BIO-G3"],
+      "parents": ["BIO-G3"],
+      "statement": "BIO-G3 closes V_A as an abstract self-maintaining fixed point; whether V_A corresponds to a real cell or organism requires a calibrated encoding. No such encoding exists yet.",
+      "forbidden_claims": ["V_A is a real cell", "this bridge has been constructed"]
+    },
+    {
+      "rule_id": "B-Y3",
+      "name": "reproduction R_kappa branch (declared, not derived)",
+      "class": "YELLOW_BRIDGE_PARTIAL",
+      "assumptions": ["BIO-G3"],
+      "parents": ["BIO-G3"],
+      "statement": "A reproduction operator R_kappa is architecturally sketched as a branch off the living-unit fixed point V_A (a self-maintaining unit producing a new self-maintaining unit), but its construction and closure are declared, not derived or witnessed in biology_closure_v0_1.py.",
+      "forbidden_claims": ["R_kappa has been proven to close", "this is a real reproduction/cell-division mechanism"]
+    },
+    {
+      "rule_id": "B-Y4",
+      "name": "heredity -> biological-selection semantic bridge (uncalibrated)",
+      "class": "PARTIAL_UNCALIBRATED",
+      "assumptions": ["BIO-G4"],
+      "parents": ["BIO-G4"],
+      "statement": "BIO-G4 closes q_H and the frequency readout p_{j,n+1} structurally; whether this frequency change corresponds to real biological selection or fitness requires a calibrated encoding. No fitness variable is ever introduced as a root quantity.",
+      "forbidden_claims": ["fitness has been derived from the root", "p_{j,n+1} is a real allele frequency under natural selection"]
+    },
+    {
+      "rule_id": "B-Y5",
+      "name": "evolution readout (semantic partial)",
+      "class": "YELLOW_BRIDGE_PARTIAL",
+      "assumptions": ["B-LIN", "B-Y4"],
+      "parents": ["B-LIN", "B-Y4"],
+      "statement": "The lineage-frequency trend (B-LIN) can be READ as an 'evolution' trajectory, but this reading is a declared interpretation, not a derived biological-evolution law -- 'evolution' here is a structural count trend, not natural selection.",
+      "forbidden_claims": ["biological evolution has been derived from the root", "this readout constitutes Darwinian natural selection"]
+    },
+    {
+      "rule_id": "B-Y6",
+      "name": "homeostasis substrate -> real physiological bridge (Dr, clinical)",
+      "class": "YELLOW_BRIDGE_PARTIAL",
+      "assumptions": ["B-SUB1"],
+      "parents": ["B-SUB1"],
+      "statement": "B-SUB1's discrete-algebra homeostasis theorems are Coq-green as FORMAL claims; whether they describe real physiological homeostasis is a declared clinical reading (Dr, not root-derived), open pending calibration.",
+      "forbidden_claims": ["B-SUB1 is proven physiological homeostasis", "any clinical reading here is empirically validated"]
+    },
+    {
+      "rule_id": "B-Y7",
+      "name": "relaxation substrate -> real recovery/relapse bridge (Dr, clinical)",
+      "class": "YELLOW_BRIDGE_PARTIAL",
+      "assumptions": ["B-SUB2"],
+      "parents": ["B-SUB2"],
+      "statement": "B-SUB2's setpoint-relaxation theorems are Coq-green as FORMAL claims; whether they describe real clinical recovery/relapse dynamics is a declared reading (Dr), open pending calibration.",
+      "forbidden_claims": ["B-SUB2 is proven clinical recovery dynamics"]
+    },
+    {
+      "rule_id": "B-Y8",
+      "name": "cusp-fold substrate -> real bistable disease-state bridge (Dr, clinical)",
+      "class": "YELLOW_BRIDGE_PARTIAL",
+      "assumptions": ["B-SUB3"],
+      "parents": ["B-SUB3"],
+      "statement": "B-SUB3's bistable-window theorem is Coq-green as a FORMAL claim; whether it describes a real bistable disease state is a declared reading (Dr), open pending calibration.",
+      "forbidden_claims": ["B-SUB3 is proven clinical bistability"]
+    },
+    {
+      "rule_id": "B-Y9",
+      "name": "coupled EP-3 substrate -> real physiological coupling bridge (Dr, clinical)",
+      "class": "YELLOW_BRIDGE_PARTIAL",
+      "assumptions": ["B-SUB4"],
+      "parents": ["B-SUB4"],
+      "statement": "B-SUB4's coupling-energy theorems are Coq-green as FORMAL claims; whether they describe real physiological coupling (hormonal, neural, etc.) is a declared reading (Dr), open pending calibration.",
+      "forbidden_claims": ["B-SUB4 is proven physiological coupling"]
+    },
+    {
+      "rule_id": "B-Y10",
+      "name": "domain-discovery battery -> real event-resolved bridge (synthetic only)",
+      "class": "YELLOW_BRIDGE_PARTIAL",
+      "assumptions": ["readout_genesis/scripts/domain_discovery_battery.py exists and PASSes"],
+      "parents": [],
+      "statement": "The domain-discovery battery is real and runnable (PASS), but has been run only on SYNTHETIC tapes -- no real event-resolved biological data has been passed through it. The bridge to real data is open.",
+      "forbidden_claims": ["the domain-discovery battery has demonstrated discovery on real biological data", "SYNTHETIC-tape results generalize to event-resolved measured data without further work"]
+    },
+    {
+      "rule_id": "B-Y11",
+      "name": "bR lineage ledger -> real event-resolved run bridge (architecture-only)",
+      "class": "YELLOW_BRIDGE_PARTIAL",
+      "assumptions": ["bR ledger CLI architecture exists in the core snapshot"],
+      "parents": [],
+      "statement": "The bacteriorhodopsin (bR) lineage ledger and its CLI are narrated and architected in the core, but NO real event-resolved run has ever been executed. This is architecture-only, not evidence.",
+      "forbidden_claims": ["the bR ledger has produced any real result", "the bR ledger architecture constitutes a closed witness"]
+    },
+    {
+      "rule_id": "B-X1",
+      "name": "calibrated encoding retained-state -> biological observables (OPEN)",
+      "class": "OPEN",
+      "assumptions": [],
+      "parents": ["B-Y1", "B-Y2", "B-Y4"],
+      "statement": "TARGET, not established: a calibrated encoding mapping retained root state to real biological observables (sequence identity, functional identity, unit identity, heredity identity). This is the single central open bottleneck licensing all real-domain semantics; none of BIO-G1..G4/T2 supply it.",
+      "forbidden_claims": ["a calibrated encoding has been constructed or checked", "any structural closure above substitutes for this encoding"]
+    },
+    {
+      "rule_id": "B-X2",
+      "name": "end-to-end root -> real biology via event-resolved data (OPEN)",
+      "class": "OPEN",
+      "assumptions": ["B-X1"],
+      "parents": ["B-X1"],
+      "statement": "TARGET, not established: derivation of any real biological result from the root through real (measured, event-resolved) data. End-to-end root -> real-biology through event-resolved data = 0%.",
+      "forbidden_claims": ["any end-to-end real-biology result exists", "the domain-discovery battery's synthetic-tape PASS constitutes this closure"]
+    },
+    {
+      "rule_id": "B-X3",
+      "name": "DNA / genome carrier real semantics (OPEN, destination only)",
+      "class": "OPEN",
+      "assumptions": ["B-X1"],
+      "parents": ["BIO-G1", "B-X1"],
+      "statement": "DNA/genome as a real molecular carrier is a destination the ordered-sequence carrier (BIO-G1) might eventually be calibrated to reach -- never a premise anywhere in this registry.",
+      "forbidden_claims": ["DNA/genome semantics have been derived or assumed anywhere in LINE-1"]
+    },
+    {
+      "rule_id": "B-X4",
+      "name": "cell / organelle real semantics (OPEN, destination only)",
+      "class": "OPEN",
+      "assumptions": ["B-X1"],
+      "parents": ["BIO-G3", "B-Y2", "B-X1"],
+      "statement": "A real cell or organelle is a destination the living-unit closure (BIO-G3) might eventually be calibrated to reach -- never a premise anywhere in this registry.",
+      "forbidden_claims": ["cell/organelle semantics have been derived or assumed anywhere in LINE-1"]
+    },
+    {
+      "rule_id": "B-X5",
+      "name": "enzyme / catalytic-kinetics real semantics (OPEN, destination only)",
+      "class": "OPEN",
+      "assumptions": ["B-X1"],
+      "parents": ["BIO-G2", "B-Y1", "B-X1"],
+      "statement": "Real enzyme kinetics (e.g. Michaelis-Menten-shaped catalysis) is a destination the functional quotient (BIO-G2) might eventually be calibrated to reach -- never a premise. Michaelis-Menten remains a prohibited active token (see DRIFT_CONTRACT.json).",
+      "forbidden_claims": ["enzyme/catalytic semantics have been derived or assumed anywhere in LINE-1"]
+    },
+    {
+      "rule_id": "B-X6",
+      "name": "fitness / natural-selection as root-derived quantity (OPEN, destination only)",
+      "class": "OPEN",
+      "assumptions": ["B-X1"],
+      "parents": ["BIO-G4", "B-Y4", "B-X1"],
+      "statement": "Fitness / natural selection is explicitly FORBIDDEN as a root variable anywhere in BIO-G4/B-LIN; it remains a destination requiring a calibrated encoding, fully open.",
+      "forbidden_claims": ["fitness has been derived from the root anywhere in LINE-1"]
+    },
+    {
+      "rule_id": "B-X7",
+      "name": "ecology / population-level real dynamics (OPEN)",
+      "class": "OPEN",
+      "assumptions": ["B-Y5"],
+      "parents": ["B-Y5"],
+      "statement": "Real population-level ecological dynamics beyond the abstract lineage-count trend (B-LIN/B-Y5) are fully open -- no root-native construction exists. Lotka-Volterra remains a prohibited active token.",
+      "forbidden_claims": ["ecological dynamics have been derived from the root"]
+    },
+    {
+      "rule_id": "B-X8",
+      "name": "LINE-2 textbook curriculum -> root-native promotion (OPEN, explicitly forbidden)",
+      "class": "OPEN",
+      "assumptions": [],
+      "parents": [],
+      "statement": "The LINE-2 textbook curriculum solver (45/45 checklist, tier textbook_closure/finite_diagnostic, no Th_coqc) sits outside this DAG entirely as a CHECKER. This node exists ONLY to make the boundary explicit and permanently red -- it must never be promoted, folded in, or counted toward the 47.2%/62.5% LINE-1 score.",
+      "forbidden_claims": ["the textbook 45/45 checklist has been counted toward the root-native score", "InfoEpidemicThreshold_attempt.v (imports SIR as a premise) is cited as root-native anywhere"]
+    }
+  ],
+  "gates": [
+    {
+      "id": "BG-1",
+      "name": "BIO-G1 ordered-sequence-carrier gate",
+      "question": "Does the ordered quotient q_seq close where the count carrier N^G fails?",
+      "passing_control": "Ordered carrier G* keeps ab != ba, so F(ab)=aa != F(ba)=bb is unambiguous -- q_seq closes exact.",
+      "failing_control": "Count carrier: nu(ab)=nu(ba)=(1,1) yet nu(F(ab))=(2,0) != nu(F(ba))=(0,2) -- the count quotient loses the distinction the dynamics need.",
+      "status": "green",
+      "rule_id": "BIO-G1"
+    },
+    {
+      "id": "BG-2",
+      "name": "BIO-G2 functional-quotient gate",
+      "question": "Is q_F=O(w) invariant under the swap intervention while a coarser quotient breaks output factorization?",
+      "passing_control": "O(swap(w))==O(w) for all w in {aa,ab,ba,bb} -- q_F closes under the swap intervention.",
+      "failing_control": "q_first(aa)=q_first(ab)=a but O(aa)=0 != O(ab)=1 -- keep-first-letter quotient breaks output factorization, correctly REFUSED.",
+      "status": "green",
+      "rule_id": "BIO-G2"
+    },
+    {
+      "id": "BG-3",
+      "name": "BIO-G3 living-unit fixed-point gate",
+      "question": "Does a self-maintaining fixed point V_A exist under the no-free-repair ledger, and does violating the contract exit V_A?",
+      "passing_control": "(1,1) with contract {(0,0),(1,1)}, policy a=d -> stays (1,1), remains in V_A.",
+      "failing_control": "Sustained contract (d,j)=(1,0) drives integrity x -> 0 -- irreversible exit from V_A (mortality reading, B-MORT).",
+      "status": "green",
+      "rule_id": "BIO-G3"
+    },
+    {
+      "id": "BG-4",
+      "name": "BIO-G4 heredity gate",
+      "question": "Does the descendant-signature quotient q_H keep successor counts well-defined where a coarser parent-quotient breaks them?",
+      "passing_control": "N1=B*N0=(2,1), frequency p1=(2/3,1/3) from lineage counts alone -- q_H closes structurally, no fitness variable used.",
+      "failing_control": "A coarse parent-quotient merging classes with different licensed replication counts (2 vs 1) makes the successor count NOT a function of the quotient -- 2 != 1, correctly REFUSED.",
+      "status": "green",
+      "rule_id": "BIO-G4"
+    },
+    {
+      "id": "BG-T2",
+      "name": "T2 endogenous-operator augmentation gate",
+      "question": "Does the augmented quotient (I,Theta) close where the I-only quotient fails?",
+      "passing_control": "Augmented q_aug=(I,Theta): (1,1,0) != (1,1,1) -- distinguishes z1,z2 exactly, closes.",
+      "failing_control": "I-only quotient: q_I(z1)=q_I(z2)=(1,1) before the endogenous step, but z1,z2 diverge after ((1,1,0) vs (2,0,1)) -- I-only quotient FAILS.",
+      "status": "green",
+      "rule_id": "T2"
+    },
+    {
+      "id": "BG-CAL",
+      "name": "Real-calibration gate (the central open bottleneck)",
+      "question": "Does a calibrated encoding exist mapping retained root state to any real biological observable (sequence identity, function identity, unit identity, heredity identity), checked against event-resolved real data?",
+      "passing_control": "NOT YET CONSTRUCTED -- no finite witness or real-data run exists.",
+      "failing_control": "NOT YET CONSTRUCTED -- no finite witness or real-data run exists.",
+      "status": "red",
+      "rule_id": "B-X1",
+      "note": "Central open bottleneck, honestly recorded with no controls yet -- per the FAIL-ABLE gate law this is the explicit non-closure case, not a Type-U convention (a Type-U convention would silently claim closure without controls; this gate makes no closure claim at all)."
+    }
+  ]
+}
