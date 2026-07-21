@@ -474,6 +474,50 @@ discipline exists to prevent.
   its first line, to the commuting-square admissibility test the ontology requires before any domain
   name is allowed to attach to it.
 
+### I.2a The inverse arrow — the spine is *discoverable*, not only *derived*
+
+The Root-to-Trunk progression above runs one way: axioms → structure → spine, a **derivation**. The
+same object can be reached from the other end — from a raw transition tape, with no axioms and no law
+handed to the engine — by the domain-discovery machinery (Version-Reconciliation item 5). This
+**inverse arrow** is not a second, separate result: it terminates at the *same* `MQ.08` / `L_R` node.
+That convergence is the strongest evidence in this book that `ROOT-3` is a genuinely discoverable
+feature of retained-difference data, not merely a convenient assumption the next arrow needs.
+
+```
+     FORWARD  (derivation — axioms downward)          INVERSE  (discovery — data upward)
+
+ P0: ∃ a,b : a ≠ b                               raw transition tape   (N,S) → (N′,S′)
+   └ distinguishability → asymmetry → ordering          │  [no domain name, no law handed in]
+      └ retention   τ_c > 0                              ▼
+         └ finite causal graph  L_R                domain-discovery engine
+              └ ROOT-3: stepper MQ.08 ◄══════╗      ├ law-DSL: candidate-basis grammar
+                   └ telegraph coarse-grain  ║      │        { 1, N, S, N², N·S, S², … }
+                        └ UNIVERSAL SPINE PDE ║      ├ identifiability gate  (guard 14)
+                                              ║      │    rank(A) = #coeff   else  ⊥ = abstain
+                    ONE convergence node:     ║      ├ interaction test  (mixed 2nd difference ≠ 0)
+                    MQ.08 = L_R, reached      ║      ├ exact closure over ℚ  +  conservation
+                    from BOTH directions      ║      ▼
+                                              ╚══ minimal exact update law
+                                                  e.g.  N′ = N + N·S/8 ,   C = N + S  conserved
+                                                  — the SAME MQ.08 / L_R object, recovered
+                                                    from data, never fabricated   [finite_diagnostic]
+```
+
+Read the two columns together. The **left** column is Part I's derivation (`[Ax]`/`[Th]` down to the
+spine). The **right** column is the discovery engine reconstructing a stepper *of the same character*
+from data alone (`[finite_diagnostic]`), passing through its own **law-DSL** — the candidate-basis
+grammar it searches — and the identifiability gate (`rank(A) = #coefficients`, else `⊥ = abstain`,
+guard 14) so it never fabricates a law the tape does not uniquely determine. The **convergence at
+`MQ.08` / `L_R`** is the claim; each column keeps its own tier, and neither borrows the other's.
+
+What the inverse arrow does **not** upgrade: the discovered law is `[finite_diagnostic]` on the tape
+it saw — not a `Dr`-or-higher statement about any real physical, chemical, or biological domain until
+a domain translation gate is supplied (I.3; Part V). Discoverability of the *form* is not truth of the
+*content*. The law-DSL is a grammar for *expressing* candidate closures, not a new root object: it
+sits entirely inside the already-`[finite_diagnostic]` discovery tool, and the only thing it adds to
+the lineage graph is a visible second arrow into a node (`MQ.08` / `L_R`) that Part I had already
+placed.
+
 ### I.3 What Part I does not yet claim
 
 Consistent with §I.0's opening discipline, it is worth closing Part I by stating plainly what has *not*
