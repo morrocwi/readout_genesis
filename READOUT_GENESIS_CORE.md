@@ -22,6 +22,37 @@
 
 ---
 
+## ⬛ THE ONE-LINE MASTER EQUATION — the weld
+
+> The whole book compresses to one identity. It is **not a new PDE form** (telegraph, graph-Laplacian
+> and damped-wave forms all exist in the world). What is new and *ours* is the **weld**: one
+> informational root that **forces** one operator whose single stepper is at once the dynamics and the
+> grammar of every domain.
+
+```
+   δ_R = (a ♯ b)   ⊢[Th_coqc]   L_R = D_W − W   ⊢[Dr]   F (MQ.08 stepper)   ≡   { q_D : q_D ∘ F = F♯_D ∘ q_D }
+   ─────────────    ───────────  ─────────────    ────  ────────────────    ─    ───────────────────────────
+   retained          the root    the graph        F is  the master stepper       every admissible domain is
+   distinction       FORCES it   operator         all   everything reads out     EXACTLY a quotient that
+   (the root)        (not posit) L_R              of it                          COMMUTES with F
+```
+
+> Read it as one sentence: **one root, forced into one operator, whose single stepper `F` is
+> simultaneously the master equation and the self-generating language of all domains** — *running the
+> equation* and *admitting a domain* are the same act (`q_D ∘ F = F♯_D ∘ q_D`). The spine PDE
+> `M∂²Φ + D∂Φ + K·L_R·Φ + ∇V = J − η` (Part II) is a coarse-grain **readout** of `F`, not the root.
+>
+> **Honest tier of the one line** (no hollow flag): `δ_R ⊢ L_R` is **`[Th_coqc]`** — the retained
+> distinction *forces* the graph-Laplacian form, machine-checked axiom-free
+> (`InfoRetainedDistinctionForcesLaplacian`). The stepper `F` and the spine readout are **`[Dr]`**. The
+> weld `q_D ∘ F = F♯_D ∘ q_D` is **`[finite_diagnostic]`** on each registered domain
+> (`scripts/unification_weld.py` — witnessed and fail-able) and **`[Dr]/architecture`** as a universal
+> theorem. Still *borrowed*, not yet ours: `M` (mass — posited, a readout of `τ_c`), `∇V`, and the SI
+> constants. The frontier (§I.3, §V.20) is to **force those from the root too** — each term forced is a
+> term that becomes provably ours, and by the weld that is the same act as admitting one more domain.
+
+---
+
 ## 📖 Table of Contents
 
 **16 major sections** (2 front-matter + 14 Parts) **+ Appendix A**, **141 subsections**, ~5,970 lines.
