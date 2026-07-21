@@ -49,7 +49,7 @@ Read top to bottom for the full arc, or jump by Part.
 
 **Appendix**
 - [Appendix A — v0.11 Turbulence-Integrated carry-forward](#appendix-a-v011-carry-forward--turbulence-integrated-equations-preserved-verbatim) — 13 equations/lists from the earlier turbulence-integrated snapshot, preserved verbatim with honest tiers (memory kernel, DRL→RTPE bridge, LP/NS residual, readability, modal audit, cost, theorem regimes, continuum map, scalar-reduction gate, runtime protocol, open items)
-- [Appendix B — External-paper integration (2026-07-21)](#appendix-b-external-paper-integration-2026-07-21--carried-at-honest-tier-provenance-tagged) — conserved (Φ,Ψ) pairing charge + linear-pair caveat from Paper I ([Dr], coqc-pending), and Paper VI's ×4-doubling / spin-statistics-sign / d=3-selector as [Dr]/[Open] frontier candidates awaiting independent review
+- [Appendix B — External-paper integration (2026-07-21)](#appendix-b-external-paper-integration-2026-07-21--carried-at-honest-tier-provenance-tagged) — conserved (Φ,Ψ) pairing charge from Paper I (3-ring T1/T2 [Th_coqc] via PR #185; exact-conservation/general-N [Dr]/[Open]), and Paper VI's ×4-doubling / spin-statistics-sign / d=3-selector as [Dr]/[Open] frontier candidates awaiting independent review
 
 **Tier legend:** `[Th_coqc]` machine-checked axiom-free · `[finite_diagnostic]` measured/computed ·
 `[Dr]` declared bridge · `[DeclaredFormula]` restated in Coq, not proved · `[Ax]` definitional ·
@@ -6006,19 +6006,30 @@ Paper I supplies one: a conserved pairing charge
 H = Σ_k ( Φ_k · π^Ψ_k − Ψ_k · π^Φ_k )        conserved along the DRL flow
 ```
 
-built from the antisymmetric (η/ω) pairing already posited in the core (lines ~1005-1011). Paper I
-claims an **axiom-free, full-generality Legendre D-cancellation proof** (`DRL_General_Legendre.v`) and
-a **discrete Euler–Lagrange equivalence** machine-checked over ℚ for a **3-ring scope**
-(`DRL_Discrete.v`), which if verified would upgrade the core's current `[Dr]` stepper-equivalence
-label to `[Th_coqc]` *for that scope* (general-N stays `[Open]`, matching Paper I's own §VIII
-non-claims).
+built from the antisymmetric (η/ω) pairing already posited in the core (lines ~1005-1011).
 
-**Tier as folded in here: `[Dr]`, verification-pending.** The two `.v` files are cited in
-paperI_drl.pdf but are **not present in this repo** (`research_universal_solver/formal/` has no DRL
-`.v` as of 2026-07-21). Per the project rule that a `Th_coqc` tag must point at a real, locally
-`coqc`-checkable object, the pairing charge and the discrete EL-equivalence are carried at `[Dr]`
-until `DRL_General_Legendre.v` / `DRL_Discrete.v` are added here and compile clean. Do **not** tag
-either `[Th_coqc]` before that.
+**What IS machine-checked here — `[Th_coqc]`, 3-ring scope.** `formal/InfoRetentionLagrangian_attempt.v`
+(added 2026-07-19, PR #185) — a port of `readout_universe/evidence/DRL_Discrete.v` — proves,
+axiom-free over ℚ (every `Print Assumptions` "Closed under the global context"; `coqc`-verified here
+2026-07-21): the discrete Euler–Lagrange equivalence (`T1_el_psi_node1/node2`, `T1_el_phi_node1`) and
+the Legendre D-cancellation identity (`T2_D_cancellation`, showing the pairing `H` is D-free), for the
+**3-ring / T=3–4-slice scope only**. For that scope this is a genuine `[Th_coqc]` result the core
+previously lacked — the (Φ,Ψ) system now has a machine-checked conserved pairing structure, not just a
+posited one.
+
+**What stays weaker — honest boundaries carried verbatim-in-spirit from the ported file.**
+- **Exact conservation of `H` along a full trajectory when D≠0 is NOT proved.** The source's own
+  numerics show O(Δθ²) charge drift (a truncation residual), so the narrative "the record absorbs
+  exactly what the reader loses" is `[Dr]`, not `[Th_coqc]`.
+- **No generalization off the 3-ring** (nonlinear potentials / per-node parameters / general-N):
+  `[Open]`. The full-generality `DRL_General_Legendre.v` named in Paper I is genuinely absent from this
+  repo — only the 3-ring port exists.
+- **The `BORROWED_VS_DERIVED_LEDGER.md` item #8 upgrade is NOT authorized by this file**; the port
+  explicitly requires this repo's own adversarial audit first (`docs/root/proposals/DRL_LEDGER_AMENDMENT.md`).
+  Until that audit, the core's II.8a stepper-equivalence *interpretation* stays `[Dr]`.
+
+Net: the 3-ring `T1`/`T2` theorems are `[Th_coqc]` (scope-tagged, verified); exact-conservation and
+general-N are `[Dr]`/`[Open]`; the ledger promotion waits on the adversarial audit.
 
 ### APP-B.2 — Linear-pair honesty caveat (Paper I §, one line, folds a guard in)
 
