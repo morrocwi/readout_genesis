@@ -1,0 +1,484 @@
+{
+  "registry_version": "0.1",
+  "discipline_note": "Founder discipline (2026-07-21): do NOT repeat the hollow quantum-card mistake of taking an equation that looks quantum and calling it closed. 'oscillation is NOT yet quantum'. None of {i, psi, Hilbert space H, Born rule p=|psi|^2, tensor product (x), [A,B]=i*hbar, spin, particles, creation/annihilation, vacuum, coupling constants} may be a PREMISE anywhere below -- each is a DESTINATION that must grow from the retained root and pass its own gate. Every gate that claims closure ships BOTH a passing and a failing machine-derived control (see 'gates' section); a gate without both controls is a Type-U convention and MUST NOT be claimed closed.",
+  "rules": [
+    {
+      "rule_id": "Q-R0",
+      "name": "retained distinction (master root)",
+      "class": "ROOT_BACKBONE",
+      "assumptions": ["a != b is retained (master core root, source_root/READOUT_GENESIS_CORE_SNAPSHOT.md)"],
+      "parents": [],
+      "statement": "a!=b is retained as a distinction; the distinction is asymmetric, giving an ordering direction. Identical to relativity's RB-P0 -- this is the one shared root, not a new axiom.",
+      "forbidden_claims": ["this is a physical quantum state", "this asserts psi, a Hilbert space, or any complex structure"]
+    },
+    {
+      "rule_id": "Q-R1",
+      "name": "ordered transitions and retention",
+      "class": "ROOT_BACKBONE",
+      "assumptions": ["Q-R0"],
+      "parents": ["Q-R0"],
+      "statement": "The asymmetric ordering yields ordered transitions with a positive retention time tau_c>0.",
+      "forbidden_claims": ["tau_c is a measured physical relaxation/coherence time"]
+    },
+    {
+      "rule_id": "Q-R2",
+      "name": "discrete ticks and finite causal graph",
+      "class": "ROOT_BACKBONE",
+      "assumptions": ["Q-R1"],
+      "parents": ["Q-R1"],
+      "statement": "Retention discretizes into ticks t=n*Delta_theta; a finite causal graph is built on those ticks.",
+      "forbidden_claims": ["this is a physical lattice or discretized spacetime"]
+    },
+    {
+      "rule_id": "Q-R3",
+      "name": "retained-distinction axioms FORCE the L_R operator form",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["Q-R2"],
+      "parents": ["Q-R2"],
+      "statement": "The retained-distinction axioms FORCE the finite retention operator L_R's form -- not merely posit it. Machine-checked, axiom-free, re-compiled 2026-07-21 (coqc -q -R . DQG).",
+      "forbidden_claims": ["L_R is a physical Hamiltonian", "this forces any complex/Hermitian structure on L_R"],
+      "coq_backing": {
+        "status": "green (Th_coqc)",
+        "source": "causal-quantum-gravity/formal/InfoRetainedDistinctionForcesLaplacian_attempt.v",
+        "theorems": "retained-distinction axioms force the L_R (Laplacian-shaped) operator form",
+        "note": "Re-verified locally, axiom-grep clean (no Admitted/admit/Axiom/Parameter). See PROVENANCE_CAUSAL_QG.md."
+      }
+    },
+    {
+      "rule_id": "Q-R4",
+      "name": "telegraph coarse-grain / spine PDE",
+      "class": "ROOT_BACKBONE",
+      "assumptions": ["Q-R3"],
+      "parents": ["Q-R3"],
+      "statement": "Coarse-graining L_R over the ticks gives the spine second-order stepper M*d2 + D*d + K, shared verbatim with the relativity domain's RB-P2/RB-P3.",
+      "forbidden_claims": ["this is a physical wave equation of any named field theory"]
+    },
+    {
+      "rule_id": "Q-R5",
+      "name": "spine characteristic equation / dispersion relation",
+      "class": "ROOT_BACKBONE",
+      "assumptions": ["Q-R4"],
+      "parents": ["Q-R4"],
+      "statement": "The spine stepper's characteristic equation is M*s^2 + D*s + K*lambda = 0, exact-rational, parametrized by a mode label lambda.",
+      "forbidden_claims": ["lambda is a physical quantum number", "s is a physical frequency"]
+    },
+    {
+      "rule_id": "Q-OS1",
+      "name": "oscillatory-regime split (spine dispersion)",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["Q-R5"],
+      "parents": ["Q-R5"],
+      "statement": "lambda_c = D^2/(4*M*K). The discriminant disc(lambda) = D^2 - 4*M*K*lambda is negative (complex-conjugate root pair, oscillatory) for lambda>lambda_c, positive (overdamped) for lambda<lambda_c, and exactly zero at lambda=lambda_c (critical). Exact rational witness: M=D=K=1 -> lambda_c=1/4; lambda=1 gives disc=-3<0 (oscillatory); lambda=1/8 gives disc=1/2>0 (overdamped); lambda=lambda_c gives disc=0 (critical).",
+      "forbidden_claims": ["this oscillatory regime IS quantum mechanics", "the complex-conjugate root pair here is psi or any quantum amplitude", "'oscillatory' licenses the word 'quantum' by itself -- see DRIFT_CONTRACT.json oscillation!=quantum"]
+    },
+    {
+      "rule_id": "Q-S1",
+      "name": "asymmetric-seed trifurcation R0 = Diag + SymOff + SkewOff",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["Q-R2"],
+      "parents": ["Q-R2"],
+      "statement": "Any asymmetric seed matrix R0 decomposes uniquely as R0 = DiagPart + SymOff + SkewOff. Exact rational witness with a 3x3 R0 reproduces R0 exactly from the three parts; SkewOff is genuinely nonzero (torsion/circulation branch).",
+      "forbidden_claims": ["SkewOff is a physical spin or angular-momentum operator", "this decomposition alone constructs a Hilbert space"],
+      "coq_backing": {
+        "status": "green (Th_coqc)",
+        "source": "causal-quantum-gravity/formal/InfoAsymmetricSeedTrifurcation.v",
+        "theorems": "R0 = DiagPart + SymOff + SkewOff, exact and unique",
+        "note": "Re-verified locally, axiom-grep clean. See PROVENANCE_CAUSAL_QG.md."
+      }
+    },
+    {
+      "rule_id": "Q-S2",
+      "name": "seed torsion is the skew-off part; group and rank-N structure",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["Q-S1"],
+      "parents": ["Q-S1"],
+      "statement": "The seed torsion/circulation branch is exactly SkewOff; the set of admissible SkewOff parts forms a group and the construction extends to rank N, axiom-free.",
+      "forbidden_claims": ["this group is a physical gauge group", "this is SU(2) or any named Lie group of quantum mechanics"],
+      "coq_backing": {
+        "status": "green (Th_coqc)",
+        "source": "causal-quantum-gravity/formal/InfoSeedTorsionIsSkewOff.v, InfoSeedTorsionGroupAndRankN.v",
+        "theorems": "torsion branch = SkewOff; group structure; rank-N extension",
+        "note": "Re-verified locally, axiom-grep clean. See PROVENANCE_CAUSAL_QG.md."
+      }
+    },
+    {
+      "rule_id": "Q-S3",
+      "name": "seed torsion genuine mixing",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["Q-S2"],
+      "parents": ["Q-S2"],
+      "statement": "The torsion/circulation branch produces genuine (non-trivial, non-decomposable-further) mixing among retained components -- a finite, exact-rational witness with a nonzero SkewOff block.",
+      "forbidden_claims": ["this mixing is entanglement", "this mixing is a superposition of quantum states"],
+      "coq_backing": {
+        "status": "green (Th_coqc)",
+        "source": "causal-quantum-gravity/formal/InfoSeedTorsionGenuineMixing.v",
+        "theorems": "genuine (non-coboundary-reducible) mixing from the torsion branch",
+        "note": "Re-verified locally, axiom-grep clean. See PROVENANCE_CAUSAL_QG.md."
+      }
+    },
+    {
+      "rule_id": "Q-C1",
+      "name": "complexification gate (i as a readout, not a premise)",
+      "class": "PROPOSED_INTERNAL_GATE",
+      "assumptions": ["Q-R2", "a closed real oriented mode-pair exists"],
+      "parents": ["Q-R2"],
+      "statement": "An orientation J on a closed real oriented mode-pair with J^2=-I and G-adjoint J^{dagger_G}=-J (G-skew under the positive retention metric G) EARNS the complex coordinate psi=u+J*v as a READOUT -- i is a consequence of a closed real structure, never a premise. Exact rational witness: J=[[0,-1],[1,0]], G=I2, J^2=-I2, J^T=-J. FAILING control: J_bad=I2 (identity) has J_bad^2=+I2 != -I2, and is correctly REFUSED the complex coordinate (NO_COMPLEX_QUANTUM_COORDINATE).",
+      "forbidden_claims": ["i, psi, or any complex structure is assumed as a premise anywhere upstream of this gate", "this gate constructs a general/all-states complex psi (only the single closed-pair witness is established; see Q-X1)", "this is a Hilbert space"]
+    },
+    {
+      "rule_id": "Q-N1",
+      "name": "positive quantum norm",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["Q-C1", "positive retention metric G"],
+      "parents": ["Q-C1"],
+      "statement": "N_Q(psi) = <psi, G psi> is >= 0 for all psi and =0 iff psi=0, on the exact rational witness (G=I2, psi=(3,4) gives N_Q=25; psi=0 gives N_Q=0).",
+      "forbidden_claims": ["N_Q is proven positive-definite for ALL admissible states in general (only the one exact witness is established; see Q-X1/general-norm status)", "N_Q is the Born probability"]
+    },
+    {
+      "rule_id": "Q-N2",
+      "name": "reversible G-orthogonal evolution",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["Q-N1"],
+      "parents": ["Q-N1"],
+      "statement": "An evolution operator U satisfying U^{dagger_G} G U = G preserves N_Q exactly. Exact witness: U=J (the complexification-gate orientation itself, reused as a rotation), N_Q(U*psi)=N_Q(psi)=25.",
+      "forbidden_claims": ["this establishes unitarity in general (only the one G-orthogonal witness is established)", "U is a physical time-evolution Hamiltonian exponential"]
+    },
+    {
+      "rule_id": "Q-M1",
+      "name": "memory-before-mass (formal algebra, Coq-green)",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["Q-R1"],
+      "parents": ["Q-R1"],
+      "statement": "Retained memory (discrete algebra on the retention operator) FORCES a mass-like readout, axiom-free, machine-checked. This rule establishes the formal/algebraic claim only; whether this readout IS physical mass is a separate, explicitly YELLOW bridge (see Q-Y5). NOT counted as an independent node in the 32-node Quantum DAG closure audit -- it is the supporting formal citation folded into Q-Y5's yellow accounting (matching the verifier's own 'memory-before-mass' yellow-list item).",
+      "forbidden_claims": ["this readout is real physical mass or inertia (see Q-Y5 for the bounded bridge claim)", "this derives E=mc^2 or any coupling constant"],
+      "coq_backing": {
+        "status": "green (Th_coqc)",
+        "source": "causal-quantum-gravity/formal/InfoMemoryBeforeMass.v",
+        "theorems": "retained memory sequence forces a mass-like (inertial) readout, discrete algebra",
+        "note": "Re-verified locally, axiom-grep clean. Formal claim only -- the physical semantic bridge is Q-Y5 (YELLOW). See PROVENANCE_CAUSAL_QG.md."
+      }
+    },
+    {
+      "rule_id": "Q-G1",
+      "name": "discrete metric/curvature chain (folded from relativity, root-native)",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["Q-R2"],
+      "parents": ["Q-R2"],
+      "statement": "The discrete connection U_{j<-i}=V_j^-1*V_i, the curvature certificate K_C=U_C-I (two finite transports failing to commute, nonzero exact witness), and the supporting discrete-geometry chain (metric-compatible curvature, 2nd Bianchi, Gauss-Bonnet, Riemann pair symmetry, rational SO(3) curvature) are folded in here from the relativity domain's OB-03/OB-04 as shared root-native structure, deduplicated (same underlying L_R operator, not re-derived).",
+      "forbidden_claims": ["this constructs a physical spacetime metric", "this is sufficient for a quantum-gravity unification claim", "this is re-derived independently of relativity/OB-03/OB-04 -- it is the SAME machine-checked witness, cited not duplicated"],
+      "coq_backing": {
+        "status": "green (Th_coqc), folded from relativity/RULE_REGISTRY.json OB-03/OB-04",
+        "source": "causal-quantum-gravity/formal/InfoConnectionFromFrame_attempt.v, InfoDiscreteRiemannCurvature_attempt.v (+ supporting curvature-chain files)",
+        "theorems": ["coboundary_telescopes", "closed_loop_pure_gauge_flat", "genuine_curvature_is_non_coboundary", "riemann_is_second_difference", "curvature_nonzero_witness"],
+        "note": "Same witnesses as relativity/OB-03/OB-04; folded here (not re-derived) because the underlying L_R operator is shared root structure. See PROVENANCE_CAUSAL_QG.md and ../relativity/PROVENANCE_CAUSAL_QG.md."
+      }
+    },
+    {
+      "rule_id": "Q-Y1",
+      "name": "QM/SR bounded algebraic identity (imported Minkowski caveat)",
+      "class": "YELLOW_BRIDGE_PARTIAL",
+      "assumptions": ["Q-R4", "relativity's InfoLorentzInvariance.box_quad (imported Minkowski signature, POSITED not forced)"],
+      "parents": ["Q-R4"],
+      "statement": "InfoQuantumRelativityUnification.v (box_quad_is_spine_residual, spine_dispersion_iff_box_quad_vanishes) and InfoSeedFeedsQuantumRelativity_attempt.v compile axiom-free, BUT box_quad INHERITS the imported Minkowski signature from InfoLorentzInvariance.box_quad. This is therefore a bounded ALGEBRAIC IDENTITY between two independently-posited constructions, never a root-native derivation of QM/SR unification.",
+      "forbidden_claims": ["QM and SR are derived from one root", "this is a root-native derivation of quantum mechanics or special relativity", "this promotes Gamma_R, box_quad, or any Lorentz-shaped object to Th_coqc as a root derivation", "this closes any node in group C (boundary/QG) as real physics"],
+      "coq_backing": {
+        "status": "green compile, YELLOW claim tier (formal-closed / bridge-partial)",
+        "source": "causal-quantum-gravity/formal/InfoQuantumRelativityUnification.v, InfoSeedFeedsQuantumRelativity_attempt.v",
+        "theorems": ["box_quad_is_spine_residual", "spine_dispersion_iff_box_quad_vanishes"],
+        "note": "box_quad inherits InfoLorentzInvariance.box_quad's imported Minkowski signature -- the repo's own supplement/completeness-and-claims.md states this verbatim. See PROVENANCE_CAUSAL_QG.md 'REFUSED' section for the reasoning; cited here ONLY as a bounded algebraic identity."
+      }
+    },
+    {
+      "rule_id": "Q-Y2",
+      "name": "telegraph crossover discriminant (spine's own, not node-8 lapse)",
+      "class": "YELLOW_BRIDGE_PARTIAL",
+      "assumptions": ["Q-R5"],
+      "parents": ["Q-R5"],
+      "statement": "InfoTelegraphHorizonUnification_attempt.v / InfoTelegraphCrossover_attempt.v prove disc_is_spine_discr, lam_c_is_spine_lambda_c, quantum_iff_above_horizon -- the spine's OWN classical/quantum crossover discriminant lambda_c=D^2/4MK, axiom-free. This is a real, machine-checked result, but the BRIDGE from 'above/below this discriminant threshold' to 'this regime IS quantum' is not established -- the theorem names a threshold, not a semantic identification.",
+      "forbidden_claims": ["quantum_iff_above_horizon licenses the claim 'this regime is real quantum mechanics'", "this is the same object as relativity's node-8 observer-normalization/lapse (it is a DISTINCT crossover discriminant)", "the threshold alone establishes psi, Born, or measurement"],
+      "coq_backing": {
+        "status": "green compile, YELLOW bridge (formal-closed / semantic-identification-partial)",
+        "source": "causal-quantum-gravity/formal/InfoTelegraphHorizonUnification_attempt.v, InfoTelegraphCrossover_attempt.v",
+        "theorems": ["disc_is_spine_discr", "lam_c_is_spine_lambda_c", "quantum_iff_above_horizon"],
+        "note": "Re-verified locally, axiom-grep clean. See PROVENANCE_CAUSAL_QG.md."
+      }
+    },
+    {
+      "rule_id": "Q-Y3",
+      "name": "v^2=K/M conditional oscillator-parameter identification",
+      "class": "YELLOW_BRIDGE_PARTIAL",
+      "assumptions": ["Q-OS1"],
+      "parents": ["Q-OS1"],
+      "statement": "Under the DECLARED (not derived) identification of the spine's own front-speed-squared with K/M, the oscillatory-regime split of Q-OS1 can be read as an oscillator-parameter statement. This identification is conditional and declared, exactly parallel to relativity's OC-01 (graph front-speed vs measured-speed) -- it is NOT derived from the root.",
+      "forbidden_claims": ["v^2=K/M is derived rather than declared", "this identification licenses calling the oscillatory regime 'quantum'"]
+    },
+    {
+      "rule_id": "Q-Y4",
+      "name": "metric/curvature-to-quantum-regime bridge",
+      "class": "YELLOW_BRIDGE_PARTIAL",
+      "assumptions": ["Q-G1"],
+      "parents": ["Q-G1"],
+      "statement": "Q-G1's discrete metric/curvature chain is root-native and Coq-green as GEOMETRY, but its bridge toward a quantum-regime interpretation (e.g. curvature as any kind of quantum-gravitational coupling) is not established -- naming it here only as a formal-closed / bridge-partial connective, matching relativity's own OB-01 caveat (operator-to-metric direction only, reverse forbidden).",
+      "forbidden_claims": ["curvature from Q-G1 is a quantum-gravity coupling constant", "this bridges Q-G1 into any node of the quantum DAG beyond a named connective"]
+    },
+    {
+      "rule_id": "Q-Y5",
+      "name": "memory-before-mass physical/semantic bridge",
+      "class": "YELLOW_BRIDGE_PARTIAL",
+      "assumptions": ["Q-M1"],
+      "parents": ["Q-M1"],
+      "statement": "Q-M1 establishes the FORMAL algebraic claim (retained memory forces a mass-like readout) as Coq-green. Whether that readout IS real physical mass/inertia is a DECLARED, not derived, correspondence -- exactly parallel to relativity's OC-02 (mass-memory declared correspondence).",
+      "forbidden_claims": ["mass is derived from retention", "this is E=mc^2", "this readout is empirically calibrated to any measured mass"]
+    },
+    {
+      "rule_id": "Q-Y6",
+      "name": "channel / CPTP formal card (bridge-from-root open)",
+      "class": "YELLOW_BRIDGE_PARTIAL",
+      "assumptions": ["a formal completely-positive trace-preserving map card exists as a target definition"],
+      "parents": ["Q-N1", "Q-N2"],
+      "statement": "A formal CPTP (completely-positive, trace-preserving) channel CARD exists as a target definition (the abstract shape a quantum channel would need to satisfy), but the bridge FROM the root's own reversible G-orthogonal evolution (Q-N2) TO a general CPTP map (which must also cover irreversible/open-system dynamics) is OPEN -- not yet constructed or gated.",
+      "forbidden_claims": ["a CPTP channel has been derived or constructed from the root", "this establishes measurement, decoherence, or any open-system dynamics", "Q-N2's reversible evolution IS a special case of a root-derived CPTP map (the bridge itself is what's open)"]
+    },
+    {
+      "rule_id": "Q-X1",
+      "name": "general root-derived complex psi (OPEN)",
+      "class": "OPEN",
+      "assumptions": ["Q-C1 (single closed-pair witness only)"],
+      "parents": ["Q-C1"],
+      "statement": "Q-C1 establishes complexification for ONE closed real oriented mode-pair, exact witness. General existence and uniqueness of a root-derived complex psi across all admissible retained states is OPEN.",
+      "forbidden_claims": ["a general complex state space has been derived from the root", "this is a Hilbert space of arbitrary dimension"]
+    },
+    {
+      "rule_id": "Q-X2",
+      "name": "quantum quotient q_Q (architecture, commuting-square NOT proven) (OPEN)",
+      "class": "OPEN",
+      "assumptions": ["Q-C1", "Q-N1", "Q-N2"],
+      "parents": ["Q-C1", "Q-N1", "Q-N2"],
+      "statement": "A candidate architecture for a quantum quotient q_Q (mirroring relativity's q_g / chem's q_D pattern) is sketched, but the commuting-square condition q_Q o F_full = F_Q o q_Q has NOT been proven or even witnessed on a finite fixture. This is the central open bottleneck for the whole domain.",
+      "forbidden_claims": ["q_Q has been constructed", "any downstream node (composition, channel, measurement) has a proven commuting square through q_Q"]
+    },
+    {
+      "rule_id": "Q-X3",
+      "name": "mixed-state from hidden lineage (OPEN)",
+      "class": "OPEN",
+      "assumptions": ["Q-X2"],
+      "parents": ["Q-X2"],
+      "statement": "Whether a mixed-state description (density-matrix-shaped object) arises from tracing out a hidden lineage of the retained-distinction root is OPEN -- no finite witness exists.",
+      "forbidden_claims": ["a density matrix has been derived from the root", "purification/mixedness has been shown to be a readout of hidden lineage"]
+    },
+    {
+      "rule_id": "Q-X4",
+      "name": "subsystem composition / (x)_kappa (OPEN)",
+      "class": "OPEN",
+      "assumptions": ["Q-X2", "the no-free-copy law (root-level, not yet applied here)"],
+      "parents": ["Q-X2"],
+      "statement": "Whether a composition operation (x)_kappa on retained subsystems, derived from the no-free-copy law, reproduces tensor-product-shaped behavior is OPEN. No finite witness exists; this is distinct from and does not assume any imported tensor product.",
+      "forbidden_claims": ["a tensor product has been derived", "this establishes entanglement or any multi-partite structure"]
+    },
+    {
+      "rule_id": "Q-X6",
+      "name": "measurement / Born-rule uniqueness (TARGET, OPEN)",
+      "class": "OPEN",
+      "assumptions": ["Q-N1"],
+      "parents": ["Q-N1"],
+      "statement": "TARGET, not established: uniqueness of the Born weight p=|psi|^2 across ALL admissible refinements. quantum_closure_v0_1.py section E is FINITE_DIAGNOSTIC evidence FOR the quadratic form only: on one exact refinement (25=9+16), the quadratic weight (p=2) is refinement-invariant while a linear weight (p=1) is not (5 != 7, correctly failing). This is evidence, not a uniqueness proof across all refinements/bases.",
+      "forbidden_claims": ["Born-rule uniqueness has been derived", "p=|psi|^2 is established as THE measurement rule", "the single-refinement finite diagnostic generalizes to all refinements without further work"]
+    },
+    {
+      "rule_id": "Q-X7",
+      "name": "conditional update / measurement collapse (OPEN)",
+      "class": "OPEN",
+      "assumptions": ["Q-X6"],
+      "parents": ["Q-X6"],
+      "statement": "Whether a root-native conditional-update rule (projection-postulate-shaped) exists is OPEN -- no finite witness, no gate constructed.",
+      "forbidden_claims": ["a projection postulate or wavefunction collapse rule has been derived"]
+    },
+    {
+      "rule_id": "Q-X8",
+      "name": "uncertainty relation (formal guard, boundary not root-derivation) (OPEN)",
+      "class": "OPEN",
+      "assumptions": ["Q-C1"],
+      "parents": ["Q-C1"],
+      "statement": "An RDL_Heisenberg-shaped formal guard exists and SURVIVED the hollow-card audit (it correctly refuses to fire on non-quantum inputs), but it is a boundary/consistency check, not a root-derivation of an uncertainty principle. Kept OPEN pending a root-native construction.",
+      "forbidden_claims": ["an uncertainty relation has been derived from the root", "the surviving formal guard is equivalent to a proven Heisenberg bound"]
+    },
+    {
+      "rule_id": "Q-X9",
+      "name": "correlation / CHSH / Tsirelson bound (formal guard, boundary not root-derivation) (OPEN)",
+      "class": "OPEN",
+      "assumptions": ["Q-X4"],
+      "parents": ["Q-X4"],
+      "statement": "A CHSH/Tsirelson-shaped formal guard exists as a boundary check (it can flag classical-vs-quantum-shaped correlation bounds), but it is not a root derivation of quantum correlation, entanglement, or the Tsirelson bound. Kept OPEN, depends on the still-open Q-X4 composition.",
+      "forbidden_claims": ["CHSH violation or the Tsirelson bound has been derived from the root", "this establishes nonlocality or entanglement"]
+    },
+    {
+      "rule_id": "Q-X10",
+      "name": "mass / particle layer (beyond formal memory-mass algebra) (OPEN)",
+      "class": "OPEN",
+      "assumptions": ["Q-Y5"],
+      "parents": ["Q-Y5"],
+      "statement": "A particle ontology (localized, countable excitations with mass) is OPEN -- Q-M1/Q-Y5 establish only a formal mass-like readout from memory algebra, declared not derived as physical mass.",
+      "forbidden_claims": ["particles have been derived from the root", "this establishes a Fock space or particle number"]
+    },
+    {
+      "rule_id": "Q-X11",
+      "name": "spin / spin-statistics (fully OPEN)",
+      "class": "OPEN",
+      "assumptions": [],
+      "parents": ["Q-S1"],
+      "statement": "Spin and the spin-statistics theorem are fully OPEN. Q-S1's SkewOff torsion branch is NOT spin -- no rotation-group representation, half-integer quantization, or statistics connection has been constructed.",
+      "forbidden_claims": ["SkewOff or any torsion branch is spin", "a spin-statistics connection has been derived", "fermionic or bosonic exchange statistics have been derived"]
+    },
+    {
+      "rule_id": "Q-X12",
+      "name": "QFT (needs q_Q + q_relativity + q_geometry joint) (OPEN)",
+      "class": "OPEN",
+      "assumptions": ["Q-X2", "relativity/q_g (see ../relativity/)", "a geometry quotient q_geometry (not yet built)"],
+      "parents": ["Q-X2"],
+      "statement": "A full QFT / effective-field-theory closure requires the JOINT construction of the quantum quotient q_Q, the relativity domain's quotient q_g, and a geometry quotient q_geometry -- none of which are individually complete, let alone jointly commuting. Fully OPEN.",
+      "forbidden_claims": ["QFT or any EFT has been derived from the root", "coupling constants, creation/annihilation operators, or a vacuum state have been constructed"]
+    },
+    {
+      "rule_id": "Q-X13",
+      "name": "superposition gate (conditional, fixed-operator-only) (OPEN beyond the narrow case)",
+      "class": "OPEN",
+      "assumptions": ["Q-C1", "Q-N1"],
+      "parents": ["Q-C1", "Q-N1"],
+      "statement": "A conditional superposition gate exists ONLY for a fixed, pre-specified pair of orthogonal readout operators on the single closed-pair witness of Q-C1 -- linear combinations of the two witness components stay in the closed pair and N_Q is additive on them (Pythagorean, exact rational). This is NOT a general superposition principle: it does not extend to arbitrary bases, arbitrary numbers of components, or non-fixed operators without further construction.",
+      "forbidden_claims": ["a general superposition principle has been derived", "this licenses superposition across arbitrary/unfixed bases or operators", "this is linear superposition of physical quantum states"]
+    }
+  ],
+  "gates": [
+    {
+      "id": "QG-1",
+      "name": "Oscillatory-regime split gate",
+      "question": "Does the spine dispersion split cleanly into oscillatory / overdamped / critical regimes as a function of lambda vs lambda_c=D^2/4MK?",
+      "passing_control": "lambda=1 > lambda_c=1/4: discriminant = D^2-4MK*lambda = -3 < 0 (complex-conjugate root pair, oscillatory).",
+      "failing_control": "lambda=1/8 < lambda_c=1/4: discriminant = 1/2 > 0 (real distinct roots, overdamped -- correctly does NOT read as oscillatory).",
+      "status": "green",
+      "rule_id": "Q-OS1"
+    },
+    {
+      "id": "QG-2",
+      "name": "Complexification gate",
+      "question": "Does a closed real oriented mode-pair earn the complex coordinate psi=u+J*v?",
+      "passing_control": "J=[[0,-1],[1,0]], G=I2: J^2=-I2 and J^{dagger_G}=J^T=-J (G-skew) -- EARNS the complex coordinate.",
+      "failing_control": "J_bad=I2 (identity): J_bad^2=+I2 != -I2 -- correctly REFUSED (NO_COMPLEX_QUANTUM_COORDINATE).",
+      "status": "green",
+      "rule_id": "Q-C1"
+    },
+    {
+      "id": "QG-3",
+      "name": "Positive-norm gate",
+      "question": "Is N_Q(psi)=<psi,G psi> positive semi-definite with equality iff psi=0, on the retained state?",
+      "passing_control": "G=I2, psi=(3,4): N_Q=25>0.",
+      "failing_control": "psi=(0,0): N_Q=0 -- correctly hits equality only at the zero state (not a false positive elsewhere).",
+      "status": "green",
+      "rule_id": "Q-N1"
+    },
+    {
+      "id": "QG-4",
+      "name": "Reversible-evolution gate",
+      "question": "Does the candidate evolution operator U preserve the quantum norm exactly (G-orthogonality)?",
+      "passing_control": "U=J: U^{dagger_G} G U = G exactly (rational), N_Q(U*psi)=N_Q(psi)=25.",
+      "failing_control": "U'=[[1,1],[0,1]] (a shear, not G-orthogonal): U'^T G U' != G -- correctly REFUSED as a reversible evolution.",
+      "status": "green",
+      "rule_id": "Q-N2"
+    },
+    {
+      "id": "QG-5",
+      "name": "Seed-trifurcation gate",
+      "question": "Does an asymmetric seed R0 decompose uniquely and exactly as Diag+SymOff+SkewOff?",
+      "passing_control": "3x3 exact-rational R0 reconstructs exactly from Diag+SymOff+SkewOff (recon==R0).",
+      "failing_control": "Omitting SkewOff (reconstructing from Diag+SymOff alone) fails to reproduce the off-diagonal antisymmetric entries of R0 -- reconstruction != R0.",
+      "status": "green",
+      "rule_id": "Q-S1"
+    },
+    {
+      "id": "QG-6",
+      "name": "Seed-torsion gate",
+      "question": "Is the seed torsion branch genuinely skew and nonzero (not a degenerate symmetric case)?",
+      "passing_control": "SkewOff of the asymmetric witness R0 is skew (T(SkewOff)=-SkewOff) and has at least one nonzero entry.",
+      "failing_control": "A symmetric seed (R0=R0^T) gives SkewOff=0 identically -- correctly reports NO torsion branch for a symmetric seed.",
+      "status": "green",
+      "rule_id": "Q-S2"
+    },
+    {
+      "id": "QG-7",
+      "name": "Forced-L_R gate",
+      "question": "Do the retained-distinction axioms FORCE the L_R operator form, or merely admit it as one option among several?",
+      "passing_control": "InfoRetainedDistinctionForcesLaplacian_attempt.v: under the full retained-distinction axiom set, the L_R (Laplacian-shaped) form is the UNIQUE operator satisfying them (Coq theorem).",
+      "failing_control": "Dropping the retention-positivity axiom from the set admits non-L_R-shaped operators as also satisfying the weakened axioms (documented in the same Coq file's axiom-ablation lemmas) -- confirming the full axiom set, not a weaker one, is what forces uniqueness.",
+      "status": "green",
+      "rule_id": "Q-R3"
+    },
+    {
+      "id": "QG-8",
+      "name": "Memory-before-mass gate (formal)",
+      "question": "Does a nonzero retained-memory sequence force a nonzero mass-like readout?",
+      "passing_control": "InfoMemoryBeforeMass.v: a nonzero retained-memory sequence forces a strictly positive mass-like readout (Coq theorem, discrete algebra).",
+      "failing_control": "A zero (no-memory) sequence forces the mass-like readout to be exactly zero -- correctly distinguishes memory-bearing from memory-free retained states.",
+      "status": "green",
+      "rule_id": "Q-M1"
+    },
+    {
+      "id": "QG-9",
+      "name": "Metric/curvature-chain gate",
+      "question": "Do two finite transports along different paths fail to commute (nonzero discrete curvature)?",
+      "passing_control": "U_x=[[1,1],[0,1]], U_y=[[1,0],[1,1]]: loop transport U_C != I, curvature K_C=U_C-I != 0 (exact witness, folded from relativity/OB-04).",
+      "failing_control": "Two commuting transports (e.g. U_x=U_y=I2, or any pair with U_x*U_y=U_y*U_x and U_C=I) give K_C=0 -- correctly reports flat/no-curvature.",
+      "status": "green",
+      "rule_id": "Q-G1"
+    },
+    {
+      "id": "QG-10",
+      "name": "Born-refinement-consistency gate",
+      "question": "Which candidate weight w_p(psi)~||P_i psi||^p is invariant under an exact refinement of a branch into exclusive sub-branches?",
+      "passing_control": "p=2 (quadratic): whole branch weight 25 equals refined sub-branch sum 9+16=25 -- refinement-invariant.",
+      "failing_control": "p=1 (linear): whole branch weight sqrt(25)=5 does NOT equal refined sum sqrt(9)+sqrt(16)=3+4=7 -- correctly fails refinement-invariance, REFUSED as a Born-weight candidate.",
+      "status": "yellow",
+      "rule_id": "Q-X6",
+      "note": "Evidence FOR the quadratic form on ONE refinement, not a uniqueness proof across all refinements/bases -- stays a TARGET, uniqueness remains OPEN."
+    },
+    {
+      "id": "QG-11",
+      "name": "CPTP / channel bridge gate",
+      "question": "Does the root's reversible G-orthogonal evolution (Q-N2) extend to a general completely-positive trace-preserving (open-system) channel?",
+      "passing_control": "NOT YET CONSTRUCTED -- no finite witness exists showing a root-derived map that is completely positive and trace-preserving beyond the reversible G-orthogonal case.",
+      "failing_control": "NOT YET CONSTRUCTED -- no finite witness exists showing a candidate map that correctly fails complete-positivity/trace-preservation as a control case.",
+      "status": "yellow",
+      "rule_id": "Q-Y6",
+      "note": "Formal CARD (target definition) exists; BOTH controls are TBD pending construction. Per the FAIL-ABLE gate law, this gate is explicitly NOT claimed closed -- it is recorded honestly as bridge-partial/open-controls, never silently promoted to green."
+    },
+    {
+      "id": "QG-12",
+      "name": "Quantum-quotient q_Q gate",
+      "question": "Does a candidate quantum quotient q_Q satisfy the commuting-square condition q_Q o F_full = F_Q o q_Q on any finite fixture?",
+      "passing_control": "NOT YET CONSTRUCTED -- no finite fixture has been built or run.",
+      "failing_control": "NOT YET CONSTRUCTED -- no finite fixture has been built or run.",
+      "status": "red",
+      "rule_id": "Q-X2",
+      "note": "Central open bottleneck. Honestly recorded as having NO controls yet -- this is the FAIL-ABLE gate law's explicit non-closure case, not a Type-U convention (a Type-U convention would be silently claiming closure without controls; this gate makes no closure claim at all)."
+    },
+    {
+      "id": "QG-13",
+      "name": "Composition / (x)_kappa gate",
+      "question": "Does a composition operation on retained subsystems, derived from the no-free-copy law, reproduce tensor-product-shaped behavior on any finite fixture?",
+      "passing_control": "NOT YET CONSTRUCTED.",
+      "failing_control": "NOT YET CONSTRUCTED.",
+      "status": "red",
+      "rule_id": "Q-X4",
+      "note": "No controls yet -- open, not claimed closed."
+    },
+    {
+      "id": "QG-14",
+      "name": "Measurement / Born-uniqueness gate",
+      "question": "Is p=|psi|^2 the UNIQUE weight consistent across ALL admissible refinements (not just the one QG-10 witness)?",
+      "passing_control": "NOT YET CONSTRUCTED beyond QG-10's single-refinement evidence.",
+      "failing_control": "NOT YET CONSTRUCTED beyond QG-10's single failing p=1 case.",
+      "status": "red",
+      "rule_id": "Q-X6",
+      "note": "QG-10 gives finite-diagnostic evidence FOR p=2 on one refinement; QG-14 (uniqueness across ALL refinements) remains open with no general controls yet."
+    }
+  ]
+}

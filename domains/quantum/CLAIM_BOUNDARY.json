@@ -1,0 +1,36 @@
+{
+  "version": "0.1",
+  "tier": "QUANTUM_ROOT_CLOSURE_PARTIAL",
+  "checker_label": "INTERNAL_EXACT_RATIONAL_WITNESS",
+  "public_label": "[FiniteRootWitnesses] root-native quantum readout — GREEN structural only, not real QM",
+  "established": [
+    "oscillatory-regime split of the spine dispersion: lambda_c = D^2/(4MK), oscillatory iff discriminant<0, overdamped iff discriminant>0, critical iff discriminant=0 (exact rational witness)",
+    "complexification gate: an orientation J with J^2=-I and G-adjoint J^{dagger_G}=-J (G-skew) on a closed real oriented mode-pair EARNS the complex coordinate psi=u+Jv as a READOUT, with a FAILING control (J_bad=identity, J_bad^2=+I) that correctly REFUSES the complex coordinate",
+    "positive quantum norm N_Q(psi)=<psi,G psi> >= 0, =0 iff psi=0, on an exact rational witness",
+    "reversible G-orthogonal evolution: U with U^{dagger_G} G U = G preserves N_Q exactly (witness N_Q(U psi)=N_Q(psi)=25)",
+    "asymmetric-seed trifurcation R0 = DiagPart + SymOff + SkewOff, exact and unique, with SkewOff genuinely nonzero (torsion/circulation branch), machine-checked via causal-quantum-gravity Coq (InfoAsymmetricSeedTrifurcation.v)",
+    "retained-distinction axioms FORCE the L_R operator form (not merely posit it), machine-checked via InfoRetainedDistinctionForcesLaplacian_attempt.v",
+    "seed-torsion branch is exactly the skew-off part and forms a group with genuine (non-trivial) mixing at rank N, machine-checked via InfoSeedTorsionIsSkewOff.v / InfoSeedTorsionGroupAndRankN.v / InfoSeedTorsionGenuineMixing.v",
+    "retained memory precedes and forces a mass-like readout (discrete algebra, no continuum import), machine-checked via InfoMemoryBeforeMass.v",
+    "Born-candidate refinement-consistency finite diagnostic: the quadratic weight w_p (p=2) is invariant under an exact refinement of a branch into exclusive sub-branches (25 = 9+16); a linear weight (p=1) is NOT invariant under the same refinement (5 != 7) — this is evidence FOR the quadratic form as a target, not a derivation of Born-rule uniqueness",
+    "32-node Quantum DAG closure audit, conservative honest re-score: strict green 14/32=43.75%, weighted (green+yellow/2)/32=17/32=53.1%, up from the founder's first-pass 10/32=31.25% baseline by folding in causal-quantum-gravity green nodes only — Born/measurement/spin/composition/QFT stay RED and were NOT used to inflate the score"
+  ],
+  "not_established": [
+    "a general root-derived complex psi (only the closed-oriented-pair complexification GATE is established; general existence/uniqueness of psi across all admissible states is open)",
+    "Born probability uniqueness (p=|psi|^2 as the UNIQUE consistent weight across all refinements — only a single refinement-consistency finite diagnostic exists, favoring p=2 over p=1)",
+    "measurement / conditional update (projection postulate, wavefunction collapse, or any conditioning rule)",
+    "subsystem composition / tensor-product structure derived from the no-free-copy law",
+    "entanglement provenance",
+    "spin",
+    "spin-statistics theorem",
+    "coupling constants of any kind",
+    "full nonlinear general relativity",
+    "full QFT / effective field theory",
+    "continuum Lorentz recovery",
+    "empirical identification of any root quantity with a measured physical quantity",
+    "i, psi, Hilbert space, Born rule p=|psi|^2, tensor product, canonical commutator [A,B]=i*hbar, spin, particles, creation/annihilation operators, vacuum state, or coupling constants used as FUNDAMENTAL PREMISES anywhere in this domain — each is licensed only as a DESTINATION that must grow from the retained root and pass its own gate",
+    "'real quantum mechanics' in any general sense — this release is a finite, exact-rational, formal-structural readout only",
+    "'QM derived from one root' — the QM/SR bounded identity (InfoQuantumRelativityUnification.v) inherits an IMPORTED Minkowski signature from InfoLorentzInvariance.box_quad and is therefore only a bounded ALGEBRAIC identity between two independently-posited constructions, never a root-native derivation of QM",
+    "oscillation (the spine dispersion split, item A above) as itself being 'quantum' — oscillation is NOT yet quantum; the word 'quantum' is licensed only when state + norm + composition + channel + measurement close TOGETHER, which they do not here"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "version": "0.1",
+  "denominator_note": "The 32 nodes are the Minimal Quantum DAG constructed for THIS closure exercise (ROOT_DAG_MASTER.md, matching quantum_closure_v0_1.py's hard-coded counts exactly). Percentages below are of THIS 32-node DAG only -- not of 'all of quantum mechanics', not of 'all textbook QM formulas', and not a claim about coverage of the real theory. Q-M1 (memory-before-mass, formal) is cited support for Q-Y5 and is NOT a 33rd counted node.",
+  "status_taxonomy": {
+    "green": "Coq/formal closed -- compiled clean (coqc -q -R . DQG) and axiom-grep clean (no Admitted/admit/Axiom/Parameter), OR an exact-rational finite witness in quantum_closure_v0_1.py with BOTH a passing and a failing control.",
+    "yellow": "theorem/witness closed but the physical/semantic bridge is partial -- FORMAL-CLOSED / BRIDGE-PARTIAL. Never promoted to green.",
+    "red": "open -- no closing witness/gate exists yet, or only a boundary/consistency guard exists (not a root derivation).",
+    "gray": "measured/calibration adapter. None active in this domain yet (no node uses this status)."
+  },
+  "groups": {
+    "root_and_spine": [
+      {"node": "Q-R0 retained distinction", "rule_id": "Q-R0", "status": "green"},
+      {"node": "Q-R1 ordered transitions / retention", "rule_id": "Q-R1", "status": "green"},
+      {"node": "Q-R2 discrete ticks / finite causal graph", "rule_id": "Q-R2", "status": "green"},
+      {"node": "Q-R3 forced L_R operator form", "rule_id": "Q-R3", "status": "green", "note": "Th_coqc, InfoRetainedDistinctionForcesLaplacian_attempt.v"},
+      {"node": "Q-R4 telegraph coarse-grain / spine PDE", "rule_id": "Q-R4", "status": "green"},
+      {"node": "Q-R5 spine characteristic equation", "rule_id": "Q-R5", "status": "green"},
+      {"node": "Q-OS1 oscillatory-regime split lambda_c=D^2/4MK", "rule_id": "Q-OS1", "status": "green", "note": "exact rational witness with passing (disc<0 oscillatory) AND failing (disc>0 overdamped) controls; oscillation itself is NOT claimed quantum here"}
+    ],
+    "seed_torsion": [
+      {"node": "Q-S1 seed trifurcation R0=Diag+SymOff+SkewOff", "rule_id": "Q-S1", "status": "green", "note": "Th_coqc, InfoAsymmetricSeedTrifurcation.v"},
+      {"node": "Q-S2 seed torsion = SkewOff, group + rank-N", "rule_id": "Q-S2", "status": "green", "note": "Th_coqc, InfoSeedTorsionIsSkewOff.v / InfoSeedTorsionGroupAndRankN.v"},
+      {"node": "Q-S3 seed torsion genuine mixing", "rule_id": "Q-S3", "status": "green", "note": "Th_coqc, InfoSeedTorsionGenuineMixing.v"}
+    ],
+    "complexification_norm_evolution": [
+      {"node": "Q-C1 complexification gate", "rule_id": "Q-C1", "status": "green", "note": "exact witness J^2=-I, G-skew; FAILING control J_bad=I refused -- single closed-pair only, general case is Q-X1 (red)"},
+      {"node": "Q-N1 positive quantum norm", "rule_id": "Q-N1", "status": "green", "note": "exact witness N_Q(psi)>=0, =0 iff psi=0"},
+      {"node": "Q-N2 reversible G-orthogonal evolution", "rule_id": "Q-N2", "status": "green", "note": "exact witness, norm-preserving U"}
+    ],
+    "metric_curvature": [
+      {"node": "Q-G1 discrete metric/curvature chain", "rule_id": "Q-G1", "status": "green", "note": "Th_coqc, folded from relativity/OB-03,OB-04 -- same underlying L_R operator, not re-derived"}
+    ],
+    "yellow_bridges": [
+      {"node": "Q-Y1 QM/SR bounded algebraic identity", "rule_id": "Q-Y1", "status": "yellow", "note": "compiles axiom-free but INHERITS imported Minkowski signature from relativity's refused InfoLorentzInvariance.v -- bounded algebraic identity only, never a root-native QM/SR derivation"},
+      {"node": "Q-Y2 telegraph crossover discriminant", "rule_id": "Q-Y2", "status": "yellow", "note": "green compile (spine's own lambda_c), but the bridge to 'this regime IS quantum' is not established; distinct object from relativity's node-8 lapse/redshift"},
+      {"node": "Q-Y3 v^2=K/M conditional oscillator-parameter ID", "rule_id": "Q-Y3", "status": "yellow", "note": "declared, not derived -- parallel to relativity's OC-01"},
+      {"node": "Q-Y4 metric/curvature-to-quantum-regime bridge", "rule_id": "Q-Y4", "status": "yellow", "note": "Q-G1 is green as geometry; bridge into a quantum-regime interpretation is not established"},
+      {"node": "Q-Y5 memory-before-mass physical/semantic bridge", "rule_id": "Q-Y5", "status": "yellow", "note": "Q-M1 formal algebra is green; the mass semantic identification is declared, not derived -- parallel to relativity's OC-02"},
+      {"node": "Q-Y6 channel/CPTP formal card", "rule_id": "Q-Y6", "status": "yellow", "note": "formal target definition exists; bridge FROM Q-N2's reversible evolution TO a general CPTP (open-system) map is OPEN -- both controls TBD, never claimed closed"}
+    ],
+    "red_open": [
+      {"node": "Q-X1 general root-derived complex psi", "rule_id": "Q-X1", "status": "red"},
+      {"node": "Q-X2 quantum quotient q_Q (commuting square not proven)", "rule_id": "Q-X2", "status": "red", "note": "central open bottleneck -- most downstream red nodes depend on this"},
+      {"node": "Q-X3 mixed-state from hidden lineage", "rule_id": "Q-X3", "status": "red"},
+      {"node": "Q-X4 subsystem composition / (x)_kappa", "rule_id": "Q-X4", "status": "red"},
+      {"node": "Q-X6 measurement / Born-rule uniqueness", "rule_id": "Q-X6", "status": "red", "note": "TARGET only; QG-10 gives finite-diagnostic evidence FOR the quadratic form on ONE refinement, not a uniqueness proof"},
+      {"node": "Q-X7 conditional update / collapse", "rule_id": "Q-X7", "status": "red"},
+      {"node": "Q-X8 uncertainty relation", "rule_id": "Q-X8", "status": "red", "note": "RDL_Heisenberg-shaped formal guard SURVIVED the hollow-card audit as a boundary check, but is not a root-derivation"},
+      {"node": "Q-X9 correlation / CHSH / Tsirelson bound", "rule_id": "Q-X9", "status": "red", "note": "formal guard exists as a boundary check, not a root derivation; depends on still-open Q-X4"},
+      {"node": "Q-X10 mass / particle layer", "rule_id": "Q-X10", "status": "red"},
+      {"node": "Q-X11 spin / spin-statistics", "rule_id": "Q-X11", "status": "red", "note": "fully open; Q-S1..S3's torsion branch is explicitly NOT spin"},
+      {"node": "Q-X12 QFT", "rule_id": "Q-X12", "status": "red", "note": "needs q_Q + relativity's q_g + a geometry q_geometry jointly, none complete"},
+      {"node": "Q-X13 superposition gate (fixed-operator-only)", "rule_id": "Q-X13", "status": "red", "note": "only a narrow fixed-pair witness exists; general superposition principle is open"}
+    ]
+  },
+  "totals": {
+    "green": 14,
+    "yellow": 6,
+    "red": 12,
+    "gray": 0,
+    "denominator": 32,
+    "strict": "14/32=43.75%",
+    "weighted": "17/32=53.1%",
+    "weighted_formula": "(green + yellow/2) / total = (14 + 3) / 32 = 17/32"
+  },
+  "rescore_note": "This is a conservative honest re-score, UP from the founder's first-pass 10/32=31.25% baseline, because the causal-quantum-gravity Coq-green nodes (Q-R3 forced-L_R, Q-S1..S3 seed trifurcation/torsion, Q-G1 metric/curvature chain) were undercounted in the first pass. Born/measurement/spin/composition/QFT (Q-X6, Q-X7, Q-X11, Q-X2/X3/X4, Q-X12) stay RED throughout -- they were NOT used to inflate the score, and no yellow node was silently promoted to green to reach this number.",
+  "remaining_red": [
+    "Q-X1 general root-derived complex psi",
+    "Q-X2 quantum quotient q_Q (commuting square not proven)",
+    "Q-X3 mixed-state from hidden lineage",
+    "Q-X4 subsystem composition / (x)_kappa",
+    "Q-X6 measurement / Born-rule uniqueness",
+    "Q-X7 conditional update / collapse",
+    "Q-X8 uncertainty relation (root-derivation)",
+    "Q-X9 correlation / CHSH / Tsirelson bound (root-derivation)",
+    "Q-X10 mass / particle layer",
+    "Q-X11 spin / spin-statistics",
+    "Q-X12 QFT",
+    "Q-X13 superposition gate (general, beyond fixed-operator-only)"
+  ]
+}
