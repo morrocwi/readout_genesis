@@ -27,6 +27,8 @@ Every row points at a runnable verifier (`… .py`, PASS) and/or a machine-check
 | **Radiative engine** | finite log-det curvatures `(r1,r2,r3)=(−153/20,−243/20,−216/5)` | 🟡 finite **diagnostic** | pipeline §7–8 (**NOT** physical β-functions) |
 | **Color number = 3 / SU(3) / Z₃** | ordered closed tape ⇒ `(−1)^{k−1}=1` ⇒ k **odd** ⇒ k=3 ⇒ SU(3) + Z₃ center + dim 8 | 🟦 conditional `Th_coqc` | `ordered_tape_closure_v0_2.py`, `InfoOrderedTapeClosure.v` (oddness **derived**, not posited; not "3 colors" input) |
 | **Center-sector confinement** | `⟨W(C)⟩=q(κ)^{A(C)}` ⇒ area law `σ=−log q>0` ⇒ `V(R)=σR` | 🟦 exact, **Z₃/2D only** | `center_confinement_v0_3.py`, `InfoCenterConfinement.v` (root curvature action, no QCD potential; controls κ→∞⇒σ→0) |
+| **Confinement certificate** (SU(3)) | `𝔠_t=μ_4·ρ_t<1` from the action: rigorous `0<κ<0.0020252` (all reps), candidate `κ≲0.053` | 🟦 rigorous small-κ + `[SeriesEstimate]` | `retained_confinement_certificate_v0_5.py`, `InfoConfinementCertificate.v` (ρ_t=character integral, μ_4≤20e; standard strong-coupling, not new) |
+| **Triality spectral flow** (RG of ρ_t) | serial blocking `a_R^{(m)}=a_R^m`⇒`ρ_t(b)=ρ_t^{b²}`; **block-scale existence**: `0<ρ_t<1`,`μ_4<∞`⇒`∃b_*: 𝔠_t(b_*)<1` | 🟦 exact (serial) + conditional (4D) | `triality_spectral_flow_v0_6.py`, `InfoTrialitySpectralFlow.v` (RG = flow of *distinguishability*, not a single coupling; κ need not "flow into a window") |
 | **Physical SM end-to-end** | — | 🟥 **OPEN** | — |
 
 ## What is genuinely closed (do not undersell)
@@ -56,12 +58,18 @@ Also not derived from the root (finite BLIND fixtures supply them): the **rep co
 **count** (why exactly `u(1)×su(2)×su(3)`), and any **physical coupling value**. `α`, masses, and
 `θ_W` remain **rejected-not-faked / calibration inputs**.
 
-**On color/confinement specifically** (v0.2/v0.3): SU(3) and its Z₃ center are *conditionally* derived,
-and confinement is closed **only** in the Z₃ center sector on a **2D** graph. Still open there: the full
-**SU(3)** (all 8 directions, not just the center), **3+1D** coupled plaquettes, a nonzero **continuum**
-`σ_phys` under a root-derived scale flow, and — the sharpened wall — proving the **full SU(3) action
-flows into the center-confined sector** without projecting Z₃ by hand. (The Wilson-loop area-law
-criterion and the center's role are standard lattice-gauge results, not new here.)
+**On color/confinement specifically** (v0.2–v0.6): SU(3) and its Z₃ center are *conditionally* derived
+(oddness of the minimal closure a theorem); center-sector confinement is exact in Z₃/2D (v0.3); a
+**computable SU(3) confinement certificate** `𝔠_t=μ_4·ρ_t<1` is rigorous for `0<κ<0.0020252` (all reps)
+with a candidate window `κ≲0.053` (v0.5); and the **block-scale existence theorem** (v0.6) dissolves the
+old "does κ flow into the window?" wall — since `ρ_t(b)=ρ_t^{b²}`, spectral contraction always beats the
+finite surface entropy `μ_4`, so **some** coarse scale `b_*` certifies confinement whenever the
+per-cell triality retention `0<ρ_t<1`. What is **still open**: the 4D correlation defect `ε_t(b)`, the
+full block kernel `K_b` and `ρ_t^full(b)` for `b=2` computed from the real action (the sharpened wall —
+a finite integral, not a debate), a representation-tail bound, the exact admissible-surface `μ_4`, and a
+nonzero **continuum** `σ_phys`. (The Wilson area-law criterion, the center's role, and character/
+convolution blocking are standard lattice-gauge results — not new here; the *reading* as retained-triality
+contraction is the in-framework contribution.)
 
 ## One-line verdict
 > **Algebra + representations + hypercharges + anomaly cancellation: FINITE BLIND / Th_coqc closed.
