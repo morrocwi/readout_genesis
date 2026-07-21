@@ -24,8 +24,8 @@
 
 ## 📖 Table of Contents
 
-**16 major sections** (2 front-matter + 14 Parts), **128 subsections**, ~5,700 lines. Read top to
-bottom for the full arc, or jump by Part.
+**16 major sections** (2 front-matter + 14 Parts) **+ Appendix A**, **141 subsections**, ~5,970 lines.
+Read top to bottom for the full arc, or jump by Part.
 
 **Front matter**
 - [Version Reconciliation](#version-reconciliation) — the three lineage streams this consolidates
@@ -46,6 +46,9 @@ bottom for the full arc, or jump by Part.
 12. [PART X — Formal Floor (Coq-checked structure)](#part-x--formal-floor-coq-checked-structure--v31)
 13. [PART XI — Claim Discipline & Readout-Not-Truth](#part-xi--claim-discipline--readout-not-truth--v31) — non-claims + the must-not-enter-root list
 14. [PART XII — Executable Guards](#part-xii--executable-guards--v31)
+
+**Appendix**
+- [Appendix A — v0.11 Turbulence-Integrated carry-forward](#appendix-a-v011-carry-forward--turbulence-integrated-equations-preserved-verbatim) — 13 equations/lists from the earlier turbulence-integrated snapshot, preserved verbatim with honest tiers (memory kernel, DRL→RTPE bridge, LP/NS residual, readability, modal audit, cost, theorem regimes, continuum map, scalar-reduction gate, runtime protocol, open items)
 
 **Tier legend:** `[Th_coqc]` machine-checked axiom-free · `[finite_diagnostic]` measured/computed ·
 `[Dr]` declared bridge · `[DeclaredFormula]` restated in Coq, not proved · `[Ax]` definitional ·
@@ -5720,6 +5723,242 @@ This file is a **superset that only grows forward**. The rule for every future e
    else in the repo tree or in any other repo. All future findings that
    belong to this story get threaded into this same assembly.
 ```
+
+## APPENDIX A (v0.11 CARRY-FORWARD) — Turbulence-Integrated equations preserved verbatim
+
+> **Provenance.** These items appear in `URS–RDT Master v0.11 (Turbulence-Integrated)`, an earlier
+> snapshot in the same lineage this book consolidates. A 2026-07-21 completeness audit found they had
+> no direct restatement in the main text. Per the no-silent-overwrite rule they are preserved here
+> verbatim with honest tiers — folded in, never dropped. Where the main text already covers the
+> *general* form, the cross-reference is given; this appendix keeps the *specific* instance.
+> **Notation fix carried with them:** the trunk transport operator and the turbulence relaxation
+> operator are DISTINCT objects; where the main text reuses `L_R` for both, read the turbulence one as
+> `ℒ_R` (calligraphic), per II.8a.
+
+### APP-v011.1 — Hidden-memory kernel + observed/hidden state split
+
+Source: v0.11 §8. Explicit linear recurrence and the resulting memory-kernel product. [Df]
+
+```
+x_{O,n+1} = F_{OO,n} x_{O,n} + R_n x_{H,n} + B_{O,n} u_n
+x_{H,n+1} = W_n x_{O,n} + F_{H,n} x_{H,n} + B_{H,n} u_n
+
+K_mem^[m] = R_{n+m} ( ∏_{j=1}^{m-1} F_{H,n+j} ) W_n
+```
+
+x_O = observed sub-state, x_H = hidden sub-state, K_mem^[m] = memory kernel at lag m. [Df]
+
+Cross-ref: main-text cut-current/tape machinery (II.8a) covers the architecture; this is the
+explicit linear recurrence and the memory-kernel product it induces.
+
+### APP-v011.2 — Injectivity laws (output-residue transition, tape-encoder)
+
+Source: v0.11 §8.
+
+```
+(z_n,u_n) ≠ (z_n',u_n')  ⇒  (z_{n+1},r_n) ≠ (z_{n+1}',r_n')      [Ax]  no distinction lost at the step
+E_{T,n}(r) = E_{T,n}(r') ⇒ r = r'                                  [Ax]  tape encoder is injective
+```
+
+Both are stated as required properties of the transition/tape-write step, not proved for a
+general realization — carried as [Ax] (definitional requirements the architecture must satisfy).
+
+### APP-v011.3 — DRL–Telegraph → RTPE conditional bridge
+
+Source: v0.11 §9, "Conditional bridge from DRL–Telegraph to RTPE."
+
+```
+𝒞_turb,n+1 ∘ F_n = F_{R,n} ∘ 𝒞_turb,n                       [Df]   exact-bridge condition
+ε_bridge,n = 𝒞_turb,n+1(F_n 𝔖_n) − F_{R,n}(𝒞_turb,n 𝔖_n)     [Df]   bridge defect (if only approximate)
+η_{R,n} = η_unresolved,n + E_bridge(ε_bridge,n)              [Df]   defect folded into the RTPE residual
+```
+
+That RTPE is an **exact** reduction of the full DRL–Telegraph architecture is **[Open]**. The
+source states this explicitly: "The proof that RTPE is an exact reduction of the complete
+DRL–Telegraph architecture is currently open; the existing RTPE derivation is conditional on a
+retained state, positive relaxation time and a lowest-sufficient restoration law."
+
+Cross-ref: IV.5 general commuting-square criterion; ε_bridge is one component of the seven-gate
+defect vector ε_α.
+
+### APP-v011.4 — LP/NS finite-diagnostic residual (checker only, never native dynamics)
+
+Source: v0.11 §10. [finite_diagnostic]
+
+```
+H_q^rem = [ H_q^hid − C_q^tr − C_q^p − C_q^inc − C_q^nonalign − C_q^hf − C_q^para ]_+
+```
+
+Six correction terms, named in the source: transport (`C_q^tr`), pressure (`C_q^p`),
+incompressibility (`C_q^inc`), non-alignment (`C_q^nonalign`), high-frequency (`C_q^hf`),
+paraproduct (`C_q^para`).
+
+This layer does **not** define native URS dynamics; it checks a proposed bridge against an
+external turbulence representation. A zero residual on finite synthetic grids is a protocol
+result, not a continuum theorem — [finite_diagnostic]. Over-absorption must be excluded by
+ablation controls on the broad high-frequency and paraproduct components [Dr].
+
+### APP-v011.5 — Readability / identifiability formalism + strict report hierarchy
+
+Source: v0.11 §12. [Df]
+
+```
+Y_L = 𝒢_L x_0 + N_L ,    d_struct(L) = rank 𝒢_L                 [Df]
+I_read = 𝔍_dom(Y_L, 𝒢_L, Σ_x, Σ_N, α, ρ)                        [Df]
+Σ_α(s) = Σ_α(s') ⇒ s ~_{Δ,α} s'                                 [Df]
+P_{α,n} ≠ Y_{α,n} ≠ O_α(𝔖_n) ≠ 𝔖_n                              [Df]  strict report hierarchy
+```
+
+The strict hierarchy is the source's guard against collapsing report, readout, projection and
+retained state into one object.
+
+### APP-v011.6 — Modal-reduction discarded-coupling audit + admissibility rule
+
+Source: v0.11 §13. [Df] for the audited quantity, [Ax] for the admissibility rule.
+
+```
+ε_mode = ‖(I−P) 𝔾 P‖ + ‖P 𝔾 (I−P)‖                             [Df]
+```
+
+Rule **[Ax]** (source §13, verbatim): "A scalar eigenmode is admissible only when the discarded
+coupling is zero or bounded below the preregistered tolerance for the declared readout." Here the
+discarded coupling is exactly the `ε_mode` quantity defined above.
+
+Cross-ref: the Scalar-Eigenmode Reduction Error (II.6, V.13a, XIV.4) — this names its quantity.
+
+### APP-v011.7 — Total-cost decomposition + replication depth/branching
+
+Source: v0.11 §13. [Df] for the decomposition and the depth/branching definitions; [Dr] for the
+exponential-phase declaration rule.
+
+```
+𝔠_URS = C_discover + C_audit + C_normalize + C_frontier + C_lineage + C_tape + C_geometry + C_turb + C_recovery
+r_!(π) = max #{ nested licensed replications } ,    ℬ_!(π) = ∏_{j=1}^{r_!(π)} κ_j
+```
+
+Rule [Dr]: intrinsic exponential phase is declared only when BOTH licensed branching and the
+count of distinguishable admissible normal forms grow exponentially. (Source: "if discovery,
+auditing, normal forms and active state size are polynomial, replication depth is O(log N), and
+all quotient gates hold, polynomial total cost remains a theorem candidate rather than a
+completed theorem.")
+
+### APP-v011.8 — Theorem-compatibility regimes
+
+Source: v0.11 §14, three named regimes.
+
+- **Regime 1, fixed linear operator [Dr]:** if 𝔾, ℒ_R, M, D, K are fixed linear operators,
+  sources are declared and nonlinear currents vanish — superposition holds for solutions using the
+  same operator trajectory under homogeneous boundary conditions; the zero state is invariant when
+  all sources and currents vanish; rescale covariance holds under the declared weights; an
+  antisymmetric operator sector preserves linearity and contributes no quadratic self-energy.
+- **Regime 2, time-dependent exogenous operator [Dr]:** if the operator trajectory is prescribed
+  independently of the state, common-trajectory superposition survives, but the autonomous theorem
+  must be restated.
+- **Regime 3, endogenous geometry or nonlinear transfer [Open]:** if 𝔾_n = 𝔾[Θ_n] with
+  Θ_{n+1} = F_Θ(Θ_n, X_n), or 𝒩_R ≠ 0, global-solution superposition generally fails — expected,
+  not a refutation of the linear skeleton. This is the existing T2 gap / two-field wall (XIV.5).
+
+Honesty line: Regimes 1–2 are elementary linear-algebra facts stated but NOT machine-checked in
+our Coq floor; they would be [Th] only after an axiom-free lift — they are **[Dr]** here, not
+[Th_coqc].
+
+### APP-v011.9 — Consolidated master box
+
+Source: v0.11 §15, "Full master box." This is a **consolidation, not new math** — the whole
+architecture boxed together for one-point reference. [Df] (it restates existing structure).
+Reproduced verbatim from the source box (symbols exactly as they appear there):
+
+```
+δ_R:  Γ ≠ Γ' ⇒ ℜ(Γ) ≠ ℜ(Γ')
+Γ ⊢_{α,ρ,κ} φ ,   A ⇏ A⊗A ,   !_κ A ⊢ A^{⊗m}
+𝒫_n = FixRefine(ℳ_n, 𝒬_α)
+q_{n+1} F_n = F_n^♯ q_n ,   O_{α,n} = O_{α,n}^♯ q_n
+Adm = T ∧ I ∧ B ∧ [O_ρ = 0]
+𝔖_n = (G_n, Λ_n, 𝒯_n, Θ_n)
+X_n^A = (Φ_n^I, Ψ_n^I)^T ,   A = (σ, I)
+𝔾_n = L_{G_n}⊗I + I⊗C_ℱ + C_{int,n}
+𝔾_n = 𝔾_n^{(+)} + 𝔾_n^{(-)}
+Θ_{n+1} = F_Θ(Θ_n, X_n, Λ_n, 𝒯_n, u_n)
+M δ_t²Φ + D δ_t^c Φ + K 𝔾[Θ]Φ + ∇V − J = P_Φ 𝒥_C + 𝒥_syn + 𝒥_geo
+M δ_t²Ψ − D δ_t^c Ψ + K 𝔾[Θ]^T Ψ + ∇²V Ψ = P_Ψ 𝒥_C + 𝒥_Λ
+I_R = 𝒞_turb(𝔖, X)
+τ_R δ_t I_R + ℒ_R[I_R,Θ] I_R = S_R + η_R
+ℒ_R I_R = ℒ_R^{(+)} I_R + ℒ_R^{(-)} I_R + 𝒩_R[I_R;Θ]
+𝒥_C = 𝒥_transport + 𝒥_return + 𝒥_readout + 𝒥_tape
+𝒯_{n+1} = 𝒯_n ⊞ E_T(r_n)
+𝔖̂_{α,n} = K_{α←β}^{[m]}(Y_{β,n−m:n}, 𝒯_n)
+P_{α,n} = Π_α(Y_{α,n}, δ_α, ν_α, D_α, θ_α)
+```
+
+Note: this box is where the source keeps the reader/record pair (Φ,Ψ) and the turbulence
+retained-state readout `I_R` in one place; the M→0, V→0 relation between them is **our** framing
+(main text II.8 Layer 2 / RTPE), not a v0.11 statement, and is therefore not asserted here.
+
+### APP-v011.10 — Continuum readout map + validity gate
+
+Source: v0.11 §16.
+
+```
+Φ_ε(t) = 𝒞_{α,ε}(Φ_0, Φ_1, …)                                   [Df]
+δ_t² Φ_n ⇝ ∂_t² Φ ,   δ_t^c Φ_n ⇝ ∂_t Φ   (only when bridge error is controlled)   [Open validity]
+```
+
+The native order remains discrete; a continuum field is a coarse-grained readout, valid only
+when the bridge error is controlled — otherwise the arrow substitution is unlicensed [Open].
+Correct order: retained discrete synthesis → DRL recurrence → continuum readout.
+
+### APP-v011.11 — Five explicit conditions for a valid scalar reduction
+
+Source: v0.11 §17, "Scalar legacy equation as a projection." [Ax] (a checkable gate).
+
+The frozen scalar equation `R = M a + D v + K λ φ + V' − j + η` is obtained only when all of the
+following hold:
+
+1. a valid quotient has already been found;
+2. one invariant mode v_a is sufficient for the declared readout;
+3. off-diagonal, skew and moving-basis currents vanish in that sector;
+4. geometry is fixed or externally prescribed;
+5. no retained nonlinear transfer between modes is required.
+
+The scalar equation is a legitimate reduced theorem domain, not the complete ontology of the
+generalized architecture.
+
+### APP-v011.12 — 15-step runtime protocol
+
+Source: v0.11 §18, reproduced in order. [Dr] (procedural).
+
+1. Register the domain semantic card without importing its governing equation.
+2. Encode observations into RD and declare decoder/calibration separately.
+3. Discover the partition and multimode state space.
+4. Audit the exact quotient and readout factorization.
+5. Build the full operator; do not diagonalize prematurely.
+6. Measure symmetric, antisymmetric and discarded modal sectors.
+7. Generate only admissible syntheses and append every obstruction certificate.
+8. Evolve the DRL–Telegraph reader–record pair.
+9. Evolve retained geometry when it is endogenous.
+10. Construct the turbulence retained-state readout when requested.
+11. Audit the DRL-to-RTPE bridge defect.
+12. Apply the LP/NS layer only as a separately labelled checker.
+13. Audit conservation, lineage, tape, recovery and identifiability.
+14. Decode the final RD report into domain units only after calibration.
+15. Compare with preregistered external benchmarks using a checker independent of the maker.
+
+Cross-ref: B.2 ten-step extraction, the seven-gate pipeline, Part IX 42-step stream.
+
+### APP-v011.13 — Named open items
+
+Source: v0.11 §19, "Proposed/open," reproduced verbatim. [Open].
+
+- axiom-free Coq lift from scalar rationals to generalized operator modules;
+- exact derivation of RTPE from the full DRL–Telegraph architecture;
+- endogenous living-geometry action with complete backreaction;
+- derivation of nonlinear transfer without importing benchmark laws;
+- continuum-uniform turbulence residual bound;
+- external DNS/experimental validation and component ablation;
+- full chemostat, Lotka–Volterra and MHD derivations from native RD dynamics;
+- a unified hybrid action deriving discovery, admissibility, tape and turbulence together.
+
+---
 
 *Readout-not-truth. Verified MATH ≠ true physics. This book closes STRUCTURE.*
 *Measurement closes NUMBERS.*
