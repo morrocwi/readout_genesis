@@ -22,6 +22,37 @@
 
 ---
 
+## 📖 Table of Contents
+
+**16 major sections** (2 front-matter + 14 Parts), **128 subsections**, ~5,700 lines. Read top to
+bottom for the full arc, or jump by Part.
+
+**Front matter**
+- [Version Reconciliation](#version-reconciliation) — the three lineage streams this consolidates
+- [Founder Ontology — the spine of meaning](#founder-ontology--the-spine-of-meaning) — the base doctrine
+
+**The universe, unfolding step by step**
+1. [PART I — Root Axioms: what is first?](#part-i--root-axioms-what-is-first) — δ_R, the resource-logic floor, L_R := D_W − W
+2. [PART II — The Universal Equation](#part-ii--the-universal-equation) — the spine PDE, term-by-term tiers, the three layers, and the DRL–Telegraph two-field (Φ,Ψ) apparatus
+3. [PART III — The Twelve Faces of the Spine](#part-iii--the-twelve-faces-of-the-spine)
+4. [PART IV — The τ_c Scale Bus](#part-iv--the-τ_c-scale-bus) — τ_c prior to mass; the PGFT-RDU native-unit gateway
+5. [PART V — Domain Leaves (domain = translation)](#part-v--domain-leaves-domain--translation) — all leaves incl. the reserved Neuron/Connectome TBD slots; the Scalar-Eigenmode Reduction Error
+6. [PART V-A — Domain Emergence and Translation Sufficiency](#part-v-a--domain-emergence-and-translation-sufficiency) — the exact-quotient gate and the **seven general gates**
+7. [PART VI-A — Domain-Neutral Extraction and the Maker–Checker Epistemic Firewall](#part-vi-a--domain-neutral-extraction-and-the-makerchecker-epistemic-firewall)
+8. [PART VI — The Epistemic Nuclear Core](#part-vi--the-epistemic-nuclear-core)
+9. [PART VII — Unit Grammar & Newton Gate](#part-vii--unit-grammar--newton-gate)
+10. [PART VIII — Human Agency: the τ_c^H loop, the waking self, and Ω_H](#part-viii--human-agency-the-τ_ch-loop-the-waking-self-and-ω_h) — imagination as reversible skew-transport
+11. [PART IX — The 42-Step Genesis Stream](#part-ix--the-42-step-genesis-stream-v31-extended) — all 42 steps, root → end
+12. [PART X — Formal Floor (Coq-checked structure)](#part-x--formal-floor-coq-checked-structure--v31)
+13. [PART XI — Claim Discipline & Readout-Not-Truth](#part-xi--claim-discipline--readout-not-truth--v31) — non-claims + the must-not-enter-root list
+14. [PART XII — Executable Guards](#part-xii--executable-guards--v31)
+
+**Tier legend:** `[Th_coqc]` machine-checked axiom-free · `[finite_diagnostic]` measured/computed ·
+`[Dr]` declared bridge · `[DeclaredFormula]` restated in Coq, not proved · `[Ax]` definitional ·
+`[Open]` unresolved. `PROPOSED` = a candidate result pending its named test (e.g. skew-L_R pending T1).
+
+---
+
 ## VERSION-RECONCILIATION
 
 v3.1 does not erase anything that came before it. It is a **consolidation-in-content**, not a
