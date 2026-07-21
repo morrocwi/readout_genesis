@@ -3116,6 +3116,22 @@ assumed* (control `κ→∞⇒σ→0`). **Scope, sharp:** Z₃-only, 2D, no cont
 criterion is standard lattice-gauge, not new. The color/confinement wall is now the single point:
 does the **full SU(3)** action flow into this center-confined sector without projecting Z₃ by hand?
 
+**Confinement certificate (v0.5) + triality spectral flow (v0.6).** `retained_confinement_certificate_v0_5.py`
++ `InfoConfinementCertificate.v` (Closed) derive **ρ_t** (triality retention = character integral) and
+**μ_4≤20e** (4D plaquette entropy) FROM the action `S_p=κ‖U−I‖²` (with `‖U−I‖²=6−2Re Tr U` on SU(3)),
+making confinement a **computable certificate** `𝔠_t=μ_4ρ_t<1`: rigorous for `0<κ<0.0020252` (all reps,
+`ρ_t≤e^{9κ}−1`), candidate `κ≲0.053`. Then `triality_spectral_flow_v0_6.py` + `InfoTrialitySpectralFlow.v`
+(Closed) **dissolve the RG wall**: the right RG variable is **ρ_t, not κ** — serial blocking is
+convolution ⇒ Peter–Weyl ⇒ `a_R^{(m)}=a_R^m` ⇒ `ρ_t(b)=ρ_t^{b²}`, so information cost grows as *area*
+`I_t(b)=b²I_t(1)`. **Block-Scale Existence Theorem:** for any `0<ρ_t<1` and finite `μ_4` there is a
+coarse scale `b_*>√(log μ_4/−log ρ_t)` with `𝔠_t(b_*)<1` — spectral contraction beats surface entropy,
+so κ need **not** flow into any window (analytic PASS: `κ=0.01,b=2⇒𝔠≤0.004276`). RG = flow of
+*distinguishability*. **Sharpened wall (a finite integral, not a debate):** compute the block kernel
+`K_b`, `ρ_t^full(b)` and the correlation defect `ε_t(b)` for `b=2` from the real action; a block scale
+survives iff `ε_*<−log ρ_t`. (Convolution/character blocking is standard lattice gauge; the
+retained-triality reading is ours.)
+
+
 
 
 ---
