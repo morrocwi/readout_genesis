@@ -3088,6 +3088,36 @@ massless direction. **Calibration (CODATA2022+PDG2025, consistency not predictio
 the root"** — the algebra `SU(2)×U(1)`, chirality, representations, the value of `θ_W`, and radiative
 corrections stay OPEN and are not imported.
 
+**SM Discovery Pipeline v0.4 — FINITE BLIND discovery (the honest "close the Standard Model").**
+`sm_discovery_pipeline_v0_4.py` (PASS) + `InfoHyperchargeAnomalyClosure.v` (Closed over ℚ) run BLIND
+discriminators — the group name, the reps, the charges, and Left/Right are **never inputs** — and, on
+finite fixtures, recover: the algebra (center 1 + ideals 8⊕3 ⇒ `u(1)⊕su(3)⊕su(2)`; negative control
+`1⊕3⊕3`⇒FAIL); chirality (`η_χ=1` chiral vs `0` vectorlike, *conditional* on a given orientation op);
+the reps `(3,2)+(1,2)+(3,1)×2+(1,1)`; and — the crown — the **hypercharges** `q=1/6, ℓ=−1/2, u=2/3,
+d=−1/3, e=−1` **FORCED by anomaly + coupling closure** with the cubic `[U(1)]³` anomaly **=0 exact**
+(Th_coqc). A finite radiative log-det engine gives raw curvatures `(r1,r2,r3)=(−153/20,−243/20,−216/5)`
+and `Tr K0⁻¹=27/10` — **finite diagnostic, NOT physical β-functions**. **Honest verdict:** three layers
+close FINITE-BLIND, the radiative engine only as a finite diagnostic, and **physical Standard Model from
+the root is OPEN with exactly three bottlenecks** (root-derived orientation/spin-statistics; the
+gauge-orbit fluctuation Hessian; continuum/held-out radiative validation). Full ledger:
+[`domains/standard_model/STANDARD_MODEL_CLOSURE.md`](domains/standard_model/STANDARD_MODEL_CLOSURE.md).
+
+**Color = 3 and SU(3) from ordered tape (v0.2), and center-sector confinement (v0.3).**
+`ordered_tape_closure_v0_2.py` + `InfoOrderedTapeClosure.v` (Closed) grow the color number **3** and
+**SU(3)+Z₃** from the rules of an ordered *closed* tape — order-sensitivity ⇒ antisymmetry, and
+closed-loop start-independence ⇒ `(−1)^{k−1}=1` ⇒ **k odd** (*derived, not posited*) ⇒ minimal k=3 ⇒
+`dim V=3`; preserving the load + triple record ⇒ SU(3), the common phase `c³=1` ⇒ the **Z₃ center**,
+`dim su(3)=9−1=8`; single channels carry no invariant readout, pair and triple do (kinematic
+color-neutrality). Then `center_confinement_v0_3.py` + `InfoCenterConfinement.v` (Closed) close the
+**first dynamical-confinement** step, EXACT, in the **Z₃/2D** center sector: the root curvature action
+`κΣ|u_p−1|²` gives `⟨u_p⟩=(1−r)/(1+2r)=q`, hence `⟨W(C)⟩=q^{A(C)}` and the **area law**
+`−log|⟨W⟩|=σA`, `σ=−log q>0`, so `V(R)=σR` — the separation cost grows linearly, *derived not
+assumed* (control `κ→∞⇒σ→0`). **Scope, sharp:** Z₃-only, 2D, no continuum; the Wilson area-law/center
+criterion is standard lattice-gauge, not new. The color/confinement wall is now the single point:
+does the **full SU(3)** action flow into this center-confined sector without projecting Z₃ by hand?
+
+
+
 ---
 
 ## PART V-A — DOMAIN EMERGENCE AND TRANSLATION SUFFICIENCY

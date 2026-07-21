@@ -14,6 +14,7 @@ premises. Gauge is, first, **the non-uniqueness of the internal description unde
 readout**: `Aut(F,O) = { h : O∘h = O, h∘F = F∘h }` — the weld of core §V.20.
 
 ## Contents
+- **[`STANDARD_MODEL_CLOSURE.md`](STANDARD_MODEL_CLOSURE.md)** — the honest closure LEDGER: what closes (Th_coqc/finite-blind) vs the 3 open bottlenecks. Read this first for any SM claim.
 - **[`UNIFIED_FORCE_DAG.md`](UNIFIED_FORCE_DAG.md)** — one action → four force projections (gravity/EM/weak/strong as readouts of one `S_UF`, not four theories added); core §V.22.
 - **[`ROOT_TO_SM_DAG.md`](ROOT_TO_SM_DAG.md)** — the full root-native DAG, the survey of existing
   verified assets, the honest per-node tiers, and **SM-G0 (the Gauge Emergence Kernel)** = where to
