@@ -33,6 +33,7 @@ Every row points at a runnable verifier (`… .py`, PASS) and/or a machine-check
 | **Corrected certificate** (v0.9) | link intertwiner `P=∫ρ(h)dh` is a projector, `‖P‖≤1` (contraction) ⇒ tail resums `û≤u/(1−8v)`; **correct criterion `μ_4·û<1`** (linear) | 🟩 `Th_coqc` (projector/criterion) | `retained_metric_intertwiner_v0_9.py`, `InfoRetainedIntertwiner.v` (fixes the v0.7 power-4 bug; window `κ≲0.05358`) |
 | **All-order u(κ),v(κ)** (v1.0) | exact SU(3) Weyl integrals (no truncation): `u=c_3/3c_0`, `v=c_8/8c_0`; recursion `c_0'=2c_3`; window `0<κ<0.05358397…` | 🟦 **high-precision numerical** (not interval proof) | `all_order_character_v1_0.py`, `InfoAllOrderCharacter.v` (matches v0.9 series to ~4e-6, not a fit) |
 | **Surface automaton** `μ_4^admissible` (v1.1) | exact Z₃ frontier automaton; first 4D spectral radii `μ_can=3.38298`, `μ_short=3.87513`; bracket `[3.87513, 54.366]` | 🟦 exact construction + **lower bound only** | `surface_automaton_v1_1.py`, `InfoSurfaceAutomaton.v` (single-sheet; UPPER automaton `M^+` still open — no cert improvement yet) |
+| **Upper automaton** (v1.2) | pair + Z₃ triple-junction branching `B(z)=5z+10z²+30z³+25z⁴+11z⁵`; `μ^+≤7.084`; bracket **`[3.875, 7.084]`**; window `κ<0.321687` (~6×) | 🟦 conditional **upper bound** (first-discovery) | `surface_upper_automaton_v1_2.py`, `InfoSurfaceUpperAutomaton.v` (squeezes 54.37→7.08; exact μ still open between the two automata) |
 | **Physical SM end-to-end** | — | 🟥 **OPEN** | — |
 
 ## What is genuinely closed (do not undersell)

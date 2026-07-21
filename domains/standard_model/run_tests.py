@@ -14,6 +14,7 @@ Python (always, stdlib only, no network):
   - retained_metric_intertwiner_v0_9.py  (v0.9: CORRECTED criterion mu4*u_hat<1; intertwiner ||P||<=1)
   - all_order_character_v1_0.py      (v1.0: all-order u,v via Weyl integrals; needs numpy)
   - surface_automaton_v1_1.py        (v1.1: Z3 frontier automaton; mu_short=3.87513, bracket)
+  - surface_upper_automaton_v1_2.py  (v1.2: upper automaton; mu^+=7.084, bracket [3.875,7.084])
 Coq finite formal witnesses (only if `coqc` is on PATH; skipped otherwise):
   - InfoOrderDefectFromComposition.v      (SM-G0/G0.6 order-defect from ordered composition)
   - InfoFourForceCirculationRecovery.v    (v0.2 exact response identity + recovery + control)
@@ -27,6 +28,7 @@ Coq finite formal witnesses (only if `coqc` is on PATH; skipped otherwise):
   - InfoRetainedIntertwiner.v             (v0.9 intertwiner contraction + corrected linear criterion)
   - InfoAllOrderCharacter.v               (v1.0 fusion 3x3bar=1+8 + recursion c0'=2c3)
   - InfoSurfaceAutomaton.v                (v1.1 critical polynomials + root/mu brackets)
+  - InfoSurfaceUpperAutomaton.v           (v1.2 branching poly sum=81=3^4 + upper mu bracket)
 """
 import subprocess, sys, json, os, shutil, tempfile
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -42,7 +44,8 @@ for py in ("unified_force_closure_v0_1.py", "four_force_circulation_v0_2.py",
            "triality_spectral_flow_v0_6.py",
            "full_block_closure_v0_7.py",
            "retained_metric_intertwiner_v0_9.py", "all_order_character_v1_0.py",
-           "surface_automaton_v1_1.py"):
+           "surface_automaton_v1_1.py",
+           "surface_upper_automaton_v1_2.py"):
     r = subprocess.run([sys.executable, py])
     out[py] = r.returncode == 0
     ok = ok and r.returncode == 0
@@ -56,7 +59,8 @@ if shutil.which("coqc"):
               "InfoTrialitySpectralFlow.v",
               "InfoBlockCorrelation.v",
               "InfoRetainedIntertwiner.v", "InfoAllOrderCharacter.v",
-              "InfoSurfaceAutomaton.v"):
+              "InfoSurfaceAutomaton.v",
+              "InfoSurfaceUpperAutomaton.v"):
         with tempfile.TemporaryDirectory() as d:
             # compile a COPY inside the tempdir so coqc build artifacts never touch the repo
             shutil.copy(v, os.path.join(d, v))

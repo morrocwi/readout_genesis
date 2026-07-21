@@ -3169,6 +3169,21 @@ certificate — the route to a rigorous **upper** bound is an overflow-state aut
 `ρ(M⁻)≤ρ(M)≤ρ(M⁺)` (Perron–Frobenius). Next: `M^+` with pair continuation + Z₃ triple junction. (Frontier
 transfer-matrix surface counting is standard; the minimal-sufficient-quotient reading is ours.)
 
+**Upper automaton — the entropy ceiling drops 54→7 (v1.2).** `surface_upper_automaton_v1_2.py` +
+`InfoSurfaceUpperAutomaton.v` (Closed) build the **upper** automaton (pair continuation + Z₃ triple
+junction) the v1.1 lower bound was missing. A 4D edge touches 6 plaquettes (1 in, 5 free `x_i∈Z₃`); the
+Z₃ link closure `Σx_i=2 (mod 3)` has `3⁴=81` solutions, and splitting by the number `k` of nonzero new
+plaquettes gives — **enumerated exactly** — the branching polynomial `B(z)=5z+10z²+30z³+25z⁴+11z⁵`
+(`Σ=81`; the `k=2` coefficient `10` **is** the Z₃ triple junction `1→1+1`). A scalar majorant (`s^r≤s`)
+makes `B(z)<1` a contraction; the critical root `B(z_+)=1 ⇒ z_+=0.141161 ⇒ μ^+≤7.084097` (an **upper**
+bound because the first-discovery code over-counts non-closing surfaces). This squeezes the bracket to
+**`3.87513 ≤ μ_4^admissible ≤ 7.08410`** (from `≤54.366`) and, with the all-order Weyl `u(κ),v(κ)`,
+widens the certificate window to **`κ<0.321687`** — about **6×** the old `20e` window (same action, just
+honest counting). **Open:** machine-checking the first-discovery injection, a finite frontier matrix that
+remembers mergers/handles for the *exact* `μ` between `3.875` and `7.084`, continuum scaling, QCD
+calibration. (Dual plaquette-occupation surface sums and Z₃ triple branching are standard; the reading is ours.)
+
+
 
 
 `K_b`, `ρ_t^full(b)` and the correlation defect `ε_t(b)` for `b=2` from the real action; a block scale
