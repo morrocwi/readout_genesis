@@ -11,7 +11,8 @@
     "a non-abelian group from the seed: the Heisenberg group, group-torsion-free = group-inverse (InfoSeedTorsionGroupAndRankN)",
     "a proven gauge invariance: dispersion invariant under scale (InfoScaleGaugeNonReadout)",
     "Noether: symmetry -> conserved current (InfoGraphNoether, InfoCurvatureNoether)",
-    "gauge = readout-preserving automorphism Aut(F,O) as the ROADMAP starting definition (the weld, V.20)"
+    "gauge = readout-preserving automorphism Aut(F,O) as the ROADMAP starting definition (the weld, V.20)",
+    "Unified Force Closure v0.1 (finite/internal, verifier PASS): readout-preserving automorphism group; connection law U'=h_j U h_i^-1 DERIVED from transport commutation; holonomy conjugation ⇒ tr/det invariants; order-defect [X,Y] with Jacobi from associativity; covariant retained Laplacian covariance; the strong⊕weak selected-state h/m split fixture; and the four-force PROJECTION identity F_all=F_G+F_EM+F_W+F_S+F_res with a falsifiable completeness score χ4 (χ4=1 on the fixture, χ4<1 when a hidden fifth interaction leaks)"
   ],
   "not_established": [
     "the Standard Model (any derivation of it)",
@@ -23,8 +24,10 @@
     "any coupling constant or mass (alpha is rejected-not-faked; see scripts/force_constants.py)",
     "AP20 self-interaction ratio as root-derived (its commutator + self-carrier are still borrowed premises)",
     "AP10 beta slopes as a Standard Model derivation (representation content is SM input; benchmark match only)",
-    "spin-statistics / Born-measurement (prerequisite from the quantum domain, still open)"
+    "spin-statistics / Born-measurement (prerequisite from the quantum domain, still open)",
+    "that the four projection sectors match the REAL forces of nature (needs real gauge-group discovery, chirality/spin-statistics, couplings, confinement, full nonlinear GR, and experimental calibration) — physical four-force unification is OPEN"
   ],
   "checker_label": "ROADMAP_NO_VERIFIER",
-  "note": "This is a map of where to start (SM-G0 Gauge Emergence Kernel), not a closure. The four registered domains (chem/relativity/quantum/biology) each ship a passing verifier; this one deliberately does not, because nothing here is closed."
+  "note": "This is a map of where to start (SM-G0 Gauge Emergence Kernel), not a closure. The four registered domains (chem/relativity/quantum/biology) each ship a passing verifier; this one deliberately does not, because nothing here is closed.",
+  "unified_force_v0_1": "INTERNALLY_CLOSED_FINITE (verifier unified_force_closure_v0_1.py PASS); physical four-force unification OPEN"
 }

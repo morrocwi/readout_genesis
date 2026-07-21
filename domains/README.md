@@ -32,7 +32,7 @@
 
 | domain | kind | root-derived | what it is |
 |---|---|---|---|
-| [`standard_model/`](standard_model/) | `FRONTIER_ROADMAP` | **0%** | root-native Standard Model DAG + the survey of verified gauge *substrate* (connection/holonomy/curvature Th_coqc, Heisenberg group, SO(3), Noether, a proven gauge invariance) + **SM-G0** = where to start. Imports of `SU(3)×SU(2)×U(1)`/particles/Higgs as premises are drift-contract hard-fails. See [`standard_model/ROOT_TO_SM_DAG.md`](standard_model/ROOT_TO_SM_DAG.md). |
+| [`standard_model/`](standard_model/) | `FRONTIER_ROADMAP` | **0%** | root-native Standard Model DAG + **Unified Force Closure v0.1** (finite/internal, verifier PASS: one action → four orthogonal projections F_all=F_G+F_EM+F_W+F_S+F_res + χ4 completeness score) + the survey of verified gauge *substrate* (connection/holonomy/curvature Th_coqc, Heisenberg group, SO(3), Noether, a proven gauge invariance) + **SM-G0** = where to start. Imports of `SU(3)×SU(2)×U(1)`/particles/Higgs as premises are drift-contract hard-fails. See [`standard_model/ROOT_TO_SM_DAG.md`](standard_model/ROOT_TO_SM_DAG.md). |
 
 ## How to read a domain folder
 

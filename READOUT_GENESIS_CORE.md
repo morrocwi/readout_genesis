@@ -3035,9 +3035,17 @@ DAG, never the start*. Full roadmap:
   the geometry branch to give the real unified-force equation **without adding four ready-made theories
   together**.
 
-**Honest status:** the sectors are mostly forced/attempted; the single assembled action, the
-gauge-from-root step, the four projections, and the downstream physics are open. End-to-end
-root-derived unified force = **0%** as a closed claim.
+**Unified Force Closure v0.1 (`unified_force_closure_v0_1.py`, PASS):** the architecture is now
+**INTERNALLY CLOSED** at the finite/typed level — one action, one block master equation, and the four
+forces as **orthogonal projection readouts** `F_all = F_G+F_EM+F_W+F_S+F_res` with a **falsifiable
+completeness score `χ4`** (`χ4=1` on a strong⊕weak fixture; `χ4<1` when a hidden fifth interaction
+leaks). Witnessed: automorphism group, connection-law-from-commutation, holonomy invariants,
+order-defect+Jacobi, covariant Laplacian, the selected-state h/m split — with six failing controls.
+**But physical four-force unification is OPEN:** the gauge-from-root step (UF-0/SM-G0), whether the
+emergent algebra is really `SU(3)×SU(2)×U(1)`, chirality/anomaly/spin-statistics, generations,
+constants, confinement, full nonlinear GR, and experimental matching all remain open. The four are
+**not added together** — they are made orthogonal readouts of one generalized force, with a residual
+that can be refuted. Root-derived *physical* unification = **0%** as a closed claim.
 
 ---
 
