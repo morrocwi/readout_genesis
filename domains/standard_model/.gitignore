@@ -1,0 +1,8 @@
+# Coq build artifacts (sources are the .v files; witnesses compile in a tempdir)
+*.vo
+*.vok
+*.vos
+*.glob
+*.aux
+.*.aux
+__pycache__/
