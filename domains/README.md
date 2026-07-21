@@ -28,6 +28,12 @@
 | [`quantum/`](quantum/) | Quantum root-closure-partial v0.1 | `QUANTUM_ROOT_CLOSURE_PARTIAL` | ⏳ `43.75%` strict green / `53.1%` weighted (verifier PASS; oscillation≠quantum) | real QM · i/ψ/Hilbert/Born/tensor/spin as fundamental · Born uniqueness · measurement · composition · entanglement · spin · QFT (all RED) |
 | [`biology/`](biology/) | Biology root-native-partial v0.1 | `BIOLOGY_ROOT_NATIVE_PARTIAL` | ⏳ `47.2%` strict / `62.5%` weighted root-native (verifier PASS); real end-to-end `0%` | real biology · DNA/cell/enzyme/fitness as premise · protein/cell semantics · biological selection · calibrated encoding · (textbook 45/45 is LINE-2 checker, NOT counted) |
 
+## Frontier (roadmaps — NOT closed domains, no verifier by design)
+
+| domain | kind | root-derived | what it is |
+|---|---|---|---|
+| [`standard_model/`](standard_model/) | `FRONTIER_ROADMAP` | **0%** | root-native Standard Model DAG + the survey of verified gauge *substrate* (connection/holonomy/curvature Th_coqc, Heisenberg group, SO(3), Noether, a proven gauge invariance) + **SM-G0** = where to start. Imports of `SU(3)×SU(2)×U(1)`/particles/Higgs as premises are drift-contract hard-fails. See [`standard_model/ROOT_TO_SM_DAG.md`](standard_model/ROOT_TO_SM_DAG.md). |
+
 ## How to read a domain folder
 
 Each `<D>/` ships its own `CLAIM_BOUNDARY`, `RULE_REGISTRY`, `ROOT_DAG_MASTER`, `DRIFT_CONTRACT`,

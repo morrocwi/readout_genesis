@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "kind": "FRONTIER_ROADMAP",
+  "tier": "FRONTIER_ROADMAP",
+  "public_label": "[FrontierRoadmap] root-native Standard Model DAG — substrate only, 0% end-to-end",
+  "end_to_end_root_derived": "0%",
+  "not_a_closed_domain": true,
+  "established": [
+    "gauge SUBSTRATE only (root-native, Th_coqc): discrete connection U=V_j^-1 V_i (InfoConnectionFromFrame)",
+    "SO(3) rotation group with holonomy and nonzero curvature (InfoRationalSO3Curvature)",
+    "a non-abelian group from the seed: the Heisenberg group, group-torsion-free = group-inverse (InfoSeedTorsionGroupAndRankN)",
+    "a proven gauge invariance: dispersion invariant under scale (InfoScaleGaugeNonReadout)",
+    "Noether: symmetry -> conserved current (InfoGraphNoether, InfoCurvatureNoether)",
+    "gauge = readout-preserving automorphism Aut(F,O) as the ROADMAP starting definition (the weld, V.20)"
+  ],
+  "not_established": [
+    "the Standard Model (any derivation of it)",
+    "SU(3)xSU(2)xU(1) or any specific gauge group from the root (SU(3) is the wall: 3 seed parts != 8 generators)",
+    "the automorphism-as-gauge derivation itself (R3 / SM-G0 not yet built)",
+    "matter representations, chirality, anomaly closure",
+    "three generations, mixing angles (CKM/PMNS)",
+    "the Higgs mechanism in full",
+    "any coupling constant or mass (alpha is rejected-not-faked; see scripts/force_constants.py)",
+    "AP20 self-interaction ratio as root-derived (its commutator + self-carrier are still borrowed premises)",
+    "AP10 beta slopes as a Standard Model derivation (representation content is SM input; benchmark match only)",
+    "spin-statistics / Born-measurement (prerequisite from the quantum domain, still open)"
+  ],
+  "checker_label": "ROADMAP_NO_VERIFIER",
+  "note": "This is a map of where to start (SM-G0 Gauge Emergence Kernel), not a closure. The four registered domains (chem/relativity/quantum/biology) each ship a passing verifier; this one deliberately does not, because nothing here is closed."
+}

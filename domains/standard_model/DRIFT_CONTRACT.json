@@ -1,0 +1,20 @@
+{
+  "contract_version": "0.1",
+  "kind": "FRONTIER_ROADMAP",
+  "hard_fail_conditions": [
+    "importing SU(3), SU(2), U(1), or SU(3)xSU(2)xU(1) as a PREMISE (they may appear only as a discovered/labelled endpoint)",
+    "importing quark, lepton, Higgs, gauge-boson, or any named particle as a premise",
+    "importing a named gauge equation (Yang-Mills action, Dirac equation, Higgs potential) as a premise",
+    "starting from a gauge group instead of from readout-preserving automorphisms Aut(F,O)",
+    "claiming the Standard Model, a gauge group, a representation assignment, a generation count, a mixing angle, or a coupling constant is derived from the root",
+    "reading AP20's self-interaction ratio or AP10's beta slopes as a root-derivation of the Standard Model",
+    "any claim that end-to-end root-derived Standard Model is > 0%",
+    "treating this roadmap folder as a closed/registered domain (it has no verifier by design)",
+    "mixing the derivation chain and the empirical-discovery chain"
+  ],
+  "prohibited_active_premise_tokens": [
+    "SU3", "SU2", "U1", "quark", "lepton", "higgs", "gauge_boson", "yang_mills",
+    "dirac_equation", "gell_mann", "weinberg_angle", "yukawa_value", "fine_structure_constant"
+  ],
+  "note": "The Standard Model is a domain-translation to be DISCOVERED, never a root. The gauge group is a semantic label added only after group identification from data (the discovery chain)."
+}
