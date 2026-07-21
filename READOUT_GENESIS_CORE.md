@@ -60,7 +60,10 @@
 | `D > 0` (damping / arrow of time) | **forced existence/sign** (consequence Th_coqc), value borrowed | root's asymmetry (`D=0`⇒energy conserved⇒time-reversible) | `scripts/force_damping.py` (PASS) + `RDL_SpineStability.energy_strict_decay` (axiom-free) |
 | `τ_c = M/D` | **forced relation** (a readout, not a dial) | ratio fixed by the two forced coefficients | II.1; value is a *measured* memory time |
 | `∇V` (potential) | **coercivity forced** `[Dr]`, **shape is domain-DSL** | retention + forced-`D` (non-coercive `V`⇒`E`→−∞⇒runaway⇒not retained) | `scripts/force_potential.py` (PASS) + `InfoCoercivityBoundedClosure` |
-| `K`, and SI constants `ħ, c, G` | **borrowed** — not derived from the trunk | — | DeclaredFormula / measurement |
+| structural dimensionless (`4` in `λ_c=D²/4MK`, `det ω=1`, `ω²=−I`, `η²=I`) | **forced** by graph/group structure | the second-order + pairing structure | `scripts/force_constants.py` (A, PASS) |
+| `π`, `e` | **half** — rational approximants ours, the constant is a continuum limit (borrowed) | discrete→continuum readout | `scripts/force_constants.py` (B) |
+| `α` (fine structure), mass ratios | **REJECTED, not faked** — no root derivation; `[Open]` | — (would be a hollow card) | `scripts/force_constants.py` (C); DEC-toe-candidacy-one-root |
+| `K`, SI constants `ħ, c, G` | **borrowed** — measurement anchors, likely irreducible | — | DeclaredFormula / measurement |
 
 > So the remaining frontier (§I.3, §V.20) is the **dimensionless constants**, then the SI constants
 > `ħ, c, G` (the hardest — possibly irreducible). Each term forced is a term that becomes provably
@@ -68,8 +71,14 @@
 > forced** (Th_coqc); `M`, `D` **half-forced** (existence/sign ours + Coq-supported, absolute value
 > pending calibration); `∇V` **structurally forced** (coercivity ours, shape correctly left to the
 > domain-DSL — which is itself a confirmation of the weld: *forcing a term* and *admitting a domain's
-> shape* meet here). Only `K` and the SI constants remain fully borrowed. The equation is genuinely,
-> provably becoming ours one fail-able step at a time, with no hollow flag on any of it.
+> shape* meet here); structural **dimensionless constants forced** (the `4` of the discriminant, the
+> `±1`/`det` of the forced pairings). And — the honest close — the **free physics constants (`α`, mass
+> ratios) are REJECTED, not faked**: no root derivation exists, so claiming one would be the exact
+> hollow card this book audits out; that frontier closes by *proving they are not forced*, which is
+> `readout-not-truth` doing its job. `π, e` are half (approximants ours, the limit borrowed); only `K`
+> and the SI anchors `ħ, c, G` stay fully borrowed (likely irreducible — and that is fine). **The
+> structure of the master equation is now provably ours; what stays borrowed is exactly what honesty
+> says cannot be forced — and not a single term of it was faked.**
 
 ---
 
