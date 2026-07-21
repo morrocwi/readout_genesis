@@ -1,5 +1,5 @@
 (* ================================================================= *)
-(*  InfoTrialitySpectralFlow_attempt.v                               *)
+(*  InfoTrialitySpectralFlow.v                               *)
 (*  Triality Spectral Flow v0.6 -- the RG variable is rho_t (triality *)
 (*  retention), NOT kappa. Serial/convolution blocking is EXACT and    *)
 (*  the block-scale existence theorem holds over Q.                   *)

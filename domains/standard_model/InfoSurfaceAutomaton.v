@@ -1,5 +1,5 @@
 (* ================================================================= *)
-(*  InfoSurfaceAutomaton_attempt.v                                   *)
+(*  InfoSurfaceAutomaton.v                                   *)
 (*  Surface Automaton Closure v1.1 -- the exact algebra behind the    *)
 (*  first 4D admissible-surface spectral radii. (The eigenvalues are  *)
 (*  NUMERICAL in surface_automaton_v1_1.py; here we mechanize the      *)

@@ -1,5 +1,5 @@
 (* ================================================================= *)
-(*  InfoConfinementCertificate_attempt.v                             *)
+(*  InfoConfinementCertificate.v                             *)
 (*  Retained Confinement Certificate v0.5 -- the exact pieces of a    *)
 (*  computable confinement certificate 𝔠_t = μ_4·ρ_t < 1 derived from *)
 (*  the plaquette action S_p(U)=κ‖U−I‖_F² on SU(3).                  *)

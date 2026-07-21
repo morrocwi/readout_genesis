@@ -1,5 +1,5 @@
 (* ================================================================= *)
-(*  InfoBlockCorrelation_attempt.v                                   *)
+(*  InfoBlockCorrelation.v                                   *)
 (*  Full 4D Block Closure v0.7 -- the b=2 block: exact structure of   *)
 (*  the FIRST correlated shell (single cube-bumps). NOT the full      *)
 (*  all-representation tensor contraction (Delta_multi, Delta_rep     *)

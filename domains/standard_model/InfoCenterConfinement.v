@@ -1,5 +1,5 @@
 (* ================================================================= *)
-(*  InfoCenterConfinement_attempt.v                                  *)
+(*  InfoCenterConfinement.v                                  *)
 (*  Center-Confinement Closure v0.3 -- the first dynamical-confinement *)
 (*  result, EXACT, in a Z_3 center-restricted 2D model. No QCD        *)
 (*  potential and no "force grows with distance" assumed in advance.  *)

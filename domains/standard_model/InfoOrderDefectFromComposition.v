@@ -1,5 +1,5 @@
 (* ================================================================= *)
-(*  InfoOrderDefectFromComposition_attempt.v                          *)
+(*  InfoOrderDefectFromComposition.v                          *)
 (*  SM-G0 / UF-0 subgoal G0.6 : the ORDER DEFECT (commutator) is      *)
 (*  DERIVED from ordered composition, not borrowed.                    *)
 (*                                                                     *)

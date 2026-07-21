@@ -1,5 +1,5 @@
 (* ================================================================= *)
-(*  InfoElectroweakNullDirection_attempt.v                            *)
+(*  InfoElectroweakNullDirection.v                            *)
 (*  Unified Force Closure v0.3 -- electroweak STRUCTURAL CORE.        *)
 (*                                                                     *)
 (*  The neutral selected-state obstruction matrix                     *)

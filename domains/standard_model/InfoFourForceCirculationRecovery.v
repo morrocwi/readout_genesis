@@ -1,5 +1,5 @@
 (* ================================================================= *)
-(*  InfoFourForceCirculationRecovery_attempt.v                        *)
+(*  InfoFourForceCirculationRecovery.v                        *)
 (*  Four-Force Circulation Tomography v0.2 -- FINITE FORMAL WITNESS.  *)
 (*                                                                     *)
 (*  A = H + Omega  (H symmetric reciprocal load, Omega antisymmetric  *)
