@@ -2994,6 +2994,53 @@ the borrowed premises under AP20 come off and the rest of the DAG gets a real ro
 
 ---
 
+### V.22 UNIFIED FORCE — one action, four projections (frontier, mostly open)
+
+The wrong form is `F_total = F_gravity + F_strong + F_weak + F_EM` — it adds four already-separated
+forces afterward and forces gravity (a *geometry* readout) to be the same kind of object as the gauge
+forces. The right form for this architecture: **one retained dynamics → many interaction readouts** —
+the four forces are different **projections** of one action, and their *names live at the end of the
+DAG, never the start*. Full roadmap:
+[`domains/standard_model/UNIFIED_FORCE_DAG.md`](domains/standard_model/UNIFIED_FORCE_DAG.md).
+
+```
+   S_UF = S_DRL + S_Θ + S_U + S_Σ + S_cut/tape ,   δS_UF/δZ_n = 𝒥_{C,n}[Z_n]
+   𝓕_D = P_D(−∇_Z 𝒰_UF + 𝒥_C):  P_geo→gravity · P_center→EM · P_chiral,broken→weak · P_simple,unbroken→strong
+```
+
+- **Already ours — the unified action's SECTORS have formal support** (survey 2026-07-21): the
+  action-stationarity backbone `δS/δZ` (`InfoActionStationarity`, **Th_coqc**); the internal transport
+  `S_U` (connection + SO(3) holonomy + curvature + Heisenberg group seed, **Th_coqc**); the geometry
+  `S_Θ` (metric/curvature **Th_coqc**, backreaction `InfoBackReaction` **Th_coqc** = the `UF-G8`
+  matter↔geometry joint); the cross-term `C_int` (`InfoCrossTermDominance`), the potential `∇V`
+  (`InfoCubicLinearization`, coercivity `InfoCoercivityBoundedClosure`), and the cut `S_cut`
+  (`InfoCutGrowth`) — all **Th_coqc**; plus grep-clean attempts for a **unified master readout**
+  (`InfoSeedUnifiedMasterEquation`, seed → velocity+coupling+damping in one readout), spine unification,
+  the selected state `S_Σ` (`InfoSeedArgminActionCost`), and cut-as-max-flow-min-cut.
+- **Still open (must not be faked):** the SINGLE assembled `S_UF` as one stationary action (the pieces
+  exist; the one-action weld does not); `UF-0` = the gauge-automorphism-from-root step (same kernel as
+  SM-G0); the four-force **projection decoder**; and all downstream physics — chirality, anomaly,
+  spin-statistics, generations, constants (`α` rejected-not-faked), and **full nonlinear GR** (only
+  metric/curvature are `Th_coqc`; Einstein's equations are open). AP20's `c_self/c_geo = 1` is
+  conditional — its commutator + self-carrier are still **borrowed premises**.
+- **The four forces grow at the END:** gravity = the geometry response `P_geo` (not another gauge
+  sector); EM = the unbroken **center** abelian sector; weak = a **chiral** simple sector with
+  **selected-state obstruction**; strong = an **unbroken non-abelian** sector with **self-carrier
+  closure** → composite-only readout. Emergent/macroscopic forces (residual nuclear, chemical,
+  friction, pressure, viscosity, buoyancy, biomechanical) are **not new roots** — each is a quotient of
+  composite dynamics under a declared coarse-graining (`UF-G10`).
+- **Where to start:** `UF-0` — build the readout-preserving automorphism and local transport from the
+  root (identical to SM-G0). Closing it yields, from one mechanism, internal gauge structure +
+  connection + holonomy + curvature + self-interaction + the abelian/non-abelian fork, and plugs into
+  the geometry branch to give the real unified-force equation **without adding four ready-made theories
+  together**.
+
+**Honest status:** the sectors are mostly forced/attempted; the single assembled action, the
+gauge-from-root step, the four projections, and the downstream physics are open. End-to-end
+root-derived unified force = **0%** as a closed claim.
+
+---
+
 ## PART V-A — DOMAIN EMERGENCE AND TRANSLATION SUFFICIENCY
 
 Part V walked the twelve leaves one at a time. This Part steps back one level and states, in fully
