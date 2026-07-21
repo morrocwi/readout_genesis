@@ -29,6 +29,7 @@ Every row points at a runnable verifier (`… .py`, PASS) and/or a machine-check
 | **Center-sector confinement** | `⟨W(C)⟩=q(κ)^{A(C)}` ⇒ area law `σ=−log q>0` ⇒ `V(R)=σR` | 🟦 exact, **Z₃/2D only** | `center_confinement_v0_3.py`, `InfoCenterConfinement.v` (root curvature action, no QCD potential; controls κ→∞⇒σ→0) |
 | **Confinement certificate** (SU(3)) | `𝔠_t=μ_4·ρ_t<1` from the action: rigorous `0<κ<0.0020252` (all reps), candidate `κ≲0.053` | 🟦 rigorous small-κ + `[SeriesEstimate]` | `retained_confinement_certificate_v0_5.py`, `InfoConfinementCertificate.v` (ρ_t=character integral, μ_4≤20e; standard strong-coupling, not new) |
 | **Triality spectral flow** (RG of ρ_t) | serial blocking `a_R^{(m)}=a_R^m`⇒`ρ_t(b)=ρ_t^{b²}`; **block-scale existence**: `0<ρ_t<1`,`μ_4<∞`⇒`∃b_*: 𝔠_t(b_*)<1` | 🟦 exact (serial) + conditional (4D) | `triality_spectral_flow_v0_6.py`, `InfoTrialitySpectralFlow.v` (RG = flow of *distinguishability*, not a single coupling; κ need not "flow into a window") |
+| **b=2 block, first shell** | exact block integral defined; single cube-bumps ⇒ `ρ_{1,geom}=u⁴(1+16u⁴)`; correlations *help* (`ε_geom>0`) but only `O(u⁴)`; first-shell cert `u<0.34915` | 🟦 first-shell **diagnostic** only | `full_block_closure_v0_7.py`, `InfoBlockCorrelation.v` (Δ_multi, Δ_rep still open; MC estimator failed — no MC value asserted) |
 | **Physical SM end-to-end** | — | 🟥 **OPEN** | — |
 
 ## What is genuinely closed (do not undersell)

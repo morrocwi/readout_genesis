@@ -10,6 +10,7 @@ Python (always, stdlib only, no network):
   - center_confinement_v0_3.py       (Center-Confinement v0.3: Z3 2D area law, V(R)=σR)
   - retained_confinement_certificate_v0_5.py  (v0.5: 𝔠=μ4·ρt<1 certificate from the action)
   - triality_spectral_flow_v0_6.py   (v0.6: RG of ρt; block-scale existence 𝔠(b_*)<1)
+  - full_block_closure_v0_7.py       (v0.7: b=2 block, first correlated shell u^4(1+16u^4))
 Coq finite formal witnesses (only if `coqc` is on PATH; skipped otherwise):
   - InfoOrderDefectFromComposition.v      (SM-G0/G0.6 order-defect from ordered composition)
   - InfoFourForceCirculationRecovery.v    (v0.2 exact response identity + recovery + control)
@@ -19,6 +20,7 @@ Coq finite formal witnesses (only if `coqc` is on PATH; skipped otherwise):
   - InfoCenterConfinement.v               (v0.3 Z3 area law: <W>=q^A, sigma>0, V(R)=sigma R)
   - InfoConfinementCertificate.v          (v0.5 Frobenius/center/Delta_p/geometric-suppression exact)
   - InfoTrialitySpectralFlow.v            (v0.6 serial a_R^m + block contraction + existence witness)
+  - InfoBlockCorrelation.v                (v0.7 bump counting + rho_geom=u^4(1+16u^4) + correlations-help)
 """
 import subprocess, sys, json, os, shutil, tempfile
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -31,7 +33,8 @@ for py in ("unified_force_closure_v0_1.py", "four_force_circulation_v0_2.py",
            "ordered_tape_closure_v0_2.py",
            "center_confinement_v0_3.py",
            "retained_confinement_certificate_v0_5.py",
-           "triality_spectral_flow_v0_6.py"):
+           "triality_spectral_flow_v0_6.py",
+           "full_block_closure_v0_7.py"):
     r = subprocess.run([sys.executable, py])
     out[py] = r.returncode == 0
     ok = ok and r.returncode == 0
@@ -42,7 +45,8 @@ if shutil.which("coqc"):
               "InfoOrderedTapeClosure.v",
               "InfoCenterConfinement.v",
               "InfoConfinementCertificate.v",
-              "InfoTrialitySpectralFlow.v"):
+              "InfoTrialitySpectralFlow.v",
+              "InfoBlockCorrelation.v"):
         with tempfile.TemporaryDirectory() as d:
             # compile a COPY inside the tempdir so coqc build artifacts never touch the repo
             shutil.copy(v, os.path.join(d, v))

@@ -3127,6 +3127,20 @@ convolution ⇒ Peter–Weyl ⇒ `a_R^{(m)}=a_R^m` ⇒ `ρ_t(b)=ρ_t^{b²}`, so 
 coarse scale `b_*>√(log μ_4/−log ρ_t)` with `𝔠_t(b_*)<1` — spectral contraction beats surface entropy,
 so κ need **not** flow into any window (analytic PASS: `κ=0.01,b=2⇒𝔠≤0.004276`). RG = flow of
 *distinguishability*. **Sharpened wall (a finite integral, not a debate):** compute the block kernel
+
+**b=2 block, first correlated shell (v0.7).** `full_block_closure_v0_7.py` + `InfoBlockCorrelation.v`
+(Closed) take the sharpened wall's first step: the exact block integral `K_{B2}`, `c_R^{(2)}`,
+`ρ_t^full(2)` are **defined** (finite tensor contraction — link character-coefficients → invariant
+intertwiner projectors → contract, NOT serial independence). The **first correlated shell** (single
+cube-bumps) is exact: in 4D each plaquette has `2(D−2)=4` bump directions and the minimal surface has
+`A_min=4`, giving `16` single-bumps (area `4→8`), so `ρ_{1,geom}(2)=u⁴(1+16u⁴)` and the correlation
+defect `ε_geom^{(1)}=¼log(1+16u⁴)>0` — **correlations HELP** triality survive, but only at `O(u⁴)`, so
+the primitive contraction `−log u` still dominates in strong disorder; first-shell certificate
+`20e·u⁴(1+16u⁴)<1 ⟺ u<0.34915`. **NOT claimed done:** the full block still owes `Δ_multi` (many bumps)
+and `Δ_rep` (representation branching `3↔6̄↔15`); a plain Metropolis estimator FAILED (signal≈noise,
+`FAIL_ESTIMATOR_NOISE`) so no MC value is asserted. Remaining wall, now sharp + finite: bound
+`Δ_rep+Δ_multi < 1/μ_4 − u⁴(1+16u⁴)` by character-space tensor contraction, not a debate.
+
 `K_b`, `ρ_t^full(b)` and the correlation defect `ε_t(b)` for `b=2` from the real action; a block scale
 survives iff `ε_*<−log ρ_t`. (Convolution/character blocking is standard lattice gauge; the
 retained-triality reading is ours.)
