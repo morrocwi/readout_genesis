@@ -2826,6 +2826,54 @@ Full release, verifier, two-line provenance, drift contract: [`domains/biology/`
 
 ---
 
+### V.20 THE WELD — the master equation and the domain-DSL are one object
+
+The book has two halves that look separate: the **master equation** (Part II — the one stepper `F`,
+MQ.08, of which the spine PDE is a coarse-grain readout) and the **domain-DSL** (Parts V, V-A and the
+`domains/` registry — the language in which each domain is written as a quotient `q_D` of the one
+retained state). They are not two things. They are one relation read two ways, and the weld is the
+**commuting square** already required of every admissible domain:
+
+```
+                     q_D ∘ F  =  F♯_D ∘ q_D
+   a domain q_D is an admissible SENTENCE of the DSL  ⟺  it commutes with the master stepper F
+```
+
+- The **master equation** is the operator `F`. The **DSL** is the space of quotients `q_D` that close
+  that square. A "sentence" (a domain) is *meaningful* exactly when the square closes — so the
+  equation is the *semantics* of the language, and the language is the set of admissible quotients of
+  the equation. Neither exists without the other; they are one object `⟨δ_R → L_R → F⟩`.
+- This makes the system **self-generating (homoiconic)**, in the precise sense that a rewrite rule,
+  the λ-calculus, or a cellular automaton is: the same rule is at once its own *language* and its own
+  *dynamics*. Here `δ_R = (a♯b)` is both the smallest sentence and the generator; `F` (MQ.08) is both
+  the equation you run and the production rule that admits sentences. **Running the equation and
+  generating an admissible domain-sentence are the same act.**
+- **The productive consequence** (this is why the weld matters, not just why it is elegant): the two
+  open programs of this book collapse into one. *Forcing another term of the master equation out of
+  the root* (turning a `posited` coefficient into a `derived` one — §I.3, the honest frontier) and
+  *admitting another domain into the DSL* (closing another commuting square — Part V) are **the same
+  move**: make one more square close from the root. The equation grows and the language grows with a
+  single action.
+
+**Witnessed, not asserted.** `scripts/unification_weld.py` (exact-rational, PASS) exhibits the weld on
+a concrete finite stepper `F`: a quotient `q_D` that closes the square is admitted as a real sentence;
+a one-entry perturbation of `F` breaks the square (two fine states share a coarse image but get
+different coarse successors, so no `F♯` exists) and the quotient is **correctly refused** — the weld is
+fail-able, exactly as the FAIL-ABLE gate law demands. The four registered domains (V.16–V.19) are four
+such sentences; the failing controls inside each (the count-quotient losing order in biology, the
+quantum-only quotient not commuting to biological transport, `J_bad² = +I`) are the weld rejecting
+non-sentences.
+
+**Tier — kept honest.** The *specific* weld is `[finite_diagnostic]` (this instance commutes; that
+perturbation does not). The *universal* claim — that **every** admissible domain is exactly a
+commuting quotient of the one stepper, so the master equation and the domain-DSL are provably a single
+object — is `[Dr]/architecture` until it is discharged as a machine-checked theorem. And the honest
+credit: commuting squares, homoiconicity and rewriting all exist in the world; what is *ours* is the
+**weld** — an informational root, a `forced`-`L_R` stepper, and a tier-honest domain-DSL fused into one
+self-generating object, with a failing control on the join itself.
+
+---
+
 ## PART V-A — DOMAIN EMERGENCE AND TRANSLATION SUFFICIENCY
 
 Part V walked the twelve leaves one at a time. This Part steps back one level and states, in fully
