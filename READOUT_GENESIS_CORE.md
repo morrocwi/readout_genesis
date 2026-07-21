@@ -2934,6 +2934,66 @@ self-generating object, with a failing control on the join itself.
 
 ---
 
+### V.21 STANDARD MODEL — root-native DAG (frontier roadmap, mostly open)
+
+The Standard Model must be a **domain — a translation of the retained structure — not a new root**,
+with the two chains (derivation / empirical discovery) kept separate. The binding rule: **do not start
+from `SU(3)×SU(2)×U(1)`, quarks, leptons, the Higgs, or the gauge equations** — importing them makes
+the answer a premise. This section is a **map of where to start**, not a result: **end-to-end
+root-derived Standard Model = 0%**, and saying so is the discipline. Full roadmap:
+[`domains/standard_model/ROOT_TO_SM_DAG.md`](domains/standard_model/ROOT_TO_SM_DAG.md).
+
+**Where gauge comes from (the founder rule).** Gauge is not "a force" first; it is first the
+*non-uniqueness of the internal description under the same checkable readout* — the same commuting
+square the domains already require, and the same weld of V.20:
+
+```
+   Aut(F,O) = { h : O∘h = O ,  h∘F = F∘h }      ← the internal symmetry, grown from the
+                                                   exact-quotient discipline, never posited
+```
+
+**The spine of the DAG:**
+```
+δ_R → typed state → ordered paths → [R3 readout-preserving automorphism  🟥 FIRST GATE]
+     → localized transport → connection 🟩 → holonomy 🟩 → curvature 🟩
+     ├─ gauge algebra (center ⊕ simple sectors)      ─ needs SM-G0
+     ├─ quantum completion (spin/statistics, Born)   ─ prerequisite (§V.18)
+     └─ scale flow (kinematic weights 11/3,2/3,1/3)  🟥 not derived
+     → representations → chirality/anomaly → order-parameter breaking G→H
+     → mass/coupling structure → generations/mixing → empirical group-ID → bounded SM claim
+```
+
+- **Already ours (survey 2026-07-21, verified `Th_coqc`, axiom-clean, root-native):** the discrete
+  **connection** `U=V_j⁻¹V_i` (`InfoConnectionFromFrame`); the **SO(3)** rotation group with holonomy
+  and nonzero curvature (`InfoRationalSO3Curvature`) — the SO(3)↔SU(2) spin/weak-isospin seed; a
+  **non-abelian group from the seed** — the **Heisenberg group** with group-torsion-free = group-inverse
+  (`InfoSeedTorsionGroupAndRankN`) — the gauge-algebra seed; a **proven gauge invariance** (dispersion
+  invariant under scale, `InfoScaleGaugeNonReadout`); and **Noether** (`InfoGraphNoether`). So the
+  gauge *substrate* — connection, curvature, a non-abelian group, a genuine readout-preserving
+  redundancy, conserved currents — is real. Plus AP20's self-interaction ratio `c_self/c_geo = 1`
+  (🟨, its commutator + self-carrier still borrowed) and AP10's one-loop β slopes (🟦 benchmark, with
+  SM representation content as input).
+- **Where to start — `SM-G0`, the Gauge Emergence Kernel** (not Higgs, not particles, not β):
+  prove (G0.1) path composition, (G0.2) `Aut(F,O)` is a group, (G0.3) localization, (G0.4) the
+  connection transform `U↦h_j U h_i⁻¹` *derived* from transport-commutation, (G0.5) holonomy
+  conjugacy-invariance, (G0.6) build the commutator FROM ordered composition (Jacobi follows) and
+  wire it to AP20 — lifting `c_self/c_geo=1` from *borrowed commutator* to *root-derived order defect*.
+  With failing controls: a readout-changing `h` is refused; a commutative carrier kills the
+  non-abelian branch; an off-carrier payload kills the self-term.
+- **NOT ours / open (must not be faked):** the automorphism-as-gauge derivation (R3 itself), the
+  specific gauge group (**`SU(3)` is the wall** — the trifurcation gives *three parts*, not the *eight*
+  generators), matter representations, chirality/anomaly closure, three generations, mixing angles,
+  the Higgs mechanism in full, and every coupling constant (the `force_constants.py` boundary:
+  structural constants forced, `α`/masses **rejected-not-faked**). The Quantum domain (§V.18) is a hard
+  prerequisite — no spin-statistics ⇒ no "fermion/boson"; no Born closure ⇒ no cross-sections from the
+  root.
+
+**Direction, honestly:** not "write the Standard Model," but **prove that gauge redundancy, the
+connection, and curvature grow from retained readout-equivalence** (SM-G0). Only when SM-G0 closes do
+the borrowed premises under AP20 come off and the rest of the DAG gets a real root to stand on.
+
+---
+
 ## PART V-A — DOMAIN EMERGENCE AND TRANSLATION SUFFICIENCY
 
 Part V walked the twelve leaves one at a time. This Part steps back one level and states, in fully
