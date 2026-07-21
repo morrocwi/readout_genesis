@@ -196,6 +196,59 @@ Its complement is the **FAIL-ABLE gate law**: a claim counts as evidence (Type P
 Type U convention, not evidence. FAIL-ABLE gates each claim; Maker–Checker separates the claimant from
 the answer.
 
+### 4.4 The general gates (the architecture around the recurrence)
+
+Seven general principles govern *any* domain reading. They upgrade the architecture around the DRL
+recurrence; the recurrence core itself does not change.
+
+1. **No-Free-Domain-Law.** Retention alone does not hand you a domain-specific law:
+   `δ_R + Retention ⇏ (F, 𝒞, V, θ)_domain`. If more than one model is retention-compatible
+   (`|{ℳ : ℳ ⊨ δ_R, Retention, 𝒦}| > 1`), you may **not** declare a domain law — you owe extra
+   interaction tape, observation, or a postulate. (This is the general form of the two-field / field-count
+   result: a law is not free, it is *earned* with sufficiency.)
+
+2. **Three-valued admissibility.** `𝒞(ξ | c, 𝒯) ∈ {1, 0, ⊥}` — admitted / obstructed / **unresolved**.
+   `⊥` (no information) is **not** `0` (blocked): on `⊥`, *record unresolved and do not guess*. Admitted →
+   expand; obstructed → record the obstruction certificate; unresolved → record and wait.
+
+3. **Context-indexed law.** Operators are not context-free: `F_n = F_n(𝔖_n, c_n, 𝒯_n)`,
+   `𝔾_n = 𝔾_n(G_n, c_n, 𝒯_n)`, `Adm_n = Adm_n(ξ; c_n, 𝒯_n)`. **valid in context `c` ⇏ valid in `c'`.**
+   (The general form of state-dependent coupling `L_R[I_R]`.)
+
+4. **State-sufficiency gate** (three-valued): `Suff_{α,L}(𝔃^cand; c, 𝒯) ∈ {1,0,⊥}`, checked *before*
+   discovery/quotient. Insufficient → **expand the state** `𝔃^(k+1) = 𝔃^(k) ⊞ Δ𝔃_missing`, never patch a
+   lost distinction with a threshold or decoder.
+
+5. **Invariant-completion gate.** One invariant set may be insufficient: two states can share a
+   distance-matrix `D²(g) = D²(g')` yet be separated by the readout through an orientation invariant
+   `χ(g) ≠ χ(g')`. An exact quotient must therefore *also* preserve the question's invariants:
+   `Inv_α = Inv♯_α ∘ q_α`. If `q(z) = q(z')` but `Inv_α(z) ≠ Inv_α(z')`, refine `C_a → C_{a,1} ⊔ C_{a,2}`.
+   **apparent symmetry ≠ valid quotient symmetry.** (The general form of a readout that looked sufficient
+   but was missing an invariant — e.g. the structural-camera failure.)
+
+6. **Query-relative symmetry group.** Do not quotient by every visible symmetry — only by
+   transformations that preserve the *question's* readout:
+   `ℋ_α = { h : O_α(hz) = O_α(z), hF = Fh }`, and `𝒟_α = 𝔃 / ℋ_α`. (Reflection is a symmetry only if the
+   readout ignores orientation; permutation only among units with truly equal interaction profiles.)
+
+7. **Calibration firewall.** A native informational functional is **not** a physical observable until an
+   independently-checked decoder says so: `y_α^known = U_α(r_RD; θ_α, c, 𝒞_α^cal)`, frozen by
+   `H_cal = Hash(U_α, θ_α, training, units, protocol)` and checked against held-out data
+   (`Checker → ε_cal`). **native informational functional ≠ physical observable** before calibration.
+
+**Defect vector** (replace a single scalar error): `ε_α = (ε_suff, ε_dyn, ε_read, ε_inv, ε_bridge, ε_cal)`.
+An `exact` claim requires `ε_α = 0`; otherwise it is `approximate` and must name the non-zero component.
+
+**Must NOT enter the root** (these live in the domain tape / interpretation / empirical layer, never as a
+universal axiom): a specific atom's valence, a specific molecular formula, a sample's oriented volume, a
+demo calibration coefficient, "RD-cost = energy", a domain-specific geometry class, or any result derived
+from synthetic data.
+
+> **The single most general lesson:** *Retention forces the preservation of difference, but it does not
+> hand out domain-specific laws for free.* And: `unknown ≠ impossible`; `an invariant that looks
+> sufficient ≠ an invariant that actually preserves the readout`; `an informational value ≠ a physical
+> value before calibration`.
+
 ---
 
 ## 5. The honest state (what is settled, posited, and open)
