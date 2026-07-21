@@ -29,7 +29,10 @@ Every row points at a runnable verifier (`… .py`, PASS) and/or a machine-check
 | **Center-sector confinement** | `⟨W(C)⟩=q(κ)^{A(C)}` ⇒ area law `σ=−log q>0` ⇒ `V(R)=σR` | 🟦 exact, **Z₃/2D only** | `center_confinement_v0_3.py`, `InfoCenterConfinement.v` (root curvature action, no QCD potential; controls κ→∞⇒σ→0) |
 | **Confinement certificate** (SU(3)) | `𝔠_t=μ_4·ρ_t<1` from the action: rigorous `0<κ<0.0020252` (all reps), candidate `κ≲0.053` | 🟦 rigorous small-κ + `[SeriesEstimate]` | `retained_confinement_certificate_v0_5.py`, `InfoConfinementCertificate.v` (ρ_t=character integral, μ_4≤20e; standard strong-coupling, not new) |
 | **Triality spectral flow** (RG of ρ_t) | serial blocking `a_R^{(m)}=a_R^m`⇒`ρ_t(b)=ρ_t^{b²}`; **block-scale existence**: `0<ρ_t<1`,`μ_4<∞`⇒`∃b_*: 𝔠_t(b_*)<1` | 🟦 exact (serial) + conditional (4D) | `triality_spectral_flow_v0_6.py`, `InfoTrialitySpectralFlow.v` (RG = flow of *distinguishability*, not a single coupling; κ need not "flow into a window") |
-| **b=2 block, first shell** | exact block integral defined; single cube-bumps ⇒ `ρ_{1,geom}=u⁴(1+16u⁴)`; correlations *help* (`ε_geom>0`) but only `O(u⁴)`; first-shell cert `u<0.34915` | 🟦 first-shell **diagnostic** only | `full_block_closure_v0_7.py`, `InfoBlockCorrelation.v` (Δ_multi, Δ_rep still open; MC estimator failed — no MC value asserted) |
+| **b=2 block, first shell** | exact block integral defined; single cube-bumps ⇒ `ρ_{1,geom}=u⁴(1+16u⁴)` (a minimal-surface *amplitude*); correlations *help* (`ε_geom>0`) but only `O(u⁴)` | 🟦 first-shell **diagnostic** | `full_block_closure_v0_7.py`, `InfoBlockCorrelation.v` (its `u<0.34915` was **not** a valid criterion — **corrected in v0.9**; Δ_multi/Δ_rep open; MC failed) |
+| **Corrected certificate** (v0.9) | link intertwiner `P=∫ρ(h)dh` is a projector, `‖P‖≤1` (contraction) ⇒ tail resums `û≤u/(1−8v)`; **correct criterion `μ_4·û<1`** (linear) | 🟩 `Th_coqc` (projector/criterion) | `retained_metric_intertwiner_v0_9.py`, `InfoRetainedIntertwiner.v` (fixes the v0.7 power-4 bug; window `κ≲0.05358`) |
+| **All-order u(κ),v(κ)** (v1.0) | exact SU(3) Weyl integrals (no truncation): `u=c_3/3c_0`, `v=c_8/8c_0`; recursion `c_0'=2c_3`; window `0<κ<0.05358397…` | 🟦 **high-precision numerical** (not interval proof) | `all_order_character_v1_0.py`, `InfoAllOrderCharacter.v` (matches v0.9 series to ~4e-6, not a fit) |
+| **Surface automaton** `μ_4^admissible` (v1.1) | exact Z₃ frontier automaton; first 4D spectral radii `μ_can=3.38298`, `μ_short=3.87513`; bracket `[3.87513, 54.366]` | 🟦 exact construction + **lower bound only** | `surface_automaton_v1_1.py`, `InfoSurfaceAutomaton.v` (single-sheet; UPPER automaton `M^+` still open — no cert improvement yet) |
 | **Physical SM end-to-end** | — | 🟥 **OPEN** | — |
 
 ## What is genuinely closed (do not undersell)
@@ -67,8 +70,12 @@ old "does κ flow into the window?" wall — since `ρ_t(b)=ρ_t^{b²}`, spectra
 finite surface entropy `μ_4`, so **some** coarse scale `b_*` certifies confinement whenever the
 per-cell triality retention `0<ρ_t<1`. What is **still open**: the 4D correlation defect `ε_t(b)`, the
 full block kernel `K_b` and `ρ_t^full(b)` for `b=2` computed from the real action (the sharpened wall —
-a finite integral, not a debate), a representation-tail bound, the exact admissible-surface `μ_4`, and a
-nonzero **continuum** `σ_phys`. (The Wilson area-law criterion, the center's role, and character/
+a finite integral, not a debate) and a nonzero **continuum** `σ_phys`. **Update (v0.9/v1.0):** the
+representation tail is now **closed** — the link intertwiner is a contraction `‖P‖≤1` so `û≤u/(1−8v)` —
+and `u(κ),v(κ)` are closed to **all orders** numerically (SU(3) Weyl integrals), giving `κ<0.05358397…`;
+the v0.7 `μ_4·û⁴<1` criterion was a **self-caught bug**, corrected to the linear `μ_4·û<1`. The single
+remaining confinement wall is now **`μ_4^admissible`** = the spectral radius of a triality-preserving
+surface automaton (replacing the crude `20e`). (The Wilson area-law criterion, the center's role, and character/
 convolution blocking are standard lattice-gauge results — not new here; the *reading* as retained-triality
 contraction is the in-framework contribution.)
 

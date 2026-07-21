@@ -3141,6 +3141,36 @@ and `Δ_rep` (representation branching `3↔6̄↔15`); a plain Metropolis estim
 `FAIL_ESTIMATOR_NOISE`) so no MC value is asserted. Remaining wall, now sharp + finite: bound
 `Δ_rep+Δ_multi < 1/μ_4 − u⁴(1+16u⁴)` by character-space tensor contraction, not a debate.
 
+**Corrected certificate (v0.9) + all-order character closure (v1.0).** A self-caught **correction**
+first: the v0.7 `20e·u⁴(1+16u⁴)<1 ⟺ u<0.34915` was **not** a valid convergence criterion — `u⁴(1+16u⁴)`
+is the minimal-surface *amplitude* (a prefactor), not the per-plaquette ratio; entropy grows with area,
+so the sum `Σ_A N_A û^A` converges iff **`μ_4·û<1`** (LINEAR). `retained_metric_intertwiner_v0_9.py` +
+`InfoRetainedIntertwiner.v` (Closed) fix it and close the representation tail: from `G>0` the internal
+automorphism group is compact, the link intertwiner `P=∫_𝒢 ρ(h)dh` is an **orthogonal projector with
+‖P‖≤1** (a *contraction* — it selects, never amplifies), so `û≤u/(1−8v)` for `8v<1`; corrected window
+`κ≲0.05358`. Then `all_order_character_v1_0.py` + `InfoAllOrderCharacter.v` (Closed) close `u(κ),v(κ)` to
+**all orders** from exact SU(3) **Weyl integrals** (deterministic quadrature, no truncation, no QCD
+coefficient): `u=c_3/3c_0`, `v=c_8/8c_0`, `χ_8=|χ_3|²−1` from `3⊗3̄=1⊕8`, recursion `c_0'=2c_3`; the
+all-order window is `0<κ<0.053583974745…`, matching the v0.9 low-order series to `~4e-6` (not a fit).
+**Honest status:** high-precision *numerical* closure, **not** a rigorous interval proof. The single
+remaining confinement wall is now `μ_4^admissible` = the spectral radius of a triality-preserving surface
+automaton, replacing the crude `20e` bound. (Character integration / invariant averaging are standard;
+the retained-triality reading is ours.)
+
+**Surface automaton for `μ_4^admissible` (v1.1).** `surface_automaton_v1_1.py` + `InfoSurfaceAutomaton.v`
+(Closed) turn the crude `20e` surface-entropy bound into a computable spectral quantity: surfaces are
+Z₃ 2-chains `n` with `∂₂n=j_C`, and `μ_4^admissible` = the Perron growth of a **frontier automaton**
+whose state `b_s` (the edges the past still owes the future) is exactly our *minimal sufficient quotient*.
+First real 4D spectral radii (single-sheet sector): canonical connector `z³+z²+3z−1=0 ⇒ μ_can=3.38298`;
+shortest-paths `2z³−z²+4z−1=0 ⇒ μ_short=3.87513` (finite strips `H=0..4` give `1, 2.846, 3.348, 3.555,
+3.660`, converging systematically). **Honest:** this is a **lower** bound (omits bubbles/handles/branching),
+so the bracket is `3.87513 ≤ μ_4^admissible ≤ 54.366` and it does **not** yet replace `20e` in the
+certificate — the route to a rigorous **upper** bound is an overflow-state automaton `M^+` with
+`ρ(M⁻)≤ρ(M)≤ρ(M⁺)` (Perron–Frobenius). Next: `M^+` with pair continuation + Z₃ triple junction. (Frontier
+transfer-matrix surface counting is standard; the minimal-sufficient-quotient reading is ours.)
+
+
+
 `K_b`, `ρ_t^full(b)` and the correlation defect `ε_t(b)` for `b=2` from the real action; a block scale
 survives iff `ε_*<−log ρ_t`. (Convolution/character blocking is standard lattice gauge; the
 retained-triality reading is ours.)

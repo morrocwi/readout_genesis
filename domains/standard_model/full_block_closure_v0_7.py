@@ -2,6 +2,15 @@
 """
 Full 4D Block Closure v0.7 — the b=2 block: exact structure + FIRST correlated shell.
 
+*** CORRECTION (superseded in part by v0.9) ***
+The "first-shell certificate  20e·u^4(1+16u^4) < 1  =>  u < 0.34915" below is NOT a correct
+CONVERGENCE criterion. u^4(1+16u^4) is the AMPLITUDE of the minimal (area>=4) surface — a
+prefactor — NOT the per-plaquette weight. The sum over surfaces of ALL areas, sum_A N_A*u_hat^A,
+converges iff  mu_4 * u_hat < 1  (linear in u_hat, NO exponent), where u_hat is the resummed
+per-plaquette triality retention. See retained_metric_intertwiner_v0_9.py for the corrected
+criterion  20e * u/(1-8v) < 1  (=> kappa <~ 0.05358). The bump COUNTING and rho_geom=u^4(1+16u^4)
+as a minimal-surface amplitude below are still correct; only the "< 1 threshold" reading was wrong.
+
 What is honestly closed this round:
   * the EXACT block integral K_{B2}, c_R^(2), ρ_t^full(2) are DEFINED (finite tensor contraction,
     NOT a serial-independence assumption);
@@ -62,7 +71,7 @@ for u in (0.01, 0.05, 0.1, 0.2):
        contraction > 10*eps)
 
 # ---- 5-7. first-shell certificate: 20e·u^4(1+16u^4) < 1 ⟺ u < 0.34915 ----
-print("== 5-7. first-shell certificate 20e·u^4(1+16u^4) < 1 ⟺ u < 0.3491475 ==")
+print("== 5-7. minimal-surface AMPLITUDE 20e·u^4(1+16u^4) [NOT a convergence criterion — see v0.9] ==")
 def C_shell(u): return mu4 * rho_geom(u)
 # threshold: solve 20e u^4(1+16u^4)=1
 lo,hi=0.0,1.0
