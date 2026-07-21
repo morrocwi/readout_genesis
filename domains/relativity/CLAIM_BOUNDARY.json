@@ -1,0 +1,43 @@
+{
+  "version": "0.3",
+  "tier": "FINITE_INTERNAL_CLOSURE",
+  "checker_label": "INTERNAL_EXACT_RATIONAL_WITNESS",
+  "public_label": "[FiniteInternalWitnesses] root-native relativity readout (algebraic closure, not physics)",
+  "established": [
+    "finite causal cone |x|<=vt with v derived from the root's own finite retention (v=sqrt(D/tau_c)), not an inserted speed of light",
+    "cone product Q_v = n_+ n_- composed from the cone's own two null edges",
+    "four-gate observer map (path-additivity, cone-preservation, orientation, RD-neutrality) forcing kappa-parametrized null rescaling",
+    "exact rational Lorentz-shaped bridge (Gamma_R, boosts, time dilation, length contraction, relative simultaneity, velocity composition) conditional on the RD-neutrality gate, verified on an exact witness (v=5/4,u=3/4 -> beta=3/5,kappa=2,Gamma_R=5/4; event (8,5)->(t'=7,x'=-5/4); Q_v=Q_v'=75)",
+    "operator-to-metric direction g^ij ~= 1/2 Hess sigma_LR at the [Th_coqc] base tier inherited from the master core (Face 8), for that one direction only",
+    "minimal closed geometry state Z_n=(Phi_n,Phi_{n-1},Psi_n,Psi_{n-1},Theta_n) because the geometry-only quotient Theta lacks the variables to close alone",
+    "discrete connection U_{j<-i}=V_j^-1 V_i from the basis-change identity, with an exact finite-matrix witness -- now ALSO machine-checked (Th_coqc, v0.3) via the causal-quantum-gravity Coq corpus (InfoConnectionFromFrame_attempt.v: coboundary_telescopes, closed_loop_pure_gauge_flat, genuine_curvature_is_non_coboundary); see PROVENANCE_CAUSAL_QG.md",
+    "curvature certificate: two finite transports that fail to commute, K_C=U_C-I != 0, on an exact integer/rational witness -- now ALSO machine-checked (Th_coqc, v0.3) via InfoDiscreteRiemannCurvature_attempt.v (riemann_is_second_difference, curvature_nonzero_witness, flat_iff_second_diff_zero) plus a supporting discrete-geometry curvature chain; see PROVENANCE_CAUSAL_QG.md",
+    "free-path selection as an obstruction minimizer O(P)=sum o_e^T G_j o_e, exact witness selecting the zero-obstruction path over the obstruction-1 path",
+    "geometry-field feedback closes as a time-unrolled DAG (not circular) with a commuting square q_LG o F_full = F_LG o q_LG and a shared singular fail-state",
+    "Schwarzschild r_s=2GE/c^4 and Unruh tau_c=pi c/a admitted only as [DeclaredFormula] calculator identities, not as derived theorems",
+    "observer-normalization / internal lapse N=sqrt(det B): a diagonal observer map B=diag(a,b) factors uniquely as B=N*diag(chi^-1,chi), exact witness a=2,b=8 -> det B=16, N=4, chi=2; pure-observer change (det B=1) forces N=1",
+    "redshift as relative retained-step rate: dtheta_i=N dtheta_o, nu_o=N nu_i on a stationary path, composed only from the root's own retained transition count, no external light/gravity/metric law used",
+    "horizon as rank-loss boundary N=0 (finite, not infinity): N=0 iff det B=0, a finite singular boundary of the observer map with no inverse, exact witness B_h=diag(0,5)",
+    "dynamic metric-source law from the DRL action: geometry source S_Theta=Phi^T G_a Psi, stationarity law M_Theta d^2_t Theta_n + grad U_Theta(Theta_n) + K S_Theta,n = 0 with explicit stepper, exact fixture Theta_{n+1}=3/8 with residual 0, and a failing control case (Theta_wrong=7/8, R_Theta=1 != 0) proving the record field Psi is load-bearing",
+    "minimal closed state Z_n=(Phi_n,Phi_{n-1},Psi_n,Psi_{n-1},Theta_n,Theta_{n-1}) for living geometry, with a commuting square q_MSG o F_full = F_MSG o q_MSG that a metric-only quotient q_g cannot satisfy alone",
+    "24-node Minimal Relativity DAG closure audit, v0.2: strict 19/24=79.2%, weighted 21.5/24=89.6%, lift chain 16.7% -> 70.8% -> 79.2% on the same DAG; OB-07 and OC-05 (both OPEN in v0.1) are now CLOSED via the two new internal gates above"
+  ],
+  "not_established": [
+    "real spacetime / real physics of any kind",
+    "that the graph front-speed v equals the physical speed of light c",
+    "any coupling constant derived from the root",
+    "a calibration/encoding from RD units to SI units",
+    "a complete horizon / redshift bridge (black-hole or cosmological)",
+    "a dynamic metric-source field law (Einstein-field-equation-like closure)",
+    "a Coq proof of the relativity closure as a whole",
+    "a commuting-square check against real measured data",
+    "that the RD-neutrality gate is proven rather than proposed",
+    "that Gamma_R is the physical Lorentz factor of special relativity",
+    "that N is the lapse of a real physical metric",
+    "that kappa_R is physical surface gravity",
+    "that S_Theta is a physical/external stress-energy tensor",
+    "that GC-01..GC-05 or GD-01..GD-04 constitute a real black-hole event horizon or the Einstein field equations",
+    "that the v0.2 commuting-square/Theta-stepper closure has been checked against real measured data",
+    "empirical generalization of any kind"
+  ]
+}

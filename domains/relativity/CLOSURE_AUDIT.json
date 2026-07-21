@@ -1,0 +1,115 @@
+{
+  "version": "0.2",
+  "denominator_note": "The 24 nodes are the Minimal Relativity DAG constructed for THIS closure exercise (the coarse-grained observer/geometry/boundary node set shown in ROOT_DAG_MASTER.md). The percentages below are of THIS 24-node DAG only -- not of 'all of relativity', not of 'all textbook formulas', and not a claim about coverage of the real theory of relativity.",
+  "status_taxonomy": {
+    "note": "Per founder, 2026-07-21. Applies to the causal-quantum-gravity Coq upgrades folded in from PROVENANCE_CAUSAL_QG.md -- a QUALITY overlay on top of the existing closed/partial/open node statuses above, not a new status column that changes the 19/24 count.",
+    "green": "Coq/formal closed -- compiled clean (coqc -q -R . DQG) and axiom-grep clean (no Admitted/admit/Axiom/Parameter); usable as Th_coqc.",
+    "yellow": "theorem closed but the physical/semantic bridge is partial -- FORMAL-CLOSED / BRIDGE-PARTIAL.",
+    "red": "open.",
+    "gray": "measured/calibration adapter."
+  },
+  "coq_backed_nodes": {
+    "note": "Nodes in the existing 19/24 'closed' count that now additionally carry a green, machine-checked (Th_coqc) backing from the causal-quantum-gravity corpus. See RULE_REGISTRY.json coq_backing fields and PROVENANCE_CAUSAL_QG.md for the full audit trail. This does NOT move any node between closed/partial/open -- these nodes were already counted closed.",
+    "OB-01": "green -- already Th_coqc (Face 8, RDL_MetricReadout.v); broadened green by InfoMetricIsEnergyReadout.v (closes the isolated-islands gap, metric-Hessian = energy form).",
+    "OB-03": "green -- FINITE_DIAGNOSTIC upgraded to Th_coqc via InfoConnectionFromFrame_attempt.v.",
+    "OB-04": "green -- FINITE_DIAGNOSTIC upgraded to Th_coqc via InfoDiscreteRiemannCurvature_attempt.v plus supporting curvature-chain files.",
+    "OA-06": "green, signature-foundation only, via InfoLorentz.v (signature from causal order); OA-06 itself stays PROPOSED_INTERNAL_GATE, and OA-07..OA-12 (Gamma_R, transforms, dilation, length, simultaneity, composition) stay PROPOSED_INTERNAL_BRIDGE -- nothing derives Gamma_R root-natively.",
+    "GD-01_GD-03": "green, PARTIAL joint, via InfoBackReaction.v (edge_strain_expansion_exact / budget_consumed_exact / retention_shift_iff); tier stays FINITE_DIAGNOSTIC, full GD-04 source law stays open."
+  },
+  "percentage_unchanged_note": "IMPORTANT: the strict closure percentage is UNCHANGED at 19/24=79.2% (weighted 21.5/24=89.6%) after folding in the causal-quantum-gravity Coq upgrades. These are QUALITY upgrades (FINITE_DIAGNOSTIC -> Th_coqc) on nodes that were already counted closed in v0.2, NOT open->closed moves. No node changed its closed/partial/open status as a result of this Coq-provenance pass.",
+  "distinct_not_node8": "InfoTelegraphHorizonUnification_attempt.v (with InfoTelegraphCrossover_attempt.v) is verified green, but it proves the spine's OWN classical/quantum crossover discriminant lambda_c=D^2/4MK -- a DISTINCT object from node-8 (OB-07 / GC-01..GC-05 observer-normalization/redshift/lapse). It does NOT cover node-8's lapse N=sqrt(det B) or redshift nu_o=N*nu_i, and no coq_backing was added to any node-8 rule for this reason. See PROVENANCE_CAUSAL_QG.md.",
+  "groups": {
+    "A": [
+      {"node": "OA-01 null coordinates", "rule_id": "OA-01", "status": "closed"},
+      {"node": "OA-02 cone product", "rule_id": "OA-02", "status": "closed"},
+      {"node": "OA-03 O1 path-additivity gate", "rule_id": "OA-03", "status": "closed"},
+      {"node": "OA-04 O2 cone-preservation gate", "rule_id": "OA-04", "status": "closed"},
+      {"node": "OA-05 O3 orientation gate", "rule_id": "OA-05", "status": "closed"},
+      {"node": "OA-06 O4 RD-neutrality gate", "rule_id": "OA-06", "status": "closed", "note": "closed as a [Proposed internal gate], not as a proven theorem"},
+      {"node": "OA-07 forced kappa rescaling", "rule_id": "OA-07", "status": "closed"},
+      {"node": "OA-08 Gamma_R + relative velocity", "rule_id": "OA-08", "status": "closed"},
+      {"node": "OA-09 observer transforms", "rule_id": "OA-09", "status": "closed"},
+      {"node": "OA-10 time dilation / length contraction", "rule_id": "OA-10", "status": "closed"},
+      {"node": "OA-11 relative simultaneity", "rule_id": "OA-11", "status": "closed"},
+      {"node": "OA-12 velocity composition", "rule_id": "OA-12", "status": "closed"}
+    ],
+    "B": [
+      {"node": "OB-01 operator-to-metric", "rule_id": "OB-01", "status": "closed", "note": "[Th_coqc] base tier, Face 8, operator->metric direction only"},
+      {"node": "OB-02 finite-basis covariance / minimal closed state", "rule_id": "OB-02", "status": "partial", "note": "unchanged from v0.1 -- still the one real-physics-calibration gap in group B"},
+      {"node": "OB-03 discrete connection", "rule_id": "OB-03", "status": "closed"},
+      {"node": "OB-04 curvature certificate", "rule_id": "OB-04", "status": "closed"},
+      {"node": "OB-05 free-path obstruction minimizer", "rule_id": "OB-05", "status": "closed"},
+      {"node": "OB-06 geometry-field feedback commuting square", "rule_id": "OB-06", "status": "closed"},
+      {"node": "OB-07 observer-normalization / redshift / lapse quotient", "rule_id": "OB-07", "status": "closed", "note": "CLOSED in v0.2 by the Null-Transport Factorization Gate [Proposed internal gate]: lapse N=sqrt(det B), redshift = relative retained-step rate. Internal algebraic closure only, not a physical redshift derivation."}
+    ],
+    "C": [
+      {"node": "OC-01 graph front-speed vs measured-speed", "rule_id": "OC-01", "status": "partial", "note": "declared correspondence only, [DeclaredFormula]; unchanged -- real-physics-calibration gap (v = measured c not established)"},
+      {"node": "OC-02 mass-memory", "rule_id": "OC-02", "status": "partial", "note": "declared correspondence only, [DeclaredFormula]; unchanged -- real-physics-calibration gap"},
+      {"node": "OC-03 Schwarzschild r_s=2GE/c^4", "rule_id": "OC-03", "status": "partial", "note": "calculator identity, [DeclaredFormula], not a theorem; unchanged -- real-physics-calibration gap (Schwarzschild-as-derived not established)"},
+      {"node": "OC-04 Unruh tau_c=pi c/a", "rule_id": "OC-04", "status": "partial", "note": "calculator identity, [DeclaredFormula], not a theorem; unchanged -- real-physics-calibration gap (Unruh-as-derived not established), though the Unruh-fix readout kappa_R=Normalize_N(a_local) in v0.2 repairs the internal bridge to OB-07/OC-05"},
+      {"node": "OC-05 complete horizon bridge / dynamic metric-source closure", "rule_id": "OC-05", "status": "closed", "note": "CLOSED in v0.2: horizon half by the Null-Transport Factorization Gate (N=0 <=> det B=0, finite rank-loss boundary, plus the Unruh-fix kappa_R=Normalize_N(a_local) internal bridge); metric-source half by the Geometry Stationarity Gate [Finite diagnostic] (exact fixture Theta_{n+1}=3/8, S_Theta=1, residual 0, plus a failing control case Theta_wrong=7/8, R_Theta=1 proving the Psi source is load-bearing). Internal algebraic closure only -- not a physical event horizon, not real surface gravity, not the Einstein field equations."}
+    ]
+  },
+  "totals": {
+    "closed": 19,
+    "partial": 5,
+    "open": 0,
+    "strict": "19/24=79.2%",
+    "weighted": "21.5/24=89.6%"
+  },
+  "lift": {
+    "before_v0_0": "4/24=16.7%",
+    "v0_1": "17/24=70.8%",
+    "v0_2": "19/24=79.2%",
+    "note": "Lift chain on this same 24-node DAG: 16.7% (pre-closure baseline) -> 70.8% (v0.1, RD-neutrality gate + living-geometry finite-matrix witnesses) -> 79.2% (v0.2, Null-Transport Factorization Gate + Geometry Stationarity Gate close OB-07 and OC-05). Weighted: 81.25% (v0.1) -> 89.6% (v0.2)."
+  },
+  "new_gates_v0_2": [
+    {
+      "id": "null_transport_factorization_gate",
+      "class": "PROPOSED_INTERNAL_GATE",
+      "closes": ["OB-07"],
+      "contributes_to": ["OC-05 (horizon half)"],
+      "description": "Diagonal observer map B=diag(a,b) factors uniquely as B=N*diag(chi^-1,chi), N=sqrt(det B) (internal LAPSE), chi=sqrt(b/a) (relative-observer factor). Pure observer change => det B=1 => N=1. Redshift = relative retained-step rate (nu_o=N nu_i). Composition is multiplicative in N (scalar holonomy). Horizon = N=0 <=> det B=0, a finite rank-loss boundary, not infinity. Unruh-fix readout kappa_R=Normalize_N(a_local) repairs the internal bridge to Schwarzschild/Unruh without asserting physical surface gravity."
+    },
+    {
+      "id": "geometry_stationarity_gate",
+      "class": "FINITE_DIAGNOSTIC",
+      "closes": ["OC-05 (metric-source half)"],
+      "description": "The living-geometry state Theta obeys the same DRL retained-action grammar as the rest of the root: S_closed = S_DRL + retained-difference cost of Theta. Geometry source S_Theta^a = Phi^T G_a Psi (reader x record changing the operator geometry reads). Stationarity gives an explicit stepper for Theta_{n+1}. Exact fixture (Theta_n=1/2,Theta_{n-1}=0,M_Theta=2,K=1,dt=1,U_Theta=Theta^2/4,G_1=[[0,1],[1,0]],Phi_n=[1,0],Psi_n=[0,1]) gives S_Theta=1, Theta_{n+1}=3/8, action residual R_Theta=0. A failing control (S_Theta forced to 0) gives Theta_wrong=7/8 and, evaluated against the TRUE equation, R_Theta=1 != 0 -- proving the record field Psi is load-bearing, not a hand-picked always-succeeding recurrence."
+    }
+  ],
+  "remaining_bottlenecks_for_real_physics_tier": [
+    {
+      "id": "graph_speed_vs_measured_c",
+      "rule_id": "OC-01",
+      "status": "partial",
+      "description": "The graph front-speed v is still only DECLARED (not derived or calibrated) as playing the role of the physical speed of light c. No encoding from root units to SI units exists."
+    },
+    {
+      "id": "mass_memory_correspondence",
+      "rule_id": "OC-02",
+      "status": "partial",
+      "description": "Retention memory is still only DECLARED as playing a mass-like role; no mass-energy law is derived from the root."
+    },
+    {
+      "id": "schwarzschild_as_derived",
+      "rule_id": "OC-03",
+      "status": "partial",
+      "description": "r_s=2GE/c^4 remains a [DeclaredFormula] calculator identity, not a theorem derived from the root; still gated as real-physics-calibration work, unaffected by the v0.2 internal-bridge repair."
+    },
+    {
+      "id": "unruh_as_derived",
+      "rule_id": "OC-04",
+      "status": "partial",
+      "description": "tau_c=pi*c/a remains a [DeclaredFormula] calculator identity, not a theorem derived from the root. The v0.2 Unruh-fix readout kappa_R=Normalize_N(a_local) repairs the INTERNAL bridge to OB-07/OC-05 only -- it does not promote OC-04 itself to derived or to real physical surface gravity."
+    },
+    {
+      "id": "finite_basis_covariance",
+      "rule_id": "OB-02",
+      "status": "partial",
+      "description": "Full basis-independent covariance under the minimal closed state Z_n is still only partially closed; carried forward unchanged from v0.1."
+    }
+  ],
+  "remaining_bottlenecks": [],
+  "roadmap_note": "v0.1's two OPEN bottlenecks (OB-07, OC-05) are both CLOSED in v0.2 by two new FINITE INTERNAL CLOSURE gates (algebraic, not real physics, not Coq) -- see new_gates_v0_2 above. What remains open toward any 'heavy GR' / real-physics tier is exactly the five items in remaining_bottlenecks_for_real_physics_tier: they are calibration gaps (v=c, mass-energy, Schwarzschild/Unruh-as-derived, full basis covariance), not missing internal algebra. Neither the v0.1 nor the v0.2 gates may be closed further by importing a named external law (e.g. a named metric, the Einstein field equations, or a named redshift formula) as a premise -- doing so would trip DRIFT_CONTRACT.json's hard_fail_conditions."
+}

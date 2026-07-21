@@ -1,0 +1,378 @@
+{
+  "registry_version": "0.2",
+  "rules": [
+    {
+      "rule_id": "RB-P0",
+      "name": "distinguishability and asymmetry",
+      "class": "ROOT_BACKBONE",
+      "assumptions": ["a != b is retained (master core root)"],
+      "parents": [],
+      "statement": "a!=b is retained as a distinction; the distinction is asymmetric, giving an ordering direction.",
+      "forbidden_claims": ["this is a physical spacetime event", "this asserts a real observer"]
+    },
+    {
+      "rule_id": "RB-P1",
+      "name": "ordered transitions and retention",
+      "class": "ROOT_BACKBONE",
+      "assumptions": ["RB-P0"],
+      "parents": ["RB-P0"],
+      "statement": "The asymmetric ordering yields ordered transitions with a positive retention time tau_c>0.",
+      "forbidden_claims": ["tau_c is a measured physical relaxation time", "tau_c is calibrated to SI seconds"]
+    },
+    {
+      "rule_id": "RB-P2",
+      "name": "discrete ticks and finite causal operator",
+      "class": "ROOT_BACKBONE",
+      "assumptions": ["RB-P1"],
+      "parents": ["RB-P1"],
+      "statement": "Retention discretizes into ticks t=n*Delta_theta; the finite causal graph and retention operator L_R are built on those ticks, stepped by MQ.08.",
+      "forbidden_claims": ["L_R is a physical Hamiltonian", "the stepper reproduces real dynamics"]
+    },
+    {
+      "rule_id": "RB-P3",
+      "name": "telegraph coarse-grain and finite front speed",
+      "class": "ROOT_BACKBONE",
+      "assumptions": ["RB-P2"],
+      "parents": ["RB-P2"],
+      "statement": "Coarse-graining the stepper gives a telegraph process with finite front speed v=sqrt(D/tau_c), derived from finite retention, not inserted.",
+      "forbidden_claims": ["v equals the physical speed of light c", "v is empirically measured"]
+    },
+    {
+      "rule_id": "RB-P4",
+      "name": "finite causal cone",
+      "class": "ROOT_BACKBONE",
+      "assumptions": ["RB-P3"],
+      "parents": ["RB-P3"],
+      "statement": "The finite front speed bounds a causal cone |x|<=v*t.",
+      "forbidden_claims": ["this cone is the physical light cone"]
+    },
+    {
+      "rule_id": "OA-01",
+      "name": "null coordinates on the cone",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["RB-P4"],
+      "parents": ["RB-P4"],
+      "statement": "Define null coordinates n_+ = v*t+x, n_- = v*t-x from the cone's own two edges.",
+      "forbidden_claims": ["these are imported Minkowski null coordinates"]
+    },
+    {
+      "rule_id": "OA-02",
+      "name": "cone product invariant candidate",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["OA-01"],
+      "parents": ["OA-01"],
+      "statement": "Q_v = n_+ * n_- = v^2 t^2 - x^2, composed from the cone's own null edges, not an imported interval.",
+      "forbidden_claims": ["Q_v is the physical Minkowski interval"]
+    },
+    {
+      "rule_id": "OA-03",
+      "name": "O1 path-additivity gate",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["observer map B is defined on cone displacements"],
+      "parents": ["RB-P4"],
+      "statement": "B(delta1+delta2)=B(delta1)+B(delta2) is imposed and forces linearity of B over Q (derived, not separately assumed).",
+      "forbidden_claims": ["B is assumed linear a priori"]
+    },
+    {
+      "rule_id": "OA-04",
+      "name": "O2 cone-preservation gate",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["OA-03"],
+      "parents": ["OA-03"],
+      "statement": "The observer map B must send the cone to itself (preserve |x|<=v*t under the map).",
+      "forbidden_claims": ["cone preservation alone fixes the map uniquely"]
+    },
+    {
+      "rule_id": "OA-05",
+      "name": "O3 orientation gate",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["OA-04"],
+      "parents": ["OA-04"],
+      "statement": "The observer map B preserves the forward/backward orientation of the cone.",
+      "forbidden_claims": ["orientation preservation is a physical causality proof"]
+    },
+    {
+      "rule_id": "OA-06",
+      "name": "O4 RD-neutrality gate",
+      "class": "PROPOSED_INTERNAL_GATE",
+      "assumptions": ["OA-01", "OA-02", "OA-05", "pure observer change carries no RD-cell creation/destruction"],
+      "parents": ["OA-02", "OA-05"],
+      "statement": "A pure observer change preserves the RD causal-cell count n_+ * n_- (Q_v). This is the one new internal gate added by this closure; it is proposed, not derived from the root backbone.",
+      "forbidden_claims": ["O4 is proved from RB-P0..RB-P4", "O4 is a theorem", "O4 is empirically confirmed"],
+      "coq_backing": {
+        "status": "green, signature-foundation ONLY -- OA-06 stays PROPOSED_INTERNAL_GATE (tier unchanged)",
+        "source": "causal-quantum-gravity/formal/InfoLorentz.v",
+        "theorems": "signature-from-causal-order (<)",
+        "note": "The Lorentzian SIGNATURE foundation underneath the RD-neutrality gate is Coq-green. This does NOT upgrade Gamma_R or the transforms (OA-07..OA-12) -- those remain [Proposed internal bridge]; nothing in the DB derives Gamma_R root-natively (InfoLorentzInvariance secretly imports Minkowski -- refused, see PROVENANCE_CAUSAL_QG.md)."
+      }
+    },
+    {
+      "rule_id": "OA-07",
+      "name": "forced null rescaling (kappa parametrization)",
+      "class": "PROPOSED_INTERNAL_BRIDGE",
+      "assumptions": ["OA-06"],
+      "parents": ["OA-06"],
+      "statement": "O4 forces n_+' = kappa^-1 * n_+, n_-' = kappa * n_-, kappa>0, so that Q_v'=Q_v automatically.",
+      "forbidden_claims": ["kappa is a physically measured boost parameter"]
+    },
+    {
+      "rule_id": "OA-08",
+      "name": "Gamma_R from kappa and relative velocity",
+      "class": "PROPOSED_INTERNAL_BRIDGE",
+      "assumptions": ["OA-07"],
+      "parents": ["OA-07"],
+      "statement": "Relative velocity beta=u/v; kappa^2=(1+beta)/(1-beta); Gamma_R=(kappa+1/kappa)/2=1/sqrt(1-beta^2). Exact witness: v=5/4,u=3/4 -> beta=3/5, kappa=2, Gamma_R=5/4.",
+      "forbidden_claims": ["Gamma_R is the physical Lorentz factor of special relativity", "beta is a measured velocity ratio to c", "this is proven physics"]
+    },
+    {
+      "rule_id": "OA-09",
+      "name": "observer coordinate transforms",
+      "class": "PROPOSED_INTERNAL_BRIDGE",
+      "assumptions": ["OA-08"],
+      "parents": ["OA-08"],
+      "statement": "x'=Gamma_R*(x-u*t), t'=Gamma_R*(t-u*x/v^2). Exact witness: event (t=8,x=5) -> (t'=7,x'=-5/4); Q_v=Q_v'=75.",
+      "forbidden_claims": ["this is the physical Lorentz transformation", "c is derived here"]
+    },
+    {
+      "rule_id": "OA-10",
+      "name": "time dilation and length contraction (kinematic consequences)",
+      "class": "PROPOSED_INTERNAL_BRIDGE",
+      "assumptions": ["OA-09"],
+      "parents": ["OA-09"],
+      "statement": "t'/t=1/Gamma_R and L=L_0/Gamma_R follow from OA-09 with no new law inserted.",
+      "forbidden_claims": ["real clocks or rulers are shown to dilate/contract"]
+    },
+    {
+      "rule_id": "OA-11",
+      "name": "relative simultaneity",
+      "class": "PROPOSED_INTERNAL_BRIDGE",
+      "assumptions": ["OA-09"],
+      "parents": ["OA-09"],
+      "statement": "Delta t' = -Gamma_R * u * Delta x / v^2 follows from OA-09 with no new law inserted.",
+      "forbidden_claims": ["this is a claim about real simultaneous physical events"]
+    },
+    {
+      "rule_id": "OA-12",
+      "name": "velocity composition",
+      "class": "PROPOSED_INTERNAL_BRIDGE",
+      "assumptions": ["OA-09"],
+      "parents": ["OA-09"],
+      "statement": "u_21=(u1+u2)/(1+u1*u2/v^2) follows from OA-09; exact witness stays sub-cone (|u21|<v).",
+      "forbidden_claims": ["this proves a real speed limit on physical velocities"]
+    },
+    {
+      "rule_id": "OB-01",
+      "name": "operator-to-metric readout",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["master core Face 8 base (operator->metric direction only)"],
+      "parents": ["RB-P2"],
+      "statement": "g^ij ~= 1/2 * Hess(sigma_LR), the retention operator's principal symbol read as a metric. This direction carries the master core's [Th_coqc] base tier (Face 8). The reverse direction (spectrum-alone -> metric) is explicitly forbidden.",
+      "forbidden_claims": ["spectrum alone determines the metric", "this is a general covariant metric theory", "the reverse readout direction is also Th_coqc"],
+      "coq_backing": {
+        "status": "green broadening (Th_coqc, unchanged tier)",
+        "source": "causal-quantum-gravity/formal/InfoMetricIsEnergyReadout.v",
+        "theorems": "metric-Hessian readout = mother-equation energy form",
+        "note": "Closes the named 'isolated islands' gap (RDL_GammaSpectral.energy <-> RDL_MetricReadout.qform) -- axiom-free, root-native (weighted-graph Dirichlet form + L_R Hessian only). See PROVENANCE_CAUSAL_QG.md."
+      }
+    },
+    {
+      "rule_id": "OB-02",
+      "name": "finite-basis covariance and minimal closed state",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["OB-01"],
+      "parents": ["OB-01"],
+      "statement": "The geometry-only quotient Theta lacks the variables to close on its own (Theta_{n+1} depends on Phi,Psi, not Theta alone); the minimal closed state is Z_n=(Phi_n,Phi_{n-1},Psi_n,Psi_{n-1},Theta_n). Basis covariance under this minimal state is only PARTIALLY closed.",
+      "forbidden_claims": ["full basis-independent covariance is established", "Theta alone is a closed geometric quotient"]
+    },
+    {
+      "rule_id": "OB-03",
+      "name": "discrete connection",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["OB-02"],
+      "parents": ["OB-02"],
+      "statement": "U_{j<-i} = V_j^-1 * V_i from the basis-change identity; transport defect o_{i->j} = phi_j - U_{j<-i}*phi_i.",
+      "forbidden_claims": ["this is a Levi-Civita or physical gauge connection"],
+      "coq_backing": {
+        "status": "green (Th_coqc) -- FINITE_DIAGNOSTIC upgraded to ROOT_THEOREM, 2026-07-21",
+        "source": "causal-quantum-gravity/formal/InfoConnectionFromFrame_attempt.v",
+        "theorems": ["coboundary_telescopes", "closed_loop_pure_gauge_flat", "genuine_curvature_is_non_coboundary"],
+        "note": "Connection from a frame field, pure-gauge-is-flat, genuine non-coboundary curvature -- no continuum/manifold import; re-verified locally (coqc -q -R . DQG, axiom-grep clean). See PROVENANCE_CAUSAL_QG.md."
+      }
+    },
+    {
+      "rule_id": "OB-04",
+      "name": "curvature certificate",
+      "class": "ROOT_THEOREM",
+      "assumptions": ["OB-03"],
+      "parents": ["OB-03"],
+      "statement": "Loop transport U_C = U_C(loop) - I defines curvature K_C: local transports failing to commute (finite witness: U_x=[[1,1],[0,1]], U_y=[[1,0],[1,1]] => U_C=[[0,1],[-1,3]], K_C=[[-1,1],[-1,2]] != 0).",
+      "forbidden_claims": ["K_C is the physical Riemann curvature tensor", "this witness generalizes beyond the two given matrices without re-derivation"],
+      "coq_backing": {
+        "status": "green (Th_coqc) -- FINITE_DIAGNOSTIC upgraded to ROOT_THEOREM, 2026-07-21",
+        "source": "causal-quantum-gravity/formal/InfoDiscreteRiemannCurvature_attempt.v",
+        "theorems": ["riemann_is_second_difference", "curvature_nonzero_witness", "flat_iff_second_diff_zero"],
+        "supporting": ["InfoMetricCompatibleCurvature_attempt.v", "InfoDiscreteSecondBianchi_attempt.v", "InfoDiscreteGaussBonnet_attempt.v", "InfoRiemannPairSymmetry_attempt.v", "InfoRationalSO3Curvature_attempt.v"],
+        "note": "Discrete Riemann = second finite difference, with a nonzero witness; supporting theorems close the discrete geometry chain (metric-compatibility, 2nd Bianchi, Gauss-Bonnet, pair symmetry, rational SO(3) curvature). Re-verified locally, axiom-grep clean. See PROVENANCE_CAUSAL_QG.md."
+      }
+    },
+    {
+      "rule_id": "OB-05",
+      "name": "free-path obstruction minimizer",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["OB-03"],
+      "parents": ["OB-03"],
+      "statement": "Free path selects O(P)=sum_e o_e^T G_j o_e minimal; witness phi_i=[1,0], phi_f=[1,1]: path x->y obstruction 0, path y->x obstruction 1, minimizer selects x->y.",
+      "forbidden_claims": ["this is a physical geodesic equation", "this reproduces real particle trajectories"]
+    },
+    {
+      "rule_id": "OB-06",
+      "name": "geometry-field feedback commuting square",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["OB-01", "OB-02", "OB-03"],
+      "parents": ["OB-01", "OB-02", "OB-03"],
+      "statement": "The geometry-field feedback loop closes as a time-unrolled DAG (not circular), satisfying q_LG o F_full = F_LG o q_LG, with a shared singular fail-state perp_singular.",
+      "forbidden_claims": ["this is a dynamic metric-source field law", "this closure is checked against real measured data"]
+    },
+    {
+      "rule_id": "OB-07",
+      "name": "observer-normalization / redshift / lapse quotient",
+      "class": "PROPOSED_INTERNAL_GATE",
+      "assumptions": ["GC-01"],
+      "parents": ["OA-08", "OB-01", "GC-01"],
+      "statement": "CLOSED in v0.2 by the Null-Transport Factorization Gate: the local causal-cell rate relates to a remote record rate via the internal lapse N=sqrt(det B) (dtheta_i = N dtheta_o, nu_o = N nu_i), with no named metric inserted as a premise.",
+      "forbidden_claims": ["a physical redshift or physical lapse relation has been derived", "N is the lapse of a real physical metric", "this is the gravitational redshift of real physics"]
+    },
+    {
+      "rule_id": "GC-01",
+      "name": "null-transport factorization (internal lapse N and relative-observer factor chi)",
+      "class": "PROPOSED_INTERNAL_GATE",
+      "assumptions": ["OA-09", "diagonal observer map B=diag(a,b)"],
+      "parents": ["OA-09"],
+      "statement": "The diagonal cone map B=diag(a,b) factors uniquely as B=N*diag(chi^-1,chi), with N=sqrt(ab)=sqrt(det B) (the internal LAPSE) and chi=sqrt(b/a) (relative-observer factor). Pure observer change => det B=1 => N=1; geometry-dependent readout => N=sqrt(det B). Exact witness: a=2,b=8 => det B=16, N=4, chi=2.",
+      "forbidden_claims": ["N is the lapse of a real physical metric", "this is a real spacetime lapse function", "B is shown to be the physical observer transformation of general relativity"]
+    },
+    {
+      "rule_id": "GC-02",
+      "name": "redshift as relative retained-step rate",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["GC-01"],
+      "parents": ["GC-01"],
+      "statement": "On a stationary path, dtheta_i = N_{i|o} dtheta_o (theta = retained transition count), so nu_o = N nu_i and dtheta_o = dtheta_i / N. No external light/gravity/metric law is used; 'frequency shift' here means relative retained-step rate only.",
+      "forbidden_claims": ["this equals the gravitational redshift of real physics", "nu is a physically measured frequency", "this is derived from any named metric"]
+    },
+    {
+      "rule_id": "GC-03",
+      "name": "lapse composition and normalization holonomy",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["GC-01"],
+      "parents": ["GC-01"],
+      "statement": "Determinants multiply under composition of diagonal observer maps, so N_{j|o}=N_{j|i}*N_{i|o}, and N_P=product of N_e along a path P. Around a loop C, the normalization holonomy H_N(C)=product of N_e over the loop is the scalar side of curvature. Exact witness: B_{i|o}=diag(2,8) (N=4), B_{j|i}=diag(3,27) (N=9), composed B_{j|o}=diag(6,216) (det=1296, N=36=9*4).",
+      "forbidden_claims": ["H_N(C) is a physical holonomy of a real connection", "this is the Riemann curvature tensor"]
+    },
+    {
+      "rule_id": "GC-04",
+      "name": "horizon as rank-loss boundary, N=0 (finite, not infinity)",
+      "class": "PROPOSED_INTERNAL_GATE",
+      "assumptions": ["GC-01"],
+      "parents": ["GC-01"],
+      "statement": "N=0 iff det B=0, a finite rank-loss boundary of the observer map (not a statement involving infinity). At N=0 the translation B has no inverse; the exterior cannot reconstruct the interior. Clone/agency-horizon connects here as a READOUT equivalence only. Exact witness: B_h=diag(0,5), det=0, N=0, singular (no inverse).",
+      "forbidden_claims": ["this is a real black-hole event horizon", "N=0 asserts a physical singularity", "this proves anything about real spacetime causal structure"]
+    },
+    {
+      "rule_id": "GC-05",
+      "name": "Unruh-fix: kappa_R as an internally normalized readout of a_local",
+      "class": "DECLARED_FORMULA",
+      "assumptions": ["GC-01", "OC-04"],
+      "parents": ["GC-01", "OC-04"],
+      "statement": "From the DeclaredFormula tau_c^(U)=pi*c/a_local, a_local=pi*c/tau_c^(U). The observer reads a_o = N_{i|o} * a_local; at the horizon, kappa_R := lim_{i->H} N_{i|o} a_local(i), if finite. CORRECT STATUS: a_local != kappa_R directly, but kappa_R = Normalize_N(a_local); 'surface gravity' requires EXTERNAL semantic calibration -- only the INTERNAL bridge (kappa_R as a normalized readout of a_local) is repaired here, not the physical identification. Exact witness: a_local=7/2, N=4 => kappa_R=14, finite, kappa_R != a_local.",
+      "forbidden_claims": ["kappa_R is physical surface gravity", "this derives Hawking/Unruh temperature", "a_local is shown equal to kappa_R", "this promotes OC-04 to a derived theorem"]
+    },
+    {
+      "rule_id": "OC-01",
+      "name": "graph front-speed vs measured-speed correspondence",
+      "class": "DECLARED_FORMULA",
+      "assumptions": ["identification declared, not derived"],
+      "parents": ["RB-P3"],
+      "statement": "The graph front-speed v is declared (not derived) as playing the role a measured propagation speed would play; the identification with any specific physical speed is not established.",
+      "forbidden_claims": ["v is shown equal to the physical speed of light c", "this correspondence is derived rather than declared"]
+    },
+    {
+      "rule_id": "OC-02",
+      "name": "mass-memory declared correspondence",
+      "class": "DECLARED_FORMULA",
+      "assumptions": ["identification declared, not derived"],
+      "parents": ["RB-P1"],
+      "statement": "Retention memory is declared (not derived) as playing a mass-like role; no mass-energy law is derived from the root.",
+      "forbidden_claims": ["mass is derived from retention", "this is E=mc^2"]
+    },
+    {
+      "rule_id": "OC-03",
+      "name": "Schwarzschild calculator identity",
+      "class": "DECLARED_FORMULA",
+      "assumptions": ["calculator identity only, same tier as the core gateway"],
+      "parents": ["OC-02"],
+      "statement": "r_s = 2*G*E/c^4, admitted only as a declared calculator identity, not a derived theorem of this domain.",
+      "forbidden_claims": ["r_s is derived here", "this proves a physical event horizon exists"]
+    },
+    {
+      "rule_id": "OC-04",
+      "name": "Unruh calculator identity",
+      "class": "DECLARED_FORMULA",
+      "assumptions": ["calculator identity only, same tier as the core gateway"],
+      "parents": ["RB-P1"],
+      "statement": "tau_c = pi*c/a, admitted only as a declared calculator identity, not a derived theorem of this domain.",
+      "forbidden_claims": ["tau_c=pi*c/a is derived from RB-P1..RB-P4", "this proves real Unruh radiation"]
+    },
+    {
+      "rule_id": "OC-05",
+      "name": "complete horizon/redshift bridge and dynamic metric-source closure",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["GC-04", "GC-05", "GD-01", "GD-02"],
+      "parents": ["OC-03", "OC-04", "OB-06", "GC-04", "GC-05", "GD-02"],
+      "statement": "CLOSED in v0.2: the horizon half by GC-04 (N=0 <=> det B=0, finite rank-loss boundary) plus GC-05 (Unruh-fix internal bridge kappa_R=Normalize_N(a_local)); the metric-source half by the Geometry Stationarity Gate (GD-01..GD-04), a source/record field Psi driving a Theta-evolution that passes a commuting square AND has a failing control case (exact fixture Theta_{n+1}=3/8, R_Theta=0; failing control Theta_wrong=7/8, R_Theta=1 != 0).",
+      "forbidden_claims": ["a physical horizon bridge has been derived", "a physical metric-source field law has been derived", "this is a real black-hole event horizon", "this is the Einstein field equations", "S_Theta is the physical stress-energy tensor", "g is the real metric of the universe"]
+    },
+    {
+      "rule_id": "GD-01",
+      "name": "geometry source S_Theta = Phi^T G_a Psi",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["OB-01", "OB-02", "G[Theta]=G_0+sum_a Theta^a G_a"],
+      "parents": ["OB-01", "OB-02"],
+      "statement": "Since G[Theta]=G_0+sum_a Theta^a G_a, dG/dTheta^a=G_a. The geometry source is S_Theta,n^a = Phi_n^T G_a Psi_n -- reader x record changing the operator geometry reads. This is NOT posited as energy/mass/stress. Exact witness: G_1=[[0,1],[1,0]], Phi_n=[1,0], Psi_n=[0,1] => S_Theta=1.",
+      "forbidden_claims": ["S_Theta is the physical stress-energy tensor", "S_Theta is energy or mass", "this is derived from any named field-theory Lagrangian"],
+      "coq_backing": {
+        "status": "green, PARTIAL joint -- tier unchanged (stays FINITE_DIAGNOSTIC)",
+        "source": "causal-quantum-gravity/formal/InfoBackReaction.v",
+        "theorems": ["edge_strain_expansion_exact", "budget_consumed_exact", "retention_shift_iff"],
+        "note": "Closes ONE joint of the feedback (strain/edge budget) as a single closed unit with GD-03, root-native, no stress-energy import. Does NOT close the full metric-source law (GD-04 remains open). See PROVENANCE_CAUSAL_QG.md."
+      }
+    },
+    {
+      "rule_id": "GD-02",
+      "name": "geometry stationarity law and explicit Theta stepper",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["GD-01", "S_closed = S_DRL + retained-difference cost of Theta"],
+      "parents": ["GD-01"],
+      "statement": "The living-geometry state Theta obeys the same retained-action grammar as the rest of the root: S_closed = S_DRL + sum_n [(1/2 dt) dTheta_n^T M_Theta dTheta_n - dt U_Theta(Theta_n)]. Stationarity in Theta gives M_Theta d^2_t Theta_n + grad U_Theta(Theta_n) + K S_Theta,n = 0, with explicit stepper Theta_{n+1}=2 Theta_n - Theta_{n-1} - dt^2 M_Theta^-1 [grad U_Theta(Theta_n) + K S_Theta,n]. Exact fixture (Theta_{n-1}=0, Theta_n=1/2, M_Theta=2, K=1, dt=1, U_Theta=Theta^2/4) with S_Theta=1 gives Theta_{n+1}=3/8 and action residual R_Theta=0. Then G_{n+1}=G[Theta_{n+1}] and g_{n+1}^ij=(1/2) Hess sigma_{G[Theta_{n+1}]} -- operator->metric only, spectrum-alone still forbidden.",
+      "forbidden_claims": ["this is a new field equation family", "this is the Einstein field equations", "g is the real metric of the universe", "the reverse spectrum-alone->metric readout is licensed here"]
+    },
+    {
+      "rule_id": "GD-03",
+      "name": "minimal closed state Z_n and commuting square (time-unrolled DAG)",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["OB-02", "GD-02"],
+      "parents": ["OB-02", "GD-02"],
+      "statement": "The minimal closed state is Z_n=(Phi_n,Phi_{n-1},Psi_n,Psi_{n-1},Theta_n,Theta_{n-1}); Z_{n+1}=F_MSG(Z_n). The commuting square q_MSG o F_full = F_MSG o q_MSG holds, but the metric-only quotient q_g LACKS the variables to close alone -- two states with equal metric but different Phi, Psi, Theta_{n-1} give different next metrics. Time-unrolled, this is a DAG, not circular.",
+      "forbidden_claims": ["Theta or the metric alone is a closed quotient", "this closure is checked against real measured data", "this is a proof of general covariance"]
+    },
+    {
+      "rule_id": "GD-04",
+      "name": "geometry stationarity fail rules",
+      "class": "FINITE_DIAGNOSTIC",
+      "assumptions": ["GD-02"],
+      "parents": ["GD-02"],
+      "statement": "Four named fail states for the geometry stationarity gate: FAIL_GEOMETRY_PIVOT (det M_Theta=0 / low pivot), FAIL_METRIC_ADMISSIBILITY (bad-signature/degenerate metric), FAIL_NULL_MIXING (null edges mixed into a stationary claim), HORIZON_BOUNDARY (lapse=0, ties to GC-04). No silent regularization; no inverse computed across a horizon.",
+      "forbidden_claims": ["these fail states are exhaustive of all possible real-physics failure modes", "a fail state triggering proves anything about real spacetime"]
+    }
+  ]
+}

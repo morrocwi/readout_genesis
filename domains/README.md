@@ -24,6 +24,7 @@
 | domain | release | tier | status | not established (headline) |
 |---|---|---|---|---|
 | [`chem/`](chem/) | Information Chemistry v0.910 | `FORMAL_COMPOSITION_QUOTIENT_ONLY` | ✅ `PASS` (dual-checker + peer review) | chemical semantics · periodic-table identity · formula/molecular identity · reaction occurrence |
+| [`relativity/`](relativity/) | Relativity finite-internal-closure v0.3 | `FINITE_INTERNAL_CLOSURE` | ⏳ `79.2%` strict / `89.6%` weighted (exact-rational verifier PASS; connection/curvature Th_coqc via causal-quantum-gravity) | real physics · v=c · surface gravity · stress-energy · full GR/QFT · root-native Γ_R (still Proposed) |
 
 ## How to read a domain folder
 

@@ -1,0 +1,60 @@
+{
+  "contract_version": "0.2",
+  "active_files_scanned_for_imported_laws": [
+    "relativity_closure_v0_1.py",
+    "relativity_closure_v0_2.py",
+    "RULE_REGISTRY.json",
+    "ROOT_DAG_MASTER.md",
+    "CLAIM_BOUNDARY.json",
+    "CLOSURE_AUDIT.json"
+  ],
+  "allowed_rule_classes": [
+    "ROOT_BACKBONE",
+    "ROOT_THEOREM",
+    "PROPOSED_INTERNAL_BRIDGE",
+    "PROPOSED_INTERNAL_GATE",
+    "FINITE_DIAGNOSTIC",
+    "DECLARED_FORMULA",
+    "OPEN"
+  ],
+  "master_dag_file": "ROOT_DAG_MASTER.md",
+  "hard_fail_conditions": [
+    "any external relativity/geometry law imported as a PREMISE (not merely named for comparison) anywhere in the active files",
+    "Gamma_R, the observer transforms, or any Lorentz-shaped result tagged [Th_coqc] instead of [Proposed internal bridge]",
+    "the SR/observer-cone sector (OA-06..OA-12) asserted as real physics, or asserted to be proven rather than conditional on the RD-neutrality gate",
+    "the O4 RD-neutrality gate (OA-06) treated as proven, derived, or ROOT_THEOREM rather than [Proposed internal gate]",
+    "graph front-speed v asserted equal to the physical speed of light c, or any coupling constant asserted derived from the root",
+    "any claim stronger than the declared tier FINITE_INTERNAL_CLOSURE (see CLAIM_BOUNDARY.json)",
+    "the operator-to-metric [Th_coqc] tag applied to any node other than OB-01's forward direction (spectrum-alone -> metric is explicitly forbidden)",
+    "Schwarzschild (OC-03) or Unruh (OC-04) presented as derived theorems rather than [DeclaredFormula] calculator identities",
+    "a DAG cycle in ROOT_DAG_MASTER.md",
+    "missing verifier (relativity_closure_v0_1.py and relativity_closure_v0_2.py), source_root snapshot, CLAIM_BOUNDARY.json, RULE_REGISTRY.json, ROOT_DAG_MASTER.md, CLOSURE_AUDIT.json, or run_tests.py",
+    "relativity_closure_v0_1.py modified from its shipped exact-rational form (e.g. floats introduced, checks removed, network calls added) -- it is the immutable v0.1 anchor",
+    "relativity_closure_v0_2.py introducing floats, removing checks, or adding network calls",
+    "OB-07 or OC-05 marked closed in v0.2 without the corresponding new finite internal witness (GC-01..GC-05 for OB-07/horizon; GD-01..GD-04 for the metric-source half) present in both relativity_closure_v0_2.py and RULE_REGISTRY.json",
+    "the Null-Transport Factorization Gate (GC-01) or the Geometry Stationarity Gate (GD-01..GD-04) tagged [Th_coqc] instead of [Proposed internal gate] / [Finite diagnostic]",
+    "N (the internal lapse), kappa_R, or S_Theta asserted as physical lapse / physical surface gravity / physical stress-energy respectively",
+    "unregistered active rule (a claim or equation appearing in code/docs with no corresponding rule_id in RULE_REGISTRY.json)",
+    "network or third-party runtime dependency introduced anywhere in the verification path",
+    "citing InfoLorentzInvariance / InfoQuantumRelativityUnification / InfoAnalysisLift / InfoQuantumGravityRootBridge as a root-native derivation (they import Minkowski/Schwarzschild as premises)",
+    "relabeling InfoTelegraphHorizonUnification's spine-crossover discriminant as node-8 lapse/redshift"
+  ],
+  "prohibited_active_domain_tokens": [
+    "lorentz_transformation",
+    "minkowski_metric",
+    "special_relativity_postulate",
+    "einstein_field_equations",
+    "general_relativity",
+    "schwarzschild_metric",
+    "riemann_curvature_tensor",
+    "einstein_tensor",
+    "stress_energy_tensor",
+    "geodesic_equation",
+    "equivalence_principle",
+    "light_cone",
+    "proper_time",
+    "four_vector",
+    "spacetime_interval"
+  ],
+  "note_on_tokens": "These names may appear in prose ONLY as explicit comparisons/disclaimers (e.g. 'this is not the physical Lorentz transformation'). They fail the contract if activated as an imported PREMISE that any derivation or witness in relativity_closure_v0_1.py or RULE_REGISTRY.json depends on."
+}
