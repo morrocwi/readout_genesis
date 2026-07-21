@@ -47,9 +47,26 @@
 > (`InfoRetainedDistinctionForcesLaplacian`). The stepper `F` and the spine readout are **`[Dr]`**. The
 > weld `q_D ∘ F = F♯_D ∘ q_D` is **`[finite_diagnostic]`** on each registered domain
 > (`scripts/unification_weld.py` — witnessed and fail-able) and **`[Dr]/architecture`** as a universal
-> theorem. Still *borrowed*, not yet ours: `M` (mass — posited, a readout of `τ_c`), `∇V`, and the SI
-> constants. The frontier (§I.3, §V.20) is to **force those from the root too** — each term forced is a
-> term that becomes provably ours, and by the weld that is the same act as admitting one more domain.
+> theorem.
+
+> **Forcing ledger — how much of the master equation is already *ours* (forced from the root) vs still
+> *borrowed*.** Each "forced" row has a runnable, fail-able witness; each is an honest partial — the
+> *existence/sign* of the term is forced, its *absolute SI value* is not.
+
+| term | status | forced by | witness / Coq |
+|---|---|---|---|
+| `L_R = D_W − W` | **forced (structure + Th_coqc)** | retained distinction | `InfoRetainedDistinctionForcesLaplacian` (axiom-free) |
+| `M > 0` (2nd-order / inertia) | **forced existence/sign** `[Dr]`, value borrowed | root's finite causal cone (`M=0`⇒diffusion⇒∞ speed⇒no cone) | `scripts/force_mass.py` (PASS) + `InfoConeInheritance` (Th_coqc) + `InfoMemoryBeforeMass` |
+| `D > 0` (damping / arrow of time) | **forced existence/sign** (consequence Th_coqc), value borrowed | root's asymmetry (`D=0`⇒energy conserved⇒time-reversible) | `scripts/force_damping.py` (PASS) + `RDL_SpineStability.energy_strict_decay` (axiom-free) |
+| `τ_c = M/D` | **forced relation** (a readout, not a dial) | ratio fixed by the two forced coefficients | II.1; value is a *measured* memory time |
+| `∇V` (potential) | **borrowed** — generic form, not yet forced | — | §I.3 frontier |
+| `K`, and SI constants `ħ, c, G` | **borrowed** — not derived from the trunk | — | DeclaredFormula / measurement |
+
+> So the frontier (§I.3, §V.20) is to **force the remaining borrowed terms from the root** — starting
+> with `∇V`, then the dimensionless constants. Each term forced is a term that becomes provably ours,
+> and by the weld that is the *same act* as admitting one more domain. Today `L_R` is fully forced and
+> `M`, `D` are half-forced (structure ours, value pending calibration) — the equation is genuinely,
+> provably becoming ours one fail-able step at a time, with no hollow flag on any of it.
 
 ---
 
