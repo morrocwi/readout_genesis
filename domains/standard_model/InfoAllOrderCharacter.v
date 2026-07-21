@@ -1,5 +1,5 @@
 (* ================================================================= *)
-(*  InfoAllOrderCharacter_attempt.v                                  *)
+(*  InfoAllOrderCharacter.v                                  *)
 (*  All-Order Character Closure v1.0 -- the exact ALGEBRAIC scaffold  *)
 (*  behind the all-order Weyl-integral computation of u(k), v(k).     *)
 (*  (The integrals themselves are high-precision NUMERICAL, in        *)

@@ -1,5 +1,5 @@
 (* ================================================================= *)
-(*  InfoRetainedIntertwiner_attempt.v                                *)
+(*  InfoRetainedIntertwiner.v                                *)
 (*  Retained-Metric Intertwiner Theorem v0.9 -- the CORRECTED         *)
 (*  confinement certificate + the link-intertwiner contraction.       *)
 (*                                                                     *)

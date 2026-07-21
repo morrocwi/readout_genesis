@@ -1,5 +1,5 @@
 (* ================================================================= *)
-(*  InfoHyperchargeAnomalyClosure_attempt.v                          *)
+(*  InfoHyperchargeAnomalyClosure.v                          *)
 (*  SM Discovery Pipeline v0.4 -- the exact crown: the Standard-Model *)
 (*  hypercharges satisfy the coupling-invariance + anomaly-closure    *)
 (*  system EXACTLY, and the cubic [U(1)]^3 anomaly cancels.           *)

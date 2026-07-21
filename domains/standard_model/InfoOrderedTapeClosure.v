@@ -1,5 +1,5 @@
 (* ================================================================= *)
-(*  InfoOrderedTapeClosure_attempt.v                                 *)
+(*  InfoOrderedTapeClosure.v                                 *)
 (*  Ordered-Tape Closure Theorem v0.2 -- the color number 3, SU(3),   *)
 (*  and its Z_3 center grown from the rules of an ordered CLOSED tape. *)
 (*  The crown: the ODDNESS of the minimal closure is DERIVED, not      *)

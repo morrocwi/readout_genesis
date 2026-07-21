@@ -1,5 +1,5 @@
 (* ================================================================= *)
-(*  InfoSurfaceUpperAutomaton_attempt.v                              *)
+(*  InfoSurfaceUpperAutomaton.v                              *)
 (*  Surface Upper Automaton v1.2 -- the exact algebra behind the      *)
 (*  UPPER bound mu_4^admissible <= 7.0841 (pair continuation + Z_3    *)
 (*  triple junction), squeezing the entropy bracket to [3.875,7.084]. *)
