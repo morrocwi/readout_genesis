@@ -64,9 +64,15 @@ Proof. intros k H. nra. Qed.
 Theorem massless_sector_zeros_total : forall d : Q,
   0 <= d -> Qmin 0 d == 0.
 Proof. intros d H. apply Q.min_l. exact H. Qed.
-(* while any massive sector keeps its own gap strictly positive *)
-Theorem massive_sector_gap_positive : forall E : Q, 0 < E -> 0 < E.
-Proof. intros E H. exact H. Qed.
+(* while any massive sector keeps its own gap strictly positive: with NO massless sector present
+   (all per-sector gaps > 0), the total gap min(a,b) over any two massive sectors stays > 0 *)
+Theorem massive_sector_gap_positive : forall a b : Q, 0 < a -> 0 < b -> 0 < Qmin a b.
+Proof.
+  intros a b Ha Hb.
+  destruct (Qlt_le_dec a b) as [Hab|Hab].
+  - rewrite Q.min_l; [ exact Ha | apply Qlt_le_weak; exact Hab ].
+  - rewrite Q.min_r; [ exact Hb | exact Hab ].
+Qed.
 
 (* (fock) fermionic Fock lift Γ_-(A_f)=⊕ ∧^n A_f: its eigenvalues are subset PRODUCTS of the
    A_f eigenvalues; if each λ_i ∈ [0,1] then every product ∈ [0,1] ⇒ Γ_-(A_f) ⪰ 0. *)

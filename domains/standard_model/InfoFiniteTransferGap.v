@@ -51,10 +51,21 @@ Definition posctrl_gap (q : Q) : Q := 1 - q.
 Theorem positive_control : forall q : Q, 0 < q -> q < 1 -> 0 < posctrl_gap q.
 Proof. intros q H0 H1. unfold posctrl_gap. lra. Qed.
 
-(* (contract) on P_⊥ (v = e_1, orthogonal to the vacuum e_0):
-   <e_1, diag(1,q) e_1> = q, and q<1 is the strict contraction *)
-Theorem contraction_on_perp : forall q : Q, q < 1 -> q < 1.
-Proof. intros q H. exact H. Qed.
+(* (contract) on P_⊥ (v = e_1 = (0,1), orthogonal to the vacuum e_0 = (1,0)):
+   <e_1, diag(1,q) e_1> = 0*1*0 + 1*q*1 = q, and q<1 is the strict contraction *)
+Definition e0 : Q * Q := (1, 0).
+Definition e1 : Q * Q := (0, 1).
+Definition diagT (a b : Q) (v : Q * Q) : Q * Q := (a * fst v, b * snd v).
+Definition dot (u v : Q * Q) : Q := fst u * fst v + snd u * snd v.
+Theorem e0_e1_orthogonal : dot e0 e1 == 0.
+Proof. unfold dot, e0, e1. simpl. ring. Qed.
+Theorem contraction_on_perp : forall q : Q,
+  dot e1 (diagT 1 q e1) == q /\ (q < 1 -> dot e1 (diagT 1 q e1) < 1).
+Proof.
+  intro q. unfold dot, diagT, e1. simpl. split.
+  - ring.
+  - intro H. setoid_replace (0*(1*0) + 1*(q*1)) with q by ring. exact H.
+Qed.
 
 (* (degen) vacuum degeneracy q=1 => gap = 0 => NO mass gap *)
 Theorem degeneracy_no_gap : 1 - (1:Q) == 0.
@@ -73,6 +84,8 @@ End InfoFiniteTransferGap.
 Print Assumptions InfoFiniteTransferGap.strict_contraction_gives_gap.
 Print Assumptions InfoFiniteTransferGap.fixture_gap.
 Print Assumptions InfoFiniteTransferGap.positive_control.
+Print Assumptions InfoFiniteTransferGap.e0_e1_orthogonal.
+Print Assumptions InfoFiniteTransferGap.contraction_on_perp.
 Print Assumptions InfoFiniteTransferGap.degeneracy_no_gap.
 Print Assumptions InfoFiniteTransferGap.diffusion_gap_positive.
 Print Assumptions InfoFiniteTransferGap.diffusion_gap_closes.
