@@ -83,6 +83,27 @@ SU(3)×SU(2)×U(1) semantic label — ONLY IF DISCOVERED  🟥
 bounded Standard Model claim
 ```
 
+> **This DAG tracks the UNRESTRICTED root chain only.** The 🟥 nodes above (representations,
+> chirality, minimal rep set, selected state, gauge obstruction) are genuinely open **from an
+> unrestricted root** — no Coq witness derives them without a declared finite architecture. But a
+> separate v1.5–v1.13 arc (`domains/standard_model/*_v1_[5-9,1*].py` + matching `Info*.v`) DOES
+> close the *architecture-level* analogue of several of these nodes, exact within a stated minimal
+> alphabet / carrier. **Never collapse the two axes into one 🟥/🟩** — read them side by side:
+
+| DAG node (unrestricted root) | Root/formal status | Finite-architecture status (v1.5–v1.13) |
+|---|---|---|
+| representations = response classes | 🟥 open | `EXACT_WITHIN_DECLARED_ARCHITECTURE` — blind search over `{1,3,3̄}×{1,2}` finds `(3,2)+2(3̄,1)+(1,2)+(1,1)` uniquely (v1.6, `InfoBlindMatterSearch.v`) |
+| chirality (orientation `V=V_+⊕V_-`) | 🟥 open | `EXACT` grading `Γ_𝒯` + exact no-go (v1.7, `InfoRootChirality.v`); weak *selection* stays `CONDITIONAL` on `⟨Ξ⟩≠0` |
+| minimal consistent representation set | 🟥 open | same as representations row — minimal within the declared alphabet only, not over all reps |
+| order-parameter potential `V(Φ)` / selected state `v∈argmin V` | 🟥 open (substrate exists, coercivity forced) | `H=(1,2)_{1/2}` forced by matter closure (v1.12); `⟨H†H⟩>0` from closure-pressure/intertwiner-rank counting, `CONDITIONAL` on `Π₀>α` being forced (v1.13, `InfoOrderHiggsClosure.v` + `InfoIntertwinerOrderVacuum.v`) |
+| gauge-direction obstruction `(M_G²)_{ab}` | 🟥 open | `EXACT` rank pattern given nonzero order: `det=0` photon, `m_W=m_Z cosθ`, `ρ=1` (v1.12) |
+| hypercharge normalization (not shown above, folds into "representations") | 🟥 open (unrestricted) | `EXACT_WITHIN_DECLARED_ARCHITECTURE` — `Y=(1/6,−2/3,1/3,−1/2,1,1/2)` + Z₆ quotient forced by anomaly cancellation on the skeleton (v1.5) |
+| `d=4` / spacetime shadow (not on this DAG; see `UNIFIED_FORCE_DAG.md`) | 🟥 open (unrestricted, why 3+1 at all) | `EXACT_WITHIN_DECLARED_ARCHITECTURE` — derived from the minimal orientation⊗incidence carrier (v1.9); Lorentz shadow conditional on a declared coarse-reader map with weights derived from the action (v1.10–v1.11) |
+
+The finite-architecture column is real progress and is machine-checked (`run_tests.py`), but it is
+**not** a substitute for closing R3/SM-G0 on the unrestricted root — the architecture itself (the
+declared alphabet, the carrier, the coarse-reader map) is still an *input*, not yet derived from R0–R7.
+
 ## What we ALREADY have (2026-07-21 survey — verified, axiom-clean, root-native)
 
 | asset | file (Th_coqc unless noted) | role in the SM DAG |
@@ -114,7 +135,7 @@ Prove six things, closing the borrowed premises that currently prop up AP20:
 - **F2** a commutative path carrier `XY=YX` → `[X,Y]=0` → no non-abelian curvature, no self-interaction branch (must be excludable).
 - **F3** an external payload not in the same carrier algebra → no quadratic self-term (AP20's own failing control, but currently AP20 borrows the non-commutative algebra as a premise — G0.6 removes that).
 
-## Honest status
+## Honest status (unrestricted root — see the two-axis table above for finite-architecture status)
 
 | part | tier |
 |---|---|
@@ -125,11 +146,14 @@ Prove six things, closing the borrowed premises that currently prop up AP20:
 | localized-connection-from-root | 🟥 |
 | order-defect-from-root (G0.6, the commutator) | 🟩 Th_coqc — `InfoOrderDefectFromComposition.v` (AP20 borrow #2 *form* grounded — Jacobi/antisym now theorems — but non-abelian input still un-forced; self-carrier #3 + load A4 #4 still borrowed) |
 | gauge self-interaction relative weight (AP20) | 🟨 conditional (premises borrowed) |
-| representation counting | 🟨 (only when SM content is input) |
-| gauge-group discovery · matter reps · chirality/anomaly · generations/mixing · SU(3) · constants | 🟥 |
-| Higgs-like generic mechanism | 🟨 substrate, DAG not built |
+| representation counting (unrestricted) | 🟥 (only closed as SM input here; **but see v1.6: exact within a declared minimal alphabet, not unrestricted**) |
+| gauge-group discovery · matter reps · chirality/anomaly (unrestricted root) | 🟥 (**architecture-level**: hypercharge+Z₆ v1.5, blind skeleton v1.6, chirality grading+no-go v1.7 all `Th_coqc` — see two-axis table) |
+| generations/mixing | 🟥 |
+| SU(3) (unrestricted) | 🟥 (conditionally derived within the ordered-tape architecture — §2 of `STANDARD_MODEL_CLOSURE.md`) |
+| constants (couplings/masses) | 🟥 |
+| Higgs-like mechanism | 🟨 substrate (unrestricted root); **architecture-level: forced minimal order carrier + vector mass-rank pattern, v1.12; order-vacuum criterion corrected, v1.13** |
 | full quantum measurement / spin-statistics (prerequisite) | 🟥 |
-| **Standard Model end-to-end, root-derived** | **0%** |
+| **Standard Model end-to-end, root-derived (unrestricted)** | **0%** |
 
 **Direction (honest):** not "write the Standard Model," but **prove that gauge redundancy, the
 connection, and curvature grow from retained readout-equivalence** (SM-G0). When SM-G0 closes, the
