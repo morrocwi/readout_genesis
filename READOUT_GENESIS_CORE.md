@@ -3169,6 +3169,29 @@ certificate — the route to a rigorous **upper** bound is an overflow-state aut
 `ρ(M⁻)≤ρ(M)≤ρ(M⁺)` (Perron–Frobenius). Next: `M^+` with pair continuation + Z₃ triple junction. (Frontier
 transfer-matrix surface counting is standard; the minimal-sufficient-quotient reading is ours.)
 
+**Mass gap — root-native program + universal reflection-positive slab (v1.3/v1.4).** Re-read the
+Yang–Mills mass gap in information-philosophy terms: *mass gap = a positive lower bound on the loss
+rate of non-vacuum closed readouts* (not a mass term, not a gauge-coordinate decay, and ≠ confinement
+which controls the `τ=1,2` sectors while the gap lives in the `τ=0` neutral sector). **v1.3
+`finite_transfer_gap_v1_3.py` + `InfoFiniteTransferGap.v` (Closed)** — the finite-transfer theorem
+(exact conditional): given a positive self-adjoint physical transfer operator `𝕋_phys` with a unique
+vacuum that STRICTLY contracts the nonvacuum sector (`q=‖𝕋_phys P_⊥‖<1`), the gap `Δ=−(1/a)log q>0`
+and connected gauge-invariant correlators decay exponentially — with genuine negative controls
+(massless-diffusion gap CLOSES as `L→∞`; vacuum degeneracy ⇒ `Δ=0`). **v1.4
+`universal_rp_slab_v1_4.py` + `InfoUniversalRPSlab.v` (Closed)** — the reflection-positive slab as a
+*universal* mass reader (all sectors, not glueball-only): gauge (U(1)/SU(2)/SU(3)) + scalar + generic
+fermionic Fock kernels are Gram-positive (character coeffs `c_R≥0`; `Γ_-(A_f)⪰0` for `0⪯A_f⪯I`) ⇒
+`T_UF⪰0`, and the SAME reader `m=−(1/a)log λ` classifies every mass TYPE from the spectral-measure
+SHAPE (stable/bound/massless/infraparticle/resonance/no-standalone). A **PDG-2026 unit test**
+(photon…Higgs) shows the extractor reads the input masses back — **this tests the READER, not a
+prediction**; the honest held-out test is that mass *ratios* `m_i/m_j=log λ_i/log λ_j` are
+lattice-scale independent (`μ/e=206.768`, …). **Honest status:** *Root-Native Mass-Gap Architecture:
+Formal Program Established* · *Finite-Transfer Gap Theorem: Exact Conditional Pass* · *Universal RP
+Slab: Formal Internal Pass* — but **Continuum Yang–Mills Mass Gap: OPEN** (Clay Millennium Problem),
+and NOT *masses from first principles* (root-native chiral `A_f`, Yukawa/mixing, real-action
+eigenvalues, continuum all open). Full program: `domains/standard_model/MASS_GAP_INFORMATION_PHILOSOPHY.md`.
+
+
 **Upper automaton — the entropy ceiling drops 54→7 (v1.2).** `surface_upper_automaton_v1_2.py` +
 `InfoSurfaceUpperAutomaton.v` (Closed) build the **upper** automaton (pair continuation + Z₃ triple
 junction) the v1.1 lower bound was missing. A 4D edge touches 6 plaquettes (1 in, 5 free `x_i∈Z₃`); the

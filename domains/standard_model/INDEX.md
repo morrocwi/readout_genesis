@@ -8,6 +8,9 @@
 > canonical synthesis (root → SU(3) → Z₃ → confinement), with the honest split closed (§21) /
 > conditional·numerical (§22) / not-yet-derived (§23). Use it as the primary reference to prevent
 > drift back to importing external physics as a premise.
+> **Mass program:** [`MASS_GAP_INFORMATION_PHILOSOPHY.md`](MASS_GAP_INFORMATION_PHILOSOPHY.md) — the
+> root-native mass-gap analysis + proof DAG + the **universal reflection-positive mass slab** (§25).
+> **NOT** a proof of the Clay Yang–Mills mass gap (OPEN); a finite-scale theorem + a universal mass reader.
 >
 > **Status: FRONTIER ROADMAP, not a closed domain.** End-to-end physical Standard Model from the root
 > = **0%, OPEN**. Every row below is honestly fenced — see [`CLAIM_BOUNDARY.json`](CLAIM_BOUNDARY.json)
@@ -43,6 +46,8 @@
 | v1.0 all_order_character | `all_order_character_v1_0.py` | `InfoAllOrderCharacter.v` | `u(κ),v(κ)` **all orders** from exact SU(3) Weyl integrals; `0<κ<0.053583974745` | `ALL_ORDER_NUMERICAL` (not interval proof) | matches v0.9 series to ~4e-6 (not a fit) |
 | v1.1 surface_automaton | `surface_automaton_v1_1.py` | `InfoSurfaceAutomaton.v` | `μ₄^admissible` = Perron growth of a Z₃ frontier automaton; `μ_short=3.8751297942` | `EXACT_CONSTRUCTION` + **lower bound only** | single-sheet; bracket `[3.875, 54.366]` |
 | v1.2 surface_upper_automaton | `surface_upper_automaton_v1_2.py` | `InfoSurfaceUpperAutomaton.v` | upper automaton `B(z)=5z+10z²+30z³+25z⁴+11z⁵`; `μ^+≤7.084097`; `κ<0.321687` (~6×) | `CONDITIONAL_UPPER_BOUND` (first-discovery) | exact `μ₄` still open between the two automata |
+| v1.3 finite_transfer_gap | `finite_transfer_gap_v1_3.py` | `InfoFiniteTransferGap.v` | finite-transfer mass-gap theorem: `q=‖𝕋P_⊥‖<1 ⇒ Δ=−(1/a)log q>0` + exp clustering | `EXACT_CONDITIONAL` | NOT Clay mass gap; uniform `L→∞`,`a→0` + OS axioms OPEN; controls: diffusion gap closes, degeneracy `Δ=0` |
+| v1.4 universal_rp_slab | `universal_rp_slab_v1_4.py` | `InfoUniversalRPSlab.v` | universal reflection-positive slab (all sectors): gauge/scalar/Fock Gram-positive ⇒ `T_UF⪰0`; mass reader `m=−(1/a)log λ` | `FORMAL_INTERNAL_PASS` + reader unit-test | PDG unit-test reads masses **back** (NOT prediction); chiral `A_f`/Yukawa/continuum OPEN; ratios `a`-independent |
 
 ## How to run
 

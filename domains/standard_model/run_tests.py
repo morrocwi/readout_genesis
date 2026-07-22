@@ -15,6 +15,8 @@ Python (always, stdlib only, no network):
   - all_order_character_v1_0.py      (v1.0: all-order u,v via Weyl integrals; needs numpy)
   - surface_automaton_v1_1.py        (v1.1: Z3 frontier automaton; mu_short=3.87513, bracket)
   - surface_upper_automaton_v1_2.py  (v1.2: upper automaton; mu^+=7.084, bracket [3.875,7.084])
+  - finite_transfer_gap_v1_3.py      (v1.3: finite-transfer mass-gap theorem; q<1 => Delta>0; needs numpy)
+  - universal_rp_slab_v1_4.py        (v1.4: universal reflection-positive slab; Gram=>PSD, mass reader; needs numpy)
 Coq finite formal witnesses (only if `coqc` is on PATH; skipped otherwise):
   - InfoOrderDefectFromComposition.v      (SM-G0/G0.6 order-defect from ordered composition)
   - InfoFourForceCirculationRecovery.v    (v0.2 exact response identity + recovery + control)
@@ -29,6 +31,8 @@ Coq finite formal witnesses (only if `coqc` is on PATH; skipped otherwise):
   - InfoAllOrderCharacter.v               (v1.0 fusion 3x3bar=1+8 + recursion c0'=2c3)
   - InfoSurfaceAutomaton.v                (v1.1 critical polynomials + root/mu brackets)
   - InfoSurfaceUpperAutomaton.v           (v1.2 branching poly sum=81=3^4 + upper mu bracket)
+  - InfoFiniteTransferGap.v               (v1.3 eigenvalue gap q<1=>1-q>0 + diffusion/degeneracy controls)
+  - InfoUniversalRPSlab.v                 (v1.4 Gram=>PSD + Fock lift + gauge char-coeff + mass-ratio a-indep)
 """
 import subprocess, sys, json, os, shutil, tempfile
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -45,7 +49,9 @@ for py in ("unified_force_closure_v0_1.py", "four_force_circulation_v0_2.py",
            "full_block_closure_v0_7.py",
            "retained_metric_intertwiner_v0_9.py", "all_order_character_v1_0.py",
            "surface_automaton_v1_1.py",
-           "surface_upper_automaton_v1_2.py"):
+           "surface_upper_automaton_v1_2.py",
+           "finite_transfer_gap_v1_3.py",
+           "universal_rp_slab_v1_4.py"):
     r = subprocess.run([sys.executable, py])
     out[py] = r.returncode == 0
     ok = ok and r.returncode == 0
@@ -60,7 +66,9 @@ if shutil.which("coqc"):
               "InfoBlockCorrelation.v",
               "InfoRetainedIntertwiner.v", "InfoAllOrderCharacter.v",
               "InfoSurfaceAutomaton.v",
-              "InfoSurfaceUpperAutomaton.v"):
+              "InfoSurfaceUpperAutomaton.v",
+              "InfoFiniteTransferGap.v",
+              "InfoUniversalRPSlab.v"):
         with tempfile.TemporaryDirectory() as d:
             # compile a COPY inside the tempdir so coqc build artifacts never touch the repo
             shutil.copy(v, os.path.join(d, v))
