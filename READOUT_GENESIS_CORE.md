@@ -3022,7 +3022,7 @@ DAG, never the start*. Full roadmap:
 > [`domains/standard_model/SM_INFORMATION_PHILOSOPHY_MASTER.md`](domains/standard_model/SM_INFORMATION_PHILOSOPHY_MASTER.md).
 > The mass program (finite-transfer gap theorem + the universal reflection-positive mass slab) lives in
 > [`domains/standard_model/MASS_GAP_INFORMATION_PHILOSOPHY.md`](domains/standard_model/MASS_GAP_INFORMATION_PHILOSOPHY.md);
-> the version-by-version index (v0.1→v1.4, each with a runnable verifier + Coq witness) is
+> the version-by-version index (v0.1→v1.5, each with a runnable verifier + Coq witness) is
 > [`domains/standard_model/INDEX.md`](domains/standard_model/INDEX.md).
 >
 > **The arc in one breath (all machine-checked, honestly tiered):** ordered retained tape ⇒ the minimal
@@ -3232,6 +3232,8 @@ Formal Program Established* · *Finite-Transfer Gap Theorem: Exact Conditional P
 Slab: Formal Internal Pass* — but **Continuum Yang–Mills Mass Gap: OPEN** (Clay Millennium Problem),
 and NOT *masses from first principles* (root-native chiral `A_f`, Yukawa/mixing, real-action
 eigenvalues, continuum all open). Full program: `domains/standard_model/MASS_GAP_INFORMATION_PHILOSOPHY.md`.
+
+**Hypercharge + Z₆ global structure — anomaly closure (v1.5).** The gauge *group* arc (color→SU(3), phase→U(1), doublet→SU(2)) is now joined by the U(1) *charge* arc. Under the minimal one-generation skeleton `(Q,u^c,d^c,L,e^c,H)`, interaction closure fixes the charges up to two free scales (`u=−q−h, d=−q+h, ℓ=−3q, e=h+3q`), and **anomaly cancellation forces the ratios**: the gravitational anomaly `A_grav=6q+3u+3d+2ℓ+e = h−3q` and the cubic `A₁₁₁=(h−3q)³` **factor into the SAME condition** `h=3q` — grav and cubic are ONE constraint, not two (`A₁₁₁=(A_grav)³`). At `h=3q`, primitive `q=1`: `y=6Y=(1,−4,2,−3,6,3) ⇒ Y=(1/6,−2/3,1/3,−1/2,1,1/2)` and `Q_em=T₃+Y=(2/3,−1/3,0,−1)`. The **center-lock** `2t+3s+y≡0 (mod 6)` holds for every record ⇒ the invisible common center is exactly **Z₆**, so `G_phys=[SU(3)×SU(2)×U(1)]/Z₆` (the true SM global form). Global SU(2) (Witten): `#doublets=3Q+L=4` is even (control: colored-`Q`-only `=3` odd would FAIL). **Negative control, reported not hidden:** adding a right-handed `ν^c` (`n=3q−h`) makes `A_grav=A₁₁₁=0` for *all* `(q,h)` ⇒ Y and B−L **degenerate** (anomalies alone stop fixing Y), lifted only by the extra self-pair `ν^c⊗ν^c→1 ⇒ 2n=0`. `hypercharge_global_quotient_v1_5.py` + `InfoHyperchargeGlobalQuotient.v` (**Closed**, 7 theorems). **Honest status:** anomaly-cancellation-fixes-hypercharge is a *known* result, rebuilt here in the closure language with the exact `A₁₁₁=(A_grav)³` factorization and the Z₆ center-lock; the result is an **exact CONDITIONAL on the one-generation skeleton**. OPEN: the *blind* derivation of that matter skeleton itself (no names/multiplicities fed in), root-native chirality, whether `ν^c` must exist, and generation multiplicity — the next bottleneck. Full ledger: `domains/standard_model/CLAIM_BOUNDARY.json`, `domains/standard_model/INDEX.md`.
 
 
 

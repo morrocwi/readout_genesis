@@ -48,11 +48,12 @@
 | v1.2 surface_upper_automaton | `surface_upper_automaton_v1_2.py` | `InfoSurfaceUpperAutomaton.v` | upper automaton `B(z)=5z+10z²+30z³+25z⁴+11z⁵`; `μ^+≤7.084097`; `κ<0.321687` (~6×) | `CONDITIONAL_UPPER_BOUND` (first-discovery) | exact `μ₄` still open between the two automata |
 | v1.3 finite_transfer_gap | `finite_transfer_gap_v1_3.py` | `InfoFiniteTransferGap.v` | finite-transfer mass-gap theorem: `q=‖𝕋P_⊥‖<1 ⇒ Δ=−(1/a)log q>0` + exp clustering | `EXACT_CONDITIONAL` | NOT Clay mass gap; uniform `L→∞`,`a→0` + OS axioms OPEN; controls: diffusion gap closes, degeneracy `Δ=0` |
 | v1.4 universal_rp_slab | `universal_rp_slab_v1_4.py` | `InfoUniversalRPSlab.v` | universal reflection-positive slab (all sectors): gauge/scalar/Fock Gram-positive ⇒ `T_UF⪰0`; mass reader `m=−(1/a)log λ` | `FORMAL_INTERNAL_PASS` + reader unit-test | PDG unit-test reads masses **back** (NOT prediction); chiral `A_f`/Yukawa/continuum OPEN; ratios `a`-independent |
+| v1.5 hypercharge_global_quotient | `hypercharge_global_quotient_v1_5.py` | `InfoHyperchargeGlobalQuotient.v` | anomaly cancellation forces SM hypercharges `Y=(1/6,−2/3,1/3,−1/2,1,1/2)`; cubic `A₁₁₁=(A_grav)³=(h−3q)³` ⇒ grav+cubic are ONE condition `h=3q`; center-lock `2t+3s+y≡0 (mod 6)` ⇒ `G_phys=[SU(3)×SU(2)×U(1)]/Z₆` | `FORMAL_INTERNAL_PASS` (`Th_coqc`, 7 thm) + known-result rebuilt | exact **conditional on the one-generation skeleton**; ν^c ⇒ Y–(B−L) degenerate (negative control); blind skeleton derivation OPEN |
 
 ## How to run
 
 ```bash
-python3 run_tests.py     # runs all 13 verifiers + 13 Coq witnesses; prints a JSON decision
+python3 run_tests.py     # runs all 16 verifiers + 16 Coq witnesses; prints a JSON decision
 ```
 Each version's status is honestly fenced against [`CLAIM_BOUNDARY.json`](CLAIM_BOUNDARY.json) and
 [`STANDARD_MODEL_CLOSURE.md`](STANDARD_MODEL_CLOSURE.md) — read those (and the master synthesis), not
@@ -60,7 +61,7 @@ this index, before citing a number.
 
 ## Current state (2026-07 snapshot)
 **Closed / conditionally closed:** color **3** · **SU(3)** · **Z₃** center (conditionally derived);
-**hypercharges** `(1/6,−1/2,2/3,−1/3,−1)` + **cubic anomaly =0** (`Th_coqc`, given SM rep content);
+**hypercharges** `Y=(1/6,−2/3,1/3,−1/2,1,1/2)` from anomaly cancellation with the **grav≡cubic** factorization `A₁₁₁=(A_grav)³` and the **Z₆** center-lock ⇒ `[SU(3)×SU(2)×U(1)]/Z₆` (`Th_coqc`, conditional on the one-generation skeleton);
 **all-order** `u(κ),v(κ)` (exact Weyl integrals, numerical); the link **intertwiner** is a contraction
 `‖P‖≤1` (`Th_coqc`) — the representation tail is closed.
 **Numeric brackets:** surface entropy **`3.875 ≤ μ₄^admissible ≤ 7.084`**; confinement window **`κ<0.321687`**.
