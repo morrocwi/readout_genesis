@@ -15,7 +15,8 @@ readout**: `Aut(F,O) = { h : O∘h = O, h∘F = F∘h }` — the weld of core §
 
 ## Contents
 - **[`SM_INFORMATION_PHILOSOPHY_MASTER.md`](SM_INFORMATION_PHILOSOPHY_MASTER.md)** — the **canonical synthesis** (root → SU(3) → Z₃ → confinement), honestly split into closed / conditional·numerical / not-yet-derived. The primary reference; read to prevent drift back to importing external physics as a premise.
-- **[`INDEX.md`](INDEX.md)** — the version timeline (v0.1→v1.2): each verifier + Coq witness + tier + honest status, at a glance.
+- **[`INDEX.md`](INDEX.md)** — the version timeline (v0.1→v1.4): each verifier + Coq witness + tier + honest status, at a glance.
+- **[`MASS_GAP_INFORMATION_PHILOSOPHY.md`](MASS_GAP_INFORMATION_PHILOSOPHY.md)** — the root-native mass-gap analysis + proof DAG + the **universal reflection-positive mass slab** (§25). **NOT** a proof of the Clay Yang–Mills mass gap (OPEN); a finite-scale theorem + a universal mass reader.
 - **[`STANDARD_MODEL_CLOSURE.md`](STANDARD_MODEL_CLOSURE.md)** — the honest closure LEDGER: what closes (Th_coqc/finite-blind) vs the open bottlenecks. Read this first for any SM claim.
 - **[`UNIFIED_FORCE_DAG.md`](UNIFIED_FORCE_DAG.md)** — one action → four force projections (gravity/EM/weak/strong as readouts of one `S_UF`, not four theories added); core §V.22.
 - **[`ROOT_TO_SM_DAG.md`](ROOT_TO_SM_DAG.md)** — the full root-native DAG, the survey of existing
