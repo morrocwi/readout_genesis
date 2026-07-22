@@ -18,8 +18,11 @@ scope). Gauge is, first, **the non-uniqueness of the internal description under 
 readout**: `Aut(F,O) = { h : O∘h = O, h∘F = F∘h }` — the weld of core §V.20.
 
 ## Where to look
+- **[`HANDOFF_NEXT_SESSION.md`](HANDOFF_NEXT_SESSION.md)** — **resuming work here (a fresh session,
+  or after a break)? Read this FIRST.** The full open-items backlog (34 items, priority-triaged,
+  reviewed for continued relevance) and the exact next step.
 - **[`INDEX.md`](INDEX.md)** — the version timeline (v0.1→v1.13): every verifier + Coq witness + tier
-  + one-line honest status. **Read this first**, kept in lock-step with `run_tests.py`.
+  + one-line honest status. Kept in lock-step with `run_tests.py`.
 - **[`STANDARD_MODEL_CLOSURE.md`](STANDARD_MODEL_CLOSURE.md)** — the node-level closure matrix (ten
   categories, each node individually tiered: `EXACT` / `EXACT_WITHIN_DECLARED_ARCHITECTURE` /
   `CONDITIONAL` / `FINITE_FIXTURE` / `CALIBRATION_ONLY` / `OPEN` / `SUPERSEDED`). Read this before

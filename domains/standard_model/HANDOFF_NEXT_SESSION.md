@@ -1,0 +1,126 @@
+<!-- Durable handoff for the Standard-Model arc. Committed to git so it survives a closed
+     terminal / a fresh Claude session — read this FIRST before touching domains/standard_model. -->
+
+# HANDOFF — Standard Model arc, resume point (as of v1.13, 2026-07-22)
+
+## 0. How to resume in one paragraph
+Read `INDEX.md` (version timeline) and `STANDARD_MODEL_CLOSURE.md` (current node-level status
+matrix) first — they are the source of truth, not this file's prose. This file's job is the
+**priority-ordered open-items backlog** (§2 below, 34 items reviewed and triaged) and the **exact
+next step** (§1). Everything here was reviewed for continued relevance on 2026-07-22 — nothing was
+found obsolete; the discipline (`Th_coqc` / tier-honest / no overclaim) still applies to every new
+result. Read `[[readout-not-truth]]` skill and `SM_INFORMATION_PHILOSOPHY_MASTER.md` before writing
+any new claim.
+
+## 1. The single next step (founder-locked, highest leverage)
+The founder's own roadmap after v1.13 (the letter that shipped the intertwiner-counting correction)
+named two next versions explicitly:
+- **v1.14 — Physical Order-Spectrum Audit**: compute the microscopic intertwiner-cost parameters
+  `g_j, Δ_j, κ_j, α, β` (equivalently, in v1.13's cleaner form: `λ_j = e^{−Δ_j^eff}`) from the actual
+  tape/closure grammar — NOT fit to any physical mass — to test whether `Π₀ = 3λ_U+3λ_D+λ_E > α` is
+  **FORCED** by the root, or merely one possible regime. This is the same underlying task as closing
+  item §2.13 (`⟨Ξ⟩≠0` from an action) and §2.15 (the primitive cost ratios behind v1.11's isotropy) —
+  **all three reduce to "derive the primitive rewrite-cost functional from `S_UF`"**. Solving one
+  well may substantially inform the other two; consider them as one research thread, not three.
+- **v1.15 — Generation Multiplicity**: derive why there are (if there are) exactly 3 generations,
+  without feeding the count.
+Root-debt track (parallel, independent): **SM-G0.1–G0.5** (§2 items 1–5) — closing these is
+architecturally prerequisite to ever calling ANY of v1.5–v1.13's results root-derived rather than
+"exact within a declared architecture." Neither track blocks the other; pick based on what the
+founder wants to see next.
+
+## 2. Full open-items backlog (34 items, reviewed 2026-07-22 — all still necessary)
+Grouped by priority. "Still necessary?" was checked against the current merged state of both repos
+(`main`, both at the same commit as of this handoff) — none were found stale or already closed.
+
+### P0 — founder-named next steps (do these first)
+1. **Derive `g_j, Δ_j, κ_j` (or `λ_j`) from the tape/intertwiner grammar** — the v1.14 Physical
+   Order-Spectrum Audit. Tests whether `Π₀>α` (v1.13) is forced. *Still necessary: YES — this is the
+   sharpest, most recently-opened frontier; v1.13's own honest fence names it explicitly.*
+2. **Generation multiplicity** — why 3 (or is it derived at all)? v1.15. *Still necessary: YES —
+   completely untouched; §8 of the closure ledger is 100% open.*
+
+### P1 — root-debt track (SM-G0, architecturally foundational)
+3. G0.1 Path composition (ordered path carrier, identity+associativity) — Coq witness
+4. G0.2 Automorphism group `Aut(F,O)` closed under composition+inverse — Coq witness
+5. G0.3 Localization (node-local representative change factoring through the quotient) — Coq witness
+6. G0.4 Connection transformation `U_{ji}↦h_jU_{ji}h_i⁻¹` DERIVED from transport-commutation (not posited) — Coq witness
+7. G0.5 Holonomy invariant (conjugacy-invariants of `H_C`) — Coq witness
+   *Still necessary: YES — `CLAIM_BOUNDARY.json` still says "SM-G0 not yet built"; none of v1.5–
+   v1.13's architecture-level closures substitute for this. See `ROOT_TO_SM_DAG.md` §"WHERE TO
+   START" for the full six-item spec (G0.6 is already done).*
+8. AP20 borrow #3 — self-carrier closure (still fully borrowed)
+9. AP20 borrow #4 — the common quadratic load A4 (still fully borrowed)
+   *Still necessary: YES — `c_self/c_geo=1` is still not root-derived.*
+
+### P1 — structural prerequisites (each blocks a cluster of P2 items below)
+10. 4D correlation defect `ε_t(b)` — the full block kernel `K_b`, `ρ_t^full(b)` for `b=2` from the
+    real action (confinement §2's "sharpened wall" — a finite integral, not a debate)
+11. Nonzero continuum string tension `σ_phys` (confinement, §2)
+12. Uniqueness of the matter skeleton over ALL representations, not just the declared minimal
+    alphabet `{1,3,3̄}×{1,2}` (§3; v1.6 only closed the minimal-alphabet case)
+13. `⟨Ξ⟩≠0` derived from the unified action (§4; v1.7's chirality grading is exact, but weak
+    *selection* is conditional on this)
+14. Interacting chiral gauge measure / anomaly coefficients from the actual oriented
+    determinant/Jacobian (§4)
+15. The primitive cost ratios `κ_ord, κ_inc, κ_rel, κ_cut` behind v1.10–v1.11's isotropic fixed
+    point — derive from `S_UF` (§5; note the overlap with item 1 — same underlying task)
+16. Uniform spectral gap as volume/block-scale → ∞ (§5, "does the gap survive thermodynamic limit")
+17. Full interacting Lorentz continuum: boosts, scattering covariance, microcausality — beyond the
+    Euclidean 4-channel isotropy + dispersion shadow v1.9–v1.11 actually closed (§5)
+18. Physical scalar (Higgs) mass from real microscopic parameters, once item 1 is closed (§6)
+
+### P2 — downstream (blocked on P0/P1 above; do not start early)
+19. Physical pole masses from a REAL spectral transfer (not a local Hessian) — §7; needs item 16–17
+20. Root-native chiral `A_f` (mass-gap program's RP-G4: locality/chirality/anomaly/doubling) — needs
+    item 14
+21. Yukawa coefficients — needs items 1, 18
+22. CKM/PMNS mixing angles — needs item 2 (generations) + item 21
+23. Neutrino architecture (Dirac vs Majorana, whether `ν^c` must exist) — v1.5's own negative
+    control flagged this as `OPEN_EXTRA_ABELIAN` when `ν^c` is added
+24. CP violation — needs items 21–23
+25. Gauge-orbit fluctuation Hessian (ghost/orbit-volume subtraction, polarization counting) for real
+    one-loop β-functions — §9; v0.4's radiative engine is explicitly NOT this
+26. Regulator-independence / genuine continuum limit — §9
+
+### P3 — deferred by design (do not pursue without a specific reason to revisit)
+27. **Continuum Yang–Mills mass gap (the Clay Millennium Problem)** — explicitly NOT pursued per the
+    `readout-not-truth` discipline: this is a question about the non-readout continuum arbiter;
+    diagnose it as an injected-infinity artifact, don't chase it. *Still necessary to track as
+    explicitly OPEN and explicitly not-attempted, so nobody accidentally claims it.*
+28. Scattering amplitudes (§10) — needs essentially everything above
+29. Decay rates (§10) — same
+30. Cross sections (§10) — same
+31. Physical coupling values `g, g', v` derived (not calibrated) from the root — needs item 1/15/18
+32. Radiative corrections / one-loop matching to real QCD/EW data — needs item 25–26
+33. Spin-statistics / Born-measurement — flagged as a **prerequisite from the QUANTUM domain**
+    (`domains/quantum/`), not this domain's job; track here only as a known blocking dependency
+34. AP10 one-loop β-slope kinematic weights (`11/3, 2/3, 1/3`) derived from root — representation
+    content is currently SM input; the three weights themselves are not derived
+
+## 3. Explicit non-goals (do not attempt without founder direction)
+- Predicting any physical number not already used for calibration-consistency.
+- Claiming uniqueness of the gauge group/matter content over unrestricted representations — only
+  "exact within the declared minimal architecture" is earned so far.
+- Reviving the superseded exponential order-closure ansatz (`1+ζe^{κr}`) — see v1.13's fence.
+- Conflating `Ξ` (chirality orientation order, v1.7) with `H` (electroweak order carrier, v1.12–13).
+
+## 4. Where everything lives (so a fresh session orients in one read)
+- `INDEX.md` — version timeline v0.1→v1.13, one row each.
+- `STANDARD_MODEL_CLOSURE.md` — the authoritative node-level status matrix (§1–§11).
+- `SM_INFORMATION_PHILOSOPHY_MASTER.md` — canonical narrative synthesis, same discipline.
+- `CLAIM_BOUNDARY.json` / `DRIFT_CONTRACT.json` — machine-readable fences (v0.2, scoped).
+- `ROOT_TO_SM_DAG.md` / `UNIFIED_FORCE_DAG.md` — DAG maps, two-axis (root vs. declared-architecture).
+- `run_tests.py` — 24 Python verifiers + 24 Coq witnesses, all PASS/Closed; run before any new claim.
+- Both repos (`research_universal_solver` canonical + `readout_genesis` public twin) mirror
+  `domains/standard_model/` byte-identically — always edit both, verify with `diff -rq`.
+- The build pattern for a new version: exact-Fraction Python verifier (independent recompute of
+  every founder-given number) → `formal/Info*_attempt.v` Coq witness (`Print Assumptions` Closed) →
+  domain copy (scrub `_attempt`) → wire into `run_tests.py` → `CLAIM_BOUNDARY.json` entry → `INDEX.md`
+  row → core `§V.22` note in BOTH twin core docs → `EQUATION_REGISTRY.md` if an external result is
+  used → branch+PR+merge both repos, full-arc `make verify-attempts` audit before merging.
+
+## 5. Central tracking
+The 4 P0/root-debt-track headline items (§2 rows 1, 2, 3-9-as-one-line) are also registered in the
+ANSE.ASIA central todo system (`cpg/tools/agent_office/todo.py list`) for visibility outside this
+repo. This file is the authoritative detail; the central todo entries are pointers back here.
