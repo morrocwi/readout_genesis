@@ -1,0 +1,447 @@
+{
+  "document": {
+    "id": "RG-BIO-TRANSLATION-v0.2",
+    "title": "Root-to-Biological Semantics Translation Stack",
+    "version": "0.2.0",
+    "language": "English",
+    "format": "JSON-compatible YAML 1.2",
+    "standalone": true,
+    "status": "PARTIAL_UNCALIBRATED_SEMANTIC_COMPILER",
+    "purpose": "Translate root-native equations into explicit biological language without promoting Standard Model, chemistry, or biological semantics beyond their earned tiers."
+  },
+  "claim_boundary": {
+    "master_rule": "readout-not-truth",
+    "line_1": "Root-native structure and exact finite witnesses.",
+    "line_2": "Standard Model, chemistry, and biology semantic adapters used only after their declared gates.",
+    "no_certainty_borrowing": true,
+    "real_biology_requires": [
+      "calibrated encoders",
+      "event-resolved measured data",
+      "held-out prediction",
+      "intervention or transport controls",
+      "independent checker"
+    ],
+    "forbidden_promotions": [
+      "node-level Standard Model closure to end-to-end Standard Model",
+      "formal chemistry composition quotient to real molecular chemistry",
+      "abstract living-unit closure to a real cell",
+      "semantic translation to biological causation"
+    ]
+  },
+  "tier_grammar": {
+    "Th_coqc": "Axiom-free machine-checked structural theorem.",
+    "finite_diagnostic": "Reproducible finite witness with passing and failing controls.",
+    "exact_within_declared_architecture": "Exact only inside a frozen finite architecture.",
+    "calibrated_readout": "Mapped to measured observables under a frozen calibration and checker.",
+    "Dr": "Declared bridge or bounded interpretation.",
+    "Open": "Unresolved or uncalibrated."
+  },
+  "dependency_stack": {
+    "root": {
+      "source": "READOUT_GENESIS_CORE.md and RG-UTW v1.2.0",
+      "available": [
+        "retained distinction delta_R",
+        "ordered tape",
+        "reader equivalence",
+        "L_R = D_W - W",
+        "canonical state Z_n",
+        "domain commutation qF = F_sharp q",
+        "transport, holonomy, closure, lineage, and claim discipline"
+      ],
+      "status": "mixed Th_coqc, finite_diagnostic, and Dr"
+    },
+    "standard_model": {
+      "source": "domains/standard_model/",
+      "available": [
+        "readout-preserving automorphism concept",
+        "discrete connection",
+        "transport, holonomy, and curvature substrate",
+        "non-abelian order-defect substrate",
+        "orientation and chirality grading inside declared architectures",
+        "electroweak null-direction calibrated decoder",
+        "order-carrier and vector-mass rank patterns inside declared architectures"
+      ],
+      "open_debts": [
+        "unrestricted-root gauge kernel SM-G0.1 through SM-G0.5",
+        "unrestricted gauge-algebra uniqueness",
+        "physical couplings and masses derived from root",
+        "interacting chiral gauge measure",
+        "three generations and mixing",
+        "spin-statistics dependency",
+        "end-to-end root-derived Standard Model"
+      ],
+      "status": "FRONTIER_WITH_NODE_LEVEL_CLOSURES"
+    },
+    "chemistry": {
+      "source": "domains/chem/ Information Chemistry v0.910",
+      "available": [
+        "formal constructive composition quotient",
+        "registered root-to-composition architecture"
+      ],
+      "open_debts": [
+        "real atomic and molecular identity",
+        "physical bound-state calibration",
+        "measured reaction energetics",
+        "measured kinetic constants",
+        "solvent, temperature, pressure, ionic, and phase context",
+        "end-to-end Standard Model to chemistry compiler"
+      ],
+      "status": "FORMAL_COMPOSITION_QUOTIENT_ONLY"
+    },
+    "biology_v0_1": {
+      "source": "domains/biology/",
+      "available": [
+        "ordered sequence carrier",
+        "functional quotient",
+        "self-maintaining bounded-unit closure",
+        "heredity quotient and lineage counts",
+        "endogenous operator-memory augmentation",
+        "formal homeostasis, relaxation, cusp-fold, and coupled substrates"
+      ],
+      "open_debts": [
+        "calibrated encoding to biological observables",
+        "real molecular carrier semantics",
+        "real cell and organelle semantics",
+        "real catalytic semantics",
+        "real multicellular and tissue semantics",
+        "event-resolved biological validation"
+      ],
+      "status": "BIOLOGY_ROOT_NATIVE_PARTIAL"
+    }
+  },
+  "equation_backbone": {
+    "E00_root": "delta_R = (a sharp b), a != b",
+    "E01_operator": "L_R = D_W - W",
+    "E02_state": "Z_n = (Phi_n, Psi_n, Theta_n, Sigma_n, T_n, G_n, Lcl_n; U_n, Gamma_n, Xi_n)",
+    "E03_stepper": "Z_{n+1} = F_n(Z_n, J_n, eta_n)",
+    "E04_domain_gate": "q_{D,n+1} o F_n = F^sharp_{D,n} o q_{D,n}",
+    "E05_readout_gate": "O_{D,n} = O^sharp_{D,n} o q_{D,n}",
+    "E06_viability": "V_A = Gamma_A(V_A)",
+    "E07_ledger": "x_{n+1}+e_{n+1} = x_n+e_n+j_n-d_n",
+    "E08_lineage": "N_{n+1} = B_n N_n",
+    "E09_cross_scale": "T_{i_to_T} F_i^sharp = F_T^sharp T_{i_to_T}",
+    "E10_meta_defect": "epsilon_meta_i = ||Theta_i - ThetaHat_{i|T}||_{G_Theta}",
+    "E11_orchestration_defect": "epsilon_orch_i = ||P_i F_T - F_i^O P_i||_{G_i}",
+    "E12_joint_admissibility": "A_joint_i = A_i intersect A_{T_to_i}",
+    "E13_repair_set": "R_{T_to_i} = {u : F_i(z_i,u;Theta_i) in A_joint_i}",
+    "E14_onset": "n_star = min{n : connection>0, epsilon_meta>tau_meta, epsilon_orch>tau_orch, R_empty, z_i in V_i}",
+    "E15_operator_capture": "Theta_{T,n+1} = Theta_{T,n} + DeltaTheta_{i_to_T,n}",
+    "E16_viability_inversion": "Gamma_i^{Theta_T'}(V_i) superset Gamma_i^{Theta_T}(V_i) and Gamma_T^{Theta_T'}(V_T) subset Gamma_T^{Theta_T}(V_T)"
+  },
+  "compiler_stages": [
+    {
+      "id": "S0_ROOT_NATIVE",
+      "parents": [],
+      "output": "retained state, relations, readers, dynamics, closure, and defect vectors",
+      "tier": "mixed",
+      "biological_semantics": false
+    },
+    {
+      "id": "S1_SM_SUBSTRATE",
+      "parents": ["S0_ROOT_NATIVE"],
+      "output": "interaction symmetry, localized transport, orientation, order, and calibrated physical readout slots",
+      "tier": "frontier",
+      "biological_semantics": false
+    },
+    {
+      "id": "S2_CHEMICAL_ASSEMBLY",
+      "parents": ["S0_ROOT_NATIVE", "S1_SM_SUBSTRATE"],
+      "output": "composition classes, bound-assembly candidates, interaction events, and reaction ledgers",
+      "tier": "formal plus open physical calibration",
+      "biological_semantics": false
+    },
+    {
+      "id": "S3_BIOMOLECULAR",
+      "parents": ["S2_CHEMICAL_ASSEMBLY"],
+      "output": "molecular identity, sequence, conformation, binding, catalysis, and molecular transport readouts",
+      "tier": "calibrated_readout or Open",
+      "biological_semantics": true
+    },
+    {
+      "id": "S4_BOUNDED_CELLULAR",
+      "parents": ["S3_BIOMOLECULAR", "S0_ROOT_NATIVE"],
+      "output": "membrane, compartment, resource ledger, regulation, cell identity, viability, and reproduction readouts",
+      "tier": "calibrated_readout or Open",
+      "biological_semantics": true
+    },
+    {
+      "id": "S5_MULTICELLULAR_TISSUE",
+      "parents": ["S4_BOUNDED_CELLULAR"],
+      "output": "spatial organization, adhesion, matrix, vascular transport, immune audit, tissue viability, and repair",
+      "tier": "calibrated_readout or Open",
+      "biological_semantics": true
+    },
+    {
+      "id": "S6_PATHOLOGY",
+      "parents": ["S5_MULTICELLULAR_TISSUE", "S4_BOUNDED_CELLULAR"],
+      "output": "cross-scale communication, decoder drift, conflict, corrigibility rupture, hierarchy inversion, and operator capture",
+      "tier": "Dr until calibrated",
+      "biological_semantics": true
+    }
+  ],
+  "translation_modules": [
+    {
+      "id": "BTR-01_MOLECULAR_IDENTITY",
+      "stage": "S3_BIOMOLECULAR",
+      "parents": ["S2_CHEMICAL_ASSEMBLY"],
+      "root_native_inputs": ["retained assembly", "composition quotient", "reader equivalence"],
+      "biological_output": "molecular species identity under declared context",
+      "required_observables": ["composition", "connectivity or structure proxy", "mass or spectral signature", "environmental context"],
+      "gate": "Distinct retained assemblies must factor to the same molecular label only when all frozen identity readers agree and interventions preserve the label.",
+      "controls": {"passing": "same species across repeated measurements", "failing": "isomer, charge, phase, or adduct change that alters a required reader"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-02_SEQUENCE_CARRIER",
+      "stage": "S3_BIOMOLECULAR",
+      "parents": ["BTR-01_MOLECULAR_IDENTITY"],
+      "root_native_inputs": ["BIO-G1 ordered sequence carrier"],
+      "biological_output": "nucleotide-like or amino-acid-like ordered polymer identity",
+      "required_observables": ["position-resolved monomer identity", "orientation", "length", "modification state"],
+      "gate": "A count-only encoding must fail whenever order changes a downstream readout; the ordered encoding must close.",
+      "controls": {"passing": "same ordered sequence under repeated reads", "failing": "same composition with reordered positions and different downstream response"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-03_CONFORMATION",
+      "stage": "S3_BIOMOLECULAR",
+      "parents": ["BTR-01_MOLECULAR_IDENTITY", "BTR-02_SEQUENCE_CARRIER"],
+      "root_native_inputs": ["Theta operator memory", "transport", "holonomy", "functional quotient"],
+      "biological_output": "context-dependent conformational state",
+      "required_observables": ["structure-sensitive readout", "time-resolved transition", "temperature and solvent context", "functional response"],
+      "gate": "The augmented state containing conformation memory must predict future responses better than an identity-only quotient on held-out interventions.",
+      "controls": {"passing": "same identity, different conformation, different response", "failing": "apparent conformation label with no independent predictive gain"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-04_BINDING_AND_COMPLEX",
+      "stage": "S3_BIOMOLECULAR",
+      "parents": ["BTR-01_MOLECULAR_IDENTITY", "BTR-03_CONFORMATION"],
+      "root_native_inputs": ["coupling graph", "boundary retention", "composition quotient"],
+      "biological_output": "binding event and complex identity",
+      "required_observables": ["association and dissociation events", "stoichiometry", "context", "orthogonal complex readout"],
+      "gate": "A complex label is admitted only when the coupled assembly has a reproducible joint readout not reducible to isolated components.",
+      "controls": {"passing": "specific reversible association", "failing": "nonspecific co-localization or aggregation"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-05_CATALYSIS",
+      "stage": "S3_BIOMOLECULAR",
+      "parents": ["BTR-03_CONFORMATION", "BTR-04_BINDING_AND_COMPLEX"],
+      "root_native_inputs": ["BIO-G2 functional quotient", "event tape", "input-output ledger"],
+      "biological_output": "catalytic function under declared substrate and context",
+      "required_observables": ["event-resolved substrate and product identity", "turnover under multiple inputs", "negative catalyst control", "context variables"],
+      "gate": "Catalytic identity must be an intervention-response quotient that generalizes to held-out input levels and is not explained by uncatalyzed conversion.",
+      "controls": {"passing": "repeatable accelerated transformation with conserved ledger", "failing": "same transformation rate without the proposed catalyst"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-06_MEMBRANE_AND_COMPARTMENT",
+      "stage": "S4_BOUNDED_CELLULAR",
+      "parents": ["BTR-01_MOLECULAR_IDENTITY", "BTR-04_BINDING_AND_COMPLEX"],
+      "root_native_inputs": ["boundary-conditioned state", "transport", "no-free-repair ledger"],
+      "biological_output": "selective membrane-like boundary and compartment",
+      "required_observables": ["inside-outside distinction", "selective flux", "boundary continuity", "repair or resealing", "compartment-specific composition"],
+      "gate": "Removing the boundary state must break prediction of internal dynamics; the full boundary-conditioned state must restore closure.",
+      "controls": {"passing": "selective retained compartment", "failing": "unbounded mixture with no predictive inside-outside distinction"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-07_RESOURCE_METABOLIC_LEDGER",
+      "stage": "S4_BOUNDED_CELLULAR",
+      "parents": ["BTR-05_CATALYSIS", "BTR-06_MEMBRANE_AND_COMPARTMENT"],
+      "root_native_inputs": ["BIO-G3 no-free-repair ledger", "reaction event tape"],
+      "biological_output": "resource conversion, maintenance expenditure, waste, and reserve",
+      "required_observables": ["material input", "material output", "internal state", "maintenance and repair events", "time-resolved reserve proxy"],
+      "gate": "Maintenance or repair must close against measured inputs, outputs, and retained reserve within frozen error bounds.",
+      "controls": {"passing": "ledger closure with independent measurements", "failing": "apparent free repair or hidden unmeasured source"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-08_REGULATORY_MEMORY",
+      "stage": "S4_BOUNDED_CELLULAR",
+      "parents": ["BTR-02_SEQUENCE_CARRIER", "BTR-03_CONFORMATION", "BTR-07_RESOURCE_METABOLIC_LEDGER"],
+      "root_native_inputs": ["T2 augmented quotient (I,Theta)", "ordered tape"],
+      "biological_output": "regulatory memory including expression-like, chromatin-like, signaling, and modification states",
+      "required_observables": ["same current input state", "different retained regulatory history", "different future response", "independent regulatory-state readout"],
+      "gate": "An I-only model must fail and an augmented I-plus-regulatory-memory model must close on held-out transitions.",
+      "controls": {"passing": "history-dependent response with measured memory state", "failing": "memory label that adds no out-of-sample prediction"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-09_SIGNAL_DECODER",
+      "stage": "S4_BOUNDED_CELLULAR",
+      "parents": ["BTR-04_BINDING_AND_COMPLEX", "BTR-08_REGULATORY_MEMORY"],
+      "root_native_inputs": ["emission", "decoder", "operator memory", "response"],
+      "biological_output": "receptor/contact/mechanical/metabolic signal decoding into a cellular action",
+      "required_observables": ["emitted signal", "received signal", "decoder state", "downstream action", "context"],
+      "gate": "The same received signal must map to actions through the measured decoder state, with a failing control where decoder state is omitted.",
+      "controls": {"passing": "decoder-aware prediction", "failing": "signal-only model aliases distinct futures"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-10_CELL_IDENTITY_AND_VIABILITY",
+      "stage": "S4_BOUNDED_CELLULAR",
+      "parents": ["BTR-06_MEMBRANE_AND_COMPARTMENT", "BTR-07_RESOURCE_METABOLIC_LEDGER", "BTR-08_REGULATORY_MEMORY", "BTR-09_SIGNAL_DECODER"],
+      "root_native_inputs": ["V_A = Gamma_A(V_A)", "functional quotient", "boundary closure"],
+      "biological_output": "cell identity and self-maintaining cellular viability",
+      "required_observables": ["boundary", "resource ledger", "repair", "functional identity", "response repertoire", "irreversible exit criteria"],
+      "gate": "A cellular label is admitted only when the full measured state forms a self-maintaining closure under a declared environmental contract and predicts irreversible exit.",
+      "controls": {"passing": "bounded self-maintaining unit", "failing": "non-self-maintaining fragment or transient assembly"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-11_REPRODUCTION_AND_LINEAGE",
+      "stage": "S4_BOUNDED_CELLULAR",
+      "parents": ["BTR-08_REGULATORY_MEMORY", "BTR-10_CELL_IDENTITY_AND_VIABILITY"],
+      "root_native_inputs": ["q_H descendant signatures", "N_{n+1}=B_nN_n"],
+      "biological_output": "cell division-like reproduction, inheritance, and lineage",
+      "required_observables": ["parent-child event", "descendant identity", "retained sequence or regulatory signature", "branch timing", "loss events"],
+      "gate": "The lineage quotient must preserve successor distributions and distinguish parent states with different descendant signatures.",
+      "controls": {"passing": "tracked parent-descendant lineage", "failing": "coarse parent merge that makes successor update nonfunctional"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-12_SPATIAL_TISSUE_ORGANIZATION",
+      "stage": "S5_MULTICELLULAR_TISSUE",
+      "parents": ["BTR-10_CELL_IDENTITY_AND_VIABILITY", "BTR-11_REPRODUCTION_AND_LINEAGE"],
+      "root_native_inputs": ["coupling graph", "transport", "holonomy", "global quotient", "global viability"],
+      "biological_output": "spatially organized tissue with division of function",
+      "required_observables": ["cell-resolved position", "contact graph", "cell state", "collective output", "boundary and lineage"],
+      "gate": "A tissue label requires a collective readout and viability closure that isolated cell readers cannot reproduce.",
+      "controls": {"passing": "position-dependent collective function", "failing": "same isolated cells without spatial organization"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-13_MATRIX_NICHE_AND_VASCULAR_TRANSPORT",
+      "stage": "S5_MULTICELLULAR_TISSUE",
+      "parents": ["BTR-06_MEMBRANE_AND_COMPARTMENT", "BTR-12_SPATIAL_TISSUE_ORGANIZATION"],
+      "root_native_inputs": ["higher-order operator Theta_T", "transport network", "boundary flux"],
+      "biological_output": "extracellular matrix, stromal niche, and vascular or ductal transport context",
+      "required_observables": ["matrix composition and mechanics", "transport topology", "flow or diffusion readout", "cell-state response", "time-resolved remodeling"],
+      "gate": "The context state must add held-out predictive information about cell transitions and must itself be updateable by cellular actions.",
+      "controls": {"passing": "bidirectional cell-context coupling", "failing": "static context label with no predictive or update role"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-14_IMMUNE_AUDIT",
+      "stage": "S5_MULTICELLULAR_TISSUE",
+      "parents": ["BTR-09_SIGNAL_DECODER", "BTR-12_SPATIAL_TISSUE_ORGANIZATION"],
+      "root_native_inputs": ["reader family", "error report", "admissibility", "repair set"],
+      "biological_output": "immune-like surveillance, recognition, containment, and removal",
+      "required_observables": ["target state", "recognition event", "auditor state", "containment or removal", "false-positive and escape controls"],
+      "gate": "Audit identity requires a state-dependent reader that changes target viability or admissibility and passes escape and false-positive controls.",
+      "controls": {"passing": "specific state-dependent removal or containment", "failing": "nonspecific damage or no target-state discrimination"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-15_TISSUE_REPAIR_AND_CORRIGIBILITY",
+      "stage": "S5_MULTICELLULAR_TISSUE",
+      "parents": ["BTR-12_SPATIAL_TISSUE_ORGANIZATION", "BTR-13_MATRIX_NICHE_AND_VASCULAR_TRANSPORT", "BTR-14_IMMUNE_AUDIT"],
+      "root_native_inputs": ["joint admissibility", "repair set", "orchestration commutation"],
+      "biological_output": "tissue repair, differentiation, extrusion, death, immune clearance, and remodeling as corrigibility operators",
+      "required_observables": ["damage or deviation", "corrective signal", "decoder state", "repair action", "restored tissue readout"],
+      "gate": "At least one measured corrective intervention must return the lower unit and tissue to joint admissibility without destroying the required tissue function.",
+      "controls": {"passing": "restored collective function", "failing": "connection persists but every corrective intervention fails"},
+      "status": "Open"
+    },
+    {
+      "id": "BTR-16_UNREPORTED_DECODER_DRIFT",
+      "stage": "S6_PATHOLOGY",
+      "parents": ["BTR-09_SIGNAL_DECODER", "BTR-15_TISSUE_REPAIR_AND_CORRIGIBILITY"],
+      "root_native_inputs": ["epsilon_meta", "epsilon_orch", "operator-memory augmentation"],
+      "biological_output": "a cell-state decoder changes while tissue-level reporting remains observationally aliased",
+      "required_observables": ["same tissue-visible report", "different measured cell decoder state", "different action under the same signal", "time order"],
+      "gate": "R(z,Theta)=R(z,Theta_prime) while D(s;Theta) differs from D(s;Theta_prime), and epsilon_meta exceeds a frozen threshold.",
+      "controls": {"passing": "silent decoder divergence", "failing": "visible channel loss or correctly reported decoder change"},
+      "status": "Dr"
+    },
+    {
+      "id": "BTR-17_CROSS_SCALE_CORRIGIBILITY_RUPTURE",
+      "stage": "S6_PATHOLOGY",
+      "parents": ["BTR-10_CELL_IDENTITY_AND_VIABILITY", "BTR-15_TISSUE_REPAIR_AND_CORRIGIBILITY", "BTR-16_UNREPORTED_DECODER_DRIFT"],
+      "root_native_inputs": ["n_star onset gate", "local viability", "empty repair set"],
+      "biological_output": "a locally viable cellular lineage for which tissue-level corrective actions no longer restore joint admissibility",
+      "required_observables": ["connection remains", "cell viability", "tissue viability", "decoder model defect", "orchestration defect", "intervention battery"],
+      "gate": "connection>0, epsilon_meta>tau_meta, epsilon_orch>tau_orch, repair set empty, and local viability retained at the earliest event n_star.",
+      "controls": {"passing": "persistent empty repair set with local viability", "failing": "transient conflict followed by restored repair"},
+      "status": "Dr"
+    },
+    {
+      "id": "BTR-18_HIERARCHY_INVERSION_AND_OPERATOR_CAPTURE",
+      "stage": "S6_PATHOLOGY",
+      "parents": ["BTR-13_MATRIX_NICHE_AND_VASCULAR_TRANSPORT", "BTR-14_IMMUNE_AUDIT", "BTR-17_CROSS_SCALE_CORRIGIBILITY_RUPTURE"],
+      "root_native_inputs": ["Theta_T update", "local and global viability operators", "capture and repair strengths"],
+      "biological_output": "a lower lineage rewrites tissue context so its own viability expands while tissue viability contracts",
+      "required_observables": ["lineage-resolved context remodeling", "matrix or stromal change", "vascular or resource routing", "immune-state change", "local and tissue viability trajectories"],
+      "gate": "capture strength persistently exceeds repair strength, Theta_T changes downstream of the lineage, local viability expands, and tissue viability contracts.",
+      "controls": {"passing": "lineage-dependent context rewrite and viability inversion", "failing": "context change independent of lineage or no global contraction"},
+      "status": "Dr"
+    },
+    {
+      "id": "BTR-19_CANCER_LIKE_REGIME",
+      "stage": "S6_PATHOLOGY",
+      "parents": ["BTR-11_REPRODUCTION_AND_LINEAGE", "BTR-17_CROSS_SCALE_CORRIGIBILITY_RUPTURE", "BTR-18_HIERARCHY_INVERSION_AND_OPERATOR_CAPTURE"],
+      "root_native_inputs": ["persistent lineage retention", "cross-scale noncommutation", "operator capture", "global viability loss"],
+      "biological_output": "cancer-like persistent pathological regime",
+      "required_observables": ["lineage persistence", "local viability", "tissue dysfunction", "decoder drift", "failed correction", "context capture", "independent pathology label"],
+      "gate": "All required conditions persist over a frozen horizon and outperform mutation-only, growth-only, and channel-loss controls on held-out data.",
+      "controls": {"passing": "persistent full conjunction", "failing": "benign expansion with preserved tissue viability or acute injury with successful repair"},
+      "status": "Open"
+    }
+  ],
+  "biological_variable_dictionary": {
+    "z_i": "measured state of one bounded cellular unit",
+    "Z_T": "measured state of the tissue-scale composite",
+    "Theta_i": "cellular decoder and regulatory memory state",
+    "ThetaHat_i_given_T": "tissue-scale model of the cellular decoder",
+    "Theta_T": "tissue context operator including matrix, stroma, vascular routing, immune state, and signal field",
+    "s_i": "received biochemical, contact, mechanical, electrical, or metabolic signal",
+    "a_i": "cellular action such as state transition, movement, secretion, division, differentiation, arrest, repair, or death",
+    "r_i": "cell-to-tissue report such as surface state, secreted signal, damage signal, metabolite flux, or mechanical output",
+    "V_i": "cellular viability set under a declared environment",
+    "V_T": "tissue viability and functional admissibility set",
+    "A_joint_i": "actions compatible with both cellular viability and tissue function",
+    "R_T_to_i": "measured corrective interventions that restore joint admissibility",
+    "epsilon_meta_i": "mismatch between measured cellular decoder state and the tissue-scale decoder model",
+    "epsilon_orch_i": "mismatch between predicted tissue orchestration and observed cellular transition",
+    "n_star": "earliest event at which connection persists but corrigibility is lost while the cell remains viable"
+  },
+  "minimum_event_resolved_dataset": {
+    "required_axes": [
+      "time",
+      "lineage",
+      "cell state",
+      "spatial position",
+      "received signals",
+      "decoder or regulatory state",
+      "cellular actions",
+      "cell-to-tissue reports",
+      "matrix and stromal context",
+      "vascular or resource context",
+      "immune or auditor context",
+      "tissue functional readout",
+      "interventions",
+      "outcomes"
+    ],
+    "required_splits": ["calibration", "held-out prediction", "intervention", "transport across context"],
+    "missing_axis_status": "UNRESOLVED"
+  },
+  "machine_gates": [
+    "no semantic preload",
+    "acyclic dependency graph",
+    "all parent nodes exist",
+    "every semantic module declares observables, a passing control, a failing control, status, and forbidden promotions",
+    "root-native stages contain no biological final object as a premise",
+    "Standard Model and chemistry outputs enter only as declared dependencies or calibrated adapters",
+    "all real-biological claims require held-out and intervention evidence",
+    "cross-scale onset requires connection, decoder-model defect, orchestration defect, empty repair set, and local viability",
+    "operator capture requires lineage-dependent context rewrite plus local expansion and global contraction",
+    "the final public claim uses the weakest load-bearing tier"
+  ],
+  "bounded_output": {
+    "allowed": ["PASS", "FAIL", "UNRESOLVED", "named defect vector", "bounded semantic translation"],
+    "prohibited": ["biology fully derived from root", "Standard Model fully derived", "real disease causation without calibration", "clinical diagnosis or treatment recommendation"],
+    "current_decision": "ARCHITECTURE_COMPLETE_FOR_TRANSLATION; EMPIRICAL_SEMANTICS_UNRESOLVED"
+  }
+}
