@@ -94,5 +94,15 @@ Everything else is a **readout** of that one operator.
 ## Files
 
 - **`READOUT_GENESIS_CORE.md`** — the core canon (single file; more nodes will be split out later).
+- **`READOUT_GENESIS_UNIVERSAL_TECHNICAL_WHITEPAPER_v1.2.0.md`** — the standalone Human–AI
+  **executable** specification (RG-UTW): typed root/state contracts, the maker–checker firewall,
+  domain-compilation protocol, a concrete reference domain with frozen calibration + held-out
+  checker, and a PASS/FAIL/UNRESOLVED decision protocol — meant to be read and run directly by a
+  human researcher or an AI reasoning system, not only narrated. Its own honest boundary: a
+  *Universal Research and Derivation Architecture* with a *Finite Reference Kernel*, explicitly
+  **not** a "Complete Final Law of Nature" or "Empirically Proven Theory of Every Domain" (§31).
+  Versioned in its own filename + an internal `document.version` field; supersedes narrated
+  sections of `READOUT_GENESIS_CORE.md` where the two overlap (see its `source_lineage`), but does
+  **not** replace the core canon's richer operational/provenance material.
 
 *More files will be added deliberately. Update knowledge in the core, in one place.*
