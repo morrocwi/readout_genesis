@@ -38,8 +38,15 @@ Proof. reflexivity. Qed.
 (* (chi8) chi_8 at the identity: |chi_3(I)|^2 - 1 = 3*3 - 1 = 8 = dim(adjoint) *)
 Theorem chi8_at_identity : (3 * 3 - 1 = 8)%nat.
 Proof. reflexivity. Qed.
-Theorem adjoint_dim_is_8 : (8 = 8)%nat.   (* the ||N_8|| <= 8 tail coefficient *)
-Proof. reflexivity. Qed.
+(* the ||N_8|| <= 8 tail-coefficient bound: N_8 = sum of 8 per-mode weights, each in [0,1]
+   (one per adjoint generator) => the sum (the operator norm on the diagonal) is <= dim(adjoint) = 8 *)
+Open Scope Q_scope.
+Theorem adjoint_tail_bound_N8 : forall n1 n2 n3 n4 n5 n6 n7 n8 : Q,
+  0 <= n1 -> n1 <= 1 -> 0 <= n2 -> n2 <= 1 -> 0 <= n3 -> n3 <= 1 -> 0 <= n4 -> n4 <= 1 ->
+  0 <= n5 -> n5 <= 1 -> 0 <= n6 -> n6 <= 1 -> 0 <= n7 -> n7 <= 1 -> 0 <= n8 -> n8 <= 1 ->
+  0 <= n1+n2+n3+n4+n5+n6+n7+n8 <= 8.
+Proof. intros. lra. Qed.
+Close Scope Q_scope.
 
 (* (recur) the singlet multiplicity in 3(x)3bar and 3bar(x)3 is 1 each, so the
    c_0' recursion coefficient is N_{3,3bar}^0 + N_{3bar,3}^0 = 1 + 1 = 2 :  c_0' = 2 c_3 *)
@@ -62,6 +69,7 @@ End InfoAllOrderCharacter.
 
 Print Assumptions InfoAllOrderCharacter.fusion_3_3bar_dim.
 Print Assumptions InfoAllOrderCharacter.chi8_at_identity.
+Print Assumptions InfoAllOrderCharacter.adjoint_tail_bound_N8.
 Print Assumptions InfoAllOrderCharacter.c0_prime_coefficient.
 Print Assumptions InfoAllOrderCharacter.c0_prime_is_two_c3.
 Print Assumptions InfoAllOrderCharacter.certificate_ratio_linear.
