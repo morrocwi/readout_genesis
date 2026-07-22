@@ -2939,9 +2939,16 @@ self-generating object, with a failing control on the join itself.
 The Standard Model must be a **domain — a translation of the retained structure — not a new root**,
 with the two chains (derivation / empirical discovery) kept separate. The binding rule: **do not start
 from `SU(3)×SU(2)×U(1)`, quarks, leptons, the Higgs, or the gauge equations** — importing them makes
-the answer a premise. This section is a **map of where to start**, not a result: **end-to-end
-root-derived Standard Model = 0%**, and saying so is the discipline. Full roadmap:
-[`domains/standard_model/ROOT_TO_SM_DAG.md`](domains/standard_model/ROOT_TO_SM_DAG.md).
+the answer a premise. **Status now (see §V.22 + the canonical docs):** parts of this DAG are no longer only a *map* —
+the color number **3**, **SU(3)** and its **Z₃** center are conditionally derived from the ordered-tape
+oddness theorem, the **hypercharges + cubic anomaly = 0** are Th_coqc (given the rep content as a
+fixture), the **photon's masslessness emerges** from a rank-1 electroweak obstruction, and confinement
+is a computable finite-scale certificate. **But end-to-end physical Standard Model from the root is still
+0% OPEN** — chirality/spin-statistics, the matter spectrum, hypercharge uniqueness, mass generation, and
+the continuum limit are not derived — so the honest verdict stays *Substantial Partial Closure*, not a
+result. Full roadmap + tiers:
+[`domains/standard_model/ROOT_TO_SM_DAG.md`](domains/standard_model/ROOT_TO_SM_DAG.md) and
+[`domains/standard_model/SM_INFORMATION_PHILOSOPHY_MASTER.md`](domains/standard_model/SM_INFORMATION_PHILOSOPHY_MASTER.md).
 
 **Where gauge comes from (the founder rule).** Gauge is not "a force" first; it is first the
 *non-uniqueness of the internal description under the same checkable readout* — the same commuting
@@ -3007,6 +3014,25 @@ DAG, never the start*. Full roadmap:
    S_UF = S_DRL + S_Θ + S_U + S_Σ + S_cut/tape ,   δS_UF/δZ_n = 𝒥_{C,n}[Z_n]
    𝓕_D = P_D(−∇_Z 𝒰_UF + 𝒥_C):  P_geo→gravity · P_center→EM · P_chiral,broken→weak · P_simple,unbroken→strong
 ```
+
+> **Canonical references for everything below.** The full, sector-by-sector synthesis of the Standard
+> Model in this framework — how `U(1)/SU(2)/SU(3)` mean *phase / doublet-translation / ordered-triple
+> closure*, why *matter = representation* and *interaction = invariant intertwiner*, and the honest split
+> **closed (§21) / conditional·numerical (§22) / not-yet-derived (§23)** — lives in
+> [`domains/standard_model/SM_INFORMATION_PHILOSOPHY_MASTER.md`](domains/standard_model/SM_INFORMATION_PHILOSOPHY_MASTER.md).
+> The mass program (finite-transfer gap theorem + the universal reflection-positive mass slab) lives in
+> [`domains/standard_model/MASS_GAP_INFORMATION_PHILOSOPHY.md`](domains/standard_model/MASS_GAP_INFORMATION_PHILOSOPHY.md);
+> the version-by-version index (v0.1→v1.4, each with a runnable verifier + Coq witness) is
+> [`domains/standard_model/INDEX.md`](domains/standard_model/INDEX.md).
+>
+> **The arc in one breath (all machine-checked, honestly tiered):** ordered retained tape ⇒ the minimal
+> closed cycle is **odd ⇒ k=3** ⇒ carrier `ℂ³` ⇒ preserve load + triple record ⇒ **SU(3)** with **Z₃**
+> center and dim 8; blind discovery recovers `u(1)⊕su(3)⊕su(2)`, the SM **hypercharges** and the cubic
+> anomaly `=0` (Th_coqc); the rank-1 electroweak obstruction makes the **photon massless emerge**;
+> confinement closes as a computable certificate with surface entropy bracketed **`3.875 ≤ μ₄ ≤ 7.084`**
+> and window **`κ<0.321687`**; and the mass gap is re-read as a **finite-transfer spectral gap** with a
+> **universal reflection-positive slab** reading every mass sector. **End-to-end physical Standard Model
+> from the root remains 0% OPEN** — verdict: *Substantial Partial Closure*, not a complete derivation.
 
 - **Already ours — the unified action's SECTORS have formal support** (survey 2026-07-21): the
   action-stationarity backbone `δS/δZ` (`InfoActionStationarity`, **Th_coqc**); the internal transport
@@ -3126,7 +3152,9 @@ convolution ⇒ Peter–Weyl ⇒ `a_R^{(m)}=a_R^m` ⇒ `ρ_t(b)=ρ_t^{b²}`, so 
 `I_t(b)=b²I_t(1)`. **Block-Scale Existence Theorem:** for any `0<ρ_t<1` and finite `μ_4` there is a
 coarse scale `b_*>√(log μ_4/−log ρ_t)` with `𝔠_t(b_*)<1` — spectral contraction beats surface entropy,
 so κ need **not** flow into any window (analytic PASS: `κ=0.01,b=2⇒𝔠≤0.004276`). RG = flow of
-*distinguishability*. **Sharpened wall (a finite integral, not a debate):** compute the block kernel
+*distinguishability*. **Sharpened wall (a finite integral, not a debate):** compute the block kernel `K_b`, `ρ_t^full(b)` and the correlation defect `ε_t(b)` for `b=2` from the real action; a block scale
+survives iff `ε_*<−log ρ_t`. (Convolution/character blocking is standard lattice gauge; the
+retained-triality reading is ours.)
 
 **b=2 block, first correlated shell (v0.7).** `full_block_closure_v0_7.py` + `InfoBlockCorrelation.v`
 (Closed) take the sharpened wall's first step: the exact block integral `K_{B2}`, `c_R^{(2)}`,
@@ -3169,6 +3197,20 @@ certificate — the route to a rigorous **upper** bound is an overflow-state aut
 `ρ(M⁻)≤ρ(M)≤ρ(M⁺)` (Perron–Frobenius). Next: `M^+` with pair continuation + Z₃ triple junction. (Frontier
 transfer-matrix surface counting is standard; the minimal-sufficient-quotient reading is ours.)
 
+**Upper automaton — the entropy ceiling drops 54→7 (v1.2).** `surface_upper_automaton_v1_2.py` +
+`InfoSurfaceUpperAutomaton.v` (Closed) build the **upper** automaton (pair continuation + Z₃ triple
+junction) the v1.1 lower bound was missing. A 4D edge touches 6 plaquettes (1 in, 5 free `x_i∈Z₃`); the
+Z₃ link closure `Σx_i=2 (mod 3)` has `3⁴=81` solutions, and splitting by the number `k` of nonzero new
+plaquettes gives — **enumerated exactly** — the branching polynomial `B(z)=5z+10z²+30z³+25z⁴+11z⁵`
+(`Σ=81`; the `k=2` coefficient `10` **is** the Z₃ triple junction `1→1+1`). A scalar majorant (`s^r≤s`)
+makes `B(z)<1` a contraction; the critical root `B(z_+)=1 ⇒ z_+=0.141161 ⇒ μ^+≤7.084097` (an **upper**
+bound because the first-discovery code over-counts non-closing surfaces). This squeezes the bracket to
+**`3.87513 ≤ μ_4^admissible ≤ 7.08410`** (from `≤54.366`) and, with the all-order Weyl `u(κ),v(κ)`,
+widens the certificate window to **`κ<0.321687`** — about **6×** the old `20e` window (same action, just
+honest counting). **Open:** machine-checking the first-discovery injection, a finite frontier matrix that
+remembers mergers/handles for the *exact* `μ` between `3.875` and `7.084`, continuum scaling, QCD
+calibration. (Dual plaquette-occupation surface sums and Z₃ triple branching are standard; the reading is ours.)
+
 **Mass gap — root-native program + universal reflection-positive slab (v1.3/v1.4).** Re-read the
 Yang–Mills mass gap in information-philosophy terms: *mass gap = a positive lower bound on the loss
 rate of non-vacuum closed readouts* (not a mass term, not a gauge-coordinate decay, and ≠ confinement
@@ -3192,26 +3234,12 @@ and NOT *masses from first principles* (root-native chiral `A_f`, Yukawa/mixing,
 eigenvalues, continuum all open). Full program: `domains/standard_model/MASS_GAP_INFORMATION_PHILOSOPHY.md`.
 
 
-**Upper automaton — the entropy ceiling drops 54→7 (v1.2).** `surface_upper_automaton_v1_2.py` +
-`InfoSurfaceUpperAutomaton.v` (Closed) build the **upper** automaton (pair continuation + Z₃ triple
-junction) the v1.1 lower bound was missing. A 4D edge touches 6 plaquettes (1 in, 5 free `x_i∈Z₃`); the
-Z₃ link closure `Σx_i=2 (mod 3)` has `3⁴=81` solutions, and splitting by the number `k` of nonzero new
-plaquettes gives — **enumerated exactly** — the branching polynomial `B(z)=5z+10z²+30z³+25z⁴+11z⁵`
-(`Σ=81`; the `k=2` coefficient `10` **is** the Z₃ triple junction `1→1+1`). A scalar majorant (`s^r≤s`)
-makes `B(z)<1` a contraction; the critical root `B(z_+)=1 ⇒ z_+=0.141161 ⇒ μ^+≤7.084097` (an **upper**
-bound because the first-discovery code over-counts non-closing surfaces). This squeezes the bracket to
-**`3.87513 ≤ μ_4^admissible ≤ 7.08410`** (from `≤54.366`) and, with the all-order Weyl `u(κ),v(κ)`,
-widens the certificate window to **`κ<0.321687`** — about **6×** the old `20e` window (same action, just
-honest counting). **Open:** machine-checking the first-discovery injection, a finite frontier matrix that
-remembers mergers/handles for the *exact* `μ` between `3.875` and `7.084`, continuum scaling, QCD
-calibration. (Dual plaquette-occupation surface sums and Z₃ triple branching are standard; the reading is ours.)
 
 
 
 
-`K_b`, `ρ_t^full(b)` and the correlation defect `ε_t(b)` for `b=2` from the real action; a block scale
-survives iff `ε_*<−log ρ_t`. (Convolution/character blocking is standard lattice gauge; the
-retained-triality reading is ours.)
+
+
 
 
 
