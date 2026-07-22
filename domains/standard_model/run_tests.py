@@ -51,7 +51,8 @@ for py in ("unified_force_closure_v0_1.py", "four_force_circulation_v0_2.py",
            "surface_automaton_v1_1.py",
            "surface_upper_automaton_v1_2.py",
            "finite_transfer_gap_v1_3.py",
-           "universal_rp_slab_v1_4.py"):
+           "universal_rp_slab_v1_4.py",
+           "hypercharge_global_quotient_v1_5.py"):
     r = subprocess.run([sys.executable, py])
     out[py] = r.returncode == 0
     ok = ok and r.returncode == 0
@@ -68,7 +69,8 @@ if shutil.which("coqc"):
               "InfoSurfaceAutomaton.v",
               "InfoSurfaceUpperAutomaton.v",
               "InfoFiniteTransferGap.v",
-              "InfoUniversalRPSlab.v"):
+              "InfoUniversalRPSlab.v",
+              "InfoHyperchargeGlobalQuotient.v"):
         with tempfile.TemporaryDirectory() as d:
             # compile a COPY inside the tempdir so coqc build artifacts never touch the repo
             shutil.copy(v, os.path.join(d, v))
