@@ -49,11 +49,15 @@
 | v1.3 finite_transfer_gap | `finite_transfer_gap_v1_3.py` | `InfoFiniteTransferGap.v` | finite-transfer mass-gap theorem: `q=‖𝕋P_⊥‖<1 ⇒ Δ=−(1/a)log q>0` + exp clustering | `EXACT_CONDITIONAL` | NOT Clay mass gap; uniform `L→∞`,`a→0` + OS axioms OPEN; controls: diffusion gap closes, degeneracy `Δ=0` |
 | v1.4 universal_rp_slab | `universal_rp_slab_v1_4.py` | `InfoUniversalRPSlab.v` | universal reflection-positive slab (all sectors): gauge/scalar/Fock Gram-positive ⇒ `T_UF⪰0`; mass reader `m=−(1/a)log λ` | `FORMAL_INTERNAL_PASS` + reader unit-test | PDG unit-test reads masses **back** (NOT prediction); chiral `A_f`/Yukawa/continuum OPEN; ratios `a`-independent |
 | v1.5 hypercharge_global_quotient | `hypercharge_global_quotient_v1_5.py` | `InfoHyperchargeGlobalQuotient.v` | anomaly cancellation forces SM hypercharges `Y=(1/6,−2/3,1/3,−1/2,1,1/2)`; cubic `A₁₁₁=(A_grav)³=(h−3q)³` ⇒ grav+cubic are ONE condition `h=3q`; center-lock `2t+3s+y≡0 (mod 6)` ⇒ `G_phys=[SU(3)×SU(2)×U(1)]/Z₆` | `FORMAL_INTERNAL_PASS` (`Th_coqc`, 7 thm) + known-result rebuilt | exact **conditional on the one-generation skeleton**; ν^c ⇒ Y–(B−L) degenerate (negative control); blind skeleton derivation OPEN |
+| v1.6 blind_matter_search | `blind_matter_search_v1_6.py` | `InfoBlindMatterSearch.v` | **blind** enumeration over `{1,3,3̄}×{1,2}` ⇒ unique minimal chiral set `(3,2)+2(3̄,1)+(1,2)+(1,1)`, `N=5,D=15`; the 2 colored singlets + colorless doublet are **forced** (color/Witten/closure); labels attached AFTER | `BLIND_SEARCH_EXACT_IN_ALPHABET` (`Th_coqc`, 10 thm; unbounded `D≥15` via lia) | uniqueness over ALL reps OPEN; ν^c ⇒ Y–(B−L) degenerate (control) |
+| v1.7 root_native_chirality | `root_native_chirality_v1_7.py` | `InfoRootChirality.v` | Γ_T from ordered triple: `Γ²=I`, `Γ†=Γ`, `RΓR=−Γ`; **no-go**: unbroken reversal ⇒ two orientations carry equal weak reps ⇒ need order `Ξ`; weak-active `P_w=(I−ΞΓ)/2` | `ORIENTATION_EXACT`+`WEAK_ASYMMETRY_CONDITIONAL` (`Th_coqc`, 12 thm) | weak chirality needs ⟨Ξ⟩≠0 (OPEN); no γ⁵ imported; K_Ξ⪰0 via minors |
+| v1.8 tape_kinetic_operator | `tape_kinetic_operator_v1_8.py` | `InfoTapeKineticGW.v` | root-native `D_T` with **exact Ginsparg–Wilson** `Γ(I−V)+(I−V)Γ=(I−V)Γ(I−V)`; free **no-doubling** (0<m₀<2r ⇒ one zero); 16→1+15 at d=4 | `KINETIC_GW_EXACT`+`NO_DOUBLING_FREE` (`Th_coqc`, 11 thm) | Clifford `{A_μ,A_ν}=2δ` forced by isotropy; continuum/Lorentz Dr/+reals; masses OPEN |
+| v1.9 relation_channel_dimension | `relation_channel_dimension_v1_9.py` | `InfoDimensionFourClosure.v` | **derive d=4** from minimal carrier (orientation⊗incidence, dim 4): `d≤4` (≤3 ⟂ in ℝ³), `d` even (parity), `d≠2` (spectator), explicit `A₀=τ₁⊗I,Aᵢ=τ₂⊗σᵢ`, `Γ=−A₀A₁A₂A₃` | `DIMENSION_FOUR_EXACT_IN_ARCHITECTURE` (`Th_coqc`, 8 thm) | **closes v1.8's why-d=4**; 3+1 reflection-conditional; isotropic fixed point OPEN |
 
 ## How to run
 
 ```bash
-python3 run_tests.py     # runs all 16 verifiers + 16 Coq witnesses; prints a JSON decision
+python3 run_tests.py     # runs all 20 verifiers + 20 Coq witnesses; prints a JSON decision
 ```
 Each version's status is honestly fenced against [`CLAIM_BOUNDARY.json`](CLAIM_BOUNDARY.json) and
 [`STANDARD_MODEL_CLOSURE.md`](STANDARD_MODEL_CLOSURE.md) — read those (and the master synthesis), not
@@ -65,6 +69,7 @@ this index, before citing a number.
 **all-order** `u(κ),v(κ)` (exact Weyl integrals, numerical); the link **intertwiner** is a contraction
 `‖P‖≤1` (`Th_coqc`) — the representation tail is closed.
 **Numeric brackets:** surface entropy **`3.875 ≤ μ₄^admissible ≤ 7.084`**; confinement window **`κ<0.321687`**.
+**Matter + chirality + spacetime arc (v1.6–v1.9):** the one-generation skeleton is **found blind** (v1.6, unique up to conjugation, `D=15`); chirality **grows** from the ordered triple with an exact no-go (v1.7, needs order `Ξ`); a root-native kinetic `D_T` has **exact Ginsparg–Wilson** chirality and **no doubling** (v1.8); and **`d=4`** is **derived** from the minimal carrier (v1.9), closing v1.8's why-d=4. All `Th_coqc`. **Still fenced:** ⟨Ξ⟩≠0 from an action, continuum/Lorentz isotropic fixed point, Yukawa/masses/generations — none claimed.
 **Still open:** physical Standard Model from root = **0%, OPEN** — chirality/spin-statistics, the
 gauge-orbit Hessian, continuum/radiative validation, and the exact `μ₄` between the lower (v1.1) and
 upper (v1.2) automata.
