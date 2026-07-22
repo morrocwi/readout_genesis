@@ -2934,19 +2934,28 @@ self-generating object, with a failing control on the join itself.
 
 ---
 
-### V.21 STANDARD MODEL — root-native DAG (frontier roadmap, mostly open)
+### V.21 STANDARD MODEL — root-native DAG (frontier roadmap, node-level closures through v1.13)
 
 The Standard Model must be a **domain — a translation of the retained structure — not a new root**,
 with the two chains (derivation / empirical discovery) kept separate. The binding rule: **do not start
 from `SU(3)×SU(2)×U(1)`, quarks, leptons, the Higgs, or the gauge equations** — importing them makes
-the answer a premise. **Status now (see §V.22 + the canonical docs):** parts of this DAG are no longer only a *map* —
-the color number **3**, **SU(3)** and its **Z₃** center are conditionally derived from the ordered-tape
-oddness theorem, the **hypercharges + cubic anomaly = 0** are Th_coqc (given the rep content as a
-fixture), the **photon's masslessness emerges** from a rank-1 electroweak obstruction, and confinement
-is a computable finite-scale certificate. **But end-to-end physical Standard Model from the root is still
-0% OPEN** — chirality/spin-statistics, the matter spectrum, hypercharge uniqueness, mass generation, and
-the continuum limit are not derived — so the honest verdict stays *Substantial Partial Closure*, not a
-result. Full roadmap + tiers:
+the answer a premise. **Status now (see §V.22 + the canonical docs — always read
+`domains/standard_model/STANDARD_MODEL_CLOSURE.md` for the current node-by-node matrix, not this
+paragraph alone):** the color number **3**, **SU(3)** and its **Z₃** center are conditionally derived
+from the ordered-tape oddness theorem; the **hypercharges + cubic anomaly = 0** + a **Z₆ global
+quotient** are `Th_coqc` (v1.5); the **one-generation matter skeleton is found BLIND**, not fed,
+within a declared minimal alphabet (v1.6); a **chirality grading + exact no-go** (v1.7), a
+**Ginsparg–Wilson kinetic operator + no-doubling fixture** (v1.8), a **derived `d=4`** (v1.9), and an
+**isotropic fixed point with weights derived from a reflection-positive slab of the action** (v1.10–
+v1.11) close the spacetime-shadow arc within a declared finite architecture; the **photon's
+masslessness emerges** from a rank-1 electroweak obstruction, and a **minimal order carrier
+`H=(1,2)_{1/2}` is forced** with a corrected order-vacuum criterion (v1.12–v1.13); confinement is a
+computable finite-scale certificate. **But end-to-end physical Standard Model from the UNRESTRICTED
+root is still 0% OPEN** — SM-G0.1–G0.5 as a Coq witness, `⟨Ξ⟩≠0`/`Π₀>α` FORCED (not just possible),
+interacting chiral gauge measure, uniqueness over all representations, spin-statistics, mass
+generation, generations/mixing, and the continuum limit are not derived — so the honest verdict is
+*Root-Native Standard-Model Architecture: Substantial Conditional and Node-Level Closure*, not a
+complete result. Full roadmap + tiers:
 [`domains/standard_model/ROOT_TO_SM_DAG.md`](domains/standard_model/ROOT_TO_SM_DAG.md) and
 [`domains/standard_model/SM_INFORMATION_PHILOSOPHY_MASTER.md`](domains/standard_model/SM_INFORMATION_PHILOSOPHY_MASTER.md).
 
@@ -3022,17 +3031,26 @@ DAG, never the start*. Full roadmap:
 > [`domains/standard_model/SM_INFORMATION_PHILOSOPHY_MASTER.md`](domains/standard_model/SM_INFORMATION_PHILOSOPHY_MASTER.md).
 > The mass program (finite-transfer gap theorem + the universal reflection-positive mass slab) lives in
 > [`domains/standard_model/MASS_GAP_INFORMATION_PHILOSOPHY.md`](domains/standard_model/MASS_GAP_INFORMATION_PHILOSOPHY.md);
-> the version-by-version index (v0.1→v1.5, each with a runnable verifier + Coq witness) is
-> [`domains/standard_model/INDEX.md`](domains/standard_model/INDEX.md).
+> the version-by-version index (v0.1→v1.13, each with a runnable verifier + Coq witness) is
+> [`domains/standard_model/INDEX.md`](domains/standard_model/INDEX.md); the current node-by-node
+> status matrix (never compress this to a fixed bottleneck count) is
+> [`domains/standard_model/STANDARD_MODEL_CLOSURE.md`](domains/standard_model/STANDARD_MODEL_CLOSURE.md).
 >
 > **The arc in one breath (all machine-checked, honestly tiered):** ordered retained tape ⇒ the minimal
 > closed cycle is **odd ⇒ k=3** ⇒ carrier `ℂ³` ⇒ preserve load + triple record ⇒ **SU(3)** with **Z₃**
-> center and dim 8; blind discovery recovers `u(1)⊕su(3)⊕su(2)`, the SM **hypercharges** and the cubic
-> anomaly `=0` (Th_coqc); the rank-1 electroweak obstruction makes the **photon massless emerge**;
-> confinement closes as a computable certificate with surface entropy bracketed **`3.875 ≤ μ₄ ≤ 7.084`**
-> and window **`κ<0.321687`**; and the mass gap is re-read as a **finite-transfer spectral gap** with a
-> **universal reflection-positive slab** reading every mass sector. **End-to-end physical Standard Model
-> from the root remains 0% OPEN** — verdict: *Substantial Partial Closure*, not a complete derivation.
+> center and dim 8; blind discovery recovers `u(1)⊕su(3)⊕su(2)`, the SM **hypercharges** + cubic anomaly
+> `=0` + a **Z₆ global quotient** (Th_coqc); the **one-generation matter skeleton is found BLIND**
+> within a minimal alphabet; a **chirality grading + exact no-go**, a **Ginsparg–Wilson kinetic
+> operator + no-doubling fixture**, a **derived `d=4`**, and an **isotropic fixed point whose mixing
+> weights are derived from a reflection-positive slab of the action** close the spacetime-shadow arc
+> within a declared finite architecture; the rank-1 electroweak obstruction makes the **photon
+> massless emerge**, and a **minimal order carrier `H=(1,2)_{1/2}` is forced** with a corrected
+> order-vacuum criterion (`Π₀>α` from actual intertwiner-rank counting); confinement closes as a
+> computable certificate with surface entropy bracketed **`3.875 ≤ μ₄ ≤ 7.084`** and window
+> **`κ<0.321687`**; and the mass gap is re-read as a **finite-transfer spectral gap** with a
+> **universal reflection-positive slab** reading every mass sector. **End-to-end physical Standard
+> Model from the UNRESTRICTED root remains 0% OPEN** — verdict: *Root-Native Standard-Model
+> Architecture: Substantial Conditional and Node-Level Closure*, not a complete derivation.
 
 - **Already ours — the unified action's SECTORS have formal support** (survey 2026-07-21): the
   action-stationarity backbone `δS/δZ` (`InfoActionStationarity`, **Th_coqc**); the internal transport
@@ -3122,10 +3140,13 @@ finite fixtures, recover: the algebra (center 1 + ideals 8⊕3 ⇒ `u(1)⊕su(3)
 the reps `(3,2)+(1,2)+(3,1)×2+(1,1)`; and — the crown — the **hypercharges** `q=1/6, ℓ=−1/2, u=2/3,
 d=−1/3, e=−1` **FORCED by anomaly + coupling closure** with the cubic `[U(1)]³` anomaly **=0 exact**
 (Th_coqc). A finite radiative log-det engine gives raw curvatures `(r1,r2,r3)=(−153/20,−243/20,−216/5)`
-and `Tr K0⁻¹=27/10` — **finite diagnostic, NOT physical β-functions**. **Honest verdict:** three layers
-close FINITE-BLIND, the radiative engine only as a finite diagnostic, and **physical Standard Model from
-the root is OPEN with exactly three bottlenecks** (root-derived orientation/spin-statistics; the
-gauge-orbit fluctuation Hessian; continuum/held-out radiative validation). Full ledger:
+and `Tr K0⁻¹=27/10` — **finite diagnostic, NOT physical β-functions**. **Honest verdict (v0.4-era):**
+three layers close FINITE-BLIND here, the radiative engine only as a finite diagnostic. **This is now
+only a slice of the picture** — v1.5–v1.13 (§V.22) close several of these open items within a
+declared finite architecture (hypercharge+Z₆, the matter skeleton found blind, chirality grading,
+kinetic no-doubling, `d=4`, isotropic fixed point, order/Higgs); **physical Standard Model from the
+UNRESTRICTED root remains OPEN**, and the open surface is now tracked per node, not as a fixed count
+— see the current matrix, never a stale "three bottlenecks":
 [`domains/standard_model/STANDARD_MODEL_CLOSURE.md`](domains/standard_model/STANDARD_MODEL_CLOSURE.md).
 
 **Color = 3 and SU(3) from ordered tape (v0.2), and center-sector confinement (v0.3).**
