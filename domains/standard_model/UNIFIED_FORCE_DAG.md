@@ -52,7 +52,15 @@ weld does not), (b) `UF-0` gauge-automorphism-from-root, (c) the four-force **pr
 - **EM** = the **center** sector `𝔷` (`[𝔷,𝔤]=0`), an unbroken abelian direction with a long-range loop
   phase — *label* only after charge calibration. 🟥 (needs UF-0 + calibration).
 - **weak** = a **chiral** simple sector with **selected-state obstruction** (short range) — no chirality
-  or no `Σ`-obstruction ⇒ not weak. 🟥.
+  or no `Σ`-obstruction ⇒ not weak. 🟥 from the unrestricted root. **Architecture-level update
+  (v1.7–v1.13, `Th_coqc` within a declared minimal architecture, see `STANDARD_MODEL_CLOSURE.md`
+  §4/§6):** the chirality grading `Γ_𝒯` IS exact and comes with an exact no-go (grading alone gives
+  no weak asymmetry — needs an orientation order `Ξ`, `CONDITIONAL` on `⟨Ξ⟩≠0`, v1.7); the order
+  carrier `H=(1,2)_{1/2}` bridging weak-active/inactive sectors is **forced** by the matter skeleton
+  and gives one massless + three massive vector directions when nonzero, `m_W=m_Z cosθ`, `ρ=1`
+  (v1.12); *why* the order condenses reduces to one primitive-cost inequality `Π₀>α`, not yet forced
+  (v1.13). None of this closes the unrestricted-root 🟥 above — it closes the analogous question
+  within the declared architecture.
 - **strong** = an **unbroken non-abelian** sector with **self-carrier closure** → composite-only
   readout. AP20 gives, conditionally, `c_self/c_geo = 1` — but its commutator + self-carrier are still
   **borrowed premises**. 🟨.

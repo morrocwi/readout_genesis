@@ -1,20 +1,36 @@
 {
-  "contract_version": "0.1",
+  "contract_version": "0.2",
   "kind": "FRONTIER_ROADMAP",
   "hard_fail_conditions": [
-    "importing SU(3), SU(2), U(1), or SU(3)xSU(2)xU(1) as a PREMISE (they may appear only as a discovered/labelled endpoint)",
+    "importing SU(3), SU(2), U(1), or SU(3)xSU(2)xU(1) as a PREMISE (they may appear only as a discovered/labelled endpoint, in comparison text, or as a semantic label attached AFTER a derivation node)",
     "importing quark, lepton, Higgs, gauge-boson, or any named particle as a premise",
     "importing a named gauge equation (Yang-Mills action, Dirac equation, Higgs potential) as a premise",
     "starting from a gauge group instead of from readout-preserving automorphisms Aut(F,O)",
-    "claiming the Standard Model, a gauge group, a representation assignment, a generation count, a mixing angle, or a coupling constant is derived from the root",
+    "claiming a gauge group, representation set, generation count, mixing angle, or coupling constant is derived from the UNRESTRICTED root (finite/minimal-architecture closures ARE allowed and must say 'exact within the declared architecture', never 'derived from the root' unqualified)",
     "reading AP20's self-interaction ratio or AP10's beta slopes as a root-derivation of the Standard Model",
     "any claim that end-to-end root-derived Standard Model is > 0%",
-    "treating this roadmap folder as a closed/registered domain (it has no verifier by design)",
-    "mixing the derivation chain and the empirical-discovery chain"
+    "claiming this folder has a single end-to-end Standard Model verifier (it does not, by design); it DOES have node-level verifiers + Coq witnesses (run_tests.py), and that is a real, checkable, PASS/Closed status per node -- do not deny their existence and do not conflate node-level PASS with end-to-end closure",
+    "mixing the derivation chain and the empirical-discovery chain",
+    "calling a local Hessian / curvature at a minimum a PHYSICAL POLE MASS without a spectral-transfer certificate",
+    "calling a calibrated decoder (e.g. electroweak_decoder_v0_3) a PREDICTION rather than a calibration-consistency check",
+    "citing the SUPERSEDED exponential order-closure ansatz (Z_j=1+zeta e^{kappa r}) as a canonical or active result; the canonical order-vacuum result is intertwiner_order_vacuum_v1_13 (Fock factor (1+lambda r)^d, Z_j(0)=1)",
+    "declaring the order criterion Pi0>alpha PROVEN/FORCED before the primitive costs (Delta_j, alpha, beta) are derived from the root grammar -- it is currently a conditional criterion only"
   ],
   "prohibited_active_premise_tokens": [
-    "SU3", "SU2", "U1", "quark", "lepton", "higgs", "gauge_boson", "yang_mills",
-    "dirac_equation", "gell_mann", "weinberg_angle", "yukawa_value", "fine_structure_constant"
+    "SU3",
+    "SU2",
+    "U1",
+    "quark",
+    "lepton",
+    "higgs",
+    "gauge_boson",
+    "yang_mills",
+    "dirac_equation",
+    "gell_mann",
+    "weinberg_angle",
+    "yukawa_value",
+    "fine_structure_constant"
   ],
-  "note": "The Standard Model is a domain-translation to be DISCOVERED, never a root. The gauge group is a semantic label added only after group identification from data (the discovery chain)."
+  "note": "The Standard Model is a domain-translation to be DISCOVERED, never a root. The gauge group is a semantic label added only after group identification from data (the discovery chain).",
+  "prohibited_active_premise_tokens_scope": "The token list below is a PREMISE-POSITION rule only: forbidden as an input assumption feeding a derivation. The SAME tokens are ALLOWED as: (a) a discovered/labelled endpoint after a derivation (e.g. 'the recovered algebra IS su(3)+su(2)+u(1)'), (b) a comparison to known physics for honesty/calibration, (c) a semantic label attached AFTER a blind search (e.g. v1.6's matter skeleton labels Q,u^c,d^c,L,e^c only after the search)."
 }

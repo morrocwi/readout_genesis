@@ -1,41 +1,66 @@
-<!-- Standard Model: a FRONTIER ROADMAP, not a closed domain. Read ROOT_TO_SM_DAG.md. -->
+<!-- Standard Model: a FRONTIER with node-level closures, not one closed domain. -->
 
-# ⚛️ Standard Model — FRONTIER (roadmap, not a closed domain)
+# ⚛️ Standard Model — FRONTIER (node-level closures, no single end-to-end verifier)
 
 > **This folder is different from `chem/`, `relativity/`, `quantum/`, `biology/`.** Those are
-> *registered* domains with a passing verifier and a measured closure %. This one is a **roadmap**:
-> a DAG of where to start and an honest ledger of what is still open. **End-to-end root-derived
-> Standard Model = 0%.** Do not read anything here as a Standard Model derivation.
+> *registered* domains with one closure percentage. This is a **DAG of nodes**: each node has its own
+> Python verifier + Coq witness (`run_tests.py` — 24 verifiers + 24 Coq witnesses as of v1.13, all
+> PASS/Closed). There is **no single end-to-end Standard Model verifier by design** — do not read
+> node-level PASS as end-to-end closure, and do not deny the nodes exist either.
+> **End-to-end root-derived Standard Model (unrestricted root) = 0%.**
 
 ## The one rule
 The Standard Model must be a **domain — a translation of the retained structure — not a new root**,
-and it must **not** import `SU(3)×SU(2)×U(1)`, quarks, leptons, the Higgs, or the gauge equations as
-premises. Gauge is, first, **the non-uniqueness of the internal description under the same checkable
+and must **not** import `SU(3)×SU(2)×U(1)`, quarks, leptons, the Higgs, or the gauge equations as
+*premises*. The same names ARE allowed as discovered/labelled endpoints, comparisons, or semantic
+labels attached AFTER a derivation (see `DRIFT_CONTRACT.json` for the exact premise-vs-endpoint
+scope). Gauge is, first, **the non-uniqueness of the internal description under the same checkable
 readout**: `Aut(F,O) = { h : O∘h = O, h∘F = F∘h }` — the weld of core §V.20.
 
-## Contents
-- **[`SM_INFORMATION_PHILOSOPHY_MASTER.md`](SM_INFORMATION_PHILOSOPHY_MASTER.md)** — the **canonical synthesis** (root → SU(3) → Z₃ → confinement), honestly split into closed / conditional·numerical / not-yet-derived. The primary reference; read to prevent drift back to importing external physics as a premise.
-- **[`INDEX.md`](INDEX.md)** — the version timeline (v0.1→v1.4): each verifier + Coq witness + tier + honest status, at a glance.
-- **[`MASS_GAP_INFORMATION_PHILOSOPHY.md`](MASS_GAP_INFORMATION_PHILOSOPHY.md)** — the root-native mass-gap analysis + proof DAG + the **universal reflection-positive mass slab** (§25). **NOT** a proof of the Clay Yang–Mills mass gap (OPEN); a finite-scale theorem + a universal mass reader.
-- **[`STANDARD_MODEL_CLOSURE.md`](STANDARD_MODEL_CLOSURE.md)** — the honest closure LEDGER: what closes (Th_coqc/finite-blind) vs the open bottlenecks. Read this first for any SM claim.
-- **[`UNIFIED_FORCE_DAG.md`](UNIFIED_FORCE_DAG.md)** — one action → four force projections (gravity/EM/weak/strong as readouts of one `S_UF`, not four theories added); core §V.22.
-- **[`ROOT_TO_SM_DAG.md`](ROOT_TO_SM_DAG.md)** — the full root-native DAG, the survey of existing
-  verified assets, the honest per-node tiers, and **SM-G0 (the Gauge Emergence Kernel)** = where to
-  start (six proofs + failing controls).
-- `CLAIM_BOUNDARY.json` — tier `FRONTIER_ROADMAP`, what is established (the gauge *substrate*) vs the
-  large not-established list.
-- `DRIFT_CONTRACT.json` — the hard-fail conditions that keep this a domain-translation, never a root.
+## Where to look
+- **[`INDEX.md`](INDEX.md)** — the version timeline (v0.1→v1.13): every verifier + Coq witness + tier
+  + one-line honest status. **Read this first**, kept in lock-step with `run_tests.py`.
+- **[`STANDARD_MODEL_CLOSURE.md`](STANDARD_MODEL_CLOSURE.md)** — the node-level closure matrix (ten
+  categories, each node individually tiered: `EXACT` / `EXACT_WITHIN_DECLARED_ARCHITECTURE` /
+  `CONDITIONAL` / `FINITE_FIXTURE` / `CALIBRATION_ONLY` / `OPEN` / `SUPERSEDED`). Read this before
+  citing any specific claim's scope.
+- **[`SM_INFORMATION_PHILOSOPHY_MASTER.md`](SM_INFORMATION_PHILOSOPHY_MASTER.md)** — the canonical
+  narrative synthesis (root → color → confinement → hypercharge → matter → chirality → kinetic →
+  spacetime → order/Higgs), same tier discipline, prose form.
+- **[`MASS_GAP_INFORMATION_PHILOSOPHY.md`](MASS_GAP_INFORMATION_PHILOSOPHY.md)** — the root-native
+  mass-gap program + the universal reflection-positive mass slab. **NOT** the Clay Yang–Mills mass
+  gap (OPEN); a finite-scale theorem + a universal mass reader.
+- **[`ROOT_TO_SM_DAG.md`](ROOT_TO_SM_DAG.md)** / **[`UNIFIED_FORCE_DAG.md`](UNIFIED_FORCE_DAG.md)** —
+  the DAG maps, each node carrying **two axes**: root/formal status (a Coq witness from an
+  unrestricted root?) and architecture/discovery status (closed within a declared finite
+  architecture — a minimal alphabet, a carrier, a coarse-reader map?). Never collapse the two.
+- `CLAIM_BOUNDARY.json` — machine-readable per-claim tier fence (`established` / `not_established`,
+  one entry per registered version).
+- `DRIFT_CONTRACT.json` — the hard-fail conditions that keep this a domain-translation, never a root;
+  scoped as premise-position rules, not blanket word bans.
 - `source_root/READOUT_GENESIS_CORE_SNAPSHOT.md` — the return anchor to the master equation.
 
-## What is already ours (verified `Th_coqc`, root-native) vs open
+## Latest registered version
+**v1.13** (`intertwiner_order_vacuum_v1_13.py` + `InfoIntertwinerOrderVacuum.v`) — see `INDEX.md` for
+the full chain v0.1→v1.13. Two distinct order-type records are in play and must never be conflated:
+`Ξ∈{+1,−1}` (orientation order, selects weak chirality, v1.7) and `H=(1,2)_{1/2}` (the electroweak
+order carrier, `⟨H†H⟩` sets the vector-mass scale, v1.12–v1.13).
+
+## What is already ours (verified `Th_coqc`, root-native substrate) vs open
 - 🟩 **substrate**: discrete connection (`InfoConnectionFromFrame`), SO(3) holonomy + curvature
   (`InfoRationalSO3Curvature`), a non-abelian **Heisenberg group** from the seed
   (`InfoSeedTorsionGroupAndRankN`), a proven gauge invariance (`InfoScaleGaugeNonReadout`), Noether
   (`InfoGraphNoether`).
-- 🟥 **open (must not be faked)**: the automorphism-as-gauge derivation, the gauge group (**`SU(3)`
-  is the wall**), matter representations, chirality/anomaly, three generations, mixing, the full
-  Higgs mechanism, and every coupling constant (`α` is *rejected-not-faked*). The Quantum domain
-  (§V.18) is a prerequisite.
+- 🟨 **exact within a declared finite architecture** (see `INDEX.md` v1.5–v1.13): hypercharge + Z₆
+  quotient, a **blind** matter-skeleton search, an ordered-tape chirality grading + no-go, a
+  Ginsparg–Wilson kinetic operator + no-doubling fixture, a **derived** `d=4`, an isotropic fixed
+  point with weights derived from a reflection-positive slab, a **forced** minimal order carrier
+  with its vector mass-rank pattern, and a corrected intertwiner-rank order criterion.
+- 🟥 **open (must not be faked)**: SM-G0.1–G0.5 (the automorphism-as-gauge kernel proper, as a Coq
+  witness), gauge-algebra uniqueness over the *unrestricted* root (**`SU(3)` is still the wall** at
+  that level), `⟨Ξ⟩≠0` and `Π₀>α` FORCED (not merely possible) from an action, interacting chiral
+  gauge measure, three generations/mixing, every physical coupling constant and mass (`α` is
+  *rejected-not-faked*). The Quantum domain (§V.18) is a prerequisite for spin-statistics.
 
 ## Progress on SM-G0 (the kernel) + v0.2 circulation + v0.3 electroweak decoder
 - 🟩 **SM-G0 / G0.6 order-defect from ordered composition** — `Th_coqc`
@@ -61,8 +86,13 @@ readout**: `Aut(F,O) = { h : O∘h = O, h∘F = F∘h }` — the weld of core §
   `M_Z=91.178` vs PDG `91.188` (0.011%). **Label: CALIBRATED ELECTROWEAK DECODER, not SM-from-root** —
   gauge algebra, chirality, `θ_W` value, radiative corrections OPEN.
 
-## Next step
-Close the rest of **SM-G0**: gauge redundancy + the connection transform + curvature from retained
-readout-equivalence as one Coq kernel (G0.1–G0.5), and discharge AP20's remaining borrows (#3
-self-carrier, #4 the common quadratic load). Only then does the rest of the DAG have a real root to
-stand on.
+## Next step — two parallel tracks
+1. **Root-debt track:** close the rest of **SM-G0**: gauge redundancy + the connection transform +
+   curvature from retained readout-equivalence as one Coq kernel (G0.1–G0.5), and discharge AP20's
+   remaining borrows (#3 self-carrier, #4 the common quadratic load).
+2. **Downstream closure track** (v1.14+): derive the primitive intertwiner costs
+   `Δ_j,ε₃,ε_±,α,β` from the tape/closure grammar to test whether `Π₀>α` (v1.13) is FORCED, not
+   merely possible; then the physical order-spectrum audit and generation multiplicity.
+Neither track substitutes for the other — the root-debt track grounds the *architecture* declared by
+the downstream track; closing SM-G0 alone does not re-derive v1.5–v1.13, and closing v1.14+ alone
+does not remove the unrestricted-root debt.
