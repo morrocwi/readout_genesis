@@ -58,7 +58,9 @@ for py in ("unified_force_closure_v0_1.py", "four_force_circulation_v0_2.py",
            "tape_kinetic_operator_v1_8.py",
            "relation_channel_dimension_v1_9.py",
            "isotropic_fixed_point_v1_10.py",
-           "frame_mixing_from_action_v1_11.py"):
+           "frame_mixing_from_action_v1_11.py",
+           "order_higgs_closure_v1_12.py",
+           "order_vacuum_selection_v1_13.py"):
     r = subprocess.run([sys.executable, py])
     out[py] = r.returncode == 0
     ok = ok and r.returncode == 0
@@ -82,7 +84,9 @@ if shutil.which("coqc"):
               "InfoTapeKineticGW.v",
               "InfoDimensionFourClosure.v",
               "InfoIsotropicFixedPoint.v",
-              "InfoFrameMixingAction.v"):
+              "InfoFrameMixingAction.v",
+              "InfoOrderHiggsClosure.v",
+              "InfoOrderVacuumSelection.v"):
         with tempfile.TemporaryDirectory() as d:
             # compile a COPY inside the tempdir so coqc build artifacts never touch the repo
             shutil.copy(v, os.path.join(d, v))
