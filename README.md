@@ -91,18 +91,50 @@ Everything else is a **readout** of that one operator.
 
 ---
 
-## Files
+## Repository map — where things are, what they do
 
-- **`READOUT_GENESIS_CORE.md`** — the core canon (single file; more nodes will be split out later).
-- **`READOUT_GENESIS_UNIVERSAL_TECHNICAL_WHITEPAPER_v1.2.0.md`** — the standalone Human–AI
-  **executable** specification (RG-UTW): typed root/state contracts, the maker–checker firewall,
-  domain-compilation protocol, a concrete reference domain with frozen calibration + held-out
-  checker, and a PASS/FAIL/UNRESOLVED decision protocol — meant to be read and run directly by a
-  human researcher or an AI reasoning system, not only narrated. Its own honest boundary: a
-  *Universal Research and Derivation Architecture* with a *Finite Reference Kernel*, explicitly
-  **not** a "Complete Final Law of Nature" or "Empirically Proven Theory of Every Domain" (§31).
-  Versioned in its own filename + an internal `document.version` field; supersedes narrated
-  sections of `READOUT_GENESIS_CORE.md` where the two overlap (see its `source_lineage`), but does
-  **not** replace the core canon's richer operational/provenance material.
+**Read in this order:** this README → `READOUT_GENESIS_CORE.md` (the canon) →
+`READOUT_GENESIS_UNIVERSAL_TECHNICAL_WHITEPAPER_v1.2.0.md` (the executable spec) →
+`domains/README.md` (the domain registry) → the specific domain folder you need.
+
+### Top-level files
+
+| file | role |
+|---|---|
+| **`README.md`** (this file) | Orientation map — read first. Root equation, tier discipline, where every other file lives. |
+| **`READOUT_GENESIS_CORE.md`** | **The canon.** Single-file narrative: root axioms → the spine equation → the twelve faces → τ_c scale bus → domain leaves → epistemic core. Richest operational/provenance material; update knowledge here first when in doubt. |
+| **`READOUT_GENESIS_UNIVERSAL_TECHNICAL_WHITEPAPER_v1.2.0.md`** (RG-UTW) | **The executable spec** — a standalone Human–AI protocol: typed root/state contracts, reader-equivalence + automorphism/transport/holonomy, closure grammar, a reference finite DRL reader–record kernel, positive-transfer certificates, the maker–checker epistemic firewall, an executable Domain Card + seven general domain gates + compilation algorithm, a concrete reference domain with frozen calibration + held-out evidence, and a PASS/FAIL/UNRESOLVED decision protocol. Meant to be **run**, not only read. Own honest boundary (§31): *Universal Research and Derivation Architecture* + *Finite Reference Kernel* — explicitly NOT a "Complete Final Law of Nature". Versioned in its filename + internal `document.version`; supersedes narrated sections of the core canon where they overlap, but does not replace the canon's richer material. |
+
+### `domains/` — registered domain leaves
+
+Each folder is a bounded-tier **readout** (translation) of the one root in `READOUT_GENESIS_CORE.md`
+— never a new root. Registration contract: `domains/DOMAIN_REGISTRATION_STANDARD.md`. Full registry
++ status table: **`domains/README.md`** (read this before citing any domain's closure %).
+
+| domain | one-line status (see the domain's own README/CLAIM_BOUNDARY for the honest fence) |
+|---|---|
+| `domains/chem/` | Information Chemistry v0.910 — formal composition-quotient only, PASS; no real chemistry claimed. |
+| `domains/relativity/` | Finite Internal Closure v0.3 — strict `19/24=79.2%`, weighted `21.5/24=89.6%`; internal algebraic closure, not proof of real physics. |
+| `domains/quantum/` | Quantum Root Closure v0.1 (partial) — strict `14/32=43.75%`, weighted `17/32=53.1%`; `oscillation is NOT yet quantum`. |
+| `domains/biology/` | Biology Root-Native v0.1 (partial) — strict `17/36=47.2%`, weighted `22.5/36=62.5%`; two lines (root-native vs textbook-checker) never mixed. |
+| `domains/standard_model/` | **Not a closed domain** — a FRONTIER with node-level closures (v0.1→v1.13, 24 verifiers + 24 Coq witnesses, all PASS/Closed). Start at `domains/standard_model/README.md`, and if resuming work, `domains/standard_model/HANDOFF_NEXT_SESSION.md` first. |
+
+Every registered domain folder follows the same internal pattern (per
+`DOMAIN_REGISTRATION_STANDARD.md`): `README.md` (orientation) · `CLAIM_BOUNDARY.json` (what's
+established vs not) · `DRIFT_CONTRACT.json` (hard-fail conditions against premise-smuggling) ·
+`ROOT_DAG_MASTER.md` (rooted at δ_R) · a runnable `*_closure_v*.py` verifier · (where applicable)
+`CLOSURE_AUDIT.json` and provenance notes.
+
+### `scripts/` — real runnable guard scripts (exact-rational, pass+fail controls)
+
+De-hollowing scripts written so the core's narrated claims about guard/discovery engines are
+backed by actual code, not prose. `domain_discovery_battery.py` and `unification_weld.py` are the
+substantive engines (discovery recovery + the master-equation/domain-DSL weld witness); the rest
+are `[finite_diagnostic]` guards on **synthetic fixtures only** (no claim about any real system) —
+`bh_gateway_lane_check.py`, `br_lineage_conservation_check.py`, `cfl_sufficiency_guard.py`,
+`discovery_identifiability_gate.py`, `geometry_dominance_check.py`, `label_inflation_guard.py`.
+`force_constants.py` / `force_damping.py` / `force_mass.py` / `force_potential.py` are frontier
+attempts to force root coefficients (existence+sign, not value) out of the root — each honestly
+states exactly what it forces and what it doesn't.
 
 *More files will be added deliberately. Update knowledge in the core, in one place.*
