@@ -52,7 +52,12 @@ for py in ("unified_force_closure_v0_1.py", "four_force_circulation_v0_2.py",
            "surface_upper_automaton_v1_2.py",
            "finite_transfer_gap_v1_3.py",
            "universal_rp_slab_v1_4.py",
-           "hypercharge_global_quotient_v1_5.py"):
+           "hypercharge_global_quotient_v1_5.py",
+           "blind_matter_search_v1_6.py",
+           "root_native_chirality_v1_7.py",
+           "tape_kinetic_operator_v1_8.py",
+           "relation_channel_dimension_v1_9.py",
+           "isotropic_fixed_point_v1_10.py"):
     r = subprocess.run([sys.executable, py])
     out[py] = r.returncode == 0
     ok = ok and r.returncode == 0
@@ -70,7 +75,12 @@ if shutil.which("coqc"):
               "InfoSurfaceUpperAutomaton.v",
               "InfoFiniteTransferGap.v",
               "InfoUniversalRPSlab.v",
-              "InfoHyperchargeGlobalQuotient.v"):
+              "InfoHyperchargeGlobalQuotient.v",
+              "InfoBlindMatterSearch.v",
+              "InfoRootChirality.v",
+              "InfoTapeKineticGW.v",
+              "InfoDimensionFourClosure.v",
+              "InfoIsotropicFixedPoint.v"):
         with tempfile.TemporaryDirectory() as d:
             # compile a COPY inside the tempdir so coqc build artifacts never touch the repo
             shutil.copy(v, os.path.join(d, v))
