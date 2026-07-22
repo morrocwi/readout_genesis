@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "tier": "PARTIAL_UNCALIBRATED_SEMANTIC_COMPILER",
+  "public_label": "[ArchitectureOnly] root-to-physics-to-chemistry-to-biology semantic compiler; real biological semantics remain unresolved",
+  "established": [
+    "A standalone machine-readable dependency stack now connects the retained root, the Standard Model frontier, Information Chemistry, Biology Root-Native v0.1, and explicit biological semantic destinations.",
+    "The compiler separates root-native structure, exact-within-declared-architecture physics, formal chemistry composition, calibrated readouts, and biological interpretation into non-interchangeable tiers.",
+    "Nineteen biological translation modules are declared from molecular identity through sequence, conformation, binding, catalysis, membrane, resource ledger, regulation, signaling, cell viability, lineage, tissue organization, niche, immune audit, repair, decoder drift, corrigibility rupture, hierarchy inversion, operator capture, and a cancer-like regime.",
+    "Each semantic module declares parents, required measured observables, a fail-able gate, a passing control, a failing control, and an honest status.",
+    "The earlier cross-scale equations are assigned explicit biological variable meanings without using those meanings as root premises.",
+    "The onset gate distinguishes visible channel loss from connection-preserving but unreported decoder drift and loss of corrigibility.",
+    "The architecture requires local viability, global viability, tissue repair, lineage, spatial, context, and intervention measurements before a biological pathology label may be admitted."
+  ],
+  "not_established": [
+    "an end-to-end Standard Model derived from the unrestricted retained root",
+    "physical particles, couplings, masses, or interaction constants derived from the root",
+    "an end-to-end Standard Model to real chemistry compiler",
+    "real molecular identity, binding, catalysis, membrane, metabolism, gene regulation, cell identity, tissue identity, immunity, or pathology derived from the root",
+    "a calibrated encoder for any of the nineteen biological translation modules",
+    "a real event-resolved biological dataset that passes the full compiler",
+    "that cross-scale corrigibility rupture is an established cause of cancer or any other disease",
+    "that mutation, pathway, cell, tissue, molecule, or cancer semantics may be promoted into the root-native premise chain",
+    "clinical diagnosis, prognosis, treatment selection, or drug design",
+    "any closure-percentage increase for Biology Root-Native v0.1"
+  ],
+  "weakest_link_status": "Open for real biology",
+  "relation_to_biology_v0_1": {
+    "anchor_modified": false,
+    "closure_score_changed": false,
+    "role": "Additive semantic-compiler extension only",
+    "v0_1_remains_source_of_truth_for_root_native_closure": true
+  },
+  "relation_to_standard_model": {
+    "status": "Dependency with node-level closures and explicit unresolved root debt",
+    "forbidden_claim": "Standard Model closure is inherited or completed by this biology extension"
+  },
+  "relation_to_chemistry": {
+    "status": "Dependency on formal composition quotient plus explicit physical-calibration debt",
+    "forbidden_claim": "formal composition quotient equals real molecular chemistry"
+  }
+}
