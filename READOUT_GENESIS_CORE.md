@@ -213,6 +213,43 @@ results (Standard-Model chain, biology/health) are deliberately **not** in this 
                                                 (InfoOrderDefectFromComposition)
 ```
 
+**Symbolic form** — same 24 items, same numbering, no English gloss (for fast machine parsing, in the
+style of [APP-v011.9](#app-v0119-consolidated-master-box)). Unlike APP-v011.9 (tier `[Df]`, a verbatim
+restatement, not machine-checked), **every line below is `Th_coqc`** — the citation is the proof, not
+a pointer to one:
+
+```
+I.     L_R = D_W − W                                    (InfoRetainedDistinctionForcesLaplacian)
+II.    δS/δZ_n|rm = δS/δZ_n|kp + ∂B_n                    (InfoActionStationarity)
+III.   strain(x,e) ≥ 0 ,  strain(x,e)=0 ⟺ x_u=x_v        (InfoBackReaction)
+IV.    step ∘ 𝒮_local = 𝒮_local                          (InfoConeInheritance)
+V.     cell_diag ⟂ cell_×pol                             (InfoCrossTermDominance)
+VI.    qshift(V₃) ≥ 0                                    (InfoCubicLinearization)
+VII.   cut(E∪e) ≥ cut(E)                                 (InfoCutGrowth)
+VIII.  Sym(C₆)·F = F  ⇒  ∃Q: δQ = 0                      (InfoGraphNoether)
+IX.    Q_v = n₊·n₋ ,  h*Q_v = Q_v                        (InfoLorentz)
+X.     □_quad(g,v) = □_quad(1,0) ,  g²(1−v²) = 1         (InfoLorentzInvariance) †
+XI.    rate · τ_c = 1                                    (InfoMemoryBeforeMass)
+XII.   qform(L,x) ≡ energy(x)                            (InfoMetricIsEnergyReadout)
+XIII.  Mω² = Kλ  ⟺  □_quad = 0                           (InfoQuantumRelativityUnification) †
+XIV.   τ ≠ 0  ⇒  [G,G] ≠ 0 , rank = N                    (InfoSeedTorsionGroupAndRankN)
+XV.    ∇V coercive ⟺ wshare/wdeg bounded                 (InfoCoercivityBoundedClosure)
+XVI.   ∂²g/∂x∂y = ∂²g/∂y∂x                               (InfoAnalysisLift)
+XVII.  Seed(v,c,d) = 0  ⟺  Φ ≡ const                     (InfoSeedUnifiedMasterEquation)
+XVIII. disp(sM,sD,sK) = disp(M,D,K)                      (InfoScaleGaugeNonReadout)
+XIX.   X* = argmin_X S[X]                                (InfoSeedArgminActionCost)
+XX.    ∂(loop) = pure-gauge ⟺ curv = 0                   (InfoConnectionFromFrame)
+XXI.   flat ⟺ δ²g = 0                                    (InfoDiscreteRiemannCurvature)
+XXII.  curv = [∇_i, ∇_j]                                 (InfoDiscreteRiemannCommutator)
+XXIII. λ_c = λ_c(spine)                                  (InfoTelegraphHorizonUnification)
+XXIV.  K(X,Y) = XY − YX  ⇒  Jacobi(K)                    (InfoOrderDefectFromComposition) ‡
+```
+
+> † narrow claim only — not the wider "unification" reading this book explicitly refuses elsewhere
+> (§V.13a). ‡ the algebraic identity is general; the specific noncommuting witness pair used to
+> instantiate it is hand-exhibited, not itself root-forced ("borrow #2 reduced, not removed" — see
+> the Forcing Ledger row and prose XXIV above for the full statement).
+
 > So the remaining frontier (§I.3, §V.20) is the **dimensionless constants**, then the SI constants
 > `ħ, c, G` (the hardest — possibly irreducible). Each term forced is a term that becomes provably
 > ours, and by the weld that is the *same act* as admitting one more domain. Today: `L_R` **fully
@@ -6951,6 +6988,7 @@ Honesty line: Regimes 1–2 are elementary linear-algebra facts stated but NOT m
 our Coq floor; they would be [Th] only after an axiom-free lift — they are **[Dr]** here, not
 [Th_coqc].
 
+<a name="app-v0119-consolidated-master-box"></a>
 ### APP-v011.9 — Consolidated master box
 
 Source: v0.11 §15, "Full master box." This is a **consolidation, not new math** — the whole
