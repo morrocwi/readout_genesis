@@ -13,7 +13,7 @@
 
 Every row points at a runnable verifier (`… .py`, PASS) and/or a machine-checked Coq witness
 (`… .v`, `Print Assumptions` **Closed over ℚ**). Run them all: `python3 run_tests.py` (24
-verifiers + 24 Coq witnesses as of v1.13, all PASS/Closed).
+verifiers + 25 Coq witnesses as of SM-G0.1/G0.2, all PASS/Closed).
 
 **Status vocabulary** used below (never blur these):
 - `EXACT` — a genuine root-native `Th_coqc` result, no declared finite architecture needed.

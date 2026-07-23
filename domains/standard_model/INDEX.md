@@ -63,7 +63,7 @@
 ## How to run
 
 ```bash
-python3 run_tests.py     # runs all 24 verifiers + 24 Coq witnesses; prints a JSON decision
+python3 run_tests.py     # runs all 24 verifiers + 25 Coq witnesses; prints a JSON decision
 ```
 Each version's status is honestly fenced against [`CLAIM_BOUNDARY.json`](CLAIM_BOUNDARY.json) and
 [`STANDARD_MODEL_CLOSURE.md`](STANDARD_MODEL_CLOSURE.md) — read those (and the master synthesis), not

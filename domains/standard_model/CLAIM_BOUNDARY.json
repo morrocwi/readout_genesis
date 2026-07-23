@@ -2,7 +2,7 @@
  "version": "0.2",
  "kind": "FRONTIER_ROADMAP",
  "tier": "FRONTIER_ROADMAP",
- "public_label": "[FrontierRoadmap] root-native Standard Model DAG — node-level verifiers + Coq witnesses exist and PASS (run_tests.py, 24+24 as of v1.13), but there is NO single end-to-end verifier by design; end-to-end root-derived Standard Model (unrestricted root) = 0%",
+ "public_label": "[FrontierRoadmap] root-native Standard Model DAG — node-level verifiers + Coq witnesses exist and PASS (run_tests.py, 24 Python + 25 Coq as of SM-G0.1/G0.2 (2026-07-23)), but there is NO single end-to-end verifier by design; end-to-end root-derived Standard Model (unrestricted root) = 0%",
  "end_to_end_root_derived": "0%",
  "not_a_closed_domain": true,
  "established": [
@@ -36,7 +36,7 @@
   "regulator-independent continuum, radiative stability, scattering amplitudes, decay rates, cross sections"
  ],
  "checker_label": "ROADMAP_NODE_LEVEL_VERIFIERS_NO_END_TO_END",
- "note": "This is a map of where to start (SM-G0 Gauge Emergence Kernel) plus a growing set of node-level closures (v0.1-v1.13, each its own verifier+Coq witness, all PASS/Closed) -- it is NOT a single closed domain with one closure percentage like chem/relativity/quantum/biology. Do not read 'no single verifier' as 'no verifiers'; run_tests.py runs 24 Python verifiers + 24 Coq witnesses, all currently PASS/Closed. What remains genuinely at 0% is END-TO-END closure from the UNRESTRICTED root -- see STANDARD_MODEL_CLOSURE.md for the node-by-node matrix.",
+ "note": "This is a map of where to start (SM-G0 Gauge Emergence Kernel) plus a growing set of node-level closures (v0.1-v1.13, each its own verifier+Coq witness, all PASS/Closed) -- it is NOT a single closed domain with one closure percentage like chem/relativity/quantum/biology. Do not read 'no single verifier' as 'no verifiers'; run_tests.py runs 24 Python verifiers + 25 Coq witnesses, all currently PASS/Closed. What remains genuinely at 0% is END-TO-END closure from the UNRESTRICTED root -- see STANDARD_MODEL_CLOSURE.md for the node-by-node matrix.",
  "unified_force_closure_v0_1": "INTERNALLY_CLOSED_FINITE (verifier unified_force_closure_v0_1.py PASS); physical four-force unification OPEN",
  "sm_g0_order_defect": "Th_coqc (InfoOrderDefectFromComposition.v, Closed): order-defect + Jacobi DERIVED from ordered composition; REDUCES AP20 borrow #2 (grounds the commutator FORM) but does not remove it (non-abelian input still rests on an un-forced non-commuting pair); borrows #3 self-carrier + #4 load A4 still OPEN",
  "sm_g0_1_g0_2_automorphism_group": "Th_coqc (InfoGaugeAutomorphismGroup.v, Closed): path composition is a monoid (G0.1) and Aut(F,O) is closed under composition + identity + inverse (G0.2), for arbitrary (S,R,F,O) -- fully general, no Section/Variable/Hypothesis, no domain alphabet. Narrows R3/SM-G0 to G0.3 (localization), G0.4 (connection transform law as its own theorem), G0.5 (holonomy conjugacy-invariance in general -- NOTE InfoRationalSO3Curvature is a single hand-picked witness pair per its own header, not this general result, and must not be cited as closing G0.5).",
