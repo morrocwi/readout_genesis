@@ -108,9 +108,11 @@ Read top to bottom for the full arc, or jump by Part.
 ### ⬛ THE FORCED SET — I through XXIV
 
 Every result below is **necessity-tier**: general facts about `F`/the spine itself, no domain-specific
-alphabet or architecture assumed — independently compiled/coqchk'd 2026-07-23 (round 1: I–XVI; round 2:
-XVII–XXIV, after two initial round-2 candidates were caught by independent review and correctly
-demoted back to conditional — see the addenda below for the full audit trail). Domain-conditional
+alphabet or architecture assumed. **I** is the original Forcing Ledger citation (predates both
+verification rounds); **II–XVI** are round 1's 15 independently re-compiled/coqchk'd confirmations,
+2026-07-23; **XVII–XXIV** are round 2's 8 new confirmations (7 more Face-of-`F` witnesses + 1 promoted
+from the Standard-Model chain), same day, after two other round-2 candidates were caught by independent
+review and correctly demoted back to conditional — see the addenda below for the full audit trail. Domain-conditional
 results (Standard-Model chain, biology/health) are deliberately **not** in this set — they live in
 [`ROOT_INFO_LANGUAGE_INVENTORY.md`](ROOT_INFO_LANGUAGE_INVENTORY.md).
 
