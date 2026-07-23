@@ -24,7 +24,7 @@
 
 ## 📖 Table of Contents
 
-**16 major sections** (2 front-matter + 14 Parts) **+ Appendix A**, **141 subsections**, ~5,970 lines.
+**16 major sections** (2 front-matter + 14 Parts) **+ Appendix A**, **141 subsections**, ~6,980 lines.
 Read top to bottom for the full arc, or jump by Part.
 
 **Front matter**
@@ -123,12 +123,21 @@ Read top to bottom for the full arc, or jump by Part.
 > `InfoLorentzInvariance` (narrow boost-invariance claim only, not the rejected "unification" claim),
 > `InfoMemoryBeforeMass`, `InfoMetricIsEnergyReadout`, `InfoQuantumRelativityUnification` (narrow
 > dispersion-identity claim only), `InfoSeedTorsionGroupAndRankN`, `InfoCoercivityBoundedClosure`,
-> plus `InfoAnalysisLift` — all returned `Closed under the global context` / `Modules were
-> successfully checked`, no `Axiom`, no `Admitted`. These are genuinely the **same** `F` read at a
-> different face, so they belong in this box; domain-specific consequences (Standard-Model chain,
-> bio/health chain) do **not** — folding those in here would be the label-inflation this book audits
-> against (§V.20, §V.22). Full inventory with root-language statements, file paths, and the honest
-> not-yet-verified list: see the extraction working note (not yet merged into this repo).
+> plus `research_universal_solver/formal/InfoAnalysisLift.v` (module `RDL.InfoAnalysisLift`, the
+> Clairaut-symmetry result — **not** the same-named `causal-quantum-gravity/formal/InfoAnalysisLift.v`
+> file, which this book already refuses elsewhere in this section as importing Schwarzschild; the two
+> repos happen to share a filename for unrelated results, so cite the repo path, never the bare name)
+> — all returned `Closed under the global context` / `Modules were successfully checked`, no `Axiom`,
+> no `Admitted`. These are genuinely the **same** `F` read at a different face, so they belong in this
+> box; domain-specific consequences (Standard-Model chain, bio/health chain) do **not** — folding those
+> in here would be the label-inflation this book audits against (§V.20, §V.22). Verified names and
+> `.v` paths: `causal-quantum-gravity/formal/{InfoActionStationarity,InfoBackReaction,InfoConeInheritance,
+> InfoCrossTermDominance,InfoCubicLinearization,InfoCutGrowth,InfoGraphNoether,InfoLorentz,
+> InfoLorentzInvariance,InfoMemoryBeforeMass,InfoMetricIsEnergyReadout,InfoQuantumRelativityUnification,
+> InfoSeedTorsionGroupAndRankN,InfoCoercivityBoundedClosure}.v` (module root `-R . DQG`) plus
+> `research_universal_solver/formal/InfoAnalysisLift.v` (module root `-R . RDL`) — a not-yet-merged
+> working note lists the Standard-Model and bio/health names checked the same way, and the names still
+> unverified; ask for it directly rather than following a stale link.
 ---
 
 ## VERSION-RECONCILIATION
