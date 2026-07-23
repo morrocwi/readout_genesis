@@ -20,7 +20,8 @@
 
 | what | value |
 |---|---|
-| End-to-end root-derived SM | **0% — OPEN** (chirality/spin-statistics · gauge-orbit Hessian · continuum/radiative) |
+| End-to-end root-derived SM | **0% — OPEN** (chirality/spin-statistics · gauge-orbit Hessian · continuum/radiative; **unchanged** — G0.1/G0.2 closes the FIRST gate's first 2 of 6 sub-gates, not the whole chain) |
+| R3/SM-G0 first gate | G0.1, G0.2 **closed 2026-07-23** (`Th_coqc`, unconditional); G0.3-G0.5 still open |
 | Color / SU(3) / Z₃ center | conditionally derived (oddness of the minimal closed tape is a theorem) |
 | Hypercharges + cubic anomaly | forced exactly, `Th_coqc` (given SM rep content as a fixture) |
 | All-order character `u(κ), v(κ)` | closed to all orders, high-precision numerical (not an interval proof) |
@@ -57,6 +58,7 @@
 | v1.11 frame_mixing_from_action | `frame_mixing_from_action_v1_11.py` | `InfoFrameMixingAction.v` | **derive** the mixing weights `p(h)` from a slab of `S_UF`: `b_m=e^{−ε(m)/2}`, Gram `K_fr=B†B` (reflection-positive), `p(h)=Σ_{m⁻¹n=h}b_mb_n/(Σb)²` (≥0, Σ=1, `p(h)=p(h⁻¹)`); Fix=`ℝI₄`; equal-cost `ρ_aniso=0.7361824549886<v1.10's 0.8580` (root of a `25⁶`-sextic) | `FRAME_WEIGHTS_DERIVED_FROM_SLAB` (`Th_coqc`, 10 thm) | **closes v1.10's derive-p(R)-from-S_UF**; uniform gap/cost ratios/boosts OPEN |
 | v1.12 order_higgs_closure | `order_higgs_closure_v1_12.py` | `InfoOrderHiggsClosure.v` | order carrier `H=(1,2)_3` **forced** (color-singlet, `2⊗2⊃1`, `y_H=3` from every closure); nonzero order ⇒ stabilizer `Q_res=T₃+Y` (dim1) ⇒ 3 broken; neutral matrix `det=0` rank1 ⇒ `m_A=0`, `m_W=m_Z cosθ`, `ρ=1`; DOF `8+4=2+9+1` | `ORDER_REP_STABILIZER_MASS_PATTERN_EXACT` (`Th_coqc`, 12 thm) | EWSB **pattern** from matter skeleton; scale/couplings/why-condense OPEN |
 | v1.13 intertwiner_order_vacuum **(corrects an earlier flawed draft)** | `intertwiner_order_vacuum_v1_13.py` | `InfoIntertwinerOrderVacuum.v` | invariant multiplicities `ν=(1,1,1)` ≠ closure-map **rank** `(d_U,d_D,d_E)=(3,3,1)` ⇒ 7 modes; **corrected** Fock factor `Z_j=(1+λ_jr)^{d_j}` with `Z_j(0)=1` (supersedes a superseded exponential ansatz that wrongly kept weight at `H=0`); `Π₀=3λ_U+3λ_D+λ_E>α ⇒` order, convexity automatic (`β>0`), no-go `Π₀≤7` | `INTERTWINER_COUNT_EXACT` + `ORDER_CRITERION_EXACT_WITHIN_LOCAL_CLOSURE_MODEL` (`Th_coqc`, 11 thm) | **closes v1.12's why-order-condenses** down to one primitive-cost inequality; whether `Π₀>α` is FORCED (vs merely possible) OPEN |
+| SM-G0.1/G0.2 gauge_automorphism_group **(the first gate, R3/SM-G0 — necessity-tier, not architecture-conditional)** | *(no dedicated .py — fully abstract Type-polymorphic Coq; `unified_force_closure_v0_1.py` §A gives a concrete illustration)* | `InfoGaugeAutomorphismGroup.v` | path composition `(M,one,op)` is a **monoid** (assoc + 2-sided id, fold-app-compatible); `Aut(F,O):={h:O∘h=O, h∘F=F∘h}` is closed under composition, contains id, and is closed under inverse — for **arbitrary** `(S,R,F,O)`, no domain alphabet at all | `Th_coqc` (7 thm, fully general — no `Section`/`Variable`/`Hypothesis`) | **closes G0.1 and G0.2**, the first 2 of 6 SM-G0 sub-gates, unconditionally (no declared architecture); does not show `Aut(F,O)` nontrivial for the real root dynamics, nor derive G0.3–G0.5 |
 
 ## How to run
 
@@ -68,6 +70,14 @@ Each version's status is honestly fenced against [`CLAIM_BOUNDARY.json`](CLAIM_B
 this index, before citing a number.
 
 ## Current state (2026-07 snapshot)
+**R3/SM-G0, the first gate (2026-07-23):** **G0.1 and G0.2 are closed, unconditionally** —
+`InfoGaugeAutomorphismGroup.v` proves path composition is a monoid and `Aut(F,O)` is closed under
+composition/identity/inverse, for *arbitrary* `(S,R,F,O)`, zero domain alphabet. This is the first
+part of R3/SM-G0 to close at necessity tier rather than "exact within a declared architecture."
+G0.3 (localization), G0.4 (connection-transform law as its own theorem), and G0.5 (general holonomy
+conjugacy-invariance — note `InfoRationalSO3Curvature` is a single hand-picked witness, corrected
+2026-07-23, not a general G0.5 result) remain open.
+
 **Closed / conditionally closed:** color **3** · **SU(3)** · **Z₃** center (conditionally derived);
 **hypercharges** `Y=(1/6,−2/3,1/3,−1/2,1,1/2)` from anomaly cancellation with the **grav≡cubic** factorization `A₁₁₁=(A_grav)³` and the **Z₆** center-lock ⇒ `[SU(3)×SU(2)×U(1)]/Z₆` (`Th_coqc`, conditional on the one-generation skeleton);
 **all-order** `u(κ),v(κ)` (exact Weyl integrals, numerical); the link **intertwiner** is a contraction
