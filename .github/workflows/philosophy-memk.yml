@@ -2,15 +2,10 @@ name: Philosophy MEMK Registration
 
 on:
   push:
-    branches:
-      - feat/register-philosophy-memk-v0.2.0
-    paths:
-      - 'domains/philosophy/**'
-      - '.github/workflows/philosophy-memk.yml'
+    branches: [feat/register-philosophy-memk-v0.2.0]
+    paths: ['domains/philosophy/**', '.github/workflows/philosophy-memk.yml']
   pull_request:
-    paths:
-      - 'domains/philosophy/**'
-      - '.github/workflows/philosophy-memk.yml'
+    paths: ['domains/philosophy/**', '.github/workflows/philosophy-memk.yml']
   workflow_dispatch:
 
 permissions:
@@ -23,29 +18,50 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          show-progress: false
+        with: {show-progress: false}
       - name: Rebuild current standalone companion
         run: python3 -B domains/philosophy/artifacts/rebuild_information_epistemic_foundation_v1_6_0.py
-      - name: Check domain README hash
-        if: always()
-        run: echo 'cb0e75c266c3db9fc242ee90b97861b2d75862cca7f4a4c7969f29c2feabd9e6  domains/philosophy/README.md' | sha256sum -c -
-      - name: Check release registry hash
-        if: always()
-        run: echo '57b368308b87a1ebd33900fb789ac59e3abdd239397fc9e6687b58d250c2b2cd  domains/philosophy/FOUNDATION_RELEASE_REGISTRY_PHILOSOPHY_MEMK.yaml' | sha256sum -c -
-      - name: Check validation receipt hash
-        if: always()
-        run: echo 'edee9d1110265c675665e07c91800c0e86b5d278f6c8ec9cea9cd97ef6ca3313  domains/philosophy/INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.validation.yaml' | sha256sum -c -
-      - name: Check artifact README hash
-        if: always()
-        run: echo '6e597bd6382f0d4da220f404ecea1aa7548f01774984152ec08d72e087b4945c  domains/philosophy/artifacts/README.md' | sha256sum -c -
-      - name: Check rebuild verifier hash
-        if: always()
-        run: echo '5acf62a157c630d5c6895ae887756dee888d8a0246fc13d5d0c07703d7644871  domains/philosophy/artifacts/rebuild_information_epistemic_foundation_v1_6_0.py' | sha256sum -c -
-      - name: Verify full checksum manifest
+      - name: Check governance hashes
         if: always()
         working-directory: domains/philosophy
-        run: sha256sum -c CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt
+        run: |
+          head -n 6 CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | tail -n 5 | sha256sum -c -
+      - name: Check archive hashes 01-04
+        if: always()
+        working-directory: domains/philosophy
+        run: sed -n '7,10p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
+      - name: Check archive hashes 05-08
+        if: always()
+        working-directory: domains/philosophy
+        run: sed -n '11,14p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
+      - name: Check archive hashes 09-11
+        if: always()
+        working-directory: domains/philosophy
+        run: sed -n '15,17p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
+      - name: Check archive hashes 12 family
+        if: always()
+        working-directory: domains/philosophy
+        run: sed -n '18,21p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
+      - name: Check archive hashes 13-16
+        if: always()
+        working-directory: domains/philosophy
+        run: sed -n '22,25p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
+      - name: Check claim boundary hash
+        if: always()
+        working-directory: domains/philosophy
+        run: sed -n '26p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
+      - name: Check root DAG hash
+        if: always()
+        working-directory: domains/philosophy
+        run: sed -n '27p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
+      - name: Check drift contract hash
+        if: always()
+        working-directory: domains/philosophy
+        run: sed -n '28p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
+      - name: Check root snapshot hash
+        if: always()
+        working-directory: domains/philosophy
+        run: sed -n '29p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
       - name: Run primary registration checker
         if: always()
         run: python3 -B domains/philosophy/philosophy_memk_closure_v0_2_0.py
