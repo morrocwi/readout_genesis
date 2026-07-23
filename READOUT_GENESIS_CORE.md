@@ -22,6 +22,41 @@
 
 ---
 
+## 📖 Table of Contents
+
+**16 major sections** (2 front-matter + 14 Parts) **+ Appendix A**, **141 subsections**, ~6,980 lines.
+Read top to bottom for the full arc, or jump by Part.
+
+**Front matter**
+- [Version Reconciliation](#version-reconciliation) — the three lineage streams this consolidates
+- [Founder Ontology — the spine of meaning](#founder-ontology--the-spine-of-meaning) — the base doctrine
+
+**The universe, unfolding step by step**
+1. [PART I — Root Axioms: what is first?](#part-i--root-axioms-what-is-first) — δ_R, the resource-logic floor, L_R := D_W − W
+2. [PART II — The Universal Equation](#part-ii--the-universal-equation) — the spine PDE, term-by-term tiers, the three layers, and the DRL–Telegraph two-field (Φ,Ψ) apparatus
+3. [PART III — The Twelve Faces of the Spine](#part-iii--the-twelve-faces-of-the-spine)
+4. [PART IV — The τ_c Scale Bus](#part-iv--the-τ_c-scale-bus) — τ_c prior to mass; the PGFT-RDU native-unit gateway
+5. [PART V — Domain Leaves (domain = translation)](#part-v--domain-leaves-domain--translation) — all leaves incl. the reserved Neuron/Connectome TBD slots; the Scalar-Eigenmode Reduction Error; **V.16 registered domain: Chemistry** (`domains/chem/`, the first leaf to pass the [Domain Registration Standard](domains/DOMAIN_REGISTRATION_STANDARD.md))
+6. [PART V-A — Domain Emergence and Translation Sufficiency](#part-v-a--domain-emergence-and-translation-sufficiency) — the exact-quotient gate and the **seven general gates**
+7. [PART VI-A — Domain-Neutral Extraction and the Maker–Checker Epistemic Firewall](#part-vi-a--domain-neutral-extraction-and-the-makerchecker-epistemic-firewall)
+8. [PART VI — The Epistemic Nuclear Core](#part-vi--the-epistemic-nuclear-core)
+9. [PART VII — Unit Grammar & Newton Gate](#part-vii--unit-grammar--newton-gate)
+10. [PART VIII — Human Agency: the τ_c^H loop, the waking self, and Ω_H](#part-viii--human-agency-the-τ_ch-loop-the-waking-self-and-ω_h) — imagination as reversible skew-transport
+11. [PART IX — The 42-Step Genesis Stream](#part-ix--the-42-step-genesis-stream-v31-extended) — all 42 steps, root → end
+12. [PART X — Formal Floor (Coq-checked structure)](#part-x--formal-floor-coq-checked-structure--v31)
+13. [PART XI — Claim Discipline & Readout-Not-Truth](#part-xi--claim-discipline--readout-not-truth--v31) — non-claims + the must-not-enter-root list
+14. [PART XII — Executable Guards](#part-xii--executable-guards--v31)
+
+**Appendix**
+- [Appendix A — v0.11 Turbulence-Integrated carry-forward](#appendix-a-v011-carry-forward--turbulence-integrated-equations-preserved-verbatim) — 13 equations/lists from the earlier turbulence-integrated snapshot, preserved verbatim with honest tiers (memory kernel, DRL→RTPE bridge, LP/NS residual, readability, modal audit, cost, theorem regimes, continuum map, scalar-reduction gate, runtime protocol, open items)
+- [Appendix B — External-paper integration (2026-07-21)](#appendix-b-external-paper-integration-2026-07-21--carried-at-honest-tier-provenance-tagged) — conserved (Φ,Ψ) pairing charge from Paper I (3-ring T1/T2 [Th_coqc] via PR #185; exact-conservation/general-N [Dr]/[Open]), and Paper VI's ×4-doubling / spin-statistics-sign / d=3-selector as [Dr]/[Open] frontier candidates awaiting independent review
+
+**Tier legend:** `[Th_coqc]` machine-checked axiom-free · `[finite_diagnostic]` measured/computed ·
+`[Dr]` declared bridge · `[DeclaredFormula]` restated in Coq, not proved · `[Ax]` definitional ·
+`[Open]` unresolved. `PROPOSED` = a candidate result pending its named test (e.g. skew-L_R pending T1).
+
+---
+
 ## ⬛ THE ONE-LINE MASTER EQUATION — the weld
 
 > The whole book compresses to one identity. It is **not a new PDE form** (telegraph, graph-Laplacian
@@ -80,41 +115,29 @@
 > structure of the master equation is now provably ours; what stays borrowed is exactly what honesty
 > says cannot be forced — and not a single term of it was faked.**
 
----
 
-## 📖 Table of Contents
-
-**16 major sections** (2 front-matter + 14 Parts) **+ Appendix A**, **141 subsections**, ~5,970 lines.
-Read top to bottom for the full arc, or jump by Part.
-
-**Front matter**
-- [Version Reconciliation](#version-reconciliation) — the three lineage streams this consolidates
-- [Founder Ontology — the spine of meaning](#founder-ontology--the-spine-of-meaning) — the base doctrine
-
-**The universe, unfolding step by step**
-1. [PART I — Root Axioms: what is first?](#part-i--root-axioms-what-is-first) — δ_R, the resource-logic floor, L_R := D_W − W
-2. [PART II — The Universal Equation](#part-ii--the-universal-equation) — the spine PDE, term-by-term tiers, the three layers, and the DRL–Telegraph two-field (Φ,Ψ) apparatus
-3. [PART III — The Twelve Faces of the Spine](#part-iii--the-twelve-faces-of-the-spine)
-4. [PART IV — The τ_c Scale Bus](#part-iv--the-τ_c-scale-bus) — τ_c prior to mass; the PGFT-RDU native-unit gateway
-5. [PART V — Domain Leaves (domain = translation)](#part-v--domain-leaves-domain--translation) — all leaves incl. the reserved Neuron/Connectome TBD slots; the Scalar-Eigenmode Reduction Error; **V.16 registered domain: Chemistry** (`domains/chem/`, the first leaf to pass the [Domain Registration Standard](domains/DOMAIN_REGISTRATION_STANDARD.md))
-6. [PART V-A — Domain Emergence and Translation Sufficiency](#part-v-a--domain-emergence-and-translation-sufficiency) — the exact-quotient gate and the **seven general gates**
-7. [PART VI-A — Domain-Neutral Extraction and the Maker–Checker Epistemic Firewall](#part-vi-a--domain-neutral-extraction-and-the-makerchecker-epistemic-firewall)
-8. [PART VI — The Epistemic Nuclear Core](#part-vi--the-epistemic-nuclear-core)
-9. [PART VII — Unit Grammar & Newton Gate](#part-vii--unit-grammar--newton-gate)
-10. [PART VIII — Human Agency: the τ_c^H loop, the waking self, and Ω_H](#part-viii--human-agency-the-τ_ch-loop-the-waking-self-and-ω_h) — imagination as reversible skew-transport
-11. [PART IX — The 42-Step Genesis Stream](#part-ix--the-42-step-genesis-stream-v31-extended) — all 42 steps, root → end
-12. [PART X — Formal Floor (Coq-checked structure)](#part-x--formal-floor-coq-checked-structure--v31)
-13. [PART XI — Claim Discipline & Readout-Not-Truth](#part-xi--claim-discipline--readout-not-truth--v31) — non-claims + the must-not-enter-root list
-14. [PART XII — Executable Guards](#part-xii--executable-guards--v31)
-
-**Appendix**
-- [Appendix A — v0.11 Turbulence-Integrated carry-forward](#appendix-a-v011-carry-forward--turbulence-integrated-equations-preserved-verbatim) — 13 equations/lists from the earlier turbulence-integrated snapshot, preserved verbatim with honest tiers (memory kernel, DRL→RTPE bridge, LP/NS residual, readability, modal audit, cost, theorem regimes, continuum map, scalar-reduction gate, runtime protocol, open items)
-- [Appendix B — External-paper integration (2026-07-21)](#appendix-b-external-paper-integration-2026-07-21--carried-at-honest-tier-provenance-tagged) — conserved (Φ,Ψ) pairing charge from Paper I (3-ring T1/T2 [Th_coqc] via PR #185; exact-conservation/general-N [Dr]/[Open]), and Paper VI's ×4-doubling / spin-statistics-sign / d=3-selector as [Dr]/[Open] frontier candidates awaiting independent review
-
-**Tier legend:** `[Th_coqc]` machine-checked axiom-free · `[finite_diagnostic]` measured/computed ·
-`[Dr]` declared bridge · `[DeclaredFormula]` restated in Coq, not proved · `[Ax]` definitional ·
-`[Open]` unresolved. `PROPOSED` = a candidate result pending its named test (e.g. skew-L_R pending T1).
-
+> **Verification addendum (2026-07-23)** — an independent re-verification pass this session
+> re-compiled 14 of the Face-of-`F` witnesses fresh (`coqc`/`coqchk`, not re-reading the tag):
+> `InfoActionStationarity`, `InfoBackReaction`, `InfoConeInheritance`, `InfoCrossTermDominance`,
+> `InfoCubicLinearization`, `InfoCutGrowth`, `InfoGraphNoether`, `InfoLorentz`,
+> `InfoLorentzInvariance` (narrow boost-invariance claim only, not the rejected "unification" claim),
+> `InfoMemoryBeforeMass`, `InfoMetricIsEnergyReadout`, `InfoQuantumRelativityUnification` (narrow
+> dispersion-identity claim only), `InfoSeedTorsionGroupAndRankN`, `InfoCoercivityBoundedClosure`,
+> plus `research_universal_solver/formal/InfoAnalysisLift.v` (module `RDL.InfoAnalysisLift`, the
+> Clairaut-symmetry result — **not** the same-named `causal-quantum-gravity/formal/InfoAnalysisLift.v`
+> file, which this book already refuses elsewhere in this section as importing Schwarzschild; the two
+> repos happen to share a filename for unrelated results, so cite the repo path, never the bare name)
+> — all returned `Closed under the global context` / `Modules were successfully checked`, no `Axiom`,
+> no `Admitted`. These are genuinely the **same** `F` read at a different face, so they belong in this
+> box; domain-specific consequences (Standard-Model chain, bio/health chain) do **not** — folding those
+> in here would be the label-inflation this book audits against (§V.20, §V.22). Verified names and
+> `.v` paths: `causal-quantum-gravity/formal/{InfoActionStationarity,InfoBackReaction,InfoConeInheritance,
+> InfoCrossTermDominance,InfoCubicLinearization,InfoCutGrowth,InfoGraphNoether,InfoLorentz,
+> InfoLorentzInvariance,InfoMemoryBeforeMass,InfoMetricIsEnergyReadout,InfoQuantumRelativityUnification,
+> InfoSeedTorsionGroupAndRankN,InfoCoercivityBoundedClosure}.v` (module root `-R . DQG`) plus
+> `research_universal_solver/formal/InfoAnalysisLift.v` (module root `-R . RDL`) — a not-yet-merged
+> working note lists the Standard-Model and bio/health names checked the same way, and the names still
+> unverified; ask for it directly rather than following a stale link.
 ---
 
 ## VERSION-RECONCILIATION
