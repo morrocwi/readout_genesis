@@ -1,0 +1,42 @@
+{
+  "contract_id": "DRIFT_CONTRACT_RG_PHILOSOPHY_MEMK_001",
+  "version": "0.2.0",
+  "fail_closed": true,
+  "hard_fail_conditions": [
+    "a semantic, psychological, religious, sociological, neuroscientific, or AI law is inserted as a root theorem",
+    "meaning is assigned before q_MEMK and O_MEMK pass",
+    "the target interpretation is inserted into the encoder, quotient, coefficient, or loss",
+    "a ROOT_THEOREM depends on empirical tape, discovered law, calibration, or numerical procedure",
+    "event occurrence, event trace, memory, experience, and knowledge are collapsed into one object",
+    "social acceptance is reported as sufficient proof of knowledge",
+    "local or large-scale convention is promoted to global or absolute truth without transport tests",
+    "informational work is reported in physical energy units without an independently checked bridge",
+    "shock, awakening, subjective certainty, or life change is reported as truth without invariant and epistemic gates",
+    "W_0 changes during adapter-only training",
+    "adapter rank, loss weights, thresholds, or semantic temperature are selected after held-out outcomes are visible",
+    "old meanings or minority conventions are deleted rather than retained as lineage or residue",
+    "LoRA is presented as a demonstrated biological mechanism",
+    "a transient experience is promoted to durable knowledge, identity, or transformation without persistence",
+    "the claim exceeds ARCHITECTURE_CONDITIONAL_UNRESOLVED_DOMAIN",
+    "a required source lock, checksum, positive control, negative control, abstention control, metric, or tolerance is missing"
+  ],
+  "prohibited_active_domain_tokens_in_root": [
+    "meaning_energy_joules",
+    "literal_lora_brain",
+    "awakening_truth_proof",
+    "shock_is_insight",
+    "consensus_is_truth",
+    "memory_equals_event"
+  ],
+  "required_nonclaims": [
+    "informational work is not physical energy",
+    "intensity is not truth",
+    "experience is not knowledge",
+    "rebinding is not consolidation",
+    "global convention is not absolute truth"
+  ],
+  "permitted_temporal_feedback": {
+    "sequence": "meaning -> experience -> memory -> knowledge/view/identity -> next meaning",
+    "condition": "ordered indices only; no static provenance cycle"
+  }
+}
