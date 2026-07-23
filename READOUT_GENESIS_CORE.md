@@ -137,9 +137,10 @@ Read top to bottom for the full arc, or jump by Part.
 > InfoCrossTermDominance,InfoCubicLinearization,InfoCutGrowth,InfoGraphNoether,InfoLorentz,
 > InfoLorentzInvariance,InfoMemoryBeforeMass,InfoMetricIsEnergyReadout,InfoQuantumRelativityUnification,
 > InfoSeedTorsionGroupAndRankN,InfoCoercivityBoundedClosure}.v` (module root `-R . DQG`) plus
-> `research_universal_solver/formal/InfoAnalysisLift.v` (module root `-R . RDL`) — a not-yet-merged
-> working note lists the Standard-Model and bio/health names checked the same way, and the names still
-> unverified; ask for it directly rather than following a stale link.
+> `research_universal_solver/formal/InfoAnalysisLift.v` (module root `-R . RDL`). The Standard-Model
+> and bio/health names checked the same way this session — deliberately kept **out** of this box for
+> the reason above — plus the still-unverified names, are catalogued in
+> [`ROOT_INFO_LANGUAGE_INVENTORY.md`](ROOT_INFO_LANGUAGE_INVENTORY.md).
 ---
 
 ## VERSION-RECONCILIATION
