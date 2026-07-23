@@ -228,10 +228,10 @@ VI.    qshift(V₃) ≥ 0                                    (InfoCubicLineariza
 VII.   cut(E∪e) ≥ cut(E)                                 (InfoCutGrowth)
 VIII.  Sym(C₆)·F = F  ⇒  ∃Q: δQ = 0                      (InfoGraphNoether)
 IX.    Q_v = n₊·n₋ ,  h*Q_v = Q_v                        (InfoLorentz)
-X.     □_quad(g,v) = □_quad(1,0) ,  g²(1−v²) = 1         (InfoLorentzInvariance)
+X.     □_quad(g,v) = □_quad(1,0) ,  g²(1−v²) = 1         (InfoLorentzInvariance) †
 XI.    rate · τ_c = 1                                    (InfoMemoryBeforeMass)
 XII.   qform(L,x) ≡ energy(x)                            (InfoMetricIsEnergyReadout)
-XIII.  Mω² = Kλ  ⟺  □_quad = 0                           (InfoQuantumRelativityUnification)
+XIII.  Mω² = Kλ  ⟺  □_quad = 0                           (InfoQuantumRelativityUnification) †
 XIV.   τ ≠ 0  ⇒  [G,G] ≠ 0 , rank = N                    (InfoSeedTorsionGroupAndRankN)
 XV.    ∇V coercive ⟺ wshare/wdeg bounded                 (InfoCoercivityBoundedClosure)
 XVI.   ∂²g/∂x∂y = ∂²g/∂y∂x                               (InfoAnalysisLift)
@@ -242,8 +242,13 @@ XX.    ∂(loop) = pure-gauge ⟺ curv = 0                   (InfoConnectionFrom
 XXI.   flat ⟺ δ²g = 0                                    (InfoDiscreteRiemannCurvature)
 XXII.  curv = [∇_i, ∇_j]                                 (InfoDiscreteRiemannCommutator)
 XXIII. λ_c = λ_c(spine)                                  (InfoTelegraphHorizonUnification)
-XXIV.  K(X,Y) = XY − YX  ⇒  Jacobi(K)                    (InfoOrderDefectFromComposition)
+XXIV.  K(X,Y) = XY − YX  ⇒  Jacobi(K)                    (InfoOrderDefectFromComposition) ‡
 ```
+
+> † narrow claim only — not the wider "unification" reading this book explicitly refuses elsewhere
+> (§V.13a). ‡ the algebraic identity is general; the specific noncommuting witness pair used to
+> instantiate it is hand-exhibited, not itself root-forced ("borrow #2 reduced, not removed" — see
+> the Forcing Ledger row and prose XXIV above for the full statement).
 
 > So the remaining frontier (§I.3, §V.20) is the **dimensionless constants**, then the SI constants
 > `ħ, c, G` (the hardest — possibly irreducible). Each term forced is a term that becomes provably
