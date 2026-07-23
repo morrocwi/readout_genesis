@@ -103,6 +103,116 @@ Read top to bottom for the full arc, or jump by Part.
 | `K`, SI constants `ħ, c, G` | **borrowed** — measurement anchors, likely irreducible | — | DeclaredFormula / measurement |
 | commutator `K(X,Y)=XY−YX` is bilinear+antisymmetric, Jacobi holds | **forced (structure + Th_coqc)** — necessity (the *algebraic identity* only; the specific noncommuting pair used to witness it is hand-exhibited, not itself root-forced — "borrow #2 reduced, not removed", per the file's own fence) | associativity of ordered composition alone — no Lie algebra imported | `InfoOrderDefectFromComposition` (axiom-free; re-verified 2026-07-23) |
 
+---
+
+### ⬛ THE FORCED SET — I through XXIV
+
+Every result below is **necessity-tier**: general facts about `F`/the spine itself, no domain-specific
+alphabet or architecture assumed. **I** is the original Forcing Ledger citation (predates both
+verification rounds); **II–XVI** are round 1's 15 independently re-compiled/coqchk'd confirmations,
+2026-07-23; **XVII–XXIV** are round 2's 8 new confirmations (7 more Face-of-`F` witnesses + 1 promoted
+from the Standard-Model chain), same day, after two other round-2 candidates were caught by independent
+review and correctly demoted back to conditional — see the addenda below for the full audit trail. Domain-conditional
+results (Standard-Model chain, biology/health) are deliberately **not** in this set — they live in
+[`ROOT_INFO_LANGUAGE_INVENTORY.md`](ROOT_INFO_LANGUAGE_INVENTORY.md).
+
+```
+  I.     L_R = D_W − W                         retained distinction forces the graph-Laplacian
+                                                form — among all candidate operators, only L_R
+                                                passes every required structural test
+                                                (InfoRetainedDistinctionForcesLaplacian)
+
+  II.    δS/δZ_n |removed = δS/δZ_n |kept       removing a retained node changes the stationary
+         + boundary term, exactly              residual by exactly the boundary term — no free
+                                                growth (InfoActionStationarity)
+
+  III.   strain(x,e) ≥ 0                        strain across any edge is nonnegative, and zero
+         strain(x,e) = 0  ⟺  x_u = x_v          iff there is no retained distinction across it
+                                                (InfoBackReaction)
+
+  IV.    step ⇒ same local stencil              one operator step inherits its own local stencil
+                                                ⇒ the finite causal cone survives composition
+                                                (InfoConeInheritance)
+
+  V.     cell_diag ⟂ cell_cross_polarization    the cross term in a 2×2 local cell separates
+                                                cleanly from the diagonal term
+                                                (InfoCrossTermDominance)
+
+  VI.    qshift(cubic residual) ≥ 0             the residual linearized from the cubic potential
+                                                is nonnegative, strictly positive off the fixed
+                                                point (InfoCubicLinearization)
+
+  VII.   cut monotone under edge growth         screened strain stays nonnegative as the graph
+                                                grows (InfoCutGrowth)
+
+  VIII.  graph permutation symmetry             a symmetry under graph permutation forces a
+         ⇒ conserved quantity                   conserved quantity — Noether, on a graph
+                                                (InfoGraphNoether)
+
+  IX.    Q_v = n₊·n₋  is frame-covariant        the causal quadratic form built from the cone's
+                                                edges is covariant under frame change — signature
+                                                comes from the causal order ≺ (InfoLorentz)
+
+  X.     box_quad  is boost-invariant           the box quadratic form is unchanged under a
+         (g²(1−v²) = 1)                         boost — narrow claim only, not the wider
+                                                "unification" this book refuses (InfoLorentzInvariance)
+
+  XI.    rate · τ_c = 1                         equal memory (τ_c) forces identical dynamics
+         τ_c equal ⇒ dynamics identical         regardless of how (M,D) split — memory precedes
+                                                mass (InfoMemoryBeforeMass)
+
+  XII.   qform(L(edges), x) ≡ energy(edges, x)  the metric's Hessian and the energy functional
+                                                are the same object (InfoMetricIsEnergyReadout)
+
+  XIII.  M·ω² = K·λ  ⟺  box_quad = 0            the dispersion identity, and this null-condition
+         (survives boost)                       survives a boost — narrow claim only
+                                                (InfoQuantumRelativityUnification)
+
+  XIV.   torsion ≠ 0 ⇒ non-abelian group        a nonzero torsion witness generates a non-abelian
+         of rank N                              group of rank N — the gauge-algebra seed
+                                                (InfoSeedTorsionGroupAndRankN)
+
+  XV.    ∇V coercive, bounded closure           the potential's coercivity is bounded — wshare/
+                                                wdeg closure (InfoCoercivityBoundedClosure)
+
+  XVI.   ∂²(metric)/∂x∂y = ∂²(metric)/∂y∂x      mixed-partial (Clairaut) symmetry of the metric
+                                                lift (InfoAnalysisLift — research_universal_solver
+                                                copy; NOT the causal-quantum-gravity same-named
+                                                file, which imports Schwarzschild and is refused)
+
+  XVII.  SeedReadout = 0  ⟺  Φ homogeneous      velocity+coupling+damping combine into one seed
+                                                readout that vanishes iff the field is homogeneous
+                                                (InfoSeedUnifiedMasterEquation)
+
+  XVIII. dispersion relation is scale-gauge     the dispersion relation's sign/structure is
+         invariant                              invariant under a scale-gauge transform
+                                                (InfoScaleGaugeNonReadout)
+
+  XIX.   selected state = argmin(action)        the selected state minimizes the action — the
+                                                general variational principle
+                                                (InfoSeedArgminActionCost)
+
+  XX.    closed loop pure gauge ⟺ flat          a connection from any frame difference; genuine
+                                                curvature is exactly the non-coboundary part
+                                                (InfoConnectionFromFrame)
+
+  XXI.   flat  ⟺  second difference = 0         discrete curvature from second differences
+                                                (InfoDiscreteRiemannCurvature)
+
+  XXII.  curvature recovered from the           a nonvacuous witness recovers curvature from the
+         transport commutator                   transport commutator (InfoDiscreteRiemannCommutator)
+
+  XXIII. λ_c is the spine's own crossover       the classical/quantum crossover λ_c — a distinct
+                                                object from GR redshift, not a claim of unifying
+                                                the two (InfoTelegraphHorizonUnification)
+
+  XXIV.  K(X,Y) = XY − YX  bilinear+antisym.    Jacobi follows from associativity of ordered
+         Jacobi holds                           composition alone — no Lie algebra imported;
+                                                the algebraic identity is general, the specific
+                                                noncommuting witness pair is hand-exhibited
+                                                (InfoOrderDefectFromComposition)
+```
+
 > So the remaining frontier (§I.3, §V.20) is the **dimensionless constants**, then the SI constants
 > `ħ, c, G` (the hardest — possibly irreducible). Each term forced is a term that becomes provably
 > ours, and by the weld that is the *same act* as admitting one more domain. Today: `L_R` **fully
