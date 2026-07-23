@@ -1,44 +1,60 @@
-# Information Epistemic Foundation v1.2.0 — Lossless Source Archive
+# Information Epistemic Foundation — Lossless Source Archives
 
-This folder stores the exact standalone Markdown artifact as a deterministic split base64 archive.
-The split exists only to keep connector writes bounded; it is not a conceptual decomposition.
+This folder retains deterministic source archives for standalone foundation companions.
+Each archive is gzip-compressed with fixed `mtime=0`, base64-encoded, split only for bounded connector writes, and rebuilt under exact SHA-256 and dimension checks.
 
-## Rebuild
+## Current companion: v1.6.0
 
-From `domains/philosophy/artifacts/`:
+Run from this folder:
 
 ```bash
-python -B rebuild_information_epistemic_foundation_v1_2_0.py
+python -B rebuild_information_epistemic_foundation_v1_6_0.py
 ```
 
-The script concatenates four parts, decodes the gzip archive, verifies both compressed and Markdown SHA-256 hashes, verifies dimensions and required sections, and writes:
+The script reconstructs:
 
 ```text
-domains/philosophy/INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.2.0.md
+domains/philosophy/INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md
 ```
 
-Expected output:
+Expected identity:
 
 ```text
-PASS: rebuilt .../INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.2.0.md
-SHA256: c9d395ba32ef156199078658ff9951dddbaac069cedbd17ff206d41b40f94a00
-LINES: 3358
-CHARACTERS: 98406
-EMPIRICAL_AND_DOCTRINAL_IDENTITY: UNRESOLVED
+MARKDOWN_SHA256: ff8cbf6848d93f7579327dc628e25e91801d959669de4235fcdfbcb347f7a926
+GZIP_SHA256: a05dabea3dd44c7fc07fddd19246bc382c2c35faef48f73453b0eab77ebc58f1
+LINES: 5927
+CHARACTERS: 153091
+BYTES: 154653
+TARGET_DOMAIN_ENCODING_AND_CALIBRATION: UNRESOLVED
 ```
 
-## Archive files
+Archive parts:
 
-- `...part01`
-- `...part02`
-- `...part03`
-- `...part04`
-- `rebuild_information_epistemic_foundation_v1_2_0.py`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part01`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part02`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part03`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part04`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part05`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part06`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part07`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part08`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part09`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part10`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part11`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part12`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part13`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part14`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part15`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part16`
 
-The validation receipt is stored one directory above as:
+Validation and canonicalization lineage are recorded one directory above in:
 
-`INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.2.0.validation.yaml`
+`INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.validation.yaml`
+
+## Retained predecessor: v1.2.0
+
+The v1.2.0 archive and rebuild script remain present for append-only lineage. It is superseded only as the current standalone companion, not deleted or retroactively rewritten.
 
 ## Claim boundary
 
-The artifact is complete as a specification. It does not establish empirical universality, exact Buddhist doctrinal identity, literal biological LoRA, or transfer of chemical/biological/quantum/Standard-Model semantics into the root.
+Archive integrity establishes byte identity and required structural content. It does not establish exact target-domain encoding, empirical calibration, external independent review, or universal truth.
