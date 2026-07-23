@@ -21,50 +21,12 @@ jobs:
         with: {show-progress: false}
       - name: Rebuild current standalone companion
         run: python3 -B domains/philosophy/artifacts/rebuild_information_epistemic_foundation_v1_6_0.py
-      - name: Check governance hashes
-        if: always()
+      - name: Verify checksum manifest
         working-directory: domains/philosophy
-        run: |
-          head -n 6 CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | tail -n 5 | sha256sum -c -
-      - name: Check archive hashes 01-04
-        if: always()
-        working-directory: domains/philosophy
-        run: sed -n '7,10p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
-      - name: Check archive hashes 05-08
-        if: always()
-        working-directory: domains/philosophy
-        run: sed -n '11,14p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
-      - name: Check archive hashes 09-11
-        if: always()
-        working-directory: domains/philosophy
-        run: sed -n '15,17p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
-      - name: Check archive hashes 12 family
-        if: always()
-        working-directory: domains/philosophy
-        run: sed -n '18,21p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
-      - name: Check archive hashes 13-16
-        if: always()
-        working-directory: domains/philosophy
-        run: sed -n '22,25p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
-      - name: Check claim boundary hash
-        if: always()
-        working-directory: domains/philosophy
-        run: sed -n '26p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
-      - name: Check root DAG hash
-        if: always()
-        working-directory: domains/philosophy
-        run: sed -n '27p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
-      - name: Check drift contract hash
-        if: always()
-        working-directory: domains/philosophy
-        run: sed -n '28p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
-      - name: Check root snapshot hash
-        if: always()
-        working-directory: domains/philosophy
-        run: sed -n '29p' CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt | sha256sum -c -
+        run: sha256sum -c CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt
       - name: Run primary registration checker
-        if: always()
         run: python3 -B domains/philosophy/philosophy_memk_closure_v0_2_0.py
       - name: Run independent registration checker
-        if: always()
         run: python3 -B domains/philosophy/checker_philosophy_memk.py
+      - name: Run combined registration suite
+        run: python3 -B domains/philosophy/run_all_tests_philosophy_memk.py
