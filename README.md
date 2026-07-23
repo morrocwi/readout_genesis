@@ -117,6 +117,7 @@ Each folder is a bounded-tier **readout** (translation) of the one root in `READ
 | `domains/relativity/` | Finite Internal Closure v0.3 — strict `19/24=79.2%`, weighted `21.5/24=89.6%`; internal algebraic closure, not proof of real physics. |
 | `domains/quantum/` | Quantum Root Closure v0.1 (partial) — strict `14/32=43.75%`, weighted `17/32=53.1%`; `oscillation is NOT yet quantum`. |
 | `domains/biology/` | Biology Root-Native v0.1 (partial) — strict `17/36=47.2%`, weighted `22.5/36=62.5%`; two lines (root-native vs textbook-checker) never mixed. |
+| `domains/philosophy/` | Information Philosophy / MEMK v0.2.0 — `4/8=50%` structural registration; exact q_MEMK, semantic calibration and held-out human prediction remain `UNRESOLVED`. |
 | `domains/standard_model/` | **Not a closed domain** — a FRONTIER with node-level closures (v0.1→v1.13, 24 verifiers + 24 Coq witnesses, all PASS/Closed). Start at `domains/standard_model/README.md`, and if resuming work, `domains/standard_model/HANDOFF_NEXT_SESSION.md` first. |
 
 Every registered domain folder follows the same internal pattern (per
