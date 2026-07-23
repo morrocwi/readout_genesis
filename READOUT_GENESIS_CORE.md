@@ -28,6 +28,7 @@
 Read top to bottom for the full arc, or jump by Part.
 
 **Front matter**
+- [⬛ THE ONE-LINE MASTER EQUATION — the weld](#the-one-line-master-equation) — the whole book compresses to one identity; forcing ledger for every term
 - [Version Reconciliation](#version-reconciliation) — the three lineage streams this consolidates
 - [Founder Ontology — the spine of meaning](#founder-ontology--the-spine-of-meaning) — the base doctrine
 
@@ -57,6 +58,7 @@ Read top to bottom for the full arc, or jump by Part.
 
 ---
 
+<a name="the-one-line-master-equation"></a>
 ## ⬛ THE ONE-LINE MASTER EQUATION — the weld
 
 > The whole book compresses to one identity. It is **not a new PDE form** (telegraph, graph-Laplacian
