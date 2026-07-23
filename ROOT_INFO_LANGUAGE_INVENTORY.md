@@ -54,16 +54,23 @@ into the master-equation box's 2026-07-23 verification addendum.
 | `InfoConnectionFromFrame.closed_loop_pure_gauge_flat` / `genuine_curvature_is_non_coboundary` (same source, `_attempt`) | a connection built from any frame difference; a closed loop is pure gauge iff flat, and genuine curvature is exactly the non-coboundary part | ✅ coqchk clean |
 | `InfoDiscreteRiemannCurvature.flat_iff_second_diff_zero` (same source, `_attempt`) | discrete curvature from second differences: flat ⟺ the second difference vanishes | ✅ coqchk clean |
 | `InfoDiscreteRiemannCommutator.nonvacuous_witness` (same source, `_attempt`) | curvature recovered from the transport commutator; the nonvacuous witness shows it's not a vacuous statement | ✅ coqchk clean |
-| `InfoRationalSO3Curvature.curvature_nonzero` (same source, `_attempt`) | a holonomy construction with generically nonzero curvature | ✅ coqchk clean |
 | `InfoTelegraphHorizonUnification.lam_c_is_spine_lambda_c` (same source, `_attempt`) | the spine's own classical/quantum crossover `λ_c` (Face 3/4 content) — a *distinct* object from GR redshift, not a claim of unifying the two | ✅ coqchk clean |
-| `InfoOrderedTapeClosure` (`domains/standard_model/`, **promoted from Group B 2026-07-23 round 2** — its premises turned out to be root-generic, not SM-specific) | closed ordered tape: nonzero witness ⇒ (−1)^(k−1)=1 ⇒ k odd; minimal odd k>1 ⇒ k=3 — depends only on closure + order-sensitivity of the same "ordered tape" object `δ_R` is built from, no SM alphabet assumed | ✅ coqchk clean |
-| `InfoOrderDefectFromComposition` (`domains/standard_model/`, **promoted from Group B 2026-07-23 round 2**) | K(X,Y)=XY−YX bilinear+antisymmetric; Jacobi follows from associativity of ordered composition alone — no Lie algebra imported | ✅ coqchk clean |
+| `InfoOrderDefectFromComposition` (`domains/standard_model/`, **promoted from Group B 2026-07-23 round 2**, caveat: the algebraic identity — bilinear+antisymmetric commutator, Jacobi from associativity — is genuinely general; the specific noncommuting pair used to witness it is hand-exhibited, not itself root-forced) | K(X,Y)=XY−YX bilinear+antisymmetric; Jacobi follows from associativity of ordered composition alone — no Lie algebra imported | ✅ coqchk clean |
 
-**This is the set that legitimately folds into "the master equation"** — these 26 *are* the stepper `F`
-read at a different regime/face, not separate theorems. (15 confirmed round 1, 2026-07-23; 11 more —
-9 new + 2 promoted from Group B — confirmed round 2, same day, after applying the founder's stricter
+**This is the set that legitimately folds into "the master equation"** — these 24 *are* the stepper `F`
+read at a different regime/face, not separate theorems. (15 confirmed round 1, 2026-07-23; 9 more —
+8 new + 1 promoted from Group B — confirmed round 2, same day, after applying the founder's stricter
 necessity bar: only admit a result if its premises are root-generic, not conditional on a declared
 domain alphabet/architecture.)
+
+**Round-2 correction (independent adversarial review, second Claude session, 2026-07-23):** two
+candidates initially proposed for promotion — `InfoRationalSO3Curvature` and `InfoOrderedTapeClosure`
+— were caught and reverted before merge. Both files **self-tag as conditional in their own headers**:
+`InfoOrderedTapeClosure.v` states *"HONEST FENCE. CONDITIONAL ALGEBRAIC PASS... Kinematic neutrality
+is NOT yet dynamical confinement"* and hardcodes its dimension-3 carrier (`Mat3`) as a record rather
+than deriving it; `InfoRationalSO3Curvature_attempt.v` states *"this is a specific pair, not a
+parametrized theorem for all rational rotations"* — one hand-picked Pythagorean-triple witness, not a
+general SO(3)/dimension-3 derivation. Both remain correctly classified as conditional, in Group B below.
 
 ---
 
@@ -74,7 +81,7 @@ imports beyond the Coq standard library).
 
 | Theorem | Equation (root language) | Domain vocabulary (reference only) |
 |---|---|---|
-| ~~`InfoOrderedTapeClosure`~~ | **promoted to Group A, 2026-07-23 round 2** — see above | (color=3, SU(3), Z₃ center) |
+| `InfoOrderedTapeClosure` (initially misclassified as necessity in a round-2 draft, reverted after independent review — see the round-2 correction note above) | closed ordered tape: nonzero witness ⇒ (−1)^(k−1)=1 ⇒ k odd; minimal odd k>1 ⇒ k=3; **but** the k=3 carrier is realized via a hardcoded 3×3 matrix type, not derived from the closure argument itself — "Kinematic neutrality is NOT yet dynamical confinement" (the file's own fence) | (color=3, SU(3), Z₃ center) |
 | `InfoBlindMatterSearch` | blind enumeration over a minimal representation alphabet under closure/anomaly/parity/no-vectorlike/minimality gates ⇒ minimum total dimension = 15, forced (not fed in) | (matter skeleton, 1 generation) |
 | `InfoRootChirality` | a grading Γ from the ordered triple (Γ²=I, Γ†=Γ, RΓR=−Γ); an order-odd Ξ is required to get an asymmetric projector P=(I−ΞΓ)/2 | (chirality, one-sided weak coupling) |
 | `InfoTapeKineticGW` | an exact Ginsparg-Wilson relation Γ(I−V)+(I−V)Γ=(I−V)Γ(I−V); no-doubling when 0<m₀<2r | (kinetic operator, fermion doubling) |
@@ -90,6 +97,7 @@ imports beyond the Coq standard library).
 | ~~`InfoOrderDefectFromComposition`~~ | **promoted to Group A, 2026-07-23 round 2** — see above | (order-defect, non-abelian seed) |
 | `InfoConfinementCertificate` / `InfoCenterConfinement` / `InfoBlockCorrelation` / `InfoAllOrderCharacter` / `InfoSurfaceAutomaton` / `InfoSurfaceUpperAutomaton` | a family of surface-entropy bounds + automaton brackets that close as a computable certificate | (confinement) |
 | `InfoTrialitySpectralFlow` / `InfoUniversalRPSlab` / `InfoFiniteTransferGap` / `InfoRetainedIntertwiner` | a universal reflection-positive slab reads the finite-transfer spectral gap in every sector | (mass gap, universal RP slab) |
+| `InfoRationalSO3Curvature` (`research_universal_solver/formal`, `_attempt`; reverted from a round-2 necessity-promotion attempt — see correction note above) | one concrete rational-rotation pair with nonzero holonomy — proves curvature *exists* for this witness, not a general SO(3)/dimension-3 derivation (file's own words: "a specific pair, not a parametrized theorem") | (SO(3) holonomy witness) |
 
 **Important**: Group B is **not** a new master equation — these are theorems that *follow* when `F` is
 squeezed against the Standard-Model alphabet/gates. Do not lift these into `F` as new additive terms —
@@ -118,10 +126,13 @@ that repo's index yet. They did, however, **compile clean, fresh, today, with no
 ## Not yet verifiable this round (stated honestly, not hidden)
 
 Round 1 flagged 11 names as unverified; round 2 (2026-07-23) tracked down and independently
-coqchk'd 9 of them clean (`InfoConnectionFromFrame`, `InfoDiscreteRiemannCommutator`,
-`InfoDiscreteRiemannCurvature`, `InfoRationalSO3Curvature`, `InfoScaleGaugeNonReadout`,
-`InfoSeedArgminActionCost`, `InfoSeedUnifiedMasterEquation`, `InfoTelegraphHorizonUnification`,
-`InfoRetainedDistinctionForcesLaplacian`) — all now in Group A above. Still outstanding:
+coqchk'd 9 of them clean. 8 are genuinely necessity-tier and are now in Group A above
+(`InfoConnectionFromFrame`, `InfoDiscreteRiemannCommutator`, `InfoDiscreteRiemannCurvature`,
+`InfoScaleGaugeNonReadout`, `InfoSeedArgminActionCost`, `InfoSeedUnifiedMasterEquation`,
+`InfoTelegraphHorizonUnification`, `InfoRetainedDistinctionForcesLaplacian`). The 9th,
+`InfoRationalSO3Curvature`, compiles clean but is a **single hand-picked witness pair**, not a general
+theorem (see the round-2 correction note above) — it stays conditional, listed in Group B. Still
+outstanding:
 
 `InfoAllOrderCharacter` (file found, not yet re-tested independently of Group B's compile),
 `InfoQuotientCompressionExactness` (not located this round either)

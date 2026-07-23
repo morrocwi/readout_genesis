@@ -101,8 +101,7 @@ Read top to bottom for the full arc, or jump by Part.
 | `π`, `e` | **half** — rational approximants ours, the constant is a continuum limit (borrowed) | discrete→continuum readout | `scripts/force_constants.py` (B) |
 | `α` (fine structure), mass ratios | **REJECTED, not faked** — no root derivation; `[Open]` | — (would be a hollow card) | `scripts/force_constants.py` (C); DEC-toe-candidacy-one-root |
 | `K`, SI constants `ħ, c, G` | **borrowed** — measurement anchors, likely irreducible | — | DeclaredFormula / measurement |
-| carrier dim `= 3` (minimal closed order) | **forced (structure + Th_coqc)** — necessity, not domain-conditional | closure + order-sensitivity of a retained ordered tape (nonzero witness ⇒ `(−1)^(k−1)=1` ⇒ `k` odd; minimal odd `k>1` ⇒ `k=3`) — the same "ordered tape" object used to define `δ_R` itself, no SM-specific alphabet assumed | `InfoOrderedTapeClosure` (axiom-free; re-verified 2026-07-23) |
-| commutator `K(X,Y)=XY−YX` is bilinear+antisymmetric, Jacobi holds | **forced (structure + Th_coqc)** — necessity | associativity of ordered composition alone — no Lie algebra imported | `InfoOrderDefectFromComposition` (axiom-free; re-verified 2026-07-23) |
+| commutator `K(X,Y)=XY−YX` is bilinear+antisymmetric, Jacobi holds | **forced (structure + Th_coqc)** — necessity (the *algebraic identity* only; the specific noncommuting pair used to witness it is hand-exhibited, not itself root-forced — "borrow #2 reduced, not removed", per the file's own fence) | associativity of ordered composition alone — no Lie algebra imported | `InfoOrderDefectFromComposition` (axiom-free; re-verified 2026-07-23) |
 
 > So the remaining frontier (§I.3, §V.20) is the **dimensionless constants**, then the SI constants
 > `ħ, c, G` (the hardest — possibly irreducible). Each term forced is a term that becomes provably
@@ -150,7 +149,7 @@ Read top to bottom for the full arc, or jump by Part.
 > declared architecture/alphabet choice, which is the tier the Standard-Model chain openly admits to,
 > §V.21). Applying that bar to every candidate this round (not assuming any of them qualify by
 > default):
-> - **9 more Face-of-`F` witnesses independently re-compiled and confirmed necessity-tier** (general
+> - **8 more Face-of-`F` witnesses independently re-compiled and confirmed necessity-tier** (general
 >   facts about `F`/the spine itself, no domain-specific alphabet assumed): `InfoRetainedDistinctionForcesLaplacian`
 >   (`only_LR_passes_all_three` — re-confirms the exact citation already backing the `L_R` row above),
 >   `InfoSeedUnifiedMasterEquation` (`seed_master_readout_zero_iff_homogeneous` — velocity+coupling+damping
@@ -158,28 +157,39 @@ Read top to bottom for the full arc, or jump by Part.
 >   (`dispersion_gauge_invariant`), `InfoSeedArgminActionCost` (`action_argmin` — the selected state
 >   minimizes the action), `InfoConnectionFromFrame` (`closed_loop_pure_gauge_flat`,
 >   `genuine_curvature_is_non_coboundary`), `InfoDiscreteRiemannCurvature` (curvature from second
->   differences), `InfoDiscreteRiemannCommutator` (curvature from the commutator), `InfoRationalSO3Curvature`
->   (holonomy with generically nonzero curvature), `InfoTelegraphHorizonUnification` (the spine's own
->   `λ_c` classical/quantum crossover — Face 3/4 content, a *distinct* object from GR redshift, not a
->   claim of unifying the two). All: `research_universal_solver/formal/Info*_attempt.v` (module root
->   `-R . RDL`) — still tagged `_attempt` in that repo's own naming convention (not yet promoted there),
->   but independently coqchk'd clean here, no `Axiom`, no `Admitted`.
-> - **2 promoted out of the Standard-Model chain**, because on inspection their premises are root-generic,
->   not SM-specific, despite living in `domains/standard_model/`: `InfoOrderedTapeClosure` (color=3/SU(3)
->   oddness — depends only on closure + order-sensitivity of an ordered tape, the same primitive object
->   `δ_R` is built from) and `InfoOrderDefectFromComposition` (Jacobi from associativity alone, no Lie
->   algebra imported) — both now rows in the Forcing Ledger table above.
+>   differences), `InfoDiscreteRiemannCommutator` (curvature from the commutator),
+>   `InfoTelegraphHorizonUnification` (the spine's own `λ_c` classical/quantum crossover — Face 3/4
+>   content, a *distinct* object from GR redshift, not a claim of unifying the two). All:
+>   `research_universal_solver/formal/Info*_attempt.v` (module root `-R . RDL`) — still tagged
+>   `_attempt` in that repo's own naming convention (not yet promoted there), but independently
+>   coqchk'd clean here, no `Axiom`, no `Admitted`.
+> - **1 promoted out of the Standard-Model chain**, because on inspection its premises are root-generic,
+>   not SM-specific, despite living in `domains/standard_model/`: `InfoOrderDefectFromComposition`
+>   (Jacobi from associativity alone, no Lie algebra imported — with the caveat noted in the ledger row
+>   above) — now a row in the Forcing Ledger table above.
+> - **Independent adversarial review (second Claude session, 2026-07-23) caught 2 overclaims in this
+>   round's first draft, both reverted before merge**: `InfoOrderedTapeClosure` and
+>   `InfoRationalSO3Curvature` were initially proposed for promotion, but the reviewer read each file's
+>   own header and found both **self-tag as conditional**, not necessity —
+>   `InfoOrderedTapeClosure.v` states outright *"HONEST FENCE. CONDITIONAL ALGEBRAIC PASS... Kinematic
+>   neutrality is NOT yet dynamical confinement,"* and its dimension-3 carrier (`Mat3`) is a hardcoded
+>   record, not a derived consequence of the closure argument; `InfoRationalSO3Curvature_attempt.v`
+>   states *"this is a specific pair, not a parametrized theorem for all rational rotations"* — a single
+>   hand-picked Pythagorean-triple witness, not a general SO(3)/dimension-3 derivation. Both stay
+>   correctly classified as conditional, catalogued in `ROOT_INFO_LANGUAGE_INVENTORY.md` only.
 > - **Everything else in the Standard-Model and bio/health chains stays excluded** — `InfoBlindMatterSearch`,
 >   `InfoDimensionFourClosure`, `InfoRootChirality`, `InfoTapeKineticGW`, `InfoIsotropicFixedPoint`,
->   `InfoFrameMixingAction`, `InfoOrderHiggsClosure`, `InfoIntertwinerOrderVacuum`, the hypercharge/
->   electroweak/confinement/RP-slab families, and the biology/health/epidemic set all depend on a
->   *declared* alphabet or carrier construction (the minimal representation alphabet, the discrete
->   carrier dim-4 construction, the chosen epidemiological/homeostasis model) — real, Coq-verified,
+>   `InfoFrameMixingAction`, `InfoOrderHiggsClosure`, `InfoIntertwinerOrderVacuum`, `InfoOrderedTapeClosure`,
+>   `InfoRationalSO3Curvature`, the hypercharge/electroweak/confinement/RP-slab families, and the
+>   biology/health/epidemic set all depend on a *declared* alphabet or carrier construction (the minimal
+>   representation alphabet, the discrete carrier dim-4 construction, the chosen epidemiological/
+>   homeostasis model) — real, Coq-verified,
 >   but **conditional**, exactly the tier §V.21 itself assigns them ("Substantial Conditional and
 >   Node-Level Closure, not a complete result"). They stay in
 >   [`ROOT_INFO_LANGUAGE_INVENTORY.md`](ROOT_INFO_LANGUAGE_INVENTORY.md), not here.
-> - Net this round: **26 necessity-forced items now underwrite this box** (15 from round 1 + 2 promoted
->   + 9 new), zero of them domain-conditional.
+> - Net this round: **24 necessity-forced items now underwrite this box** (15 from round 1 + 1 promoted
+>   + 8 new), zero of them domain-conditional — after an independent review caught and reverted 2
+>   initial overclaims.
 
 ---
 
