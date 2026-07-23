@@ -123,11 +123,11 @@ So R5–R7 (connection, holonomy, curvature) are **stronger than a first pass su
 
 Prove six things, closing the borrowed premises that currently prop up AP20:
 
-- **G0.1 Path composition** — ordered path carrier with identity + associativity `(P₃∘P₂)∘P₁ = P₃∘(P₂∘P₁)`.
-- **G0.2 Automorphism group** — `Aut(F,O)` closed under composition + inverse.
+- **G0.1 Path composition** — ordered path carrier with identity + associativity `(P₃∘P₂)∘P₁ = P₃∘(P₂∘P₁)`. **🟩 Th_coqc (done, 2026-07-23):** [`InfoGaugeAutomorphismGroup.v`](InfoGaugeAutomorphismGroup.v) (Closed) — proved fully abstractly for *any* carrier `(M, one, op)` that is a monoid: `pathcomp` (fold `op` over a list of steps) satisfies `pathcomp(xs++ys) = op(pathcomp xs)(pathcomp ys)`, single-step and app-associativity corollaries. No domain alphabet, no Section/Hypothesis.
+- **G0.2 Automorphism group** — `Aut(F,O)` closed under composition + inverse. **🟩 Th_coqc (done, 2026-07-23):** same file — `Aut(F,O) := {h : O∘h=O, h∘F=F∘h}` proved to contain the identity, be closed under composition, and be closed under inverse (whenever a two-sided inverse exists), for **arbitrary** state type `S`, readout type `R`, dynamics `F : S→S`, readout `O : S→R`. This satisfies every group axiom Aut(F,O) needs — it does *not* yet show Aut(F,O) is nontrivial for the actual root dynamics, which is a separate question.
 - **G0.3 Localization** — each node may change internal representative while observable transport still factors through the quotient.
 - **G0.4 Connection transformation** — DERIVE `U_{ji} ↦ h_j U_{ji} h_i⁻¹` from transport-commutation (not posit it). *(the connection itself is already `Th_coqc`.)*
-- **G0.5 Holonomy invariant** — loop readout independent of internal representative (conjugacy-invariants of `H_C`). *(SO(3) holonomy is already `Th_coqc`.)*
+- **G0.5 Holonomy invariant** — loop readout independent of internal representative (conjugacy-invariants of `H_C`). *(CORRECTED 2026-07-23: `InfoRationalSO3Curvature` is a single hand-picked rational witness pair, not a general theorem — its own header says so. Still open at the general level; do not cite it as closing G0.5.)*
 - **G0.6 Order-defect / self-carrier gate** — build the commutator FROM the ordered product (ordered composition → exchange defect → commutator algebra, with Jacobi following algebraically), then wire it to AP20 so `c_self/c_geo=1` is lifted from **borrowed commutator** to **root-derived order defect**. **🟩 Th_coqc (done, for the commutator):** [`InfoOrderDefectFromComposition.v`](InfoOrderDefectFromComposition.v) (Closed over ℚ) — plain 2×2 rational matrix composition (no non-commuting term written in), associativity a theorem, `K(X,Y)=XY−YX` bilinear+antisymmetric, **Jacobi derived from associativity**, non-commutativity emergent, commuting ⇒ zero defect. This **reduces AP20 borrow #2** (grounds the commutator *form* — Jacobi/antisymmetry become theorems) **but does not remove it**: the self-force still needs a *non-commuting* pair, here hand-exhibited (not root-forced), so the non-abelian *input* is relocated, not eliminated. Self-carrier closure (#3) and the common load A4 (#4) are **still fully borrowed/OPEN**; `c_self/c_geo=1` is **not** root-derived.
 
 ### First failing controls (the gate must be able to fail)
@@ -142,7 +142,7 @@ Prove six things, closing the borrowed premises that currently prop up AP20:
 | retained root / operator / geometry | 🟩/🟨 strong |
 | connection · holonomy · curvature (R5–R7) | 🟩 **Th_coqc** |
 | non-abelian group seed (Heisenberg) · SO(3) · Noether · a proven gauge invariance | 🟩/🟨 present |
-| **gauge = readout-preserving automorphism (R3 / SM-G0)** | 🟥 **the first gate — not yet built** |
+| **gauge = readout-preserving automorphism (R3 / SM-G0)** | 🟨 **partially built: G0.1/G0.2 🟩 Th_coqc (2026-07-23), G0.3-G0.5 still 🟥** |
 | localized-connection-from-root | 🟥 |
 | order-defect-from-root (G0.6, the commutator) | 🟩 Th_coqc — `InfoOrderDefectFromComposition.v` (AP20 borrow #2 *form* grounded — Jacobi/antisym now theorems — but non-abelian input still un-forced; self-carrier #3 + load A4 #4 still borrowed) |
 | gauge self-interaction relative weight (AP20) | 🟨 conditional (premises borrowed) |

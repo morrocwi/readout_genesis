@@ -13,7 +13,7 @@
 
 Every row points at a runnable verifier (`… .py`, PASS) and/or a machine-checked Coq witness
 (`… .v`, `Print Assumptions` **Closed over ℚ**). Run them all: `python3 run_tests.py` (24
-verifiers + 24 Coq witnesses as of v1.13, all PASS/Closed).
+verifiers + 25 Coq witnesses as of SM-G0.1/G0.2, all PASS/Closed).
 
 **Status vocabulary** used below (never blur these):
 - `EXACT` — a genuine root-native `Th_coqc` result, no declared finite architecture needed.
@@ -33,9 +33,11 @@ verifiers + 24 Coq witnesses as of v1.13, all PASS/Closed).
 ## §1. Gauge substrate
 | node | result | status | witness |
 |---|---|---|---|
-| Discrete connection + holonomy | `U=V_j⁻¹V_i`, SO(3) holonomy, curvature≠0 | `EXACT` | `InfoConnectionFromFrame`, `InfoRationalSO3Curvature` |
+| Discrete connection | `U=V_j⁻¹V_i` | `EXACT` | `InfoConnectionFromFrame` |
+| SO(3) holonomy, curvature≠0 | one hand-picked rational rotation pair | `CORRECTED 2026-07-23: WITNESS_ONLY` (its own header: "a specific pair, not a parametrized theorem for all rational rotations" — not a general SO(3) result; do not cite as closing G0.5) | `InfoRationalSO3Curvature` |
+| SM-G0.1/G0.2 automorphism-as-gauge kernel | path composition is a monoid; `Aut(F,O)` closed under composition+identity+inverse, for **arbitrary** `(S,R,F,O)` | `EXACT` (fully general, no domain alphabet) | `InfoGaugeAutomorphismGroup.v` (2026-07-23) |
 | SM-G0/G0.6 order defect | commutator from plain 2×2 rational composition; Jacobi derived | `EXACT` (borrow #2 *reduced*, not removed — non-commuting pair still hand-exhibited) | `InfoOrderDefectFromComposition.v` |
-| SM-G0.1–G0.5 (automorphism-as-gauge kernel proper) | — | `OPEN` (no Coq witness yet) | — |
+| SM-G0.3–G0.5 (localization, connection-law-as-theorem, general holonomy invariance) | — | `OPEN` (no Coq witness yet) | — |
 
 ## §2. Color and confinement
 | node | result | status | witness |
@@ -119,7 +121,7 @@ number that was not first put in for calibration-consistency (`CALIBRATION_ONLY`
 End-to-end **physical Standard Model from the unrestricted root = 0%**. The open surface is now
 tracked **per node** (§1–§10 above), not as a fixed bottleneck count — collapsing it back into
 "three bottlenecks" would hide real progress on some fronts and real gaps on others. The load-
-bearing open items, by category: SM-G0.1–G0.5 as Coq witnesses (§1); the 4D correlation defect and
+bearing open items, by category: SM-G0.3–G0.5 as Coq witnesses (§1; G0.1/G0.2 closed 2026-07-23); the 4D correlation defect and
 continuum `σ_phys` (§2); uniqueness of the matter skeleton over ALL representations, not just the
 declared minimal alphabet (§3); `⟨Ξ⟩≠0` and interacting chiral gauge measure (§4); the primitive
 cost ratios behind isotropy and full interacting Lorentz covariance (§5); whether `Π₀>α` is FORCED
