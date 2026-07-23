@@ -23,11 +23,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          show-progress: false
       - name: Rebuild current standalone companion
-        run: python -B domains/philosophy/artifacts/rebuild_information_epistemic_foundation_v1_6_0.py
+        run: python3 -B domains/philosophy/artifacts/rebuild_information_epistemic_foundation_v1_6_0.py
       - name: Run Philosophy MEMK registration checks
-        run: python -B domains/philosophy/run_all_tests_philosophy_memk.py
+        run: python3 -B domains/philosophy/run_all_tests_philosophy_memk.py
