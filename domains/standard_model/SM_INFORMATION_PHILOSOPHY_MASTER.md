@@ -276,9 +276,12 @@ character coefficient integral นิยามครบ · 15. Infinite adjoint 
 **หมายเหตุความซื่อสัตย์ (สำคัญ):** รายการข้างบน (1–4 โดยเฉพาะ) เป็น *architecture-level derivation* ที่
 สอดคล้องกับ SM-G0 conceptually — **G0.1/G0.2 (path composition เป็น monoid + `Aut(F,O)` ปิดภายใต้
 composition/identity/inverse) ปิดแล้วจริง แบบ unconditional 2026-07-23** (`InfoGaugeAutomorphismGroup.v`,
-ไม่มี domain alphabet เลย) — ดู `CLAIM_BOUNDARY.json` key `sm_g0_1_g0_2_automorphism_group`. **G0.3–G0.5
-ยังไม่มี Coq witness ของตัวเอง**. อย่าอ่านรายการ 1–4 ข้างบนว่าเทียบเท่ากับ `Th_coqc` root-witness ของ
-G0.3–G0.5 โดยตรง — ดู `ROOT_TO_SM_DAG.md` คอลัมน์ root/formal status.
+ไม่มี domain alphabet เลย) — ดู `CLAIM_BOUNDARY.json` key `sm_g0_1_g0_2_automorphism_group`. **G0.3/G0.4/G0.5
+ปิดแล้วจริงเช่นกัน แบบ unconditional 2026-07-24** (`InfoGaugeLocalizationConnectionHolonomy.v` — frame
+telescoping, connection-law derived ไม่ใช่ posit, holonomy-triviality เป็น conjugation-invariant, ทั้งหมด
+สำหรับ group ใดๆ) — ดู key `sm_g0_3_g0_4_g0_5_localization_connection_holonomy`. **ครบทั้ง 6 sub-gate ของ
+SM-G0 แล้ว** แต่ไม่ได้แสดงว่าโครงสร้างนี้ non-trivial สำหรับรากจริง — ดู `ROOT_TO_SM_DAG.md` คอลัมน์
+root/formal status.
 
 **เพิ่ม (v1.5–v1.13, ทุกอันมี Coq witness `Print Assumptions Closed`):** 16. Hypercharge ratios +
 `A₁₁₁=(A_grav)³` + Z₆ center-lock (v1.5, เงื่อนไขบน skeleton) · 17. Blind matter-skeleton uniqueness
@@ -301,8 +304,9 @@ certificate → continuum · 7. ตีความ `κ` เป็น physical co
 โต ไม่ใช่แค่ fixture เดียว.
 
 ## ส่วนที่ 23 — สิ่งที่ยังไม่ได้ derive
-**กลุ่ม (unrestricted root):** uniqueness ของ gauge algebra เหนือ representation ทุกขนาด · SM-G0.3–G0.5
-เป็น Coq witness (G0.1/G0.2 ปิดแล้ว 2026-07-23, unconditional — ดู `InfoGaugeAutomorphismGroup.v`). **สสาร:** uniqueness ของ matter skeleton เหนือ representation ทุกขนาด (ปิดแล้วเฉพาะใน
+**กลุ่ม (unrestricted root):** uniqueness ของ gauge algebra เหนือ representation ทุกขนาด · SM-G0
+ทั้ง 6 sub-gate ปิดแล้วเป็น Coq witness (G0.1/G0.2 2026-07-23, G0.3/G0.4/G0.5 2026-07-24, unconditional) —
+แต่ยังไม่แสดง nontriviality สำหรับรากจริง. **สสาร:** uniqueness ของ matter skeleton เหนือ representation ทุกขนาด (ปิดแล้วเฉพาะใน
 minimal alphabet, v1.6) · จำนวน generation = 3 · neutrino architecture · particle–antiparticle จากราก.
 **Chirality/spacetime:** weak chiral selection ที่ไม่มีเงื่อนไข (`⟨Ξ⟩≠0` จาก action) · interacting chiral
 gauge measure · spin–statistics · full interacting Lorentz covariance (boosts/scattering) เกินกว่า
@@ -341,7 +345,7 @@ confinement mechanism ⇒ hypercharge + Z₆ quotient ⇒ blind matter skeleton 
 ⇒ Ginsparg–Wilson kinetic + no-doubling ⇒ derived d=4 ⇒ isotropic fixed point (weights from the
 action) ⇒ forced order carrier + vector mass-rank pattern ⇒ corrected order-vacuum criterion.`
 
-**ยังต้องปิด:** SM-G0.3–G0.5 เป็น root Coq witness (G0.1/G0.2 ปิดแล้ว 2026-07-23) · `⟨Ξ⟩≠0` และ `Π₀>α` FORCED จาก action (ไม่ใช่แค่
+**ยังต้องปิด:** SM-G0 ทั้ง 6 sub-gate ปิดเป็น Coq witness แล้ว (โครงสร้างเท่านั้น ไม่ใช่ nontriviality) · `⟨Ξ⟩≠0` และ `Π₀>α` FORCED จาก action (ไม่ใช่แค่
 เป็นไปได้) · interacting chiral gauge measure และ full Lorentz covariance · uniqueness เหนือ
 representation ทุกขนาด · generations/mixing/Yukawa · physical couplings/masses · continuum/radiative
 validation. ดูตารางเต็ม node-by-node ที่ `STANDARD_MODEL_CLOSURE.md`.

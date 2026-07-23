@@ -53,6 +53,7 @@ Coq finite formal witnesses (only if `coqc` is on PATH; skipped otherwise):
   - InfoOrderHiggsClosure.v               (v1.12 hypercharge-closure algebra + neutral-matrix det=0 + DOF)
   - InfoIntertwinerOrderVacuum.v          (v1.13 CORRECTED Fock-factor Z_j(0)=1 + automatic-convexity algebra)
   - InfoGaugeAutomorphismGroup.v          (SM-G0.1/G0.2: path composition is a monoid + Aut(F,O) is a group under composition+inverse, fully abstract)
+  - InfoGaugeLocalizationConnectionHolonomy.v  (SM-G0.3/G0.4/G0.5: frame-field localization + coboundary telescoping + pure-gauge-is-flat; connection law existence+uniqueness; holonomy-triviality conjugation-invariance, all fully abstract, any group)
 NOTE: this list is illustrative, not authoritative — the actual test set is the tuple below;
 this docstring must be updated whenever the tuple changes (do not let it silently drift again).
 """
@@ -109,7 +110,8 @@ if shutil.which("coqc"):
               "InfoFrameMixingAction.v",
               "InfoOrderHiggsClosure.v",
               "InfoIntertwinerOrderVacuum.v",
-              "InfoGaugeAutomorphismGroup.v"):
+              "InfoGaugeAutomorphismGroup.v",
+              "InfoGaugeLocalizationConnectionHolonomy.v"):
         with tempfile.TemporaryDirectory() as d:
             # compile a COPY inside the tempdir so coqc build artifacts never touch the repo
             shutil.copy(v, os.path.join(d, v))
