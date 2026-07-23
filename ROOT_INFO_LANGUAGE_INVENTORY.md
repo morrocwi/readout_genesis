@@ -47,9 +47,23 @@ into the master-equation box's 2026-07-23 verification addendum.
 | `InfoSeedTorsionGroupAndRankN.rankn_seed_torsion_is_lam_ord` | nonzero torsion witness ⇒ the commutator generates a non-abelian group of rank N (the gauge-algebra seed) | ✅ coqchk clean |
 | `InfoCoercivityBoundedClosure` | wshare/wdeg closure is bounded (coercivity of the potential) | ✅ coqchk clean |
 | `InfoAnalysisLift.clairaut_xy` / `clairaut_yx` (`research_universal_solver/formal`, root `RDL` — **not** the same-named file in `causal-quantum-gravity`, which imports Schwarzschild and is refused elsewhere in the core doc) | ∂²(metric)/∂x∂y = ∂²(metric)/∂y∂x — mixed-partial symmetry of the metric lift | ✅ coqchk clean |
+| `InfoRetainedDistinctionForcesLaplacian.only_LR_passes_all_three` (`research_universal_solver/formal`, root `RDL`, still tagged `_attempt` in that repo's own convention) | among candidate retained-difference operators, **only** `L_R` passes all required structural tests — the exact citation already backing the `L_R` row in the master box, now independently reconfirmed | ✅ coqchk clean |
+| `InfoSeedUnifiedMasterEquation.seed_master_readout_zero_iff_homogeneous` (same source, `_attempt`) | velocity+coupling+damping combine into one seed readout that vanishes iff the field configuration is homogeneous | ✅ coqchk clean |
+| `InfoScaleGaugeNonReadout.dispersion_gauge_invariant` (same source, `_attempt`) | the dispersion relation's sign/structure is invariant under a scale-gauge transform | ✅ coqchk clean |
+| `InfoSeedArgminActionCost.action_argmin` (same source, `_attempt`) | the selected state minimizes the action (general variational principle) | ✅ coqchk clean |
+| `InfoConnectionFromFrame.closed_loop_pure_gauge_flat` / `genuine_curvature_is_non_coboundary` (same source, `_attempt`) | a connection built from any frame difference; a closed loop is pure gauge iff flat, and genuine curvature is exactly the non-coboundary part | ✅ coqchk clean |
+| `InfoDiscreteRiemannCurvature.flat_iff_second_diff_zero` (same source, `_attempt`) | discrete curvature from second differences: flat ⟺ the second difference vanishes | ✅ coqchk clean |
+| `InfoDiscreteRiemannCommutator.nonvacuous_witness` (same source, `_attempt`) | curvature recovered from the transport commutator; the nonvacuous witness shows it's not a vacuous statement | ✅ coqchk clean |
+| `InfoRationalSO3Curvature.curvature_nonzero` (same source, `_attempt`) | a holonomy construction with generically nonzero curvature | ✅ coqchk clean |
+| `InfoTelegraphHorizonUnification.lam_c_is_spine_lambda_c` (same source, `_attempt`) | the spine's own classical/quantum crossover `λ_c` (Face 3/4 content) — a *distinct* object from GR redshift, not a claim of unifying the two | ✅ coqchk clean |
+| `InfoOrderedTapeClosure` (`domains/standard_model/`, **promoted from Group B 2026-07-23 round 2** — its premises turned out to be root-generic, not SM-specific) | closed ordered tape: nonzero witness ⇒ (−1)^(k−1)=1 ⇒ k odd; minimal odd k>1 ⇒ k=3 — depends only on closure + order-sensitivity of the same "ordered tape" object `δ_R` is built from, no SM alphabet assumed | ✅ coqchk clean |
+| `InfoOrderDefectFromComposition` (`domains/standard_model/`, **promoted from Group B 2026-07-23 round 2**) | K(X,Y)=XY−YX bilinear+antisymmetric; Jacobi follows from associativity of ordered composition alone — no Lie algebra imported | ✅ coqchk clean |
 
-**This is the set that legitimately folds into "the master equation"** — these 14 *are* the stepper `F`
-read at a different regime/face, not separate theorems.
+**This is the set that legitimately folds into "the master equation"** — these 26 *are* the stepper `F`
+read at a different regime/face, not separate theorems. (15 confirmed round 1, 2026-07-23; 11 more —
+9 new + 2 promoted from Group B — confirmed round 2, same day, after applying the founder's stricter
+necessity bar: only admit a result if its premises are root-generic, not conditional on a declared
+domain alphabet/architecture.)
 
 ---
 
@@ -60,7 +74,7 @@ imports beyond the Coq standard library).
 
 | Theorem | Equation (root language) | Domain vocabulary (reference only) |
 |---|---|---|
-| `InfoOrderedTapeClosure` | closed ordered tape: nonzero witness ⇒ (−1)^(k−1)=1 ⇒ k odd; minimal odd k>1 ⇒ k=3 ⇒ carrier dim=3; preserving the load ⇒ a 3-dim special-orthogonal group; phase c, c³=1 ⇒ a order-3 cyclic center | (color=3, SU(3), Z₃ center) |
+| ~~`InfoOrderedTapeClosure`~~ | **promoted to Group A, 2026-07-23 round 2** — see above | (color=3, SU(3), Z₃ center) |
 | `InfoBlindMatterSearch` | blind enumeration over a minimal representation alphabet under closure/anomaly/parity/no-vectorlike/minimality gates ⇒ minimum total dimension = 15, forced (not fed in) | (matter skeleton, 1 generation) |
 | `InfoRootChirality` | a grading Γ from the ordered triple (Γ²=I, Γ†=Γ, RΓR=−Γ); an order-odd Ξ is required to get an asymmetric projector P=(I−ΞΓ)/2 | (chirality, one-sided weak coupling) |
 | `InfoTapeKineticGW` | an exact Ginsparg-Wilson relation Γ(I−V)+(I−V)Γ=(I−V)Γ(I−V); no-doubling when 0<m₀<2r | (kinetic operator, fermion doubling) |
@@ -73,7 +87,7 @@ imports beyond the Coq standard library).
 | `InfoHyperchargeAnomalyClosure` | Σ(charge³)=0 exactly ⇒ forces the charge assignment | (cubic anomaly=0, hypercharges) |
 | `InfoElectroweakNullDirection` | obstruction matrix M²=(v²/4)·outer((g,−g'),(g,−g')) is rank 1, det=0 ⇒ exactly one null direction | (massless-photon emergence) |
 | `InfoFourForceCirculationRecovery` | χ=A⁻¹, the exact identity χ−χᵀ=−2χᵀΩχ; Ω is recovered as the antisymmetric part of χ⁻¹ | (four-force circulation decoder) |
-| `InfoOrderDefectFromComposition` | K(X,Y)=XY−YX is bilinear+antisymmetric; Jacobi follows from associativity alone (no imported Lie algebra) | (order-defect, non-abelian seed) |
+| ~~`InfoOrderDefectFromComposition`~~ | **promoted to Group A, 2026-07-23 round 2** — see above | (order-defect, non-abelian seed) |
 | `InfoConfinementCertificate` / `InfoCenterConfinement` / `InfoBlockCorrelation` / `InfoAllOrderCharacter` / `InfoSurfaceAutomaton` / `InfoSurfaceUpperAutomaton` | a family of surface-entropy bounds + automaton brackets that close as a computable certificate | (confinement) |
 | `InfoTrialitySpectralFlow` / `InfoUniversalRPSlab` / `InfoFiniteTransferGap` / `InfoRetainedIntertwiner` | a universal reflection-positive slab reads the finite-transfer spectral gap in every sector | (mass gap, universal RP slab) |
 
@@ -103,13 +117,14 @@ that repo's index yet. They did, however, **compile clean, fresh, today, with no
 
 ## Not yet verifiable this round (stated honestly, not hidden)
 
-Names the core doc cites as `[Th_coqc]` but for which the `.v` source could not be located / had no
-compiled `.vo` / was not attempted in this pass:
+Round 1 flagged 11 names as unverified; round 2 (2026-07-23) tracked down and independently
+coqchk'd 9 of them clean (`InfoConnectionFromFrame`, `InfoDiscreteRiemannCommutator`,
+`InfoDiscreteRiemannCurvature`, `InfoRationalSO3Curvature`, `InfoScaleGaugeNonReadout`,
+`InfoSeedArgminActionCost`, `InfoSeedUnifiedMasterEquation`, `InfoTelegraphHorizonUnification`,
+`InfoRetainedDistinctionForcesLaplacian`) — all now in Group A above. Still outstanding:
 
-`InfoAllOrderCharacter` (file found, not yet re-tested independently of Group B's compile), `InfoConnectionFromFrame`,
-`InfoDiscreteRiemannCommutator`, `InfoDiscreteRiemannCurvature`, `InfoRationalSO3Curvature`,
-`InfoScaleGaugeNonReadout`, `InfoSeedArgminActionCost`, `InfoSeedUnifiedMasterEquation`,
-`InfoTelegraphHorizonUnification`, `InfoQuotientCompressionExactness`, `InfoRetainedDistinctionForcesLaplacian`
+`InfoAllOrderCharacter` (file found, not yet re-tested independently of Group B's compile),
+`InfoQuotientCompressionExactness` (not located this round either)
 
 → these do not enter this inventory until independently compiled and coqchk'd clean — per this
 inventory's own rule ("Coq-verified 100% from the root, or it doesn't count").
