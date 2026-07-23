@@ -1,7 +1,6 @@
 # Information Epistemic Foundation — Lossless Source Archives
 
-This folder retains deterministic source archives for standalone foundation companions.
-Each archive is gzip-compressed with fixed `mtime=0`, base64-encoded, split only for bounded connector writes, and rebuilt under exact SHA-256 and dimension checks.
+This folder retains deterministic source archives for standalone foundation companions. Each archive is gzip-compressed with fixed `mtime=0`, base64-encoded, split only for bounded connector writes, and rebuilt under exact SHA-256 and dimension checks.
 
 ## Current companion: v1.6.0
 
@@ -28,7 +27,7 @@ BYTES: 154653
 TARGET_DOMAIN_ENCODING_AND_CALIBRATION: UNRESOLVED
 ```
 
-Archive parts:
+Archive parts (19):
 
 - `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part01`
 - `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part02`
@@ -42,14 +41,15 @@ Archive parts:
 - `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part10`
 - `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part11`
 - `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part12`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part12b`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part12c`
+- `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part12d`
 - `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part13`
 - `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part14`
 - `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part15`
 - `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part16`
 
-Validation and canonicalization lineage are recorded one directory above in:
-
-`INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.validation.yaml`
+Validation and canonicalization lineage are recorded one directory above in `INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.validation.yaml`.
 
 ## Retained predecessor: v1.2.0
 
