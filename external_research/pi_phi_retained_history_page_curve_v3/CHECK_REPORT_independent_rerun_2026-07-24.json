@@ -1,0 +1,100 @@
+{
+  "release": "READOUT_GENESIS_PI_PHI_STANDALONE_v3",
+  "scripts": [
+    {
+      "path": "theory/verify_retained_history_phi.py",
+      "returncode": 0,
+      "stdout": "{\n  \"fusion_matrix\": [\n    [\n      0.0,\n      1.0\n    ],\n    [\n      1.0,\n      1.0\n    ]\n  ],\n  \"characteristic_polynomial\": \"lambda^2-lambda-1\",\n  \"spectral_radius\": 1.618033988749895,\n  \"phi\": 1.618033988749895,\n  \"spectral_radius_equals_phi\": true,\n  \"fusion_identity_residual\": 0.0,\n  \"golden_rotation\": 0.38196601125010515,\n  \"golden_angle_radians\": 2.399963229728653,\n  \"status\": \"PASS\"\n}\n",
+      "stderr": "",
+      "pass": true
+    },
+    {
+      "path": "experiments/phi_schedule_positive/analyze_multiseed.py",
+      "returncode": 0,
+      "stdout": "{\n  \"rows\": 8,\n  \"golden_beats_random\": 8,\n  \"golden_unique_best\": 8,\n  \"mean_relative_change_vs_random\": -0.31052987489876516,\n  \"mean_rmse\": {\n    \"golden\": 0.5246986735747995,\n    \"random\": 0.7614361884184506,\n    \"cyclic\": 0.8553797577323412\n  },\n  \"negative_pair_not_worse\": 1,\n  \"entropy_admission_not_worse\": 7\n}\n",
+      "stderr": "",
+      "pass": true
+    },
+    {
+      "path": "experiments/phi_schedule_counterexample/analyze_counterexample.py",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"COUNTEREXAMPLE_PROTOCOL_GOLDEN_LOSES\",\n  \"golden_vs_random_relative_improvement\": -0.30231873692063665,\n  \"golden_has_higher_negative_readout_rate\": true,\n  \"interpretation\": \"Golden scheduling is not universally superior; the effect is estimator- and protocol-dependent.\"\n}\n",
+      "stderr": "",
+      "pass": true
+    }
+  ],
+  "required_files": {
+    "READOUT_GENESIS_PI_PHI_STANDALONE_v3.pdf": {
+      "exists": true,
+      "size_bytes": 588972
+    },
+    "paper/main.tex": {
+      "exists": true,
+      "size_bytes": 57220
+    },
+    "paper/main.pdf": {
+      "exists": true,
+      "size_bytes": 588972
+    },
+    "theory/READOUT_GENESIS_STANDARD_MODEL_CANONICAL.md": {
+      "exists": true,
+      "size_bytes": 31955
+    },
+    "theory/B0_RETAINED_HISTORY_FUSION_CLOSURE.md": {
+      "exists": true,
+      "size_bytes": 2232
+    },
+    "theory/retained_history_fusion_claim_boundary.json": {
+      "exists": true,
+      "size_bytes": 1142
+    },
+    "experiments/retained_transfer_page_curve/retained_transfer_page_curve_arxiv_preprint.pdf": {
+      "exists": true,
+      "size_bytes": 489370
+    },
+    "experiments/phi_schedule_positive/phi_schedule_v5_3_multiseed.csv": {
+      "exists": true,
+      "size_bytes": 1387
+    },
+    "experiments/phi_schedule_positive/phi_schedule_pagecurve_v5_3_multiseed_report.json": {
+      "exists": true,
+      "size_bytes": 1823
+    },
+    "experiments/phi_schedule_counterexample/KAGGLE_SIMPLE_PHI_PAGECURVE.py": {
+      "exists": true,
+      "size_bytes": 8452
+    },
+    "experiments/phi_schedule_counterexample/KAGGLE_SIMPLE_PHI_PAGECURVE_TEST.log": {
+      "exists": true,
+      "size_bytes": 644
+    },
+    "audit/CLAIM_BOUNDARY.yaml": {
+      "exists": true,
+      "size_bytes": 1308
+    },
+    "audit/SOURCE_LEDGER.md": {
+      "exists": true,
+      "size_bytes": 5155
+    }
+  },
+  "pdf": {
+    "readable": true,
+    "pages": 12,
+    "title": "Readout Genesis Standalone Synthesis: Pi, Phi, Retained-History Fusion, and Page-Curve Experiments",
+    "pass": true
+  },
+  "latex": {
+    "pdflatex": "/usr/bin/pdflatex",
+    "source_exists": true,
+    "compiled_pdf_exists": true,
+    "rebuilt": false,
+    "pass": true,
+    "note": "Set REBUILD_PAPER=1 to compile during the audit; default audit is non-mutating."
+  },
+  "manifest": {
+    "checked": true,
+    "mismatches": [],
+    "pass": true
+  },
+  "overall_status": "PASS"
+}

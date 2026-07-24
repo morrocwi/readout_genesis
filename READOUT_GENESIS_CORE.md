@@ -2831,6 +2831,14 @@ what remains untested rather than letting silence be mistaken for a checked resu
   already exists as general structure, but no `q_connectome` quotient has been built on top of it
   to test whether it commutes at connectome granularity. Open — all of it. No bridge is
   asserted; this slot is deliberately held blank rather than fabricated. **TBD.**
+- **π/φ retained-history fusion + Page-curve toy experiments (external contribution, logged
+  2026-07-24):** `τ⊗τ≅1⊕τ ⇒ FPdim(τ)=φ` closed only under 7 declared gates H1–H7 — root-forcing of
+  H1–H7 in any natural domain is untested; a candidate golden-ratio measurement schedule shows
+  opposite results under two different protocols (positive AND negative controls both kept, no
+  claim taken as general); physical Page-curve/black-hole-unitarity/quantum-advantage claims are
+  explicitly `[Open]`/not demonstrated. Full tier table + independent re-verification:
+  `external_research/pi_phi_retained_history_page_curve_v3/README.md`, indexed as Group D of
+  `ROOT_INFO_LANGUAGE_INVENTORY.md`. Nothing here enters "THE FORCED SET" above. **TBD.**
 
 None of the above is a failure of the program; it is the program working as designed. A bus that
 only ever reports success is not being tested. The τ_c scale bus and its twelve domain leaves are
