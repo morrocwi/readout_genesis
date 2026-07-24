@@ -171,3 +171,69 @@ whenever `m_j≪v_EW`, not an independent confirmation) — softened accordingly
 derived from the root; consistent-with, not forced-by. Does not touch item 1's `[Open]` status
 at `Th_coqc`/`Dr` tier, does not derive the per-generation mass hierarchy (branch-level `λ_j`
 only — that remains item 2's job), and does not license any end-to-end Standard Model claim.
+
+## Attempts 6-8 — three panel-designed probes, 2026-07-24: mixed/negative, but convergent
+
+Following Attempt 5, a 3-agent independent panel (not a single opinion) was asked to assess,
+from real files only, what this line of work genuinely extends to. Three concrete, checkable
+probes were designed and then executed with no outcome predicted in advance.
+
+**Attempt 6 — single global scale `c` with root-derived rank `d_j=(3,3,1)`**
+(`panel_test1_parameter_reduction.py`). `λ_j := exp(-c·d_j)` — the only root-derived input is
+`v1.13`'s own rank (from representation theory, not fit). Result: the QUALITATIVE ordering
+(quarks heavier than the lepton branch) **matches** real PDG data. But `d_U=d_D=3` means this
+form structurally cannot distinguish U from D at all, and the value of `c` implied separately
+by the quark group vs. the lepton group differs by a factor of **~2.25** — no single shared `c`
+emerges cleanly. Mixed result, reported as computed, not massaged toward either verdict.
+
+**Attempt 7 — held-out `v_EW` prediction from branches U,D alone**
+(`panel_test2_heldout_vEW.py`). Designed as a genuine held-out test (fit on U,D, predict `v_EW`,
+compare to the real 246 GeV, held-out branch E never touched). On execution: **the test is not
+well-posed as designed** — `λ_j=exp(-m_j/v)` has exactly one unknown (`v`) and no independent
+`λ` measurement exists anywhere to anchor it; two branch-level masses alone leave `v`
+underdetermined (any `v>0` is consistent with some `(λ_U,λ_D)` pair). This is a real finding
+about a gap in the test's own design, not a pass or fail of the underlying model.
+
+**Attempt 8 — extend the T1/T1b `F→Face8→G` chain to `domains/quantum/quantum_closure_v0_1.py`**
+No new file (an inspection, not a construction). The panel's proposed candidate — quantum's own
+norm `N_Q(ψ)=Σψ_i G_ij ψ_j` — turns out to be **circular**: `G` is used to *define* `N_Q` in the
+first place (`G=[[1,0],[0,1]]` is set, then plugged directly into `N_Q`'s own formula). Running
+Face 8's Hessian-readout on `N_Q` would just return the same `G` that was written in — zero new
+information, unlike relativity's `obstruction` functional (defined with no reference to `G` at
+all, making its Face-8-derived `G=I` a genuine, independent result in T1b). No other
+`G`-independent candidate functional exists elsewhere in that file. This extension does not work
+as proposed.
+
+## Named finding #2: Retained-Degree Insufficiency
+
+All three probes fail (or partially fail) via the **same underlying shape**, distinct from
+Cross-Role Readout Contamination (which is about *misusing* an existing readout for the wrong
+question) — this is about *asking a question with more independently-distinguishable answers
+than the retained structure being read has degrees of freedom to supply*:
+
+> A readout is asked to resolve `N` genuinely distinct answers. The structure it is read from
+> retains only `M<N` independent degrees of freedom. The result is not a wrong answer — it is a
+> **collapsed** answer (two questions get the same value, Attempt 6's `d_U=d_D`), an
+> **underdetermined** answer (the question has no unique solution, Attempt 7's `v`), or a
+> **tautological** answer (the "readout" returns exactly what was written into the structure at
+> construction time, zero new bits, Attempt 8's `G`).
+
+This is a sharpened, practical instance of `E00.1`'s own founding principle read in the other
+direction — `E00.1` says what has no effect on any readout should not be counted as a retained
+difference; **Retained-Degree Insufficiency** says a readout cannot be asked to report a
+difference the structure never actually stored, no matter how the question is phrased. It forms
+a third sibling alongside the Scalar-Eigenmode Reduction Error (an operator narrowed, losing
+structure) and Cross-Role Readout Contamination (a readout promoted, gaining unearned meaning):
+Retained-Degree Insufficiency is a readout *overdrawn* — asked to pay out more distinctions than
+were ever deposited.
+
+**Practical checklist this adds**: before fitting or reading out `N` separate quantities from a
+structure, count how many genuinely independent degrees of freedom that structure actually
+carries (e.g. how many DISTINCT values, not just how many named slots). If `N` exceeds that
+count, expect collapse, underdetermination, or circularity — and treat any single-value "success"
+from such a setup as suspect until the degree-count is checked, not just the value.
+
+**Status**: `Dr` tier, a methodological/diagnostic finding, like Cross-Role Readout
+Contamination — not a physics claim. Item 1 remains `[Open]`. `Π₀≈6.9888` (Attempt 5) is
+unaffected by these three probes; Attempts 6-8 neither strengthen nor weaken it, they test
+different, adjacent questions.
