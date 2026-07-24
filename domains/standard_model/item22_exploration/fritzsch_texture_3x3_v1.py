@@ -180,6 +180,7 @@ per DEV-SM-001/003):
   hierarchical).
 - BYPASSES item 21 (Yukawa coefficients, still fully Open) exactly as cabibbo_angle_gst_v1.py
   does -- substitutes real PDG masses for the not-yet-derived Yukawa couplings.
-- Not yet independently adversarially reviewed -- per house discipline, needs that review before
-  being treated as more than a first-pass, self-corrected draft.
+- Independently adversarially reviewed, 2026-07-24 -- verdict SURVIVES, no further corrections
+  needed (algebra, the label-fix logic, and all three overlap values were recomputed from scratch
+  and matched; eigenvector sign-ambiguity confirmed not to affect the squared overlaps).
 """)
