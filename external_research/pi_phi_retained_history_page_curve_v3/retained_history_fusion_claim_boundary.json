@@ -1,0 +1,30 @@
+{
+  "artifact": "Retained-History Fusion Bridge",
+  "status": "CLOSED_UNDER_DECLARED_FINITE_HISTORY_GATES",
+  "simulation": false,
+  "gates": {
+    "H1": "finite-dimensional Hom spaces",
+    "H2": "finite direct sums and zero object",
+    "H3": "dagger idempotents split",
+    "H4": "simple tensor unit",
+    "H5": "finitely many simple frontier classes",
+    "H6": "duals with evaluation/coevaluation and snake identities",
+    "H7": "faithful positive cyclic closure pairings compatible with tensor product"
+  },
+  "closed_claims": [
+    "contextual reader equivalence descends to a dagger monoidal quotient",
+    "H1-H7 yield a unitary fusion sector",
+    "minimal persistent rank-two sector forces tau tensor tau isomorphic to 1 direct-sum tau",
+    "FPdim(tau) equals the golden ratio"
+  ],
+  "external_dependency": {
+    "result": "classification of rank-two fusion categories",
+    "author": "Viktor Ostrik",
+    "arxiv": "math/0203255"
+  },
+  "not_claimed": [
+    "unrestricted root forces H1-H7 in all domains",
+    "all natural systems realize the rank-two sector",
+    "golden scheduling empirically proves Fibonacci fusion"
+  ]
+}

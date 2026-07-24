@@ -1,0 +1,404 @@
+document:
+  title: 'Root-Native Page-Curve Program: Findings, Prohibitions, Errors, and Claim Gates'
+  version: 1.0.0
+  date: '2026-07-24'
+  language: th
+  simulation: true
+  status: CURRENT_CONSOLIDATED_AUDIT
+  purpose: สรุปข้อค้นพบ ข้อห้าม ข้อผิดพลาด ความขัดแย้งของผลทดลอง และเกณฑ์ก่อนเคลม สำหรับสถาปัตยกรรม retained-transfer,
+    signed readout, Page-curve toy model และ candidate phi schedule
+executive_status:
+  architecture_status: SUPPORTED_AS_FINITE_QUBIT_PROTOTYPE
+  physical_page_curve_status: NOT_DERIVED
+  entropy_reconstruction_status: PARTIALLY_SUPPORTED_WITH_TRANSLATION_GATES
+  signed_readout_status: SUPPORTED_AS_A_SEPARATE_SEMANTIC_LANE
+  phi_schedule_status: PROTOCOL_DEPENDENT_CANDIDATE_NOT_GENERAL_CLAIM
+  quantum_advantage_status: NOT_DEMONSTRATED
+  journal_readiness: MAJOR_REVISION_REQUIRED_BEFORE_STRONG_PHYSICS_CLAIMS
+  one_sentence: ระบบ retained-transfer แบบไม่สร้าง Hamiltonian สามารถรันและตรวจ spectral retention ได้จริงใน finite-qubit
+    simulation แต่ signed estimator, physical purity, entropy และผลของ phi schedule ต้องแยก semantic lane และ protocol
+    อย่างเคร่งครัด
+root_principles:
+  readout_not_truth: ค่าที่เครื่องอ่านออกมาเป็น readout ไม่ใช่ physical truth โดยอัตโนมัติ ต้องผ่าน domain-translation
+    และ admissibility gate ก่อน
+  retention_to_report_order:
+  - Retention
+  - Structure
+  - Domain translation
+  - Meaning
+  - Report
+  signed_values_rule: ค่าลบไม่ใช่ failure เสมอไป ความหมายขึ้นกับ operator และ semantic lane
+  phi_rule: phi สามารถใส่เป็น candidate schedule เพื่อทดลองได้ แต่ห้ามประกาศว่า root บังคับ phi จนกว่าจะพิสูจน์
+    transfer grammar ที่ทำให้เกิดมัน
+  pi_rule: pi ใช้เป็น orientation/phase representation ได้เมื่อโครงสร้างรองรับ แต่ห้ามยก phase representation ให้เป็น
+    unrestricted root derivation
+  fail_able_gate_rule: evidence gate ต้องมีทั้ง passing control และ failing control มิฉะนั้นเป็นเพียง convention
+    ไม่ใช่หลักฐาน
+architecture:
+  layers:
+  - id: L1
+    name: unitary_evaporation
+    role: random-circuit qubit-transport toy model สำหรับสร้าง Page-like entanglement profile
+    claim_tier: finite_diagnostic
+  - id: L2
+    name: external_noise
+    role: Markovian หรือ coherent/correlated noise ที่กระทำต่อ radiation readout
+    claim_tier: finite_diagnostic
+  - id: L3
+    name: signed_readout_translation
+    symbol: M
+    role: matrix-free readout map; entries/eigenvalues อาจมีเครื่องหมายหรือ orientation
+    claim_tier: finite_diagnostic
+  - id: L4
+    name: positive_retained_geometry
+    symbol: K_ret = M^dagger G M
+    role: positive-semidefinite certificate สำหรับ retained geometry
+    claim_tier: mathematical_construction
+  - id: L5
+    name: spectral_reader
+    role: Lanczos/eigsh อ่าน extremal retained modes โดยไม่สร้าง dense Hamiltonian
+    claim_tier: finite_diagnostic
+  - id: L6
+    name: regularized_inverse
+    role: Tikhonov/CG หรือ retained inverse พร้อม uncertainty control
+    claim_tier: finite_diagnostic
+  - id: L7
+    name: physical_translation_gate
+    role: อนุญาต purity/entropy เฉพาะเมื่อ estimator อยู่ใน physical interval และผ่าน uncertainty/PSD/admissibility
+      checks
+    claim_tier: governance_rule
+  preserved_components:
+  - direct K-step dynamics
+  - signed readout lane
+  - positive certificate
+  - Lanczos spectral acceleration
+  - correlator/state readout
+  - sector and physical projection when applicable
+  - independent audit solver
+  not_replaced_by_lanczos:
+  - real-time unitary evolution
+  - direct transfer dynamics
+  - correlator calculation
+  - sector completeness
+  - Poincare/local-to-global proof
+  - hardware resource accounting
+operator_semantics:
+  M:
+    may_be_signed: true
+    meaning: signed attenuation, phase reversal, orientation, or readout translation
+    prohibition: ห้ามตีความ negative eigenvalue/entry ของ M เป็น negative probability โดยตรง
+  M_plus:
+    meaning: metric-symmetric retention/dissipation component
+    status: interpretive_or_candidate_decomposition
+  M_minus:
+    meaning: metric-skew reversible cross-mode transport
+    status: PROPOSED_NOT_PROVED_IN_THIS_BENCHMARK
+    constraint: z^T M_minus z = 0 ภายใต้ retention metric เมื่อ decomposition ใช้ได้
+  K_ret:
+    definition: M^dagger G M
+    must_be_positive_semidefinite: true
+    negative_spectrum_meaning: certificate_or_implementation_failure
+  chi_AB:
+    definition: d^{-1} x_A^T G x_B
+    may_be_negative: true
+    negative_meaning: signed anti-alignment/orientation evidence
+    is_physical_purity: false
+  physical_purity:
+    definition: Tr(rho^2)
+    required_interval: '[1/d, 1]'
+    supports_entropy: true
+    entropy_formula: S2 = -log(purity)
+  linear_state_estimator:
+    may_have_negative_eigenvalues: true
+    meaning: distance from PSD state cone or finite-sample reconstruction defect
+    prohibition: ห้ามเรียก negative eigenmass ว่า negative probability
+validated_findings:
+  finite_transfer_architecture:
+    status: SUPPORTED
+    evidence:
+    - unitary norm and Pauli-transform round-trip passed in finite simulations
+    - main runtime can avoid explicit dense Hamiltonian construction
+    - K_ret can be applied/read matrix-free
+    - Lanczos can match exact small-instance retained spectra when the spectral problem is nontrivial
+  page_toy_model:
+    status: SUPPORTED_AS_TOY_MODEL_ONLY
+    evidence:
+      black_hole_qubits: 8
+      total_qubits: 16
+      ideal_page_time: 4
+      noisy_page_time: 5
+      corrected_page_time: 4
+      ideal_vs_page_reference_rmse: 0.06591522835875215
+    boundary: เป็น random-unitary qubit-transport benchmark ไม่ใช่ derivation ของ gravitational Page curve
+  exact_noise_inverse_demo:
+    status: SUPPORTED_BUT_EASY_PROTOCOL
+    results:
+      noisy_page_rmse: 0.8722401967960624
+      corrected_page_rmse: 0.10022883894545374
+      generic_mean_noisy_trace_distance: 0.2025188530398546
+      generic_mean_corrected_trace_distance: 0.10039704942173427
+    limitation: Page-curve path ใช้ exact noisy coefficients และ nearly correct noise model จึงไม่ใช่หลักฐานเพียงพอสำหรับ
+      practical finite-shot superiority
+  signed_readout_audit:
+    status: SUPPORTED
+    points: 84
+    raw:
+      physical_translation_admissible: 79
+      signed_anti_alignment: 4
+      below_purity_floor: 1
+    retained:
+      physical_translation_admissible: 75
+      signed_anti_alignment: 4
+      below_purity_floor: 1
+      signed_overamplification: 4
+    finding: ค่าลบและค่าหลุดช่วงต้องเก็บเป็น signed/defect information ไม่ควรถูก clip แล้วแปลเป็น entropy
+  phi_schedule_protocol_v5_3:
+    status: SUPPORTED_ONLY_FOR_THAT_REDUCED_PROTOCOL
+    configuration:
+      seeds: 8
+      black_hole_qubits: 5
+      total_qubits: 10
+      circuits_per_seed: 4
+      shots_per_page_point: 750
+      batches: 5
+    results:
+      golden_beats_random_rmse_seeds: 8/8
+      golden_unique_best_rmse_seeds: 8/8
+      mean_golden_rmse: 0.5246986735747995
+      mean_random_rmse: 0.7614361884184506
+      mean_relative_rmse_reduction_vs_random: 0.31052987489876516
+      negative_pair_not_worse_seeds: 1/8
+    interpretation: ใน protocol นี้ golden low-discrepancy schedule ช่วย purity RMSE แต่ไม่ได้แก้ signed anti-alignment
+  simple_phi_protocol:
+    status: GOLDEN_FAILED_IN_THIS_PROTOCOL
+    configuration:
+      black_hole_qubits: 5
+      total_qubits: 10
+      circuits: 8
+      setting_pairs_per_point: 600
+    results:
+      random_purity_rmse: 0.584413
+      cyclic_purity_rmse: 0.682661
+      golden_purity_rmse: 0.761092
+      golden_vs_random_improvement_percent: -30.23
+      random_negative_readout_rate: 0.0625
+      golden_negative_readout_rate: 0.145833
+    interpretation: phi schedule ไม่ได้ชนะโดยทั่วไป ผลขึ้นกับ estimator, mapping ของ settings, randomization และ
+      protocol
+conflicting_results:
+  phi_schedule_conflict:
+    protocol_A: 'v5.3 reduced multiseed spectral-purity protocol: golden ชนะ random 8/8 seeds'
+    protocol_B: 'simple paired-Pauli estimator: golden แพ้ random 30.23%'
+    scientific_resolution: ถือเป็น protocol dependence ไม่ใช่ contradiction ที่ลบผลใดผลหนึ่ง; ห้ามสรุป universal
+      phi advantage
+    required_next_test:
+    - ใช้ estimator เดียวกันทุก schedule
+    - ใช้ exact same random-number coupling หรือ common random numbers
+    - เปรียบเทียบ irrational controls เช่น sqrt(2)-1, sqrt(3)-1, plastic constant
+    - รายงาน discrepancy, revisit rate และ estimator variance
+    - ทำ preregistered multiseed benchmark
+  renyi2_conflict:
+    earlier_claim: v3.2 รายงาน retained Renyi-2 improvement 2.749%
+    truth_audit: cross-purity บางจุดอยู่นอก physical interval และถูก clip ก่อน logarithm; primary physical entropy
+      claim จึงไม่ยอมรับ
+    current_status: RETRACTED_AS_PHYSICAL_ENTROPY_ENDPOINT
+    allowed_use: ใช้เป็น bounded sensitivity analysis ได้เมื่อระบุ bias ชัดเจน
+errors_found:
+- id: ERR-001
+  name: nonphysical_cross_purity_clipped_before_log
+  severity: CRITICAL
+  description: นำ signed/invalid cross-purity ไป clip ที่ค่าบวกเล็ก ๆ แล้วคำนวณ -log ทำให้ได้ entropy ที่ดู finite
+    แต่ไม่มี physical state รองรับ
+  fix: เก็บ signed value; ใช้ physical translation gate; ปฏิเสธ entropy เมื่อไม่ผ่าน
+- id: ERR-002
+  name: v4_summary_count_mismatch
+  severity: MAJOR
+  description: ข้อความสรุปเขียน retained outside interval = 5 แต่ข้อมูลจริง = 9 จาก 84 จุด
+  fix: แก้เป็น 9/84 และตรวจ aggregate against raw rows อัตโนมัติ
+- id: ERR-003
+  name: identity_retention_clipped
+  severity: MAJOR
+  description: calibration function ตั้ง eta_I=1 แล้ว clip ทั้ง vector เป็น 0.999999 ทำให้ identity retention ไม่เท่ากับ
+    1
+  fix: clip เฉพาะ non-identity entries แล้วตั้ง eta_I=1 หลัง clip
+- id: ERR-004
+  name: PSD_projection_masks_method_error
+  severity: MAJOR
+  description: PSD projection อาจซ่อน implementation bug หรือเป็นตัวที่ลด trace distance แทน retained inverse
+  fix: 'รายงาน ablation: raw, projection-only, inverse-only, inverse-plus-projection'
+- id: ERR-005
+  name: trivial_diagonal_lanczos_certificate
+  severity: MAJOR
+  description: บางเวอร์ชันใช้ Lanczos กับ diagonal retained operator ที่ exact maximum หาได้โดยตรง จึงไม่ใช่ spectral
+    challenge ที่มีนัยสำคัญ
+  fix: ใช้ non-diagonal/correlated channel และ residual-certified matrix-free operator
+- id: ERR-006
+  name: exact_noisy_data_in_primary_page_path
+  severity: MAJOR
+  description: Page correction บางเวอร์ชันได้รับ exact noisy Pauli coefficients ไม่ใช่ finite-shot measurements
+  fix: ใช้ finite-shot randomized measurement ใน primary endpoint
+- id: ERR-007
+  name: single_seed_or_self_defined_pass_gate
+  severity: MAJOR
+  description: PASS gate จาก seed เดียวหรือ threshold ที่ไม่ได้มี statistical justification
+  fix: ใช้ ensemble, paired CI, failing controls, effect size และ preregistered threshold
+- id: ERR-008
+  name: tomography_scaling_hidden
+  severity: MAJOR
+  description: full Pauli tomography โตแบบ 4^n; 8 qubits และ 20,000 shots ต่อ setting อาจแตะประมาณ 1.31 พันล้าน
+    virtual shots ต่อ state
+  fix: รายงาน measurement cost และใช้ randomized/classical-shadow observables ที่ตรงเป้าหมาย
+- id: ERR-009
+  name: overbroad_general_quantum_claim
+  severity: MAJOR
+  description: random pure states ภายใต้ small stationary Pauli noise ไม่รองรับคำว่า quantum systems generally
+  fix: จำกัด claim ตาม noise family, size, state ensemble และ calibration regime
+- id: ERR-010
+  name: copied_response_metadata_into_code
+  severity: OPERATIONAL
+  description: CTX/SRC/RSN/EVAL หรือ traceback ถูกคัดลอกเข้า Kaggle code cell
+  fix: ส่งไฟล์ .ipynb/.py สะอาดและ compile-run exact artifact ก่อน handoff
+- id: ERR-011
+  name: phi_inserted_as_answer
+  severity: EPISTEMIC
+  description: ใส่ phi ลงใน schedule แล้วถือว่าผลดีเป็น root derivation เป็นการย้อนลำดับจาก textbook/candidate ไปประกาศว่า
+    root บังคับ
+  fix: ติดป้าย candidate insertion และพิสูจน์ย้อนหลังเฉพาะเมื่อผล robust
+prohibited_claims:
+- เราแก้ black-hole information paradox แล้ว
+- เรา derive gravitational Page curve จาก first principles แล้ว
+- เรา prove black-hole unitarity แล้ว
+- เรา prove quantum gravity แล้ว
+- ระบบมี quantum computational advantage
+- Lanczos หรือ M^dagger M เป็นสิ่งประดิษฐ์ใหม่ของงานนี้
+- retained-transfer แทน Hamiltonian ได้ทุกระบบ
+- negative signed readout คือ negative physical purity
+- ค่าลบทุกชนิดเป็น error
+- clip signed estimator แล้วเรียกผลว่า physical entropy
+- phi schedule ชนะ random โดยทั่วไป
+- ธรรมชาติทุกระบบจำเป็นต้องเลือก phi หรือ golden angle
+- root บังคับ Fibonacci transfer หรือ fusion grammar แล้ว
+- skew retained operator ถูกพิสูจน์สมบูรณ์แล้ว
+- วิธีนี้แก้ noise ทุกชนิดหรือทุก drift regime
+- ผลจาก toy qubit transport เท่ากับ black-hole evaporation จริง
+currently_allowed_claims:
+- claim: เราเสนอ finite-qubit, Hamiltonian-free retained-transfer architecture ที่แยก signed readout, positive retained
+    geometry และ physical entropy gate
+  tier: finite_diagnostic_plus_architecture
+- claim: K_ret = M^dagger G M ให้ positive spectral certificate ในขณะที่ M เองสามารถเก็บ signed orientation ได้
+  tier: mathematical_construction
+- claim: ระบบตรวจพบ readouts ที่ conventional clipping อาจแปลงเป็น entropy ที่ไม่มี physical support
+  tier: finite_diagnostic
+- claim: ใน reduced v5.3 protocol golden-ratio schedule ลด purity RMSE เฉลี่ยประมาณ 31.05% เมื่อเทียบกับ random
+    across 8 tested seeds
+  tier: protocol_specific_finite_diagnostic
+  mandatory_qualifier: ผลไม่ replicate ใน simple paired-Pauli protocol; ห้าม generalize
+- claim: ใน simple protocol golden schedule แพ้ random ประมาณ 30.23% และให้ negative readout rate สูงกว่า
+  tier: protocol_specific_finite_diagnostic
+- claim: ผลรวมชี้ว่า phi schedule เป็น candidate ที่ protocol-dependent ไม่ใช่ universal principle ที่พิสูจน์แล้ว
+  tier: current_best_conclusion
+mandatory_claim_gates:
+  physical_entropy_gate:
+  - purity estimator and confidence interval lie within [1/d, 1]
+  - no silent clipping before logarithm
+  - PSD/trace conditions reported
+  - signed failures retained and counted
+  spectral_gate:
+  - K_ret positivity verified
+  - residual-based eigensolver certificate
+  - nontrivial non-diagonal test
+  - small-instance exact oracle
+  statistical_gate:
+  - multiple independent seeds/circuits
+  - paired comparison
+  - confidence interval and effect size
+  - failing control
+  - shot-scaling curve
+  phi_gate:
+  - same estimator and budget across schedules
+  - random, cyclic, and several irrational controls
+  - common-random-number or matched randomness design
+  - robust advantage across seeds
+  - no worsening of signed failure rate unless explicitly traded off
+  - mechanistic link to discrepancy/return time
+  journal_gate:
+  - all numbers regenerate from code and raw tables
+  - source package compiles cleanly
+  - no unresolved references
+  - no overfull columns
+  - claim boundary in abstract and conclusion
+  - negative results and failed endpoints retained
+next_experiments:
+- priority: 1
+  name: phi_protocol_unification
+  goal: อธิบายว่าทำไม v5.3 ชนะ แต่ simple protocol แพ้
+  design:
+  - ใช้ state ensemble เดียวกัน
+  - ใช้ setting universe เดียวกัน
+  - ใช้ estimator เดียวกัน
+  - ใช้ common random numbers
+  - sweep shots and batches
+  - วัด discrepancy and revisit histograms
+- priority: 2
+  name: irrational_control_benchmark
+  goal: แยกว่า effect มาจาก phi โดยเฉพาะหรือ low discrepancy โดยทั่วไป
+  controls:
+  - golden fraction 1/phi^2
+  - sqrt(2)-1
+  - sqrt(3)-1
+  - plastic constant based rotation
+  - randomized Sobol/Halton where applicable
+- priority: 3
+  name: signed_multimode_gram_estimator
+  goal: เก็บ orientation phase และใช้ positive Gram spectrum โดยไม่แปลง pairwise negative overlap เป็น entropy
+- priority: 4
+  name: physical_entropy_reconstruction
+  goal: สร้าง finite-shot estimator พร้อม confidence-certified physical translation
+  requirements:
+  - no clipping
+  - bounded or constrained estimator
+  - coverage test
+  - late-time radiation stress test
+- priority: 5
+  name: realistic_noise_suite
+  noise_families:
+  - Pauli Markov
+  - amplitude damping
+  - coherent over-rotation
+  - correlated noise
+  - non-Markovian memory
+  - calibration drift
+  - SPAM
+  - leakage
+source_ledger:
+- file: Pasted markdown(8).md
+  role: candidate interpretation of pi as compact closure/orientation and phi as minimal history-retaining transfer
+    invariant
+- file: signed_retained_page_curve_v4_1_report.json
+  role: truth audit, signed endpoint classification, corrected counts
+- file: journal_page_curve_report_v3_2.json
+  role: earlier journal benchmark and later-retracted physical Renyi-2 endpoint
+- file: root_native_page_curve_report.json
+  role: exact-noise finite-qubit integrated architecture demo
+- file: phi_schedule_pagecurve_v5_3_multiseed_report.json
+  role: protocol-specific multiseed phi candidate result
+- file: phi_schedule_v5_3_multiseed.csv
+  role: per-seed phi schedule comparison
+- file: KAGGLE_SIMPLE_PHI_PAGECURVE_TEST.log
+  role: counterexample protocol where golden schedule loses
+final_decision:
+  keep:
+  - retained-transfer architecture
+  - signed semantic lane
+  - positive Gram certificate
+  - Lanczos as spectral reader
+  - physical translation gate
+  - phi as experimental candidate
+  retract_or_refuse:
+  - clipped cross-purity as physical entropy
+  - universal phi advantage
+  - general quantum-system superiority
+  - black-hole or quantum-gravity solution claims
+  current_research_statement: ผลที่ซื่อสัตย์ที่สุดคือสถาปัตยกรรมสามารถรักษา signed information และป้องกันการแปล
+    entropy ที่ไม่ admissible ได้ ส่วน phi schedule แสดงทั้งผลบวกและผลลบตาม protocol จึงเป็น candidate mechanism
+    ที่ต้องทดสอบและพิสูจน์ต่อ ไม่ใช่ข้อสรุปของธรรมชาติ

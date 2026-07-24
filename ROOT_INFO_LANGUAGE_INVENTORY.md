@@ -123,6 +123,31 @@ that repo's index yet. They did, however, **compile clean, fresh, today, with no
 
 ---
 
+## Group D — External-contributed, declared-gate-conditional (π/φ retained-history fusion + Page-curve toy experiments, 2026-07-24)
+
+Source: `external_research/pi_phi_retained_history_page_curve_v3/` (this repo). A user-supplied,
+externally-produced research bundle, downstream of this repo's own canonical Standard-Model doc
+(used as its declared anchor), independently re-verified here (arithmetic reproduced from raw
+data, `PASS`). **Nothing in this group is `Th_coqc`** — no `.v` witness exists for any of it — and
+none of it enters "THE FORCED SET" box in `READOUT_GENESIS_CORE.md`. See the folder's own `README.md`
+for the full tier table; summary:
+
+| Result | Tier | Status |
+|---|---|---|
+| `τ⊗τ≅1⊕τ ⇒ FPdim(τ)=φ` | `finite_diagnostic`, conditional | Closed only under 7 declared gates H1–H7 (finite-dim history morphisms, splitting idempotents, simple unit, finitely many simples, duals+snake, faithful positive pairings). Root-forcing H1–H7 in any natural domain is explicitly `not_established`. Uses Ostrik's external rank-two fusion-category classification, cited not re-derived. |
+| Golden-angle identity `θ_G=2π/φ²` | `Dr` | Algebraic identity, not a physical claim. |
+| Finite-qubit signed-readout / retained-transfer architecture | `finite_diagnostic` | Matches this repo's own `readout-not-truth` discipline: negative readouts are kept as signed information, never silently clipped into a fake entropy. |
+| φ-schedule vs random measurement scheduling | `finite_diagnostic`, protocol-dependent — **both directions kept** | 8-seed reduced protocol: φ beats random 8/8 (mean RMSE −31%). Independent simple-protocol counterexample: φ *loses* to random by −30%. Neither is allowed to generalize; both scripts + raw data are in the folder. |
+| Physical Page curve / black-hole unitarity / quantum advantage | **`[Open]`** | Explicitly `NOT_DERIVED` / `NOT_DEMONSTRATED` in the source's own claim boundary. Do not cite this group for any of these. |
+
+⚠️ **Retraction on record inside the source material itself:** an earlier draft of this same
+program claimed a physical Rényi-2 entropy improvement; the underlying cross-purity values were
+outside the physical `[1/d,1]` interval and had been silently clipped before `-log`. That claim is
+marked `RETRACTED_AS_PHYSICAL_ENTROPY_ENDPOINT` in the source's own audit — kept here as an example
+of the exact non-readout injection this repo's discipline exists to catch, not as a live claim.
+
+---
+
 ## Not yet verifiable this round (stated honestly, not hidden)
 
 Round 1 flagged 11 names as unverified; round 2 (2026-07-23) tracked down and independently

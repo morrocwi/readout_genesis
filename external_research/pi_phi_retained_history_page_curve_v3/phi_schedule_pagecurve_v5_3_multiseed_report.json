@@ -1,0 +1,35 @@
+{
+  "status": "CANDIDATE_PHI_SCHEDULE_REPLICATED_WITH_LIMITS",
+  "simulation": true,
+  "seeds_tested": [20260724, 20260725, 20260726, 20260727, 20260728, 20260729, 20260730, 20260731],
+  "reduced_validation_config": {
+    "black_hole_qubits": 5,
+    "total_qubits": 10,
+    "circuits_per_seed": 4,
+    "shots_per_page_point": 750,
+    "batches": 5,
+    "schedules": ["random", "cyclic", "golden"]
+  },
+  "phi": 1.618033988749895,
+  "golden_rotation": 0.38196601125010515,
+  "results": {
+    "golden_beats_random_rmse_seeds": 8,
+    "golden_unique_best_rmse_seeds": 8,
+    "n_seeds": 8,
+    "mean_relative_rmse_change_vs_random": -0.31052987489876516,
+    "median_relative_rmse_change_vs_random": -0.3082071382806346,
+    "mean_golden_rmse": 0.5246986735747995,
+    "mean_random_rmse": 0.7614361884184506,
+    "mean_cyclic_rmse": 0.8553797577323412,
+    "golden_negative_pair_not_worse_seeds": 1,
+    "golden_entropy_admission_not_worse_seeds": 7,
+    "mean_negative_pair_change": 0.020833333333333363,
+    "mean_entropy_admission_change": 0.02083333333333333
+  },
+  "interpretation": {
+    "supported": "Imposing phi through a golden-ratio low-discrepancy measurement-history schedule improved finite-shot spectral-purity estimation in this reduced benchmark.",
+    "not_supported": "The schedule did not resolve signed anti-alignment and therefore cannot replace the signed-readout semantic gate.",
+    "next_proof_target": "Identify the exact discrepancy/return-time property responsible for the RMSE reduction, then test whether a minimal retained-history transfer forces the same irrational rotation rather than assuming phi."
+  },
+  "claim_boundary": "Finite diagnostic on simulated Page-curve readout. Phi was inserted by design; this is not a root derivation and not evidence that nature universally selects phi."
+}

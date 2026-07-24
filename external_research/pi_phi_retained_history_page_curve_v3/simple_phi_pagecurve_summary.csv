@@ -1,0 +1,4 @@
+schedule,purity_rmse,physical_translation_rate,negative_readout_rate
+random,0.584413,0.770833,0.062500
+cyclic,0.682661,0.666667,0.041667
+golden,0.761092,0.687500,0.145833

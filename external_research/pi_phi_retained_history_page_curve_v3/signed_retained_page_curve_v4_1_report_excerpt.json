@@ -1,0 +1,39 @@
+{
+  "status": "PASS_ARCHITECTURE_AUDIT_WITH_SIGNED_READOUT_AND_REFUSED_ENTROPY_TRANSLATION",
+  "simulation": true,
+  "correction_to_previous_claim": {
+    "previous_split_S2_claim_valid": false,
+    "reason": "Signed split-readout overlap was clipped and relabeled as physical purity before the logarithm. Values outside the physical interval cannot support a physical Renyi-2 entropy claim.",
+    "retained_outside_physical_interval_actual": 9
+  },
+  "operator_semantics": {
+    "M": "signed readout translation; entries and eigenvalues may carry orientation or phase and need not be positive",
+    "K_ret": "M^dagger G M; positive semidefinite retained geometry",
+    "chi_AB": "signed split-readout overlap; may be negative",
+    "physical_purity": "Tr(rho^2) in [1/d, 1]; only this lane supports S2=-log(purity)",
+    "negative_density_eigenmass": "distance of a linear estimator from the PSD state cone, not negative probability"
+  },
+  "signed_endpoint": {
+    "raw": {
+      "admissible": 79,
+      "signed_anti_alignment": 4,
+      "below_purity_floor": 1,
+      "negative_points": 4
+    },
+    "retained": {
+      "admissible": 75,
+      "signed_anti_alignment": 4,
+      "signed_overamplification": 4,
+      "below_purity_floor": 1,
+      "negative_points": 4
+    }
+  },
+  "generic_state_audit": {
+    "stationary_local_trace_distance": [0.52406, 0.52300],
+    "stationary_correlated_trace_distance": [0.54874, 0.53446],
+    "strong_correlated_trace_distance": [0.67276, 0.62132],
+    "drift_mismatch_trace_distance": [0.71122, 0.71122],
+    "interpretation": "Narrow positive support exists for stationary correlated channels; local-only improvement is unresolved and drift correction is refused."
+  },
+  "claim_boundary": "The architecture and signed semantic lane survive the audit. Physical Page-entropy recovery is not established."
+}

@@ -1,0 +1,26 @@
+release: READOUT_GENESIS_PI_PHI_STANDALONE_v3
+simulation: mixed
+closed_under_declared_gates:
+  - exchange sign r=-1 represented by phase pi
+  - odd cyclic closure and minimal three-channel witness
+  - context-complete retained-history quotient as dagger monoidal category
+  - H1-H7 completion to a unitary fusion sector
+  - minimal persistent rank-two grammar tau tensor tau = 1 direct_sum tau, using rank-two classification
+  - Frobenius-Perron dimension of tau equals phi
+  - golden-angle algebra theta_G = 2*pi/phi^2
+supported_computationally:
+  - deterministic transfer and return witnesses
+  - finite-qubit retained-transfer spectral diagnostics
+  - narrow trace-distance improvements under tested stationary correlated noise
+  - protocol-specific positive phi-schedule result in eight reduced seeds
+refuted_or_refused:
+  - universal phi scheduling advantage
+  - signed readout equals physical purity
+  - clipped signed overlap supports physical entropy
+  - complete black-hole solution
+  - quantum computational advantage
+not_yet_derived:
+  - unrestricted root forces H1-H7 in every natural domain
+  - measured natural domains reduce to the minimal rank-two persistent sector
+  - universal discrepancy-to-variance theorem for phi scheduling
+  - complete gravitational Page curve or black-hole S-matrix
