@@ -339,3 +339,36 @@ collapse). Item 1 remains fully Open. Narrows the search further: any future att
 explicit, disclosed, GENERATION-VARYING root-native input, not merely a richer but still
 generation-uniform construction.
 
+
+
+## Attempt 12 — sharper still: SUM vs ORDERED COMPOSITION, and why this repo's connection can't yet supply it, 2026-07-25
+
+Founder's sharpest correction yet: "the problem isn't M, isn't it the SUMMATION?"
+`item1_exploration/attempt12_ordered_composition_vs_telescoping_v1.py` confirms this is
+mathematically exactly right, one level deeper than Attempt 11's "uniformity" diagnosis: a graph
+Laplacian's `deg(i)=sum_j w_ij` is a COMMUTATIVE sum — order-blind by definition, which is why
+Attempts 10-11 (both sum-built) could never escape permutation degeneracy no matter how the sum's
+contents were dressed up. This project's own native primitive is ORDERED, non-commutative
+concatenation (R2, `ROOT_TO_SM_DAG.md`). Minimal toy demonstration: for a non-normal matrix A with
+spectral radius exactly 1, the eigenvalue-based readout of `A^n` stays flat (elementary identity
+`rho(A^n)=rho(A)^n`) while the singular-value-based readout genuinely diverges at each order n —
+NOT subject to the same degeneracy, since "position in an ordered sequence" isn't an index a
+permutation group acts transitively on the way it acts on unordered graph nodes.
+
+**But**: checked against this repo's ACTUAL root-native ordered-composition primitive
+(`pathprod`, Th_coqc, `formal/InfoGaugeLocalizationConnectionHolonomy_attempt.v`,
+`coboundary_telescopes`) — it is a proven COBOUNDARY: `pathprod(f,n) = f(n).f(0)^-1` for ANY group
+and ANY intermediate path, i.e. it structurally CANNOT accumulate growth with path length at all.
+Separately, the frames this repo actually uses (orthogonal/permutation representations, chosen in
+item25 for good disclosed physical reasons) would keep singular values bounded at 1 regardless.
+
+Independently adversarially reviewed — SURVIVES WITH REQUIRED CORRECTIONS, applied: the Coq
+citation was verified line-by-line as faithful (5 generic group axioms, no commutativity smuggled
+in); one exposition correction tightened an overgeneral reading of the toy example (constant
+spectral radius follows from `rho(A^n)=rho(A)^n` at `rho(A)=1`, not from non-normality alone — the
+narrower, correct claim is that non-normality is what lets the singular-value readout escape that
+flat trajectory specifically in the unimodular-spectral-radius regime Attempts 10-11's constructions
+sit in). Item 1 remains fully Open. Correctly narrows WHERE the missing ingredient must live (a
+genuinely non-telescoping, non-orthogonal-representation ordered composition) — not yet built, not
+independently justified from root, and explicitly not invented here just to force a positive result.
+
