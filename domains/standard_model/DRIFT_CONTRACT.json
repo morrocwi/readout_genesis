@@ -18,6 +18,23 @@
       "approved_by": "founder (yaoharee.lt), 2026-07-24, explicit instruction: \"แก้กฎเปิดเผยก่อน แล้วไป (ก) และให้เป็นข้อยกเว้นว่าฟิตได้แต่ต้องประกาศ และให้ถือว่าเป็นออฟชั่น\"",
       "expires": null,
       "status": "ACTIVE"
+    },
+    {
+      "deviation_id": "DEV-SM-002",
+      "requirement_ref": "hard_fail_conditions[4] (generation-count-derived-from-unrestricted-root ban) -- this deviation does NOT lift that ban; it authorizes an openly-declared FIT as a parallel track, same shape as DEV-SM-001",
+      "date": "2026-07-24",
+      "reason": "Item 2 (generation multiplicity, HANDOFF_NEXT_SESSION.md) has no from-root derivation after two independent Th_coqc/Dr-tier attempts this session (item2_exploration/ITEM2_EXPLORATION_LOG.md: zeroth-order scope-gap finding + Attempt 1, gauge anomaly is N-blind, both REFUTED as candidate closure conditions or found insufficient). Founder directed the same methodology already used for item 1: fitting is permitted, does not need to be a from-root derivation, 'จะเอาไงนายจัดการเลย ขอให้ตรงกับปรัชญาเราและไสต์การทำงานเรา' (handle it however, as long as it matches our philosophy and working style) -- i.e. tier-honest, minimal free parameters, openly declared, adversarially reviewed before commit.",
+      "risk": "The construction combines ONE externally-observed fact (CP violation exists in nature, real measurement) with ONE borrowed, exactly-computed theorem (unitary N x N mixing-matrix parameter counting: physical CP-phase count = (N-1)(N-2)/2, zero for N<3) via this framework's own minimality-selection STYLE (used elsewhere for genuinely forcing reasons, e.g. SM_INFORMATION_PHILOSOPHY_MASTER.md Section 3.1's dim>=3). The risk, named explicitly so it is not smuggled in: Section 3.1's minimality is a hard mathematical exclusion (dim<3 makes the closure object identically zero -- impossible, not just unobserved); THIS construction's minimality is weaker -- N=1,2 are NOT mathematically excluded, they are merely inconsistent with an OBSERVED fact. Treating these two kinds of 'minimality' as the same strength would itself be a Cross-Role Readout Contamination (item1_exploration/ITEM1_EXPLORATION_LOG.md's named finding) applied to the word 'minimal' rather than to a specific formula -- this deviation exists partly so that risk can be flagged in the compensating controls below rather than silently inherited.",
+      "compensating_controls": [
+        "every value/claim from this construction MUST carry tier tag fit_calibrated, and every occurrence MUST carry the caveat 'FITTED (external CP-violation observation + borrowed parameter-counting theorem + a POSTULATED, not forcing, minimality selection), not derived from the root' in the same line/sentence it is reported",
+        "MUST explicitly distinguish this construction's minimality (a postulate: nature is assumed to realize the smallest N consistent with what is observed) from SM_INFORMATION_PHILOSOPHY_MASTER.md's forcing-style minimality (Section 2.2, Section 3.1: smaller values are mathematically impossible, not merely unobserved) -- never state or imply they are the same kind of argument",
+        "MUST NOT claim this predicts or explains generation count; it is consistent-with the observed value under a stated, unproven postulate, nothing stronger",
+        "does not weaken or edit hard_fail_conditions[4]; that condition continues to forbid an unqualified 'generation count derived from the root' claim in full",
+        "the borrowed theorem (unitary mixing-matrix physical-phase counting) MUST be registered in docs/root/EQUATION_REGISTRY.md with owner/year before or in the same commit as first use"
+      ],
+      "approved_by": "founder (yaoharee.lt), 2026-07-24, chat instruction: \"ฟิตค่า ได้นะ ไม่ต้อง ดีไรต์ จะเอาไงนายจัดการเลย ขอให้ตรงกับปรัชยาเรา และไสต์การทำงานเรา\"",
+      "expires": null,
+      "status": "ACTIVE"
     }
   ],
   "hard_fail_conditions": [
