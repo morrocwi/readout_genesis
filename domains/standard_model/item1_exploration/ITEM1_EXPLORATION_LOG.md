@@ -275,3 +275,67 @@ open, declared import, same status as `v_EW` itself), does **not** feed back int
 `Π₀>α` (a separate, parallel use of the same registry, not a chain into item 1), and does **not**
 claim exact agreement with PDG (a few-percent tree-level gap is the expected, honestly-reported
 result). Tier: `fit_calibrated` throughout.
+
+
+## Attempt 10 — negative-but-informative: S3-symmetric generation graph forces degeneracy, 2026-07-25
+
+Unblocks Attempt 4's own named stall ("read `λ_j` as an eigenvalue of a weighted `L_R` on
+generation-space — requires `W` to already exist, which it does not"). Asks the narrower, honest
+question: is there ANY natural, non-circular, root-native weighting `W` for a 3-generation graph
+that does not require fitting to already-known masses? Answer, proven exactly (Fraction arithmetic,
+`item1_exploration/attempt10_symmetric_graph_forces_degeneracy_v1.py`): the LEAST-ARBITRARY
+candidate — full S3 permutation symmetry among the 3 generations (no generation privileged a
+priori, matching the readout-not-truth refusal to smuggle unearned structure) — **forces** the
+complete graph K3's Laplacian spectrum to be exactly `{0, 3w, 3w}` for ANY edge weight `w`: two of
+the three eigenvalues are structurally, exactly degenerate. A symmetric root-native graph on 3
+generations CANNOT produce 3 distinct masses, full stop — symmetry-breaking must come from outside.
+
+**A loose, explicitly-hedged thematic echo** (reworded after independent review — an earlier draft
+called this "independent corroboration," an overclaim, corrected), checked by actually running the
+file: `src/anse_spine/tau_c/tau_c_hierarchy.py` (pre-existing, built for an unrelated purpose —
+statistically analyzing the whole cross-domain τ_c atlas, 114 entries/18 disciplines) concludes
+"there is NO hidden magic ratio... its secret is SCALE INVARIANCE... the only non-arbitrary numbers
+are the dimensionless readout-invariants (mass ratios...) that PIN individual rungs." This is NOT a
+second proof of this attempt's exact 3-node result — the two test genuinely different things by
+genuinely different methods (a statistical 220-entry cross-domain finding vs. an exact structural
+proof about one specific graph) — worth noting as a thematic echo, not cited as strengthening this
+attempt's own rigor.
+
+**What this does not establish**: not a proof that mass-hierarchy derivation is impossible in
+principle (only that the SYMMETRIC construction fails); does not identify what symmetry-breaking
+ingredient would work; does not reuse or conflate item25's spacetime-lattice gauge-covariant
+Laplacian (a different graph, avoiding CRRC). Item 1 remains fully Open. Real, useful negative
+result: narrows the search — any future graph/Laplacian attempt at item 1 must include an explicit,
+disclosed symmetry-breaking ingredient, not rely on bare graph structure alone.
+
+
+
+## Attempt 11 — deepened negative: the real obstruction is generation-UNIFORMITY, not mere symmetry, 2026-07-25
+
+Founder correction to Attempt 10: this project already has a genuinely asymmetric-but-BALANCED
+root-native structure — the reader/record `(Φ,Ψ)` apparatus (II.8a,
+`source_root/READOUT_GENESIS_CORE_SNAPSHOT.md` line ~1017) — that might supply the missing
+symmetry-breaking. `item1_exploration/attempt11_phi_psi_apparatus_still_degenerate_v1.py` builds
+the smallest honest instance of II.8a's own tensor-product operator (`𝔾_n = L_{G_n}⊗I_F +
+I_{G_n}⊗C_F + C_int,n`, split symmetric/skew exactly as II.8a defines): 3 generations, Φ
+propagating forward around the cycle, Ψ backward, a local uniform-rate Φ↔Ψ exchange `M_n` (the
+same symbol II.8a's own DRL action uses). Tested both symmetric and skew `M_n` (II.8a's own
+`𝔾^(+)`/`𝔾^(-)` split) — **neither resolves the degeneracy**. Self-caught in-file: eigenvalue
+realness is not guaranteed (complex at M=0.5, real at M=1.0/1.7/2.3), corrected to read degeneracy
+by magnitude, the physically meaningful quantity. Deeper reason, directly verified: the full
+operator commutes with the generation-cyclic (Z3) symmetry for ANY *uniform* rate, however richly
+structured the per-node rule — uniformity across generations, not symmetric-vs-directed shape, is
+the real obstruction. CRRC guard: does NOT identify this `M_n` with item 1's actual `ε/α/κ_j` —
+the standing admissibility-square gap from the Synthesis section above remains untouched either way.
+
+Independently adversarially reviewed — SURVIVES, no required corrections (the commutation claim,
+the load-bearing one, was independently reverified and confirmed algebraically general: `L_phi`,
+`L_psi` are both polynomials in the cyclic shift, hence automatically commute with it; stress-tested
+that non-uniform rates correctly break commutation). One optional hedge applied: "generalizes and
+strengthens Attempt 10" is true of the *mechanism* (a strictly weaker sufficient condition — Z3/
+uniformity alone forces degeneracy, not full S3-invariance), not of the per-instance numeric
+conclusion (a different flavor of degeneracy — partial magnitude-collapse vs. exact 2-eigenvalue
+collapse). Item 1 remains fully Open. Narrows the search further: any future attempt needs an
+explicit, disclosed, GENERATION-VARYING root-native input, not merely a richer but still
+generation-uniform construction.
+
