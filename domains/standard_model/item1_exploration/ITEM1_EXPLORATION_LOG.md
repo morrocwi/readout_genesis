@@ -406,3 +406,44 @@ structural progress (a genuinely non-degenerate mechanism now exists, finite gro
 categorically) honestly bounded by two explicit, disclosed open gaps (θ, and the n↔generation
 conjecture).
 
+
+
+## Attempt 14 — apply readout-not-truth to Attempt 13 itself: theta is I1-injected; dissolve via exact-Q Z-action, 2026-07-25
+
+Chasing a root-native θ (Attempt 13's open gap) turned out, on investigation, to lead directly into
+`docs/root/MLCD_modal_lorentz_compatible_causal_discreteness.md`'s own `★FOUNDATION_CRITICAL_OPEN`
+"rapidity-divergence cancellation" problem — 3 independently-verified failed attempts already
+logged there, and neither the literature route (Dowker–Glaser coefficients solve a genuinely
+different object, a covariant wave-operator convergence problem, not a per-generation rapidity —
+checked directly, does not apply) nor the "our own" philosophy-native route (already failed twice)
+offered a usable θ.
+
+Applying this repo's own core methodology (`research/skills/readout-not-truth/SKILL.md`: diagnose
+which infinity was injected, then DISSOLVE it, don't defer to the continuum) to Attempt 13's own
+construction: the real-valued rapidity θ (`cosh θ, sinh θ`) requires I1 (R-completeness) merely to
+be defined. `item1_exploration/attempt14_discrete_Z_dissolves_rapidity_divergence_v1.py` dissolves
+this by replacing the continuum Lorentz group SO(1,1) with its discrete, I1-free analogue: the
+infinite cyclic group Z acting via `rho(n):=r^n` for a fixed RATIONAL r>1 — no real numbers, no
+transcendental functions, exact `Fraction` arithmetic throughout. Preserves Attempt 13's
+qualitative mechanism (non-compact group, n=1,2,3 giving 3 distinct growing values) without the
+continuum machinery. Proven exactly: this specific representation (r≠1) admits no invariant
+positive-definite form, so it genuinely escapes finite-group unitarizability — the precise reason
+this construction supplies real growth where Attempts 10-12 could not.
+
+Independently adversarially reviewed — SURVIVES WITH REQUIRED CORRECTIONS, 5 applied: an earlier
+draft overclaimed Attempt 13's θ and MLCD's rapidity-divergence integral as "the SAME injection"
+and that deriving θ "would mean re-solving that exact open MLCD keystone problem" — REVIEW CAUGHT
+THIS AS UNESTABLISHED (MLCD's problem is a genuinely different, harder object — an unconverged
+smearing-kernel integral — not a fixed scalar plugged into cosh/sinh); retracted and restated at
+its actually-supported, narrower strength. Also caught and fixed: a hardcoded `ck(...,True)`
+dressing a narrative claim as a verified test (the same pattern already caught in Attempts 10/13);
+a category error ("Z is not unitarizable" — false in general, Z has unitary irreps — corrected to
+"this specific representation is not unitarizable," with an exact algebraic proof replacing a
+growing-partial-sum heuristic); and an overclaimed "provably unentangled from MLCD" closing line.
+
+Item 1 remains fully Open. The real, defensible narrowing: an undetermined REAL parameter (θ,
+requiring the continuum to even state) becomes an undetermined RATIONAL parameter (r, exact-Q) —
+genuinely simpler to state, NOT a demonstrated escape from any specific named blocker. The
+generation↔boost-repetition identification remains the same unproven structural hypothesis Attempt
+13 already disclosed, unchanged.
+
