@@ -109,6 +109,65 @@ root-native, regardless of how root-native its earlier steps were — the failur
 correctness nor one focused on CRRC/RDI will necessarily catch it, since it is a different axis
 of honesty (readout-vocabulary discipline, not arithmetic or admissibility-square discipline).
 
+**CRIAF corollary, SIMPLIFIED TO A STANDING POLICY per founder direction (2026-07-24)** — following
+the founder's own question "sin/tan/cos ต่างกันอย่างไรในปรัชญาสารสนเทศ" (how do sin/tan/cos differ
+in information-philosophy terms) and the explicit follow-up instruction: **do not build a graded
+hierarchy — compute and connect every future formula from ONE thing only, the Born-rule-shaped
+squared ratio, and record this as a finding.**
+
+An earlier draft of this entry proposed a 4-level graded hierarchy (`sin²/cos²` best, then
+`sin/cos`, then `tan`, then `θ` itself worst) and reached first for `I4` (actual infinity) to
+explain why `tan` (unbounded near 90°) was worse than `sin/cos` (bounded). **That graded framing
+is RETIRED here, replaced by a single, sharper, easier-to-defend rule** — not because the ranking
+was necessarily wrong in every particular, but because ranking four functions of the SAME
+underlying continuum angle against each other invites exactly the kind of "how much I1 is too
+much I1" hair-splitting this project's own tier discipline exists to avoid (`Th_coqc`/
+`finite_diagnostic`/`Dr`/`Open` are supposed to be a small number of clean, defensible steps, not
+a sliding scale). The simpler, stronger rule:
+
+> **POLICY (standing, this domain): the ONLY admissible root-native form for a mixing/overlap-type
+> readout is the Born-rule-shaped SQUARED RATIO** — `sin²θ := m_light/(m_light+m_heavy)` (or the
+> equivalent `τ_c`-ratio form), i.e. exactly the shape already established, machine-tiered
+> `Th_coqc`, in `engine/lexicon.py`'s GLOSSARY entry for probability: `p_i = |amp_i|²/Σ|amp_j|²`.
+> `sinθ`, `cosθ`, `tanθ`, and `θ` itself (degrees or radians) are NEVER the target readout going
+> forward in this domain — they may appear only as (a) an explicit, separately-tiered cross-check
+> against textbook/PDG conventions (exactly how `gst_mechanism_texture_zero_v1.py`'s Part 3 uses
+> `math.sin`/`math.atan` — clearly labeled "cross-check ONLY, not part of the proposed readout"),
+> never as the thing actually claimed to be root-native, or (b) inside an openly-declared,
+> `fit_calibrated`/borrowed-formula construction (per `DRIFT_CONTRACT.json`'s DEV-SM-00x pattern)
+> where the whole point is citing an external formula, not claiming root-native purity.
+
+**Why this connects "from the root," concretely, though still a structural parallel, not a proven
+identity** (softened after independent adversarial review, 2026-07-24, verdict
+SURVIVES_WITH_CORRECTION): every quantity on the right-hand side of
+`sin²θ:=m_light/(m_light+m_heavy)` already has an independent, `Th_coqc`-tier root-native
+pedigree in THIS project — `m = ℏ/(2τ_c c²)` (`engine/lexicon.py`, mass is a readout of
+causal-memory time) and the Born rule's own `p_i=|amp_i|²/Σ|amp_j|²` shape (same GLOSSARY, same
+tier). A "mixing overlap" built this way REUSES that already-accepted Born-rule FORM applied to a
+new pair of `τ_c` values — but this is a **structural parallel, motivated by and identical in
+shape to the Born rule, NOT an independently proven identity**: the GLOSSARY's own Born-rule entry
+is specifically about complex QM amplitudes (tied to Gleason's theorem, the R0 energy quadratic
+form), and applying that exact formula shape to mass/`τ_c` ratios has not been shown to be the
+SAME underlying R0 concept, only the same arithmetic pattern — the same caution
+`mixing_angle_from_L_R_v2_overlap_fraction.py`'s own docstring already applied ("Th_coqc-
+**precedented shape**," not identical). This is still why the squared-ratio form is preferred
+over `sin/cos/tan/θ` in this domain — it reuses a real, already-tiered root-native PATTERN rather
+than importing external geometry — but that preference should be stated as "structurally
+identical to, and motivated by, an established root-native pattern," not overstated as literal
+identity with it.
+
+**Practical rule this adds to the CRIAF checklist, going forward, replacing the earlier graded
+version**: when a construction's natural readout is trig-shaped, the ONLY form to report as
+root-native is the squared-ratio/Born-rule form. Do not report `sinθ`, `cosθ`, `tanθ`, or `θ`
+itself as if they were comparably native — they are not merely "less pure," under this policy they
+are simply NOT the claimed readout at all, full stop, regardless of boundedness or which specific
+non-readout each one injects. This removes the need to litigate exactly how bad `tan`'s
+unboundedness is relative to `sin/cos`'s irrationality — a distinction this entry no longer makes.
+This is `Dr` tier — a domain policy/practice convention extending the already-validated CRIAF
+finding (see above, the `mixing_angle_from_L_R_v2_overlap_fraction.py` review), not itself an
+independently reviewed numeric claim, but a standing rule for how future work in this domain
+should be written, per explicit founder direction.
+
 ## Attempt 2, continued — `mixing_angle_from_L_R_v2_overlap_fraction.py`
 
 Fix proposed (same `L_R`/graph construction, unchanged): replace "mixing angle in degrees" with a
