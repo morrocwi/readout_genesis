@@ -48,7 +48,16 @@ Grouped by priority. "Still necessary?" was checked against the current merged s
    Order-Spectrum Audit. Tests whether `Π₀>α` (v1.13) is forced. *Still necessary: YES — this is the
    sharpest, most recently-opened frontier; v1.13's own honest fence names it explicitly.*
 2. **Generation multiplicity** — why 3 (or is it derived at all)? v1.15. *Still necessary: YES —
-   completely untouched; §8 of the closure ledger is 100% open.*
+   completely untouched; §8 of the closure ledger is 100% open.* **External context (2026-07-24):**
+   CMS's most-precise-to-date CP-violation measurement in `B⁰ₛ→J/ψK⁰` (real experiment, matches SM
+   exactly, no new physics found — [home.cern, 2026-07-24]) is item 24 (CP violation) on this same
+   backlog, which needs items 21-23 → 1, 2, 18. The mathematical reason this item is the true root
+   prerequisite for that whole downstream chain: the Kobayashi-Maskawa mechanism requires **≥3
+   generations** for a CKM matrix to carry a physical, non-rotatable-away complex phase at all — with
+   2 generations CP violation of this kind is impossible outright, not just unmeasured. So item 2 is
+   not only "why 3" in the abstract; it is the specific root-level fact that must close before this
+   entire class of real, currently-being-measured phenomena is even reachable from the root. Logged,
+   not attempted — item 2 remains exactly as open as before this note.
 
 ### P1 — root-debt track (SM-G0, architecturally foundational)
 3. G0.1 Path composition (ordered path carrier, identity+associativity) — Coq witness
