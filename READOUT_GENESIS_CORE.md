@@ -609,11 +609,13 @@ ahead of Part II and Part III, something the
 from the moment it is introduced here, not a scalar.** The Scalar-Eigenmode Reduction Error
 (Version-Reconciliation, item 4) is a warning about a mistake that becomes available only if a reader
 quietly narrows E00.7's `L_R` down to a single eigenvalue `λ` acting on a single mode `φ` — a narrowing
-this book does not license. The proposed metric-`G` decomposition `L_R = L_R^{(+)} + L_R^{(-)}`
-(retention-metric antisymmetry, not naive transpose) is flagged `[Open]`, pending test T1, precisely
-because it is a claim about the *internal structure* of the E00.7 operator, and Part I is not the place
-to assert it as settled — only to note, honestly, that the operator introduced here is already known to
-be richer than its most common informal shorthand suggests.
+this book does not license. The metric-`G` decomposition `L_R = L_R^{(+)} + L_R^{(-)}` (retention-metric antisymmetry, not
+naive transpose) has its abstract algebra CLOSED `[Th_coqc]` (T1, 2026-07-24) and a first concrete
+instance CLOSED `[finite_diagnostic]` (T1b milestone #1, same day, relativity domain) — see V.13a.
+Concrete instantiation for THIS specific E00.7 operator on any given domain remains open; Part I is
+still not the place to assert a domain's `L_R^{(±)}` split as settled — only to note, honestly, that
+the operator introduced here is already known to be richer than its most common informal shorthand
+suggests, and that the general machinery for splitting it correctly now exists and is proven.
 
 ### I.1a The Resource-Logic Floor — 1 RD, Enc_Ω/Dec_Ω, and the Copy Licence *(new in v3.1, from
 URS_RDT_MASTER_v0_12 §2–§3)*
@@ -2777,13 +2779,33 @@ checks, 2026-07-24): PASS.
 **What T1 does NOT yet close (tracked separately as T1b):** the proof establishes the algebra in
 the abstract — it does not construct the concrete retention metric `G` for the real `𝔾_n` operator
 of II.8a (`L_{G_n}⊗I_ℱ + I_{G_n}⊗C_ℱ + C_int,n`), confirm `G` is invertible there, or verify that
-`𝔾_n`'s actual G-adjoint matches the assumed form. Until T1b closes, citing this repair as
-established for any *specific* domain (including the Standard Model's intertwiner-cost items —
-see `domains/standard_model/HANDOFF_NEXT_SESSION.md` item 1) remains **`[Dr]`/`[Open]`, exactly as
-before** — T1 removes the mathematical uncertainty about whether the decomposition *could* work at
-all; it does not supply the concrete numbers. Do not read this section as licensing any concrete
-`Δ_j`, `κ_j`, or `Π₀>α` claim (see `domains/standard_model/DRIFT_CONTRACT.json`'s explicit
-hard-fail on exactly that move) — none of that is touched by this file.
+`𝔾_n`'s actual G-adjoint matches the assumed form. Until T1b closes for a specific object, citing
+this repair as established there remains **`[Dr]`/`[Open]`** — T1 removes the mathematical
+uncertainty about whether the decomposition *could* work at all; it does not by itself supply
+concrete numbers. Do not read this section as licensing any concrete `Δ_j`, `κ_j`, or `Π₀>α` claim
+for the Standard Model (see `domains/standard_model/HANDOFF_NEXT_SESSION.md` item 1 and
+`domains/standard_model/DRIFT_CONTRACT.json`'s explicit hard-fail on exactly that move) — the
+Standard Model branches are NOT touched by anything below.
+
+**T1b milestone #1 (2026-07-24, `finite_diagnostic`, relativity domain, proof of concept):**
+`T1b_relativity_instantiation_verify.py` (`formal/`) closes the first concrete instance of the full
+chain — a scalar retained-load functional `F` → Face 8's Hessian-readout (`RDL_MetricReadout.v`,
+`metric_form_readout`, `Th_coqc`) → the retention metric `G` → T1's skew-decomposition — using ONLY
+objects that already existed and were already independently verified: `domains/relativity/
+relativity_closure_v0_2.py`'s own `obstruction` functional (Gate B) and its own loop-transport
+curvature operator `U_C`. Result: Face 8 reads `G=I` **exactly** off `obstruction`'s Hessian at
+every sampled base point and step size — `G=I` is *derived*, not assumed for convenience, matching
+(and now explaining, not merely asserting) the same `G=I` basis convention `SM_INFORMATION_
+PHILOSOPHY_MASTER.md` §3.2 already uses to derive `SU(3)`. `U_C`'s skew part then vanishes under
+this derived `G` exactly as T1 predicts.
+
+**What this milestone narrows (important):** it suggests `G` is not the real free parameter blocking
+Standard Model item 1 — `G=I` looks *forced* everywhere it has been checked so far (this instance,
+and the pre-existing SU(3) derivation's own basis choice), not arbitrary. The genuinely open object
+is the graph edge-weight structure `W` in E00.7's `L_R := D_W − W` for the SM branch's own
+tape/closure history — finding `W`, not `G`, is the real next target for item 1. This milestone is
+still a proof of concept only: it does not construct `W` or `G` for any SM branch, and does not
+license any `Δ_j`/`κ_j`/`Π₀>α` claim.
 
 **Principle-level cross-reference:** the question this section answers at the technical level —
 does handling a coupled system require *two fields*, or one multimode operator with skew
@@ -2831,9 +2853,12 @@ what remains untested rather than letting silence be mistaken for a checked resu
 - **Domain-discovery engine (V.0) on real chemostat data:** adversarial battery passed on
   synthetic/proxy tapes; real-data run is pre-registered, not yet executed. **TBD.**
 - **Metric-G / L_R^(±) skew-coupling repair (V.13a):** T1 (abstract G-adjoint algebra) CLOSED
-  `[Th_coqc]` 2026-07-24 (`InfoRetentionMetricSkewDecomposition_attempt.v`). Concrete instantiation
-  for any specific `L_R`/domain (including Standard Model item 1's `Δ_j`) remains open as **T1b**.
-  **TBD** (T1b only).
+  `[Th_coqc]` 2026-07-24 (`InfoRetentionMetricSkewDecomposition_attempt.v`). T1b milestone #1
+  (proof of concept, relativity domain) CLOSED `[finite_diagnostic]` same day
+  (`T1b_relativity_instantiation_verify.py`) — derives `G=I` from Face 8 applied to an
+  already-existing domain functional, narrowing the SM item-1 blocker from "unknown G" to
+  "unknown graph weights `W`". Concrete instantiation for the Standard Model's own branches
+  (item 1's `Δ_j`) remains open. **TBD** (SM instantiation only).
 - **Endogenous state-dependent L_R[I_R] (test T2), the remaining two-field-wall gap:** open;
   the linearized cases are handled, the general nonlinear case is not. **TBD.**
 - **6 of 8 physics interpretation cards (V.1/V.2):** downgraded to `[Open]` by the 2026-07-21
