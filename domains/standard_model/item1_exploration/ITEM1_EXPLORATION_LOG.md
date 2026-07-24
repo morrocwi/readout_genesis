@@ -372,3 +372,37 @@ sit in). Item 1 remains fully Open. Correctly narrows WHERE the missing ingredie
 genuinely non-telescoping, non-orthogonal-representation ordered composition) — not yet built, not
 independently justified from root, and explicitly not invented here just to force a positive result.
 
+
+
+## Attempt 13 — builds the missing ingredient: Lorentz non-compactness, first REALIZED (not toy) mechanism, 2026-07-25
+
+"ทำเลย" — go build it. `item1_exploration/attempt13_lorentz_noncompact_breaks_degeneracy_v1.py`
+finds the exact ingredient Attempt 12 declined to invent, in a place item 1's exploration never
+looked: **Branch 2 (special relativity/Lorentz structure)**. New negative result first (generalizes
+Attempt 12): by Maschke's theorem (Weyl's unitary trick, verified directly for S3), **every**
+finite-group representation is unitarizable — no finite-group construction, however represented,
+could ever have escaped Attempts 10-12's degeneracy; this retroactively explains why item25's whole
+S3-based program (built for a different, legitimate purpose) could never double as a mass mechanism.
+
+Positive result: Lorentz boosts are genuinely non-orthogonal (preserve Minkowski not Euclidean
+metric) and non-compact (unbounded rapidity) — exactly the two jointly-necessary properties.
+Repeated composition `B^n = boost(n*theta)` (exact rapidity-additivity) gives singular values
+`e^{+-n*theta}`, genuinely distinct at every order — the first REALIZED (not merely toy-demonstrated)
+non-degenerate mechanism in this chain.
+
+**Tier correction (significant, caught by independent review):** an earlier draft mislabeled the
+boost FORMULA itself as Th_coqc. `MOTHER_EQUATION_PHYSICS_MAP.md`'s own Branch 2 explicitly splits
+special relativity: the causal-order STRUCTURE is genuinely `Th_coqc`, but the specific boost
+transformation FORMULA is separately tiered `Borrowed, verified consistent | +reals` — the same
+epistemic rung as v_EW or a PDG mass. Corrected throughout the file after review.
+
+**What this does not establish** (unchanged by the correction, already honestly fenced): the
+rapidity θ used is an illustrative, undisclosed-from-root free parameter (same status as any other
+fit_calibrated constant); the identification "generation index ↔ number of boost repetitions" is an
+explicit, new, unproven structural hypothesis, not derived; real fermion mass ratios are not
+uniform (unlike this file's exactly-uniform e^θ steps), so even a confirmed boost-repetition
+mechanism would need further structure to match reality. Item 1 remains fully Open — this is real,
+structural progress (a genuinely non-degenerate mechanism now exists, finite groups are ruled out
+categorically) honestly bounded by two explicit, disclosed open gaps (θ, and the n↔generation
+conjecture).
+
