@@ -237,3 +237,41 @@ from such a setup as suspect until the degree-count is checked, not just the val
 Contamination — not a physics claim. Item 1 remains `[Open]`. `Π₀≈6.9888` (Attempt 5) is
 unaffected by these three probes; Attempts 6-8 neither strengthen nor weaken it, they test
 different, adjacent questions.
+
+## Attempt 9 — cross-domain search, and building the registry that was missing
+
+Direct grep across every `.py` file in `domains/standard_model/` for `lambda_U`/`lambda_D`/
+`lambda_E`/`Pi0`/`intertwiner_order_vacuum` found exactly two hits:
+`intertwiner_order_vacuum_v1_13.py` itself and `run_tests.py` (the test runner). **No other
+script in this domain consumes `λ_j`/`Π₀` as input to compute anything else** — v1.13 sits at
+the end of a numeric chain with no downstream consumer, and v1.12 (immediately upstream,
+`m_W=m_Z·cosθ_W`, `ρ=1`) depends only on order *existing*, never on `Π₀`'s actual value. This
+is itself a direct instance of Retained-Degree Insufficiency: no cross-domain check was ever
+possible because the *structure to carry one had not been built* — not because anything failed.
+
+**Response — `fit_calibrated_registry.py`** (new, `domains/standard_model/`): the single shared
+source for every `fit_calibrated` external number in this domain (PDG fermion masses, `v_EW`,
+`sin²θ_W`, `α_EM`), so future fit_calibrated work imports one consistent set of constants
+instead of each script hand-copying its own (which would silently drift and violate
+DEV-SM-001's "same caveat on every citation" control). `item1_fit_calibrated_v1.py`'s own
+`Π₀≈6.9888` is now reproducible by importing this registry rather than re-typing literals.
+
+**Second consumer — `fit_calibrated_ew_masses_v1.py`** (new): demonstrates the registry is
+genuinely reusable, not a second island. Combines v1.12's own root-native pattern (`ρ=1`,
+`m_W=m_Z·cosθ_W`, exact, `Th_coqc`, no numeric scale) with the STANDARD tree-level SM
+gauge-coupling relation (`e=√(4πα_EM)`, `g=e/sinθ_W`, `g'=e/cosθ_W`, `m_W=½gv`,
+`m_Z=½v√(g²+g'²)`) — an externally-declared formula, not derived here — using ONLY the shared
+registry's `v_EW`, `sin²θ_W`, `α_EM`. Result, reported as computed: `m_W≈77.46` GeV vs PDG's
+`80.377` GeV (**3.63%** off), `m_Z≈88.34` GeV vs PDG's `91.19` GeV (**3.12%** off) — tree-level
+accuracy, exactly as expected for a formula with no radiative corrections included; neither an
+exact match nor a large miss, and reported without adjustment either way. `v1.12`'s own exact
+algebraic identity `m_W=m_Z·cosθ_W` holds to machine precision, as it must (it is not itself
+being tested — the SCALE was the only missing piece, and this script supplied it externally).
+
+**What this does and does not establish**: the registry now genuinely serves two independent
+computations from one shared source — Attempt 9's "no cross-domain consumer" gap is closed for
+this one case. It does **not** derive `m_W`/`m_Z` from the root (the tree-level formula is an
+open, declared import, same status as `v_EW` itself), does **not** feed back into or strengthen
+`Π₀>α` (a separate, parallel use of the same registry, not a chain into item 1), and does **not**
+claim exact agreement with PDG (a few-percent tree-level gap is the expected, honestly-reported
+result). Tier: `fit_calibrated` throughout.
