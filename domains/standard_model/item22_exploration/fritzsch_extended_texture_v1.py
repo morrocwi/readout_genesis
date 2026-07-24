@@ -152,6 +152,8 @@ chosen numerically to jointly best-fit all 3 real CKM angles -- NOT derived, NOT
   constitutes a derivation of Yukawa textures from anything in this repo's own root primitives --
   same open status as before (DEV-SM-003, H6-PROVISIONAL).
 - BYPASSES item 21 in the same way all this session's item-22 work does.
-- Not yet independently adversarially reviewed -- per house discipline, needs that review before
-  being treated as more than a first-pass draft.
+- Independently adversarially reviewed, 2026-07-24 -- verdict SURVIVES, no corrections needed
+  (confirmed the overfitting/circularity concern is real but adequately disclosed and not fatal;
+  confirmed the 1.5x->2x threshold correction was honest self-correction, not goalpost-moving,
+  verified against the actual prior established bar).
 """)

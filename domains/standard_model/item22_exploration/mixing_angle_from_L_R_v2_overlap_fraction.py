@@ -126,7 +126,13 @@ L_R's eigenvalues/eigenvectors here are numerically computed, not exact-Fraction
   fractions this time, not degrees) before any value is treated as informative.
 - Reuses L_R (item 4, DERIVED, docs/root/BORROWED_VS_DERIVED_LEDGER.md) and the retained metric G
   (Section 1.3) exactly as v1 did -- unchanged, still clean of CRRC.
-- Not yet independently adversarially reviewed -- per house discipline, needs that review (this
-  time specifically checking the I1-avoidance claim itself, and re-testing near-degeneracy
-  robustness using overlap fractions) before being treated as more than a first-pass draft.
+- Independently adversarially reviewed, 2026-07-24 -- verdict REFUTED (not SURVIVES): the "I1
+  avoided" claim above was found FALSE. I1/R-completeness was already injected upstream, at the
+  fit_calibrated lambda=exp(-m/v_EW) inputs (item1_generation_resolved_lambda_v1.py) -- the same
+  transcendental dependency acos/atan2 introduced, just moved earlier in the pipeline. This file
+  is KEPT, not deleted, as the honest record of that refutation (matching this domain's practice
+  of logging refuted attempts rather than erasing them) -- see ITEM22_EXPLORATION_LOG.md for the
+  full account. DO NOT cite this file's "overlap fraction" as a working I1-avoidance fix; the
+  actual working construction is gst_mechanism_texture_zero_v1.py's sin^2(theta)=m_d/(m_d+m_s),
+  which is genuinely I1-free because its inputs (m_d, m_s) are raw PDG literals, not exp()-derived.
 """)

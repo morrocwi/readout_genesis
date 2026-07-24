@@ -99,6 +99,8 @@ HONEST FENCE (tier fit_calibrated throughout):
   both still Open); this file only computes their fit_calibrated VALUES from already-known masses,
   which is a real but limited form of progress (an explicit registered number instead of an
   implicit bypass), not a derivation.
-- Not yet independently adversarially reviewed -- per house discipline, needs that review before
-  being treated as more than a first-pass draft.
+- Independently adversarially reviewed, 2026-07-24 -- verdict SURVIVES, no corrections needed
+  (confirmed the sqrt(2)*m_f/v_EW relation is the correct SM identity, independently recomputed
+  multiple values exactly, confirmed the y_t~1 sanity check is meaningful not trivial, and
+  confirmed the honest fence does not overclaim).
 """)
