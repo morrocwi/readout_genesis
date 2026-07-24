@@ -145,6 +145,43 @@ else:
     print("\nAll checks PASS -- all 3 CKM magnitudes AND the Jarlskog invariant within factor of 2,")
     print("via a JOINT fit of 2 real free parameters (D_up, phi).")
 
+print("\n== 4. PARAMETER ECONOMY (recorded per founder's request, 2026-07-24) -- how many free ==")
+print("   parameters did this session's quark-sector construction actually use, vs the real SM ==")
+print("""   READ THIS CAVEAT FIRST, before the numeric claim below (corrected after independent
+   adversarial review, 2026-07-24 -- an earlier draft put this caveat AFTER the number, where a
+   skimming reader could see the headline "20% reduction" before reaching it):
+   (1) The reduction below is NOT free -- it is bought by ADOPTING the Fritzsch texture-zero
+       ansatz (the (1,1)=0 entries in both mass matrices), an unproven theoretical COMMITMENT,
+       not a free parameter count. If nature does not actually realize this texture, the
+       "savings" reflects nothing real about the Standard Model. All 4 targets landing within
+       factor of 2 (Part 3) is WEAK evidence the bet may be on the right track, not proof -- see
+       H6-PROVISIONAL, docs/OPEN_PROBLEM_HYPOTHESES.md, DEV-SM-003's risk field.
+   (2) The "2 parameters" count below is ALSO an undercount in a second way, independently
+       flagged by review: choosing WHICH real sign-pattern to use per sector (found by exhaustive
+       search over 8 combinations, only 1-2 give real solutions -- itself a discrete choice with
+       real consequences for the fit, not counted as a "parameter" here but functionally similar
+       flexibility), and choosing to put BOTH D and phi on the up-sector specifically (rather than
+       splitting them or using the down-sector) are UNSTATED, UNJUSTIFIED modeling choices with
+       their own hidden degrees of freedom -- not counted in the "8 total" below. The true
+       "cost" of this construction is higher than 2 explicit fit parameters suggests.""")
+print("   Real SM (quark sector only, for apples-to-apples comparison): 6 quark masses + 3 CKM")
+print("   angles + 1 CP phase = 10 parameters, ALL independent -- the SM's own Yukawa matrices are")
+print("   generic (no texture-zero constraint), so none of the 10 can be computed from any other.")
+print("   (Standard Chau-Keung/PDG parameterization count, verified by independent review.)")
+sm_quark_params = 6 + 3 + 1
+print(f"   SM_quark_params = 6 masses + 3 angles + 1 phase = {sm_quark_params}")
+print("   This session's construction: 6 quark masses (same inputs, unavoidable) + D_up + phi")
+print("   (2 EXPLICIT fit parameters, though see caveat (2) above for hidden additional choices)")
+print("   = 8 total -- the 3 angles and 1 phase are OUTPUTS of the texture mechanism, not")
+print("   independently-fit inputs.")
+ours_params = 6 + 2
+print(f"   ours_params (explicit only) = 6 masses + D_up + phi = {ours_params}")
+savings = sm_quark_params - ours_params
+ck(f"explicit parameter count is smaller ({savings} fewer, {savings}/{sm_quark_params}="
+   f"{100*savings/sm_quark_params:.0f}%) than the SM's own quark-sector count -- report as a "
+   f"raw fact, NOT as a validated 'economy' claim, per both caveats above",
+   savings > 0, savings)
+
 print("""
 HONEST FENCE (tier fit_calibrated; D_up and phi are 2 OPENLY DECLARED, JOINTLY-FIT free
 parameters -- NOT derived, NOT forced, NOT independent of each other):
@@ -176,4 +213,16 @@ parameters -- NOT derived, NOT forced, NOT independent of each other):
   The magnitude-shift finding, the D-conjugation mechanism (D^dagger@M_real@D verified
   algebraically to equal M_up), the grid-search result, and the Jarlskog formula/indexing were
   all independently reproduced and confirmed accurate.
+- Part 4's parameter-economy comparison (recorded per founder's explicit request), CORRECTED after
+  independent adversarial review (verdict SURVIVES_WITH_CORRECTION): this session's quark-sector
+  construction uses 8 EXPLICIT free parameters (6 masses + D_up + phi) vs the real SM's own 10
+  (6 masses + 3 CKM angles + 1 phase -- verified as the standard Chau-Keung/PDG count), a raw
+  20% reduction in EXPLICIT count only. Two corrections applied: (1) the "not free, bought by an
+  unproven ansatz" caveat is now stated BEFORE the number in Part 4, not only after, so it cannot
+  be read out of context. (2) the "2 parameters" figure is itself disclosed as an undercount --
+  the sign-pattern search (only 1-2 of 8 combinations give real solutions per sector) and the
+  choice to place both D_up and phi on the up-sector specifically are unstated, unjustified
+  modeling choices with their own hidden flexibility, not counted in "8 total." Do not cite "20%
+  reduction" or "parameter economy" as a validated efficiency claim -- report only the raw
+  explicit-count fact, with both caveats, every time.
 """)
