@@ -108,17 +108,30 @@ Grouped by priority. "Still necessary?" was checked against the current merged s
    not attempted — item 2 remains exactly as open as before this note.
 
 ### P1 — root-debt track (SM-G0, architecturally foundational)
-3. G0.1 Path composition (ordered path carrier, identity+associativity) — Coq witness
-4. G0.2 Automorphism group `Aut(F,O)` closed under composition+inverse — Coq witness
-5. G0.3 Localization (node-local representative change factoring through the quotient) — Coq witness
-6. G0.4 Connection transformation `U_{ji}↦h_jU_{ji}h_i⁻¹` DERIVED from transport-commutation (not posited) — Coq witness
-7. G0.5 Holonomy invariant (conjugacy-invariants of `H_C`) — Coq witness
-   *Still necessary: YES — `CLAIM_BOUNDARY.json` still says "SM-G0 not yet built"; none of v1.5–
-   v1.13's architecture-level closures substitute for this. See `ROOT_TO_SM_DAG.md` §"WHERE TO
-   START" for the full six-item spec (G0.6 is already done).*
+3-7. ~~G0.1–G0.5 (path composition, `Aut(F,O)` closure, localization, connection transformation,
+   holonomy invariant)~~ — **RESOLVED, items 3-7 STALE as of 2026-07-24 (audited this session).**
+   All 6 structural sub-gates (G0.1–G0.6) are closed as unconditional `Th_coqc` Coq witnesses:
+   `InfoGaugeAutomorphismGroup.v` (G0.1/G0.2, closed 2026-07-23 commit `92eb769`) and
+   `InfoGaugeLocalizationConnectionHolonomy.v` (G0.3/G0.4/G0.5, closed 2026-07-24 commit
+   `90cefb6`) — see `CLAIM_BOUNDARY.json` keys `sm_g0_1_g0_2_automorphism_group` and
+   `sm_g0_3_g0_4_g0_5_localization_connection_holonomy`, and `SM_INFORMATION_PHILOSOPHY_MASTER.md`
+   §21. Re-verified this session by a fresh, independent `coqc -q` compile of both current `.v`
+   files (clean, exit 0, every `Print Assumptions` call reports "Closed under the global
+   context" — axiom-free). These items were left un-updated across four later same-day edits to
+   this file (`997484d`, `5aeb94c`, `e69c778`, `af81167`, all 2026-07-24) — staleness by omission,
+   not active re-affirmation; this line's own prior "`CLAIM_BOUNDARY.json` still says 'SM-G0 not
+   yet built'" claim was already false against current file content (that string no longer exists
+   anywhere in `CLAIM_BOUNDARY.json`) and is corrected here. **Scope caveat, unchanged from both
+   source-of-truth files' own hedge**: this is a STRUCTURAL closure only ("for arbitrary
+   `(S,R,F,O)`" / "for ANY group `(G,id,mul,inv)`") — it does NOT show `Aut(F,O)`, the frame
+   connection, or holonomy are non-trivial for this project's actual root dynamics; that remains
+   open. (Numbering note, also pre-existing: §1 above calls this "items 1–5"; the actual §2
+   numbering is items 3–7, corrected here, not renumbered to avoid breaking other cross-refs.)
 8. AP20 borrow #3 — self-carrier closure (still fully borrowed)
 9. AP20 borrow #4 — the common quadratic load A4 (still fully borrowed)
-   *Still necessary: YES — `c_self/c_geo=1` is still not root-derived.*
+   *Still necessary: YES — `c_self/c_geo=1` is still not root-derived. (Confirmed still accurate
+   in the same 2026-07-24 audit that resolved items 3-7 — `CLAIM_BOUNDARY.json`'s
+   `not_established` list still carries these as "still fully borrowed".)*
 
 ### P1 — structural prerequisites (each blocks a cluster of P2 items below)
 10. 4D correlation defect `ε_t(b)` — the full block kernel `K_b`, `ρ_t^full(b)` for `b=2` from the
