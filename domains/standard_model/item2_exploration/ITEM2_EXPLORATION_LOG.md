@@ -100,15 +100,70 @@ closure map", by loose analogy to continuum QFT) remains explicitly unattempted 
 CRRC-quarantined — it needs its own from-scratch admissibility square before any construction,
 not resemblance-based borrowing.
 
+## Attempt 2 — `item2_family_index_v2_fit.py`, 2026-07-24: `fit_calibrated`, `N=3`, per DEV-SM-002
+
+Founder authorized a fitting track for item 2, same shape as item 1's DEV-SM-001: "ฟิตค่า ได้นะ
+ไม่ต้อง ดีไรต์ จะเอาไงนายจัดการเลย ขอให้ตรงกับปรัชยาเรา และไสต์การทำงานเรา" (fitting is fine,
+doesn't need to be a from-root derivation, handle it however, as long as it matches our
+philosophy and working style). Declared as `DEV-SM-002` in `DRIFT_CONTRACT.json` (compensating
+controls: tier tag on every occurrence, caveat in the same line, explicit non-weakening of
+`hard_fail_conditions[4]`, borrowed theorem registered in `EQUATION_REGISTRY.md` before use).
+
+**Construction, three explicit ingredients:**
+1. **Borrowed, exact theorem** (Cabibbo 1963; Kobayashi–Maskawa 1973, registered in
+   `EQUATION_REGISTRY.md`): an `N×N` unitary mixing matrix has `(N−1)(N−2)/2` physical CP-
+   violating phases — zero for `N<3`, first nonzero (`=1`) at `N=3`. Verified exactly (plain
+   integer arithmetic) for `N=0..6`.
+2. **Externally observed fact, fed in as input, not derived**: CP violation of this kind is
+   real (CMS `B⁰ₛ→J/ψK⁰`, 2026-07-24 — the same measurement `HANDOFF_NEXT_SESSION.md` §0.-1
+   names as this item's motivating context).
+3. **This framework's own minimality-selection style, explicitly flagged as a POSTULATE**: pick
+   `N := min{N : phase_count(N)≥1} = 3`.
+
+**Result**: `N_generations (fit_calibrated) = 3` — matches the real, observed count. Uses no
+continuous fitted constant at all (only an integer selection over exact integer counts) —
+genuinely minimal-parameter as the founder's instruction asked for.
+
+**Independent adversarial review (2026-07-24, verdict SURVIVES WITH CORRECTION)** required
+three corrections, all applied before this log entry:
+1. **Bug found and fixed**: the script's two phase-count computations disagreed at the `N=0`
+   boundary (one correctly gated to `N≥1`, the other an ungated raw formula giving a spurious
+   `phase_counts[0]=1`). Fixed by gating both identically; does not affect the `N=3` result
+   (`N=0` — no matrix, nothing to observe — was never the selected value).
+2. **Criterion-selection hindsight, now disclosed in the fence**: the same parameter-counting
+   family yields several countable quantities (angles, physical params, phases); "phase count"
+   was selected because it is the CP-relevant one, which is only obvious given the target
+   observation — a different, equally legitimate-looking choice ("angles≥1") would select
+   `N=2`, not `3`. This is a declared fit doing exactly what a declared fit is allowed to do
+   (matching a criterion to the target observation, per DEV-SM-002), but it must never be
+   described as "the only natural choice" — now stated explicitly in the file.
+3. **Minor cleanup**: dropped an unused `Fraction` import and corrected the registry's "exact
+   over ℚ" phrasing to "exact over the integers" (no fractional values ever arise; the earlier
+   phrasing overstated the machinery used).
+Also confirmed by the same review: the postulate/forcing distinction (this construction's
+minimality vs. `SM_INFORMATION_PHILOSOPHY_MASTER.md` §2.2/§3.1's forcing-style minimality) is
+stated loudly and consistently, with no slippage into implying `N=3` is "the" answer;
+`hard_fail_conditions[4]` compliance is clean (no unqualified "derived from root" language
+anywhere); the Cabibbo/Kobayashi–Maskawa attributions are accurate.
+
+**What Attempt 2 does NOT establish**: any derivation, forcing, or from-root necessity of `N=3`;
+that `N=4,5,…` are excluded by anything but the fed-in CP-violation observation; that "nature
+prefers minimal `N`" is anything but an unproven meta-postulate stated as such.
+
 ## Honest status
 
-- Item 2 (generation multiplicity): **`[Open]`, unchanged.** Nothing in this file or
-  `item2_family_index_v1.py` licenses any concrete value, mechanism, or partial derivation.
+- Item 2 (generation multiplicity): **`[Open]`, unchanged at `Th_coqc`/`Dr` tier.** No from-root
+  derivation exists. What DOES now exist: a `fit_calibrated`, minimal-free-parameter, explicitly
+  caveated construction (Attempt 2) that reproduces `N=3`, consistent-with (not forced-by) the
+  observed value, per `DRIFT_CONTRACT.json` DEV-SM-002.
 - Zeroth-order scope-gap finding: `Dr` tier (confirmed by independent adversarial review,
   verdict SURVIVES WITH CORRECTION, correction applied above), not a physics claim.
 - Attempt 1 (`item2_family_index_v1.py`): `Dr` tier, negative/scope-narrowing result (confirmed
   by independent adversarial review, verdict SURVIVES WITH CORRECTION, both corrections applied
   above), not a physics claim. The `ℂ^N` family-slot ansatz it uses is explicitly flagged as
   imported motivation, not a derived/earned structure.
+- Attempt 2 (`item2_family_index_v2_fit.py`): `fit_calibrated` tier per DEV-SM-002 (confirmed by
+  independent adversarial review, verdict SURVIVES WITH CORRECTION, all three corrections
+  applied above). `N=3`, consistent-with observation, NOT derived, NOT forced.
 - Nothing here touches `CLAIM_BOUNDARY.json` or any `run_tests.py` verifier — these are
   exploratory files, not wired into the domain's closed-claim registry.
