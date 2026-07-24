@@ -1,6 +1,25 @@
 {
-  "contract_version": "0.2",
+  "contract_version": "0.3",
   "kind": "FRONTIER_ROADMAP",
+  "declared_deviations": [
+    {
+      "deviation_id": "DEV-SM-001",
+      "requirement_ref": "hard_fail_conditions[12] (Pi0>alpha root-derivation ban)",
+      "date": "2026-07-24",
+      "reason": "After 4 independently-refuted attempts this session to DERIVE Delta_j/alpha/beta from the root grammar (see domains/standard_model/item1_exploration/ITEM1_EXPLORATION_LOG.md), the founder directed a deliberate, openly-declared methodology change: FIT Delta_j/alpha/beta the way the real Standard Model itself is built -- ~19+ free parameters measured/fit to data, not derived from a deeper theory. This is standard, legitimate physics methodology, not a shortcut; the founder's own words: do not demand more of this program than the Standard Model itself delivers.",
+      "risk": "The exact circularity intertwiner_order_vacuum_v1_13.py's own INT-N6 negative control warns about: fitting lambda_j to reproduce known fermion-mass phenomenology and then citing the resulting Pi0>alpha as if it were evidence the order criterion is FORCED by the root, when it was tuned to produce that answer. INT-N6 is NOT weakened or repealed by this deviation -- it still correctly forbids exactly that (an UNDECLARED or mislabeled fit masquerading as a derivation).",
+      "compensating_controls": [
+        "every fitted value MUST be tagged tier fit_calibrated (a new tier, distinct from Th_coqc/finite_diagnostic/Dr/Open -- 'matches an SM_INFORMATION_PHILOSOPHY_MASTER.md, section-21-style closed/exact tier, this is explicitly NOT that')",
+        "every use of a fit_calibrated value or any Pi0 computed from one MUST carry the caveat 'FITTED, not derived from the root; consistent-with, not forced-by' in the SAME sentence/line it is first reported, and in every downstream citation, not just the origin file",
+        "this is declared OPTIONAL, not a new default: Th_coqc/Dr-tier derivation attempts remain the primary, preferred track for item 1; fit_calibrated is a parallel, explicitly-secondary track, not a replacement",
+        "a fit_calibrated result MUST NOT be used to claim end-to-end root-derived Standard Model closure (hard_fail_conditions[6] still applies in full)",
+        "INT-N6 itself is NOT edited or weakened in intertwiner_order_vacuum_v1_13.py -- it continues to correctly forbid the undeclared/circular version of this same move"
+      ],
+      "approved_by": "founder (yaoharee.lt), 2026-07-24, explicit instruction: \"แก้กฎเปิดเผยก่อน แล้วไป (ก) และให้เป็นข้อยกเว้นว่าฟิตได้แต่ต้องประกาศ และให้ถือว่าเป็นออฟชั่น\"",
+      "expires": null,
+      "status": "ACTIVE"
+    }
+  ],
   "hard_fail_conditions": [
     "importing SU(3), SU(2), U(1), or SU(3)xSU(2)xU(1) as a PREMISE (they may appear only as a discovered/labelled endpoint, in comparison text, or as a semantic label attached AFTER a derivation node)",
     "importing quark, lepton, Higgs, gauge-boson, or any named particle as a premise",
@@ -14,7 +33,7 @@
     "calling a local Hessian / curvature at a minimum a PHYSICAL POLE MASS without a spectral-transfer certificate",
     "calling a calibrated decoder (e.g. electroweak_decoder_v0_3) a PREDICTION rather than a calibration-consistency check",
     "citing the SUPERSEDED exponential order-closure ansatz (Z_j=1+zeta e^{kappa r}) as a canonical or active result; the canonical order-vacuum result is intertwiner_order_vacuum_v1_13 (Fock factor (1+lambda r)^d, Z_j(0)=1)",
-    "declaring the order criterion Pi0>alpha PROVEN/FORCED before the primitive costs (Delta_j, alpha, beta) are derived from the root grammar -- it is currently a conditional criterion only"
+    "declaring the order criterion Pi0>alpha PROVEN/FORCED (i.e. root-derived) before the primitive costs (Delta_j, alpha, beta) are derived from the root grammar -- it is currently a conditional criterion only. See declared_deviations[0] for the ONE explicitly-permitted exception: a FITTED (not derived) Delta_j/alpha/beta may be used and Pi0 computed from it, IF AND ONLY IF every occurrence is tagged fit_calibrated and explicitly disclaims 'forced'/'proven'/'derived from the root'. An undisclosed fit, or a disclosed fit later cited elsewhere without its tag and caveat, both remain hard-fail violations of this condition."
   ],
   "prohibited_active_premise_tokens": [
     "SU3",
