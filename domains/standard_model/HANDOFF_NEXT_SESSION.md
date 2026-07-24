@@ -1,7 +1,55 @@
 <!-- Durable handoff for the Standard-Model arc. Committed to git so it survives a closed
      terminal / a fresh Claude session — read this FIRST before touching domains/standard_model. -->
 
-# HANDOFF — Standard Model arc, resume point (as of v1.13, 2026-07-22)
+# HANDOFF — Standard Model arc, resume point (as of v1.13, 2026-07-22; session log 2026-07-24)
+
+## 0.-1 START HERE if you are the fresh session after 2026-07-24's marathon
+
+**The single next task, decided at the end of a very long 2026-07-24 session: attempt item 2,
+generation multiplicity (why exactly 3).** Confirmed that session, by direct grep across every
+`.md` file in this domain and `docs/engineering/GENESIS_STEP_BY_STEP_V3_1.md`: item 2 is
+**genuine virgin territory** — `ROOT_TO_SM_DAG.md` line 77 says plainly `generations (repeated
+classes) + mixing ... 🟥 (count NOT derived)`, and `blind_matter_search_v1_6.py`'s own honest
+fence lists "generation count" as explicitly out of its scope. There is no partial work, no
+buried hint, no existing construction to extend — this needs a genuinely new, from-scratch
+argument, built with the same rigor as everything below (read §0.0 next), not a re-reading of
+existing text.
+
+**Why this is the highest-leverage starting point right now (not item 1):** a real, external
+event on 2026-07-24 (CMS's most-precise-to-date CP-violation measurement in `B⁰ₛ→J/ψK⁰`, matches
+the Standard Model exactly) sits at item 24 on this backlog, chaining back through items 21-23 to
+items 1, 2, 18. The Kobayashi-Maskawa mechanism requires **≥3 generations** for a CKM matrix to
+carry a physical complex phase AT ALL — below 3, this class of CP violation is mathematically
+impossible, not merely unmeasured. So item 2 is the deepest root prerequisite for that entire
+downstream chain, more foundational than previously scoped. See the 2026-07-24 entries under
+item 2 (§2, P0) and item 1 (§2, P0) below for the full chain of reasoning.
+
+**Before attempting anything on item 2, read `item1_exploration/ITEM1_EXPLORATION_LOG.md` in
+full.** It documents 9 real attempts at item 1 that same day (4 derivation attempts adversarially
+REFUTED, 1 openly-declared fit that passed, 3 further probes mixed/negative, 1 infrastructure
+fix) and names TWO reusable diagnostic tools that will very likely bite again on item 2:
+- **Cross-Role Readout Contamination**: re-using a readout established for one question as if it
+  answers a different one (a sign formula read as a cost formula, etc.) — the #1 way today's item
+  1 attempts failed. Item 2 will be tempting to attack by analogy to `SM_INFORMATION_PHILOSOPHY_
+  MASTER.md` §2.2's `k=3` color argument (same numeral, "3") — **do not** reuse that argument for
+  generations without independently building and checking the admissibility square; that specific
+  temptation is exactly what CRRC is named after.
+- **Retained-Degree Insufficiency**: asking a readout to resolve more independently-distinguishable
+  answers than the structure it's read from actually retains (collapses, is underdetermined, or is
+  circular). Before proposing any construction for "why 3 generations," count how many genuine
+  independent degrees of freedom that construction's own retained structure carries, and check it
+  is actually ≥3-valued, not just "3" by assertion.
+
+**Also useful, not required:** `DRIFT_CONTRACT.json`'s `DEV-SM-001` (declared, tagged FIT is
+allowed as a parallel, secondary, OPTIONAL track — never a substitute for derivation) and
+`fit_calibrated_registry.py` (shared PDG/EW constants, reusable, avoid re-typing literals) are
+both available if a fit-tier probe on item 2 becomes useful — but derivation is still the primary
+goal for item 2, exactly as it was for item 1.
+
+**Process reminder** (this is what caught 2 near-misses on 2026-07-24, including one inside the
+CRRC finding itself while it was being written): independently adversarially review anything
+before committing to git, even Dr-tier documentation — a "sounds right when I write it" pass is
+not sufficient, spawn a separate reviewer with instructions to actively try to refute the claim.
 
 ## 0. How to resume in one paragraph
 Read `INDEX.md` (version timeline) and `STANDARD_MODEL_CLOSURE.md` (current node-level status
