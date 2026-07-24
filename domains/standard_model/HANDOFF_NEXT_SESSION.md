@@ -3,6 +3,19 @@
 
 # HANDOFF — Standard Model arc, resume point (as of v1.13, 2026-07-22; session log 2026-07-24)
 
+## 0.-2 READ FIRST, EVEN BEFORE 0.-1: check for a broader "closing the SM" framework before citing status
+
+This session's canonical (private) twin repo caught and fixed a real gap: this domain's whole
+item1-35 exploration ran for a full session without checking whether a broader, pre-existing
+"express the SM in minimal master equations + empirical residue" framework already existed
+elsewhere in the private canonical repo. This public repo does not carry that broader framework
+(it is private), but the LESSON generalizes: before citing "the SM is open/closed" from this
+domain alone, check whether a fresh session already reconciled the two views in the canonical
+repo, and prefer that reconciliation's framing. One concrete, self-caught error from that
+reconciliation, already fixed here: `item25_exploration/beta_function_coefficients_v1.py`
+originally overclaimed being "the first runnable artifact" for its beta-function coefficients;
+corrected in that file to a narrower, accurate claim (see its own honest fence).
+
 ## 0.-1 START HERE if you are the fresh session after 2026-07-24's marathon
 
 **The single next task, decided at the end of a very long 2026-07-24 session: attempt item 2,
