@@ -82,6 +82,16 @@ field before citing this result anywhere):
   item 1's own already-fit_calibrated m_d,m_s) match between a borrowed 1968 phenomenological
   relation and this repo's own PDG masses, landing within ~0.6% of the current PDG |Vus| central
   value.
+- CROSS-FILE INCONSISTENCY, found and disclosed 2026-07-24 (read
+  gst_mechanism_texture_zero_v1.py's Part 6 for the full reconciliation): this file's `sin(theta_C)
+  := sqrt(m_d/m_s)` is the commonly-cited GST "simple form," which approximates `sin~=tan~=theta`
+  at small angle. The RIGOROUS texture-zero-matrix derivation (gst_mechanism_texture_zero_v1.py)
+  shows the mechanism actually forces `tan(theta)=sqrt(m_d/m_s)` EXACTLY -- and `sin(theta)`
+  computed properly from that exact tangent is `0.218218`, a `3.01%` PDG mismatch, WORSE than this
+  file's headline `0.62%`. Both numbers are independently correct for the different trig function
+  each literally computes; citing this file's `0.62%` as if it came from the SAME exact mechanism
+  as the rigorous tan-derivation would be misleading -- it is the cruder small-angle shorthand,
+  which happens (not for a derived reason) to match PDG better than the exact relation does.
 - WHAT THIS DOES NOT ESTABLISH: (a) any derivation of theta_12's value from the root -- the GST
   relation is an externally-borrowed 1968 formula, cited not derived. (b) theta_13 or theta_23 --
   both tested analogous mass-ratio candidates (sqrt(m_c/m_t), sqrt(m_s/m_b), and their product)
