@@ -26,7 +26,7 @@
 | Hypercharges + cubic anomaly | forced exactly, `Th_coqc` (given SM rep content as a fixture) |
 | All-order character `u(κ), v(κ)` | closed to all orders, high-precision numerical (not an interval proof) |
 | Link intertwiner | `‖P‖≤1` (contraction), `Th_coqc` — representation tail closed |
-| Surface entropy bracket | **3.875 ≤ μ₄^admissible ≤ 7.084** |
+| Surface entropy bracket | **3.875 ≤ μ₄^admissible ≤ 7.084** (unchanged; exploratory narrowing attempt logged in [`mu4_exploration/MU4_INVESTIGATION_LOG.md`](mu4_exploration/MU4_INVESTIGATION_LOG.md), not yet conclusive) |
 | Confinement window | **κ < 0.321687** |
 
 ## Version timeline

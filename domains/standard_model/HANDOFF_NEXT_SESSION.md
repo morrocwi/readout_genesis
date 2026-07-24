@@ -6,7 +6,7 @@
 ## 0. How to resume in one paragraph
 Read `INDEX.md` (version timeline) and `STANDARD_MODEL_CLOSURE.md` (current node-level status
 matrix) first — they are the source of truth, not this file's prose. This file's job is the
-**priority-ordered open-items backlog** (§2 below, 34 items reviewed and triaged) and the **exact
+**priority-ordered open-items backlog** (§2 below, 34 items reviewed 2026-07-22, +1 exploratory item added 2026-07-24) and the **exact
 next step** (§1). Everything here was reviewed for continued relevance on 2026-07-22 — nothing was
 found obsolete; the discipline (`Th_coqc` / tier-honest / no overclaim) still applies to every new
 result. Read `[[readout-not-truth]]` skill and `SM_INFORMATION_PHILOSOPHY_MASTER.md` before writing
@@ -29,7 +29,7 @@ architecturally prerequisite to ever calling ANY of v1.5–v1.13's results root-
 "exact within a declared architecture." Neither track blocks the other; pick based on what the
 founder wants to see next.
 
-## 2. Full open-items backlog (34 items, reviewed 2026-07-22 — all still necessary)
+## 2. Full open-items backlog (34 items reviewed 2026-07-22 + item 35 added 2026-07-24 — all still necessary)
 Grouped by priority. "Still necessary?" was checked against the current merged state of both repos
 (`main`, both at the same commit as of this handoff) — none were found stale or already closed.
 
@@ -97,6 +97,14 @@ Grouped by priority. "Still necessary?" was checked against the current merged s
     (`domains/quantum/`), not this domain's job; track here only as a known blocking dependency
 34. AP10 one-loop β-slope kinematic weights (`11/3, 2/3, 1/3`) derived from root — representation
     content is currently SM input; the three weights themselves are not derived
+35. **Exact `μ₄^admissible`** (narrow/close `[3.875129794, 7.084096604]`) — an exploratory
+    2026-07-24 attempt is logged in [`mu4_exploration/MU4_INVESTIGATION_LOG.md`](mu4_exploration/MU4_INVESTIGATION_LOG.md)
+    (11 findings, several dead ends ruled out, current most-promising direction: reframe closed
+    admissible surfaces as `Ker(∂₂)` over GF(3) — a linear code — and compute its weight
+    enumerator via a trellis/transfer-matrix method; validated exact at a small window (R=1),
+    hit a real memory near-miss at R=2 that needs a bandwidth-reduction fix before retrying).
+    **Read that log before re-attempting — it names four confirmed dead ends.** Nothing in it
+    is `Th_coqc`; does not change this domain's established bracket.
 
 ## 3. Explicit non-goals (do not attempt without founder direction)
 - Predicting any physical number not already used for calibration-consistency.
@@ -111,9 +119,10 @@ Grouped by priority. "Still necessary?" was checked against the current merged s
 - `SM_INFORMATION_PHILOSOPHY_MASTER.md` — canonical narrative synthesis, same discipline.
 - `CLAIM_BOUNDARY.json` / `DRIFT_CONTRACT.json` — machine-readable fences (v0.2, scoped).
 - `ROOT_TO_SM_DAG.md` / `UNIFIED_FORCE_DAG.md` — DAG maps, two-axis (root vs. declared-architecture).
-- `run_tests.py` — 24 Python verifiers + 24 Coq witnesses, all PASS/Closed; run before any new claim.
+- `run_tests.py` — 24 Python verifiers + 26 Coq witnesses, all PASS/Closed; run before any new claim.
 - Both repos (`research_universal_solver` canonical + `readout_genesis` public twin) mirror
   `domains/standard_model/` byte-identically — always edit both, verify with `diff -rq`.
+- `mu4_exploration/MU4_INVESTIGATION_LOG.md` — exploratory research log (item 35 above), not a claim.
 - The build pattern for a new version: exact-Fraction Python verifier (independent recompute of
   every founder-given number) → `formal/Info*_attempt.v` Coq witness (`Print Assumptions` Closed) →
   domain copy (scrub `_attempt`) → wire into `run_tests.py` → `CLAIM_BOUNDARY.json` entry → `INDEX.md`
