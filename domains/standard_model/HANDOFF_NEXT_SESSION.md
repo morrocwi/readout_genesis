@@ -22,6 +22,16 @@ named two next versions explicitly:
   item §2.13 (`⟨Ξ⟩≠0` from an action) and §2.15 (the primitive cost ratios behind v1.11's isotropy) —
   **all three reduce to "derive the primitive rewrite-cost functional from `S_UF`"**. Solving one
   well may substantially inform the other two; consider them as one research thread, not three.
+  **2026-07-24 exploration (`item1_exploration/ITEM1_EXPLORATION_LOG.md`):** four independent
+  attempts at `Δ_j`/`α` this session were all adversarially REFUTED (read the log before
+  re-attempting — it names the exact flaw in each). The exploration converged on one useful
+  diagnostic (a named failure mode, "Cross-Role Readout Contamination" — reusing a readout
+  established for one question as if it answered a different one) and one honest re-identification:
+  the "price per elementary retained-distinction transition" this item is chasing is `M_n`, the
+  `Φ↔Ψ` exchange rate in II.8a's own DRL action — the SAME quantity `READOUT_GENESIS_CORE.md`
+  §II.6 already flags as "POSITED, not derived" after 8 independent failed attempts. Item 1 is
+  therefore not a smaller, SM-local problem — it is the master equation's own oldest open
+  question, met again here. Still fully `[Open]`.
 - **v1.15 — Generation Multiplicity**: derive why there are (if there are) exactly 3 generations,
   without feeding the count.
 Root-debt track (parallel, independent): **SM-G0.1–G0.5** (§2 items 1–5) — closing these is
