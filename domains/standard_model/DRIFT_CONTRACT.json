@@ -35,6 +35,23 @@
       "approved_by": "founder (yaoharee.lt), 2026-07-24, chat instruction: \"ฟิตค่า ได้นะ ไม่ต้อง ดีไรต์ จะเอาไงนายจัดการเลย ขอให้ตรงกับปรัชยาเรา และไสต์การทำงานเรา\"",
       "expires": null,
       "status": "ACTIVE"
+    },
+    {
+      "deviation_id": "DEV-SM-003",
+      "requirement_ref": "hard_fail_conditions[4] (mixing-angle-derived-from-unrestricted-root ban) -- this deviation does NOT lift that ban; it authorizes an openly-declared FIT for one CKM angle, same shape as DEV-SM-001/DEV-SM-002",
+      "date": "2026-07-24",
+      "reason": "Item 22 (CKM/PMNS mixing angles) is unblocked to fit_calibrated tier by item 2's N=3 fit (DEV-SM-002) but has no root-derivation. Founder authorized fitting broadly for this session's mixing-angle work, explicitly comparing this project's scope to the real Standard Model's own ~19+ fitted free parameters (\"คำนวนตรงไหมกผ้พอ sm ก็ฟิตตั้ง19 ค่า\" -- what matters is whether the calculation is correct, not purity; real SM fits ~19 values too). A root-native-formula construction was attempted first (mixing_angle_from_L_R_v1/v2.py, item22_exploration/) and REFUTED on its core claims (near-degenerate eigenvalues made the numeric result unstable; the v2 'fix' for continuum/I1 injection was found cosmetic, not substantive, by independent review) -- logged, not deleted, in item22_exploration/ITEM22_EXPLORATION_LOG.md. This deviation authorizes the alternative, working, openly-borrowed-formula track instead.",
+      "risk": "Same INT-N6-shaped risk DEV-SM-001 already names: citing a fitted value's agreement with data as if it were forced/derived, rather than a declared fit to real Standard Model data using an externally-borrowed 1968 formula (Gatto-Sartori-Tonin). Additional risk specific to this item: item 22's real dependency chain (HANDOFF_NEXT_SESSION.md) is 'needs item 2 + item 21 (Yukawa coefficients)' -- item 21 remains fully [Open]. This construction BYPASSES item 21 by substituting externally-measured PDG quark masses directly for the not-yet-derived Yukawa couplings; this bypass must be named explicitly in every occurrence, not left implicit the way an earlier draft of this work did (caught by independent review of the underlying construction before this deviation was written).",
+      "compensating_controls": [
+        "every value from this construction MUST carry tier tag fit_calibrated and the caveat 'FITTED (externally-borrowed 1968 formula + real PDG masses), not derived from the root; consistent-with, not forced-by' in the same line/sentence it is reported",
+        "every occurrence MUST explicitly state this bypasses item 21 (Yukawa coefficients, still fully [Open]) by substituting measured masses for the not-yet-derived couplings -- never presented as if item 21 were closed or unnecessary",
+        "the borrowed Gatto-Sartori-Tonin (1968) theorem MUST be registered in docs/root/EQUATION_REGISTRY.md with verified owner/year/citation (Phys. Lett. 28B, 128-130, DOI 10.1016/0370-2693(68)90150-0, verified via primary-source web search 2026-07-24) before or in the same commit as first use",
+        "theta_13 and theta_23 remain explicitly Open -- the analogous mass-ratio ansatze for both were tested and found to miss PDG by factors of 2-5x; this deviation covers ONLY theta_12/Cabibbo, not a general mixing-angle closure",
+        "does not weaken hard_fail_conditions[4]; that condition continues to forbid an unqualified 'mixing angle derived from the root' claim in full"
+      ],
+      "approved_by": "founder (yaoharee.lt), 2026-07-24, chat instruction: \"คำนวนตรงไหมกผ้พอ sm ก็ฟิตตั้ง19 ค่า อย่าเสียเวลาคุยเรื่องพวกนี้\"",
+      "expires": null,
+      "status": "ACTIVE"
     }
   ],
   "hard_fail_conditions": [
