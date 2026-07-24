@@ -308,3 +308,34 @@ Laplacian (a different graph, avoiding CRRC). Item 1 remains fully Open. Real, u
 result: narrows the search — any future graph/Laplacian attempt at item 1 must include an explicit,
 disclosed symmetry-breaking ingredient, not rely on bare graph structure alone.
 
+
+
+## Attempt 11 — deepened negative: the real obstruction is generation-UNIFORMITY, not mere symmetry, 2026-07-25
+
+Founder correction to Attempt 10: this project already has a genuinely asymmetric-but-BALANCED
+root-native structure — the reader/record `(Φ,Ψ)` apparatus (II.8a,
+`source_root/READOUT_GENESIS_CORE_SNAPSHOT.md` line ~1017) — that might supply the missing
+symmetry-breaking. `item1_exploration/attempt11_phi_psi_apparatus_still_degenerate_v1.py` builds
+the smallest honest instance of II.8a's own tensor-product operator (`𝔾_n = L_{G_n}⊗I_F +
+I_{G_n}⊗C_F + C_int,n`, split symmetric/skew exactly as II.8a defines): 3 generations, Φ
+propagating forward around the cycle, Ψ backward, a local uniform-rate Φ↔Ψ exchange `M_n` (the
+same symbol II.8a's own DRL action uses). Tested both symmetric and skew `M_n` (II.8a's own
+`𝔾^(+)`/`𝔾^(-)` split) — **neither resolves the degeneracy**. Self-caught in-file: eigenvalue
+realness is not guaranteed (complex at M=0.5, real at M=1.0/1.7/2.3), corrected to read degeneracy
+by magnitude, the physically meaningful quantity. Deeper reason, directly verified: the full
+operator commutes with the generation-cyclic (Z3) symmetry for ANY *uniform* rate, however richly
+structured the per-node rule — uniformity across generations, not symmetric-vs-directed shape, is
+the real obstruction. CRRC guard: does NOT identify this `M_n` with item 1's actual `ε/α/κ_j` —
+the standing admissibility-square gap from the Synthesis section above remains untouched either way.
+
+Independently adversarially reviewed — SURVIVES, no required corrections (the commutation claim,
+the load-bearing one, was independently reverified and confirmed algebraically general: `L_phi`,
+`L_psi` are both polynomials in the cyclic shift, hence automatically commute with it; stress-tested
+that non-uniform rates correctly break commutation). One optional hedge applied: "generalizes and
+strengthens Attempt 10" is true of the *mechanism* (a strictly weaker sufficient condition — Z3/
+uniformity alone forces degeneracy, not full S3-invariance), not of the per-instance numeric
+conclusion (a different flavor of degeneracy — partial magnitude-collapse vs. exact 2-eigenvalue
+collapse). Item 1 remains fully Open. Narrows the search further: any future attempt needs an
+explicit, disclosed, GENERATION-VARYING root-native input, not merely a richer but still
+generation-uniform construction.
+
