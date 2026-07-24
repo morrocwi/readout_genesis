@@ -145,3 +145,29 @@ the same *category* of unsolved problem as every other coupling constant in this
   branch's own retained-load functional (the T1b pattern — `F → Face 8 → G` — applied to an
   actual SM-internal-space functional that does not yet exist) or a direct derivation of `M`
   itself — not a reinterpretation of existing text.
+
+## Attempt 5 — `fit_calibrated` tier (DEV-SM-001), 2026-07-24: PASS, with one correction
+
+After `DRIFT_CONTRACT.json` v0.3 openly declared `DEV-SM-001` (founder-directed: fit
+`Δ_j`/`α`/`β` to real Standard Model data, the way the real Standard Model fits its own ~19+
+free parameters, instead of demanding a from-root derivation this program has not achieved),
+`item1_fit_calibrated_v1.py` computes `λ_j := exp(-m_j/v_EW)` from real PDG fermion masses
+(geometric mean per branch) and `v_EW=246` GeV, giving `Π₀ ≈ 6.9888` — close to v1.13's own
+`Π₀≤7` no-go ceiling — with `α` reported as a consistency range (`α<Π₀`), not a manufactured
+point value.
+
+**Independent review caught one real error before commit**: the first draft justified choosing
+`v_EW=246` GeV by claiming v1.12 "already identifies" that scale. **False** —
+`order_higgs_closure_v1_12.py`'s own honest fence states the scale is explicitly `[Open]`,
+"NOT a prediction" (`v = Fr(2) # arbitrary couplings/scale (NOT predicted)`). Corrected: `v_EW`
+is used here for one reason only — it is the real-world SM value, and this is an openly-declared
+fit to real data (DEV-SM-001), not inherited from any other closed result in this repo. The
+review also caught the "`Π₀` near its ceiling matches the hierarchy-problem fine-tuning puzzle"
+line overselling what is largely an algebraic artifact of `exp(-x)` at small `x` (guaranteed
+whenever `m_j≪v_EW`, not an independent confirmation) — softened accordingly. PDG values and
+`v_EW=246` GeV itself were both independently confirmed accurate.
+
+**Status**: `fit_calibrated` tier, PASS after correction. `Π₀≈6.9888`, `α<Π₀` — FITTED, not
+derived from the root; consistent-with, not forced-by. Does not touch item 1's `[Open]` status
+at `Th_coqc`/`Dr` tier, does not derive the per-generation mass hierarchy (branch-level `λ_j`
+only — that remains item 2's job), and does not license any end-to-end Standard Model claim.
