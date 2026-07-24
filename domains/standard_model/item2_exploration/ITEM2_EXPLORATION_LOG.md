@@ -66,12 +66,49 @@ gauge transformations. Only once such a structure exists, with its own from-scra
 admissibility square, does "what caps its count at 3 (if anything)" become an answerable
 question rather than premature.
 
+## Attempt 1 — `item2_family_index_v1.py`, 2026-07-24: gauge anomaly cannot bound N (negative, scope-narrowing)
+
+Formalizes the actual family-index slot the finding above says is missing: total matter space
+`V_R ⊗ ℂ^N`, where every gauge automorphism `h∈𝒜` (`G0.1`–`G0.5`, closed) acts only on `V_R`
+and as the identity on `ℂ^N`. Tests whether gauge-anomaly-freedom — the one per-generation
+consistency condition this domain has already closed (`hypercharge_global_quotient_v1_5.py`) —
+constrains `N`. Result, reusing v1.5's own closed hypercharge values exactly: local mixed
+anomalies (`A_grav`, `A_111`) and the global Witten SU(2) doublet-parity condition are all
+**linear in `N`**, hence identically satisfied (zero, or even) for every `N≥0` — verified by
+direct computation for `N=0..7`. **Rules out gauge-anomaly-freedom as the closure condition
+that could bound generation count**, before any further work is spent chasing that direction.
+
+**Independent adversarial review (2026-07-24, verdict SURVIVES WITH CORRECTION)** required two
+corrections, both applied to the script's own honest-fence text before this log entry:
+1. The `ℂ^N`/trivial-gauge-action shape is **not merely "unverified in Coq"** — it borders on
+   the practice `SM_INFORMATION_PHILOSOPHY_MASTER.md`'s own opening rule forbids (physical
+   names/motivations fed as premises rather than earned): the shape's actual justification
+   ("gauge can't rotate top into charm") is imported from known real-world SM phenomenology,
+   not built from anything `G0.1`–`G0.5` actually closes (those close single-frame
+   composition/inverse/localization/holonomy; nothing about multi-copy carriers). This must be
+   treated as a physics-motivated **working ansatz**, not an established, earned structure.
+2. The anomaly-blindness result is **not new physics** — it is well-known/textbook in real
+   physics that anomaly-freedom is generation-blind. The genuine, modest contribution is
+   re-deriving it exactly on this framework's own closed numbers, narrowing the in-repo search
+   space — not a discovery. Overstated "CONCLUSION" language in the script was softened
+   accordingly.
+
+**What Attempt 1 does NOT establish**: any value of `N`; that the `ℂ^N` ansatz is earned rather
+than imported; that no OTHER closure condition could bound `N`. The named-but-unbuilt next
+candidate (an index-theorem-style "net chirality count as a topological invariant of the
+closure map", by loose analogy to continuum QFT) remains explicitly unattempted and
+CRRC-quarantined — it needs its own from-scratch admissibility square before any construction,
+not resemblance-based borrowing.
+
 ## Honest status
 
-- Item 2 (generation multiplicity): **`[Open]`, unchanged.** Nothing in this file licenses any
-  concrete value, mechanism, or partial derivation.
-- This finding: `Dr` tier, a scope-gap/methodological note (confirmed by independent
-  adversarial review, verdict SURVIVES WITH CORRECTION, correction applied above), not a
-  physics claim.
-- Nothing here touches `CLAIM_BOUNDARY.json` or any run_tests.py verifier — no code changes
-  outside this log.
+- Item 2 (generation multiplicity): **`[Open]`, unchanged.** Nothing in this file or
+  `item2_family_index_v1.py` licenses any concrete value, mechanism, or partial derivation.
+- Zeroth-order scope-gap finding: `Dr` tier (confirmed by independent adversarial review,
+  verdict SURVIVES WITH CORRECTION, correction applied above), not a physics claim.
+- Attempt 1 (`item2_family_index_v1.py`): `Dr` tier, negative/scope-narrowing result (confirmed
+  by independent adversarial review, verdict SURVIVES WITH CORRECTION, both corrections applied
+  above), not a physics claim. The `ℂ^N` family-slot ansatz it uses is explicitly flagged as
+  imported motivation, not a derived/earned structure.
+- Nothing here touches `CLAIM_BOUNDARY.json` or any `run_tests.py` verifier — these are
+  exploratory files, not wired into the domain's closed-claim registry.
