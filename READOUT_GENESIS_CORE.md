@@ -1076,7 +1076,7 @@ being checked term by term, not asserted once and left unaudited.
 |---|---|---|---|
 | `M ∂²_t Φ` | memory / inertia | `[Dr]`, forcing attempts `[finite_diagnostic]` (failed) | **`M` is POSITED, not derived.** Direct forcing of `M` from more primitive structure was attempted and failed **8×**. What *is* established: mass is a **readout** of `τ_c`, via `m = ħ/(2c²τ_c)`, and `τ_c` is **discrete and logically prior to mass** (founder-locked). Only the **quantum regime** meaningfully exercises `M` at all — the `D/M` ratio checked against QuTiP gave a residual of `7.6×10⁻⁴` `[finite_diagnostic]`, i.e. `M` is empirically load-bearing only where quantum-scale readouts are being taken; elsewhere in the regime map (II.7) it is negligible or absent, not merely small. **Note against row-adjacency confusion:** turbulence does **not** live in this `M ∂²_t Φ` term — despite sitting next to it in this table, `M` is second-order and linear. Turbulence lives in the nonlinear `∇V` / `(u·∇)u` term below; the inertia that actually governs turbulent behavior is the first-order relaxation constant `τ_R`, not `M` (see the `∇V(Φ)` row and II.8). |
 | `D ∂_t Φ` | damping / smoother / drain | `[finite_diagnostic]` | Well-behaved as a linear damping term at the telegraph/spine level. Its deeper identity is `1/τ_c`-flavored memory decay (II.1–II.2). Critically — see II.8 — `D` here is **not** the same object as the first-order relaxation constant `τ_R` that governs RTPE turbulence; conflating the two is one of the mistakes the three-layer split (II.8) exists to prevent. |
-| `K · L_R Φ` | graph/operator transport; principal symbol → metric readout | `[Th_coqc]` for the admissibility/eigenmode structure itself; `[Open]` for the full multimode extension | `L_R` is a **full operator on a multimode state**, not a scalar `λφ`. Judging term behavior by the scalar-eigenmode reduction (`L_R φ_k = λ_k φ_k`, PART III Face 1) silently discards off-diagonal and skew coupling between modes — the **Scalar-Eigenmode Reduction Error**. The proposed fix decomposes `L_R = L_R^(+) + L_R^(−)` under the **retention metric `G`** (not a naive transpose), giving a principled place for skew/rotational coupling to live. This metric-`G` / `L_R`-antisymmetry algebra is `[Dr]`/`[Open]`, **pending test T1** — it must not be asserted as proven. What has already narrowed: the **two-field wall** (chemostat / Lotka–Volterra / MHD-style coupled systems) shrank, because multimode-plus-skew `L_R` handles *linearized* two-field cases without changing the master equation at all. (see V.13a, and the principle-level resolution in A.10: field-count ≠ domain-count) The remaining gap is **endogenous, state-dependent `L_R[I_R]`** — an operator that depends on the state it is acting on — held open as test **T2**. |
+| `K · L_R Φ` | graph/operator transport; principal symbol → metric readout | `[Th_coqc]` for the admissibility/eigenmode structure itself; `[Open]` for the full multimode extension | `L_R` is a **full operator on a multimode state**, not a scalar `λφ`. Judging term behavior by the scalar-eigenmode reduction (`L_R φ_k = λ_k φ_k`, PART III Face 1) silently discards off-diagonal and skew coupling between modes — the **Scalar-Eigenmode Reduction Error**. The proposed fix decomposes `L_R = L_R^(+) + L_R^(−)` under the **retention metric `G`** (not a naive transpose), giving a principled place for skew/rotational coupling to live. This metric-`G` / `L_R`-antisymmetry algebra is `[Th_coqc]` **for the abstract G-adjoint case** (T1 closed 2026-07-24, `InfoRetentionMetricSkewDecomposition_attempt.v`); concrete instantiation for any specific `L_R`/domain remains `[Dr]`/`[Open]` pending **T1b** — see V.13a. What has already narrowed: the **two-field wall** (chemostat / Lotka–Volterra / MHD-style coupled systems) shrank, because multimode-plus-skew `L_R` handles *linearized* two-field cases without changing the master equation at all. (see V.13a, and the principle-level resolution in A.10: field-count ≠ domain-count) The remaining gap is **endogenous, state-dependent `L_R[I_R]`** — an operator that depends on the state it is acting on — held open as test **T2**. |
 | `∇V(Φ)` | nonlinear potential / cascade / restoring structure | `[finite_diagnostic]` (audit only) | **Turbulence correction (2026‑07‑21): turbulence is NOT carried by the linear `M ∂²_t Φ` term.** It lives here, in the nonlinear structure — concretely in the paraproduct term `(u·∇)u` once the spine PDE is read out in a fluid/velocity face. The inertial quantity that actually governs turbulent behavior is the **first-order relaxation-memory constant `τ_R`**, not `M`. This is a correction to any earlier framing that treated turbulence as an inertial (`M`-term) phenomenon. |
 | `J` | source / drive | `[Dr]` (boundary data by construction) | External forcing/injection. Always supplied from outside the trunk — never derived from `M, D, K, L_R, V` themselves. This is deliberate: `J` is where domain-specific driving enters without contaminating the universality claim for the other five terms. |
 | `η` | residual / turbulence / irreducible mismatch | `[finite_diagnostic]` where measured, `[Open]` in general | The slot that keeps the equation honest about what it does *not* close. In the RTPE layer (II.8) this becomes the concrete forcing residual `η_R` in `S_R + η_R`. A **FAIL-ABLE gate law** applies to any claim built on `η`: a Type-P evidence gate needs **both** a passing *and* a failing machine-derived control; a claim resting on `η` alone with no demonstrated failure mode is Type-U convention, not evidence, and must be labeled as such. |
@@ -1254,9 +1254,11 @@ the exact algebra V.13a's Scalar-Eigenmode Reduction Error repair invokes, given
 than only named:
 
 ```
-𝔾_n^(+) = (𝔾_n + 𝔾_n^T)/2,     𝔾_n^(-) = (𝔾_n - 𝔾_n^T)/2            [Dr]/[Open], pending T1
+𝔾_n^(+) = (𝔾_n + 𝔾_n^adjG)/2,   𝔾_n^(-) = (𝔾_n - 𝔾_n^adjG)/2         [Th_coqc] (abstract case, T1 closed 2026-07-24) / [Open] (concrete 𝔾_n instantiation, T1b)
 
-z^T 𝔾_n^(-) z = 0     (skew part carries oriented transfer/rotation, no self-diagonal contribution)
+z^T 𝔾_n^(-) z = 0     (skew part carries oriented transfer/rotation, no self-diagonal contribution
+                        — proven in general for the G-adjoint split; NOT yet verified for this
+                        specific 𝔾_n, see V.13a)
 ```
 
 The symmetric part `𝔾_n^(+)` carries restoration/storage; the skew part `𝔾_n^(-)` carries oriented,
@@ -2732,7 +2734,7 @@ event-resolved real data** — that test is pre-registered future work, and unti
 ledger's specific numeric lineage claims for any concrete quantum→biology chain remain `[Open]`,
 even though its architecture and the I_Q accounting identity are `finite_diagnostic`.
 
-### V.13a The Scalar-Eigenmode Reduction Error, and the Metric-G Repair (PROPOSED, pending T1)
+### V.13a The Scalar-Eigenmode Reduction Error, and the Metric-G Repair (T1 CLOSED abstractly, 2026-07-24; concrete instantiation still open as T1b)
 
 A companion 2026-07-21 finding names precisely *why* naive single-quotient bridges like the failed
 `q_Q`-only case above go wrong, across several leaves at once (V.5's complex-systems graph, V.6's
@@ -2760,11 +2762,28 @@ two-field systems without any change to the master PDE of IV.4. What remains ope
 nonlinear case: **endogenous state-dependent L_R[I_R]**, where the operator itself depends on the
 state it is acting on — this is recorded as the open test **T2**.
 
-Tier honesty on this whole repair, stated as plainly as the founder ontology demands: **the
-metric-G / L_R^(±) antisymmetry algebra is PROPOSED, pending test T1. Do not assert it as proven.**
-It is a well-motivated repair to a correctly-diagnosed error, not yet a checked result. When this
-book or any downstream document invokes multimode skew-coupling to explain a leaf's behavior, that
-invocation inherits this PROPOSED tag until T1 reports.
+**T1 result (2026-07-24, abstract case CLOSED):** the identity this repair needs —
+`z^T (L_R^(-)) z = 0` under the retention inner product, for the G-adjoint (not naive-transpose)
+skew part — is now proven `[Th_coqc]` **as a general fact about any G-adjoint decomposition, given
+G invertible**: `InfoRetentionMetricSkewDecomposition_attempt.v` (`formal/`), theorem
+`retention_skew_quadratic_form_vanishes`, axiom-free (`Print Assumptions`: Closed under the global
+context), fully abstract (no Section/Variable/Hypothesis, explicit ∀-premises). A companion
+numeric fixture (`t1_metric_g_skew_verify.py`) confirms it on a concrete `G≠I` case AND confirms
+the **negative control**: the naive-transpose split genuinely does NOT have this property when
+`G≠I` — this is the concrete demonstration of why "not naive transpose" above is load-bearing, not
+stylistic. Independently adversarially reviewed (non-vacuity + circularity + overclaim-scope
+checks, 2026-07-24): PASS.
+
+**What T1 does NOT yet close (tracked separately as T1b):** the proof establishes the algebra in
+the abstract — it does not construct the concrete retention metric `G` for the real `𝔾_n` operator
+of II.8a (`L_{G_n}⊗I_ℱ + I_{G_n}⊗C_ℱ + C_int,n`), confirm `G` is invertible there, or verify that
+`𝔾_n`'s actual G-adjoint matches the assumed form. Until T1b closes, citing this repair as
+established for any *specific* domain (including the Standard Model's intertwiner-cost items —
+see `domains/standard_model/HANDOFF_NEXT_SESSION.md` item 1) remains **`[Dr]`/`[Open]`, exactly as
+before** — T1 removes the mathematical uncertainty about whether the decomposition *could* work at
+all; it does not supply the concrete numbers. Do not read this section as licensing any concrete
+`Δ_j`, `κ_j`, or `Π₀>α` claim (see `domains/standard_model/DRIFT_CONTRACT.json`'s explicit
+hard-fail on exactly that move) — none of that is touched by this file.
 
 **Principle-level cross-reference:** the question this section answers at the technical level —
 does handling a coupled system require *two fields*, or one multimode operator with skew
@@ -2811,7 +2830,10 @@ what remains untested rather than letting silence be mistaken for a checked resu
   sound but untested on event-resolved data. **TBD.**
 - **Domain-discovery engine (V.0) on real chemostat data:** adversarial battery passed on
   synthetic/proxy tapes; real-data run is pre-registered, not yet executed. **TBD.**
-- **Metric-G / L_R^(±) skew-coupling repair (V.13a):** PROPOSED, pending test T1. **TBD.**
+- **Metric-G / L_R^(±) skew-coupling repair (V.13a):** T1 (abstract G-adjoint algebra) CLOSED
+  `[Th_coqc]` 2026-07-24 (`InfoRetentionMetricSkewDecomposition_attempt.v`). Concrete instantiation
+  for any specific `L_R`/domain (including Standard Model item 1's `Δ_j`) remains open as **T1b**.
+  **TBD** (T1b only).
 - **Endogenous state-dependent L_R[I_R] (test T2), the remaining two-field-wall gap:** open;
   the linearized cases are handled, the general nonlinear case is not. **TBD.**
 - **6 of 8 physics interpretation cards (V.1/V.2):** downgraded to `[Open]` by the 2026-07-21
