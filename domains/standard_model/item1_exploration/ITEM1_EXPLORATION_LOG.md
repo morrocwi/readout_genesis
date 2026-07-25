@@ -576,3 +576,43 @@ as a candidate PR alongside it for comparison, not yet integrated as canonical. 
 semantic continuity, identifiability/RDI sufficiency, negative-control rigor, path/branch
 segmentation encoding, and whether shared-file integration should happen before selecting one.
 
+## Addendum to Attempt 18 — bias diagnosis: the OLS fit's real mechanism, 2026-07-25
+
+The parallel team's own review of this PR correctly flagged the scalar OLS fit
+(`M_hat = sum(a_n*y_n)/sum(a_n^2)`) as an errors-in-variables (EIV) estimator — both the regressor
+and target are computed from the same noisy observed field.
+`retained_transition_meter/bias_diagnosis_v1.py` (new file, same branch) identifies the EXACT
+mechanism, quantitatively, not just qualitatively.
+
+**First hypothesis tried, self-caught as WRONG before write-up**: that Reader's y_n reduces
+algebraically (K=1=-a, verified independently by the reviewer to machine precision, 8.3e-17) to
+`y_n = -D·δt^cΦ_n - Φ_n³` — a cubic function of the same noisy Φ — creates a nonlinear noise-
+rectification bias (`E[(Φ+ε)³]` has a `3Φσ²` mean shift). Applying that exact correction changed
+`M_hat` by ~1e-10 relative — utterly negligible against the real ~20% bias. Not the mechanism.
+
+**Real mechanism, confirmed**: classic LINEAR EIV attenuation, driven entirely by unequal signal-
+to-noise ratio between channels. Φ's clean second-difference signal COLLAPSES late in the tape
+(RMS 0.465→0.011, Φ settling toward the double-well fixed point, attempt1's own documented
+behavior) while Ψ's does not (RMS 9.57→14.3). The same absolute observation noise therefore
+attenuates the Reader fit severely (predicted attenuation 0.781, measured M̂/M_true 0.795) while
+leaving Record almost untouched (predicted 0.9993, measured 0.9993) — the classic attenuation
+formula `Var(a_true)/(Var(a_true)+Var(noise))`, applied with the ACTUAL measured variances,
+predicts both channels' bias to within a few percentage points.
+
+**Implication for every candidate that pools Reader+Record into an equal-weight "joint" fit**
+(this repo's own PR #67/#69's design, and `research_universal_solver`'s
+`candidate/retained-transition-meter-v3-synthesis-2026-07-25`): the joint estimate inherits
+Reader's attenuation bias, diluting Record's cleaner signal rather than correcting for Reader's
+noise sensitivity. A variance-weighted joint fit (already-computed noise-floor ratios as weights)
+would be a simpler, more targeted fix than a full errors-in-variables/state-space estimator.
+
+Independently adversarially reviewed — SURVIVES, no required corrections. Reviewer independently
+re-implemented the entire computation from scratch (own simulation, not calling this repo's fit
+functions) and reproduced every number to the digit, including the disclosed wrong-hypothesis
+story's 2.44e-10 negligible effect. Confirmed the 5-percentage-point tolerance is non-decorative
+(actual Reader residual 1.39pp, only ~3.6× margin — could plausibly have failed and did not).
+
+This is a diagnosis, not a fix — no corrected estimator is implemented here. Applies equally to
+all three parallel `M_n`-fitting candidates (this PR, PR #69, and the sibling repo's synthesis
+candidate), since all share the same underlying scalar-OLS-on-noisy-second-differences mechanism.
+
