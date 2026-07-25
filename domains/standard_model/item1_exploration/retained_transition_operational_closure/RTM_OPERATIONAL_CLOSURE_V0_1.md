@@ -90,6 +90,24 @@ The signed exchange and `Delta_candidate` may be computed for diagnostics. `lamb
 semantically locked until primitive closure paths, dimensionless normalization, and real branch
 encoding are independently supplied.
 
+## Scope boundary (required correction, independent review 2026-07-25)
+
+This candidate's directory/title echo item 1's own open branch-closure quantity (also called `M_n`,
+also feeding a `Pi0`/`Delta_j` chain) named in `HANDOFF_NEXT_SESSION.md` as POSITED not derived
+after 8 failed root-native attempts. **They are not the same closure.** This PR calibrates only the
+toy scalar Reader/Record apparatus's own `M` against a synthetic tape with a KNOWN injected
+`M_true=1` -- it does not touch, and is not evidence toward, item 1's still-open root-derivation
+question. `ITEM1_EXPLORATION_LOG.md` already names this exact risk as Cross-Role Readout
+Contamination (CRRC): reusing a readout across two different questions without an established
+admissibility bridge between them. No such bridge is built or claimed here.
+
+Estimator B (replicate-IV) additionally requires two genuinely independent noisy re-measurements
+of the *same* latent trajectory (assumption disclosed in code, `operational_exchange_estimator_v0_1.py`).
+This is a real, nontrivial data requirement: a single real/external dataset (e.g. one QuTiP run,
+one lab record) will typically NOT satisfy it without a deliberately designed replicate-measurement
+protocol. This sits on top of, and does not relax, closure criterion 3 (real external adapter) from
+the prior bias-diagnosis final synthesis -- still open.
+
 ## Status
 
 - candidate only;
