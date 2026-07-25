@@ -7566,6 +7566,30 @@ EQ-070  finite_diagnostic (exact linear algebra on the mother equation's own AFF
         RATIO, not an absolute mass — no GeV/unit conversion is attempted, EQ-068's unit-bridge
         problem remains fully open. (iii) the n↔generation identification is Attempt 13's
         UNPROVEN structural conjecture, neither assumed nor tested here.
+
+EQ-071  finite_diagnostic (exact linear algebra / M-calibrated coupled evolution on a
+        Borrowed/+reals affine operator, same tiering as Attempt 13 — NOT Th_coqc) — 2026-07-25
+        field_sourced_accumulation candidate, merged both repos. Follows EQ-069/070 (which left the
+        accumulation rate as a per-step FREE theta): drives Theta's accumulation from the mother
+        equation's OWN geometry-source law S_Theta = Phi^T (dG/dTheta) Psi = Phi^T G_a Psi, with
+        Phi/Psi evolving via the M-calibrated Reader/Record stepper, so the per-step rate is
+        COMPUTED from the dynamics (no per-step free theta). COMPUTED FACTS (no works/fails
+        judgment — see this Appendix's own Semantic Reading Key, MATERIALIST WORKS/FAILS BIAS entry
+        above; this result is the incident that guard records): (i) no per-step free theta — the
+        increment is S_Theta from the dynamics; (ii) the hierarchy (condition-number spread, the
+        mass-ratio analog) is a DETERMINED function of three graph inputs: M (calibrated), M_Theta
+        (geometry-sector inertia = 2.0, relativity_closure's own value), and the field initial
+        conditions; (iii) strongly SENSITIVE to them — M_Theta swept 1.0→50.0 moves it ~16 orders
+        of magnitude (8.39e15x), field ICs move it ~7.5e8x; (iv) FRAMEWORK-NATIVE reading
+        (stance_for('mass'): mass is a readout, mass ratios = spectral-gap ratios of L_R): M/M_Theta
+        are constants OF the one graph and the hierarchy is a readout of it, so relabeling theta into
+        M_Theta puts the freedom on the graph where the framework says the constants live — M_Theta
+        carries fit_calibrated status (DEV-SM-001), the same as M/v_EW/PDG masses, NOT a defect.
+        Compact-generator control stays at exactly 1x (consistent with EQ-069/070 — non-compactness
+        remains the range driver). REQUIRED FRAMING: the free-parameter COUNT is not reduced (theta
+        → M_Theta + field ICs), but the CHARACTER changes (a per-step tuning schedule → fixed graph
+        constants), and the hierarchy is now a determined graph readout. What fixes M_Theta and the
+        field ICs is OPEN — an internal, legitimately-calibratable graph question, NOT a failure.
 ```
 
 **Bottleneck survey (2026-07-25, CORRECTED same day).** Reading the whole stream in numeric order
