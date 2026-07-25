@@ -531,3 +531,67 @@ mechanism exists (Attempts 13-14, Lorentz non-compactness), every root-native so
 remaining parameter was searched and closed (Attempts 15-16), and the parameter is now openly
 fit_calibrated (Attempt 17) rather than left as an undisclosed gap.
 
+
+## Cross-team candidate roundup for the RTM `M_n` exchange coefficient — selection and merge, 2026-07-25
+
+This is the same DRL `Φ↔Ψ` exchange coefficient `M_n` named in the "Named finding" sections above
+(HANDOFF_NEXT_SESSION.md ~line 91, POSITED not derived), attacked in parallel this session by this
+repo's own line of candidates and a parallel team's line of candidates in the sibling private repo
+(`research_universal_solver`). Full roundup, most recent first:
+
+| candidate | repo/PR | method | mean error (disclosed run) | status |
+|---|---|---|---|---|
+| operational exchange closure v0.1 | readout_genesis PR #73 (this repo) / research_universal_solver (mirrored) | moment-correction + replicate-IV, Reader/Record 5% agreement gate | **0.042948%** (single run), 0.335552% (500-seed mean, σ=1e-5) | **SELECTED — merged to main** |
+| `eiv_corrected_fit_v1.py` | research_universal_solver PR #29 | moment-correction only, single tape | 0.63% mean (well-determined subset) | superseded, candidate branch kept for lineage, not mirrored here |
+| bias-diagnosis final synthesis | readout_genesis PR #72 / research_universal_solver PR #28 | diagnosis only, no corrected estimator | n/a (diagnosis, not an estimator) | closed — the diagnosis question itself, not `M_n` |
+| RTM v3 synthesis | readout_genesis PR #70 / research_universal_solver PR #27 | naive OLS, both sign conventions reported | n/a (bias undiagnosed at the time) | superseded, candidate branch kept for lineage |
+| RTM v1 | readout_genesis PR #68 / research_universal_solver PR #26 | naive OLS | 20.5% (Reader), bias undiagnosed at the time | superseded, candidate branch kept for lineage |
+| RTM v0.1 / v0.2 | readout_genesis PR #67 / #69 | naive OLS + semantic locking | n/a | superseded, candidate branches kept for lineage |
+
+**Selection reasoning.** Selected after: (1) independently re-running the actual code (not a pasted
+summary) in a clean worktree, reproducing every disclosed digit exactly, including the full
+500-seed-pair benchmark sweep; (2) an independent adversarial review that re-derived the
+replicate-IV estimator `M_hat=(a1·y2+a2·y1)/(2·a1·a2)` from first principles and confirmed it is a
+correctly-derived, consistent IV estimator for this errors-in-variables setup (cross-noise terms
+vanish in expectation because the estimator never multiplies same-replicate `a` and `y`); confirmed
+the Reader/Record 5% agreement gate is genuinely load-bearing (ready-fraction collapses
+500/500→38/500 as noise grows, exercised by its own regression tests, not decorative); confirmed
+the two replicate noise draws are genuinely independent (separate RNG seeds, no secret sharing).
+One REQUIRED correction was found and applied before merge (not a code/math bug): the candidate's
+naming echoed this exploration's own still-open item-1 branch-closure `M_n`/`Π₀`/`Δ_j` question
+without disclaiming the difference — exactly the Cross-Role Readout Contamination (CRRC) risk this
+log already names above. A scope-boundary section was added to `RTM_OPERATIONAL_CLOSURE_V0_1.md`
+making the distinction explicit before merge (see git history on this branch).
+
+It was preferred over `eiv_corrected_fit_v1.py` (research_universal_solver PR #29, this repo's own
+sibling candidate) because it: achieves substantially higher accuracy (0.34% vs ~2% mean error) by
+combining two independent correction methods rather than one; requires no single-tape-only
+compromise (moment-correction is retained as a fallback, replicate-IV as the preferred path when
+replicate data exists); and — most importantly — correctly withholds `lambda`/`Pi0` on the observed
+trajectory (`path_semantics=observed_trajectory` stays `DIAGNOSTIC_ONLY`), avoiding the exact "emit
+a physically nonsensical λ/Π₀" failure this repo's own v1/v3 candidates exhibited (v1: `λ_j=47.2`,
+outside `(0,1]`, reported honestly but still emitted; v3: signed vs `|abs|` `Π₀` differing by 19
+orders of magnitude, deliberately left unresolved).
+
+**What is now MERGED and usable at `main`:** `domains/standard_model/item1_exploration/
+retained_transition_operational_closure/` — a fail-closed, tier-tagged (`fit_calibrated` /
+`calibrated_readout` / `finite_diagnostic`) operational estimator for this toy scalar Reader/Record
+apparatus's exchange coefficient `M`, usable for downstream exchange/`Delta_candidate` calculation
+whenever its own report status is `CALIBRATED_READY`.
+
+**What REMAINS explicitly OPEN — `M_n` itself is NOT closed, even after this merge.** Re-checked
+against the 5 closure criteria from the bias-diagnosis final synthesis (readout_genesis PR #72 /
+research_universal_solver PR #28), now against the merged operational-closure candidate
+specifically: (1) fail-closed noise-robust estimator — MET more strongly than any prior candidate
+(genuinely refuses across 6 disclosed noise levels, tested with real regression tests); (2) multiple
+trajectories/parameters tested — still only PARTIALLY MET (one dynamical fixture, 500 independent
+noise draws on that SAME fixture, not multiple distinct trajectories/parameter regimes); (3) real
+external adapter (QuTiP/experimental data) — NOT MET, and now additionally disclosed as harder than
+previously stated: replicate-IV structurally requires two independent re-measurements of the SAME
+latent trajectory, a real protocol requirement a typical single external dataset will not satisfy
+without deliberate design; (4) invariance under segmentation/coordinate relabeling/re-encoding — NOT
+MET; (5) held-out prediction of an observable not used in the fit — NOT MET, this still validates
+against the KNOWN fixture `M_true=1`, not a blind prediction. Item 1's own root-derivation question
+for `M_n` (the DRL sense, feeding `Π₀`/`Δ_j`) remains fully Open — this merge closes the OPERATIONAL
+CALCULATION question (a real, usable, fail-closed calibrated tool now exists) while leaving the
+ROOT-DERIVATION question exactly as open as it was after Attempts 10-17, per CRRC discipline.
