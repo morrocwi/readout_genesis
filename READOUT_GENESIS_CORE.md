@@ -7218,14 +7218,49 @@ future reviewer who confirms any gate should record it in the relevant Part, not
 >
 > Independently peer-reviewed 2026-07-25 against live source (Coq compiles, script reruns, direct
 > file reads) before being written here — 5 corrections were found and applied against a first-draft
-> compiled list (see EQ-021, EQ-054, EQ-057, EQ-058, EQ-059 below for the specific fixes). Canonical
-> home of this exact numbered list: `research_universal_solver/EQUATION_LIBRARY_ROOT_TO_SM_STREAM.md`
-> (commit `35b6315`) — if this Appendix and that file ever diverge, that file wins; this Appendix is
-> the folded-in copy, not a second source of truth.
+> compiled list (see EQ-021, EQ-054, EQ-057, EQ-058, EQ-059 below for the specific fixes).
+>
+> **SOT DESIGNATION (2026-07-25, founder-directed): THIS Appendix is now the primary Source of
+> Truth for this equation stream's numbering/tiers/text.** The synced copy lives at
+> `research_universal_solver/EQUATION_LIBRARY_ROOT_TO_SM_STREAM.md` and at
+> `readout_universe/EQUATION_LIBRARY_ROOT_TO_SM_STREAM_research_universal_solver.md` — if either
+> ever diverges from this Appendix, THIS Appendix wins and the other file should be corrected to
+> match. (Earlier same-day text here said the reverse; the founder explicitly redirected the SOT
+> to this file, the true root canon, and both sibling copies were updated to point back here.)
 
 Tier legend: `Ax` axiom · `Ax→Th` near-forced, one posit · `Th` theorem · `Th_coqc` machine-checked
 axiom-free (`Print Assumptions` ⇒ Closed) · `finite_diagnostic` measured/executed · `Dr` human
 narrative/design · `fit_calibrated` fit to real data, not derived · `Open` not established.
+
+**Semantic Reading Key (added 2026-07-25, after an external review correctly flagged that this
+list, read alone, invites category errors it was never meant to license):**
+- `A→B ≠ B→A` (EQ-003) is a directed admissible-TRANSITION relation on the retained graph, NOT
+  material implication in propositional logic — it is the root of ordered-tape asymmetry, not a
+  logical formula to be "solved" by setting `A=B`.
+- "minimal" (EQ-034/EQ-037/EQ-038/EQ-045, etc.) always means the minimum value that still supports
+  a NONTRIVIAL retained closure under the stated condition (e.g. `k>1` for EQ-037's `k=3`; the
+  alternating-trilinear-witness-vanishes-below-3 argument for EQ-038's `dim V=3`) — never an
+  unexplained jump from a bare divisibility/parity fact.
+- This list is a COMPRESSED INDEX. The canonical prose earlier in this file (Part I, Face 10) and
+  `SM_INFORMATION_PHILOSOPHY_MASTER.md`/the underlying `.v`/`.py` artifacts remain the full
+  meaning; nothing here overrides them, and no tier here is re-derived from this list alone.
+- `finite_diagnostic` entries (EQ-051, EQ-056, EQ-060-062, etc.) report a computed result inside a
+  DECLARED fixture/regime, never a universal continuum theorem.
+- `Th_coqc (abstract) / Open (concrete)` (EQ-021) marks a real, load-bearing split: the general
+  algebraic structure is proven for ARBITRARY admissible data; which SPECIFIC object realizes it in
+  this project's actual physics remains separate and open — see the two-axis table below.
+
+**Two-axis status (Root/Formal vs. Concrete/Architecture — `domains/standard_model/README.md`'s own
+required separation, applied to the entries most at risk of the two axes being collapsed):**
+
+| Equation | Root/Formal status | Concrete/Architecture status |
+|---|---|---|
+| EQ-021 | abstract `𝔾_n^(±)` G-adjoint split: `Th_coqc` | which concrete `𝔾_n` realizes it: `Open` (gated on T1) |
+| EQ-032–034 | general non-injective-readout theorem: `Th_coqc` | which field plays "true state"/"record": domain-dependent, unresolved |
+| EQ-036–041 | closure inside the declared minimal architecture: `Th_coqc`-adjacent | uniqueness of `SU(3)` over the UNRESTRICTED root: `Open` |
+| EQ-045 | blind finite pipeline PASS on fixtures | unique algebra FORCED by the unrestricted root: `Open` |
+| EQ-058 | fit formula (geometric mean) is exact arithmetic | the fit itself: `fit_calibrated`, not a derivation |
+| EQ-062 | the numeric result is exact (independently rerun) | proposed field-role identification (Φ/Ψ = antimatter/matter): REFUTED |
 
 **Part 1 — ROOT-0 and the mother equation (already stated earlier in this file; repeated here only
 as the entry point of the continuous numbered stream, EQ-001 through EQ-029 — see Part I §I.1,
@@ -7260,7 +7295,9 @@ EQ-020  Dr          𝔾_n = L_{G_n}⊗I_ℱ + I_{G_n}⊗C_ℱ + C_int,n
 EQ-021  Th_coqc (abstract) / Open (concrete instantiation)
                      𝔾_n^(+) = (𝔾_n + 𝔾_n^adjG)/2      [NOT naive transpose — retention-metric
                      𝔾_n^(-) = (𝔾_n − 𝔾_n^adjG)/2       G-adjoint, per this file's own warning]
-                     z^T 𝔾_n^(-) z = 0
+                     ⟨z, 𝔾_n^(-) z⟩_G = 0      [notation hardened 2026-07-25: stated in the
+                     retained inner product (EQ-035's ⟨x,y⟩_G) so a bare "z^T...z" is not misread
+                     as a naive Euclidean bilinear — same content, disambiguated notation only]
 EQ-022  Dr/finite_diagnostic (executable)
                      Reader: M δ_t²Φ_n + D δ_t^cΦ_n + K𝔾[Θ_n]Φ_n + ∇V(Φ_n) − J_n = ℛ_Φ,n
                      Record: M δ_t²Ψ_n − D δ_t^cΨ_n + K𝔾[Θ_n]^TΨ_n + ∇²V(Φ_n)Ψ_n = ℛ_Ψ,n
@@ -7440,7 +7477,16 @@ revised conclusion:** the closure is STRUCTURAL only (any group) — non-trivial
 root dynamics stays `Open`, which is why EQ-042–048 stay Dr. The domain's own currently-tracked
 highest-leverage P0 item is **generation multiplicity — completely untouched** — real leverage:
 Kobayashi-Maskawa CP violation requires ≥3 generations. Item 1 (Δ_j/κ_j/`r`, EQ-057–059) was
-already exhaustively tried this session and closed only via `fit_calibrated`.
+already exhaustively tried this session and closed only via `fit_calibrated`. (Independent
+corroboration, unconnected to today's session: line ~3513 of this same file, from the earlier v1.5
+hypercharge work, already named "generation multiplicity — the next bottleneck" — same conclusion,
+reached separately, before this Appendix existed.)
+
+**Recorded discrepancy (2026-07-25, not silently reconciled):** a review pasted by the founder the
+same day recommended treating SM-G0.1–G0.5 as still-open, highest-priority work — contradicting
+the direct `coqc -q` recompile documented above. The likely cause is the same stale `README.md`
+line this Appendix's own maintainer initially cited before self-correcting. Flagged here rather
+than silently overwritten, per this book's own dissent-must-not-be-silently-erased discipline.
 
 **What this Appendix does not claim.** EQ-030 through EQ-062 are readouts of the SM domain leaf,
 governed by that leaf's own DRIFT_CONTRACT and CLAIM_BOUNDARY, not by this file's ROOT-0. End-to-end
