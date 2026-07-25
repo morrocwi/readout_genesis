@@ -1,0 +1,41 @@
+{
+  "domain_id": "RG-PHILOSOPHY-MEMK-001",
+  "root": "R0",
+  "nodes": {
+    "R0": {"class": "ROOT_THEOREM", "label": "retained distinction delta_R"},
+    "R1": {"class": "ROOT_THEOREM", "label": "L_R = D_W - W"},
+    "R2": {"class": "ROOT_ARCHITECTURE", "label": "universal stepper F"},
+    "P0": {"class": "PROTOCOL", "label": "freeze question/context/horizon/metrics"},
+    "S0": {"class": "PROTOCOL", "label": "candidate MEMK state and sufficiency audit"},
+    "Q0": {"class": "PROTOCOL", "label": "q_MEMK quotient and commuting gate"},
+    "O0": {"class": "CALIBRATED_READOUT", "label": "O_MEMK readout / event trace"},
+    "M0": {"class": "DISCOVERED_DOMAIN_LAW", "label": "meaning decoder"},
+    "E0": {"class": "DISCOVERED_DOMAIN_LAW", "label": "experience relation"},
+    "MM0": {"class": "DISCOVERED_DOMAIN_LAW", "label": "memory update"},
+    "K0": {"class": "PROTOCOL", "label": "candidate knowledge and Maker–Checker stabilization"},
+    "L0": {"class": "NUMERICAL_PROCEDURE", "label": "informational low-rank adapter bank"},
+    "W0": {"class": "DISCOVERED_DOMAIN_LAW", "label": "informational work and semantic potential"},
+    "T0": {"class": "PROTOCOL", "label": "barrier crossing / rebinding / consolidation classifier"},
+    "C0": {"class": "REPORT", "label": "bounded claim and defect vector"}
+  },
+  "edges": [
+    ["R0", "R1"], ["R1", "R2"], ["R2", "P0"], ["P0", "S0"], ["S0", "Q0"],
+    ["Q0", "O0"], ["O0", "M0"], ["M0", "E0"], ["E0", "MM0"], ["MM0", "K0"],
+    ["Q0", "L0"], ["L0", "M0"], ["L0", "W0"], ["W0", "T0"], ["MM0", "T0"],
+    ["K0", "T0"], ["T0", "C0"], ["K0", "C0"]
+  ],
+  "discovery_chain": [
+    "empirical_tape -> frozen_grammar",
+    "frozen_grammar -> candidate_law",
+    "candidate_law -> holdout_intervention_transport",
+    "holdout_intervention_transport -> calibrated_readout",
+    "calibrated_readout -> bounded_claim"
+  ],
+  "forbidden_edges": [
+    ["R0", "meaning"],
+    ["R1", "human_truth"],
+    ["shock_intensity", "knowledge"],
+    ["social_consensus", "absolute_truth"],
+    ["subjective_certainty", "validated_transformation"]
+  ]
+}

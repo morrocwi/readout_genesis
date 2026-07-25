@@ -1,0 +1,50 @@
+{
+  "domain_id": "RG-PHILOSOPHY-MEMK-001",
+  "release": "Information Philosophy / MEMK v0.2.0",
+  "tier": "ARCHITECTURE_CONDITIONAL_UNRESOLVED_DOMAIN",
+  "public_label": "[ArchitectureConditional] root-connected meaning–experience–memory–knowledge domain",
+  "root": {
+    "repository": "morrocwi/readout_genesis",
+    "root_file": "READOUT_GENESIS_CORE.md",
+    "root_blob_sha": "31e07095addc45aacbaea26523784380d5ce21f1",
+    "lineage": [
+      "delta_R",
+      "L_R",
+      "F",
+      "q_MEMK",
+      "F_MEMK_sharp",
+      "O_MEMK_sharp"
+    ]
+  },
+  "established": [
+    "The domain is declared as a translation/readout and does not add a new root.",
+    "Meaning attaches only after a domain translation and readout.",
+    "Experience, memory, knowledge, view, identity, and conventional truth are typed as distinct objects.",
+    "Local/global knowledge scope and cross-domain transport defects are explicit.",
+    "The optional informational-LoRA lane freezes W_0 and trains low-rank adapters under a Maker–Checker firewall.",
+    "Informational work, semantic potential, barrier crossing, unbinding, rebinding, reconsolidation, and consolidation are specified as domain functionals.",
+    "Positive, negative, and abstention controls are executable at the structural-fixture tier.",
+    "The bundle checker can pass and fail on machine-derived controls."
+  ],
+  "not_established": [
+    "An exact q_MEMK for real human cognition.",
+    "Empirical state sufficiency for persons, communities, or institutions.",
+    "Literal biological LoRA or low-rank meaning mechanisms.",
+    "Informational work as joules or physical energy.",
+    "Shock intensity, subjective certainty, awakening, or life change as proof of truth.",
+    "Neuroscience, psychology, sociology, religious doctrine, or metaphysics derived from the root.",
+    "Global convention as absolute truth.",
+    "Cross-domain transport without declared bridge defects.",
+    "Clinical efficacy or a treatment protocol.",
+    "Predictive validity on independently held-out human data."
+  ],
+  "statuses": {
+    "bundle_integrity": "PASS_EXPECTED",
+    "root_lineage": "PASS_EXPECTED",
+    "drift_contract": "PASS_EXPECTED",
+    "exact_domain_quotient": "UNRESOLVED",
+    "empirical_calibration": "UNRESOLVED",
+    "predictive_held_out": "UNRESOLVED",
+    "full_domain_registration": "PARTIAL_REGISTERED_CANDIDATE"
+  }
+}

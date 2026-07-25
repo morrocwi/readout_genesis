@@ -1,0 +1,313 @@
+document:
+  id: RG-PHILOSOPHY-MEMK
+  title: 'Information Philosophy: Meaning–Experience–Memory–Knowledge Domain'
+  version: 0.2.0
+  status: ARCHITECTURE_CONDITIONAL_UNRESOLVED_DOMAIN
+  language: English
+  standalone: true
+  root_policy: translation_only_never_new_root
+source_lineage:
+  repository: morrocwi/readout_genesis
+  root_file: READOUT_GENESIS_CORE.md
+  root_blob_sha: 31e07095addc45aacbaea26523784380d5ce21f1
+  domain_standard: domains/DOMAIN_REGISTRATION_STANDARD.md
+  mandatory_order: Retention -> Structure -> Translation -> Meaning -> Report
+claim_boundary:
+  tier: ARCHITECTURE_CONDITIONAL_UNRESOLVED_DOMAIN
+  established:
+  - root-connected typed architecture
+  - meaning after translation/readout
+  - distinct event, trace, experience, memory, knowledge, view, identity and convention
+  - informational low-rank adaptation lane with frozen base
+  - informational work and semantic barrier mechanism
+  - fail-able structural controls and Maker–Checker firewall
+  not_established:
+  - exact q_MEMK for real humans or societies
+  - literal biological LoRA
+  - informational work as physical energy
+  - shock, awakening or life change as proof of truth
+  - neuroscience, psychology, religion or metaphysics derived from the root
+  - clinical efficacy
+  - independent held-out human predictive validation
+root_contract:
+  R0:
+    symbol: delta_R
+    equation: delta_R = (a sharp b)
+    tier: ROOT_THEOREM
+  R1:
+    symbol: L_R
+    equation: L_R = D_W - W
+    tier: ROOT_THEOREM
+  R2:
+    symbol: F
+    equation: S_{n+1} = F(S_n,u_n,c_n,T_n)
+    tier: ROOT_ARCHITECTURE
+  domain_weld:
+    dynamics: q_MEMK,n+1 o F_n = F_MEMK,n^sharp o q_MEMK,n
+    readout: O_MEMK,n = O_MEMK,n^sharp o q_MEMK,n
+    invariants: Inv_MEMK = Inv_MEMK^sharp o q_MEMK
+  root_nonclaims:
+  - meaning is not a root primitive
+  - memory semantics is not the root tape
+  - knowledge and identity are not root theorems
+domain:
+  domain_id: RG-PHILOSOPHY-MEMK-001
+  name: Information Philosophy / MEMK
+  question: Can meaning–experience–memory–knowledge dynamics form a minimal sufficient dynamically closed translation?
+  state_separation: S_n != Z_MEMK,n != D_MEMK,n
+  status:
+    candidate_state_sufficiency: UNRESOLVED
+    exact_quotient: UNRESOLVED
+    empirical_calibration: UNRESOLVED
+    predictive_validation: UNRESOLVED
+typed_objects:
+  A_n: historical occurrence; past occurrence is not rewritten by later interpretation
+  x_n: domain-readable event trace; x_n != A_n
+  mu_n: context-indexed meaning relation
+  E_n: experience generated from trace, meaning, strength and context
+  Mcal_n: cognitive/semantic memory; Mcal_n != root tape T_n
+  qK_n: candidate reusable knowledge relation
+  Kcal_n: checked bounded knowledge with explicit scope
+  Theta_n: view / interpretive operator
+  Ical_n: identity or retained self-model
+  Scal_g_d_ell_n: multi-scale conventional truth
+  kappa_n: meaning bond strength
+  eta_view_n: view–identity binding strength
+  c_n: explicit context
+  Yhat_o_n: observer-indexed expected outcome
+  Y_n: actual outcome
+candidate_state:
+  equation: Z_MEMK,n = (x_n,mu_n,E_n,Mcal_n,Kcal_n,Theta_n,Ical_n,Sactive_n,kappa_n,eta_view_n,c_n,lineage_n,W_0,{U_j,V_j,lambda_j,C_j}_j,z_n,J_info,n)
+  encoder: Z_MEMK,n^cand = Enc_MEMK(S_n,Q_MEMK,O_MEMK,c_n)
+  sufficiency: Suff_MEMK,L(Z_MEMK^cand;c,T) in {ADMITTED,OBSTRUCTED,UNRESOLVED}
+  no_early_collapse: merge only after future-readout equivalence is audited
+domain_quotient:
+  partition: P_MEMK,n = FixRefine(Z_MEMK,n,F_n,O_MEMK,Inv_MEMK,Q_MEMK,c_n)
+  quotient: D_MEMK,n = Z_MEMK,n / ~MEMK,n
+  future_equivalence: q(z)=q(z') implies O_{n:n+L}(z,u)=O_{n:n+L}(z',u)
+  current_status: UNRESOLVED
+core_equations:
+  event_trace: x_n = O_MEMK^sharp(D_MEMK,n;Q_MEMK,c_n)
+  meaning_after_readout: mu_n = G_mu(x_n,Mcal_{n-1},Kcal_{n-1},Ical_{n-1},Theta_{n-1},Sactive_n,c_n)
+  experience: E_n = Phi_E(x_n,mu_n,kappa_n,c_n)
+  memory: Mcal_n = U_M(Mcal_{n-1},x_n,mu_n,E_n,c_n,lineage_n,T_n)
+  knowledge_candidate: qK_n = H_K(Mcal_n,E_n,mu_n,c_n,D,Q_K)
+  knowledge: Kcal_n = Check(Stabilize(qK_n,evidence,controls,scope,provenance))
+  reuse_gate: Pr[d_o(Y_n,Yhat_o_n)<=epsilon_o | c_n in D,Kcal,intervention] >= rho
+  view: Theta_n = V_Theta(Theta_{n-1},Mcal_n,Kcal_n,Sactive_n,evidence_n,c_n)
+  identity: Ical_n = Psi_I(Ical_{n-1},Mcal_n,Kcal_n,Theta_n,Sactive_n,roles_n,c_n)
+  view_identity_binding: J_identity,n = Ical_n tensor_view[eta_view_n] Theta_n
+  next_meaning: mu_{n+1} = G_mu(x_{n+1},Mcal_n,Kcal_n,Ical_n,Theta_n,Sactive_{n+1},c_{n+1})
+reinterpretation:
+  historical_invariant: Delta A_past = 0
+  old: E_1 = Phi_E(x_A,mu_1,kappa_1,c_1)
+  rebinding: (mu_1,kappa_1,c_1) -> (mu_2,kappa_2,c_2)
+  new: E_2 = Phi_E(x_A,mu_2,kappa_2,c_2)
+  memory_reconsolidation: Mcal_{t+1}=U_M(Mcal_t,x_A,mu_2,E_2,c_2,lineage_A,T_t)
+  rule: the historical occurrence stays fixed while the readout configuration may change
+informational_lora_training:
+  status: OPTIONAL_POST_QUOTIENT_IMPLEMENTATION
+  factorization: DeltaW_j = (alpha_j/r_j) U_j V_j
+  frozen_base: W_0,n+1 = W_0,n during adapter-only training
+  effective_reader: W_eff,n = W_0 + sum_j lambda_j,n DeltaW_j,n
+  native_readout: h_n = W_eff,n x_n
+  meaning_decode: mu_n = Dec_mu(h_n,Mcal_{n-1},Kcal_{n-1},Theta_{n-1},Ical_{n-1},Sactive_n,c_n)
+  gates:
+    constraints:
+    - lambda_j>=0
+    - sum_j lambda_j=1 when normalized
+    - inactive adapters retain lineage
+    distribution: lambda_j,n+1 = softmax_j(g_j,n+1 / T_sem,n+1)
+    temperature_nonclaim: T_sem is an uncertainty/exploration readout, not thermodynamic temperature
+  rank_selection: 'r_j^* = min{r: required defects <= frozen tolerances and held-out reuse passes}'
+  loss:
+    total: L_total = beta_pred L_pred + beta_recon L_recon + beta_dyn L_dyn + beta_read L_read + beta_inv L_inv + beta_ctx L_context + beta_reuse L_reuse + beta_lineage L_lineage + beta_interf L_interference + beta_rank L_lowrank + beta_sparse L_gate_sparse
+    L_pred: observer-indexed outcome error
+    L_recon: required distinction loss
+    L_dyn: norm(q_MEMK F - F_MEMK^sharp q_MEMK)
+    L_read: norm(O_MEMK - O_MEMK^sharp q_MEMK)
+    L_inv: required invariant loss
+    L_context: declared context-transport error
+    L_reuse: bounded reusable outcome error
+    L_lineage: provenance deletion or aliasing
+    L_interference: damage to prior valid readouts outside scope
+    L_lowrank: rank/capacity penalty
+    L_gate_sparse: optional adapter-gate sparsity penalty
+  updates:
+  - U_j,n+1 = U_j,n - eta_U grad_{U_j} L_total
+  - V_j,n+1 = V_j,n - eta_V grad_{V_j} L_total
+  - g_j,n+1 = g_j,n - eta_g grad_{g_j} L_total
+  firewall:
+  - freeze question, split, metrics, rank range, loss weights and claim ceiling before training
+  - Maker cannot see held-out outcomes
+  - Checker cannot retune adapters or thresholds
+  mechanistic_nonclaim: Passing this lane does not prove biological cognition literally uses LoRA or is low-rank
+semantic_potential_and_informational_work:
+  semantic_state: z_n=(mu_n,lambda_n,kappa_n,Theta_n,Ical_n,selected_memory,action_readout)
+  potential: V_sem(z;c,T)=V_stability+V_conflict+V_identity+V_context+V_constraint
+  binding_score: B_bind(x,mu;c)=-kappa Sim_G(x,mu;c)
+  binding_nonclaim: B_bind is an informational stability score, not chemical or physical binding energy
+  barrier: DeltaV_old_to_new^dagger = inf_{gamma:z_old->z_new} max_s [V_sem(gamma(s))-V_sem(z_old)]
+  source: J_info,n=Enc_J(evidence,experience,language,relation,context_shift,intervention;H_J)
+  informational_work: W_info[Q,gamma]=sum_n <J_info,n,z_{n+1}-z_n>_{G_MEMK}
+  dissipation: W_diss=sum_n <Delta z_n,D_MEMK Delta z_n>_{G_MEMK}
+  coherence_reduction: DeltaB_coh=a1 C_cross+a2 C_compress+a3 C_invariant+a4 C_transport
+  effective_drive: W_eff_info=W_info+DeltaB_coh-W_diss-W_conflict
+  transition_condition: W_eff_info >= DeltaV_old_to_new^dagger and admissibility/invariant/readout/context gates pass
+  energy_nonclaim: informational work is metric-dependent and MUST NOT be reported in joules without an independently checked physical bridge
+  activation_barrier: DeltaV_old_to_new^dagger = inf_{gamma:z_old->z_new} max_s [V_sem(gamma(s))-V_sem(z_old)]
+domain_spine:
+  finite_equation: M_sem (z_{n+1}-2z_n+z_{n-1})/DeltaTheta^2 + D_sem (z_n-z_{n-1})/DeltaTheta + K_sem L_R z_n + grad_z V_sem(z_n;c_n,T_n) = J_info,n - eta_sem,n
+  timescale: tau_sem = M_sem/D_sem
+  restriction: all coefficients are domain-DSL or calibrated; none is root-derived for free
+  status: OPEN_DOMAIN_IMPLEMENTATION_LANE
+transition_classes:
+  shock_like_impulse:
+    definition: high-amplitude short-horizon source; surprise may be high while coherence may be low
+    source: J_info,n=J0 at n=n_star and approximately 0 otherwise
+    outcomes:
+    - subthreshold return
+    - temporary gate dispersion
+    - unstable or fragmented basin
+    - stable new basin
+    nonclaim: intensity != truth
+  coherent_sudden_insight:
+    signature:
+    - prediction/explanatory defect decreases
+    - invariants are completed rather than lost
+    - cross-memory coherence increases
+    - context transport improves
+    - adapter gates reallocate rapidly
+    condition: barrier crossed and epsilon_inv,epsilon_read,epsilon_context,epsilon_reuse pass
+    nonclaim: surprise != knowledge
+  gradual_learning:
+    equation: DeltaW_j,N=sum_{n=1}^N eta_n eligible_gradient_n
+    condition: cumulative work crosses the barrier or slowly reshapes V_sem
+  life_changing_transformation:
+    state_change: distance((Theta,Ical,Kcal,Action)_post,(Theta,Ical,Kcal,Action)_pre)>=tau_transform
+    persistence: Pr[distance(z_{n+t},z_new)<=epsilon_stab for t in horizon]>=rho_stab
+    requirements:
+    - memory reconsolidation
+    - adapter consolidation
+    - view/identity update when load-bearing
+    - action or prediction change
+    - held-out reuse
+    - cross-context persistence
+    - lineage preservation
+    nonclaim: life change != universal truth
+unbinding_rebinding_consolidation:
+  old_unbound: lambda_old<tau_off and/or kappa_old<tau_kappa for tau_unbind
+  new_bound: lambda_new>=tau_on and kappa_new>=tau_bind with held-out reuse and persistence
+  old_gate: lambda_old,n+1=Clip(lambda_old,n-eta_unbind U_old+eta_reinforce R_old,0,1)
+  new_gate: lambda_new,n+1=Clip(lambda_new,n+eta_bind B_new-eta_decay D_new,0,1)
+  consolidation: C_j,n+1=C_j,n+eta_C(Pass_reuse+Pass_context+Pass_intervention-Interference-Contradiction-ScopeViolation)
+  promotion: transient adapter becomes consolidated only if C_j>=tau_C and independent held-out checks pass
+  non_erasure: unbinding changes effective control; the old adapter and lineage remain retained unless deletion is explicitly audited
+knowledge_scope:
+  Omega: 'Omega(K)={(g,d,ell,P,O,c): acceptance and reuse gates pass}'
+  local: K_local=K restricted to Omega_local
+  global_transport: T_ij^Y o K_i approximately equals K_j o T_ij^C with explicit epsilon_bridge
+  non_equivalences:
+  - global convention != absolute truth
+  - authority size != validity
+  - surface equation similarity != commuting bridge
+conventional_truth:
+  equation: Scal_{g,d,n}^{ell}=Stabilize_{P,H}({Theta_i},language,practice,sanctions,lineage)
+  active: Sactive_i,n=Gamma_S({Scal:i in G},c_n,D_n,H_n,Q_n)
+  scales:
+  - individual
+  - family
+  - community
+  - organization
+  - institution
+  - state
+  - global standard
+  higher_scale: Scal^{ell+1}=Aggregate({Scal_j^ell},conflicts,authority,translation,residue)
+  rule: higher scale is not automatically more true and is not a simple average of lower scales
+seven_domain_gates:
+  G1: 'No-Free-Domain-Law: delta_R+retention does not imply a final MEMK law'
+  G2: Admissibility in {ADMITTED,OBSTRUCTED,UNRESOLVED}
+  G3: all laws are context-indexed
+  G4: candidate-state sufficiency before discovery
+  G5: refine if a required invariant is lost
+  G6: quotient only query-relative symmetries
+  G7: named human/social semantics require independent calibration
+defect_vector:
+  canonical:
+  - epsilon_suff
+  - epsilon_dyn
+  - epsilon_read
+  - epsilon_inv
+  - epsilon_bridge
+  - epsilon_cal
+  - epsilon_mode
+  - epsilon_geo
+  - epsilon_solve
+  extensions:
+  - epsilon_semantic
+  - epsilon_memory
+  - epsilon_reuse
+  - epsilon_context
+  - epsilon_identity
+  - epsilon_social_scale
+  - epsilon_lineage
+  - epsilon_scope
+  - epsilon_adapter
+  - epsilon_interference
+  - epsilon_barrier
+  - epsilon_consolidation
+  exact: all required exact components equal zero
+  numerical_pass: all required components <= frozen tolerances
+  unresolved: a required component has no identified metric or sufficient evidence
+maker_checker_firewall:
+  registrar_freezes:
+  - question
+  - state schema
+  - context
+  - scope
+  - observer metric
+  - losses
+  - thresholds
+  - data split
+  - claim ceiling
+  maker_must_not_see:
+  - held-out outcomes
+  - checker-only labels
+  - post-freeze errors
+  checker_must_not:
+  - retune model
+  - change labels
+  - change thresholds
+  - drop failing contexts
+  auditor_outputs:
+  - PASS/FAIL/UNRESOLVED
+  - full defect vector
+  - protocol deviations
+  - bounded claim
+decision_protocol:
+  TRANSIENT_PERTURBATION: experience changes but gates/memory return within relaxation horizon
+  UNBOUND_OLD_MEANING: old gate/bond falls below threshold while lineage remains
+  REBOUND_NEW_MEANING: new gate/bond exceeds threshold and immediate structural gates pass
+  CONSOLIDATED_TRANSFORMATION: persistence, context, interference and held-out reuse pass
+  FALSE_OR_UNRESOLVED_INSIGHT: subjective strength is high but epistemic or transport defects fail or are unidentified
+test_plan:
+  positive:
+  - same trace with changed load-bearing meaning changes experience
+  - memory slot improves delayed-return fixture
+  - frozen-base low-rank training improves training/validation without base drift
+  - transition occurs only after effective work crosses a known synthetic barrier
+  - durable transformation passes persistence and context transport
+  negative:
+  - unanimous consensus with poor held-out reuse fails knowledge gate
+  - high intensity with low coherence does not become validated insight
+  - changing W_0 during adapter-only training is DRIFT
+  - one-step experience spike is not durable transformation
+  - deleting old adapter lineage fails
+  abstention:
+  - multiple compatible semantic models -> UNRESOLVED
+  - missing observer metric -> UNRESOLVED
+  - missing empirical calibration -> UNRESOLVED
+final_statement:
+  cycle: delta_R -> L_R -> F -> q_MEMK -> x -> optional adapter/readout -> mu -> E -> Mcal -> qK -> Kcal -> Theta/Ical/Scal -> next mu -> checker -> bounded report
+  principle: Information can perturb or reorganize meaning, but intensity alone is not truth; durable transformation requires structural, epistemic, persistence and transport gates.
+  registration_verdict: STRUCTURAL_BUNDLE_PASS_DOMAIN_CLOSURE_UNRESOLVED

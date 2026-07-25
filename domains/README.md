@@ -10,13 +10,15 @@
                  [ READOUT_GENESIS_CORE.md ]          the one root  (δ_R → L_R → spine)
                             │  domain = translation  q_D
                             ▼
-   ┌────────────────────────────────────────────────────────────────┐
-   │  registered domain leaves — each a bounded-tier readout          │
-   │                                                                  │
-   │   chem/   Information Chemistry v0.910   FORMAL_COMPOSITION_      │
-   │           (free ℕ^G carrier + quotient    QUOTIENT_ONLY   ✅ PASS │
-   │            gates + lineage sidecar)                               │
-   └────────────────────────────────────────────────────────────────┘
+   ┌──────────────────────────────────────────────────────────────────────┐
+   │  registered domain leaves — each a bounded-tier readout               │
+   │                                                                      │
+   │   chem/        formal composition quotient                    ✅ PASS │
+   │   relativity/  finite internal closure                        ⏳ partial│
+   │   quantum/     root-closure partial                           ⏳ partial│
+   │   biology/     root-native partial                            ⏳ partial│
+   │   philosophy/  MEMK architecture + informational adaptation  ⏳ 50%   │
+   └──────────────────────────────────────────────────────────────────────┘
 ```
 
 ## Registered
@@ -27,6 +29,7 @@
 | [`relativity/`](relativity/) | Relativity finite-internal-closure v0.3 | `FINITE_INTERNAL_CLOSURE` | ⏳ `79.2%` strict / `89.6%` weighted (exact-rational verifier PASS; connection/curvature Th_coqc via causal-quantum-gravity) | real physics · v=c · surface gravity · stress-energy · full GR/QFT · root-native Γ_R (still Proposed) |
 | [`quantum/`](quantum/) | Quantum root-closure-partial v0.1 | `QUANTUM_ROOT_CLOSURE_PARTIAL` | ⏳ `43.75%` strict green / `53.1%` weighted (verifier PASS; oscillation≠quantum) | real QM · i/ψ/Hilbert/Born/tensor/spin as fundamental · Born uniqueness · measurement · composition · entanglement · spin · QFT (all RED) |
 | [`biology/`](biology/) | Biology root-native-partial v0.1 | `BIOLOGY_ROOT_NATIVE_PARTIAL` | ⏳ `47.2%` strict / `62.5%` weighted root-native (verifier PASS); real end-to-end `0%` | real biology · DNA/cell/enzyme/fitness as premise · protein/cell semantics · biological selection · calibrated encoding · (textbook 45/45 is LINE-2 checker, NOT counted) |
+| [`philosophy/`](philosophy/) | Information Philosophy / MEMK v0.2.0 | `ARCHITECTURE_CONDITIONAL_UNRESOLVED_DOMAIN` | ⏳ `50%` structural gates (`4/8`; dual checker PASS locally); exact quotient + empirical calibration UNRESOLVED | exact human/social q_MEMK · literal biological LoRA · physical meaning-energy · shock/awakening as truth · clinical efficacy · held-out human prediction |
 
 ## Frontier (roadmaps — NOT closed domains, no verifier by design)
 
@@ -39,8 +42,8 @@
 Each `<D>/` ships its own `CLAIM_BOUNDARY`, `RULE_REGISTRY`, `ROOT_DAG_MASTER`, `DRIFT_CONTRACT`,
 verification bundle (proof kernel + dual-implementation checker + tests + checksums + immutable
 anchors), and a `source_root/READOUT_GENESIS_CORE_SNAPSHOT.md` anchoring it back to the master. Run
-`python run_all_tests_<D>.py` inside the folder to re-verify from a clean extraction (standard library
-only, no network).
+that folder's `run_all_tests_*.py` script to re-verify from a clean extraction (standard library only,
+no network).
 
 ## The one honest boundary every domain keeps
 
