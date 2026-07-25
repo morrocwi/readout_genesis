@@ -33,6 +33,12 @@
 
 **1.2 Reader–record relation.** ผลอ่าน `r=O(X)`; ถ้า `O(hX)=O(X)` ทุกสถานะ → `h` คือการเปลี่ยนชื่อ
 ภายใน. นิยาม `X∼X' ⟺ O(X)=O(X')`; physical state = equivalence class `[X]`. **นี่คือรากของ gauge redundancy.**
+`[Th_coqc]` (2026-07-25, `formal/InfoTrueRecordUnreadable_attempt.v`, axiom-free): เมื่อ `O(hX)=O(X)`
+กับ `hX≠X` จริง (gauge redundancy ไม่ trivial) — สถานะจริง `X` และ `hX` ยังคง**มีอยู่จริงทั้งคู่**
+แต่**ไม่มี decoder ใดกู้คืนทั้งสองได้ถูกต้องพร้อมกันจาก `O` เพียงอย่างเดียว** (`no_decoder_recovers_state`,
+`gauge_redundancy_forces_undecodability`) — สูตรทั่วไป, พิสูจน์แล้ว, สำหรับ readout ที่ non-injective
+ใดๆ ไม่ผูกกับ `Φ`/`Ψ` เจาะจง (ดู `domains/standard_model/matter_antimatter_exploration/
+MATTER_ANTIMATTER_EXPLORATION_LOG.md` Attempt 3).
 
 **1.3 Retained metric.** `⟨x,y⟩_G = x†Gy, G>0` ⇒ retained load `‖x‖²_G = x†Gx ≥ 0`. ยังไม่ใช่ "พลังงาน"
 จนกว่าจะ calibrate.
