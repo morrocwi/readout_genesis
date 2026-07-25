@@ -6,7 +6,9 @@ This candidate removes five operational dials from the declared finite-architect
 
 ```text
 before: M, C_RD, lambda_U, lambda_D, lambda_E  (5 possible fitted/tunable numbers)
-after:  no free dial in this subchain          (0)
+after:  none of these 5 NAMED dials remain free (0)
+        (freedom relocates to the 3 branches' initial conditions -- see
+        "REQUIRED CORRECTIONS" below; this is a scoped, not total, reduction)
 ```
 
 The reduction is not produced by setting arbitrary numerical values:
@@ -17,6 +19,27 @@ The reduction is not produced by setting arbitrary numerical values:
 - `Pi0=3 lambda_U + 3 lambda_D + lambda_E` is consequently an output.
 
 `alpha`, `beta`, physical gauge couplings, Yukawa data, and laboratory branch identification are not reduced by this candidate.
+
+**REQUIRED CORRECTIONS (independent adversarial review, 2026-07-25) — read before citing "5 -> 0"
+anywhere else:**
+
+1. The "5 -> 0" count is scoped to the 5 NAMED dials only. It does not mean zero free choices
+   remain in the construction. The three branch tapes' initial conditions (see the table below,
+   currently hardcoded and undocumented in `primitive_branch_fixture_v0_1.py`) deterministically
+   fix `lambda_U/D/E` through the same fixed stepper, and `Pi0` is highly sensitive to them
+   (branch E dominates the sum). This closure RELOCATES that freedom out of the 5 named dials —
+   it does not eliminate it from the subchain as a whole. Until the initial conditions themselves
+   have a principled (root-native or at least disclosed/justified) source, "0 free dials" should
+   be read as "0 of the 5 originally-named dials," not "0 remaining degrees of freedom."
+2. Each branch's `primitive_certificate` (`no_internal_reset`, `orientation_quotiented`,
+   `branch_encoding_tier`) is checked by `validate_payload` for presence and exact string/boolean
+   match ONLY — it is never independently verified against the branch's own `phi`/`psi`
+   trajectory data. A caller could declare `no_internal_reset=True` on a tape that actually
+   resets internally and the gate would not catch it. This is narrower than, and separate from,
+   the already-stated "does not certify a laboratory U/D/E encoding" disclaimer: that disclaimer
+   scopes the PHYSICS claim, this note scopes the ARCHITECTURAL/mathematical claim (i.e. even
+   granting this is not real physics, the code does not yet verify its own declared architectural
+   properties either).
 
 ## Full operational chain
 
@@ -110,10 +133,16 @@ Within this operational subchain:
 Thus:
 
 ```text
-operational free-dial count: 5 -> 0
+named operational free-dial count: 5 -> 0
 ```
 
-This is a genuine reduction of fitted/redundant parameters in the framework's finite-architecture computation. It is not yet a claim that five independent experimentally measured Standard-Model constants have disappeared; the physical U/D/E adapter remains a separate empirical identification problem.
+This is a genuine reduction of THESE 5 named fitted/redundant parameters in the framework's
+finite-architecture computation. It is not yet a claim that five independent experimentally
+measured Standard-Model constants have disappeared, NOR that the construction as a whole now has
+zero free choices — the freedom relocates into the 3 branches' initial conditions (currently
+unexplained/undocumented; see "REQUIRED CORRECTIONS" above), which is a real, disclosed, still-
+open item, not a solved one. The physical U/D/E adapter remains a separate empirical
+identification problem.
 
 ## Files
 

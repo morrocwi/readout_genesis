@@ -7,6 +7,25 @@ without treating C_RD or branch lambdas as tunable inputs.
 
 Tier: declared_finite_architecture / calibrated_readout / finite_diagnostic.
 This is not an unrestricted-root derivation and does not certify a laboratory U/D/E encoding.
+
+REQUIRED CORRECTIONS applied after independent adversarial review (2026-07-25):
+(1) `primitive_certificate` fields (`no_internal_reset`, `orientation_quotiented`,
+    `branch_encoding_tier`) are checked ONLY for presence/exact-match against caller-supplied
+    values in `validate_payload` -- they are NEVER independently verified against the actual
+    `phi`/`psi` trajectory arrays. A caller could declare `no_internal_reset=True` on a tape that
+    in fact resets internally and this gate would not catch it. Unlike the "does not certify a
+    laboratory U/D/E encoding" disclaimer (which correctly scopes the PHYSICS claim), this is a
+    narrower, previously-undisclosed limitation on the ARCHITECTURAL/mathematical claims
+    themselves -- see `SELF_DECLARED_UNVERIFIED_CERTIFICATE_FIELDS` below and its use in
+    `analyze()`'s returned report.
+(2) The `parameter_reduction.after_count=0` claim is corrected: the 3 branches' initial
+    conditions (`primitive_branch_fixture_v0_1.py`'s `BRANCH_INITIAL_CONDITIONS`, currently
+    phi0=0.2/0.5/0.8, unexplained/undocumented) are NOT counted as dials in the original 5-dial
+    list, yet they deterministically fix `lambda_U/D/E` (and `Pi0` is highly sensitive to them,
+    branch E dominates the sum) through the same fixed stepper. This closure does not eliminate
+    that freedom -- it RELOCATES it from the 3 named lambda dials into 3 (or more; each is a
+    4-tuple) unexplained initial-condition choices. See `parameter_reduction["relocated_not_
+    eliminated"]` below, added by this correction.
 """
 from __future__ import annotations
 
@@ -32,6 +51,14 @@ NATIVE_COST_UNIT_RD = 1.0
 REQUIRED_BRANCHES = ("U", "D", "E")
 MAX_SEGMENTATION_GAP = 0.01
 EPS = 1e-15
+
+# Disclosed, not fixed: these certificate fields are checked for presence/exact-match only, never
+# cross-verified against the actual phi/psi trajectory arrays (required correction, 2026-07-25 review).
+SELF_DECLARED_UNVERIFIED_CERTIFICATE_FIELDS = (
+    "primitive_certificate.no_internal_reset",
+    "primitive_certificate.orientation_quotiented",
+    "primitive_certificate.branch_encoding_tier",
+)
 
 
 class ContractError(ValueError):
@@ -141,6 +168,11 @@ def validate_payload(payload: Mapping[str, object]) -> Mapping[str, object]:
         seen_paths.add(path_id)
         seen_initial_conditions.add(initial_condition_id)
 
+        # NOTE (required correction, 2026-07-25 review): the three checks below confirm the
+        # caller DECLARED these properties -- they do NOT verify them against phi/times/psi
+        # below. A tape that actually resets internally, or is not orientation-quotiented, would
+        # still pass here if its certificate dict simply asserts otherwise. See
+        # SELF_DECLARED_UNVERIFIED_CERTIFICATE_FIELDS and analyze()'s claim_boundary.
         certificate = raw.get("primitive_certificate")
         if not isinstance(certificate, dict):
             raise ContractError(f"{field}.primitive_certificate is required")
@@ -262,11 +294,30 @@ def analyze(payload: Mapping[str, object]) -> Mapping[str, object]:
             "native_unit_gauge_fixed": ["C_RD"],
             "computed_outputs": ["lambda_U", "lambda_D", "lambda_E", "Pi0"],
             "not_reduced_here": ["alpha", "beta", "physical gauge couplings", "Yukawa data"],
+            # REQUIRED CORRECTION (2026-07-25 review): the 5 named dials above are genuinely
+            # removed from THAT list, but the freedom does not vanish -- it relocates into the
+            # branch tapes' initial conditions (currently 3 hardcoded, undocumented 4-tuples in
+            # primitive_branch_fixture_v0_1.py's BRANCH_INITIAL_CONDITIONS), which deterministically
+            # fix lambda_U/D/E (and Pi0 is highly sensitive to them). "after_count=0" therefore
+            # describes only the named-dial subchain, not the full degrees of freedom in this
+            # construction -- do not read it as "zero remaining free choices."
+            "relocated_not_eliminated": [
+                "branch initial conditions (phi0/phi1/psi0/psi1 per branch, 3 branches) are "
+                "currently unexplained/undocumented free choices that deterministically set "
+                "lambda_U, lambda_D, lambda_E through the fixed stepper -- this closure moves "
+                "freedom out of the named 5 dials, it does not remove it from the construction",
+            ],
         },
         "claim_boundary": [
-            "five operational dials are removed from this declared finite-architecture subchain",
+            "five NAMED operational dials (M, C_RD, lambda_U, lambda_D, lambda_E) are removed "
+            "from this declared finite-architecture subchain -- this is narrower than \"zero "
+            "free choices remain\", see parameter_reduction.relocated_not_eliminated",
             "branch tapes and provenance remain empirical/architectural inputs, not fitted constants",
             "does not prove that fixture U/D/E encodings are laboratory Standard-Model branches",
             "does not derive alpha or beta and does not by itself prove Pi0 > alpha",
+            "primitive_certificate fields (no_internal_reset, orientation_quotiented, "
+            "branch_encoding_tier) are checked for presence/exact-match only -- they are "
+            "self-declared by the caller and NOT independently verified against the tape's own "
+            "phi/psi data, see SELF_DECLARED_UNVERIFIED_CERTIFICATE_FIELDS",
         ],
     }
