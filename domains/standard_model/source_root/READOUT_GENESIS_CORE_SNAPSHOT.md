@@ -1669,6 +1669,19 @@ Strict gap (readout-not-truth):
 
 Every observer's record is lossy. This is not a defect; it is the definition of finite access.
 
+**`[Th_coqc]` grounding, added 2026-07-25** (`formal/InfoTrueRecordUnreadable_attempt.v`,
+axiom-free, `Print Assumptions` ⇒ Closed for all three lemmas): the exact, general, Type-
+polymorphic mathematical content behind this strict gap is now proven, not only asserted. The true
+pre-record state continues to EXIST (an ordinary value, nothing exotic) whenever two distinct true
+states are collapsed by a non-injective readout — what fails to exist is a single decoder correct
+on both (`no_decoder_recovers_state`, `true_state_exists_but_no_total_decoder`). This resolves,
+precisely, a founder question raised during the 2026-07-25 matter/antimatter exploration ("there
+IS a true Record, we just cannot read it") — see `domains/standard_model/
+matter_antimatter_exploration/MATTER_ANTIMATTER_EXPLORATION_LOG.md`, Attempt 3. Scope: a general
+foundations-level theorem about any non-injective readout, not a claim about which concrete field
+(`Φ`, `Ψ`, or any other) occupies the "true state" or "record" role in this book's own physics
+content — that remains a separate, case-by-case question.
+
 This is the face that makes readout-not-truth a structural theorem about the spine rather than a
 philosophical stance layered on top of it. `R_O`, an observer's record, is built by composing a
 selection map `T_Σ`, a projection `Π`, an aggregation `A`, and an output map `Ω_A`, each stage of
