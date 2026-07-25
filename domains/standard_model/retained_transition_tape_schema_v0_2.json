@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "retained-transition-tape-v0.2",
+  "title": "Retained Transition Tape v0.2",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema",
+    "path_semantics",
+    "delta_mode",
+    "delta_is_dimensionless",
+    "cost_unit_rd",
+    "provenance",
+    "samples"
+  ],
+  "properties": {
+    "schema": {
+      "const": "retained-transition-tape-v0.2"
+    },
+    "path_semantics": {
+      "enum": [
+        "primitive_closure",
+        "observed_trajectory"
+      ],
+      "description": "lambda/Pi0 may be emitted only for primitive_closure after every meter gate passes."
+    },
+    "delta_mode": {
+      "enum": [
+        "path_total",
+        "rate_per_time"
+      ],
+      "description": "Declares which path statistic is interpreted as the branch Delta_eff candidate."
+    },
+    "cost_unit_rd": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "description": "Declared native retained-distinction calibration unit."
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "source_id",
+        "adapter_id",
+        "calibration_id"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "adapter_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "calibration_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "samples": {
+      "type": "array",
+      "minItems": 9,
+      "items": {
+        "$ref": "#/$defs/sample"
+      }
+    },
+    "delta_is_dimensionless": {
+      "const": true,
+      "description": "Explicit declaration that the selected Delta statistic is dimensionless under calibration_id, required before exp(-Delta)."
+    }
+  },
+  "$defs": {
+    "vector": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "number"
+      }
+    },
+    "readerComponents": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "residual": {
+          "$ref": "#/$defs/vector"
+        },
+        "source": {
+          "$ref": "#/$defs/vector"
+        },
+        "damping": {
+          "$ref": "#/$defs/vector"
+        },
+        "transport": {
+          "$ref": "#/$defs/vector"
+        },
+        "potential": {
+          "$ref": "#/$defs/vector"
+        }
+      },
+      "description": "Meter resolves residual + source - damping - transport - potential."
+    },
+    "recordComponents": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "residual": {
+          "$ref": "#/$defs/vector"
+        },
+        "damping": {
+          "$ref": "#/$defs/vector"
+        },
+        "transport": {
+          "$ref": "#/$defs/vector"
+        },
+        "hessian": {
+          "$ref": "#/$defs/vector"
+        }
+      },
+      "description": "Meter resolves residual + damping - transport - hessian."
+    },
+    "sample": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "path_id",
+        "branch",
+        "time",
+        "phi",
+        "psi"
+      ],
+      "properties": {
+        "path_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "branch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "time": {
+          "type": "number"
+        },
+        "phi": {
+          "$ref": "#/$defs/vector"
+        },
+        "psi": {
+          "$ref": "#/$defs/vector"
+        },
+        "reader_load": {
+          "$ref": "#/$defs/vector"
+        },
+        "record_load": {
+          "$ref": "#/$defs/vector"
+        },
+        "reader_components": {
+          "$ref": "#/$defs/readerComponents"
+        },
+        "record_components": {
+          "$ref": "#/$defs/recordComponents"
+        }
+      },
+      "description": "Interior samples require both reader and record loads, supplied directly or through components. Endpoints may omit them. Code hard-fails if direct and component forms are both supplied for one channel."
+    }
+  }
+}
