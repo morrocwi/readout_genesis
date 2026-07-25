@@ -447,3 +447,38 @@ genuinely simpler to state, NOT a demonstrated escape from any specific named bl
 generation↔boost-repetition identification remains the same unproven structural hypothesis Attempt
 13 already disclosed, unchanged.
 
+
+
+## Attempt 15 — "รวมเข้ากับสมการแม่ตั้งแต่ต้น": two more closed doors, both honest, 2026-07-25
+
+Literally integrating Attempt 14's r with the mother equation from the start, as directed.
+`item1_exploration/attempt15_mother_equation_from_the_start_v1.py` tests two candidate sources:
+
+**Route A** — the mother equation's own continuum-time decay rate. Confirmed by reading
+`src/anse_spine/core/spine_engine.py` directly (no discrete-recurrence alternative exists anywhere
+in the repo): `Spine.evolve()` is genuinely continuum-time (`scipy.integrate.solve_ivp`), and
+`mode_roots` solves the continuum characteristic equation `M s²+D s+K λ=0`. Building a per-step
+ratio as `e^s` would REINJECT I1 (Lindemann–Weierstrass: e^s is transcendental for algebraic
+s≠0, cited not re-derived) — exactly the problem Attempt 14 dissolved by leaving the continuum.
+Dead end, now confirmed against the actual implementation rather than assumed structurally.
+
+**Route B** — L_R's own eigenvalue ratios (genuinely rational, part of the K·L_R·Φ term itself).
+Tested on the SAME two small graphs already used elsewhere this session (C3 from item25's
+loop-counting cross-check; C4, item25's own plaquette lattice) — not invented fresh. C3=K3
+reproduces Attempt 10's own already-proven degeneracy ({0,3,3}); C4 supplies only 2 distinct
+nonzero eigenvalue magnitudes (2 and 4), not the 3 needed to distinguish 3 generations.
+
+Independently adversarially reviewed — SURVIVES WITH REQUIRED CORRECTIONS: Route A and the L-W
+framing held up clean. Route B had a real bug (not just wording): an earlier draft's prose claimed
+C4 supplies "only one ratio" while the code's own computed ratio set was actually {0.5,1.0,2.0} (3
+elements) — a loose inequality bound had been reverse-fit to pass regardless, the same "loose
+bound chosen to trivially pass" pattern already caught elsewhere in this chain. Corrected to the
+accurate claim (distinct nonzero eigenvalue MAGNITUDE count: C3=1, C4=2, exact-equality checked).
+Also softened an overclaimed "entirely independent" characterization of the C3 reconfirmation
+(K_n's Laplacian spectrum {0,n,...,n} is a standard fact — a different computational method
+confirming it is not new information).
+
+Item 1 remains fully Open. Two more concrete candidate sources for r ruled out, honestly; a
+larger/differently-weighted graph for Route B remains untried and unproven impossible, though any
+such graph would need its own root-native justification to avoid becoming undisclosed fitting.
+
