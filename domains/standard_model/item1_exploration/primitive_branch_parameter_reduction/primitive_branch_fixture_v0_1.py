@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import copy
 import json
-import math
 import sys
 from pathlib import Path
 
@@ -13,6 +12,9 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[4]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+OPERATIONAL_DIR = ROOT / "domains" / "standard_model" / "item1_exploration" / "retained_transition_operational_closure"
+if str(OPERATIONAL_DIR) not in sys.path:
+    sys.path.insert(0, str(OPERATIONAL_DIR))
 
 from domains.standard_model.item1_exploration.primitive_branch_parameter_reduction.primitive_branch_parameter_reduction_v0_1 import analyze  # noqa: E402
 from domains.standard_model.item1_exploration.retained_transition_operational_closure.operational_exchange_closure_v0_1 import (  # noqa: E402
