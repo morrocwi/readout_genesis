@@ -815,3 +815,51 @@ ceiling) and shows the ceiling is removable in principle, without yet producing 
 number. The 6 negative results plus this one now form a coherent picture: the obstruction was
 structural (a frozen, compact graph), it is removable (non-compact accumulation), and what remains
 is the value-selection problem the framework has flagged as open since Attempts 15-17.
+
+## Affine G[Theta_n] non-compact growth — closes the faithfulness caveat, 2026-07-25
+
+Next step after the merged `accumulating_graph_dynamic_range` candidate, which proved a non-compact
+accumulating operator unlocks dynamic range but used `G=boost(Theta)=exp(Theta*L)` — a matrix
+EXPONENTIAL, flagged by its own review as NOT literally the mother equation's operator form. The
+mother equation's actual operator is AFFINE in the geometry state: `G[Theta_n]=G_0+Σ_a Theta_n^a G_a`
+(`source_root/READOUT_GENESIS_CORE_SNAPSHOT.md:1090`). Founder-chosen Option A: prove the FAITHFUL
+affine form (not an exponential) also produces the growth. Candidate
+`affine_graph_noncompact_growth/` (draft, both repos: readout_genesis PR #91, this repo PR #45).
+
+**Construction (faithful to the affine spec):** `G_0=I`, `G_a=[[0,1],[1,0]]` (the same so(1,1)
+boost-direction generator as Attempt 13, but used AFFINELY: `G[Theta]=I+Theta*G_a=[[1,Theta],[Theta,1]]`,
+singular values `1±Theta`, non-orthogonal), `Theta` accumulating by constant increment (simplest
+instance of the spec's `Theta_{n+1}=A_Theta Theta_n+source`). Measures the CONDITION NUMBER
+(`sv_max/sv_min`) of the accumulated product — the dimensionless mass-RATIO analog
+(spectral-gap-ratio, per `falsify_particle_graph.py`).
+
+| operator | condition number (mass-ratio analog) |
+|---|---|
+| frozen `G=I` | 1x |
+| affine COMPACT control (`I+Theta*[[0,-1],[1,0]]`, only generator direction changed) | **1.0x exactly** |
+| affine NON-COMPACT (`I+Theta*[[0,1],[1,0]]`, mother's form) | **449808x** (past ~10^5.5 fermion mass spread) |
+
+**CLOSED the faithfulness caveat:** the mother equation's ACTUAL affine operator — not just an
+exponential — spans the needed ratio range. The compact-affine control (identical affine form,
+identical accumulation and parameters, ONLY the generator direction changed compact↔non-compact,
+condition number stays exactly 1x) is the clean single-variable regime check isolating
+non-compactness as the driver. Precision-clean (min singular value 0.00105, not underflowed).
+Independently reviewed: SURVIVES, no required corrections; reviewer independently reproduced the
+numbers and confirmed it is genuinely affine (not exp), the control is genuine, and 449808x is real
+not a precision artifact.
+
+**Still NOT predictive (disclosed prominently):** `d_theta` (accumulation rate) is a free parameter
+— a sweep reaches any range — so faithful ceiling-removal is NECESSARY but NOT SUFFICIENT. The
+value-selection problem (which rate/rapidity, and why) remains exactly the open item Attempts 15-17
+left. Condition number is the dimensionless mass-ratio analog only; no GeV/unit conversion (that
+problem stays open); the n↔generation identification remains Attempt 13's unproven conjecture; the
+real non-uniform mass hierarchy (Option B) is not attempted.
+
+**Where the arc stands now:** the two graph-mechanism results (merged `accumulating_graph`, and this
+faithful-affine follow-up) together establish, with reviewed evidence, that (1) the frozen `G=1` was
+the real dynamic-range ceiling behind today's 6 bridge failures, and (2) the mother equation's own
+affine operator, un-frozen with a non-compact generator and allowed to accumulate, removes that
+ceiling and spans the fermion-mass ratio range. What remains open is unchanged and clearly named:
+selecting the accumulation rate (value-selection, Attempts 15-17) and the RD→physical-unit bridge
+(6 disclosed failures today). Structural obstruction removed; value-selection and unit-bridge still
+open.
