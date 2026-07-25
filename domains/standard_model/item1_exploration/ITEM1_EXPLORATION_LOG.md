@@ -531,3 +531,129 @@ mechanism exists (Attempts 13-14, Lorentz non-compactness), every root-native so
 remaining parameter was searched and closed (Attempts 15-16), and the parameter is now openly
 fit_calibrated (Attempt 17) rather than left as an undisclosed gap.
 
+## Attempt 18 (candidate) — Retained Transition Meter v1: fit `M_n` from a real tape, 2026-07-25
+
+A different quantity than Attempts 1-17's `r`, but the SAME kind of gap: `HANDOFF_NEXT_SESSION.md`
+line ~91 names `M_n` (the `Φ↔Ψ` exchange-rate matrix in II.8a's own DRL action,
+`𝕃^n_exchange = (1/Δt)·ΔΦ_n^T·M_n·ΔΨ_n`) as "the price per elementary retained-distinction
+transition" this item is chasing, and the SAME quantity `READOUT_GENESIS_CORE.md` §II.6 flags as
+"POSITED, not derived" after 8 independent failed derivation attempts. Built via `ultracode`
+(4-agent System/Design/Coding/Review subteam), a NINTH attempt but of a genuinely DIFFERENT KIND
+than Attempts 10-17: not a root-native derivation attempt, a disclosed `fit_calibrated`
+least-squares CALIBRATION of `M_n` from a real (synthetic, disclosed) Reader/Record transition tape,
+reusing Attempt 1's own already-reviewed stepper unmodified.
+
+`retained_transition_meter/` (new subfolder): fits `M̂` from both the Reader and Record equations
+independently (`M̂_Φ=0.923011`, `M̂_Ψ=0.999124`), computes the cost chain
+`c_n → Δj_eff=-3.854664 → λj=47.212757 → Π₀(toy)=330.489301` (λj outside v1.13's own assumed (0,1]
+range — reported as-is, not clipped; Π₀ toy uses one scalar in all 3 branch slots, explicitly NOT a
+real U/D/E claim). Five required validation tests, all genuinely falsifiable: fit-holdout (train
+0.2136, holdout 1.8132, no gate — reported as-is), dual agreement (7.92% → PARTIAL, both values kept
+separate, not averaged), path additivity (6.91e-16 → machine precision), negative control (shuffled
+VALUE sequence, not index labels, since the raw scalar LS fit is permutation-invariant on fixed
+pairs — 181x degradation, robustly passed), transport (normalized residual 1.2477 → **DOES NOT
+TRANSPORT**, reported plainly, not hidden).
+
+Independently adversarially reviewed — **SURVIVES**, re-ran the actual script twice (bit-identical,
+seeded RNG), hand-verified the physics/math against `attempt1`'s real stepper formulas, audited
+every `ck()` for loose thresholds (none found — the underdetermination gate, additivity, and
+negative-control margins are all real and non-decorative). One cosmetic (non-blocking) note applied
+after review: five `ck(name, True)` "explicit non-claims" checks were hardcoded-true documentation
+statements, not measured results — converted to plain prose so they don't inflate the PASS tally.
+
+Also found post-review (self-caught, not by the reviewer): a real QuTiP harmonic-oscillator
+comparison script DOES exist at `scripts/test_graph_quantum_relativity.py` (`D/M` vs QuTiP,
+7.6×10⁻⁴) — an earlier search by this session had missed it. RTM v1 deliberately does not use it
+(a Reader/Record tape from this domain's own stepper is the right fit target for `M_n`, not a
+different domain's harmonic-oscillator eigenvalue check) — flagged as a known resource for a
+possible RTM v2 cross-check, not a gap in RTM v1's own claims.
+
+**Candidate status**: a parallel team independently built a similar-scope instrument
+("retained transition meter v0.1", `readout_genesis` PR #67, scalar `M` from segmented tape,
+deterministic fixture `M_true=1.75` recovered to `1.74942`, ~0.033% error) — this attempt is opened
+as a candidate PR alongside it for comparison, not yet integrated as canonical. Neither closes item
+1's derivation question; both are `fit_calibrated` instruments to be compared on: event-to-cost
+semantic continuity, identifiability/RDI sufficiency, negative-control rigor, path/branch
+segmentation encoding, and whether shared-file integration should happen before selecting one.
+
+## Addendum to Attempt 18 — bias diagnosis: the OLS fit's real mechanism, 2026-07-25
+
+The parallel team's own review of this PR correctly flagged the scalar OLS fit
+(`M_hat = sum(a_n*y_n)/sum(a_n^2)`) as an errors-in-variables (EIV) estimator — both the regressor
+and target are computed from the same noisy observed field.
+`retained_transition_meter/bias_diagnosis_v1.py` (new file, same branch) identifies the EXACT
+mechanism, quantitatively, not just qualitatively.
+
+**First hypothesis tried, self-caught as WRONG before write-up**: that Reader's y_n reduces
+algebraically (K=1=-a, verified independently by the reviewer to machine precision, 8.3e-17) to
+`y_n = -D·δt^cΦ_n - Φ_n³` — a cubic function of the same noisy Φ — creates a nonlinear noise-
+rectification bias (`E[(Φ+ε)³]` has a `3Φσ²` mean shift). Applying that exact correction changed
+`M_hat` by ~1e-10 relative — utterly negligible against the real ~20% bias. Not the mechanism.
+
+**Real mechanism, confirmed**: classic LINEAR EIV attenuation, driven entirely by unequal signal-
+to-noise ratio between channels. Φ's clean second-difference signal COLLAPSES late in the tape
+(RMS 0.465→0.011, Φ settling toward the double-well fixed point, attempt1's own documented
+behavior) while Ψ's does not (RMS 9.57→14.3). The same absolute observation noise therefore
+attenuates the Reader fit severely (predicted attenuation 0.781, measured M̂/M_true 0.795) while
+leaving Record almost untouched (predicted 0.9993, measured 0.9993) — the classic attenuation
+formula `Var(a_true)/(Var(a_true)+Var(noise))`, applied with the ACTUAL measured variances,
+predicts both channels' bias to within a few percentage points.
+
+**Implication for every candidate that pools Reader+Record into an equal-weight "joint" fit**
+(this repo's own PR #67/#69's design, and `research_universal_solver`'s
+`candidate/retained-transition-meter-v3-synthesis-2026-07-25`): the joint estimate inherits
+Reader's attenuation bias, diluting Record's cleaner signal rather than correcting for Reader's
+noise sensitivity. A variance-weighted joint fit (already-computed noise-floor ratios as weights)
+would be a simpler, more targeted fix than a full errors-in-variables/state-space estimator.
+
+Independently adversarially reviewed — SURVIVES, no required corrections. Reviewer independently
+re-implemented the entire computation from scratch (own simulation, not calling this repo's fit
+functions) and reproduced every number to the digit, including the disclosed wrong-hypothesis
+story's 2.44e-10 negligible effect. Confirmed the 5-percentage-point tolerance is non-decorative
+(actual Reader residual 1.39pp, only ~3.6× margin — could plausibly have failed and did not).
+
+This is a diagnosis, not a fix — no corrected estimator is implemented here. Applies equally to
+all three parallel `M_n`-fitting candidates (this PR, PR #69, and the sibling repo's synthesis
+candidate), since all share the same underlying scalar-OLS-on-noisy-second-differences mechanism.
+
+## Final synthesis — the bias-diagnosis question closes; `M_n` itself does NOT, 2026-07-25
+
+A parallel team independently reran the same real Reader/Record stepper (this repo's own PR #71,
+"Diagnose RTM OLS bias before estimator selection") and reproduced this branch's noise-sweep table
+to the digit, plus added a 4-way ablation (EIV-only / target-only / linearized / full-nonlinear)
+this branch's own diagnosis had not run — isolating that noise in the REGRESSOR dominates the
+bias, while noise passing through the nonlinear `gradV(Φ)` target term is negligible
+(`M_target_only≈0.99999907`), and independently computing the same `S_a` signal-power ratio
+(`≈423.15`) this branch found via RMS collapse.
+
+`retained_transition_meter/bias_diagnosis_final_synthesis_v1.py` (new branch,
+`diagnosis/rtm-bias-final-synthesis-2026-07-25`, based on this candidate) independently re-derives
+PR #71's specific ablation numbers from scratch (not copied), confirming both files correctly
+implement the same computation. **Required correction, self-caught then confirmed by independent
+review**: an earlier draft framed the exact-digit match as "independent statistical convergence" —
+corrected after review (and independently re-verified with a 5-seed sweep, `M_eiv_only` spread
+0.781–0.795 across seeds, `M_target_only` stays within 3e-6 of true `M` for every seed) to
+distinguish: the exact-digit match is a REPRODUCIBILITY check (both files share the same disclosed
+seed, `20260725`, this repo's own `tape_generator.py` default), not independent evidence on its
+own; the genuinely non-circular corroboration is the SEED-ROBUST qualitative pattern (regressor-
+noise dominates, target-noise negligible) and the seed-independent `S_a` ratio (a pure function of
+the noiseless deterministic trajectory).
+
+**Explicit scope, relayed from the parallel team and endorsed here at face value, not softened**:
+this closes the DIAGNOSIS question (why the OLS fit is biased) with real cross-methodology
+confidence. It does **NOT** close `M_n` itself. Still open: (a) no noise-robust estimator exists —
+current `M_hat` is known-biased, and `c_n`/`Δ_j`/`λ_j`/`Π_0` all inherit that bias uncorrected;
+(b) the semantic bridge `M_DRL_exchange =? M_primitive_retained_transition` is entirely unproven —
+measuring a coefficient is not the same as showing it is item 1's "price per elementary retained-
+distinction transition"; (c) the cost definition `c_n` itself remains a candidate (signed vs abs,
+`cost_unit_rd`'s origin, which path is a genuine primitive closure, segmentation-invariance) — the
+reason PR #69 correctly refuses to emit `λ`/`Π₀` at all unless `path_semantics=primitive_closure`
+is explicitly declared. Five criteria before `M_n` could be considered closed (none met by any of
+the three parallel candidates yet): (1) a fail-closed, noise-robust estimator; (2) multiple
+trajectories/noise models/parameters tested, not one fixture; (3) a real external adapter (QuTiP
+or experimental data); (4) proven invariance under segmentation/coordinate relabeling/re-encoding;
+(5) a fitted `M` predicting a held-out observable not used in the fit. No number produced by any
+of the three candidates (`M_hat`, `c_n`, `Δ_j`, `λ_j`, `Π_0`) should be read as a physical
+prediction — all remain `finite_diagnostic`/`candidate`/`fit_calibrated`, never "nature's exchange
+rate" or real `Δ_U/Δ_D/Δ_E`.
+
