@@ -531,3 +531,59 @@ mechanism exists (Attempts 13-14, Lorentz non-compactness), every root-native so
 remaining parameter was searched and closed (Attempts 15-16), and the parameter is now openly
 fit_calibrated (Attempt 17) rather than left as an undisclosed gap.
 
+## Attempt 18 (candidate) — Retained Transition Meter v1, 2026-07-25
+
+Built via `ultracode` (4-agent System/Design/Coding/Review subteam) on a separate, unmerged branch
+(`candidate/retained-transition-meter-v1-2026-07-25`, Forgejo PR #26 / `readout_genesis` PR #68 —
+not present in this branch's own copy of this log, added there independently). Fits `M_n` (the
+`Φ↔Ψ` DRL exchange rate, `HANDOFF_NEXT_SESSION.md` ~line 91, POSITED not derived after 8 failed
+attempts) via least-squares from a synthetic single-path Reader/Record tape. Independently
+adversarially reviewed — SURVIVES. Full record on that branch's own log entry.
+
+## Attempt 19 (candidate) — Retained Transition Meter v3: synthesis of Attempt 18 and a parallel team's v0.1, 2026-07-25
+
+A parallel team independently built a second candidate for the same `M_n` fit
+(`readout_genesis` PR #67, "retained transition meter v0.1": general branch/path JSON tape schema,
+JOINT Reader+Record fit, median-across-multiple-paths aggregation, `|abs|` cost convention forcing
+`λ∈(0,1]`, rotated-donor negative control, explicit fail-closed PASS/FAIL gate dict). Per the
+founder's explicit instruction, this is a THIRD, separate candidate branch
+(`candidate/retained-transition-meter-v3-synthesis-2026-07-25`) that SYNTHESIZES both prior
+candidates — it does not overwrite or modify either.
+
+`retained_transition_meter_v3_synthesis/` (new subfolder, reuses Attempt 18's `stepper_reuse.py`
+byte-identical): combines Attempt 18's analytic noise-floor underdetermination gate and
+within-path additivity check (genuine second code path, explicit loop vs. vectorized sum) with
+v0.1's joint fit, median-across-multiple-paths aggregation, and fail-closed gate discipline. Runs
+BOTH prior candidates' negative controls (Attempt 18's shuffled-value-sequence test AND v0.1's
+rotated-donor test) since they were found to test genuinely different failure modes, not redundant
+ones — on a new 5-path, branch-tagged (U/D/E) synthetic tape (arbitrary branch labels, disclosed,
+no PDG data). Deliberately does NOT resolve the one place the two parents made an incompatible
+choice — signed vs. `|abs|` cost — computing and printing BOTH: `Π₀(signed)≈2.95×10¹⁹` (the sign
+compounds catastrophically along a real multi-path tape) vs. `Π₀(abs)≈0.577`, a striking, honest
+illustration of exactly why v0.1's `|abs|` choice matters in practice, without asserting it is the
+"correct" convention.
+
+Self-caught bug before review: an early draft copied `obs_noise_sigma=2e-3` from Attempt 18's
+`tape_generator.py` FUNCTION-SIGNATURE default instead of that file's actual CALL-SITE value
+(`2e-6`, in `rtm_v1.py`) — 1000× too large given `dt⁴` in the noise-floor formula, which marked
+every path underdetermined (`M_hat=nan` everywhere). Diagnosed and fixed before sending for review,
+disclosed in-file.
+
+Independently adversarially reviewed — SURVIVES WITH REQUIRED CORRECTIONS, 1 applied: a decorative
+always-`True` `ck()` call (checking nothing, inflating the PASS tally) had crept back in at the
+Pi_0-reporting step — the exact anti-pattern Attempt 18's own review already caught and removed
+once — converted to plain prose. Reviewer independently confirmed: `stepper_reuse.py` byte-
+identical to Attempt 18's; bit-identical reruns; the noise-sigma bug story checks out against
+Attempt 18's real files; the additivity check is a genuine independent code path, not decorative;
+both negative controls test different failure modes; no loose thresholds found anywhere; tier tags
+correct throughout (`fit_calibrated`/`finite_diagnostic`, no `Th_coqc` claim). One reviewer-flagged
+item was checked and found to be a FALSE POSITIVE, not applied: the reviewer claimed "PR #26"
+citations were wrong because `gh pr view 26 --repo morrocwi/research_universal_solver` (GitHub)
+returns an unrelated PR — but this repo's PR #26 for Attempt 18 lives on Forgejo (`local` remote,
+the canonical host), verified live at the time of writing, title and branch match exactly; the
+reviewer checked only GitHub, this repo's non-canonical mirror.
+
+All three candidates (Attempt 17's fit for `r`, and now Attempts 18-19 for `M_n`) remain
+`fit_calibrated`, unmerged, pending a founder decision on which (if any) becomes canonical. Item 1
+remains fully Open in the derivation sense throughout.
+
