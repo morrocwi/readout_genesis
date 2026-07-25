@@ -653,3 +653,59 @@ already known (persistent-walk telegraph derivation). All draft/unmerged pending
 Nothing found today closes the RD-to-GeV question; the survey covered substantially more of this
 project's own philosophy/math foundation than before, and ruled out several concrete mechanisms
 with real evidence rather than leaving them as untried possibilities.
+
+## Self-critique: PR #81's comparison was mismatched-regime by construction, and this was checkable before building it, 2026-07-25
+
+Recorded at the founder's explicit direction ("นายควรจะรู้เรื่องนี้ตั้งแต่แรก... นายพลาดอะไร" — you
+should have known this from the start, record what you got wrong) — an honest disclosure of a real
+methodological mistake, not a technical bug.
+
+**What was compared, and what was actually wrong with the comparison itself (not just its
+numeric outcome):** `native_causal_memory_consistency` (PR #81) computed two "mass" quantities from
+the same merged stepper and treated their disagreement (ratio 0.0612, 94% deviation) as an open
+empirical question — as if either outcome (agreement or disagreement) would have been informative.
+It would not have been. Reading the two formulas' actual dependencies directly (available in the
+source files at the time PR #81 was built, not discovered only afterward):
+
+- `m_from_tau_c_native = D/(2*M_joint)` — an exact LINEAR algebraic function of `D` and `M_joint`
+  alone. This is the decay rate of the LINEARIZED stepper near its unstable fixed point `Phi=0`
+  (`EQ-056`'s own reader/record characteristic roots, `Re(s)=-D/(2M)`).
+- `m_higgs_native = sqrt(radial_curvature_proxy)`, where `radial_curvature_proxy =
+  2*r_star*V_eff''(r_star)` — a function of `alpha_order`/`beta_order` (from the mother potential's
+  `a,b`, NOT from `D` at all) and `lambda_U/D/E` (which depend on `M_joint` only EXPONENTIALLY,
+  through a 200-step nonlinear trajectory simulation and the branch-tape `Delta_j` construction),
+  evaluated at `r_star=3.823...` — the ORDERED VACUUM, generically far from the origin.
+
+**These two quantities do not share a regime.** One is a property of the potential's LINEAR
+behavior at `Phi=0`; the other is a property of the potential's NONLINEAR curvature at a
+DIFFERENT point, `r*`, reached only after the branch/order-vacuum machinery runs. `D` does not even
+appear in the second formula except indirectly, buried inside a 200-step simulation several
+computational layers removed. There was no reason, checkable directly from the two formulas before
+ever running any code, to expect these numbers to agree — disagreement was not a discovery, it was
+the a priori expected outcome of comparing two structurally unrelated properties of the same
+nonlinear system. Analogy stated plainly: this is like expecting a car's launch acceleration and
+its top speed at the far end of the track to be numerically equal, then treating it as news when
+they are not.
+
+**What I (the AI session) should have done, and did not do, before building PR #81:** trace both
+quantities' actual algebraic dependencies FIRST (a five-minute read of the two source files, no
+code execution required) and ask "do these measure the same regime of the same system" BEFORE
+spending a build+test+independent-review cycle on the comparison. This check would have shown
+immediately that `D` is present in one formula and absent (except indirectly) from the other,
+which alone should have been enough to withhold the test as "not yet a meaningful comparison"
+rather than run it and report a 94%-deviation "finding." The founder had to ask the diagnostic
+question after the fact ("ทำไมงานเราดริฟ... M ผิดใช่ไหม" then "หามันวิเคราะห์ให้ได้ว่าทำไมมันยังผิด")
+that this analysis should have preceded the build. This is a real process gap, not a one-off: it
+is the same category of error (treating a mismatched-scope comparison as informative) that earlier
+CRRC findings this session already named for other pairs of quantities — the general lesson (check
+regime/scope compatibility before building any cross-quantity comparison, not just before naming a
+physical target) had already been learned in a narrower form and was not applied broadly enough
+here.
+
+**Correction going forward, stated as a standing check for this exploration:** before building any
+future native-quantity comparison in this domain, first write out both quantities' exact algebraic
+dependencies and confirm they are evaluated in the same regime/scope of the same underlying system
+BEFORE treating agreement-or-disagreement as informative. PR #81 itself is not deleted or
+retracted — its numbers are correct and its adversarial review was sound — but its FRAMING should
+be read as "two structurally unrelated quantities, as expected, disagree," not as "a candidate
+bridge failed a real test."
