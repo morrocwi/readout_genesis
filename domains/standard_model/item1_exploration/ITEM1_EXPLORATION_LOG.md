@@ -915,3 +915,46 @@ determined readout of the graph's own constants (`M`, `M_Theta`, field configura
 hand-tuned schedule. What remains open, stated internally (not as failure): pinning those graph
 constants (value-selection, legitimately calibratable per the framework), and the RD→physical-unit
 bridge (EQ-068, still open).
+
+## Calibrate the graph accumulation to real mass ratios — with a held-out test, 2026-07-25
+
+Founder direction "calibrate ค่าคงที่" (calibrate the constants), following EQ-071's finding that the
+graph's mass-ratio hierarchy is a readout of the graph's own constants and pinning them is a
+legitimately-calibratable internal question. Candidate `calibrate_graph_hierarchy_heldout/` (draft,
+both repos: readout_genesis PR #98, this repo PR #52). Reported strictly as COMPUTED FACTS + tier
+per the materialist-bias guard (STANDING GUARD Part 4b) — no works/fails value-words; a
+`fit_calibrated` constant is not a defect.
+
+This calibrates the accumulation constant to real PDG fermion mass ratios and adds the **held-out
+test Attempt 17 never ran**: fit `R1=gen2/gen1`, predict `R2=gen3/gen2` out-of-sample.
+
+- **FACT A:** real consecutive-generation ratios are non-uniform with DIFFERENT per-branch shapes —
+  up (588.0, 135.8, decelerating), down (20.0, 44.8, accelerating), lepton (206.8, 16.8,
+  decelerating). No single monotone profile fits all three.
+- **FACT B:** a single constant calibrated to `R1` reproduces `R1` exactly (1 param → 1 number) but
+  its held-out prediction of `R2` is off by **332.9% (up), 55.3% (down), 1130.4% (lepton)** —
+  one constant, one ratio, no held-out compression under a uniform-step accumulation.
+- **FACT C:** a uniform accumulation gives `R2/R1 = 1` (computed here), while up/lepton have
+  `R2/R1 < 1` (decelerating) — so a constant-rate accumulation cannot reproduce them; reproducing
+  them needs a per-branch rate that DECREASES across generations. The accumulation mechanisms on
+  record trend the other way (EQ-070 measured 'mildly accelerating', EQ-071 compounds). (An earlier
+  draft mis-cited a strong 'R2/R1 >> 1' acceleration to EQ-071 and was corrected after review —
+  EQ-070 measured only mild acceleration; no specific magnitude is asserted here.)
+
+**Framework-native reading (`stance_for('mass')`):** the ratios ARE graph readouts and calibrating
+the graph constant to them is legitimate (`fit_calibrated`); the held-out miss and the shape fact
+are COMPUTED structural properties of the current accumulation PROFILE — an OPEN internal question
+(can the per-branch accumulation rate be enriched to decrease across generations), legitimately
+calibratable, NOT a failure and NOT claimed reproduced. Consistent with, and extends, Attempt 17
+(per-branch geometric-mean `r` missed the middle generation 50-71%) by adding the explicit held-out
+number and the decelerate-vs-accelerate shape diagnosis Attempt 17 did not have.
+
+**Where the arc stands:** the graph-mechanism thread (EQ-069→071 + this calibration held-out test)
+has now, with reviewed computation, (a) identified the frozen `G=1` as the dynamic-range ceiling,
+(b) shown an affine non-compact accumulating graph removes it and spans the fermion-mass ratio
+range, (c) shown the hierarchy is a determined readout of the graph's constants, and (d) run the
+first explicit held-out calibration test, which locates the remaining gap precisely: the
+accumulation PROFILE shape (constant/accelerating) versus the real per-branch decelerating
+hierarchy. The concrete open lever named by the computation: a per-branch accumulation rate that can
+decrease across generations. `Th_coqc` derivation of that profile, and the RD→GeV unit bridge
+(EQ-068), remain open — internal, legitimately-calibratable questions, per the guard.
