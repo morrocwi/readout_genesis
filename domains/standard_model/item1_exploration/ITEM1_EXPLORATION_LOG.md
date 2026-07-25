@@ -761,3 +761,57 @@ already known (persistent-walk telegraph derivation). All candidates draft/unmer
 founder decision. The RD-to-GeV (or RD-to-any-physical-unit) bridge question remains genuinely
 open — today's work substantially narrowed what does NOT work, with real, reproducible, reviewed
 evidence, rather than leaving these as untried possibilities.
+
+## Accumulating non-compact graph unlocks dynamic range — founder's diagnosis CONFIRMED, 2026-07-25
+
+After the day's 6 disclosed physical-unit-bridge failures all traced to the same ceiling (native
+quantities span only ~58x while real physics needs ~10^5.5x to ~10^15x), the founder pointed at
+the root cause: the RTM stepper freezes the mother equation's graph operator at `G[Theta_n]=1`
+(identity, "no graph", `attempt1_bateman_doubling_hypothesis_v1.py:76,81`), but the mother
+equation's `G[Theta_n]` is INDEXED BY n — it is DEFINED to change/accumulate every step
+(`source_root/READOUT_GENESIS_CORE_SNAPSHOT.md:1088-1090`,
+`𝔾[Θ_n]=𝔾_0+Σ_a Θ_n^a 𝔾_a`, `Θ_{n+1}=A_Θ Θ_n+B_ΘΦ Φ_n+B_ΘΨ Ψ_n`) — and an accumulating graph is
+the natural source of dynamic range. Founder-chosen Option A: prove (falsifiably) that un-freezing
+`G[Theta_n]` into an accumulating NON-COMPACT operator removes the ceiling. Candidate
+`accumulating_graph_dynamic_range/` (draft, both repos: readout_genesis PR #89, this repo PR #43).
+
+**Four modes measured side by side (contrast measured, not asserted):**
+
+| MODE | operator | dynamic range | meaning |
+|---|---|---|---|
+| 1 FROZEN | `G=I` (current RTM) | **1x** | the diagnosed ceiling — no growth |
+| 2 HARMONIC | Θ accumulates, bounded potential `(1/4)Θ²` (the existing relativity-closure recurrence) | **1.65x** | accumulation ALONE does not unlock range |
+| 2b ROTATION control | IDENTICAL matrix-product accumulation to MODE 3, only generator changed compact | **1.0x** | clean single-variable regime check |
+| 3 NON-COMPACT | Θ_n=n·θ, `G=boost(Θ_n)=exp(Θ_n·L)`, so(1,1) boost generator (Attempt 13) | **20952x** (θ=0.05); sweep reaches 10^43x | unlocked, `e^(n·θ)` unbounded |
+
+**CONFIRMED the founder's diagnosis:** the frozen graph was genuinely the dynamic-range ceiling,
+and an accumulating NON-COMPACT graph removes it — past today's 58x native ceiling, past the
+~10^5.5 fermion-mass spread. The MODE 2b rotation control (added after independent review) is the
+decisive regime check: identical matrix-product accumulation, only the generator changed
+compact↔non-compact, stays at EXACTLY 1x while the boost explodes — isolating non-compactness as
+the single driver (not accumulation per se, not the matrix-product form). MODE 2 further shows the
+existing relativity-closure recurrence, reused naively with its bounded potential, would NOT have
+helped.
+
+**Stated plainly and prominently (not buried):** this is REAL structural progress (it removes an
+obstruction that blocked every prior bridge attempt) but is by itself **NOT PREDICTIVE** —
+because θ is a free parameter, an unbounded operator can be tuned to ANY range (a full sweep
+confirms it), so removing the ceiling is NECESSARY but not SUFFICIENT. The value-selection problem
+(which θ per branch, and why) remains exactly the open item Attempts 15-17 left. This candidate
+removes the ceiling; it does not select the answer.
+
+**Honest faithfulness caveat (from review, disclosed in-file):** MODE 3 uses `G=boost=exp(Θ·L)`, a
+matrix exponential, which is NOT literally an instance of the mother equation's affine
+`G_0+Σ Θ^a G_a`. So this demonstrates that SOME non-compact accumulating operator unlocks range —
+not that the mother equation's specific affine G does. A faithful affine-G construction with a
+non-compact generator is the natural next step (a candidate Option-B direction), not done here.
+Also: M does ZERO work in this range measurement (θ is the sole knob); the n↔generation
+identification remains Attempt 13's UNPROVEN conjecture; no GeV/unit conversion is attempted (only
+dimensionless range, per `falsify_particle_graph.py`'s spectral-gap-ratio framing).
+
+**Significance for the day's arc:** this is the FIRST result today that is not a disclosed failure
+— but its honest scope is narrow: it explains WHY every prior bridge failed (the frozen graph
+ceiling) and shows the ceiling is removable in principle, without yet producing a predictive
+number. The 6 negative results plus this one now form a coherent picture: the obstruction was
+structural (a frozen, compact graph), it is removable (non-compact accumulation), and what remains
+is the value-selection problem the framework has flagged as open since Attempts 15-17.
