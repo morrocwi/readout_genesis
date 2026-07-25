@@ -132,3 +132,70 @@ does not establish that the founder's broader "universe is a readout, not the tr
 wrong in general — that IS this repo's own existing root stance (`Z_n` retained state vs. any
 `O(X)` readout of it, §1.2); only the specific Ψ=truth/Φ=cache and λ_c=black-hole identifications
 tested here are refuted.
+
+## Findings report — primordial (pre-L_R) layer, read per the founder's redirect
+
+Per the founder's redirect after Attempt 2 ("ถ้าเจอจุดเชื่อมน่าจะอยู่ก่อน lr. อยู่ตั้งแต่จุด
+อ่านเขียนในสมการแม่"), read `READOUT_GENESIS_CORE_SNAPSHOT.md`'s ROOT-0 (§I.1, `E00.1`-`E00.7`) and
+Face 10 (Record/Readout/Epistemic) fresh, with information philosophy throughout, before building
+anything further. Three findings:
+
+1. **Confirmed: `L_R` genuinely sits downstream of the primordial read/write pair.** `E00.7`
+   (`L_R := D_W − W`) is the LAST line of ROOT-0. The primordial "read" act is `E00.2` (`A`, the
+   discriminator that registers `a≠b` — the first appearance of any reader/translator role,
+   generalized later into `q_α`). The primordial "write/retain" act is `E00.5` (`τ_c>0`,
+   persistence between distinguishable events). Both are stated before `E00.7` introduces `L_R`
+   at all — matching the founder's intuition exactly.
+
+2. **Face 10 (`R_O = Γ_{RAR,O}(D_O) = Ω_A∘A∘Π∘T_Σ(D_O)`, strict gap `M_A[n]≠θ(E) ∀n`,
+   `ε_tot>0 ∀n`) states that EVERY observer's record is lossy, unconditionally.** This is a
+   general, book-wide theorem, not specific to Ψ. It initially reads as undercutting "there is a
+   true record" entirely (no record anywhere in this framework is ever the truth) — but the
+   founder's follow-up refined the claim precisely: the TRUE thing (`D_O`, the underlying event
+   being recorded) still exists; what Face 10 rules out is any record `R_O` ever EQUALING it, not
+   its existence. "It exists but we cannot read it" turns out to be exactly what Face 10 already
+   says, read correctly — not a new claim in tension with it.
+
+3. **A new, unexplored, more-primordial-than-`L_R` lead: `I.1a`'s Copy Licence
+   (`A ⇏ A⊗A`, `!_κA ⊢ A^⊗m, m≤κ`)** — a resource-logic no-free-duplication axiom, stated even
+   before `E00.7`. Structurally resembles a no-cloning-theorem-shaped constraint (real physics'
+   no-cloning connects to unitarity/CPT/pair creation) and matches Attempt 1's own "pair creation"
+   initial-condition language. No executable machinery exists anywhere in the repo for this axiom
+   yet (only cited in two `item1_exploration` files, never built or tested) — flagged as a
+   candidate for a future attempt, not pursued here; testing it honestly would need new,
+   deliberately-scoped work, not a quick add-on to this attempt.
+
+## Attempt 3 — CONFIRMED (Th_coqc): the refined claim, proven in its precise general form
+
+Script: `attempt3_true_record_unreadable_v1.py`. Coq: `formal/InfoTrueRecordUnreadable_attempt.v`
+(axiom-free, `Print Assumptions` reports "Closed under the global context" for all three lemmas,
+verified both standalone `coqc` and under the repo's `-R . RDL` namespace).
+
+Tests the founder's refined claim directly: "มี RECORD แท้ แต่เราอ่านไม่ได้หนะ" (there IS a true
+Record, we just cannot read it) — NOT the same claim Attempt 2 refuted (that Ψ specifically plays
+that role). Proves, fully generally and axiom-free: whenever a readout `O` collapses two distinct
+true states `x1≠x2` to the same readout value (exactly §1.2's own `O(hX)=O(X)` gauge-redundancy
+condition), both states continue to exist as ordinary values, but NO decoder function can recover
+both of them correctly from the shared readout alone (`no_decoder_recovers_state`,
+`gauge_redundancy_forces_undecodability`, `true_state_exists_but_no_total_decoder` — the last
+lemma keeps "x exists" and "a correct total decoder exists" as the two separate claims the
+founder's refined phrasing distinguishes). Cross-checked numerically on a concrete 4-state
+instance (`X={0,1,2,3}`, `O(x)=x mod 2`, gauge map `h(x)=(x+2) mod 4`), exhaustively over every
+possible decoder.
+
+**What this establishes**: the founder's refined claim is TRUE and PROVABLE, in this precise
+general sense — grounding, with an exact Coq proof, Face 10's informal "every record is lossy"
+claim and §1.2's gauge-redundancy definition, both pre-existing in this repo. **What this does not
+establish**: that Ψ, Φ, or any other specific field is the "true state" or "readout" role-player —
+this is a general, Type-polymorphic, physics-free conditional (IF a readout is non-injective, THEN
+undecodability follows), not a new claim about which concrete object occupies either role. Attempt
+2's refutation of the specific Φ/Ψ identification stands, unrevisited. No connection to item 1's
+`r`, item 12's SU(3) result, real quantum numbers, or the real cosmological baryon asymmetry.
+
+Independently adversarially reviewed, 2026-07-25 — verdict SURVIVES WITH REQUIRED CORRECTIONS,
+applied: a cosmetic decoder-count mislabel ("2^2=4" instead of the correct 4×4=16 the code always
+actually built and checked) in the Python file's Part 2 print statement, fixed. Reviewer
+independently compiled the Coq file both standalone and under `-R . RDL`, hand-traced all three
+proofs and confirmed none is vacuous (no unused hypothesis, no `Admitted`, no smuggled classical
+axiom), and independently confirmed both source-document citations (§1.2, Face 10) are accurate,
+not stretched. No other issues found.
