@@ -29,7 +29,13 @@ readout**: `Aut(F,O) = { h : O∘h = O, h∘F = F∘h }` — the weld of core §
   citing any specific claim's scope.
 - **[`SM_INFORMATION_PHILOSOPHY_MASTER.md`](SM_INFORMATION_PHILOSOPHY_MASTER.md)** — the canonical
   narrative synthesis (root → color → confinement → hypercharge → matter → chirality → kinetic →
-  spacetime → order/Higgs), same tier discipline, prose form.
+  spacetime → order/Higgs), same tier discipline, prose form. **Its §1.2 (reader–record relation,
+  `r=O(X)`, the root of gauge redundancy) now carries a `[Th_coqc]` proof**
+  (`formal/InfoTrueRecordUnreadable_attempt.v`, axiom-free): whenever a readout collapses two
+  distinct true states, both continue to exist but no decoder recovers both — the general fact
+  behind "every record is lossy" (also `source_root/READOUT_GENESIS_CORE_SNAPSHOT.md` Face 10).
+  Full derivation history + scope: `matter_antimatter_exploration/
+  MATTER_ANTIMATTER_EXPLORATION_LOG.md`, Attempt 3.
 - **[`MASS_GAP_INFORMATION_PHILOSOPHY.md`](MASS_GAP_INFORMATION_PHILOSOPHY.md)** — the root-native
   mass-gap program + the universal reflection-positive mass slab. **NOT** the Clay Yang–Mills mass
   gap (OPEN); a finite-scale theorem + a universal mass reader.
