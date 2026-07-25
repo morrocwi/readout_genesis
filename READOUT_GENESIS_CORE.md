@@ -7407,7 +7407,30 @@ EQ-062  finite_diagnostic (NEGATIVE finding — refutes its own opening hypothes
                      |Φ| envelope:  1.215839 → 0.183275
                      |Ψ| envelope:  1.105998 → 322.802505
                      Φ·Ψ (n=10) = −1.188008  →  Φ·Ψ (n=1999) = −59.738547   (ratio ≈50.28×)
+
+EQ-063  Dr (bridge/definitional, founder-locked; related check finite_diagnostic, D/M vs QuTiP
+        residual 7.6×10⁻⁴) — self-caught omission during a 2026-07-25 bottleneck review: EQ-015's
+        M has no equation anywhere in this stream connecting it to τ_c, despite this file's own
+        II.6 table already noting "mass is a readout of τ_c." Numbered at the end to avoid
+        renumbering EQ-030 onward; conceptually belongs beside EQ-005/EQ-015 (Part IV, τ_c bus).
+                     τ_c = ℏ/(2mc²)   [N4 SCALE BUS, this file's own Part IV.1]
+                     m = ħ/(2c²τ_c)   [readout direction — mass is what τ_c looks like]
+                     NOTE: this is a unit/calibration bridge, NOT a derivation of EQ-015's M
+                     coefficient's role or value — that remains posited (8 forcing attempts
+                     failed, EQ-015's own tier note). Do not read EQ-063 as closing EQ-015's gap.
 ```
+
+**Bottleneck survey (2026-07-25).** Reading the whole stream in numeric order surfaces one
+recurring pattern: the ABSTRACT/GENERAL layer (ROOT-0, Face 10, gauge redundancy, SU(3) closure) is
+increasingly Th_coqc-backed; the CONCRETE-INSTANTIATION layer — which specific object out of the
+admissible space is the real one — is Dr/Open/fit_calibrated every time it appears: EQ-021's
+concrete `𝔾_n` (Th_coqc only in the abstract case), EQ-015/EQ-063's `M` (posited, not derived; the
+τ_c bridge is calibration, not derivation), EQ-042–048's gauge/representation assignment (almost
+entirely Dr — no Th_coqc backing for automorphism-as-gauge, SM-G0.1–G0.5), EQ-057–059's item-1 `r`
+(terminal `fit_calibrated`), EQ-060–062's matter/antimatter field-role assignment (every concrete
+instantiation refuted; only the field-agnostic theorem, EQ-032–034, survives). **Convergent
+conclusion, matching the SM domain's own tracked backlog:** SM-G0.1–G0.5 (the automorphism-as-gauge
+kernel, full Coq witness) is the single node gating essentially every Dr/Open entry above.
 
 **What this Appendix does not claim.** EQ-030 through EQ-062 are readouts of the SM domain leaf,
 governed by that leaf's own DRIFT_CONTRACT and CLAIM_BOUNDARY, not by this file's ROOT-0. End-to-end
