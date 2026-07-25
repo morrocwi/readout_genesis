@@ -1,0 +1,28 @@
+name: Primitive Branch Parameter Reduction
+
+on:
+  pull_request:
+    paths:
+      - "domains/standard_model/item1_exploration/primitive_branch_parameter_reduction/**"
+      - ".github/workflows/primitive-branch-parameter-reduction.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Run executable fixture
+        working-directory: domains/standard_model/item1_exploration/primitive_branch_parameter_reduction
+        run: python primitive_branch_fixture_v0_1.py > /tmp/primitive_branch_fixture_report.json
+      - name: Run regression and adversarial gates
+        working-directory: domains/standard_model/item1_exploration/primitive_branch_parameter_reduction
+        run: python test_primitive_branch_parameter_reduction_v0_1.py
