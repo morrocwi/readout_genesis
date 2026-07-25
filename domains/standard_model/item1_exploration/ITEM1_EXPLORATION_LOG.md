@@ -709,3 +709,55 @@ BEFORE treating agreement-or-disagreement as informative. PR #81 itself is not d
 retracted — its numbers are correct and its adversarial review was sound — but its FRAMING should
 be read as "two structurally unrelated quantities, as expected, disagree," not as "a candidate
 bridge failed a real test."
+
+## Fritzsch D_up bridge, denominator grid search, and the native-lifetime dynamic-range finding, 2026-07-25
+
+Three more candidates, all draft/unmerged, extending the physical-unit-bridge investigation after
+the self-critique above. Mirrors readout_genesis PR #87 (research_universal_solver PR #41).
+
+**Fritzsch D_up -> mother-potential shape bridge**: applying the regime-match discipline the
+self-critique demanded, uses `D_up=5.52 GeV` (real, PDG-CKM-fit_calibrated, from
+`item24_exploration/cp_phase_jarlskog_v1.py`) to replace the mother potential's arbitrary `b=1`
+coefficient — `D_up` plays a potential/mass-matrix role (matching `a,b`), explicitly NOT identified
+with `M`. Result: `r_star` shrinks from 3.823 to 1.471 (38.5% of baseline). Tested pragmatically
+against real GeV targets using the already-fit `Lambda_RD_to_GeV`: predicted Higgs mass moved from
+218.0 GeV (74.1% error) to 273.7 GeV (**118.6% error — worse**), and predicted `v_EW` moved to
+152.6 GeV (38.0% error). Using a real, non-arbitrary input made the match WORSE, a genuine,
+disclosed negative result — using D_up here does not help.
+
+**Fritzsch D_up denominator grid search**: makes the arbitrary choice of denominator (`m_c`, used
+above) fully explicit by trying all 6 quark masses against all 8 real targets used today — a
+disclosed 48-row table (independent review corrected the framing: only 6 distinct predictions
+exist, and only 3/8 targets are anywhere near the predicted range, so the effectively meaningful
+comparison count is ~18, not 48). **0/48 rows under 5% error**; best is 6.95% (`m_bottom`
+denominator vs `v_EW`) — not distinguishable from chance given the corrected comparison count.
+
+**Native branch-time -> real decay-lifetime bridge**: following the founder's redirect to try TIME
+(seconds) instead of GeV/mass ("เวลามันเกี่ยวกับสรรพสิ่งทั้งหมด แหละหน่วยมันก็ชัดเจนกว่า" — time relates
+to everything, and the unit is clearer). Uses the primitive-branch construction's 3 distinct branch
+costs (`Delta_U/D/E`) to build 3 native decay times (avoiding the vacuity trap of a single global
+`tau_c=M/D`, which could only ever trivially reproduce whatever one lifetime it was fit to). Fits
+`Lambda_time` from `E<->muon` (the least-arbitrary available pairing), tests unrefit against 5 real
+PDG lifetimes (muon, tau lepton, neutron, charged pion, charged kaon) — 0/14 held-out rows under
+5%, only 4/14 under even 1000% error.
+
+**This is the clearest, most decisive negative result of all 6 physical-unit-bridge attempts made
+today.** The predicted native times span only ~2 orders of magnitude (3.43 to 198.36 native units
+— a property of the 3 branch costs themselves, confirmed by independent review trying an
+alternative mapping), while real particle lifetimes span ~15 orders of magnitude (878.4 s down to
+2.9e-13 s). A single scalar conversion factor cannot stretch a ~58x native span to a ~3e15x real
+span, regardless of which pairing it is fit to — this is a **structural, architectural
+impossibility**, not a missed constant that a better-chosen Lambda or denominator could ever have
+fixed. Every one of today's 6 attempts (3 GeV-based, this one time-based, plus the 2 Fritzsch
+variants) is consistent with this same underlying diagnosis: this specific 3-branch, 2-coefficient
+(`a,b`) native architecture simply does not have enough independent degrees of freedom or dynamic
+range to reproduce the real Standard Model's actual spread of masses/lifetimes/couplings, no matter
+which real external number is used to fix its one free scale.
+
+**Running tally: 6 independently-executed, honestly-disclosed negative results** now on record for
+bridging this construction's native units to real physics, plus the 2 conclusively-closed dead-end
+routes (graph/spectral-ratio; PGFT-gateway T-cancellation) and 1 non-numeric structural bridge
+already known (persistent-walk telegraph derivation). All candidates draft/unmerged pending
+founder decision. The RD-to-GeV (or RD-to-any-physical-unit) bridge question remains genuinely
+open — today's work substantially narrowed what does NOT work, with real, reproducible, reviewed
+evidence, rather than leaving these as untried possibilities.
