@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "primitive-branch-tape-set-v0.1",
+  "title": "Primitive U/D/E Branch Tape Set v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "native_unit",
+    "delta_is_dimensionless",
+    "m_calibration",
+    "branches"
+  ],
+  "properties": {
+    "schema": {"const": "primitive-branch-tape-set-v0.1"},
+    "native_unit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unit_id", "cost_unit_rd", "is_tunable"],
+      "properties": {
+        "unit_id": {"const": "native-rd-v1"},
+        "cost_unit_rd": {"const": 1.0},
+        "is_tunable": {"const": false}
+      }
+    },
+    "delta_is_dimensionless": {"const": true},
+    "m_calibration": {
+      "type": "object",
+      "required": ["status", "M_joint", "calibration_id"],
+      "properties": {
+        "status": {"const": "CALIBRATED_READY"},
+        "M_joint": {"type": "number", "exclusiveMinimum": 0},
+        "calibration_id": {"type": "string", "minLength": 1},
+        "method": {"type": "string"}
+      }
+    },
+    "branches": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "branch",
+          "path_semantics",
+          "delta_is_dimensionless",
+          "provenance",
+          "primitive_certificate",
+          "times",
+          "phi",
+          "psi"
+        ],
+        "properties": {
+          "branch": {"enum": ["U", "D", "E"]},
+          "path_semantics": {"const": "primitive_closure"},
+          "delta_is_dimensionless": {"const": true},
+          "provenance": {
+            "type": "object",
+            "required": [
+              "path_id",
+              "source_id",
+              "adapter_id",
+              "calibration_id",
+              "initial_condition_id"
+            ],
+            "properties": {
+              "path_id": {"type": "string", "minLength": 1},
+              "source_id": {"type": "string", "minLength": 1},
+              "adapter_id": {"type": "string", "minLength": 1},
+              "calibration_id": {"type": "string", "minLength": 1},
+              "initial_condition_id": {"type": "string", "minLength": 1}
+            }
+          },
+          "primitive_certificate": {
+            "type": "object",
+            "required": [
+              "rule_id",
+              "no_internal_reset",
+              "orientation_quotiented",
+              "branch_encoding_tier"
+            ],
+            "properties": {
+              "rule_id": {"type": "string", "minLength": 1},
+              "no_internal_reset": {"const": true},
+              "orientation_quotiented": {"const": true},
+              "branch_encoding_tier": {"const": "declared_finite_architecture"}
+            }
+          },
+          "times": {
+            "type": "array",
+            "minItems": 5,
+            "items": {"type": "number"}
+          },
+          "phi": {
+            "type": "array",
+            "minItems": 5,
+            "items": {"type": "number"}
+          },
+          "psi": {
+            "type": "array",
+            "minItems": 5,
+            "items": {"type": "number"}
+          }
+        }
+      }
+    }
+  }
+}
