@@ -616,3 +616,44 @@ This is a diagnosis, not a fix — no corrected estimator is implemented here. A
 all three parallel `M_n`-fitting candidates (this PR, PR #69, and the sibling repo's synthesis
 candidate), since all share the same underlying scalar-OLS-on-noisy-second-differences mechanism.
 
+## Final synthesis — the bias-diagnosis question closes; `M_n` itself does NOT, 2026-07-25
+
+A parallel team independently reran the same real Reader/Record stepper (this repo's own PR #71,
+"Diagnose RTM OLS bias before estimator selection") and reproduced this branch's noise-sweep table
+to the digit, plus added a 4-way ablation (EIV-only / target-only / linearized / full-nonlinear)
+this branch's own diagnosis had not run — isolating that noise in the REGRESSOR dominates the
+bias, while noise passing through the nonlinear `gradV(Φ)` target term is negligible
+(`M_target_only≈0.99999907`), and independently computing the same `S_a` signal-power ratio
+(`≈423.15`) this branch found via RMS collapse.
+
+`retained_transition_meter/bias_diagnosis_final_synthesis_v1.py` (new branch,
+`diagnosis/rtm-bias-final-synthesis-2026-07-25`, based on this candidate) independently re-derives
+PR #71's specific ablation numbers from scratch (not copied), confirming both files correctly
+implement the same computation. **Required correction, self-caught then confirmed by independent
+review**: an earlier draft framed the exact-digit match as "independent statistical convergence" —
+corrected after review (and independently re-verified with a 5-seed sweep, `M_eiv_only` spread
+0.781–0.795 across seeds, `M_target_only` stays within 3e-6 of true `M` for every seed) to
+distinguish: the exact-digit match is a REPRODUCIBILITY check (both files share the same disclosed
+seed, `20260725`, this repo's own `tape_generator.py` default), not independent evidence on its
+own; the genuinely non-circular corroboration is the SEED-ROBUST qualitative pattern (regressor-
+noise dominates, target-noise negligible) and the seed-independent `S_a` ratio (a pure function of
+the noiseless deterministic trajectory).
+
+**Explicit scope, relayed from the parallel team and endorsed here at face value, not softened**:
+this closes the DIAGNOSIS question (why the OLS fit is biased) with real cross-methodology
+confidence. It does **NOT** close `M_n` itself. Still open: (a) no noise-robust estimator exists —
+current `M_hat` is known-biased, and `c_n`/`Δ_j`/`λ_j`/`Π_0` all inherit that bias uncorrected;
+(b) the semantic bridge `M_DRL_exchange =? M_primitive_retained_transition` is entirely unproven —
+measuring a coefficient is not the same as showing it is item 1's "price per elementary retained-
+distinction transition"; (c) the cost definition `c_n` itself remains a candidate (signed vs abs,
+`cost_unit_rd`'s origin, which path is a genuine primitive closure, segmentation-invariance) — the
+reason PR #69 correctly refuses to emit `λ`/`Π₀` at all unless `path_semantics=primitive_closure`
+is explicitly declared. Five criteria before `M_n` could be considered closed (none met by any of
+the three parallel candidates yet): (1) a fail-closed, noise-robust estimator; (2) multiple
+trajectories/noise models/parameters tested, not one fixture; (3) a real external adapter (QuTiP
+or experimental data); (4) proven invariance under segmentation/coordinate relabeling/re-encoding;
+(5) a fitted `M` predicting a held-out observable not used in the fit. No number produced by any
+of the three candidates (`M_hat`, `c_n`, `Δ_j`, `λ_j`, `Π_0`) should be read as a physical
+prediction — all remain `finite_diagnostic`/`candidate`/`fit_calibrated`, never "nature's exchange
+rate" or real `Δ_U/Δ_D/Δ_E`.
+
