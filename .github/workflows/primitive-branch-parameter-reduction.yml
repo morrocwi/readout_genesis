@@ -1,0 +1,52 @@
+name: Primitive Branch Parameter Reduction
+
+on:
+  pull_request:
+    paths:
+      - "domains/standard_model/item1_exploration/primitive_branch_parameter_reduction/**"
+      - ".github/workflows/primitive-branch-parameter-reduction.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install numerical dependency
+        run: python -m pip install -q --disable-pip-version-check numpy
+      - name: Run executable fixture
+        id: fixture
+        continue-on-error: true
+        working-directory: domains/standard_model/item1_exploration/primitive_branch_parameter_reduction
+        shell: bash
+        run: |
+          set +e
+          python primitive_branch_fixture_v0_1.py > /tmp/primitive_branch_fixture_report.json 2> /tmp/primitive_branch_fixture_error.log
+          status=$?
+          echo "$status" > /tmp/primitive_branch_fixture_status.txt
+          exit $status
+      - name: Upload fixture diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: primitive-branch-fixture-diagnostics
+          path: |
+            /tmp/primitive_branch_fixture_report.json
+            /tmp/primitive_branch_fixture_error.log
+            /tmp/primitive_branch_fixture_status.txt
+          if-no-files-found: warn
+      - name: Stop on fixture failure
+        if: steps.fixture.outcome == 'failure'
+        run: |
+          cat /tmp/primitive_branch_fixture_error.log
+          exit 1
+      - name: Run regression and adversarial gates
+        if: steps.fixture.outcome == 'success'
+        working-directory: domains/standard_model/item1_exploration/primitive_branch_parameter_reduction
+        run: python test_primitive_branch_parameter_reduction_v0_1.py
