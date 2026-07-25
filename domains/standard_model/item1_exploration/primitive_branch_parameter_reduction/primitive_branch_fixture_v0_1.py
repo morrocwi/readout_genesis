@@ -19,7 +19,7 @@ if str(OPERATIONAL_DIR) not in sys.path:
 from domains.standard_model.item1_exploration.primitive_branch_parameter_reduction.primitive_branch_parameter_reduction_v0_1 import analyze  # noqa: E402
 from domains.standard_model.item1_exploration.retained_transition_operational_closure.operational_exchange_closure_v0_1 import (  # noqa: E402
     load_stepper,
-    run_fixture,
+    run_fixture as run_operational_fixture,
 )
 
 N_STEPS = 200
@@ -50,7 +50,7 @@ def simulate_branch(stepper, initial, n_steps=N_STEPS):
 
 def build_payload():
     stepper = load_stepper()
-    calibration = run_fixture(sigma=SIGMA, seed=SEED)
+    calibration = run_operational_fixture(sigma=SIGMA, seed=SEED)
     selected = calibration["selected_joint"]
     if selected["status"] != "CALIBRATED_READY" or selected["M_joint"] is None:
         raise RuntimeError("operational M calibration did not close")
