@@ -7249,6 +7249,20 @@ list, read alone, invites category errors it was never meant to license):**
 - `Th_coqc (abstract) / Open (concrete)` (EQ-021) marks a real, load-bearing split: the general
   algebraic structure is proven for ARBITRARY admissible data; which SPECIFIC object realizes it in
   this project's actual physics remains separate and open — see the two-axis table below.
+- **⚠️ MATERIALIST WORKS/FAILS BIAS (added 2026-07-25, after an AI caught itself committing it twice
+  in one file — full guard in `research_universal_solver/docs/root/ZERO_INFINITY_DUAL_DIAGNOSIS.md`
+  Part 4b).** Before writing "works / fails / NEGATIVE / success / solved" about ANY entry here or
+  any computed result: a `fit_calibrated` constant is NOT a defect (calibrating a graph constant is
+  legitimate, DEV-SM-001; horizontal-knowledge stance). Do not judge a result "failed" because it
+  did not *derive a constant from nothing* or *predict an absolute real number* — that is a
+  materialist bar the framework rejects. In this framework the physical constants ARE names/readouts
+  on the one graph (`stance_for("mass")`: mass ratios = spectral-gap ratios of `L_R`), so a graph
+  constant producing a hierarchy-readout is the mechanism operating as the thesis predicts; "it's
+  just a relabelled parameter / a name on the graph" is not damning. Report computed facts + honest
+  tier; name what is `Open` as an *internal calibratable* question — never attach a success/failure
+  value-word. (Symmetric: do not over-correct into overselling either; both value-word framings of
+  the same result were wrong, only computed-facts-plus-tier was right — the incident was the
+  `field_sourced_accumulation` candidate, see `item1_exploration/ITEM1_EXPLORATION_LOG.md`.)
 
 **Two-axis status (Root/Formal vs. Concrete/Architecture — `domains/standard_model/README.md`'s own
 required separation, applied to the entries most at risk of the two axes being collapsed):**
