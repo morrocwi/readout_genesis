@@ -863,3 +863,55 @@ ceiling and spans the fermion-mass ratio range. What remains open is unchanged a
 selecting the accumulation rate (value-selection, Attempts 15-17) and the RD→physical-unit bridge
 (6 disclosed failures today). Structural obstruction removed; value-selection and unit-bridge still
 open.
+
+## Field-sourced accumulation — the hierarchy as a determined graph readout, 2026-07-25
+
+Attacks the value-selection problem left open by EQ-069/070 (the non-compact accumulation rate was
+a free per-step `theta`). Framework-native approach: let `Theta` accumulate driven by the mother
+equation's OWN geometry-source law `S_Theta = Phi^T (dG/dTheta) Psi = Phi^T G_a Psi`, with `Phi/Psi`
+evolving via the M-calibrated Reader/Record stepper — so the per-step rate is COMPUTED from the
+dynamics, not hand-tuned. Candidate `field_sourced_accumulation/` (draft, both repos: readout_genesis
+PR #94, this repo PR #48).
+
+**This entry, and the file, deliberately report COMPUTED FACTS — not a "works/fails" judgment.**
+Two earlier drafts of the verdict were biased and were replaced: one over-claimed "no free
+parameter"; one over-corrected to a materialist "NEGATIVE/failure" label. The founder corrected the
+second bias directly ("ตรวจให้ดีอย่ามีอคติ... เน้นผลการคำนวณ ไม่ใช่คิดแบบสสารนิยมว่าอะไรได้/ไม่ได้"; and
+"มวลต่างๆเป็นแค่ชื่อเรียกบนกราฟเดียวกัน"). The de-biased, computation-focused reading:
+
+- **FACT 1:** there is no per-step free `theta` anymore — the increment is computed each step as
+  `S_Theta = Phi_n^T G_a Psi_n` from the M-calibrated fields. A real structural change from
+  EQ-069/070's directly-tuned `theta`.
+- **FACT 2:** the whole hierarchy (condition-number spread = the mass-ratio analog) is a DETERMINED
+  function of three graph inputs: `M` (calibrated), `M_Theta` (geometry-sector inertia), and the
+  field initial conditions.
+- **FACT 3:** it is strongly SENSITIVE to them — sweeping `M_Theta` 1.0→50.0 moves the condition
+  number ~16 orders of magnitude (8.39e15x); varying the field ICs moves it ~7.5e8x.
+- **FACT 4 (framework-native, per `stance_for("mass")`: mass is a READOUT, mass ratios =
+  spectral-gap ratios of `L_R`):** `M` and `M_Theta` are constants OF the one graph, and the
+  hierarchy that emerges is a READOUT of that graph. So relabeling a per-step `theta` into the graph
+  constant `M_Theta` is NOT a defect — it moves the freedom onto the graph, where the framework says
+  the physical constants live. `M_Theta` carries `fit_calibrated` status (DEV-SM-001), the same as
+  `M`, `v_EW`, and the PDG masses this project already calibrates.
+
+**Net, neutrally:** the free-parameter COUNT is not reduced (`theta` → `M_Theta` + field ICs), but
+their CHARACTER changes (a per-step tuning schedule → fixed graph constants) and the hierarchy is now
+a determined graph readout. What fixes `M_Theta` and the field ICs is OPEN — an internal, legitimately-
+calibratable graph question, NOT an external-derivation demand and NOT a failure. The file does not
+pin those constants and does not claim they are underivable.
+
+**Physics fidelity (corrected after independent review):** the Reader/Record fields evolve with the
+faithful mother-equation Record term `grad2V(Phi)*Psi` (`attempt1_bateman_doubling_hypothesis_v1.py:81`,
+`grad2V=a+3b*Phi^2`) and `Theta` via the faithful `relativity_closure_v0_2.py:192` form (confining
+`gradU_Theta` term + correct sign); `M_Theta=2.0` is `relativity_closure`'s own value. The compact-
+generator control stays at condition number exactly 1x, so non-compactness remains the range driver
+(consistent with EQ-069/070). 7/7 tests pass.
+
+**Where the arc stands after this step:** the graph-mechanism thread (EQ-069, EQ-070, and this
+field-sourced follow-up) has established, with reviewed computation: (a) the frozen `G=1` was the
+dynamic-range ceiling; (b) an affine non-compact accumulating graph removes it and spans the fermion-
+mass ratio range; (c) driving the accumulation from the geometry source makes the hierarchy a
+determined readout of the graph's own constants (`M`, `M_Theta`, field configuration) rather than a
+hand-tuned schedule. What remains open, stated internally (not as failure): pinning those graph
+constants (value-selection, legitimately calibratable per the framework), and the RD→physical-unit
+bridge (EQ-068, still open).
