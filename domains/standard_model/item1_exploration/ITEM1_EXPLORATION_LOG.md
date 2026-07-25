@@ -482,3 +482,52 @@ Item 1 remains fully Open. Two more concrete candidate sources for r ruled out, 
 larger/differently-weighted graph for Route B remains untried and unproven impossible, though any
 such graph would need its own root-native justification to avoid becoming undisclosed fitting.
 
+
+
+## Attempt 16 — closes the K_F/phi lead formally, after a 5-agent philosophy panel, 2026-07-25
+
+A 5-agent "ultracode" panel (2026-07-25) re-read the philosophy fresh from 5 angles (root
+primitives, algebraic/Perron-Frobenius candidates including the K_F/phi lead flagged but not
+acted on in Attempt 14, full re-read of Attempts 1-15, item 2's generation-count connection, and
+the τ_c/memory-before-mass framework) specifically to diagnose what "r" truly is and search for
+root-native candidates. Found no genuinely new lead. `item1_exploration/
+attempt16_phi_lead_closed_panel_review_v1.py` formally closes the one concrete lead going in
+(r:=phi via the sibling π/φ paper's K_F=[[1,1],[1,0]] minimal-transfer construction) with THREE
+independently-verified reasons: (1) the sibling paper's own `CLAIM_BOUNDARY.yaml` self-declares
+the exact root-to-H1-H7 connection needed as `not_yet_derived`; (2) this repo's own native
+golden-ratio Coq file (`InfoGoldenFromRootsOfUnity_attempt.v`) explicitly disclaims any particle-
+mass content in its own SCOPE section; (3) Attempt 15 already confirmed this repo's mother
+equation, as implemented, has no discrete recurrence anywhere K_F-shaped machinery could live.
+Other panel candidates (SU(3) dimension ratios, Z3 confinement roots, τ_c generation ratios, item
+2's generation-count argument) were independently found to fail CRRC or RDI at confidence ≤0.05
+each — all considered closed alongside the K_F/φ lead. Independently adversarially reviewed —
+SURVIVES, one optional softening applied (avoided treating panel agreement as additional proof
+weight beyond the three individually-sufficient reasons). Item 1 remains fully Open; no new
+candidate for r survived.
+
+## Attempt 17 — registers r as fit_calibrated (per-branch, geometric mean), 2026-07-25
+
+Per the founder's explicit direction ("r ฟิตเอาได้ไหม ฟิตไปก่อน" — can r be fit, fit it for now),
+after Attempts 10-16 exhaustively searched for a root-native source and found none.
+`item1_exploration/attempt17_r_fit_calibrated_v1.py` registers r_U≈282.60, r_D≈29.92, r_E≈58.97 —
+the geometric mean of each branch's two consecutive PDG mass ratios — as fit_calibrated, filling
+the sole remaining free-parameter slot in Attempts 13-14's Z-action mechanism.
+
+Independently adversarially reviewed — SURVIVES WITH REQUIRED CORRECTIONS, 3 applied: (1) an
+overstated analogy to item 21's Yukawa coefficients was corrected — Yukawa's formula is injective
+(9 masses → 9 distinct outputs), this geometric mean is lossy (discards that the two per-branch
+ratios differ); (2) an overstated citation of item22/24's Fritzsch texture-zero "2-parameter
+economy" precedent was corrected — that construction achieved a genuine parameter-COUNT reduction
+against the real 19-parameter SM accounting, this file achieves no comparable reduction (Attempts
+13-14's mechanism isn't part of that accounting); (3) the top-line claim was corrected to state
+plainly that THREE separate r's are registered (not one) and that even the best fit misses the
+middle generation by 50-71% — filling the mechanism's parameter slot is not the same as validating
+it. All arithmetic independently reverified and confirmed correct.
+
+Item 1 remains fully Open in the DERIVATION sense (Δ_j/κ_j from root) — Attempt 17 closes it only
+in the FIT sense the founder explicitly authorized, matching real SM practice (~19 fitted
+parameters). This is the honest end state of the 2026-07-25 exploration arc: a real, non-degenerate
+mechanism exists (Attempts 13-14, Lorentz non-compactness), every root-native source for its one
+remaining parameter was searched and closed (Attempts 15-16), and the parameter is now openly
+fit_calibrated (Attempt 17) rather than left as an undisclosed gap.
+
