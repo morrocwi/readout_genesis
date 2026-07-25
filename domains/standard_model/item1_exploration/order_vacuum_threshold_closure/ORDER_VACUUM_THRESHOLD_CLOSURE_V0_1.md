@@ -128,6 +128,19 @@ Using the known fixture `M_true=1` as the comparison baseline:
 The phase verdict is stable because the order margin is about `6.82845`, vastly larger than the
 numerical uncertainty induced by the calibrated `M` error.
 
+**REQUIRED CORRECTION (independent scientific-methodology review, 2026-07-25):** this stability
+is not itself evidence that the branch-tape data is predictive. Because `lambda_j` is constrained
+to `(0,1]`, `Pi0` is unconditionally in `(0,7]` for ANY legitimate branch-tape input. Since
+`alpha_order=a/2=-0.5` on this stepper sits below `Pi0`'s unconditional lower bound of `0`,
+`Pi0>alpha_order` holds no matter what the U/D/E branches compute — `ORDERED_READY` on this
+stepper is guaranteed by the mother potential's sign alone, not by anything the branch
+construction discovered. See `falsifiability_note` in the executable's own output and
+`test_alpha_order_is_below_pi0_unconditional_lower_bound`, which demonstrates `ORDERED_READY`
+still holds even when all three lambdas are pushed to `1e-6` (near the extreme low end of their
+legal domain). This does not mean the numbers above are wrong — `Pi0`, `r_star`, and the branch
+lambdas are still real, correctly computed outputs — only that the specific ORDERED-vs-UNORDERED
+*decision* on this fixture carries no data-dependent information.
+
 ## Parameter reduction
 
 This stage removes two additional independent SM-sector dials:
@@ -158,5 +171,10 @@ minimum, or violation of the exact v1.13 bounds. A valid case with `Pi0<=alpha_o
 - exact algebraic bridge inside the declared scalar architecture;
 - calibrated finite-diagnostic branch pressure;
 - ordered vacuum established for this executable fixture;
+- **REQUIRED (2026-07-25 review): on this stepper, `alpha_order=-0.5` is below `Pi0`'s
+  unconditional lower bound (0), so `ORDERED_READY` is structurally guaranteed regardless of the
+  branch-tape data — do not cite this fixture's `ORDERED_READY` status as evidence the
+  primitive-branch construction is predictive; see the Error audit section above and
+  `falsifiability_note` in the executable output;**
 - not an unrestricted-root proof that the physical universe must use this scalar bridge;
 - not a prediction of the observed Higgs mass, gauge couplings, or vacuum scale in SI units.

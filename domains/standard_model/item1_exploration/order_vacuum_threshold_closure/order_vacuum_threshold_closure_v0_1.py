@@ -19,6 +19,19 @@ Pi0 > alpha_order and solves the unique convex minimum r_*.
 Tier: exact algebraic bridge inside a declared finite architecture + calibrated
 finite diagnostic for Pi0.  This is not an unrestricted-root derivation or a
 physical Higgs pole-mass prediction.
+
+REQUIRED CORRECTION (independent scientific-methodology review, 2026-07-25): the ORDERED_READY
+result on this fixture is STRUCTURALLY GUARANTEED, not data-dependent. Because pi0_from_report
+requires every lambda_j in (0,1], Pi0 = 3*lambda_U+3*lambda_D+lambda_E is unconditionally > 0 for
+ANY legitimate branch-tape input. Since alpha_order = a/2 = -0.5 on this stepper (a=-1 is fixed by
+the mother potential, not by the branch data), Pi0 > alpha_order holds for every possible
+legitimate lambda_U/D/E -- the branch-tape construction could not have produced UNORDERED_READY on
+this stepper no matter what the U/D/E data said. See `min_possible_pi0_this_alpha_gate` in
+run_fixture()'s output and `test_alpha_order_is_below_pi0_unconditional_lower_bound` for a direct
+demonstration. This does not mean the code is wrong -- Pi0, r_star, and the branch lambdas are
+still real, correctly-computed, and non-trivial numbers -- but the ORDERED_READY status itself is
+not evidence that the primitive-branch construction "worked" to produce order; it is a consequence
+of this potential's sign, disclosed here and in claim_boundary rather than left implicit.
 """
 from __future__ import annotations
 
@@ -278,9 +291,26 @@ def run_fixture() -> Mapping[str, object]:
             "cumulative_operational_sm_subchain": "7 -> 0 new/fitted dials",
             "global_parameters_not_eliminated": ["mother_potential.a", "mother_potential.b"],
         },
+        "falsifiability_note": {
+            "min_possible_pi0_given_lambda_domain": 0.0,
+            "alpha_order": float(bridge["alpha_order"]),
+            "ordered_outcome_is_data_independent": float(bridge["alpha_order"]) < 0.0,
+            "explanation": (
+                "lambda_j in (0,1] forces Pi0 in (0,7]; since alpha_order=a/2=-0.5 on this "
+                "stepper is below the unconditional lower bound of Pi0, Pi0>alpha_order holds "
+                "for EVERY legitimate branch-tape input -- ORDERED_READY on this stepper is "
+                "structurally guaranteed by the mother potential's sign, not evidence that the "
+                "specific U/D/E branch data produced order. See "
+                "test_alpha_order_is_below_pi0_unconditional_lower_bound."
+            ),
+        },
         "claim_boundary": [
             "the order-sector alpha and beta are not independent once r=x^2 and the mother potential are declared",
             "the fixture satisfies Pi0>alpha_order and therefore has a unique ordered minimum",
+            "REQUIRED (2026-07-25 review): on THIS stepper, alpha_order=-0.5 is below Pi0's "
+            "unconditional lower bound (0), so ORDERED_READY is structurally guaranteed "
+            "regardless of the branch-tape data -- see falsifiability_note; do not cite this "
+            "fixture's ORDERED_READY status as evidence the branch construction is predictive",
             "the radial curvature is a local architecture output, not a physical Higgs pole mass",
             "mother-potential coefficients a,b remain global declared/calibrated quantities",
             "no unrestricted-root or laboratory Standard-Model claim",
