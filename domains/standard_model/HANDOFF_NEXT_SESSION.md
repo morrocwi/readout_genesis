@@ -92,7 +92,47 @@ named two next versions explicitly:
   `Φ↔Ψ` exchange rate in II.8a's own DRL action — the SAME quantity `READOUT_GENESIS_CORE.md`
   §II.6 already flags as "POSITED, not derived" after 8 independent failed attempts. Item 1 is
   therefore not a smaller, SM-local problem — it is the master equation's own oldest open
-  question, met again here. Still fully `[Open]`.
+  question, met again here. Still fully `[Open]` in the DERIVATION sense.
+
+  **2026-07-25 exploration (`item1_exploration/retained_transition_operational_closure/`,
+  `primitive_branch_parameter_reduction/`, `order_vacuum_threshold_closure/`,
+  `native_vacuum_amplitude_closure/`, `rd_to_gev_fit_calibrated_bridge/`,
+  `mass_ratio_test_no_fit/`, `native_causal_memory_consistency/` — full narrative in
+  `ITEM1_EXPLORATION_LOG.md`, read that file for the complete story, this is only the pointer):**
+  `M_n` was CALIBRATED (not derived) via a noise-aware operational estimator (moment-correction +
+  replicate-IV), independently reviewed, merged to `main` in both this repo and
+  `research_universal_solver`. The chain was then extended, each step independently reviewed and
+  merged: declared U/D/E branch tapes → `Pi0=6.328453553357985` → order-vacuum criterion
+  `Pi0>alpha_order` (inherited from the mother potential, not a new dial) → `ORDERED_READY`,
+  `r_star=3.823356105009073` → native vacuum amplitude
+  `v_native=sqrt(2*r_star)=2.7652689218262565`. **All of this is MERGED to `main`, usable,
+  tier-tagged `fit_calibrated`/`declared_finite_architecture`/`finite_diagnostic`.**
+
+  **Two required disclosures on the merged chain, both already applied, read before citing
+  `Pi0`/`ORDERED_READY` anywhere:** (1) the U/D/E branch initial conditions are explicitly
+  arbitrary/uncalibrated (checked — no PR in either repo derives them); (2) `ORDERED_READY` on
+  this specific stepper is STRUCTURALLY GUARANTEED regardless of branch data (`alpha_order=-0.5`
+  sits below `Pi0`'s unconditional lower bound of 0) — this was found by an independent
+  scientific-methodology review and is disclosed in the merged code's own `claim_boundary`.
+
+  **Three further candidates, all DRAFT/UNMERGED, testing whether any of this matches real
+  physics** (this repo's PR #79, #80, #81; mirrored, unmerged, in `research_universal_solver`):
+  fitting a RD-to-GeV scale from `v=246 GeV` and independently predicting the Higgs mass —
+  **FAILS**, 74% error; the same test with ZERO fitted parameters via a mass ratio — **FAILS**,
+  identical 74% (an algebraic consequence, not new evidence); an internal (zero-external-input)
+  consistency check between two independently-derived native "mass" readouts (`tau_c=M/D`-based
+  vs curvature-based) — **NOT CONSISTENT**, 94% deviation. All three honestly disclosed, not
+  hidden, not merged. A founder-initiated side-investigation into a discrete-vs-apparent-continuum
+  bridge found a real, pre-existing, Th_coqc, `tau_c`-parametrized bridge
+  (`docs/root/PERSISTENT_WALK_TELEGRAPH_DERIVATION.md` in `research_universal_solver`) —
+  structural only (same equation form), no numeric GeV conversion, partially discharged — and an
+  unresolved internal tension between two of this project's own philosophy docs
+  (`ZERO_INFINITY_DUAL_DIAGNOSIS.md`'s readout-vs-readout STANDING GUARD vs. this project's own
+  routine use of PDG masses as `fit_calibrated` inputs elsewhere) that this session explicitly did
+  NOT resolve — flagged, not papered over. **Paused here by explicit founder instruction.** Item 1
+  remains fully `[Open]` in the root-DERIVATION sense; the OPERATIONAL-CALCULATION question for
+  `M_n` itself is closed (merged, usable); matching real Higgs-sector physics from this
+  construction is, so far, a disclosed failure on every route tried.
 - **v1.15 — Generation Multiplicity**: derive why there are (if there are) exactly 3 generations,
   without feeding the count.
 Root-debt track (parallel, independent): **SM-G0.1–G0.5** (§2 items 1–5) — closing these is
