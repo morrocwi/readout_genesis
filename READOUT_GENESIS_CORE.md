@@ -7420,17 +7420,27 @@ EQ-063  Dr (bridge/definitional, founder-locked; related check finite_diagnostic
                      failed, EQ-015's own tier note). Do not read EQ-063 as closing EQ-015's gap.
 ```
 
-**Bottleneck survey (2026-07-25).** Reading the whole stream in numeric order surfaces one
-recurring pattern: the ABSTRACT/GENERAL layer (ROOT-0, Face 10, gauge redundancy, SU(3) closure) is
-increasingly Th_coqc-backed; the CONCRETE-INSTANTIATION layer — which specific object out of the
-admissible space is the real one — is Dr/Open/fit_calibrated every time it appears: EQ-021's
-concrete `𝔾_n` (Th_coqc only in the abstract case), EQ-015/EQ-063's `M` (posited, not derived; the
-τ_c bridge is calibration, not derivation), EQ-042–048's gauge/representation assignment (almost
-entirely Dr — no Th_coqc backing for automorphism-as-gauge, SM-G0.1–G0.5), EQ-057–059's item-1 `r`
-(terminal `fit_calibrated`), EQ-060–062's matter/antimatter field-role assignment (every concrete
-instantiation refuted; only the field-agnostic theorem, EQ-032–034, survives). **Convergent
-conclusion, matching the SM domain's own tracked backlog:** SM-G0.1–G0.5 (the automorphism-as-gauge
-kernel, full Coq witness) is the single node gating essentially every Dr/Open entry above.
+**Bottleneck survey (2026-07-25, CORRECTED same day).** Reading the whole stream in numeric order
+surfaces one recurring pattern: the ABSTRACT/GENERAL layer (ROOT-0, Face 10, gauge redundancy,
+SU(3) closure) is increasingly Th_coqc-backed; the CONCRETE-INSTANTIATION layer — which specific
+object out of the admissible space is the real one — is Dr/Open/fit_calibrated every time it
+appears: EQ-021's concrete `𝔾_n` (Th_coqc only in the abstract case), EQ-015/EQ-063's `M` (posited,
+not derived; the τ_c bridge is calibration, not derivation), EQ-042–048's gauge/representation
+assignment (almost entirely Dr), EQ-057–059's item-1 `r` (terminal `fit_calibrated`), EQ-060–062's
+matter/antimatter field-role assignment (every concrete instantiation refuted; only the
+field-agnostic theorem, EQ-032–034, survives).
+
+**Correction:** the first-draft version of this survey named SM-G0.1–G0.5 as the gating node,
+citing `domains/standard_model/README.md`'s "🟥 open" list — that line was stale. SM-G0.1–G0.6
+(automorphism-as-gauge, `InfoGaugeAutomorphismGroup.v` + `InfoGaugeLocalizationConnectionHolonomy.v`)
+was independently re-verified `coqc -q`-closed, axiom-free, since 2026-07-24 (consistent with, not
+contradicting, this file's own Part III framing above — "gauge-from-root step (UF-0/SM-G0)... OPEN"
+refers to the broader physical/unrestricted-root claim, not the structural sub-gates). **Honest
+revised conclusion:** the closure is STRUCTURAL only (any group) — non-triviality for the actual
+root dynamics stays `Open`, which is why EQ-042–048 stay Dr. The domain's own currently-tracked
+highest-leverage P0 item is **generation multiplicity — completely untouched** — real leverage:
+Kobayashi-Maskawa CP violation requires ≥3 generations. Item 1 (Δ_j/κ_j/`r`, EQ-057–059) was
+already exhaustively tried this session and closed only via `fit_calibrated`.
 
 **What this Appendix does not claim.** EQ-030 through EQ-062 are readouts of the SM domain leaf,
 governed by that leaf's own DRIFT_CONTRACT and CLAIM_BOUNDARY, not by this file's ROOT-0. End-to-end
