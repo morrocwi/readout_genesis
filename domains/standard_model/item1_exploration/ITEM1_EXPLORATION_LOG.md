@@ -531,3 +531,48 @@ mechanism exists (Attempts 13-14, Lorentz non-compactness), every root-native so
 remaining parameter was searched and closed (Attempts 15-16), and the parameter is now openly
 fit_calibrated (Attempt 17) rather than left as an undisclosed gap.
 
+## Attempt 18 (candidate) — Retained Transition Meter v1: fit `M_n` from a real tape, 2026-07-25
+
+A different quantity than Attempts 1-17's `r`, but the SAME kind of gap: `HANDOFF_NEXT_SESSION.md`
+line ~91 names `M_n` (the `Φ↔Ψ` exchange-rate matrix in II.8a's own DRL action,
+`𝕃^n_exchange = (1/Δt)·ΔΦ_n^T·M_n·ΔΨ_n`) as "the price per elementary retained-distinction
+transition" this item is chasing, and the SAME quantity `READOUT_GENESIS_CORE.md` §II.6 flags as
+"POSITED, not derived" after 8 independent failed derivation attempts. Built via `ultracode`
+(4-agent System/Design/Coding/Review subteam), a NINTH attempt but of a genuinely DIFFERENT KIND
+than Attempts 10-17: not a root-native derivation attempt, a disclosed `fit_calibrated`
+least-squares CALIBRATION of `M_n` from a real (synthetic, disclosed) Reader/Record transition tape,
+reusing Attempt 1's own already-reviewed stepper unmodified.
+
+`retained_transition_meter/` (new subfolder): fits `M̂` from both the Reader and Record equations
+independently (`M̂_Φ=0.923011`, `M̂_Ψ=0.999124`), computes the cost chain
+`c_n → Δj_eff=-3.854664 → λj=47.212757 → Π₀(toy)=330.489301` (λj outside v1.13's own assumed (0,1]
+range — reported as-is, not clipped; Π₀ toy uses one scalar in all 3 branch slots, explicitly NOT a
+real U/D/E claim). Five required validation tests, all genuinely falsifiable: fit-holdout (train
+0.2136, holdout 1.8132, no gate — reported as-is), dual agreement (7.92% → PARTIAL, both values kept
+separate, not averaged), path additivity (6.91e-16 → machine precision), negative control (shuffled
+VALUE sequence, not index labels, since the raw scalar LS fit is permutation-invariant on fixed
+pairs — 181x degradation, robustly passed), transport (normalized residual 1.2477 → **DOES NOT
+TRANSPORT**, reported plainly, not hidden).
+
+Independently adversarially reviewed — **SURVIVES**, re-ran the actual script twice (bit-identical,
+seeded RNG), hand-verified the physics/math against `attempt1`'s real stepper formulas, audited
+every `ck()` for loose thresholds (none found — the underdetermination gate, additivity, and
+negative-control margins are all real and non-decorative). One cosmetic (non-blocking) note applied
+after review: five `ck(name, True)` "explicit non-claims" checks were hardcoded-true documentation
+statements, not measured results — converted to plain prose so they don't inflate the PASS tally.
+
+Also found post-review (self-caught, not by the reviewer): a real QuTiP harmonic-oscillator
+comparison script DOES exist at `scripts/test_graph_quantum_relativity.py` (`D/M` vs QuTiP,
+7.6×10⁻⁴) — an earlier search by this session had missed it. RTM v1 deliberately does not use it
+(a Reader/Record tape from this domain's own stepper is the right fit target for `M_n`, not a
+different domain's harmonic-oscillator eigenvalue check) — flagged as a known resource for a
+possible RTM v2 cross-check, not a gap in RTM v1's own claims.
+
+**Candidate status**: a parallel team independently built a similar-scope instrument
+("retained transition meter v0.1", `readout_genesis` PR #67, scalar `M` from segmented tape,
+deterministic fixture `M_true=1.75` recovered to `1.74942`, ~0.033% error) — this attempt is opened
+as a candidate PR alongside it for comparison, not yet integrated as canonical. Neither closes item
+1's derivation question; both are `fit_calibrated` instruments to be compared on: event-to-cost
+semantic continuity, identifiability/RDI sufficiency, negative-control rigor, path/branch
+segmentation encoding, and whether shared-file integration should happen before selecting one.
+
