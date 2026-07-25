@@ -1,0 +1,33 @@
+name: Order Vacuum Threshold Closure
+
+on:
+  pull_request:
+    paths:
+      - "domains/standard_model/item1_exploration/order_vacuum_threshold_closure/**"
+      - ".github/workflows/order-vacuum-threshold-closure.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install numerical dependency
+        run: python -m pip install -q --disable-pip-version-check numpy
+      - name: Run executable threshold fixture
+        working-directory: domains/standard_model/item1_exploration/order_vacuum_threshold_closure
+        run: python order_vacuum_threshold_closure_v0_1.py > /tmp/order_vacuum_threshold_report.json
+      - name: Run regression and adversarial gates
+        working-directory: domains/standard_model/item1_exploration/order_vacuum_threshold_closure
+        run: python test_order_vacuum_threshold_closure_v0_1.py
+      - name: Upload threshold report
+        uses: actions/upload-artifact@v4
+        with:
+          name: order-vacuum-threshold-report
+          path: /tmp/order_vacuum_threshold_report.json
