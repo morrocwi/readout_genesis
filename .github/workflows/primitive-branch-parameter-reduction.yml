@@ -19,10 +19,16 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install numerical dependency
-        run: python -m pip install --disable-pip-version-check numpy
+        run: python -m pip install -q --disable-pip-version-check numpy
       - name: Run executable fixture
         working-directory: domains/standard_model/item1_exploration/primitive_branch_parameter_reduction
-        run: python primitive_branch_fixture_v0_1.py > /tmp/primitive_branch_fixture_report.json
+        shell: bash
+        run: |
+          set +e
+          python primitive_branch_fixture_v0_1.py > /tmp/primitive_branch_fixture_report.json 2> /tmp/primitive_branch_fixture_error.log
+          status=$?
+          cat /tmp/primitive_branch_fixture_error.log
+          exit $status
       - name: Run regression and adversarial gates
         working-directory: domains/standard_model/item1_exploration/primitive_branch_parameter_reduction
         run: python test_primitive_branch_parameter_reduction_v0_1.py
