@@ -26,6 +26,7 @@ Python (always, stdlib only, no network):
   - frame_mixing_from_action_v1_11.py  (v1.11: mixing weights derived from a reflection-positive slab; needs numpy)
   - order_higgs_closure_v1_12.py     (v1.12: minimal order carrier H=(1,2)_1/2 forced; vector mass-rank pattern; needs numpy)
   - intertwiner_order_vacuum_v1_13.py  (v1.13: CORRECTED intertwiner-rank order criterion Pi0>alpha; supersedes an earlier exponential draft; needs numpy)
+  - retained_transition_meter_v0_1.py  (calibrated reader/record exchange meter; simulated recovery + holdout + negative controls)
 NOTE: this list is illustrative, not authoritative — the actual test set is the tuple below.
 Coq finite formal witnesses (only if `coqc` is on PATH; skipped otherwise):
   - InfoOrderDefectFromComposition.v      (SM-G0/G0.6 order-defect from ordered composition)
@@ -36,7 +37,7 @@ Coq finite formal witnesses (only if `coqc` is on PATH; skipped otherwise):
   - InfoCenterConfinement.v               (v0.3 Z3 area law: <W>=q^A, sigma>0, V(R)=sigma R)
   - InfoConfinementCertificate.v          (v0.5 Frobenius/center/Delta_p/geometric-suppression exact)
   - InfoTrialitySpectralFlow.v            (v0.6 serial a_R^m + block contraction + existence witness)
-  - InfoBlockCorrelation.v                (v0.7 bump counting + rho_geom=u^4(1+16u^4) + correlations-help)
+  - InfoBlockCorrelation.v                (v0.7 bump counting + rho_geom=u^4(1+16u^4 + correlations-help)
   - InfoRetainedIntertwiner.v             (v0.9 intertwiner contraction + corrected linear criterion)
   - InfoAllOrderCharacter.v               (v1.0 fusion 3x3bar=1+8 + recursion c0'=2c3)
   - InfoSurfaceAutomaton.v                (v1.1 critical polynomials + root/mu brackets)
@@ -83,7 +84,8 @@ for py in ("unified_force_closure_v0_1.py", "four_force_circulation_v0_2.py",
            "isotropic_fixed_point_v1_10.py",
            "frame_mixing_from_action_v1_11.py",
            "order_higgs_closure_v1_12.py",
-           "intertwiner_order_vacuum_v1_13.py"):
+           "intertwiner_order_vacuum_v1_13.py",
+           "retained_transition_meter_v0_1.py"):
     r = subprocess.run([sys.executable, py])
     out[py] = r.returncode == 0
     ok = ok and r.returncode == 0
