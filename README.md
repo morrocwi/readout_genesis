@@ -19,6 +19,14 @@ Every claim carries a tier and never leaves it:
 There is no hidden ℝ behind the odometer. What is real is the finite, discrete readout an
 agency operator returns.
 
+**Readout-not-truth is not only a stance — its exact shape is now proven.**
+[`formal/InfoTrueRecordUnreadable_attempt.v`](formal/InfoTrueRecordUnreadable_attempt.v)
+(`Th_coqc`, axiom-free): whenever a readout collapses two distinct true states to one recorded
+value, both states still exist, but no decoder recovers both from the record alone — the general
+theorem behind `domains/standard_model/SM_INFORMATION_PHILOSOPHY_MASTER.md` §1.2 (`r=O(X)`, the
+root of gauge redundancy) and `domains/standard_model/source_root/READOUT_GENESIS_CORE_SNAPSHOT.md`
+Face 10 ("every observer's record is lossy").
+
 ---
 
 ## The one root
