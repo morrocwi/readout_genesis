@@ -595,3 +595,61 @@ against the KNOWN fixture `M_true=1`, not a blind prediction. Item 1's own root-
 for `M_n` (the DRL sense, feeding `Π₀`/`Δ_j`) remains fully Open — this merge closes the OPERATIONAL
 CALCULATION question (a real, usable, fail-closed calibrated tool now exists) while leaving the
 ROOT-DERIVATION question exactly as open as it was after Attempts 10-17, per CRRC discipline.
+
+## Ultracode bridge-hypothesis survey — 2 more disclosed FAILS, one dead-end conclusively closed, 2026-07-25
+
+Founder-directed `ultracode` (multi-agent, sonnet-only workers) survey, following the pause noted
+above: read this project's OWN philosophy/math-foundation docs (not invented physics) for
+candidate discrete-to-apparent-continuum bridge mechanisms beyond the 3 already-failed GeV-anchor
+routes and the 1 already-found non-numeric structural bridge. 5 parallel survey agents (DEC
+toolkit, MLCD Lorentz-compatible discreteness, PGFT roots of mathematics, a deeper pass on
+`engine/tau_c.py`/`Memory`/`TAU_C_DB`, and a broad prior-art scan across all domains), deduped to 2
+genuinely distinct, actually-buildable candidates. Both built, run, and independently
+adversarially reviewed (re-executed from scratch each time, not trusted). Mirrors
+research_universal_solver PR #38.
+
+**Candidate — dimensionless native-ratio bridge** (`dimensionless_native_ratio_bridge/`): sidesteps
+the unit-conversion problem entirely by comparing DIMENSIONLESS numbers on both sides — the K3
+graph-Laplacian spectral gap (`lambda_gap=3`, Th_coqc), a Sobolev grading ratio (`h1/l2=4`), and a
+ratio derived from the RTM stepper's own calibrated `M_joint`/`D` — against 11 pre-registered real
+dimensionless PDG mass/coupling ratios and 3D Ising critical exponents. Full 66-pair cross table,
+zero cherry-picking, zero fitted parameters. Closest pair 7.77% off; **no sub-2% match — FAILS**.
+Required correction applied: `h1/l2=4` was mislabeled `Th_coqc` — `formal/InfoDiscreteSobolev_
+attempt.v` (in research_universal_solver; this repo does not carry the full `formal/` Coq
+library, one citation-check test skips here accordingly, disclosed in the test itself) proves only
+the inequality `l2<=h1`; the exact equality is sympy-verified (real, correct) but not yet a Coq
+theorem, corrected to `Dr` tier throughout.
+
+**Candidate — PGFT-RDU internal temperature gateway test** (`pgft_rdu_internal_temperature_
+gateway_test/`): found and reused (not reinvented) a real, already-executable native↔SI energy
+round-trip gateway (`scripts/pgft_rdu_v0_7_quantum_gravity_real_problem.py`, mirrored into this
+repo's own `scripts/`, previously unused by `standard_model`), and tested whether replacing its
+hardcoded, unexplained `T=310K` with an internally-derived `T_native=D/M_joint` could turn it into
+a genuine bridge. Proved both algebraically and numerically (T swept from `1e-6` to `1e20` K, all
+identical to `<1e-9`) that `k_B*T` cancels EXACTLY in the round-trip ratio — **no choice of T,
+borrowed or internally-derived, can fix this gateway's disclosed arbitrariness.** A structural
+negative result, not an unlucky numeric miss. Required correction applied: the file's "fail-closed
+on negative energy" test exercised an unused imported function (`qg_diagnostic`), not the actual
+`round_trip_ratio_with_kB`/`without_kB` functions the file's conclusions are based on — explicit
+input guards added to both real functions, plus a new test exercising them directly.
+
+**Search-only finding (no new files, conclusively closes a route):** the repo's one genuinely
+proven (`Th_coqc`) numeric mass mechanism — `mass ratio = tau_c ratio = spectral-gap ratio of an
+L_R graph` (`engine/frontier.py`'s `mass_ratio_tau_c`, research_universal_solver) — is real but
+ratio-only by its own Coq hypotheses, and is ALREADY independently falsified for real SM mass
+ratios elsewhere in that repo (`scripts/falsify_particle_graph.py`, 80-99% off on principled
+graphs). The RTM stepper itself has **no graph structure at all** to feed into this mechanism
+(`G[Theta_n]=1`, "no graph", by its own docstring) — forcing one requires an arbitrary topology
+choice; a probe run during this survey (3 different edge-weight assignments on a 3-node path graph
+using `M_joint`/`D`/`r_star`) produced wildly non-matching, topology-dependent ratios (5.3–17.7×
+spread, matching nothing real), confirming there is no principled route through this mechanism.
+This closes a 3rd distinct family of approaches (in addition to the 3 GeV-anchor fits and the 1
+structural bridge) with real, executed, disclosed evidence rather than assumption.
+
+**Running tally: 5 independently-executed, honestly-disclosed negative results now on record**
+for bridging this construction's native units to real physics (3 GeV-anchor fits + these 2), plus
+1 conclusively-closed dead-end route (graph/spectral-ratio) and 1 non-numeric structural bridge
+already known (persistent-walk telegraph derivation). All draft/unmerged pending founder decision.
+Nothing found today closes the RD-to-GeV question; the survey covered substantially more of this
+project's own philosophy/math foundation than before, and ruled out several concrete mechanisms
+with real evidence rather than leaving them as untried possibilities.
