@@ -7533,101 +7533,29 @@ EQ-068  finite_diagnostic (THREE NEGATIVE FINDINGS, all disclosed, none hidden) 
         results not yet folded into this Appendix as of this entry — check
         `item1_exploration/ITEM1_EXPLORATION_LOG.md` for the outcome before citing this as final.
 
-EQ-069  finite_diagnostic (exact linear algebra, Borrowed/+reals boost generator, same tiering as
-        Attempt 13 — NOT Th_coqc) — 2026-07-25 accumulating_graph_dynamic_range candidate, merged
-        both repos. Un-freezes the RTM stepper's graph operator G[Theta_n] (frozen at identity,
-        the diagnosed ceiling behind EQ-068's failed unit-bridge attempts) into a NON-COMPACT
-        ACCUMULATING operator. Measured 4 modes over 200 steps:
-                     MODE 1 frozen G=I:                    1x        (confirms the ceiling)
-                     MODE 2 harmonic accumulating (bounded potential): 1.65x  (regime control)
-                     MODE 2b rotation (compact, same scaffold):        1x    (regime control)
-                     MODE 3 non-compact G=exp(Theta·L), theta=0.05:    20952x (sweep reaches 10^43x)
-        REQUIRED CAVEATS: (i) NOT PREDICTIVE by itself — theta is a free parameter, any target
-        range is reachable by tuning it; removing the ceiling is necessary, not sufficient. (ii)
-        FAITHFULNESS GAP: G=exp(Theta·L) is a matrix EXPONENTIAL, NOT literally the mother
-        equation's affine operator form G[Theta_n]=G_0+Theta^a·G_a (this file's own II.8a,
-        source_root/READOUT_GENESIS_CORE_SNAPSHOT.md:1090) — closed by EQ-070. Confirms the frozen
-        graph was the item-1 dynamic-range ceiling; does NOT close item 1, predict any mass, or
-        bridge to GeV (EQ-068's open unit-bridge problem is untouched).
+EQ-069  RETRACTED 2026-07-26 (continuum contamination — founder ruling; number kept so the
+        stream stays stable). The continuous-Θ graph-accumulation approach was a continuum detour:
+        cond#(G[Θ]) is a smooth bijection Θ↔R — a coordinate, not an observable — so a single
+        continuous knob cannot force generations. Original content + the transferable lessons + the
+        discrete grounding are in the error note: domains/standard_model/item1_exploration/
+        CONTINUUM_ARC_ERROR_NOTE.md. Root goal = the DISCRETE graph-Laplacian / transfer-operator
+        spectrum per representation sector (MASS_GAP §25).
 
-EQ-070  finite_diagnostic (exact linear algebra on the mother equation's own AFFINE operator,
-        Borrowed/+reals generator, same tiering as Attempt 13 — NOT Th_coqc) — 2026-07-25
-        affine_graph_noncompact_growth candidate, merged both repos. Closes EQ-069's faithfulness
-        caveat: uses the mother equation's ACTUAL affine form G[Theta_n]=G_0+Theta_n·G_a (NOT an
-        exponential), G_0=I, G_a=[[0,1],[1,0]] (so(1,1) boost-direction generator, used affinely),
-        so G[Theta]=[[1,Theta],[Theta,1]], singular values 1±Theta (non-orthogonal). Theta
-        accumulates by constant increment. Measured the CONDITION NUMBER (sv_max/sv_min — the
-        dimensionless mass-RATIO / spectral-gap-ratio analog, per falsify_particle_graph.py):
-                     affine non-compact (80 steps):        449808x   (past ~10^5.5 fermion spread)
-                     affine compact control (same form):   1.0x exactly  (regime control)
-                     min singular value: 0.00105    (precision-clean, not underflowed)
-        REQUIRED CAVEATS: (i) STILL NOT PREDICTIVE — d_theta is a free parameter (value-selection
-        stays open, same status as EQ-057–059's r). (ii) condition number is a dimensionless
-        RATIO, not an absolute mass — no GeV/unit conversion is attempted, EQ-068's unit-bridge
-        problem remains fully open. (iii) the n↔generation identification is Attempt 13's
-        UNPROVEN structural conjecture, neither assumed nor tested here.
+EQ-070  RETRACTED 2026-07-26 (continuum contamination — founder ruling; number kept so the
+        stream stays stable). The continuous-Θ graph-accumulation approach was a continuum detour:
+        cond#(G[Θ]) is a smooth bijection Θ↔R — a coordinate, not an observable — so a single
+        continuous knob cannot force generations. Original content + the transferable lessons + the
+        discrete grounding are in the error note: domains/standard_model/item1_exploration/
+        CONTINUUM_ARC_ERROR_NOTE.md. Root goal = the DISCRETE graph-Laplacian / transfer-operator
+        spectrum per representation sector (MASS_GAP §25).
 
-EQ-071  finite_diagnostic (exact linear algebra / M-calibrated coupled evolution on a
-        Borrowed/+reals affine operator, same tiering as Attempt 13 — NOT Th_coqc) — 2026-07-25
-        field_sourced_accumulation candidate, merged both repos. Follows EQ-069/070 (which left the
-        accumulation rate as a per-step FREE theta): drives Theta's accumulation from the mother
-        equation's OWN geometry-source law S_Theta = Phi^T (dG/dTheta) Psi = Phi^T G_a Psi, with
-        Phi/Psi evolving via the M-calibrated Reader/Record stepper, so the per-step rate is
-        COMPUTED from the dynamics (no per-step free theta). COMPUTED FACTS (no works/fails
-        judgment — see this Appendix's own Semantic Reading Key, MATERIALIST WORKS/FAILS BIAS entry
-        above; this result is the incident that guard records): (i) no per-step free theta — the
-        increment is S_Theta from the dynamics; (ii) the hierarchy (condition-number spread, the
-        mass-ratio analog) is a DETERMINED function of three graph inputs: M (calibrated), M_Theta
-        (geometry-sector inertia = 2.0, relativity_closure's own value), and the field initial
-        conditions; (iii) strongly SENSITIVE to them — M_Theta swept 1.0→50.0 moves it ~16 orders
-        of magnitude (8.39e15x), field ICs move it ~7.5e8x; (iv) FRAMEWORK-NATIVE reading
-        (stance_for('mass'): mass is a readout, mass ratios = spectral-gap ratios of L_R): M/M_Theta
-        are constants OF the one graph and the hierarchy is a readout of it, so relabeling theta into
-        M_Theta puts the freedom on the graph where the framework says the constants live — M_Theta
-        carries fit_calibrated status (DEV-SM-001), the same as M/v_EW/PDG masses, NOT a defect.
-        Compact-generator control stays at exactly 1x (consistent with EQ-069/070 — non-compactness
-        remains the range driver). REQUIRED FRAMING: the free-parameter COUNT is not reduced (theta
-        → M_Theta + field ICs), but the CHARACTER changes (a per-step tuning schedule → fixed graph
-        constants), and the hierarchy is now a determined graph readout. What fixes M_Theta and the
-        field ICs is OPEN — an internal, legitimately-calibratable graph question, NOT a failure.
-```
-
-**Bottleneck survey (2026-07-25, CORRECTED same day).** Reading the whole stream in numeric order
-surfaces one recurring pattern: the ABSTRACT/GENERAL layer (ROOT-0, Face 10, gauge redundancy,
-SU(3) closure) is increasingly Th_coqc-backed; the CONCRETE-INSTANTIATION layer — which specific
-object out of the admissible space is the real one — is Dr/Open/fit_calibrated every time it
-appears: EQ-021's concrete `𝔾_n` (Th_coqc only in the abstract case), EQ-015/EQ-063's `M` (posited,
-not derived; the τ_c bridge is calibration, not derivation), EQ-042–048's gauge/representation
-assignment (almost entirely Dr), EQ-057–059's item-1 `r` (terminal `fit_calibrated`), EQ-060–062's
-matter/antimatter field-role assignment (every concrete instantiation refuted; only the
-field-agnostic theorem, EQ-032–034, survives).
-
-**Correction:** the first-draft version of this survey named SM-G0.1–G0.5 as the gating node,
-citing `domains/standard_model/README.md`'s "🟥 open" list — that line was stale. SM-G0.1–G0.6
-(automorphism-as-gauge, `InfoGaugeAutomorphismGroup.v` + `InfoGaugeLocalizationConnectionHolonomy.v`)
-was independently re-verified `coqc -q`-closed, axiom-free, since 2026-07-24 (consistent with, not
-contradicting, this file's own Part III framing above — "gauge-from-root step (UF-0/SM-G0)... OPEN"
-refers to the broader physical/unrestricted-root claim, not the structural sub-gates). **Honest
-revised conclusion:** the closure is STRUCTURAL only (any group) — non-triviality for the actual
-root dynamics stays `Open`, which is why EQ-042–048 stay Dr. The domain's own currently-tracked
-highest-leverage P0 item is **generation multiplicity — completely untouched** — real leverage:
-Kobayashi-Maskawa CP violation requires ≥3 generations. Item 1 (Δ_j/κ_j/`r`, EQ-057–059) was
-already exhaustively tried this session and closed only via `fit_calibrated`. (Independent
-corroboration, unconnected to today's session: line ~3513 of this same file, from the earlier v1.5
-hypercharge work, already named "generation multiplicity — the next bottleneck" — same conclusion,
-reached separately, before this Appendix existed.)
-
-**Recorded discrepancy (2026-07-25, not silently reconciled):** a review pasted by the founder the
-same day recommended treating SM-G0.1–G0.5 as still-open, highest-priority work — contradicting
-the direct `coqc -q` recompile documented above. The likely cause is the same stale `README.md`
-line this Appendix's own maintainer initially cited before self-correcting. Flagged here rather
-than silently overwritten, per this book's own dissent-must-not-be-silently-erased discipline.
-
-**What this Appendix does not claim.** EQ-030 through EQ-062 are readouts of the SM domain leaf,
-governed by that leaf's own DRIFT_CONTRACT and CLAIM_BOUNDARY, not by this file's ROOT-0. End-to-end
-root-derived Standard Model (unrestricted root) remains **0%** — see `domains/standard_model/
-README.md`'s own top banner. This Appendix is a reading-continuity aid, not a re-derivation, and not
-a change to any tier already assigned upstream.
+EQ-071  RETRACTED 2026-07-26 (continuum contamination — founder ruling; number kept so the
+        stream stays stable). The continuous-Θ graph-accumulation approach was a continuum detour:
+        cond#(G[Θ]) is a smooth bijection Θ↔R — a coordinate, not an observable — so a single
+        continuous knob cannot force generations. Original content + the transferable lessons + the
+        discrete grounding are in the error note: domains/standard_model/item1_exploration/
+        CONTINUUM_ARC_ERROR_NOTE.md. Root goal = the DISCRETE graph-Laplacian / transfer-operator
+        spectrum per representation sector (MASS_GAP §25).
 
 ---
 
