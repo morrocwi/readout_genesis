@@ -276,7 +276,6 @@ open, declared import, same status as `v_EW` itself), does **not** feed back int
 claim exact agreement with PDG (a few-percent tree-level gap is the expected, honestly-reported
 result). Tier: `fit_calibrated` throughout.
 
-
 ## Attempt 10 — negative-but-informative: S3-symmetric generation graph forces degeneracy, 2026-07-25
 
 Unblocks Attempt 4's own named stall ("read `λ_j` as an eigenvalue of a weighted `L_R` on
@@ -308,8 +307,6 @@ Laplacian (a different graph, avoiding CRRC). Item 1 remains fully Open. Real, u
 result: narrows the search — any future graph/Laplacian attempt at item 1 must include an explicit,
 disclosed symmetry-breaking ingredient, not rely on bare graph structure alone.
 
-
-
 ## Attempt 11 — deepened negative: the real obstruction is generation-UNIFORMITY, not mere symmetry, 2026-07-25
 
 Founder correction to Attempt 10: this project already has a genuinely asymmetric-but-BALANCED
@@ -338,8 +335,6 @@ conclusion (a different flavor of degeneracy — partial magnitude-collapse vs. 
 collapse). Item 1 remains fully Open. Narrows the search further: any future attempt needs an
 explicit, disclosed, GENERATION-VARYING root-native input, not merely a richer but still
 generation-uniform construction.
-
-
 
 ## Attempt 12 — sharper still: SUM vs ORDERED COMPOSITION, and why this repo's connection can't yet supply it, 2026-07-25
 
@@ -372,8 +367,6 @@ sit in). Item 1 remains fully Open. Correctly narrows WHERE the missing ingredie
 genuinely non-telescoping, non-orthogonal-representation ordered composition) — not yet built, not
 independently justified from root, and explicitly not invented here just to force a positive result.
 
-
-
 ## Attempt 13 — builds the missing ingredient: Lorentz non-compactness, first REALIZED (not toy) mechanism, 2026-07-25
 
 "ทำเลย" — go build it. `item1_exploration/attempt13_lorentz_noncompact_breaks_degeneracy_v1.py`
@@ -405,8 +398,6 @@ mechanism would need further structure to match reality. Item 1 remains fully Op
 structural progress (a genuinely non-degenerate mechanism now exists, finite groups are ruled out
 categorically) honestly bounded by two explicit, disclosed open gaps (θ, and the n↔generation
 conjecture).
-
-
 
 ## Attempt 14 — apply readout-not-truth to Attempt 13 itself: theta is I1-injected; dissolve via exact-Q Z-action, 2026-07-25
 
@@ -447,8 +438,6 @@ genuinely simpler to state, NOT a demonstrated escape from any specific named bl
 generation↔boost-repetition identification remains the same unproven structural hypothesis Attempt
 13 already disclosed, unchanged.
 
-
-
 ## Attempt 15 — "รวมเข้ากับสมการแม่ตั้งแต่ต้น": two more closed doors, both honest, 2026-07-25
 
 Literally integrating Attempt 14's r with the mother equation from the start, as directed.
@@ -481,8 +470,6 @@ confirming it is not new information).
 Item 1 remains fully Open. Two more concrete candidate sources for r ruled out, honestly; a
 larger/differently-weighted graph for Route B remains untried and unproven impossible, though any
 such graph would need its own root-native justification to avoid becoming undisclosed fitting.
-
-
 
 ## Attempt 16 — closes the K_F/phi lead formally, after a 5-agent philosophy panel, 2026-07-25
 
@@ -531,59 +518,60 @@ mechanism exists (Attempts 13-14, Lorentz non-compactness), every root-native so
 remaining parameter was searched and closed (Attempts 15-16), and the parameter is now openly
 fit_calibrated (Attempt 17) rather than left as an undisclosed gap.
 
-
 ## Cross-team candidate roundup for the RTM `M_n` exchange coefficient — selection and merge, 2026-07-25
 
 This is the same DRL `Φ↔Ψ` exchange coefficient `M_n` named in the "Named finding" sections above
 (HANDOFF_NEXT_SESSION.md ~line 91, POSITED not derived), attacked in parallel this session by this
-repo's own line of candidates and a parallel team's line of candidates in the sibling private repo
-(`research_universal_solver`). Full roundup, most recent first:
+repo's own line of candidates and a parallel team's line of candidates in the sibling public repo
+(`readout_genesis`). Full roundup, most recent first:
 
 | candidate | repo/PR | method | mean error (disclosed run) | status |
 |---|---|---|---|---|
-| operational exchange closure v0.1 | readout_genesis PR #73 (this repo) / research_universal_solver (mirrored) | moment-correction + replicate-IV, Reader/Record 5% agreement gate | **0.042948%** (single run), 0.335552% (500-seed mean, σ=1e-5) | **SELECTED — merged to main** |
-| `eiv_corrected_fit_v1.py` | research_universal_solver PR #29 | moment-correction only, single tape | 0.63% mean (well-determined subset) | superseded, candidate branch kept for lineage, not mirrored here |
-| bias-diagnosis final synthesis | readout_genesis PR #72 / research_universal_solver PR #28 | diagnosis only, no corrected estimator | n/a (diagnosis, not an estimator) | closed — the diagnosis question itself, not `M_n` |
-| RTM v3 synthesis | readout_genesis PR #70 / research_universal_solver PR #27 | naive OLS, both sign conventions reported | n/a (bias undiagnosed at the time) | superseded, candidate branch kept for lineage |
-| RTM v1 | readout_genesis PR #68 / research_universal_solver PR #26 | naive OLS | 20.5% (Reader), bias undiagnosed at the time | superseded, candidate branch kept for lineage |
+| operational exchange closure v0.1 | readout_genesis PR #73 / research_universal_solver (this repo, mirrored) | moment-correction + replicate-IV, Reader/Record 5% agreement gate | **0.042948%** (single run), 0.335552% (500-seed mean, σ=1e-5) | **SELECTED — merged to main** |
+| `eiv_corrected_fit_v1.py` (this repo) | research_universal_solver PR #29 | moment-correction only, single tape | 0.63% mean (well-determined subset) | superseded, candidate branch kept for lineage |
+| bias-diagnosis final synthesis | research_universal_solver PR #28 / readout_genesis PR #72 | diagnosis only, no corrected estimator | n/a (diagnosis, not an estimator) | closed — the diagnosis question itself, not `M_n` |
+| RTM v3 synthesis | research_universal_solver PR #27 / readout_genesis PR #70 | naive OLS, both sign conventions reported | n/a (bias undiagnosed at the time) | superseded, candidate branch kept for lineage |
+| RTM v1 | research_universal_solver PR #26 / readout_genesis PR #68 | naive OLS | 20.5% (Reader), bias undiagnosed at the time | superseded, candidate branch kept for lineage |
 | RTM v0.1 / v0.2 | readout_genesis PR #67 / #69 | naive OLS + semantic locking | n/a | superseded, candidate branches kept for lineage |
 
-**Selection reasoning.** Selected after: (1) independently re-running the actual code (not a pasted
-summary) in a clean worktree, reproducing every disclosed digit exactly, including the full
-500-seed-pair benchmark sweep; (2) an independent adversarial review that re-derived the
-replicate-IV estimator `M_hat=(a1·y2+a2·y1)/(2·a1·a2)` from first principles and confirmed it is a
-correctly-derived, consistent IV estimator for this errors-in-variables setup (cross-noise terms
-vanish in expectation because the estimator never multiplies same-replicate `a` and `y`); confirmed
-the Reader/Record 5% agreement gate is genuinely load-bearing (ready-fraction collapses
-500/500→38/500 as noise grows, exercised by its own regression tests, not decorative); confirmed
-the two replicate noise draws are genuinely independent (separate RNG seeds, no secret sharing).
-One REQUIRED correction was found and applied before merge (not a code/math bug): the candidate's
-naming echoed this exploration's own still-open item-1 branch-closure `M_n`/`Π₀`/`Δ_j` question
-without disclaiming the difference — exactly the Cross-Role Readout Contamination (CRRC) risk this
-log already names above. A scope-boundary section was added to `RTM_OPERATIONAL_CLOSURE_V0_1.md`
-making the distinction explicit before merge (see git history on this branch).
+**Selection reasoning.** The operational-closure candidate (readout_genesis PR #73) was selected
+after: (1) independently re-running its actual code (not the pasted summary) in a clean worktree in
+BOTH repos, reproducing every disclosed digit exactly, including the full 500-seed-pair benchmark
+sweep; (2) an independent adversarial review that re-derived the replicate-IV estimator
+`M_hat=(a1·y2+a2·y1)/(2·a1·a2)` from first principles and confirmed it is a correctly-derived,
+consistent IV estimator for this errors-in-variables setup (cross-noise terms vanish in expectation
+because the estimator never multiplies same-replicate `a` and `y`); confirmed the Reader/Record 5%
+agreement gate is genuinely load-bearing (ready-fraction collapses 500/500→38/500 as noise grows,
+exercised by its own regression tests, not decorative); confirmed the two replicate noise draws are
+genuinely independent (separate RNG seeds, no secret sharing). One REQUIRED correction was found and
+applied before merge (not a code/math bug): the candidate's naming echoed this exploration's own
+still-open item-1 branch-closure `M_n`/`Π₀`/`Δ_j` question without disclaiming the difference —
+exactly the Cross-Role Readout Contamination (CRRC) risk this log already names above. A scope-
+boundary section was added to `RTM_OPERATIONAL_CLOSURE_V0_1.md` making the distinction explicit
+before merge.
 
-It was preferred over `eiv_corrected_fit_v1.py` (research_universal_solver PR #29, this repo's own
-sibling candidate) because it: achieves substantially higher accuracy (0.34% vs ~2% mean error) by
-combining two independent correction methods rather than one; requires no single-tape-only
-compromise (moment-correction is retained as a fallback, replicate-IV as the preferred path when
-replicate data exists); and — most importantly — correctly withholds `lambda`/`Pi0` on the observed
-trajectory (`path_semantics=observed_trajectory` stays `DIAGNOSTIC_ONLY`), avoiding the exact "emit
-a physically nonsensical λ/Π₀" failure this repo's own v1/v3 candidates exhibited (v1: `λ_j=47.2`,
-outside `(0,1]`, reported honestly but still emitted; v3: signed vs `|abs|` `Π₀` differing by 19
-orders of magnitude, deliberately left unresolved).
+It was preferred over this repo's own `eiv_corrected_fit_v1.py` (PR #29) because it: achieves
+substantially higher accuracy (0.34% vs ~2% mean error) by combining two independent correction
+methods rather than one; requires no single-tape-only compromise (moment-correction is retained as a
+fallback, replicate-IV as the preferred path when replicate data exists); and — most importantly —
+correctly withholds `lambda`/`Pi0` on the observed trajectory (`path_semantics=observed_trajectory`
+stays `DIAGNOSTIC_ONLY`), avoiding the exact "emit a physically nonsensical λ/Π₀" failure this repo's
+own v1/v3 candidates exhibited (v1: `λ_j=47.2`, outside `(0,1]`, reported honestly but still emitted;
+v3: signed vs `|abs|` `Π₀` differing by 19 orders of magnitude, deliberately left unresolved).
 
 **What is now MERGED and usable at `main`:** `domains/standard_model/item1_exploration/
 retained_transition_operational_closure/` — a fail-closed, tier-tagged (`fit_calibrated` /
 `calibrated_readout` / `finite_diagnostic`) operational estimator for this toy scalar Reader/Record
 apparatus's exchange coefficient `M`, usable for downstream exchange/`Delta_candidate` calculation
-whenever its own report status is `CALIBRATED_READY`.
+whenever its own report status is `CALIBRATED_READY`. Registered in `docs/root/EQUATION_REGISTRY.md`
+under a new "Statistics / estimation theory" section (errors-in-variables attenuation correction:
+Spearman 1904 / Fuller 1987; replicate instrumental-variable estimation: Wright 1928 / Reiersøl 1950).
 
 **What REMAINS explicitly OPEN — `M_n` itself is NOT closed, even after this merge.** Re-checked
-against the 5 closure criteria from the bias-diagnosis final synthesis (readout_genesis PR #72 /
-research_universal_solver PR #28), now against the merged operational-closure candidate
-specifically: (1) fail-closed noise-robust estimator — MET more strongly than any prior candidate
-(genuinely refuses across 6 disclosed noise levels, tested with real regression tests); (2) multiple
+against the 5 closure criteria from the bias-diagnosis final synthesis (research_universal_solver
+PR #28 / readout_genesis PR #72), now against the merged operational-closure candidate specifically:
+(1) fail-closed noise-robust estimator — MET more strongly than any prior candidate (genuinely
+refuses across 6 disclosed noise levels, tested with real regression tests); (2) multiple
 trajectories/parameters tested — still only PARTIALLY MET (one dynamical fixture, 500 independent
 noise draws on that SAME fixture, not multiple distinct trajectories/parameter regimes); (3) real
 external adapter (QuTiP/experimental data) — NOT MET, and now additionally disclosed as harder than
@@ -596,6 +584,89 @@ for `M_n` (the DRL sense, feeding `Π₀`/`Δ_j`) remains fully Open — this me
 CALCULATION question (a real, usable, fail-closed calibrated tool now exists) while leaving the
 ROOT-DERIVATION question exactly as open as it was after Attempts 10-17, per CRRC discipline.
 
+## Primitive-branch parameter reduction + order-vacuum threshold closure — stacked candidates, 2026-07-25
+
+Two stacked candidates extend the merged RTM operational-closure chain (readout_genesis PR #75,
+PR #76; mirrored here). Both independently re-verified by direct execution (not just the pasted
+summaries) before being reflected here, and both required corrections from independent review
+were applied to the source PRs directly (not silently accepted).
+
+**PR #75 — primitive-branch parameter reduction** (`primitive_branch_parameter_reduction/`):
+builds 3 branch tapes (U/D/E, distinguished only by initial condition on the same merged RTM
+stepper — see the standing CRRC caveat below), computes `Delta_j -> lambda_j -> Pi0 =
+3*lambda_U+3*lambda_D+lambda_E = 6.328453553357985` (0.0037% error vs the fixture's known-M
+reconstruction), and gauge-fixes `C_RD=1`. Independent review found the numbers real
+(reproduced exactly) but flagged two required corrections, both applied directly to the PR
+branch: (1) the "5 dials -> 0 free dials" framing is now scoped to the 5 NAMED dials only — the
+freedom relocates into the 3 branches' still-unexplained initial conditions, not eliminated; (2)
+the `primitive_certificate` fields (`no_internal_reset`, `orientation_quotiented`,
+`branch_encoding_tier`) are checked for presence/exact-match only, never cross-verified against
+the trajectory data — disclosed explicitly, with a regression test demonstrating the precise gap
+(a subtle 0.1% single-sample tamper with a false certificate is NOT caught, though a gross one is
+caught incidentally by the unrelated segmentation-invariance gate).
+
+**PR #76 — order-vacuum threshold closure** (`order_vacuum_threshold_closure/`): inherits
+`alpha_order=a/2`, `beta_order=b/4` from the SAME merged stepper's own mother-potential
+coefficients (`a=-1, b=1`) rather than introducing new SM-sector dials, combines with PR #75's
+`Pi0` via the v1.13 criterion (`intertwiner_order_vacuum_v1_13.py`, this repo), and reports
+`ORDERED_READY` with `r_star=3.823356105009073` (0.0006% error). A dedicated scientific-
+methodology review (circularity, negative controls, falsifiability, error propagation, threshold
+pre-registration) found 4 of 5 axes sound and one real, previously-undisclosed gap, since applied
+directly to the PR branch: `alpha_order=-0.5` sits below `Pi0`'s unconditional lower bound (`Pi0`
+is always in `(0,7]` since every `lambda_j` is constrained to `(0,1]`), so `ORDERED_READY` on this
+stepper is STRUCTURALLY GUARANTEED regardless of what the U/D/E branch data computes — confirmed
+directly by a regression test pushing all three lambdas to `1e-6` and still getting
+`ORDERED_READY`. This does not mean `Pi0`/`r_star`/the branch lambdas are wrong (they are real,
+correctly-computed, non-trivial numbers) — only that the ORDERED-vs-UNORDERED *decision* on this
+particular fixture carries no data-dependent information, now disclosed in both files' own
+`claim_boundary` output.
+
+**Standing CRRC caveat (unchanged from the earlier RTM roundup section above):** the "U/D/E
+branches" in both PRs are architecturally declared (`declared_finite_architecture` tier), not
+laboratory-verified Standard-Model branches — the toy Reader/Record stepper carries no SU(3)/SU(2)
+representation content. Both PRs' own `claim_boundary` lists already say this; it is repeated here
+so a reader of this log does not need to re-derive it. Item 1's real, independently-reviewed,
+already-established `Pi0~=6.9888` (`item1_fit_calibrated_v1.py`, from real PDG masses) remains
+unrelated and unaffected by either PR.
+
+**What remains open:** item 1's root-derivation question for `Delta_j` (Attempts 10-17) is
+untouched by this stack. Whether `Pi0>alpha` is FORCED by anything root-native (as opposed to
+structurally guaranteed by this stepper's particular potential sign, as found above) is not
+established. `a,b` (the mother-potential coefficients this whole stack now depends on for
+`alpha_order`/`beta_order`) remain global declared/calibrated quantities, not derived.
+
+## Native vacuum-amplitude closure — candidate, 2026-07-25
+
+Stacked on the merged order-vacuum threshold closure (readout_genesis PR #78; mirrored here).
+Converts `r_star` into a native-unit vacuum amplitude via the standard `r=v^2/2` convention:
+
+```text
+M -> Delta_{U,D,E} -> lambda_{U,D,E} -> Pi0 -> alpha_order,beta_order -> r_star -> v_native
+v_native = sqrt(2*r_star) = 2.7652689218262565  (0.00031% error vs the fixture's known-M
+reconstruction)
+```
+
+Independently reviewed: SURVIVES, no corrections required. Math verified (standard `r=v^2/2`
+convention correctly applied), no implicit unit-smuggling found (every mention of GeV/246 sits
+inside an explicit refusal), fail-closed gates confirmed by direct adversarial testing including
+an internally-inconsistent-report case (`status="ORDERED_READY"` with `r_star<=0`, caught
+independently of the trusted status flag).
+
+**Explicitly, per the founder's own direction, NOT attempted here:** the RD-to-GeV conversion
+factor. Setting it to make `v_native` land near the real 246 GeV Higgs vev would be a reverse-fit
+dressed up as a prediction — this candidate refuses to do that, and states so in its own
+`claim_boundary`. That bridge remains a fully open frontier.
+
+Cumulative reduction in this native/operational subchain: `M, C_RD, lambda_U, lambda_D, lambda_E,
+alpha_order, beta_order, v_native` — 8 quantities that are no longer free fitting dials in this
+declared-architecture construction. Still NOT reduced by any candidate in this chain: the mother-
+potential coefficients `a, b`; the RD-to-GeV conversion factor; the U/D/E branch initial
+conditions (explicitly disclosed as arbitrary/uncalibrated, confirmed by re-checking every open
+candidate PR in both repos — none contain a calibration procedure for them); and all real SM
+gauge couplings, Yukawa data, and physical masses in GeV. The standing CRRC caveat and the
+ORDERED_READY structural-guarantee disclosure (both noted in the prior log section above) apply
+unchanged to everything downstream, including this candidate.
+
 ## Ultracode bridge-hypothesis survey — 2 more disclosed FAILS, one dead-end conclusively closed, 2026-07-25
 
 Founder-directed `ultracode` (multi-agent, sonnet-only workers) survey, following the pause noted
@@ -605,8 +676,8 @@ routes and the 1 already-found non-numeric structural bridge. 5 parallel survey 
 toolkit, MLCD Lorentz-compatible discreteness, PGFT roots of mathematics, a deeper pass on
 `engine/tau_c.py`/`Memory`/`TAU_C_DB`, and a broad prior-art scan across all domains), deduped to 2
 genuinely distinct, actually-buildable candidates. Both built, run, and independently
-adversarially reviewed (re-executed from scratch each time, not trusted). Mirrors
-research_universal_solver PR #38.
+adversarially reviewed (re-executed from scratch each time, not trusted). Mirrors readout_genesis
+PR #84.
 
 **Candidate — dimensionless native-ratio bridge** (`dimensionless_native_ratio_bridge/`): sidesteps
 the unit-conversion problem entirely by comparing DIMENSIONLESS numbers on both sides — the K3
@@ -615,36 +686,34 @@ ratio derived from the RTM stepper's own calibrated `M_joint`/`D` — against 11
 dimensionless PDG mass/coupling ratios and 3D Ising critical exponents. Full 66-pair cross table,
 zero cherry-picking, zero fitted parameters. Closest pair 7.77% off; **no sub-2% match — FAILS**.
 Required correction applied: `h1/l2=4` was mislabeled `Th_coqc` — `formal/InfoDiscreteSobolev_
-attempt.v` (in research_universal_solver; this repo does not carry the full `formal/` Coq
-library, one citation-check test skips here accordingly, disclosed in the test itself) proves only
-the inequality `l2<=h1`; the exact equality is sympy-verified (real, correct) but not yet a Coq
-theorem, corrected to `Dr` tier throughout.
+attempt.v` proves only the inequality `l2<=h1`; the exact equality is sympy-verified (real,
+correct) but not yet a Coq theorem, corrected to `Dr` tier throughout.
 
 **Candidate — PGFT-RDU internal temperature gateway test** (`pgft_rdu_internal_temperature_
 gateway_test/`): found and reused (not reinvented) a real, already-executable native↔SI energy
-round-trip gateway (`scripts/pgft_rdu_v0_7_quantum_gravity_real_problem.py`, mirrored into this
-repo's own `scripts/`, previously unused by `standard_model`), and tested whether replacing its
-hardcoded, unexplained `T=310K` with an internally-derived `T_native=D/M_joint` could turn it into
-a genuine bridge. Proved both algebraically and numerically (T swept from `1e-6` to `1e20` K, all
-identical to `<1e-9`) that `k_B*T` cancels EXACTLY in the round-trip ratio — **no choice of T,
-borrowed or internally-derived, can fix this gateway's disclosed arbitrariness.** A structural
-negative result, not an unlucky numeric miss. Required correction applied: the file's "fail-closed
-on negative energy" test exercised an unused imported function (`qg_diagnostic`), not the actual
-`round_trip_ratio_with_kB`/`without_kB` functions the file's conclusions are based on — explicit
-input guards added to both real functions, plus a new test exercising them directly.
+round-trip gateway (`scripts/pgft_rdu_v0_7_quantum_gravity_real_problem.py`, previously unused by
+`standard_model`), and tested whether replacing its hardcoded, unexplained `T=310K` with an
+internally-derived `T_native=D/M_joint` could turn it into a genuine bridge. Proved both
+algebraically and numerically (T swept from `1e-6` to `1e20` K, all identical to `<1e-9`) that
+`k_B*T` cancels EXACTLY in the round-trip ratio — **no choice of T, borrowed or internally-
+derived, can fix this gateway's disclosed arbitrariness.** A structural negative result, not an
+unlucky numeric miss. Required correction applied: the file's "fail-closed on negative energy"
+test exercised an unused imported function (`qg_diagnostic`), not the actual `round_trip_ratio_
+with_kB`/`without_kB` functions the file's conclusions are based on — explicit input guards added
+to both real functions, plus a new test exercising them directly.
 
 **Search-only finding (no new files, conclusively closes a route):** the repo's one genuinely
 proven (`Th_coqc`) numeric mass mechanism — `mass ratio = tau_c ratio = spectral-gap ratio of an
-L_R graph` (`engine/frontier.py`'s `mass_ratio_tau_c`, research_universal_solver) — is real but
-ratio-only by its own Coq hypotheses, and is ALREADY independently falsified for real SM mass
-ratios elsewhere in that repo (`scripts/falsify_particle_graph.py`, 80-99% off on principled
-graphs). The RTM stepper itself has **no graph structure at all** to feed into this mechanism
-(`G[Theta_n]=1`, "no graph", by its own docstring) — forcing one requires an arbitrary topology
-choice; a probe run during this survey (3 different edge-weight assignments on a 3-node path graph
-using `M_joint`/`D`/`r_star`) produced wildly non-matching, topology-dependent ratios (5.3–17.7×
-spread, matching nothing real), confirming there is no principled route through this mechanism.
-This closes a 3rd distinct family of approaches (in addition to the 3 GeV-anchor fits and the 1
-structural bridge) with real, executed, disclosed evidence rather than assumption.
+L_R graph` (`engine/frontier.py`'s `mass_ratio_tau_c`) — is real but ratio-only by its own Coq
+hypotheses, and is ALREADY independently falsified for real SM mass ratios elsewhere in this repo
+(`scripts/falsify_particle_graph.py`, 80-99% off on principled graphs). The RTM stepper itself has
+**no graph structure at all** to feed into this mechanism (`G[Theta_n]=1`, "no graph", by its own
+docstring) — forcing one requires an arbitrary topology choice; a probe run during this survey (3
+different edge-weight assignments on a 3-node path graph using `M_joint`/`D`/`r_star`) produced
+wildly non-matching, topology-dependent ratios (5.3–17.7× spread, matching nothing real),
+confirming there is no principled route through this mechanism. This closes a 3rd distinct family
+of approaches (in addition to the 3 GeV-anchor fits and the 1 structural bridge) with real,
+executed, disclosed evidence rather than assumption.
 
 **Running tally: 5 independently-executed, honestly-disclosed negative results now on record**
 for bridging this construction's native units to real physics (3 GeV-anchor fits + these 2), plus
@@ -761,6 +830,17 @@ already known (persistent-walk telegraph derivation). All candidates draft/unmer
 founder decision. The RD-to-GeV (or RD-to-any-physical-unit) bridge question remains genuinely
 open — today's work substantially narrowed what does NOT work, with real, reproducible, reviewed
 evidence, rather than leaving these as untried possibilities.
+
+> ⚠️ **RETRACTED — CONTINUUM CONTAMINATION (founder ruling 2026-07-26).** Every log entry from here to
+> the end of this file records the **continuous-Θ 2×2 graph-operator arc** (accumulating non-compact
+> graph → affine → field-sourced → decelerating profile → derived rate → convergence study → fixed
+> q-diagnostic → degeneracy → principled mapping → ε-approach → calibrate). This whole arc was
+> **continuum contamination** — `cond#(G[Θ]) = (1+Θ)/(1−Θ)` is a smooth bijection (a coordinate, not
+> an observable), so a single continuous knob can never force generations. Its EQ-069/070/071 were
+> retracted from the core stream and all its candidate code was deleted from both repos. These entries
+> are kept only as a dated lab-notebook record of the mistake. **Do not act on them; the root goal is
+> the DISCRETE graph-Laplacian / transfer-operator spectrum.** Full record + transferable lessons +
+> discrete grounding: [`CONTINUUM_ARC_ERROR_NOTE.md`](CONTINUUM_ARC_ERROR_NOTE.md).
 
 ## Accumulating non-compact graph unlocks dynamic range — founder's diagnosis CONFIRMED, 2026-07-25
 
