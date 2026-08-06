@@ -29,12 +29,12 @@
 - **ขั้นตอนถัดไป:** จำลอง 4 แกนต้นทุน (หรือ g_j/Δ_j/κ_j) เป็นแกนของ `RetainedBurden` แสดงว่า isotropic fixed point (v1.10-v1.11, largest root ของ polynomial ดีกรี 6) เป็นจุด lexmin-optimal ของ burden algebra ที่สร้างจาก S_UF เอง แล้วตรวจว่า finite-minimality induction argument ของ §7 ย้ายมาใช้พิสูจน์ "forced ไม่ใช่ choice" ได้หรือไม่
 - **ความเสี่ยง/ข้อควรระวัง:** finite-minimality induction ยังไม่ Coq-proved (RCP_ENERGY_ARCHITECTURE.md §9 ระบุตรงๆ) — ให้เพียง template/finite_diagnostic ไม่ใช่ derivation แกน 6 ของ RCP-Energy สร้างมาสำหรับ energy scheduling ไม่ใช่ S_UF's rewrite-cost structure — transfer ได้แค่ container/เทคนิค ไม่ใช่ผลลัพธ์ และไม่ได้แก้สาเหตุที่ 4 ความพยายามก่อนหน้าถูก refute
 
-### 4. ⚠️ ธง CRRC: IDM_Harvest.v มีทฤษฎีบท "k=3 จาก cyclic start-independence" ซึ่งเป็น**การ re-prove ในเครื่อง (local re-proof) ของข้อโต้แย้งสี (color) ที่ harvest มาจาก readout_genesis เอง** — คือกับดักที่ SM handoff เตือนไว้ตรงๆ
+### 4. ⚠️ ธง CRRC: IDM_Harvest.v มีทฤษฎีบท "k=3 จาก cyclic start-independence" ซึ่งเป็น**การ re-prove ในเครื่อง (local re-proof) ของข้อโต้แย้งสี (color) ที่ harvest มาจาก readout_genesis เอง** — คือกับดัก Cross-Role Readout Contamination ที่ `HANDOFF_NEXT_SESSION.md` ในโดเมนนี้ระบุไว้ตรงๆ
 
 - **เป้าหมาย:** Item 2 (generation multiplicity)
 - **แหล่งอ้างอิง idm:** `formal/IDM_Harvest.v` — `Theorem odd_from_cyclic_closure`, `Theorem least_nontrivial_odd_is_three` (บรรทัด ~26-36, Th_coqc, axiom-free, พิสูจน์ด้วย `lia` สั้นๆ) หัวไฟล์ระบุตรงๆ ว่า "⇒ the color number 3 / SU(3)" **และ**หัวไฟล์ (บรรทัด 2-3) ระบุด้วยว่าผลลัพธ์เหล่านี้ **"harvested from readout_genesis and re-proved locally"** — กล่าวคือนี่**ไม่ใช่**ข้อค้นพบที่เกิดขึ้นเอง/อิสระในอีก repo แต่เป็นสำเนาที่ถูกดึงมาจาก readout_genesis แล้ว re-prove ซ้ำในเครื่องของ idm เอง (ตามคำของไฟล์เอง ไม่ใช่การตีความ)
 - **ขั้นตอนถัดไป:** **ห้ามอ้างผลสรุป k=3 กับ item 2 โดยตรงเด็ดขาด** (เพราะเป็นสำเนาของ argument ที่ readout_genesis ผลิตไว้เองอยู่แล้ว ไม่ใช่หลักฐานใหม่จากภายนอก) ใช้เฉพาะเป็นแม่แบบของ**ขั้นตอนที่ต้องทำอิสระ**: ตรวจว่า generation-index structure มีแนวคิด "cyclic closure" ของตัวเองที่แตกต่างออกไปหรือไม่ ถ้ามีให้สร้างข้อโต้แย้งใหม่ที่ตรวจ Retained-Degree Insufficiency ก่อนถือว่าเกี่ยวข้องกับ generations
-- **ความเสี่ยง/ข้อควรระวัง:** ความเสี่ยงสูงสุดในลิสต์นี้เพราะล่อใจที่สุด — ตัวเลขเดียวกัน (3), machine-checked, อยู่ในชื่อทฤษฎีบทกลางๆ (H2) ไม่ติดป้าย "color argument" ตรงๆ แม้หัวไฟล์จะเปิดเผยที่มา/ความเชื่อมโยงกับ SU(3) ไว้แล้วก็ตาม เซสชันในอนาคตที่ไล่อ่านไฟล์โดยไม่เห็นบริบทนี้เสี่ยงทำ CRRC ตามที่ SM handoff เตือนไว้พอดี บันทึกไว้เพื่อ**เตือน ไม่ใช่แนะนำให้ใช้**
+- **ความเสี่ยง/ข้อควรระวัง:** ความเสี่ยงสูงสุดในลิสต์นี้เพราะล่อใจที่สุด — ตัวเลขเดียวกัน (3), machine-checked, อยู่ในชื่อทฤษฎีบทกลางๆ (H2) ไม่ติดป้าย "color argument" ตรงๆ แม้หัวไฟล์จะเปิดเผยที่มา/ความเชื่อมโยงกับ SU(3) ไว้แล้วก็ตาม ผู้อ่านที่ไล่ดูไฟล์นี้โดยไม่เห็นบริบทข้างต้นมีความเสี่ยงทำ CRRC ตามที่ `HANDOFF_NEXT_SESSION.md` เตือนไว้พอดี บันทึกไว้เพื่อ**เตือน ไม่ใช่แนะนำให้ใช้**
 
 ---
 
