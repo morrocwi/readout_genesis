@@ -1,7 +1,7 @@
 # TODO: พัฒนา readout_genesis Standard Model domain โดยใช้ information-discrete-math (idm)
 
-> **31 รายการ**, จัดกลุ่มตามลำดับความสำคัญ: P0=4 (#1-4), P1=9 (#5-12, #30), P2=9 (#13-20, #29), P3=9
-> (#21-28, #31) — ดูหัวข้อ "รายการเพิ่มเติม 29-31" สำหรับ 3 รายการท้ายที่มี target SM item ต่างจากรายการ
+> **32 รายการ**, จัดกลุ่มตามลำดับความสำคัญ: P0=4 (#1-4), P1=9 (#5-12, #30), P2=9 (#13-20, #29), P3=10
+> (#21-28, #31-32) — ดูหัวข้อ "รายการเพิ่มเติม 29-32" สำหรับ 4 รายการท้ายที่มี target SM item ต่างจากรายการ
 > ใกล้เคียงในลิสต์หลัก
 
 ---
@@ -197,7 +197,7 @@
 
 ---
 
-## รายการเพิ่มเติม 29-31
+## รายการเพิ่มเติม 29-32
 
 รายการเหล่านี้ผ่านการตรวจสอบไฟล์ต้นทางโดยตรงเช่นเดียวกับรายการอื่น แต่มี target SM item ที่ต่างจากรายการ
 ใกล้เคียงในลิสต์หลักอย่างมีนัยสำคัญ จึงแยกเป็นรายการของตัวเอง (#21 ผูกกับ item 14 แต่ #30 นี้ผูกกับ item 35
@@ -223,6 +223,13 @@
 - **แหล่งอ้างอิง idm:** `RCP_ARCHITECTURE.md` §8 "Next mathematical layer" (บรรทัด 399-411) — backlog 6 ขั้นตอนที่ยังไม่ทำ: define finite factors/scopes ใน Coq, พิสูจน์ว่า admissible elimination step หนึ่งขั้นรักษา boundary readout, พิสูจน์การรักษาไว้ด้วย induction ตลอด admissible path, define reverse program, พิสูจน์ unary-adjoint moment identity, bind Python lineage serialization — ยืนยันจากการอ่านไฟล์จริง: "contains exactly the quoted 6-step declared-not-yet-done backlog verbatim... explicitly frames this as not-yet-done"
 - **ขั้นตอนถัดไป:** เมื่อ formalize cost-ratio derivation ของ item 15 ให้จัดโครง proof obligation เป็น "boundary-readout invariance under admissible elimination order" แบบเดียวกับที่ §8 อธิบาย พิจารณาว่าการปิดจบ backlog นี้ก่อนใน idm จะให้ Coq lemma shape ที่ transfer มาใช้กับ SM domain ได้โดยตรงหรือไม่
 - **ความเสี่ยง/ข้อควรระวัง:** ทั้งสองฝั่งยังไม่ปิดจบ (backlog เปิดอยู่ในตัว idm เอง) — เป็นโอกาส "ทำงานเปิดชิ้นเดียวกันครั้งเดียวแล้วแบ่งปันกัน" ไม่ใช่ "ใช้ผลลัพธ์ที่มีอยู่แล้ว" ความเชื่อมั่นในการ transfer ได้จริงต่ำจนกว่าฝั่งใดฝั่งหนึ่งจะปิดจบจริง
+
+### 32. ใช้ทฤษฎีบท geometric/exponential tail-bound ของ `IDM_Certified.v` เป็น rigor template หาก item 11's string-tension estimate ถูกสร้างจาก discrete decaying correlator sum
+
+- **เป้าหมาย:** Item 11 (nonzero continuum string tension σ_phys) — เป้าหมายต่างจากรายการ #16 (tropical min-plus semiring, ใช้กับ minimal-area/Wilson-loop proxy) แม้จะเป็น item เดียวกัน
+- **แหล่งอ้างอิง idm:** `formal/IDM_Certified.v` — `geom_majorant_tail` (บรรทัด 64, tail sum ของ M terms ที่ contract ด้วย ratio ρ ถูก bound ด้วย `t_N/(1-ρ)` เหนือ ℚ, division-free) และ `exp_tail_certified` (บรรทัด 142, instantiate สำหรับ Taylor terms ของ exp(x)) — ทั้งคู่ Th_coqc, axiom-free
+- **ขั้นตอนถัดไป:** ถ้า(เมื่อ) มีการเลือกใช้ discrete decaying-sum construction สำหรับ σ_phys ให้ cast tail ของมันเข้ารูป ratio-contracting หรือ exponential-term ที่ทฤษฎีบทเหล่านี้ครอบคลุม แล้วอ้าง `geom_majorant_tail`/`exp_tail_certified` สำหรับ truncation-error bound แทนการ truncate ด้วย numerical cutoff ที่ไม่ได้ verify
+- **ความเสี่ยง/ข้อควรระวัง:** เป็นการคาดเดา — ยังไม่มีการยืนยันว่า construction จริงของ σ_phys (ที่ยังไม่ได้สร้าง) จะมีรูปแบบ decaying-correlator-sum นี้จริงหรือไม่ โอกาสนี้ตั้งอยู่บนสมมติฐานของ construction ในอนาคตที่ยังไม่ได้ตัดสินใจ
 
 ---
 
