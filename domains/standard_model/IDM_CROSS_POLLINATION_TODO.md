@@ -1,8 +1,8 @@
-# TODO: พัฒนา readout_genesis Standard Model domain โดยใช้ information-discrete-math (idm) — ฉบับแก้ไข v2
+# TODO: พัฒนา readout_genesis Standard Model domain โดยใช้ information-discrete-math (idm)
 
-> **31 รายการ** — 28 รายการจัดกลุ่มตามลำดับความสำคัญ (P0=4, P1=8, P2=8, P3=8) บวกอีก 3 รายการ (#29-31, P2/P1/P3
-> ตามลำดับ) ที่พบเพิ่มจากรอบตรวจสอบซ้ำ ดูหัวข้อ "รายการเพิ่มเติม 29-31" — รายการที่อยู่ใน
-> "CONFIRMED-BUT-NEEDS-CORRECTION" ใช้คำอธิบายที่แก้ไขแล้วเป็นหลัก ไม่ใช้ rationale เดิมที่ overclaim
+> **31 รายการ**, จัดกลุ่มตามลำดับความสำคัญ: P0=4 (#1-4), P1=9 (#5-12, #30), P2=9 (#13-20, #29), P3=9
+> (#21-28, #31) — ดูหัวข้อ "รายการเพิ่มเติม 29-31" สำหรับ 3 รายการท้ายที่มี target SM item ต่างจากรายการ
+> ใกล้เคียงในลิสต์หลัก
 
 ---
 
@@ -74,7 +74,7 @@
 - **เป้าหมาย:** Item 2 (generation multiplicity)
 - **แหล่งอ้างอิง idm:** `formal/IDM_EquivariantReadout.v` — `equivariant_stabilizer_containment` (general G, Th_coqc, พิสูจน์แล้ว) และ `faithful_stabilizer_equality` (กรณี faithful action, Th_coqc, พิสูจน์แล้ว) แต่สูตรทั่วไป |V|_min=Σ[G:H] ถูกระบุตรงๆ ในคอมเมนต์ท้ายไฟล์ว่าเป็น **"Conjecture P1 (NOT proved here)"**
 - **ขั้นตอนถัดไป:** เมื่อจะ formalize ข้อเสนอ item-2 ใดๆ ให้จำแนกก่อนว่ากลุ่มการกระทำ (group action) ที่ได้เป็น faithful หรือไม่ ถ้าใช่ ให้อ้าง `faithful_stabilizer_equality` ตรงๆ ถ้าไม่ใช่ ให้ธงว่าสูตรทั่วไปยัง "ต้องใช้แต่ยังไม่พิสูจน์" ในทั้งสอง repo — เป็นโอกาสสองทาง: ถ้าโครงสร้างของ SM (item 2) กลายเป็น non-faithful case ที่ต้องการสูตรทั่วไปจริง อาจเป็นแรงจูงใจให้ปิด conjecture ของ idm เองไปพร้อมกัน
-- **ความเสี่ยง/ข้อควรระวัง:** สูตรทั่วไปเป็น conjecture ที่เปิดอยู่ในตัว idm เอง ไม่ใช่ผลลัพธ์ที่อ้างอิงได้ปิด — การใช้เกินกรณี faithful-action เดี่ยวๆ จะเป็นการ overclaim เอง (รายการนี้เคยถูกรวมเข้ากับรายการ #2 ในฉบับก่อนหน้าจนหายไปเป็นข้อแยกต่างหาก — ดูหมายเหตุท้ายเอกสาร)
+- **ความเสี่ยง/ข้อควรระวัง:** สูตรทั่วไปเป็น conjecture ที่เปิดอยู่ในตัว idm เอง ไม่ใช่ผลลัพธ์ที่อ้างอิงได้ปิด — การใช้เกินกรณี faithful-action เดี่ยวๆ จะเป็นการ overclaim เอง (กลไกนี้แยกจากรายการ #2 เพราะมี concrete_next_action และ risk profile ต่างกัน — #2 คือ precondition checklist, รายการนี้คือ open conjecture ของ idm เองที่เป็นโอกาสประสานงานปิดร่วมกัน)
 
 ### 10. [คืนค่าที่หายไป] ใช้กลไก necessary-condition (NC1-NC3 + minimal_three_values) ของ idm เป็น lower-bound probe สำหรับ generation multiplicity พร้อมธง CRRC ชัดเจน
 
@@ -93,7 +93,7 @@
 ### 12. ใช้ Retained Readout Pullback (RRP) axis-moment/gradient identities คำนวณ ⟨Ξ⟩ เป็นค่าคาดหวังจาก partition function
 
 - **เป้าหมาย:** Item 13 (⟨Ξ⟩ ≠ 0 จาก unified action, ไม่ใช่สมมติไว้)
-- **แหล่งอ้างอิง idm:** `RCP_RETAINED_READOUT_PULLBACK_STANDALONE.md` §1, §6-7 — เอกลักษณ์ ∂log Z/∂θ=−E[T] แบบ finite exponential-family, retained-closure pass เดียว ไม่ใช้ autodiff tape/junction tree, cross-verified กับ finite-difference (worst |Δ|≈1.9e-10, verdict ACCEPT) และ opt_einsum+Autograd (agreement ถึง 8.89e-16)
+- **แหล่งอ้างอิง idm:** `RCP_RETAINED_READOUT_PULLBACK_STANDALONE.md` §1, §6-7 — เอกลักษณ์ ∂log Z/∂θ=−E[T] แบบ finite exponential-family, retained-closure pass เดียว ไม่ใช้ autodiff tape/junction tree, cross-verified กับ finite-difference (worst |Δ|≈1.9e-10, verdict ACCEPT — committed check) และเทียบเพิ่มเติมกับ opt_einsum+Autograd (agreement ถึง 8.89e-16) ซึ่งเอกสารต้นทางระบุเองว่าเป็นการรันแยกต่างหากที่ **ยังไม่ commit เข้า CI** (ต้องมี `autograd`/`opt_einsum` เป็น optional dependency)
 - **ขั้นตอนถัดไป:** แสดง finite truncation ของ S_UF (ตัวที่ใช้แล้วสำหรับ isotropic fixed point v1.10-v1.11) เป็น RRP-compatible finite exponential-family factor graph เรียก pullback อ่านค่า axis moment ของ Ξ โดยตรง เทียบกับ native readout เดิม (curvature/τ_c-based) ของ item 1 เป็น consistency check
 - **ความเสี่ยง/ข้อควรระวัง:** เอกลักษณ์เชิงพีชคณิตของ RRP เป็น tier **Th_coqc-elig (ยังไม่ machine-checked)** และการตีความฟิสิกส์ติดป้าย **Dr (interpretive)** — ให้แค่ finite_diagnostic-tier numeric readout ภายใต้ truncation ที่ประกาศไว้ ไม่ใช่การพิสูจน์ว่า ⟨Ξ⟩≠0 ถูก**บังคับ** และสืบทอดความเสี่ยง physics-match เดียวกับที่เปิดเผยไว้แล้วสำหรับ item 1's M_n chain ถ้า weight ของ S_UF ยังไม่ถูก root-derive เองก่อน
 
@@ -120,7 +120,7 @@
 - **เป้าหมาย:** Item 14 (interacting chiral gauge measure) และรอง Item 20 (root-native chiral A_f)
 - **แหล่งอ้างอิง idm:** `formal/IDM_Matrix.v` §13.4 — `twirl(n,A) := (tr A/n)·I` (isotropy Reynolds-operator projector), `twirl_idempotent` (idempotent, พิสูจน์แล้ว), `trace_twirl` (trace-preserving), `twirl_image_scalar` (image เป็น scalar line เป๊ะ) — ทั้งหมด Th_coqc, axiom-free
 - **ขั้นตอนถัดไป:** generalize `twirl` จากกรณี full-symmetric-group/scalar ไปเป็น finite gauge group ที่เกี่ยวข้องกับ rep content ที่ประกาศไว้ (เช่น Z6/Z3 quotient) แล้วตรวจว่า idempotence/trace-preservation ยังคงอยู่สำหรับ averaging operator ที่ generalize แล้ว — เป็นข้อพิสูจน์ขั้นต่ำสุดก่อนเรียกผลลัพธ์ว่า "gauge measure" ได้
-- **ความเสี่ยง/ข้อควรระวัง:** `twirl` ใน IDM_Matrix.v average เหนือ full symmetric/isotropy group ไปสู่ scalar เท่านั้น — **ยังไม่ใช่** group-average เหนือ finite gauge group G ใดๆ ไปสู่ G-invariant subspace ที่ไม่จำเป็นต้องเป็น scalar การ generalize เป็นงานใหม่ทั้งหมด มีแค่ proof pattern ของ idempotence/trace-preservation ที่ย้ายมาได้ตรงๆ (รายการนี้เป็นกลไกคนละตัวกับรายการ #8 — เป้าหมาย SM คนละข้อ (14/20 vs 15/1) ทั้งสองรอบตรวจสอบยืนยันตรงกันว่าเป็น 2 โอกาสแยกกัน — ฉบับก่อนหน้ารวมทั้งคู่เป็นข้อเดียวจนรายการนี้หายไปเป็นข้อแยก ดูหมายเหตุท้ายเอกสาร)
+- **ความเสี่ยง/ข้อควรระวัง:** `twirl` ใน IDM_Matrix.v average เหนือ full symmetric/isotropy group ไปสู่ scalar เท่านั้น — **ยังไม่ใช่** group-average เหนือ finite gauge group G ใดๆ ไปสู่ G-invariant subspace ที่ไม่จำเป็นต้องเป็น scalar การ generalize เป็นงานใหม่ทั้งหมด มีแค่ proof pattern ของ idempotence/trace-preservation ที่ย้ายมาได้ตรงๆ (รายการนี้เป็นกลไกคนละตัวกับรายการ #8 — เป้าหมาย SM คนละข้อ: #8 คือ item 15/1, รายการนี้คือ item 14/20 — 2 โอกาสแยกกัน แม้ทั้งคู่อ้าง `twirl` เป็นกลไกร่วม)
 
 ### 16. ใช้ tropical (min-plus) all-pairs shortest-path semiring เป็นตัวแทน discrete minimal-area/Wilson-loop สำหรับ string tension
 
@@ -147,7 +147,7 @@
 
 - **เป้าหมาย:** Item 1 (order-spectrum audit numeric chain: M_n → Π0 → ORDERED_READY → r_star → v_native)
 - **แหล่งอ้างอิง idm:** `idm/certified.py` (re-export `exp_certified`/`geom_series_certified` จาก `tools/certified_readout.py`, สัญญา `Readout(q, bound, status, reason)`: CERTIFIED เมื่อมี bound ที่พิสูจน์แล้ว หรือ HOLD ถ้าเงื่อนไขไม่ผ่าน ไม่เดา); backed by `formal/IDM_Certified.v`
-- **⚠️ ข้อแก้ไข:** ชื่อทฤษฎีบทที่ถูกต้องคือ `geom_certified_identity` (บรรทัด 31) และ `geom_majorant_tail` (บรรทัด 64) — **ไม่ใช่** `geom_series_certified_identity`/`geom_series_certified_defect` ตามที่เคยอ้าง (ชื่อเหล่านั้นไม่มีอยู่ในไฟล์เลย จากการ grep) ส่วน `exp_tail_certified` (บรรทัด 142) และ `exp_term_ratio` (บรรทัด 132) ถูกต้องตามที่อ้างไว้เดิม
+- **⚠️ ข้อแก้ไข:** ชื่อที่ถูกต้องคือ `geom_certified_identity` (Theorem, บรรทัด 31) และ `geom_certified_defect` (Corollary ที่ derive จาก `geom_certified_identity` โดยตรง, บรรทัด 44) — **ไม่ใช่** `geom_series_certified_identity`/`geom_series_certified_defect` ตามที่เคยอ้าง (คำว่า "series" ไม่มีอยู่ในชื่อจริง แต่ทั้งคู่มี counterpart ที่ถูกต้องในไฟล์ ไม่ใช่ไม่มีอยู่เลย) `geom_majorant_tail` (บรรทัด 64) เป็นทฤษฎีบทอีกตัวที่เกี่ยวข้อง (tail-bound แยกจาก identity/defect) ส่วน `exp_tail_certified` (บรรทัด 142) และ `exp_term_ratio` (บรรทัด 132) ถูกต้องตามที่อ้างไว้เดิม
 - **ขั้นตอนถัดไป:** ตรงจุดที่ M_n/Π0 pipeline คำนวณ exponential decay rate หรือ geometric-series-shaped aggregation ให้เรียก `idm.certified.exp(Delta_j_eff, eps)` (หรือ `geom_series`) พร้อมพก bound ที่ได้ไปด้วยในเอกสารประกอบ chain โดยใช้ชื่อทฤษฎีบทที่ถูกต้อง
 - **ความเสี่ยง/ข้อควรระวัง:** ไม่ช่วย derive Δ_j หรือ M_n เอง (บล็อกเกอร์ P0 จริงของ item 1) — ยกระดับแค่ numeric-honesty tier ของการคำนวณที่สร้างจาก input ที่ CALIBRATED ไม่ใช่ root-derived อยู่แล้ว ความล้มเหลวเชิงฟิสิกส์ที่เปิดเผยไว้ 3 จุด (74%/74%/94% deviation) ยังไม่ถูกแก้ เพราะเป็นเรื่อง physical correctness ไม่ใช่ numeric-bound tightness
 
@@ -199,9 +199,9 @@
 
 ## รายการเพิ่มเติม 29-31
 
-รายการเหล่านี้ผ่านการตรวจสอบไฟล์ต้นทางโดยตรงเช่นเดียวกับรายการอื่น แต่ตกหล่นจากรายการ 1-28 ในรอบสังเคราะห์
-แรกเนื่องจากถูกยุบรวมเข้ากับรายการอื่นที่มี target SM item ต่างกันโดยไม่ตั้งใจ (#21 ผูกกับ item 14 แต่ #30
-นี้ผูกกับ item 35 โดยตรง ซึ่งเป็นคนละ blocker; #27 ผูกกับ item 17 แต่ #31 ผูกกับ item 13/15 ซึ่งเป็นคนละเป้าหมาย)
+รายการเหล่านี้ผ่านการตรวจสอบไฟล์ต้นทางโดยตรงเช่นเดียวกับรายการอื่น แต่มี target SM item ที่ต่างจากรายการ
+ใกล้เคียงในลิสต์หลักอย่างมีนัยสำคัญ จึงแยกเป็นรายการของตัวเอง (#21 ผูกกับ item 14 แต่ #30 นี้ผูกกับ item 35
+โดยตรง ซึ่งเป็นคนละ blocker; #27 ผูกกับ item 17 แต่ #31 ผูกกับ item 13/15 ซึ่งเป็นคนละเป้าหมาย)
 
 ### 29. ใช้ `groebner_basis` kind ของ idm (exact-CAS) ค้นหาคำตอบทั้งหมดของระบบข้อจำกัด anomaly-cancellation/rep-content
 
@@ -228,16 +228,15 @@
 
 ## ตัดออก (dropped)
 
-ไม่มีรายการที่ถูกตัดออกเพราะไฟล์ที่อ้างถึงไม่มีอยู่จริง — ทุกไฟล์/ทฤษฎีบท/ฟังก์ชันที่อ้างในเอกสารนี้ตรวจสอบแล้วว่า
-มีอยู่จริงในการอ่านไฟล์ตรง
+ไม่มีรายการที่ถูกตัดออกเพราะไฟล์ที่อ้างถึงไม่มีอยู่จริง — ทุกไฟล์/ทฤษฎีบท/ฟังก์ชันของ idm ที่อ้างในเอกสารนี้
+ตรวจสอบแล้วว่ามีอยู่จริงในการอ่านไฟล์ตรง **ยกเว้นรายการ #18** ซึ่งทฤษฎีบทหลักอยู่ใน external companion
+repo (`zero-readout-certifies`) ที่ยังไม่ได้เปิดตรวจในรอบนี้ — ระบุไว้ชัดเจนในรายการนั้นเองว่าเป็น pointer
+ที่ยังไม่ verify ไม่ใช่ผลที่ยืนยันแล้ว
 
 ## หมายเหตุระเบียบวิธี
 
-เอกสารนี้มาจากการสังเคราะห์และตรวจสอบหลายรอบอิสระ (แต่ละรายการอ่านไฟล์ต้นทางใน `information-discrete-math`
-โดยตรงเพื่อยืนยันว่าไฟล์/ทฤษฎีบท/ฟังก์ชันที่อ้างถึงมีอยู่จริงและทำงานตามที่อธิบาย ก่อนบรรจุเข้ารายการ) — 4
-รายการ (#6, #19, #20, #24) มีการแก้ไขคำกล่าวอ้างให้ตรงกับไฟล์จริง (ชื่อทฤษฎีบทผิด, ที่มาไฟล์ผิด, overclaim
-ระดับ Th_coqc backing) รายการ #4 (IDM_Harvest.v) ได้รับการแก้ไข provenance ให้ตรงกับหัวไฟล์ต้นทาง: เป็น
-local re-proof ที่ harvest มาจาก readout_genesis เอง ไม่ใช่ข้อค้นพบอิสระในอีก repo — ระดับความเสี่ยง (P0,
-ห้ามอ้าง k=3 กับ item 2) ไม่เปลี่ยน มีแค่คำอธิบายที่มาที่ถูกต้องขึ้น รายการ #29-31 เป็นการเพิ่มเติมจากรอบ
-ตรวจสอบซ้ำเพื่อความครบถ้วน หลังพบว่าฉบับก่อนหน้ายุบรวมโอกาสที่แตกต่างกันจริง (target SM item และ
-concrete_next_action คนละเรื่อง) เข้าเป็นรายการเดียวโดยไม่ตั้งใจ ทำให้ 3 โอกาสที่ตรวจสอบแล้วหายไปจากลิสต์
+ทุกรายการในเอกสารนี้อ้างอิงไฟล์ต้นทางใน `information-discrete-math` ที่ตรวจสอบแล้วว่ามีอยู่จริงและทำงาน
+ตามที่อธิบาย (อ่านไฟล์โดยตรง ไม่ใช่จากคำอธิบาย/สรุปเพียงอย่างเดียว) 4 รายการ (#6, #19, #20, #24) มีการแก้ไข
+คำกล่าวอ้างให้ตรงกับไฟล์จริง (ชื่อทฤษฎีบทผิด, ที่มาไฟล์ผิด, หรือ overclaim ระดับ Th_coqc backing) รายการ #4
+(IDM_Harvest.v) ระบุ provenance ตรงตามหัวไฟล์ต้นทาง: เป็น local re-proof ที่ harvest มาจาก readout_genesis
+เอง ไม่ใช่ข้อค้นพบอิสระในอีก repo — ระดับความเสี่ยง (P0, ห้ามอ้าง k=3 กับ item 2) คงเดิม
