@@ -105,11 +105,23 @@ imported prerequisite, backlog item 33), not a second root. If a future result n
 qubit machinery, translate it through the Lens Law into `δ_R`/overlap-fraction vocabulary
 first; do not import the continuum state space as primitive.
 
-## 5. Named next steps (none started; founder picks)
+## 5. Named next steps (5.1 DONE 2026-08-09; founder picks the next)
 
-1. **Sector census over the gauge quotient:** count which edge-directions `Θ^e` survive /
-   act nontrivially per representation sector under the established gauge automorphisms 𝒜
-   (G0.1–G0.5, closed Th_coqc) — the RDI count that must precede ANY family-index claim.
+1. **Sector census over the gauge quotient — DONE (2026-08-09,
+   `theta_sector_census_v1.py` + `formal/InfoThetaSectorSpectrum_attempt.v`, 9 theorems
+   axiom-free).** Findings: (a) the gauge quotient cuts NO family-graph Θ-directions (𝒜
+   acts as identity on the family slot — inherits Attempt 1's imported-ansatz caveat); the
+   cutting group is the family graph's OWN symmetry, and the surviving-parameter count =
+   **edge-orbit count** (invariance provably forces per-orbit uniform weights). (b) RDI
+   count for the two 3-vertex candidates: K3/S3 and P3/Z2 each retain exactly ONE invariant
+   direction — same parameter budget — yet **K3's invariant spectrum {0,3w,3w} is
+   degenerate for every w (re-derives item1 Attempt 10 at the census level) while P3's
+   {0,w,3w} has three distinct levels for every w>0: distinguishing power lives in
+   TOPOLOGY, not parameters or symmetry-breaking**. Grounds the `DISCRETE_MASS_ITEM1_PLAN`
+   reduction lever (P3→{0,1,3}) structurally. Four gates recorded for any future family
+   candidate (≥3 distinct levels; per-sector-distinct shapes incl. both hierarchy shapes;
+   the CP N≥3 gate; root-forcing of topology = step 5.2). CRRC guard binding: no
+   level↔generation identification made.
 2. **Topology-forced spectra:** which small graph topologies are forced by root
    constraints, and what per-sector spectra they give (the `P₃ → {0,1,3}` reduction lever,
    `DISCRETE_MASS_ITEM1_PLAN.md`) — checked against constraint 2 (two hierarchy shapes)
