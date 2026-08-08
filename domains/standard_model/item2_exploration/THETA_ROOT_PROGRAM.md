@@ -148,3 +148,38 @@ first; do not import the continuum state space as primitive.
 3. **Census beyond n=4 / general-n Coq:** generalize `InfoThetaEdgeCensus_attempt.v` from
    the 3-vertex case to general n (the sweep here covers n=4 exactly; the general theorem
    is routine but unwritten).
+
+## 5.2b-1 — dynamical selection: "ไม่สมมาตร แต่สมดุล" (2026-08-09)
+
+Founder's guiding directive, recorded verbatim: *"เผื่อใจไว้ด้วยว่า แท้จริงแล้วทั้งหมดอาจเป็น
+สิ่งเดียวกันมาจากรากกลับสู่ราก ไม่สมมาตร แต่สมดุล."* Files:
+`theta_dynamics_selection_v1.py` + `formal/InfoThetaFixedPointBalance_attempt.v`
+(3 theorems, general coefficients, axiom-free).
+
+- **B1 — forced balance law (`Th_coqc`):** at ANY J=0 static fixed point of the
+  reader/record pair over a symmetric operator (mother potential `aΦ+bΦ³`, b≠0):
+  **`⟨Φ³,Ψ⟩ = ΣᵢΦᵢ³Ψᵢ = 0` is FORCED.** "สมดุล" is not a symmetry of the configuration —
+  it is a forced bilinear balance.
+- **B2 — symmetry is dead (`Th_coqc`):** perfect agreement `Ψ=Φ` forces `Φ=0` (via
+  `2aΦᵢ=0`, decoupled case justified by 5.2a's support rule), and perfect mirror `Ψ=−Φ`
+  forces `Φ=0` (via `2bΦᵢ³=0`, ANY graph term — it cancels). Both the symmetric and the
+  anti-symmetric configurations retain nothing. **A living fixed point (Ψ≠0) is
+  necessarily NOT-symmetric yet balanced — the founder's phrase as a theorem pair.**
+- **B3 — selection experiment (`finite_diagnostic`, floats disclosed, fixed seeds):**
+  multistart Newton over all 8 supports (n=3, a=−1, b=1, K=μ=1, J=0 and ℛ_Φ=ℛ_Ψ=0 —
+  closed case, declared): living fixed points found ONLY on the three path-shape
+  supports (≥2 distinct orbits: a uniform-weight star, spectrum `{0,w,3w}` ratio 3.0
+  — its non-support edge is an exact TIE s=0 with a residual leaf-swap profile
+  symmetry, disclosed; and a non-uniform one, ratio ~3.33, strictly concordant off
+  support — both with THREE DISTINCT levels, balance ≈0 at ~1e-15, Ψ∦Φ). K3: **0
+  living fixed points in 3000 trials** incl. structured anti-aligned starts — a
+  bounded negative, NOT a nonexistence proof (independent review additionally failed
+  to refute it with 25,000 trials + homotopy continuation). Single-edge/empty: none
+  living.
+- **Reading (Dr):** within this bounded search the dynamics rejects both dead symmetric
+  states and full disorder; what lives is a path configuration — the very topology whose
+  spectrum separates (5.1) — closing the loop root → configuration → root.
+- **Open, named:** exact algebraic certification of the living fixed points (symbolic
+  solve timed out twice — recorded); K3 nonexistence proof; n>3; dynamic (non-static)
+  selection; parameter-dependence beyond the declared `a=−1,b=1,K=μ=1`. CRRC guard
+  binding: no generation identification.
