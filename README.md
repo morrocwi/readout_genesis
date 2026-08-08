@@ -80,6 +80,12 @@ independently adversarially reviewed before commit:
   3 as the minimal living count. This root-native arrow converges with the independent
   CP-conditional N ≥ 3 (item 2 Attempt 3); identifying the two N's is the program's
   named open square (CRRC-guarded).
+- **The N≥3 square half-closes** (`formal/InfoThetaCPSquareObstruction_attempt.v`):
+  the two N≥3 arrows constrain the same declared slot space (supports of unequal tier
+  — root-native unconditional + empirical-conditional); real mixing angles exist
+  natively between living sectors (|V₁₁|=½), but a real mixing matrix provably retains
+  **no** CP-signed readout (Im ≡ 0) — full closure awaits the oriented/skew Θ
+  extension (`𝔾^(−)`, `ω` — named, not built).
 - **Not symmetric, but balanced** (`formal/InfoThetaFixedPointBalance_attempt.v`,
   `Th_coqc`, founder directive 2026-08-09): at any closed static fixed point of the
   reader/record pair, the balance `⟨Φ³,Ψ⟩ = 0` is **forced**, while both perfect
