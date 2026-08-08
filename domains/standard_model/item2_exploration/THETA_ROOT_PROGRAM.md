@@ -215,3 +215,32 @@ Files: `theta_minimal_living_v1.py` + `formal/InfoThetaMinimalLiving_attempt.v`
   INDEPENDENT arrows hitting the same value from different premises. Identifying their
   two N's is an unbuilt admissibility square — the CRRC guard holds; that square is now
   the single most valuable named open item of the program.
+
+## 5.4 — the admissibility square between the two N≥3 arrows: HALF-CLOSED (2026-08-09)
+
+Files: `theta_cp_square_v1.py` + `formal/InfoThetaCPSquareObstruction_attempt.v`
+(1 theorem, axiom-free). Item-2 side: this is **Attempt 4** in the item-2 line.
+
+- **Part 1 — legitimate intersection (exact within declared architecture):** both
+  arrows constrain the dimension of the SAME declared family-slot space (the ℂ^N
+  ansatz): Θ-graph vertices = slot indices (5.1–5.2b setup) and mixing-matrix indices
+  = slot indices (Attempt 3 setup). Two different questions about one declared index
+  set — combining necessary conditions is an intersection, not CRRC. **N ≥ 3 stands
+  with two supports of UNEQUAL TIER** (per review): the root arrow is unconditional
+  within the declared architecture; the CP arrow is conditional on the empirical
+  retained-CP premise (fed in, not derived — and per Part 3 not yet root-realizable).
+  Root-native + empirical-conditional, NOT two root-native proofs.
+- **Part 2 — bridge candidate (declared, Dr):** mixing = eigenbasis mismatch of two
+  living sector graphs' Laplacians. On two living path sectors (different centers):
+  V = U_AᵀU_B is a genuine nontrivial rotation (|V₁₁| = ½ — reads 60° under the
+  declared ascending-eigenvalue/sign convention, 120° under a sign flip; the
+  convention-invariant content is |V₁₁| = ½ and non-permutation mixing) — **real
+  mixing angles exist natively.**
+- **Part 3 — proven obstruction (`real_quartet_no_cp_readout`, Th_coqc):** a REAL
+  mixing matrix's Jarlskog quartet has Im ≡ 0 — the CP-signed readout reads NEUTRAL on
+  every real configuration. The current real-weighted Θ architecture **cannot satisfy
+  A_CP's premise**; the two N's cannot yet be identified as one derived quantity.
+- **Named next step (root-available, not built):** oriented/skew edge structure — the
+  corpus's own `𝔾^(−)` G-adjoint split (storage vs oriented transfer) and `ω` pairing
+  are the precise candidates for making a retained `J ≠ 0` root-realizable. That is
+  the program's next frontier.
