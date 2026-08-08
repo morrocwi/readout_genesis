@@ -150,6 +150,85 @@ anywhere); the Cabibbo/Kobayashi–Maskawa attributions are accurate.
 that `N=4,5,…` are excluded by anything but the fed-in CP-violation observation; that "nature
 prefers minimal `N`" is anything but an unproven meta-postulate stated as such.
 
+## Attempt 3 — `item2_cp_equivariant_lower_bound_v3.py` + `formal/InfoCPEquivariantGenerationBound_attempt.v`, 2026-08-08: conditional N≥3 forced, in-house, exact
+
+Built per the founder's direction to learn from `information-discrete-math` (idm) and
+`readout_universe` and extract tools for item 2 (this session first read
+`IDM_CROSS_POLLINATION_TODO.md` #2/#4/#9/#10, `item1_exploration/ITEM1_EXPLORATION_LOG.md` in
+full, and a thorough `readout_universe` survey confirming no prior generation-count derivation
+exists anywhere and yielding two governing rules applied here: B1 — a mechanism must REDUCE
+freedom, not reparametrize a knob; Q3 — identity by role, `k_color` and `n_gen` stay distinct
+symbols regardless of shared digits).
+
+**Construction (admissibility square built from scratch — nothing reused from the color
+argument or `IDM_Harvest.v`):** object space = N×N unitary mixing configurations over exact
+Gaussian rationals ℚ(i); involution = elementwise conjugation (the CP action); readout = sign
+of a Jarlskog-type quartet invariant into {+,−,0}. IDM's equivariant-readout machinery is used
+as proof PATTERN only (per TODO #2/#10); the per-instance content (equivariance, neutrality on
+CP-fixed objects, non-degeneracy) is proven/exhibited locally, not cited.
+
+**Machine-checked content** (Coq, 13 theorems, all `Print Assumptions` = Closed under the
+global context; plus an exact-Fraction Python verifier, ALL PASS, no floats anywhere):
+1. **Vanishing theorem (load-bearing, in-house):** for ANY 2×2 matrix over ℚ-pairs satisfying
+   the column-orthogonality relation of unitarity, the quartet's imaginary part is exactly 0 —
+   N=2 mixing structurally CANNOT retain a CP-signed difference. Proven generally
+   (`two_gen_quartet_im_vanishes`), instance-swept on 648 exact ℚ(i) unitaries.
+2. **CP equivariance, general:** conjugation flips the quartet sign (`quartet_conj_flips_sign`)
+   — the signed readout is CP-equivariant for arbitrary entries; also rephasing-invariant
+   (checked exactly), so it reads the physical equivalence class (master §1.2), not a basis.
+3. **N=3 witness, exact:** V = R23·R13(d)·R12 from Pythagorean triples (3-4-5, 5-12-13,
+   8-15-17) and unit-modulus Gaussian-rational phase d=(3+4i)/5 — exactly unitary, with
+   J = 110592/4151485 ≠ 0 exactly (closed-form cross-checked). No trig, no continuum angles —
+   IDM-floor clean.
+4. **Three readout values realized** on {witness, CP(witness), CP-fixed real unitary}: {+,−,0}
+   pairwise distinct — the 3-value minimality pattern instantiated locally on THIS square.
+
+**The conditional result (premise always attached):** IF the world retains a CKM-type CP-signed
+difference (empirical premise, fed in — same epistemic slot as Attempt 2's ingredient 2), THEN
+N ≥ 3 is FORCED by the vanishing theorem given that premise — no fit, no tuned knob, no
+minimality postulate needed for the ≥3 half. This upgrades Attempt 2's "≥3" ingredient from
+borrowed-theorem+postulate to in-house-proven conditional mechanism. It also partially
+addresses Attempt 2's disclosed criterion-selection-hindsight caveat: |V_ij|² is CP-EVEN
+(proven trivially, checked exactly), so an angle count was never a candidate criterion FOR a
+CP-difference readout — the criterion is selected by the equivariance structure; what remains
+genuinely chosen is the premise that the CP difference is the retained difference in question.
+
+**NOVELTY, calibrated (per Attempt 1's review precedent):** the physics content (2 generations
+admit no CKM-type CP violation; observed CPV implies ≥3) is textbook (Kobayashi–Maskawa 1973),
+NOT a discovery. The contribution is only the in-house exact/machine-checked re-derivation on
+this framework's own terms and the criterion-structure analysis.
+
+**NOT from the root — stated plainly (founder asked directly: "มาจากรากของเราจริงๆไหม"; answer:
+no):** the supporting structure is imported, not grown from the root — the existence of an N×N
+unitary mixing matrix (items 21–23 open), the ℂ^N family slot (Attempt 1's flagged ansatz),
+unitarity itself (quantum-domain prerequisite, backlog item 33), and the CP↔matter/antimatter
+semantics are all imported; the premise is empirical. What is native is the lens and the
+discipline (IDM equivariant-readout pattern, exact-ℚ(i) floor, tier honesty). Epistemic rung:
+"exact within a declared/imported architecture + empirical premise" — NOT the root-native rung
+of the §2.1–2.2 color chain. If a future root-native family structure emerges (see below), this
+attempt's N≥3 becomes a consistency check on it, not its derivation.
+
+**Independent adversarial review (2026-08-08, verdict SURVIVES WITH REQUIRED CORRECTIONS, all
+applied before commit):** (1) the orthogonality relation was mislabeled "row" — it is COLUMN
+orthogonality (naming error, not soundness; fixed in both files); (2) the textbook-physics
+novelty calibration had to be stated explicitly, not implied (added to both files); (3) the
+Section-1 "r is total on X_N" wording was inaccurate at N=2 (the fixed 3×3 indices don't exist
+there) — reworded as a per-N quartet-sign readout family. The reviewer independently re-derived
+the decomposition identity symbolically, rebuilt the witness and the 648-family with different
+constructions, retyped the Coq literals from source, re-ran `Print Assumptions` on all 13
+theorems from its own scratch file, and confirmed CRRC-cleanliness (color-argument terms appear
+only inside explicit guards) and DRIFT_CONTRACT `hard_fail_conditions[4]`/[8] compliance.
+
+**Named next direction (founder, same session): Θ as the new root.** "ไปอ่าน readout universe
+เพื่อเชื่อมตัวอ่าน บันทึก ความแตกต่าง และธีต้าซึ่งเป็นรากใหม่" — connect reader Φ, record Ψ,
+retained difference, and Θ (the living-geometry state, `𝔾[Θ_n]=𝔾_0+Σ_a Θ_n^a 𝔾_a`,
+`Θ_{n+1}=A_Θ Θ_n+B_ΘΦ Φ_n+B_ΘΨ Ψ_n`, source `S_Θ^a=Φᵀ𝔾_aΨ` per generator direction) as a
+root-native carrier for the family index — under the hard constraint of
+`item1_exploration/CONTINUUM_ARC_ERROR_NOTE.md`: discreteness must live in the OBJECT (the
+discrete `L_R`/`𝕋_phys` spectrum per representation sector, MASS_GAP §25), never in a
+continuous Θ knob (the retracted EQ-069–071 mistake). Scoping in progress at session close;
+nothing built yet, nothing claimed.
+
 ## Honest status
 
 - Item 2 (generation multiplicity): **`[Open]`, unchanged at `Th_coqc`/`Dr` tier.** No from-root
@@ -165,5 +244,11 @@ prefers minimal `N`" is anything but an unproven meta-postulate stated as such.
 - Attempt 2 (`item2_family_index_v2_fit.py`): `fit_calibrated` tier per DEV-SM-002 (confirmed by
   independent adversarial review, verdict SURVIVES WITH CORRECTION, all three corrections
   applied above). `N=3`, consistent-with observation, NOT derived, NOT forced.
+- Attempt 3 (`item2_cp_equivariant_lower_bound_v3.py` +
+  `formal/InfoCPEquivariantGenerationBound_attempt.v`): CONDITIONAL mechanism tier — the
+  mechanism itself is exact/machine-checked (axiom-free Coq), the conclusion `N≥3` is
+  conditional on a declared empirical premise, and the whole construction sits on imported
+  (non-root) structure, disclosed in-file. Does not change item 2's `[Open]` status at the
+  unconditional/root level; does not establish `N=3` exactly.
 - Nothing here touches `CLAIM_BOUNDARY.json` or any `run_tests.py` verifier — these are
   exploratory files, not wired into the domain's closed-claim registry.
