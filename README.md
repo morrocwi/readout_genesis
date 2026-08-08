@@ -71,6 +71,14 @@ independently adversarially reviewed before commit:
   CRRC-guarded): under the stationary (discordance-valued) weights, degeneracy is
   **generically avoided** — the uniform degenerate K3 spectrum is provably unreachable as
   a readout, and both total- and partial-disorder supports separate into distinct levels.
+- **Not symmetric, but balanced** (`formal/InfoThetaFixedPointBalance_attempt.v`,
+  `Th_coqc`, founder directive 2026-08-09): at any closed static fixed point of the
+  reader/record pair, the balance `⟨Φ³,Ψ⟩ = 0` is **forced**, while both perfect
+  agreement `Ψ=Φ` and perfect mirror `Ψ=−Φ` admit only the dead state — a living record
+  is necessarily non-symmetric yet balanced. In the bounded selection experiment
+  (`finite_diagnostic`), living fixed points arise **only on path-shape supports** (3
+  distinct spectral levels; K3 found none in 3000+25,000 combined trials — not a
+  nonexistence proof).
 
 ---
 
