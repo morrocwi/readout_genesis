@@ -226,8 +226,11 @@ retained difference, and Θ (the living-geometry state, `𝔾[Θ_n]=𝔾_0+Σ_a 
 root-native carrier for the family index — under the hard constraint of
 `item1_exploration/CONTINUUM_ARC_ERROR_NOTE.md`: discreteness must live in the OBJECT (the
 discrete `L_R`/`𝕋_phys` spectrum per representation sector, MASS_GAP §25), never in a
-continuous Θ knob (the retracted EQ-069–071 mistake). Scoping in progress at session close;
-nothing built yet, nothing claimed.
+continuous Θ knob (the retracted EQ-069–071 mistake). Scoping completed same session —
+see [`THETA_ROOT_PROGRAM.md`](THETA_ROOT_PROGRAM.md) (founder ruling recorded; Θ-direction
+census closed for n=3 at `Th_coqc` — `formal/InfoThetaEdgeCensus_attempt.v`; the two Θ laws
+reconciled — `theta_direction_census_v1.py`; central row `DEC-theta-new-root-2026-0808`).
+No family-index construction attempted; item 2 status unchanged.
 
 ## Honest status
 
