@@ -183,3 +183,35 @@ Founder's guiding directive, recorded verbatim: *"เผื่อใจไว้
   solve timed out twice — recorded); K3 nonexistence proof; n>3; dynamic (non-static)
   selection; parameter-dependence beyond the declared `a=−1,b=1,K=μ=1`. CRRC guard
   binding: no generation identification.
+
+## 5.2b-2 — the minimal living count: N ≥ 3, root-native (2026-08-09)
+
+Files: `theta_minimal_living_v1.py` + `formal/InfoThetaMinimalLiving_attempt.v`
+(6 theorems/lemmas, all axiom-free).
+
+- **PROVEN (`Th_coqc`): n=2 admits NO living fixed point.** Empty-support branch: the
+  record dies componentwise (`n2_empty_support_dead`). Edge-present branch (both
+  retained differences nonzero): the four fixed-point equations are **contradictory**
+  (`n2_edge_present_dead`) — complete case tree, endgame factor `(3D²−4)(D²−1)=0` with
+  every root killing a living hypothesis; the reduction to sum/difference variables is
+  itself machine-checked (4 ring identities); and the top-level assembly under the
+  5.2a support rule is now ONE Coq theorem (`n2_no_living_fixed_point`, added per
+  review — its case split uses the order comparison; M2's core stays order-free).
+  Every M2 step is characteristic-0 field algebra — **valid over ℝ, not only ℚ**
+  (formal `Coq.Reals` restatement open, noted); independent review confirmed
+  nonexistence by Gröbner saturation — **even over ℂ**.
+- **MEASURED (`finite_diagnostic`):** n=3 lives (paths only, per 5.2b-1); n=4 also
+  lives, and more broadly — with structure (per review): the isolated-vertex class is
+  the n=3 living path embedded in n=4 (the isolated slot is EXACTLY dead, its
+  decoupled equations being M1's); the star, P4-path, and 4-cycle classes are
+  genuinely 4-slot living. So existence alone does NOT single out 3.
+- **VERDICT:** **a living reader/record/geometry loop needs ≥ 3 slots — a root-native
+  lower bound**, with 3 as the MINIMAL living count. "Exactly 3" invokes the
+  framework's own declared minimality-selection discipline (`Dr` — the same "minimum
+  value that still supports a nontrivial retained closure" semantics the EQ-stream
+  already uses), not existence alone.
+- **Convergence, carefully stated (Q3 identity-by-role):** root-native minimal-living
+  `N ≥ 3` (here) and CP-conditional `N ≥ 3` (Attempt 3, imported physics) are two
+  INDEPENDENT arrows hitting the same value from different premises. Identifying their
+  two N's is an unbuilt admissibility square — the CRRC guard holds; that square is now
+  the single most valuable named open item of the program.

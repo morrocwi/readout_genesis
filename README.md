@@ -71,6 +71,15 @@ independently adversarially reviewed before commit:
   CRRC-guarded): under the stationary (discordance-valued) weights, degeneracy is
   **generically avoided** — the uniform degenerate K3 spectrum is provably unreachable as
   a readout, and both total- and partial-disorder supports separate into distinct levels.
+- **The minimal living count is 3** (`formal/InfoThetaMinimalLiving_attempt.v`,
+  `Th_coqc`, 7 theorems axiom-free): at n=2 the closed static reader/record/Θ system
+  admits **no living fixed point** — proven as one top-level theorem (assembly of a
+  complete contradictory case tree; valid over ℝ by char-0 field algebra, and confirmed
+  by independent review even over ℂ via Gröbner saturation). n=3 lives (paths only,
+  `finite_diagnostic`); n=4 lives too (disclosed) — so the root forces **N ≥ 3**, with
+  3 as the minimal living count. This root-native arrow converges with the independent
+  CP-conditional N ≥ 3 (item 2 Attempt 3); identifying the two N's is the program's
+  named open square (CRRC-guarded).
 - **Not symmetric, but balanced** (`formal/InfoThetaFixedPointBalance_attempt.v`,
   `Th_coqc`, founder directive 2026-08-09): at any closed static fixed point of the
   reader/record pair, the balance `⟨Φ³,Ψ⟩ = 0` is **forced**, while both perfect
