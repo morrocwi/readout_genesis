@@ -46,6 +46,32 @@ Face 10 ("every observer's record is lossy").
 
 Everything else is a **readout** of that one operator.
 
+### Θ — the living-geometry root (founder ruling 2026-08-08; program: `domains/standard_model/item2_exploration/THETA_ROOT_PROGRAM.md`)
+
+The geometry state `Θ` is elevated to a root-level object alongside the reader `Φ`, the
+record `Ψ`, and `δ_R` itself — closing the loop `δ_R → L_R → 𝔾[Θ] → (Φ,Ψ) → Θ`
+(geometry that is itself a retained readout of the reading process). First results, each
+independently adversarially reviewed before commit:
+
+- **Direction census** (`formal/InfoThetaEdgeCensus_attempt.v`, `Th_coqc` n=3): the affine
+  law's index is answered — admissible deformation directions of `L_R` are exactly **one
+  per edge** (unique nonneg edge-weight decomposition); Θ's direction structure is
+  finite/countable by construction. The knob half of the retracted continuum mistake is
+  NOT excluded by this and stays separately guarded.
+- **Sector census** (`formal/InfoThetaSectorSpectrum_attempt.v`, `Th_coqc`, general-w):
+  after the symmetry quotient both 3-vertex candidates keep ONE invariant direction, yet
+  K3's spectrum `{0,3w,3w}` is degenerate for every `w` while P3's `{0,w,3w}` has three
+  distinct levels for every `w>0` — **distinguishing power lives in topology**.
+- **Topology is a readout, not an input** (`formal/InfoThetaTopologyReadout_attempt.v`):
+  at Gate-D stationarity on the census cone, an edge exists **iff** the reader and record
+  differences across that pair are anti-aligned — the family graph's support IS the
+  reader↔record discordance pattern. All 8 labeled supports are kinematically realizable
+  (honest negative): selection must come from dynamics — open, named step 5.2b.
+- Reading (`Dr`, corrected after adversarial review, no generation identification —
+  CRRC-guarded): under the stationary (discordance-valued) weights, degeneracy is
+  **generically avoided** — the uniform degenerate K3 spectrum is provably unreachable as
+  a readout, and both total- and partial-disorder supports separate into distinct levels.
+
 ---
 
 ## The three layers (the whole canon is organized this way)

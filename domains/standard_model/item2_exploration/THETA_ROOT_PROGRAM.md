@@ -122,10 +122,29 @@ first; do not import the continuum state space as primitive.
    candidate (≥3 distinct levels; per-sector-distinct shapes incl. both hierarchy shapes;
    the CP N≥3 gate; root-forcing of topology = step 5.2). CRRC guard binding: no
    level↔generation identification made.
-2. **Topology-forced spectra:** which small graph topologies are forced by root
-   constraints, and what per-sector spectra they give (the `P₃ → {0,1,3}` reduction lever,
-   `DISCRETE_MASS_ITEM1_PLAN.md`) — checked against constraint 2 (two hierarchy shapes)
-   and gate 3 (CP N≥3).
+2. **Topology-forced spectra — 5.2a DONE (2026-08-09, `theta_topology_readout_v1.py` +
+   `formal/InfoThetaTopologyReadout_attempt.v`, 8 theorems axiom-free).** Root-native
+   reframing established: **topology is a READOUT, not an input.** (R1) the per-edge
+   Gate-D source is exactly the product of retained differences,
+   `S_Θ^e = ΦᵀL_eΨ = (Φ_i−Φ_j)(Ψ_i−Ψ_j)`; (R2) at Gate-D stationarity on the census cone
+   (quadratic edge cost, division-free doubled form, stationary point characterized by
+   `μw* = −Ks`), an edge EXISTS iff its reader/record differences are ANTI-ALIGNED
+   (discordant) — the family graph's support IS the reader↔record discordance pattern;
+   (R3) honest negative: ALL 8 labeled 3-vertex supports are realizable (exhaustive over
+   36 injective rank-pairs; complement closure Ψ→−Ψ proven generally), so kinematics does
+   NOT restrict topology — **the selection must come from the DYNAMICS = step 5.2b
+   (open):** which (Φ,Ψ) configuration the coupled Φ/Ψ/Θ system settles into. (R4,
+   CORRECTED per review — the earlier "partial disorder ⟺ 3 distinct levels" reading was
+   REFUTED and is WITHDRAWN: 5.1's spectra assume uniform weights while R2's stationary
+   weights are the discordance values themselves, provably never uniform on an
+   all-discordant K3 (a²+ab+b²=0 has no nonzero rational solution). Under R2 weights the
+   K3 total-disorder witness gives {0,3,9}·(K/μ) — three distinct levels from TOTAL
+   disorder — and every positive-weight P3-support separates too; what survives is that
+   5.1's degenerate uniform-K3 spectrum is UNREACHABLE as an R2 readout — the mechanism
+   generically avoids degeneracy. Tier Dr.) Scope: static/fixed-point case at frozen
+   (Φ,Ψ) only; non-strict minimality machine-checked, uniqueness by strict convexity by
+   inspection; quadratic cost declared, cost-independence open (needs coercivity). CRRC
+   guard binding throughout.
 3. **Census beyond n=4 / general-n Coq:** generalize `InfoThetaEdgeCensus_attempt.v` from
    the 3-vertex case to general n (the sweep here covers n=4 exactly; the general theorem
    is routine but unwritten).

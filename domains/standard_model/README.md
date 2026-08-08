@@ -105,3 +105,13 @@ order carrier, `⟨H†H⟩` sets the vector-mass scale, v1.12–v1.13).
 Neither track substitutes for the other — the root-debt track grounds the *architecture* declared by
 the downstream track; closing SM-G0 alone does not re-derive v1.5–v1.13, and closing v1.14+ alone
 does not remove the unrestricted-root debt.
+
+## Θ root program (2026-08-08/09 — the active root-native track for item 2)
+
+Founder ruling: `Θ` (living geometry) is a root alongside `Φ`/`Ψ`/`δ_R`. Program doc, results
+(direction census `Th_coqc`; topology-distinguishes theorem; topology-is-a-readout at Gate-D
+stationarity; all independently adversarially reviewed), standing constraints, and the open
+dynamical-selection step: [`item2_exploration/THETA_ROOT_PROGRAM.md`](item2_exploration/THETA_ROOT_PROGRAM.md).
+Item 2's CP-equivariant conditional bound (`N≥3` given retained CP difference, machine-checked,
+NOT root-derived — disclosed): [`item2_exploration/ITEM2_EXPLORATION_LOG.md`](item2_exploration/ITEM2_EXPLORATION_LOG.md)
+Attempt 3. CRRC guard binding everywhere: no edge/level ↔ generation identification exists yet.
