@@ -244,7 +244,7 @@ real-skew route (Route B), a Q(i)/`μ₄` route (Route A), and a hybrid (Route C
 adversarial judging FOUND a real support-untied bug in Route B's original construction
 (its `a_e` was computed on every ordered pair regardless of support membership, silently
 re-opening the census's "one direction per edge" closure) and a synthesis pass REPAIRED
-it (support-tying: `a_e≡0` off the census-selected edge set `E`, by declaration). Fable
+it (support-tying: `a_e≡0` off the census-selected edge set `E`, by declaration). Orchestrator
 ruling (binding): PRIMARY = the repaired support-tied real construction only; the
 Q(i)/`μ₄` FALLBACK branch was NOT built (no `theta_oriented_gaussian_*.py` exists in the
 repo); the untied enlarged-census reframing is deferred as a named **5.6 candidate**, not
@@ -294,9 +294,9 @@ robust across 3 independent seed triples), the decisive re-check under the EXTEN
   (no cycle in the support) — exactly as the tree-triviality lemma predicts.
 - **Traversal-sign note:** `J_Theta`'s sign (not its nonzero-ness) flips under
   reversed traversal on the ODD cycle K3 but not on the EVEN cycle C4 — the general
-  `(−1)^m` telescoping fact, matching the Fable ruling's own "orientation-odd" phrase.
+  `(−1)^m` telescoping fact, matching the orchestrator ruling's own "orientation-odd" phrase.
 
-**B1/B2 transfer to the extended system (Fable ruling's mandatory sub-task, exact
+**B1/B2 transfer to the extended system (orchestrator ruling's mandatory sub-task, exact
 Fraction + paper derivation, `Dr`, numerically re-confirmed at all 59 found living FPs,
 worst `|⟨Φ³,Ψ⟩|=5.42e-14`):** **B1** (`⟨Φ³,Ψ⟩=0`) transfers UNCONDITIONALLY — the
 scalar-transpose identity `Ψ^T G Φ=Φ^T G^T Ψ` holds for ANY `G`, symmetric or not.

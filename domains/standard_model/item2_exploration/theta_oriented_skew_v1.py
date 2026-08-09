@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Theta ORIENTED SKEW EXTENSION v1 -- step 5.5 of THETA_ROOT_PROGRAM.md (PRIMARY branch
-only, per Fable ruling 2026-08-09; the Q(i)/mu_4 FALLBACK branch is NOT built here --
+only, per orchestrator ruling 2026-08-09; the Q(i)/mu_4 FALLBACK branch is NOT built here --
 no theta_oriented_gaussian_*.py file exists in this repo, and none should).
 
 CRRC GUARD (binding, checked by inspection): no edge, orientation, weight, skew value,
@@ -58,7 +58,7 @@ DISCLOSED FLOATS / FIXED SEEDS (Part 7 only; everything else is exact Fraction/s
   full spread, not a hand-picked subset, when characterizing "how nonzero" a
   support's found J_Theta values are.
 
-REPAIR UNDER TEST (the load-bearing fix this whole file exists to verify, Fable
+REPAIR UNDER TEST (the load-bearing fix this whole file exists to verify, orchestrator
 ruling 1 + repaired-design section 1): the original ("Route B") construction let
 a_e be computed on EVERY ordered pair in V x V, independent of whether w_e > 0 --
 a confirmed bug two of three independent judges missed. THE REPAIR: A[a]'s support
@@ -73,16 +73,16 @@ NAMED OPEN ITEMS (carried forward, not resolved here):
     Cq quartet-J (the CP-signed Jarlskog-type invariant) is an entirely separate,
     unbuilt admissibility square. Finding J_Theta != 0 here would NOT automatically
     close it -- a new square must be built and Coq-checked first (CRRC guard).
-  [Open] 5.6 untied reframing -- Fable ruling 2: the BOLDER "untied" construction
+  [Open] 5.6 untied reframing -- orchestrator ruling 2: the BOLDER "untied" construction
     (a_e defined over the full C(n,2) index set independent of L's support, closing
     the census differently) is logged here as a NAMED FUTURE CANDIDATE STEP (5.6),
     not pursued in this file. 5.5 is the support-tied repair ONLY.
   [Open] full diagonal-rescaling gauge invariance -- Part 4/5 below verify Z2
-    (sign-flip) gauge invariance only, per Fable ruling design section; the FULL
+    (sign-flip) gauge invariance only, per orchestrator ruling design section; the FULL
     continuous diagonal-rescaling group is Route B's own inherited, unresolved risk
     #2, not attempted here.
   [Open] V=U_A^dagger*U_B eigenbasis bridge -- REMAINS FORBIDDEN as a J readout in
-    this file (Fable ruling 4, gauge-artifact trap, two routes converged on this
+    this file (orchestrator ruling 4, gauge-artifact trap, two routes converged on this
     independently). Not used anywhere below; flagged as future work needing its own
     gauge-invariance square if ever revisited, since L+A is genuinely non-symmetric
     and its eigenpairs can be genuinely complex.
@@ -103,7 +103,7 @@ numeric verifier and is carried as inherited context):
 
 THE EXTENDED STATIONARITY IDENTITY -- derived on paper here, then machine-verified
 exactly in Part 6, THEN checked numerically at every found living FP in Part 7
-(Fable ruling 3c, the mandatory B1/B2 transfer sub-task):
+(orchestrator ruling 3c, the mandatory B1/B2 transfer sub-task):
 
   Write G := L[w] + A[a] (reader operator), so record uses G^T = L[w] - A[a]
   (L symmetric, A antisymmetric, both tied to the SAME support E, per the repair).
@@ -346,7 +346,7 @@ def directed_a(a_dict, p, q):
 # cycle-traversal direction. Reversing the cycle multiplies the product by (-1)^m
 # where m = cycle length: an ODD cycle (K3, m=3) flips sign under reversal; an EVEN
 # cycle (C4, m=4) does not. This is exactly the "orientation-odd cyclic product"
-# the Fable ruling already names -- not a bug, just spelled out here explicitly so a
+# the orchestrator ruling already names -- not a bug, just spelled out here explicitly so a
 # future reader of the Step 4 writeup does not mistake a K3 sign for something a
 # different traversal convention would preserve.
 def cyclic_product(a_dict, cycle):

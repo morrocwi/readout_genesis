@@ -258,7 +258,7 @@ judging FOUND a real support-untied bug in Route B (its `a_e` was computed on ev
 ordered pair in `V×V` regardless of whether the edge was in the census-selected
 support `E`, silently re-opening the "one admissible direction per edge" closure
 5.1/5.2a already proved shut) and the synthesis pass REPAIRED it by tying `A`'s
-support identically to `L`'s support (`a_e≡0` off `E` by declaration). **Fable ruling
+support identically to `L`'s support (`a_e≡0` off `E` by declaration). **Orchestrator ruling
 (binding, Step 0):** PRIMARY = the repaired support-tied real construction only;
 FALLBACK Q(i)/`μ₄` branch NOT built (no `theta_oriented_gaussian_*.py` exists); the
 untied enlarged-census reframing is deferred, named as a **5.6 candidate**, not
@@ -324,10 +324,10 @@ EXTENDED `(L+A)`-coupled dynamics:**
 - **Odd/even traversal-sign note:** `J_Theta`'s SIGN (not its nonzero-ness) flips
   under reversed cycle traversal for the ODD cycle K3 (`m=3`) but is invariant
   under reversal for the EVEN cycle C4 (`m=4`) — the general `(−1)^m` telescoping
-  fact, exactly what the Fable ruling's own phrase "orientation-odd cyclic
+  fact, exactly what the orchestrator ruling's own phrase "orientation-odd cyclic
   product" already names; nonzero-ness itself is traversal-invariant either way.
 
-**B1/B2 transfer to the extended `(L+A)`-coupled system (Fable ruling 3c's
+**B1/B2 transfer to the extended `(L+A)`-coupled system (orchestrator ruling 3c's
 mandatory sub-task — exact Fraction checks + paper derivation, tier `Dr` as
 general claims, numerically re-confirmed at all 59 living FPs found, worst
 `|⟨Φ³,Ψ⟩|=5.42e-14`):**
@@ -357,7 +357,7 @@ obstruction: a real mixing matrix's quartet has `Im≡0`) is UNBUILT and is now
 
 **Named open items:** the quartetJ identification square (the single most
 valuable named open item now, per 5.2b-2's precedent framing); the 5.6
-untied-reframing candidate (deferred by Fable ruling, not pursued); exact
+untied-reframing candidate (deferred by orchestrator ruling, not pursued); exact
 algebraic/minimal-polynomial certification of the C4 living FPs (currently
 residual-certified only, ~1e-14 to 1e-16, symbolic solve not attempted); the
 near-zero-cluster's rigorous exact-arithmetic distinction from a possible
