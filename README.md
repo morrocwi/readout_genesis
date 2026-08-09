@@ -119,6 +119,21 @@ independently adversarially reviewed before commit:
   (`finite_diagnostic`, fresh seed) not well-posed — eigen-ordering flips `quartetJ`'s
   sign on 29/528 sector pairs, magnitudes spanning `~1461x`. Item 2 stays `[Open]`; this
   square does not resolve it (CRRC-guarded).
+- **The orientation-sign program: a conditional theorem "living ⇒ J_Θ > 0"** (5.8-5.10;
+  `theta_field_certification_v1.py`, `theta_transient_selection_v1.py`,
+  `theta_asym_refutation_v1.py`, `theta_living_sign_round2_v1.py`,
+  `formal/InfoThetaLivingOrientationSign_attempt.v`, 19 statements axiom-free): all 33
+  living C4 fixed points are found to lie on exactly two D4 vertex-reflection loci (19 +
+  14, one ansatz up to rotation) with all 33/33 reading `sign(J_Θ)=+`; at these regimes
+  the C4 living fixed points are **dynamically unstable** (100% divergence, closing
+  5.5's open stability question negatively). On the vertex loci `J_Θ` is proven
+  (`Th_coqc`) to be an exact perfect square, strictly positive given nonzero generators,
+  and edge-reflection loci are proven incompatible with a living support — but whether
+  EVERY living fixed point actually lies on a vertex locus (Lemma 2) and is strictly
+  nonzero there (Lemma 3) both stay `[Open]` after a dedicated 26,155-trial adversarial
+  refutation campaign (not refuted) and a 60-minute Groebner/resultant compute campaign
+  (budgets exhausted, not closed). **"Living ⇒ J_Θ > 0" is a conditional Th_coqc result
+  plus a strongly-supported open conjecture — never an unconditional proven theorem.**
 
 ---
 

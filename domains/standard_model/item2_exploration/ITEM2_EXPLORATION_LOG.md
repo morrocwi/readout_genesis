@@ -419,6 +419,26 @@ general structural-induction tree Coq lemmas; the near-zero C4 cluster's rigorou
 exact-arithmetic distinction from a possible exact-zero branch; stability of the C4
 living FPs; full continuous gauge invariance beyond Z2 sign-flips.
 
+## Note — Theta 5.8/5.9/5.10, 2026-08-09: not logged as a new Attempt
+
+Unlike 5.5/5.7 above (Attempts 5/6), the three follow-on Theta-program steps 5.8 (field
+certification), 5.9 (transient selection + stability), and 5.10 (the orientation-sign
+theorem program, founder-ordered target "living ⇒ J_Θ > 0") are **not** given their own
+Attempt number here: they are downstream technical work on the already-`[Open]`,
+already-OBSTRUCTED quartet-square gate (Attempt 6/§5.7) rather than a new move toward
+closing item 2 itself. Full record: [`THETA_ROOT_PROGRAM.md`](THETA_ROOT_PROGRAM.md)
+§5.8–§5.10.
+
+Headline, one paragraph: all 33 living C4 fixed points collapse onto two D4
+vertex-reflection loci (19+14, one ansatz up to rotation, all `sign(J_Θ)=+`); the C4
+living fixed points are dynamically UNSTABLE at the declared regime (closing 5.5's
+stability item negatively); `J_Θ`'s strict positivity is PROVEN (`Th_coqc`) on the
+vertex loci and edge-reflection loci are proven incompatible with a living support, but
+whether every living FP lies on a vertex locus (Lemma 2) and is nonzero there (Lemma 3)
+both stay `[Open]` after a 26,155-trial adversarial refutation campaign (not refuted)
+and a dedicated 60-minute Groebner/resultant compute campaign (budgets exhausted, not
+closed). Item 2 remains `[Open]`, unchanged by this note.
+
 ## Honest status
 
 - Item 2 (generation multiplicity): **`[Open]`, unchanged at `Th_coqc`/`Dr` tier.** No from-root

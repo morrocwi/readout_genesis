@@ -502,3 +502,176 @@ finite-n-cycle and general structural-induction tree Coq lemmas (both inherited
 rigorous exact-arithmetic distinction from a possible exact-zero branch (inherited from
 5.5, unaddressed here); stability of the C4 living FPs (inherited, unaddressed); full
 continuous diagonal-rescaling gauge invariance beyond the Z2 sign-flip case (inherited).
+
+(§5.6 remains RESERVED for the deferred untied enlarged-census reframing candidate,
+unchanged since 5.5/5.7 — not used by 5.8/5.9/5.10 below.)
+
+## 5.8 — field certification: the 33 living C4 fixed points collapse onto two D4 vertex-reflection loci (2026-08-09)
+
+File: `theta_field_certification_v1.py`. Built as 5.7's own named escape hatch (a): exact
+algebraic/minimal-polynomial certification of a C4 living fixed point.
+
+**New structural discovery (the finding that seeded 5.10):** regenerating the 33 distinct
+C4 living FPs (seed 551, verbatim-reused machinery, reproduced independently by this
+doer's own run: 101/3000 hits, 33 distinct) and testing D4 symmetry directly finds **all
+33, with zero exceptions, lying on one of exactly two D4 vertex-reflection fixed loci**:
+19 on `Phi1=Phi3,Psi1=Psi3` ("class A") and 14 on `Phi0=Phi2,Psi0=Psi2` ("class B"), 0
+unclassified. Algebraically confirmed, not just numerically observed: class B is class
+A's ansatz under the C4 rotation `0→1→2→3→0`, not an independent phenomenon — the same
+implicit relation `R(x,p,q)=0` derived below vanishes at both classes' 60-digit certified
+points under that rotation.
+
+**Exact content (sympy `Rational`, zero floats):** the full 8-variable cubic fixed-point
+system over Q is built and cross-checked against the float inventory (residual match to
+~1e-15). Under the class-A ansatz the 8 equations collapse to 6 distinct equations in 6
+unknowns; the vertex-0 reader equation is exactly linear in Psi0, giving an exact
+(non-approximate) rational-function elimination of Psi0, producing an exact
+degree-7-in-`x` implicit relation `R(x,p,q)=0` plus two further exact equations — a
+genuine exact 8-variable → 4-variable reduction (`Phi0,Phi2,p,q`), verified algebraically
+at 60-digit certified points from both symmetry classes (residuals ~3.10e-60 class A,
+~9.73e-63 class B).
+
+**`[Open]`, honestly declared, budgets stated:** the final univariate minimal-polynomial
+elimination via lex Groebner on the reduced 4-variable system timed out at its declared
+60s budget, consistent with two independent pre-flight attempts (6-var ~300s, this 4-var
+system ~180s) — matching 5.2b-1's own "symbolic solve timed out twice" precedent. The
+full 8-variable Groebner stage was not attempted at all, by design (the easier 4-var case
+already exceeded budget). Consequently the fully exact Q-minimal-polynomial statement for
+`G`'s eigenvalues stays `[Open]`.
+
+**Downgraded Dr/finite_diagnostic stand-in (always run):** at the 60-digit certified
+points, `G = L[w*]+A[a*]` has 2 real + 1 genuinely complex-conjugate eigenvalue pair in
+BOTH classes (negative discriminant of the conjugate-pair quadratic factor, both classes:
+class A ≈ −0.299, class B ≈ −0.349 — the extension generated is strictly larger than any
+real subfield). PSLQ (degree-2 integer relation, 60-digit precision, tol 1e-30) found no
+small-height rational relation for either class's trace/product — weak Dr-tier evidence
+AGAINST a specific `Q(i)` identification, consistent with (neither proving nor refuting)
+5.7's own Galois-genericity leg.
+
+## 5.9 — transient selection + stability: no J-sign-flipping symmetry, 100% dynamical instability at declared regimes, 33/33 living FPs sign(J_Θ)=+ (2026-08-09)
+
+File: `theta_transient_selection_v1.py`. Question shape imported from a Dr-tier founder
+prior (DOI `10.5281/zenodo.17600798`) — shape-only import, no equation/constant/numeric
+value imported; five contamination guards declared in-file (G1–G5: fixed `Δt`, finite
+tape, finite steps, count-based fractions in Q, no knob-sweep-as-observable).
+
+**Symmetry search, exact (`Fraction`), all four named candidates refuted:** C4 graph
+automorphisms (D4 — rotations trivially preserve `J`; reflections = cycle reversal, and
+reversal of the EVEN cycle `m=4` preserves sign too, per the `(−1)^m` telescoping fact
+5.5 already established); `Ψ→−Ψ` flips every `a_e` (naively suggesting `J→−J`) but is
+**refuted as an actual system symmetry** — `w_e` is also odd in `Ψ`, so it flips too,
+giving `G→−G` and breaking the reader equation, shown by an explicit exact
+counterexample; `(Φ,Ψ)→(−Φ,−Ψ)` is a genuine symmetry (`w_e,a_e` both invariant) but
+leaves `J_Θ` untouched, useless for debiasing; time-reversal is refuted on inspection
+(it would swap the reader's `+D` / record's `−D` roles, a genuinely different system).
+**No valid J-sign-flipping symmetry exists** — the founder's asymmetry question cannot be
+answered by a pairing argument; the file falls through to its documented fallback
+(compare the dynamical-arrival composition against the static inventory's own
+composition, not a fabricated 50/50).
+
+**NEW static census fact (the observation that triggered 5.10):** re-deriving the 33
+distinct C4 living FPs (seed 551), **all 33/33 have `sign(J_Θ) = +`**, zero found negative
+— not previously disclosed in 5.5/5.7's own writeups.
+
+**Dynamics (the corpus's own Gauss-Jordan reader(`+D`)/record(`−D`) stepper,
+`READOUT_GENESIS_CORE.md` ~1290–1360, Θ read adiabatically each step from the
+Gate-D-stationary formula; regime `a=−1,b=1,K=μ=1,M=1`, `DT=0.1`, `N_STEPS=2000`, `D` in
+`{0.5,1.0,2.0}` plus a `D=0` undamped control plus 2 extra seeds):** **100% DIVERGED in
+every declared run**, `N_+=N_-=0` everywhere. Diagnosed as genuine physical instability,
+not a stepper artifact: even `eps=1e-3`/`1e-4` perturbations of an EXACT known static
+living FP diverge, in a DT-independent physical time (~11–15 time units, checked at
+`DT=0.1/0.02/0.005`).
+
+**Verdict:** this **CLOSES 5.5's own open "stability of the C4 living FPs" item
+NEGATIVELY, at these declared regimes** — the C4 living FPs are dynamically unstable.
+Transient selection is therefore **inconclusive-by-instability** (honest, no fabricated
+fraction/bias — all outcome classes LIVING±/DEAD/DIVERGED/UNRESOLVED counted, none
+dropped); the static-side 33/33-positive finding is flagged as the more promising place
+to look for the asymmetry the founder's question is actually about, and is what 5.10
+takes up next.
+
+## 5.10 — the orientation-sign theorem program: founder-ordered target "living ⇒ J_Θ > 0" (2026-08-09)
+
+Founder order, recorded verbatim: *"พิสูจน์ให้ได้ว่า living ⇒ J>0"* (prove that living
+implies `J>0`), on C4 support, declared regime `a=−1,b=1,K=μ=1`. Files:
+`theta_asym_refutation_v1.py` (Phase R), `theta_living_sign_round2_v1.py` (rounds 2/R3),
+`formal/InfoThetaLivingOrientationSign_attempt.v` (19 statements total by this session's
+own count — `grep '^Theorem\|^Lemma\|^Corollary'`: 6 `Theorem` + 11 `Corollary` + 2
+helper `Lemma`, all axiom-free, `Print Assumptions` "Closed under the global context" on
+every one, independently confirmed by both reviewers). Protocol (house discipline,
+honest-first): Phase R adversarial refutation BEFORE any proof attempt; only once
+not-refuted does proof work proceed.
+
+**Phase R — adversarial refutation, NOT REFUTED (finite_diagnostic bound):** 26,155 total
+adversarial Newton trials across three independent strategies (asymmetry-forced
+multistart, deformation/continuation off known FPs, direct chirality-biased `−J`
+targeting) plus the verbatim 3000-trial baseline reconstruction: 36 distinct living FPs
+found, **0 landed off either D4 vertex-reflection locus**, all `J_Θ > 0`. A self-caught
+bug during development (conflating "small magnitude" with "non-positive sign" on the
+known ~2.6e-14 near-zero cluster) was fixed with a dps=60 mpmath resolver: all 8
+near-zero-`J` candidates resolve to genuinely, unambiguously positive `J_Θ` (residuals
+~1e-61) — legitimate boundary-adjacent points, not counterexamples. This is a bounded
+negative, not a proof: it does not rule out a witness outside the sampled regions.
+
+**Lemma 1 — CLOSED (`Th_coqc`, `InfoThetaLivingOrientationSign_attempt.v` Part 1–3):** on
+the class-A vertex locus (`Phi1=Phi3,Psi1=Psi3`), `J_Θ = (t01·t12)²` exactly (NOT the
+naive same-form relabeling); on the rotated class-B locus (`Phi0=Phi2,Psi0=Psi2`),
+`J_Θ = (t01·t23)²`. Strict positivity given nonzero generators follows as a corollary.
+Confirmed exactly and independently by both reviewers (fresh sympy re-derivation from
+`build_exact_system`, matching the `.v` file's literal polynomials).
+
+**Edge-locus exclusion — CLOSED (`Th_coqc`, Part 4):** the two D4 edge-reflection loci
+force `J_Θ == 0` exactly and unconditionally, a strictly weaker guarantee than the vertex
+loci — but a living C4 FP can never actually sit there: any edge-coincidence locus
+(equal vertex fields on a support edge) forces that edge's discordance `s_e = 0`, which
+contradicts the 5.2a support rule's strict-negativity requirement on every support edge.
+Proven generically (`edge_locus_kills_support`,
+`edge_locus_incompatible_with_strict_support_rule`) and instantiated on all four C4 edges
+plus both two-edge reflections — closing the `J=0` gap analytically, matching Phase R's
+empirical finding with a proof of why.
+
+**Lemma 2 (living ⇒ on a vertex locus) and Lemma 3 (on-locus ⇒ `t01,t12 ≠ 0`, hence
+`J>0` strictly) — `[Open]`:** on the class-A locus, the exact defining relation
+`T(x,p,q)` for `t01` (linear in `q`, so exactly eliminable) was derived; lex+grevlex
+Groebner and a resultant cascade on `{R0,R2,E3',E4',T0/T2}` all timed out at their
+declared budgets (120s each in round 2; a dedicated 60-minute round-3 campaign — idm
+Buchberger 600s budget, sympy grevlex 1500s, resultant cascade 900s×2, GF(p) probes
+1200s — also did not close it). Empirical support: 26,155 adversarial trials (Phase R)
+plus 5000 targeted off-both-locus Newton starts (round 2/3) → 1383 off-locus roots of any
+kind, 941 of those living, **0 of those admissible** under the full C4 strict-negativity
+rule — consistent with Lemma 2 but not a proof. NEW Dr-tier evidence from the round-3
+campaign: the `T=0` branch's leading equation `R0s`/`R2s` factors exactly into
+denominator-clearing artifacts of the rational elimination (`p=Phi0/2` or `p=Phi0`, resp.
+`Phi2`) and provably-inadmissible boundary points (`Phi0` or `Phi2` in `{0,1,−1}`, where
+`q` and `Psi0`/`Psi2` are forced to 0, making the support edges' discordance identically 0
+for every `p` — never admissible); a 60-digit-stable nonzero floor was confirmed at the
+smallest-`|t01|` known living FP. One sub-case (`Phi0=0` resp. `Phi2=0`) was hand-checked,
+not exhaustively computer-verified, and is flagged as the remaining loose end.
+
+**NET verdict, carefully fenced:** the statement "living ⇒ `J_Θ > 0`" on the C4 declared
+regime stands as a **CONDITIONAL `Th_coqc` result** (Lemma 1 + edge-locus exclusion are
+proven; the remaining gap is exactly Lemma 2/Lemma 3, both `[Open]`) plus a
+**strongly-supported `[Open]` conjecture** at the unconditional level — it is NEVER
+stated as an unconditionally proven theorem anywhere in the batch (grepped clean by both
+reviewers). `K_{2,2}` difference-system identities (`diffR_taylor_identity`,
+`diffRec_taylor_identity`, `linear_diff_system_nondegenerate` — T4a–c) are machine-checked
+as the structural lever toward closing Lemma 2: vertices 1 and 3 both neighbor exactly
+`{0,2}` in C4, and the linear-order Jacobian of `Phi1−Phi3`/`Psi1−Psi3` has the clean form
+`[[D,E],[F,D]]` (same `D` on both diagonal entries) — a genuine necessary local-rigidity
+condition, numerically nonzero (`det ≈ 2.9508` at a representative class-A living FP) at
+every FP found, but not yet a global proof (the quadratic/cubic remainder terms are not
+shown to vanish off-locus).
+
+**Product/tooling finding for the IDM solver (honest, one paragraph):** the round-3
+campaign found idm's own from-scratch pure-Python Buchberger (`groebner_basis` kind)
+correct on small test cases but did not finish (killed by the external wall-clock guard
+at ~880MB resident, before reaching its own internal `MAX_BASIS_GROWTH=500` refusal cap)
+on Lemma 3's ideal within a 600s budget; sympy's grevlex fallback ALSO did not finish on
+the same ideal in 1500s (2.5× idm's budget) — so no "sympy N times faster" claim is
+supportable from this campaign; both engines HOLD, not a race result. A genuine
+capability gap was surfaced: idm exposes NO dedicated multivariate-resultant/
+variable-elimination `kind` (checked against idm's full 269-kind catalogue) — the
+resultant-cascade route had to fall back to sympy's `sp.resultant()` entirely for what
+should be a PRIMARY-tool operation under the product-purity mandate; adding a
+`resultant` kind (even a naive Sylvester-determinant implementation) would close this
+gap.

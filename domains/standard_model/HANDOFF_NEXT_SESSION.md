@@ -52,9 +52,37 @@ reduced to ONE sharp question (todo #1 below).
    inequality-relation route; feeding `𝔾`'s eigenvalues into the holonomy machinery;
    5.6 untied-reframing candidate (still reserved); exact certification of C4 FPs;
    near-zero-cluster exact distinction; general-n Coq lemmas; stability analysis.
-2. **Stability of the living fixed points:** dynamic-stability analysis (note the
-   Bateman anti-damped record — subtle); if path-3 is stable where n=4 configurations
-   are not, "exactly 3" upgrades from Dr-selection toward a dynamics result.
+   **Downstream work (2026-08-09):** the field-certification, transient-selection, and
+   orientation-sign theorem steps (5.8–5.10) that followed this square are recorded in
+   `item2_exploration/THETA_ROOT_PROGRAM.md` §5.8–§5.10 and cross-referenced (not given
+   a new Attempt number) in `ITEM2_EXPLORATION_LOG.md`; item 2 remains `[Open]`.
+2. ~~**Stability of the living fixed points**~~ — **CLOSED NEGATIVELY at the declared
+   regimes, 2026-08-09** (`item2_exploration/THETA_ROOT_PROGRAM.md` §5.9;
+   `theta_transient_selection_v1.py`, 8/8 checks PASS, independently reproduced by both
+   reviewers incl. extra seeds). The corpus's own Gauss-Jordan reader(`+D`)/record(`−D`)
+   stepper, regime `a=−1,b=1,K=μ=1,M=1`, `D` in `{0.5,1.0,2.0}` plus a `D=0` control plus
+   extra seeds: **100% DIVERGED** — every C4 living FP is dynamically UNSTABLE at this
+   regime (DT-independent physical divergence time, ~11–15 time units, not a stepper
+   artifact). "Exactly 3 is stable" does **not** hold at these regimes; the Bateman
+   anti-damped-record concern flagged above was the right thing to worry about. Scope
+   caveat (binding): this closes stability ONLY at the declared parameter regime, not
+   for all possible `(a,b,K,μ,D)`; other regimes remain untested. A NEW static fact
+   surfaced by the same file: all 33/33 living C4 FPs have `sign(J_Θ)=+`, which seeded
+   step 5.10 (see `THETA_ROOT_PROGRAM.md` §5.10 — the "living ⇒ J_Θ > 0" theorem
+   program). Named next targets:
+   - **Lemma 2/Lemma 3 closure routes** (5.10, `THETA_ROOT_PROGRAM.md` §5.10): a
+     dedicated 60-minute round-3 compute campaign (idm Buchberger, sympy grevlex,
+     resultant cascade, GF(p) probes) left both `[Open]` at declared budgets
+     (120s/300s/600s/900s/1200s/1500s tried). Next attempt should try
+     resultant+gcd-splitting on the now-derived exact `T(x,p,q)` relation, msolve-class
+     (Groebner-over-finite-field-with-lifting) tooling if available, or a materially
+     larger declared budget.
+   - The hand-checked-only `Phi0=0` (resp. `Phi2=0`) sub-case from the round-3
+     factorization needs an exhaustive computer check, not just a hand substitution.
+   - **IDM backlog pointer:** no dedicated multivariate-resultant/variable-elimination
+     `kind` exists in `idm`'s 269-kind catalogue (checked this round, per §5.10) — a
+     real product gap surfaced by this campaign, named here for whoever next extends
+     `idm`.
 3. **Step 5.3 — Coq hygiene:** matrix-level objects (replace entrywise transliteration),
    general-n census theorem, `Coq.Reals` (+ℝ flag) restatement of the n=2 theorem.
 4. **Exact algebraic certification of the living FPs** (symbolic solve timed out twice —
