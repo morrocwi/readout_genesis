@@ -3,6 +3,59 @@
 
 # HANDOFF — Standard Model arc, resume point (as of v1.13, 2026-07-22; session log 2026-07-24)
 
+## 0.-3 CURRENT RESUME POINT (2026-08-09 — supersedes §0.-1 below for item 2)
+
+**§0.-1's "item 2 is virgin territory" is STALE.** Item 2 now has 4 attempts and a whole
+root-native program behind it. Read, in order:
+1. [`item2_exploration/THETA_ROOT_PROGRAM.md`](item2_exploration/THETA_ROOT_PROGRAM.md) —
+   the Θ root program (founder ruling `DEC-theta-new-root-2026-0808` + erratum row):
+   steps 5.1 → 5.4 ALL DONE (2026-08-08/09), each independently adversarially reviewed
+   before commit, mirrored byte-identically to `research_universal_solver`.
+2. [`item2_exploration/ITEM2_EXPLORATION_LOG.md`](item2_exploration/ITEM2_EXPLORATION_LOG.md)
+   — Attempts 1–4 (Attempt 3 = CP-conditional N≥3 machine-checked; Attempt 4 = the 5.4
+   admissibility square, half-closed with a proven real-mixing obstruction).
+
+**State in one paragraph:** Θ (living geometry) is a root by founder ruling. Proven
+(`Th_coqc`, all axiom-free): Θ's deformation directions = edges (5.1); family topology =
+reader↔record discordance readout (5.2a); at closed static fixed points the balance
+`⟨Φ³,Ψ⟩=0` is forced and both `Ψ=±Φ` are dead (5.2b-1); **n=2 admits NO living fixed
+point — root-native N≥3** (5.2b-2, 7 theorems, confirmed by reviewer's Gröbner even over
+ℂ); a real mixing matrix retains no CP-signed readout (5.4 obstruction). Measured
+(`finite_diagnostic`): n=3 lives on path supports only (≥2 orbits); n=4 lives more
+broadly (disclosed); living-sector eigenbasis mismatch gives real mixing angles
+(|V₁₁|=½) but the phase slot is structurally empty. Item 2 remains `[Open]` — but is now
+reduced to ONE sharp question (todo #1 below).
+
+**TODO LIST (handed off, priority order):**
+1. **Step 5.5 — Oriented Θ (THE gate):** let edges carry orientation/phase via the
+   corpus's own `𝔾^(−)` G-adjoint split (CORE ~1259) + `ω` pairing (~1323); build the
+   oriented analog of the 5.2a/5.2b machinery and ask: does a living oriented fixed
+   point retain `J ≠ 0`? YES → the N≥3 square closes fully, item 2 moves off `[Open]`
+   for the first time. NO (a symmetry kills the phase) → a maximally valuable negative:
+   CP needs a non-root ingredient. Either outcome is a result.
+2. **Stability of the living fixed points:** dynamic-stability analysis (note the
+   Bateman anti-damped record — subtle); if path-3 is stable where n=4 configurations
+   are not, "exactly 3" upgrades from Dr-selection toward a dynamics result.
+3. **Step 5.3 — Coq hygiene:** matrix-level objects (replace entrywise transliteration),
+   general-n census theorem, `Coq.Reals` (+ℝ flag) restatement of the n=2 theorem.
+4. **Exact algebraic certification of the living FPs** (symbolic solve timed out twice —
+   minimal polynomials open; the uniform-star orbit looks most tractable).
+5. **K3 nonexistence proof** (currently a bounded negative: 3000+25000 trials +
+   failed homotopy continuation, not a theorem).
+6. **Push both repos to remotes** — every commit in this arc passed the adversarial
+   gate; push itself awaits founder go (commits: readout_genesis `9c921d4`→`710b09b`,
+   research_universal_solver `bc1e91c`→`7cfb64b`).
+7. **Fix `cpg` DECISIONS.yaml strict-YAML breakage** (pre-existing, line ~1875; the
+   anse_sync loader returns `[]` for decisions — the theta rows are appended in current
+   convention but nothing materializes).
+
+**DO NOT (binding, unchanged):** reuse the color `k=3` cyclic argument for generations
+(CRRC); identify spectral levels / slots / edge counts with generations without building
+the admissibility square (Q3 identity-by-role); inject continuum knobs (discrete-only,
+`CONTINUUM_ARC_ERROR_NOTE.md` lessons 1+5 — the census excludes only the index-continuum
+half); commit anything without an independent adversarial review pass; edit
+`domains/standard_model/` in one repo only (always mirror both, verify `diff -q`).
+
 ## 0.-2 READ FIRST, EVEN BEFORE 0.-1: check for a broader "closing the SM" framework before citing status
 
 This session's canonical (private) twin repo caught and fixed a real gap: this domain's whole
