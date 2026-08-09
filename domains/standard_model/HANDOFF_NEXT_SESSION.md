@@ -27,12 +27,19 @@ broadly (disclosed); living-sector eigenbasis mismatch gives real mixing angles
 reduced to ONE sharp question (todo #1 below).
 
 **TODO LIST (handed off, priority order):**
-1. **Step 5.5 — Oriented Θ (THE gate):** let edges carry orientation/phase via the
-   corpus's own `𝔾^(−)` G-adjoint split (CORE ~1259) + `ω` pairing (~1323); build the
-   oriented analog of the 5.2a/5.2b machinery and ask: does a living oriented fixed
-   point retain `J ≠ 0`? YES → the N≥3 square closes fully, item 2 moves off `[Open]`
-   for the first time. NO (a symmetry kills the phase) → a maximally valuable negative:
-   CP needs a non-root ingredient. Either outcome is a result.
+1. ~~**Step 5.5 — Oriented Θ (THE gate)**~~ — **DONE 2026-08-09** (see
+   `item2_exploration/THETA_ROOT_PROGRAM.md` §5.5 + `ITEM2_EXPLORATION_LOG.md` Attempt 5;
+   files `theta_oriented_skew_v1.py` + `formal/InfoThetaOrientedSkewObstruction_attempt.v`,
+   7 lemmas axiom-free). Outcome: YES at n=4 — C4 admits living fixed points with
+   `J_Θ ≠ 0` (`finite_diagnostic`, first root-native nonzero orientation-odd invariant
+   at a living configuration); K3 (n=3) stays dead under the extended dynamics
+   (strengthened bounded negative). Item 2 remains `[Open]`: the real-`J_Θ` ↔
+   Cq-`quartetJ` identification square is UNBUILT and is now THE gate (new todo #0).
+0. **(NEW top item) Build the `J_Θ` ↔ `quartetJ` identification square** — the role-
+   equivalence square between 5.5's real orientation-odd cycle readout and 5.4's complex
+   CP quartet readout (Q3 discipline). Also named: 5.6 untied-reframing candidate,
+   exact algebraic certification of the C4 living FPs, near-zero-cluster exact
+   distinction, general-n Coq lemmas, stability of the C4 living FPs.
 2. **Stability of the living fixed points:** dynamic-stability analysis (note the
    Bateman anti-damped record — subtle); if path-3 is stable where n=4 configurations
    are not, "exactly 3" upgrades from Dr-selection toward a dynamics result.
@@ -48,6 +55,13 @@ reduced to ONE sharp question (todo #1 below).
 7. **Fix `cpg` DECISIONS.yaml strict-YAML breakage** (pre-existing, line ~1875; the
    anse_sync loader returns `[]` for decisions — the theta rows are appended in current
    convention but nothing materializes).
+8. **Fix twin-repo `make verify-attempts` PRE-EXISTING failures** (discovered 2026-08-09
+   during 5.5's one-time full-arc audit): `InfoThetaEdgeCensus_attempt.v` and
+   `InfoThetaFixedPointBalance_attempt.v` fail the audit's `Hypothesis` source scan —
+   both files byte-identical to HEAD, so the failure pre-dates 5.5 (the scanner was
+   evidently extended after those commits); either discharge/restate the section
+   hypotheses or scope the scanner, then re-run the audit once. NOT caused by 5.5
+   (`InfoThetaOrientedSkewObstruction_attempt.v` scans clean and passes).
 
 **DO NOT (binding, unchanged):** reuse the color `k=3` cyclic argument for generations
 (CRRC); identify spectral levels / slots / edge counts with generations without building

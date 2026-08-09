@@ -244,3 +244,127 @@ Files: `theta_cp_square_v1.py` + `formal/InfoThetaCPSquareObstruction_attempt.v`
   corpus's own `𝔾^(−)` G-adjoint split (storage vs oriented transfer) and `ω` pairing
   are the precise candidates for making a retained `J ≠ 0` root-realizable. That is
   the program's next frontier.
+
+## 5.5 — support-tied real oriented skew extension: `J_Theta ≠ 0` FOUND ROOT-NATIVE at a living C4 fixed point (2026-08-09)
+
+Files: `theta_oriented_skew_v1.py` + `formal/InfoThetaOrientedSkewObstruction_attempt.v`
+(7 lemmas/theorems, all axiom-free, `Print Assumptions` confirmed independently by two
+reviewers). Item-2 side: this is **Attempt 5** in the item-2 line — 5.4's named next
+frontier, taken up.
+
+**Provenance (multi-agent design + build, disclosed):** a 3-route design workflow
+proposed real-skew (Route B), Q(i)/mu_4 (Route A), and a Route-C hybrid; adversarial
+judging FOUND a real support-untied bug in Route B (its `a_e` was computed on every
+ordered pair in `V×V` regardless of whether the edge was in the census-selected
+support `E`, silently re-opening the "one admissible direction per edge" closure
+5.1/5.2a already proved shut) and the synthesis pass REPAIRED it by tying `A`'s
+support identically to `L`'s support (`a_e≡0` off `E` by declaration). **Fable ruling
+(binding, Step 0):** PRIMARY = the repaired support-tied real construction only;
+FALLBACK Q(i)/`μ₄` branch NOT built (no `theta_oriented_gaussian_*.py` exists); the
+untied enlarged-census reframing is deferred, named as a **5.6 candidate**, not
+pursued here. Implementation passed two independent adversarial reviews (verdicts
+RELEASABLE and RELEASABLE-AFTER-FIXES) plus one repair pass (the repair fixed a
+print-precision overclaim at its root cause — see below — not a mathematical error).
+
+**Construction:** for the SAME edge set `E` the census/Gate-D machinery already
+selects (5.1/5.2a), add a real antisymmetric skew term tied to that support:
+`𝔾[Θ] := L[w] + A[a]`, `A[a] := Σ_{e∈E} a_e A_e`, `A_e := e_ie_j^T − e_je_i^T` for
+`e=(i,j)∈E` ONLY, `a_e ≡ 0` off support by construction (not a separate
+optimization). This concretely instantiates the corpus's own `𝔾^(+)+𝔾^(-)` split
+(closing V.13a's flagged "[Open] concrete instantiation") with `𝔾^(+):=L`,
+`𝔾^(-):=A`. The extended living reader/record system (same declared regime
+`a=−1,b=1,K=μ=1,J=0`): `K(L[w]+A[a])Φ + aΦ + bΦ³ = 0`, `K(L[w]−A[a])Ψ +
+(a+3bΦ²)·Ψ = 0` — the record couples to `𝔾[Θ]^T = L−A` (literal transpose,
+verified against `READOUT_GENESIS_CORE.md:1332-1337`, not a dagger — no
+complexification needed). `J_Theta(C)` := the ordered cyclic product of `a_e*`
+around an independent cycle `C` lying entirely within `E` (only possible when `L`'s
+own support is non-tree).
+
+**Th_coqc (`InfoThetaOrientedSkewObstruction_attempt.v`, 7 lemmas/theorems,
+axiom-free):** `qsign_exists` (shared Z2 sign-witness helper);
+`cyclic_product_switching_invariant_triangle`/`_C4` (Z2 vertex switching
+`a_e→ε_iε_ja_e` leaves the ordered cyclic product of `a_e` around K3/C4 EXACTLY
+invariant, telescoping — the two concrete cycles the program's living-FP inventory
+can reach); `tree_gauge_fixable_P3`/`_star3`/`_P4`/`_star4` (the Z2 switching group
+gauges every `a_e≥0` on the four concrete tree supports 5.2b-1's search actually
+visits). Scope stated honestly: these are concrete-instance transliterations, not
+the general theorems — the general finite-n-cycle statement and the general
+structural-induction tree lemma are both declared `[Open]` in-file (concrete-and-
+closed over general-and-stuck, per playbook risk ranking).
+
+**finite_diagnostic (floats disclosed, fixed seeds 550/551/552, reviewer-verified
+robust across 3 independent seed triples), the decisive re-check under the
+EXTENDED `(L+A)`-coupled dynamics:**
+- **K3 (n=3, 5.4's re-verification target): 0/3000 living hits.** A strengthened
+  bounded negative — the OLD symmetric-only dynamics already found 0/3000
+  (5.2b-1) plus 0/25000+homotopy (independent review), but those were never
+  re-checked under the genuinely different `(L+A)`-coupled system until now; K3
+  stays dead under the extension too. Bounded-search negative, not a nonexistence
+  proof.
+- **C4 (n=4): 101/3000 living hits, 33 distinct FPs, `J_Theta ≠ 0` — the FIRST
+  root-native nonzero orientation-odd invariant found at a living fixed point
+  anywhere in this program.** The full magnitude spread MUST be disclosed, not
+  just the largest values: `J_Theta ∈` `{2.583e-14 (×8 FPs), 1.036e-05 (×6),
+  2.170e-05 (×7), 1.089e-03 (×8), 4.544e-03 (×4)}` (33 total), i.e.
+  **min|J_Theta|=2.583e-14,
+  max|J_Theta|=4.544e-03** — nearly 9 orders of magnitude of internal spread on
+  the identical support/parameter regime. The near-zero cluster (8/33 FPs,
+  ≈2.6e-14) sits within ~3 orders of magnitude of this support's worst Newton
+  residual (8.7e-14) — genuinely close to the noise floor by eye — but was
+  independently confirmed by a reviewer's 60-digit mpmath re-solve (residual
+  ~3e-62, `a_e` stable to 60+ digits) plus a Jacobian condition-number check
+  (8.3, well-conditioned, not a degenerate manifold) to be a real, isolated,
+  reproducible nonzero fixed point, not floating-point noise. Its rigorous
+  exact-arithmetic distinction from a hypothetical exact-zero branch remains
+  `[Open]` — the mpmath/condition-number check is a strong post hoc finite_diagnostic
+  indicator, not a Coq-level or exact-arithmetic proof.
+- **P3 control (n=3, {(0,1),(0,2)}, tree): 577/3000 living hits, 26 distinct FPs,
+  `J_Theta` UNDEFINED (no cycle in the support) — exactly as the tree-triviality
+  lemma predicts.**
+- **Odd/even traversal-sign note:** `J_Theta`'s SIGN (not its nonzero-ness) flips
+  under reversed cycle traversal for the ODD cycle K3 (`m=3`) but is invariant
+  under reversal for the EVEN cycle C4 (`m=4`) — the general `(−1)^m` telescoping
+  fact, exactly what the Fable ruling's own phrase "orientation-odd cyclic
+  product" already names; nonzero-ness itself is traversal-invariant either way.
+
+**B1/B2 transfer to the extended `(L+A)`-coupled system (Fable ruling 3c's
+mandatory sub-task — exact Fraction checks + paper derivation, tier `Dr` as
+general claims, numerically re-confirmed at all 59 living FPs found, worst
+`|⟨Φ³,Ψ⟩|=5.42e-14`):**
+- **B1 (`⟨Φ³,Ψ⟩=0`) transfers UNCONDITIONALLY**, for a MORE GENERAL reason than
+  5.2b-1 needed: the scalar-transpose identity `Ψ^T G Φ = Φ^T G^T Ψ` holds for ANY
+  matrix `G` (not only symmetric ones — nothing but "a 1×1 matrix equals its own
+  transpose"), so the combo identity `⟨Ψ,Reader⟩−⟨Φ,Record⟩ = −2b⟨Φ³,Ψ⟩` holds
+  exactly REGARDLESS of `A[a]`.
+- **B2 (symmetry is dead) ALSO transfers, but via a genuinely NEW mechanism —
+  disclose that the old "graph term cancels" argument does NOT survive
+  verbatim:** the skew source `S^{e,skew}=Φ_iΨ_j−Φ_jΨ_i` vanishes identically at
+  `Ψ=cΦ` for ANY scalar `c`, forcing Gate-D-stationary `A[a]=0` exactly there —
+  collapsing `𝔾[Θ]` back to plain symmetric `L[w]`, at which point the OLD
+  (pre-5.5) B2 proof applies verbatim. The old proof relied on `G=G^T` identically
+  (`G−G^T=2A≠0` in general under the extension), so it genuinely does not survive
+  as stated — B2's conclusion transfers, its old mechanism does not.
+
+**The verdict, carefully fenced:** 5.4's missing ingredient IS root-realizable — a
+living oriented fixed point CAN retain a nonzero orientation-odd real cyclic
+invariant (**YES at n=4/C4; n=3 stays NO within this bounded search, K3 dead**).
+**Item 2 REMAINS `[Open]`**: the identification square between this real
+`J_Theta` and 5.4's complex `Cq` quartet-`J` (`real_quartet_no_cp_readout`'s own
+obstruction: a real mixing matrix's quartet has `Im≡0`) is UNBUILT and is now
+**the named next gate** — Q3 identity-by-role holds (`w_e`, `a_e`, `k_color`,
+`n_gen`, edge/level counts stay distinct symbols), CRRC guard binding throughout
+(no generation/CKM identification made anywhere in either file, grepped clean).
+
+**Named open items:** the quartetJ identification square (the single most
+valuable named open item now, per 5.2b-2's precedent framing); the 5.6
+untied-reframing candidate (deferred by Fable ruling, not pursued); exact
+algebraic/minimal-polynomial certification of the C4 living FPs (currently
+residual-certified only, ~1e-14 to 1e-16, symbolic solve not attempted); the
+near-zero-cluster's rigorous exact-arithmetic distinction from a possible
+exact-zero branch; general finite-n-cycle and general structural-induction tree
+Coq lemmas (both declared `[Open]` in-file); full continuous diagonal-rescaling
+gauge invariance (only Z2 sign-flip verified, per Route B's own unresolved
+risk #2); stability of the C4 living FPs (only static existence checked, not
+stability); the `V=U_A^†U_B` eigenbasis bridge stays FORBIDDEN as a `J` readout
+(gauge-artifact trap, two independent design routes converged on this
+independently — never used in either new file).

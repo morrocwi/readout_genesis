@@ -94,6 +94,19 @@ independently adversarially reviewed before commit:
   (`finite_diagnostic`), living fixed points arise **only on path-shape supports** (3
   distinct spectral levels; K3 found none in 3000+25,000 combined trials — not a
   nonexistence proof).
+- **The oriented extension retains `J ≠ 0` at a living fixed point** (5.5, "Item 2
+  Attempt 5"; `formal/InfoThetaOrientedSkewObstruction_attempt.v`, 7 lemmas axiom-free;
+  `theta_oriented_skew_v1.py`): Θ's edges carry the corpus's own skew/oriented structure
+  (`𝔾 = L + A`, support-tied; reader feels `+A`, record feels `−A` via the literal
+  transpose) — Z2 switching-invariance and tree-triviality of the orientation-odd cycle
+  readout `J_Θ` are machine-checked (concrete instances; general-n `[Open]`). Under the
+  extended coupled dynamics K3 (n=3) stays dead (0/3000 — strengthened bounded negative),
+  but **C4 (n=4) admits living fixed points with `J_Θ ≠ 0`** (`finite_diagnostic`, seeds
+  disclosed, full magnitude spread 2.6e-14…4.5e-3 disclosed incl. an 8-FP near-zero
+  cluster) — the first root-native nonzero orientation-odd invariant at a living
+  configuration; the balance law transfers unconditionally. Item 2 stays `[Open]`:
+  identifying real `J_Θ` with the complex quartet readout is the named unbuilt square
+  (CRRC-guarded).
 
 ---
 
