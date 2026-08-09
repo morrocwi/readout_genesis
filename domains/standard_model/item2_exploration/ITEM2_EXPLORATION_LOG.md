@@ -324,6 +324,101 @@ open item of the whole Theta program); the 5.6 untied-reframing candidate (defer
 not pursued); exact algebraic certification of the C4 living FPs; general finite-n-cycle
 and general-tree-structural-induction Coq lemmas; full continuous gauge invariance.
 
+## Attempt 6 — `theta_quartet_square_v1.py` + `formal/InfoThetaQuartetSquareObstruction_attempt.v`, 2026-08-09: the quartet-square identification is OBSTRUCTED for every embedding examined
+
+Built per Attempt 5/`THETA_ROOT_PROGRAM.md` §5.5's own named next gate: the
+identification square between 5.5's real `J_Theta` and 5.4's complex `Cq` quartet-`J`
+(`real_quartet_no_cp_readout`'s obstruction). Item-2 side, this is **Theta 5.7** in the
+Theta-root-program line (see [`THETA_ROOT_PROGRAM.md`](THETA_ROOT_PROGRAM.md) §5.7 for
+the full construction; §5.6 stays reserved by 5.5's own text for the deferred untied
+enlarged-census reframing candidate, not this square).
+
+**Design provenance (multi-agent, disclosed):** a 3-route design workflow produced a
+combinatorial/holonomy bridge (Route R2, primary), a spectral eigenbasis bridge (Route
+R1), and a role-axiom square (Route R3); three independent adversarial judge lenses,
+each doing its own from-scratch re-derivation, converged on ranking R2 > R1 > R3 and
+verdict OBSTRUCTED for all three. One judge lens caught a genuine mechanism error in
+R1's own gauge-bridge refutation (it tested the symmetric source `s_e` when the load-
+bearing bilinear is the skew source `t_e`) — corrected and disclosed, per this
+program's own house convention of naming caught mistakes rather than silently fixing
+them. Orchestrator ruling: PRIMARY = Route R2 (Family A/B/C `Cq` embeddings), R1's
+corrected diagnostics and R3's parity/rescaling content grafted in as supporting
+material, not filed as separate artifacts; the triple-convergent rescaling lemma filed
+ONCE. Implementation was checked by two independent adversarial reviews (verdicts
+RELEASABLE-AFTER-FIXES and RELEASABLE) plus one repair pass that applied two
+confirmed MINOR documentation-level findings (a cross-file C4 edge-quartet
+pairing-convention disclosure; an eigen-ordering-convention-redundancy disclosure) —
+no theorem or numeric result was changed by the repair.
+
+**Construction:** three combinatorial embeddings into `Cq := Q×Q` tested against
+`quartetJ(V) := Im(V_01·V_12·conj(V_02)·conj(V_11))` on the same `𝔾[Θ]=L[w]+A[a]`
+architecture 5.5 builds: **Family A** (`z_e:=w_e*+i·a_e*`, both sectors), **Family B**
+(`z_e:=i·a_e*`, skew-only, the unique gauge-clean embedding), **Family C**
+(`N_ij:=conj(Z_i)·Z_j`, the vertex-phase Gram/rank-1 embedding — the `omega`/doubled-
+real-space complex-structure lever the task named).
+
+**Th_coqc (14 theorems, axiom-free, independently `Print Assumptions`-confirmed by two
+reviewers plus a fresh post-repair recompile):** headline eight —
+`quartet_rescale_invariant` (the ONE shared triple-convergent rescaling lemma, filed
+once), `family_B_K3_exact`, `family_B_C4_vanishes`, `family_C_rank1_vanishes`,
+`family_A_not_switching_invariant`, `skew_source_switching_covariant`,
+`symmetric_source_not_switching_covariant`, `c4_reversal_is_gauge_witness` +
+`k3_no_uniform_reversal_gauge`. Five supporting companion-witness/variant theorems
+round out the 14. General-n cycle/tree statements stay `[Open]`.
+
+**The corrected gauge mechanism (house-style disclosed correction):** `t_e :=
+Phi_i·Psi_j−Phi_j·Psi_i` (sources `a_e*`) is EXACTLY `D_i·D_j`-covariant under vertex
+switching for ANY `D` (`Th_coqc`, unconditional) — the skew sector is fully dynamically
+gauge-compatible. `s_e := (Phi_i−Phi_j)(Psi_i−Psi_j)` (sources `w_e*`) is NOT (`Th_coqc`
+witness: `s'=21` vs. the naive prediction `−1`) — the symmetric sector breaks gauge-
+compatibility. Only Family B is dynamically gauge-clean.
+
+**The verdict — OBSTRUCTED for every embedding family examined, by three
+mutually-reinforcing mechanisms:**
+1. **Gauge split** (Th_coqc): only the skew/`a_e` sector is dynamically
+   gauge-compatible with the real-side `Z2^{|V|}` switching group.
+2. **Parity** (Th_coqc): Family B reproduces `J_Theta` EXACTLY on K3
+   (`Im(P)=a1·a2·a3`) but VANISHES IDENTICALLY on C4 (`i^4=1` parity fact). K3 is dead
+   (THREE disclosed independent search efforts: 0/3000 + 0/25000+homotopy + 0/3000
+   extended); C4 is the program's only living witness (33 distinct FPs, 5.5) — Family B
+   is nonzero exactly where nothing lives, zero exactly at the living witness.
+3. **Eigenbasis non-well-posedness** (finite_diagnostic + Dr): `V_cand:=V_A^{-1}·V_B`
+   is not well-posed — a fresh sweep (seed 551, this run's own measurement) finds
+   29/528 sector pairs flip `quartetJ`'s sign across four eigen-ordering conventions
+   (robust across two extra reviewer seeds: 20/561, 23/561), magnitudes span `~1461x`,
+   non-normality residual `≥0.416` and non-unitarity residual `≥0.807` at all 33 living
+   FPs; plus a weakest-leg, explicitly-flagged `Dr` Galois-genericity argument that
+   eigenvalues generically leave `Q(i)`.
+
+**Positive byproducts, disclosed:** `quartet_rescale_invariant` — independently derived
+by all three design routes, filed once, the one reusable general lemma this square
+produces. Family C's general rank-1 vanishing CLOSES, negatively and permanently, the
+`omega`/doubled-space complex-structure lever the task named — no future attempt should
+believe it untried. The corrected `t_e`/`s_e` mechanism is recorded as this program's
+house-style disclosed correction.
+
+**Disclosures (mandatory):** the python file and the Coq file use DIFFERENT C4
+edge-quartet pairing conventions for Family A/B (python: adjacent-edge split; Coq:
+opposite-edge split) — TWO INDEPENDENT WITNESSES of the same qualitative
+gauge-dependence conclusion, not cross-file numeric corroboration of one number.
+Eigen-ordering convention #4 is analytically redundant with convention #1 (guaranteed
+equal by `quartet_rescale_invariant`) — a live sanity check, not a 4th independent
+test; effective independent conventions = 3, not 4. The 29/528 count is
+this-run/this-platform; qualitative existence of conflict is the claim.
+
+**What Attempt 6 does NOT establish:** any resolution of item 2's `[Open]` status
+(stays an orchestrator/founder-level call outside this square's scope, per orchestrator
+ruling 7); any generation/CKM identification anywhere (CRRC guard, grepped clean); that
+the eigenbasis bridge is a validated `J` readout (it stays FORBIDDEN — used here purely
+diagnostically to refute its own well-posedness, the compliant carve-out per orchestrator
+ruling 1). Named next steps (unchanged, inherited): exact Groebner-basis/minimal-
+polynomial certification of a C4 living FP's exact eigenvalue field; the nonlinear
+(non-affine) embedding family; the qualitative/inequality-relation escape hatch; feeding
+`G`'s actual eigenvalues into the R2 holonomy machinery; general finite-n-cycle and
+general structural-induction tree Coq lemmas; the near-zero C4 cluster's rigorous
+exact-arithmetic distinction from a possible exact-zero branch; stability of the C4
+living FPs; full continuous gauge invariance beyond Z2 sign-flips.
+
 ## Honest status
 
 - Item 2 (generation multiplicity): **`[Open]`, unchanged at `Th_coqc`/`Dr` tier.** No from-root

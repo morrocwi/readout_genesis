@@ -35,11 +35,23 @@ reduced to ONE sharp question (todo #1 below).
    at a living configuration); K3 (n=3) stays dead under the extended dynamics
    (strengthened bounded negative). Item 2 remains `[Open]`: the real-`J_Θ` ↔
    Cq-`quartetJ` identification square is UNBUILT and is now THE gate (new todo #0).
-0. **(NEW top item) Build the `J_Θ` ↔ `quartetJ` identification square** — the role-
-   equivalence square between 5.5's real orientation-odd cycle readout and 5.4's complex
-   CP quartet readout (Q3 discipline). Also named: 5.6 untied-reframing candidate,
-   exact algebraic certification of the C4 living FPs, near-zero-cluster exact
-   distinction, general-n Coq lemmas, stability of the C4 living FPs.
+0. ~~**Build the `J_Θ` ↔ `quartetJ` identification square**~~ — **DONE 2026-08-09,
+   verdict OBSTRUCTED** (§5.7 in `item2_exploration/THETA_ROOT_PROGRAM.md` + Attempt 6
+   in the log; files `theta_quartet_square_v1.py` +
+   `formal/InfoThetaQuartetSquareObstruction_attempt.v`, 14 theorems axiom-free).
+   Three converging mechanisms: only the skew/`a_e` sector is switching-covariant
+   (`t_e` yes / `s_e` no, both machine-checked); the unique gauge-clean embedding
+   `z_e = i·a_e` vanishes identically on C4 (the living witness) and is nonzero only on
+   dead K3; the eigenbasis bridge is not well-posed (ordering flips sign; eigenvalues
+   generically leave ℚ(i) — Dr). Positive byproducts: `quartet_rescale_invariant`
+   (shared lemma), Family-C rank-1 vanishing closes the ω/doubled-space lever
+   NEGATIVELY (permanently — do not re-try it). Item 2 stays `[Open]` — the status
+   call is a founder/orchestrator decision outside the square. **Named escape hatches
+   (the new top candidates):** Gröbner/minimal-polynomial certification of a C4 living
+   FP's exact eigenvalue field; nonlinear (non-affine) embedding family; qualitative/
+   inequality-relation route; feeding `𝔾`'s eigenvalues into the holonomy machinery;
+   5.6 untied-reframing candidate (still reserved); exact certification of C4 FPs;
+   near-zero-cluster exact distinction; general-n Coq lemmas; stability analysis.
 2. **Stability of the living fixed points:** dynamic-stability analysis (note the
    Bateman anti-damped record — subtle); if path-3 is stable where n=4 configurations
    are not, "exactly 3" upgrades from Dr-selection toward a dynamics result.

@@ -107,6 +107,18 @@ independently adversarially reviewed before commit:
   configuration; the balance law transfers unconditionally. Item 2 stays `[Open]`:
   identifying real `J_Θ` with the complex quartet readout is the named unbuilt square
   (CRRC-guarded).
+- **The quartet-square identification is OBSTRUCTED** (5.7, "Item 2 Attempt 6";
+  `formal/InfoThetaQuartetSquareObstruction_attempt.v`, 14 theorems axiom-free;
+  `theta_quartet_square_v1.py`): three combinatorial `Cq` embeddings were tested against
+  `quartetJ` — only the skew-only embedding (`z_e=i·a_e`) is dynamically gauge-clean
+  (`Th_coqc`: `t_e` is exactly `D_i·D_j`-covariant under vertex switching, `s_e` is not),
+  but it reproduces `J_Θ` exactly on the dead topology K3 and **vanishes identically on
+  the one living topology C4** (`i^4=1` parity); the rank-1 vertex-phase Gram embedding
+  (the `omega`/doubled-space lever) vanishes identically on **every** topology, closing
+  that lever for good; the eigenbasis bridge stays forbidden and is shown
+  (`finite_diagnostic`, fresh seed) not well-posed — eigen-ordering flips `quartetJ`'s
+  sign on 29/528 sector pairs, magnitudes spanning `~1461x`. Item 2 stays `[Open]`; this
+  square does not resolve it (CRRC-guarded).
 
 ---
 

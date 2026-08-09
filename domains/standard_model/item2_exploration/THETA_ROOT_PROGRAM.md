@@ -368,3 +368,137 @@ risk #2); stability of the C4 living FPs (only static existence checked, not
 stability); the `V=U_A^†U_B` eigenbasis bridge stays FORBIDDEN as a `J` readout
 (gauge-artifact trap, two independent design routes converged on this
 independently — never used in either new file).
+
+## 5.7 — the quartet-square identification: OBSTRUCTED for every embedding examined (2026-08-09)
+
+(§5.6 stays RESERVED, per 5.5's own text, for the deferred untied enlarged-census
+reframing candidate — not pursued here; this is a different, later number.)
+
+Files: `theta_quartet_square_v1.py` + `formal/InfoThetaQuartetSquareObstruction_attempt.v`
+(14 theorems, axiom-free, `Print Assumptions` confirmed independently by two reviewers
+plus a post-repair fresh recompile). Item-2 side: this is **Attempt 6** in the item-2
+line — 5.5's own named next gate, taken up: the identification square between 5.5's
+real `J_Theta` and 5.4's complex `Cq` quartet-`J` (`real_quartet_no_cp_readout`'s
+obstruction).
+
+**Provenance (multi-agent design + build, disclosed):** a 3-route design workflow
+produced a combinatorial/holonomy bridge (Route R2 — Family A/B/C `Cq` embeddings, no
+eigenproblem), a spectral bridge (Route R1 — the eigenbasis-mismatch object), and a
+role-axiom square (Route R3 — bipartite/parity connective observations). Three
+independent adversarial judge lenses (gauge/convention-invariance; discrete-floor+CRRC;
+provability/decisiveness), each doing its own from-scratch symbolic/numeric
+re-derivation, converged on the same ranking (R2 > R1 > R3) and the same top-line
+verdict (OBSTRUCTED for all three routes' natural constructions). One judge lens
+independently caught a genuine mechanism error in R1's own gauge-bridge refutation — it
+had tested the wrong bilinear (see the corrected mechanism below) — and the repair is
+disclosed as this program's house-style caught-and-fixed correction, matching the
+5.2a/5.4 precedent of naming a caught mistake rather than silently overwriting it. The
+orchestrator ruled: PRIMARY = Route R2 (holonomy/Family A/B/C), with R1's corrected
+diagnostic content and R3's parity/rescaling content grafted in as supporting material,
+not filed as three separate near-duplicate artifacts; the triple-convergent rescaling
+lemma is filed ONCE. Implementation passed two independent adversarial reviews
+(verdicts RELEASABLE-AFTER-FIXES and RELEASABLE) plus one repair pass — both findings
+applied were documentation-level MINORs (a cross-file C4 edge-quartet pairing-convention
+disclosure and an eigen-ordering-convention-redundancy disclosure), no theorem or
+numeric result was changed.
+
+**Construction:** on the SAME `𝔾[Θ]=L[w]+A[a]` architecture 5.5 builds, three
+combinatorial embeddings into `Cq := Q×Q` (Gaussian rationals) are tested against
+`quartetJ(V) := Im(V_01·V_12·conj(V_02)·conj(V_11))`: **Family A** (`z_e := w_e*+i·a_e*`,
+uses both sectors), **Family B** (`z_e := i·a_e*`, skew-only, the unique gauge-clean
+embedding), **Family C** (`N_ij := conj(Z_i)·Z_j` for `Z_i := Phi_i+i·Psi_i`, the
+vertex-phase Gram/rank-1 embedding — this is the `omega`/doubled-real-space complex
+structure lever the task named). The real-side gauge group tested is `Z2^{|V|}` vertex
+switching, split by which bilinear source is probed: the skew source
+`t_e := Phi_i·Psi_j − Phi_j·Psi_i` (sources `a_e*`) vs. the symmetric discordance
+`s_e := (Phi_i−Phi_j)(Psi_i−Psi_j)` (sources `w_e*`).
+
+**Th_coqc (`InfoThetaQuartetSquareObstruction_attempt.v`, 14 theorems, axiom-free,
+independently `Print Assumptions`-confirmed by both reviewers and a fresh post-repair
+recompile):** headline eight — `quartet_rescale_invariant` (the ONE shared
+triple-convergent rescaling/rephasing lemma, filed once per orchestrator ruling, subsuming
+all three routes' independently-derived versions), `family_B_K3_exact`,
+`family_B_C4_vanishes`, `family_C_rank1_vanishes`, `family_A_not_switching_invariant`,
+`skew_source_switching_covariant`, `symmetric_source_not_switching_covariant`,
+`c4_reversal_is_gauge_witness` + `k3_no_uniform_reversal_gauge` (existence + general
+impossibility, the bipartite-parity pair). Five supporting theorems (companion witness
+values and the real-scalar-rescale variant) round out the 14. General-n cycle/tree
+statements stay `[Open]`, matching 5.5's own precedent.
+
+**The corrected gauge mechanism (the single most consequential finding, house-style
+disclosed correction — a judge refuted a design route's own wrong-bilinear test):**
+`t_e` is EXACTLY `D_i·D_j`-covariant under vertex switching `(Phi,Psi)→(D.Phi,D.Psi)` for
+ANY `D` (`Th_coqc` `skew_source_switching_covariant`, unconditional ring identity) —
+the skew/`a_e` sector is fully, dynamically gauge-compatible. `s_e` is NOT
+`D_i·D_j`-covariant for non-uniform `D` (`Th_coqc` `symmetric_source_not_switching_covariant`,
+concrete witness: `s'=21` vs. the naive covariant prediction `−1`) — the symmetric/`w_e`
+sector breaks gauge-compatibility. Only the `a_e` sector — Family B — is dynamically
+gauge-clean; any embedding touching `w_e` (Family A) is not.
+
+**The verdict — OBSTRUCTED, by three mutually-reinforcing mechanisms, for every
+embedding family examined:**
+1. **Gauge split** (Th_coqc, above): only the skew/`a_e` sector is dynamically
+   gauge-compatible with the real-side `Z2^{|V|}` switching group; the symmetric/`w_e`
+   sector is not.
+2. **Parity** (Th_coqc `family_B_K3_exact` + `family_B_C4_vanishes`): the unique
+   gauge-clean embedding (Family B) reproduces `J_Theta` EXACTLY on K3
+   (`Im(P)=a1·a2·a3`) but VANISHES IDENTICALLY on C4 (`i²·(−i)²=1`, real — the
+   unconditional `i^4=1` parity fact). K3 is the program's dead topology — THREE
+   disclosed independent search efforts, 0/3000 (5.2b-1) + 0/25000+homotopy
+   (independent review) + 0/3000 extended (5.5) — and C4 is the program's only living,
+   nonzero-`J_Theta` witness (33 distinct FPs, 5.5). Family B is nonzero exactly where
+   nothing lives and zero exactly at the program's one living witness.
+3. **Eigenbasis non-well-posedness** (finite_diagnostic + Dr): the eigenbasis bridge
+   `V_cand := V_A^{-1}·V_B` is not well-posed. A fresh sweep (seed 551, this run's own
+   disclosed measurement, not transcribed from any design paper): 29/528 sector pairs
+   flip `quartetJ`'s sign across four eigen-ordering conventions (robust across two extra
+   reviewer seeds: 20/561, 23/561 — qualitative existence of conflict is the load-bearing
+   claim, not the precise 29 count), magnitudes span `~1461x`, non-normality residual
+   `≥0.416` and non-unitarity residual `≥0.807` at all 33 living FPs (`G` genuinely has
+   no canonical orthonormal eigenbasis). Plus a weakest-leg, explicitly-flagged `Dr`
+   Galois-genericity argument: the eigenvalues generically generate a field extension
+   with no structural reason to sit in `Q(i)`.
+
+**Positive byproducts (disclosed, not buried):** `quartet_rescale_invariant` was
+independently derived by all three design routes and is filed once — the one
+unambiguously reusable, general, Coq-cheap positive lemma this square produces. Family
+C's general rank-1 vanishing (`family_C_rank1_vanishes`, no case split, the single most
+general lemma in the file) CLOSES, negatively and permanently, the `omega`/doubled-space
+complex-structure lever the task named and 5.4/5.5 left open — no future attempt should
+believe this lever is untried. The corrected `t_e`/`s_e` mechanism itself (found by a
+judge refuting a design route's own wrong-bilinear test on `theta_oriented_skew_v1.py`'s
+`S^{e,skew}` definition) is recorded as this program's house-style disclosed correction,
+matching the caught-mistake conventions already visible in 5.2a/5.4's text.
+
+**Disclosures (mandatory):** the python file (`theta_quartet_square_v1.py`) and the Coq
+file use DIFFERENT C4 edge-quartet pairing conventions for Family A/B's construction
+(python: adjacent-edge split; Coq: opposite-edge split) — both independently confirmed
+correct under their own convention, but these are TWO INDEPENDENT WITNESSES of the same
+qualitative gauge-dependence conclusion for Family A, NOT cross-file numeric
+corroboration of one number; do not read the two files' witness values as verifying each
+other. Eigen-ordering convention #4 in the Part-4 sweep is analytically redundant with
+convention #1 (a unit-modulus column rephasing of it, so `quartet_rescale_invariant`
+GUARANTEES the two agree) — it functions as a live sanity check of that lemma, not a 4th
+independent ordering test; effective independent conventions in the magnitude-spread
+statistic = 3, not 4. The 29/528 sign-conflict count is this-run/this-platform
+(numpy 2.4.6, Python 3.13.13); the qualitative existence of eigen-ordering conflict, not
+the precise count, is the claim this square rests on.
+
+**Framing guards (binding, unchanged from 5.5):** this square does **not** resolve item
+2's `[Open]` status — that determination stays an orchestrator/founder-level call
+outside this square's scope (orchestrator ruling 7). No generation/CKM identification is
+made anywhere (CRRC guard, grepped clean in both files). The eigenbasis bridge
+(`V=U_A^†U_B`-style construction) stays FORBIDDEN as a `J` readout — its numeric
+evaluation here is used purely diagnostically, to refute its own well-posedness
+(orchestrator ruling 1's compliant refutation-purpose carve-out), never as a validated
+readout. Named `[Open]` escape hatches, unchanged from the synthesis: exact
+Groebner-basis/minimal-polynomial certification of a C4 living FP's exact eigenvalue
+field; the nonlinear (non-affine) embedding family; the qualitative/inequality-relation
+escape hatch; feeding `G`'s actual eigenvalues into the R2 holonomy machinery; general
+finite-n-cycle and general structural-induction tree Coq lemmas (both inherited
+`[Open]` from 5.5's own file).
+
+**Named open items:** all four escape hatches above; the near-zero C4 cluster's
+rigorous exact-arithmetic distinction from a possible exact-zero branch (inherited from
+5.5, unaddressed here); stability of the C4 living FPs (inherited, unaddressed); full
+continuous diagonal-rescaling gauge invariance beyond the Z2 sign-flip case (inherited).
