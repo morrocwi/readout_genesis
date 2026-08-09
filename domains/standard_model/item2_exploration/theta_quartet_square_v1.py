@@ -70,7 +70,7 @@ this square's only living witness): 0/3000 (5.2b-1, original symmetric-only dyna
 under the extended (L+A)-coupled dynamics, seed=550). K3 is a triangle: bounded-
 search negative, not a nonexistence proof, carried forward unchanged here.
 
-WHY THREE FAMILIES (recap, so this file is self-contained against THETA_SQUARE_SPEC.md
+WHY THREE FAMILIES (recap, so this file is self-contained against the 5.7 design record
 without requiring the reader to have it open):
   Family A: z_e := w_e* + i*a_e*  (both Gate-D-stationary sources on one Cq edge value)
   Family B: z_e := i*a_e*         (pure-skew only; the ONE gauge-CLEAN, dynamically-

@@ -17,7 +17,7 @@
 (*  is not needed by any theorem in this file and is not rebuilt.           *)
 (*                                                                          *)
 (*  ORCHESTRATOR RULINGS carried (binding, not re-litigated here; full      *)
-(*  text in THETA_SQUARE_SPEC.md / THETA_ROOT_PROGRAM.md 5.7): the          *)
+(*  text in THETA_ROOT_PROGRAM.md 5.7 (the design record)  ): the          *)
 (*  eigenbasis-mismatch route (R1) is diagnostic-only and NOT built in      *)
 (*  Coq; this file is ONE primary route (holonomy/rephasing, R2) plus       *)
 (*  grafts, filing the ONE shared rescaling lemma once (T1); numeric        *)
@@ -237,7 +237,7 @@ Qed.
    a C4-as-rectangle drawing. The companion python file
    theta_quartet_square_v1.py's P4/sup_c4_order instead reads an ADJACENT-
    edge split -- (0,1)+(1,2) plain, (2,3)+(0,3) conjugated. Neither this
-   file's header nor THETA_SQUARE_SPEC.md fixes one canonical formula for
+   file header nor the 5.7 design record fixes one canonical formula for
    this edge-indexed "quartet" (both files' own text concedes it is an
    analogy to the vertex-indexed quartetJ, not that construction itself),
    so the divergence does not affect correctness: family_B_C4_vanishes
