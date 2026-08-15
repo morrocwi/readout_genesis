@@ -266,6 +266,20 @@ Grouped by priority. "Still necessary?" was checked against the current merged s
    not only "why 3" in the abstract; it is the specific root-level fact that must close before this
    entire class of real, currently-being-measured phenomena is even reachable from the root. Logged,
    not attempted — item 2 remains exactly as open as before this note.
+   **External context (2026-08-15, methodological pointer only, not evidence):** STAR
+   Collaboration (RHIC), published in *Science* (`science.org/doi/10.1126/science.ads5962`),
+   reports baryon number is transported differently from electric charge in Au+Au collisions —
+   disfavoring the textbook per-quark additive-label picture (B=1/3 per valence quark) in favor
+   of baryon number being carried by a gluon-junction (Y-shaped gluon-line topology, QCD's
+   Rossi-Veneziano prediction, first direct experimental support in ~50 years). Relevance flagged
+   here, not incorporated as proof or validation (this workspace rejects external-authority
+   validation per `EPIS-KNOWLEDGE-VALIDATION`): it is a real-world instance of exactly the
+   methodological pattern this arc's own Θ program already uses — a conserved quantum number
+   being a readout of edge/junction TOPOLOGY rather than a per-particle additive charge. Possible
+   analogy for item 2 (and item 12, matter-skeleton uniqueness): "why 3 generations" may be a
+   question about admissible junction/edge-count topology (cf. C4/K3 living-fixed-point counting
+   already underway in `item2_exploration/THETA_ROOT_PROGRAM.md`), not a per-generation label
+   question — untested, no construction attempted yet, logged as a hint only.
 
 ### P1 — root-debt track (SM-G0, architecturally foundational)
 3-7. ~~G0.1–G0.5 (path composition, `Aut(F,O)` closure, localization, connection transformation,
