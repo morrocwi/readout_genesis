@@ -1,7 +1,39 @@
 <!-- Durable handoff for the Standard-Model arc. Committed to git so it survives a closed
-     terminal / a fresh Claude session — read this FIRST before touching domains/standard_model. -->
+     terminal / a fresh AI session — read this FIRST before touching domains/standard_model. -->
 
 # HANDOFF — Standard Model arc, resume point (as of v1.13, 2026-07-22; session log 2026-07-24)
+
+## 0.-4 LATEST SESSION NOTE (2026-08-29 — a core-level result, NOT an item-2 step; §0.-3 below is still the item-2 resume point)
+
+**What happened:** an external analogy relayed by the founder ("under the same sky `g` reads the
+same; under the same CMB `c, h, Λ` read the same; if they differed the CMB would look different")
+was checked against the canon. Verdict: conceptually aligned with Face XI (`τ_c equal ⇒ dynamics
+identical`) and the commuting-square doctrine; it contributed **no evidence** and is recorded as a
+reviewer-level hint only (`EPIS-KNOWLEDGE-VALIDATION`). Two things came out of it, both committed
+(`readout_genesis` `9d2031b`, `solver-arc-private` `a86541c`, files byte-identical):
+
+1. **Face XI is now an iff** — `formal/InfoSharedReadoutForcesSharedMemory_attempt.v` (axiom-free,
+   8 statements, 5 `Print Assumptions` Closed, passes the twin's `ci_attempts_audit`): one agreeing
+   discrete decay readout at `dt≠0` forces shared `τ_c` whatever the separate `(M,D)`; disclosed
+   limit `readout_cannot_split_mass` (the readout retains `τ_c` and nothing finer). Companion
+   exact-ℚ diagnostic `scripts/shared_readout_component_check.py` (14/14 PASS). Core: Face XI line
+   `⇔`, Forcing Ledger gains the iff row **and an explicit `Λ` (cosmological constant) `[Open]`
+   row** (no node, not attempted — declared, not silent), round-3 verification addendum.
+2. **Item-2 carry-over FAILED — do not re-try under a new name:** the same analogy, rebuilt as a
+   "domain-embeddable core" admissibility square (a living `k`-slot core must survive embedding
+   into a larger `n` with the extra slots dead, `P=S=0`; reduces to `P_j·S_j ≥ 0` at every core
+   vertex via the 5.2a non-support rule), fails at **every** living shape found by
+   `theta_minimal_living_v1.py` — the n=3 path and all four n=4 classes (star, P4, C4,
+   path-embedded), regime `a=−1,b=1,K=μ=1`. Scratch only, not filed as an Attempt; recorded in the
+   core's round-3 addendum. An unverified side-observation — every living configuration has at
+   least one vertex with `sign(P_j) ≠ sign(S_j)` — was **not** checked against §5.8's
+   vertex-reflection loci (different system layer: pre-orientation 5.2b-2 vs oriented 5.5+); it
+   is likely the same fact seen from another angle, not new. Item 2 status: unchanged, `[Open]`.
+
+**Housekeeping done the same session:** the two pre-ruling "second Claude session" phrasings
+(core ~L285, inventory ~L67) scrubbed to role words per the 2026-08-09 founder ruling. **Still
+not pushed** — every commit above awaits founder go (item 6 below) and the pre-push
+`PUB-ADVERSARIAL-REVIEW` gate.
 
 ## 0.-3 CURRENT RESUME POINT (2026-08-09 — supersedes §0.-1 below for item 2)
 
@@ -10,7 +42,7 @@ root-native program behind it. Read, in order:
 1. [`item2_exploration/THETA_ROOT_PROGRAM.md`](item2_exploration/THETA_ROOT_PROGRAM.md) —
    the Θ root program (founder ruling `DEC-theta-new-root-2026-0808` + erratum row):
    steps 5.1 → 5.4 ALL DONE (2026-08-08/09), each independently adversarially reviewed
-   before commit, mirrored byte-identically to `research_universal_solver`.
+   before commit, mirrored byte-identically to `solver-arc-private`.
 2. [`item2_exploration/ITEM2_EXPLORATION_LOG.md`](item2_exploration/ITEM2_EXPLORATION_LOG.md)
    — Attempts 1–4 (Attempt 3 = CP-conditional N≥3 machine-checked; Attempt 4 = the 5.4
    admissibility square, half-closed with a proven real-mixing obstruction).
@@ -91,8 +123,8 @@ reduced to ONE sharp question (todo #1 below).
    failed homotopy continuation, not a theorem).
 6. **Push both repos to remotes** — every commit in this arc passed the adversarial
    gate; push itself awaits founder go (commits: readout_genesis `9c921d4`→`710b09b`,
-   research_universal_solver `bc1e91c`→`7cfb64b`).
-7. **Fix `cpg` DECISIONS.yaml strict-YAML breakage** (pre-existing, line ~1875; the
+   solver-arc-private `bc1e91c`→`7cfb64b`).
+7. **Fix solver-arc-private DECISIONS.yaml strict-YAML breakage** (pre-existing, line ~1875; the
    anse_sync loader returns `[]` for decisions — the theta rows are appended in current
    convention but nothing materializes).
 8. **Fix twin-repo `make verify-attempts` PRE-EXISTING failures** (discovered 2026-08-09
@@ -208,7 +240,7 @@ named two next versions explicitly:
   `ITEM1_EXPLORATION_LOG.md`, read that file for the complete story, this is only the pointer):**
   `M_n` was CALIBRATED (not derived) via a noise-aware operational estimator (moment-correction +
   replicate-IV), independently reviewed, merged to `main` in both this repo and
-  `research_universal_solver`. The chain was then extended, each step independently reviewed and
+  `solver-arc-private`. The chain was then extended, each step independently reviewed and
   merged: declared U/D/E branch tapes → `Pi0=6.328453553357985` → order-vacuum criterion
   `Pi0>alpha_order` (inherited from the mother potential, not a new dial) → `ORDERED_READY`,
   `r_star=3.823356105009073` → native vacuum amplitude
@@ -223,7 +255,7 @@ named two next versions explicitly:
   scientific-methodology review and is disclosed in the merged code's own `claim_boundary`.
 
   **Three further candidates, all DRAFT/UNMERGED, testing whether any of this matches real
-  physics** (this repo's PR #79, #80, #81; mirrored, unmerged, in `research_universal_solver`):
+  physics** (this repo's PR #79, #80, #81; mirrored, unmerged, in `solver-arc-private`):
   fitting a RD-to-GeV scale from `v=246 GeV` and independently predicting the Higgs mass —
   **FAILS**, 74% error; the same test with ZERO fitted parameters via a mass ratio — **FAILS**,
   identical 74% (an algebraic consequence, not new evidence); an internal (zero-external-input)
@@ -231,7 +263,7 @@ named two next versions explicitly:
   vs curvature-based) — **NOT CONSISTENT**, 94% deviation. All three honestly disclosed, not
   hidden, not merged. A founder-initiated side-investigation into a discrete-vs-apparent-continuum
   bridge found a real, pre-existing, Th_coqc, `tau_c`-parametrized bridge
-  (`docs/root/PERSISTENT_WALK_TELEGRAPH_DERIVATION.md` in `research_universal_solver`) —
+  (`docs/root/PERSISTENT_WALK_TELEGRAPH_DERIVATION.md` in `solver-arc-private`) —
   structural only (same equation form), no numeric GeV conversion, partially discharged — and an
   unresolved internal tension between two of this project's own philosophy docs
   (`ZERO_INFINITY_DUAL_DIAGNOSIS.md`'s readout-vs-readout STANDING GUARD vs. this project's own
@@ -266,6 +298,20 @@ Grouped by priority. "Still necessary?" was checked against the current merged s
    not only "why 3" in the abstract; it is the specific root-level fact that must close before this
    entire class of real, currently-being-measured phenomena is even reachable from the root. Logged,
    not attempted — item 2 remains exactly as open as before this note.
+   **External context (2026-08-15, methodological pointer only, not evidence):** STAR
+   Collaboration (RHIC), published in *Science* (`science.org/doi/10.1126/science.ads5962`),
+   reports baryon number is transported differently from electric charge in Au+Au collisions —
+   disfavoring the textbook per-quark additive-label picture (B=1/3 per valence quark) in favor
+   of baryon number being carried by a gluon-junction (Y-shaped gluon-line topology, QCD's
+   Rossi-Veneziano prediction, first direct experimental support in ~50 years). Relevance flagged
+   here, not incorporated as proof or validation (this workspace rejects external-authority
+   validation per `EPIS-KNOWLEDGE-VALIDATION`): it is a real-world instance of exactly the
+   methodological pattern this arc's own Θ program already uses — a conserved quantum number
+   being a readout of edge/junction TOPOLOGY rather than a per-particle additive charge. Possible
+   analogy for item 2 (and item 12, matter-skeleton uniqueness): "why 3 generations" may be a
+   question about admissible junction/edge-count topology (cf. C4/K3 living-fixed-point counting
+   already underway in `item2_exploration/THETA_ROOT_PROGRAM.md`), not a per-generation label
+   question — untested, no construction attempted yet, logged as a hint only.
 
 ### P1 — root-debt track (SM-G0, architecturally foundational)
 3-7. ~~G0.1–G0.5 (path composition, `Aut(F,O)` closure, localization, connection transformation,
@@ -360,7 +406,7 @@ Grouped by priority. "Still necessary?" was checked against the current merged s
 - `CLAIM_BOUNDARY.json` / `DRIFT_CONTRACT.json` — machine-readable fences (v0.2, scoped).
 - `ROOT_TO_SM_DAG.md` / `UNIFIED_FORCE_DAG.md` — DAG maps, two-axis (root vs. declared-architecture).
 - `run_tests.py` — 24 Python verifiers + 26 Coq witnesses, all PASS/Closed; run before any new claim.
-- Both repos (`research_universal_solver` canonical + `readout_genesis` public twin) mirror
+- Both repos (`solver-arc-private` canonical + `readout_genesis` public twin) mirror
   `domains/standard_model/` byte-identically — always edit both, verify with `diff -rq`.
 - `mu4_exploration/MU4_INVESTIGATION_LOG.md` — exploratory research log (item 35 above), not a claim.
 - The build pattern for a new version: exact-Fraction Python verifier (independent recompute of
@@ -371,5 +417,5 @@ Grouped by priority. "Still necessary?" was checked against the current merged s
 
 ## 5. Central tracking
 The 4 P0/root-debt-track headline items (§2 rows 1, 2, 3-9-as-one-line) are also registered in the
-ANSE.ASIA central todo system (`cpg/tools/agent_office/todo.py list`) for visibility outside this
+ANSE.ASIA central todo system (solver-arc-privatetools/agent_office/todo.py list`) for visibility outside this
 repo. This file is the authoritative detail; the central todo entries are pointers back here.

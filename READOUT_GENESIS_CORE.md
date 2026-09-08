@@ -1,7 +1,7 @@
 ## Genesis of the Universe, Step by Step — Genesis Step-by-Step v3.1
 ### A World-Class AI Equation Book — Standalone Source of Truth (extended edition)
 
-> **Edition:** v3.1 (2026-07-21) · `research_universal_solver` · node N10 (superset over the v3.0
+> **Edition:** v3.1 (2026-07-21) · `solver-arc-private` · node N10 (superset over the v3.0
 > lineage, prepared for consolidation)
 > **Claim boundary:** readout-not-truth. Verified MATH ≠ true physics. Structure can be
 > machine-checked; physical numbers require laboratory measurement. Every sentence in this book that
@@ -101,6 +101,8 @@ Read top to bottom for the full arc, or jump by Part.
 | `π`, `e` | **half** — rational approximants ours, the constant is a continuum limit (borrowed) | discrete→continuum readout | `scripts/force_constants.py` (B) |
 | `α` (fine structure), mass ratios | **REJECTED, not faked** — no root derivation; `[Open]` | — (would be a hollow card) | `scripts/force_constants.py` (C); DEC-toe-candidacy-one-root |
 | `K`, SI constants `ħ, c, G` | **borrowed** — measurement anchors, likely irreducible | — | DeclaredFormula / measurement |
+| `Λ` (cosmological constant — not `Λ_n`, the lineage ledger) | **`[Open]` — no node, not attempted** (row added 2026-08-29 so the gap is declared, not silent; seeded by an external analogy relayed by the founder, which contributed no evidence) | — | none |
+| `τ_c` equality ⇔ readout equality (Face XI as an **iff**) | **forced (Th_coqc)** — one agreeing discrete decay readout at a nonzero step forces shared `τ_c`, whatever the separate `(M,D)`; the disclosed limit: the readout retains `τ_c` and nothing finer (shared readout does **not** force shared `M`) | reciprocal `rate·τ_c = 1` alone | `formal/InfoSharedReadoutForcesSharedMemory_attempt.v` (axiom-free; converse of `InfoMemoryBeforeMass`, 2026-08-29) |
 | commutator `K(X,Y)=XY−YX` is bilinear+antisymmetric, Jacobi holds | **forced (structure + Th_coqc)** — necessity (the *algebraic identity* only; the specific noncommuting pair used to witness it is hand-exhibited, not itself root-forced — "borrow #2 reduced, not removed", per the file's own fence) | associativity of ordered composition alone — no Lie algebra imported | `InfoOrderDefectFromComposition` (axiom-free; re-verified 2026-07-23) |
 
 ---
@@ -158,8 +160,11 @@ results (Standard-Model chain, biology/health) are deliberately **not** in this 
                                                 "unification" this book refuses (InfoLorentzInvariance)
 
   XI.    rate · τ_c = 1                         equal memory (τ_c) forces identical dynamics
-         τ_c equal ⇒ dynamics identical         regardless of how (M,D) split — memory precedes
-                                                mass (InfoMemoryBeforeMass)
+         τ_c equal ⇔ dynamics identical         regardless of how (M,D) split (M,D,dt nonzero) —
+                                                memory precedes mass (InfoMemoryBeforeMass); the
+                                                converse — one agreeing readout forces shared τ_c, and
+                                                retains nothing finer than τ_c — closed 2026-08-29
+                                                (InfoSharedReadoutForcesSharedMemory, axiom-free)
 
   XII.   qform(L(edges), x) ≡ energy(edges, x)  the metric's Hessian and the energy functional
                                                 are the same object (InfoMetricIsEnergyReadout)
@@ -176,7 +181,7 @@ results (Standard-Model chain, biology/health) are deliberately **not** in this 
                                                 wdeg closure (InfoCoercivityBoundedClosure)
 
   XVI.   ∂²(metric)/∂x∂y = ∂²(metric)/∂y∂x      mixed-partial (Clairaut) symmetry of the metric
-                                                lift (InfoAnalysisLift — research_universal_solver
+                                                lift (InfoAnalysisLift — solver-arc-private
                                                 copy; NOT the causal-quantum-gravity same-named
                                                 file, which imports Schwarzschild and is refused)
 
@@ -236,7 +241,7 @@ results (Standard-Model chain, biology/health) are deliberately **not** in this 
 > `InfoLorentzInvariance` (narrow boost-invariance claim only, not the rejected "unification" claim),
 > `InfoMemoryBeforeMass`, `InfoMetricIsEnergyReadout`, `InfoQuantumRelativityUnification` (narrow
 > dispersion-identity claim only), `InfoSeedTorsionGroupAndRankN`, `InfoCoercivityBoundedClosure`,
-> plus `research_universal_solver/formal/InfoAnalysisLift.v` (module `RDL.InfoAnalysisLift`, the
+> plus `solver-arc-private/formal/InfoAnalysisLift.v` (module `RDL.InfoAnalysisLift`, the
 > Clairaut-symmetry result — **not** the same-named `causal-quantum-gravity/formal/InfoAnalysisLift.v`
 > file, which this book already refuses elsewhere in this section as importing Schwarzschild; the two
 > repos happen to share a filename for unrelated results, so cite the repo path, never the bare name)
@@ -248,7 +253,7 @@ results (Standard-Model chain, biology/health) are deliberately **not** in this 
 > InfoCrossTermDominance,InfoCubicLinearization,InfoCutGrowth,InfoGraphNoether,InfoLorentz,
 > InfoLorentzInvariance,InfoMemoryBeforeMass,InfoMetricIsEnergyReadout,InfoQuantumRelativityUnification,
 > InfoSeedTorsionGroupAndRankN,InfoCoercivityBoundedClosure}.v` (module root `-R . DQG`) plus
-> `research_universal_solver/formal/InfoAnalysisLift.v` (module root `-R . RDL`). The Standard-Model
+> `solver-arc-private/formal/InfoAnalysisLift.v` (module root `-R . RDL`). The Standard-Model
 > and bio/health names checked the same way this session — deliberately kept **out** of this box for
 > the reason above — plus the still-unverified names, are catalogued in
 > [`ROOT_INFO_LANGUAGE_INVENTORY.md`](ROOT_INFO_LANGUAGE_INVENTORY.md).
@@ -270,14 +275,14 @@ results (Standard-Model chain, biology/health) are deliberately **not** in this 
 >   differences), `InfoDiscreteRiemannCommutator` (curvature from the commutator),
 >   `InfoTelegraphHorizonUnification` (the spine's own `λ_c` classical/quantum crossover — Face 3/4
 >   content, a *distinct* object from GR redshift, not a claim of unifying the two). All:
->   `research_universal_solver/formal/Info*_attempt.v` (module root `-R . RDL`) — still tagged
+>   `solver-arc-private/formal/Info*_attempt.v` (module root `-R . RDL`) — still tagged
 >   `_attempt` in that repo's own naming convention (not yet promoted there), but independently
 >   coqchk'd clean here, no `Axiom`, no `Admitted`.
 > - **1 promoted out of the Standard-Model chain**, because on inspection its premises are root-generic,
 >   not SM-specific, despite living in `domains/standard_model/`: `InfoOrderDefectFromComposition`
 >   (Jacobi from associativity alone, no Lie algebra imported — with the caveat noted in the ledger row
 >   above) — now a row in the Forcing Ledger table above.
-> - **Independent adversarial review (second Claude session, 2026-07-23) caught 2 overclaims in this
+> - **Independent adversarial review (separate reviewer session, 2026-07-23) caught 2 overclaims in this
 >   round's first draft, both reverted before merge**: `InfoOrderedTapeClosure` and
 >   `InfoRationalSO3Curvature` were initially proposed for promotion, but the reviewer read each file's
 >   own header and found both **self-tag as conditional**, not necessity —
@@ -300,6 +305,30 @@ results (Standard-Model chain, biology/health) are deliberately **not** in this 
 > - Net this round: **24 necessity-forced items now underwrite this box** (15 from round 1 + 1 promoted
 >   + 8 new), zero of them domain-conditional — after an independent review caught and reverted 2
 >   initial overclaims.
+
+> **Verification addendum, round 3 (2026-08-29) — Face XI closed as an equivalence.** One new
+> necessity-tier witness: `InfoSharedReadoutForcesSharedMemory_attempt.v`
+> (`readout_genesis/formal/` and `solver-arc-private/formal/`, byte-identical; standalone
+> `QArith` file, no project root needed — the solver twin's CI compiles it under its `-R . RDL`),
+> the **converse** of `InfoMemoryBeforeMass.memory_before_mass`. Theorems
+> `shared_readout_forces_shared_memory` (one agreeing discrete decay readout at a nonzero step
+> forces equal `τ_c`, whatever the separate `(M,D)`), `memory_iff_readout` (Face XI as `⇔`), and
+> `readout_cannot_split_mass` (the disclosed limit — witness `(M,D)=(2,1)` vs `(4,2)`: identical
+> readout at every `dt`, different `M`; the readout retains `τ_c` and nothing finer). All 8
+> statements in the file `Closed under the global context` (`Print Assumptions`, re-run
+> independently by the adversarial reviewer), `QArith` only, no Reals, no `Axiom`, no `Admitted`.
+> Premises are root-generic (the reciprocal `rate·τ_c = 1` alone), so it belongs in this box.
+> **Lineage, stated so it cannot be laundered later:** the *direction* of inference — shared
+> readout ⇒ shared retained memory — was seeded by an external analogy relayed by the founder
+> ("under the same sky `g` reads the same; under the same CMB `c, h, Λ` read the same"). That
+> analogy entered at reviewer level as a hint (§KNOWLEDGE VALIDATION: never certification),
+> contributed **no** evidence, constant, or equation, and the physical constants it names stay
+> exactly where the Forcing Ledger puts them (`ħ, c, G` borrowed; `α` REJECTED/`[Open]`; `Λ` now an
+> explicit `[Open]` row above, no node). A first attempt to carry the same analogy into the
+> Θ program's generation-count question (`domains/standard_model/item2_exploration/`) as a
+> "domain-embeddable core" admissibility square **failed at every living shape including n=3**
+> (single-regime `finite_diagnostic`, scratch only, not filed as an Attempt) — recorded here so
+> the dead end is not re-tried under a new name. Net after round 3: **25 necessity-forced items.**
 
 ---
 
@@ -6299,7 +6328,7 @@ it is allowed to support a claim above `Dr`.
 ### XII.1 Minimum Smoke Suite
 
 ```bash
-# From repo root: research_universal_solver/
+# From repo root:solver-arc-private
 
 # 1. Package health
 python -c "from anse_spine import NuclearCore, Domain, Spine; print('anse_spine OK')"
@@ -7222,8 +7251,8 @@ future reviewer who confirms any gate should record it in the relevant Part, not
 >
 > **SOT DESIGNATION (2026-07-25, founder-directed): THIS Appendix is now the primary Source of
 > Truth for this equation stream's numbering/tiers/text.** The synced copy lives at
-> `research_universal_solver/EQUATION_LIBRARY_ROOT_TO_SM_STREAM.md` and at
-> `readout_universe/EQUATION_LIBRARY_ROOT_TO_SM_STREAM_research_universal_solver.md` — if either
+> `solver-arc-private/EQUATION_LIBRARY_ROOT_TO_SM_STREAM.md` and at
+> `readout_universe/EQUATION_LIBRARY_ROOT_TO_SM_STREAM_solver-arc-private.md` — if either
 > ever diverges from this Appendix, THIS Appendix wins and the other file should be corrected to
 > match. (Earlier same-day text here said the reverse; the founder explicitly redirected the SOT
 > to this file, the true root canon, and both sibling copies were updated to point back here.)
@@ -7250,7 +7279,7 @@ list, read alone, invites category errors it was never meant to license):**
   algebraic structure is proven for ARBITRARY admissible data; which SPECIFIC object realizes it in
   this project's actual physics remains separate and open — see the two-axis table below.
 - **⚠️ MATERIALIST WORKS/FAILS BIAS (added 2026-07-25, after an AI caught itself committing it twice
-  in one file — full guard in `research_universal_solver/docs/root/ZERO_INFINITY_DUAL_DIAGNOSIS.md`
+  in one file — full guard in `solver-arc-private/docs/root/ZERO_INFINITY_DUAL_DIAGNOSIS.md`
   Part 4b).** Before writing "works / fails / NEGATIVE / success / solved" about ANY entry here or
   any computed result: a `fit_calibrated` constant is NOT a defect (calibrating a graph constant is
   legitimate, DEV-SM-001; horizontal-knowledge stance). Do not judge a result "failed" because it
@@ -7477,7 +7506,7 @@ EQ-064  fit_calibrated (M_joint) / finite_diagnostic (accuracy check) — 2026-0
                      M_hat = (a1ᵀy2 + a2ᵀy1) / (2 a1ᵀa2)     [replicate-IV, preferred]
                      M_joint = 1.0004294772248     (0.042948% error vs the disclosed fixture's
                      known M_true=1; 500-seed sweep mean error 0.335552% at σ=1e-5)
-                     Merged to main, both repos (research_universal_solver, readout_genesis).
+                     Merged to main, both repos (solver-arc-private, readout_genesis).
                      Does NOT close EQ-015's M the way EQ-063 does not — this is calibration on a
                      declared synthetic tape, not a root-native derivation.
 

@@ -25,9 +25,9 @@ retained-distinction, order-parameter, τ_c, M/D, Γ, K, Q_v, ...) — no domain
 ## Group A — Faces of the one master equation `F` (same information, different face)
 
 Source: `causal-quantum-gravity/formal/*.v` (module root `DQG.formal`, compiled from that repo's root with
-`-R . DQG`) + `research_universal_solver/formal/InfoAnalysisLift.v` (module root `RDL`). **These files are
+`-R . DQG`) + `solver-arc-private/formal/InfoAnalysisLift.v` (module root `RDL`). **These files are
 not mirrored into this repo** — they live in sibling repos on the same machine
-(`~/ANSE.ASIA/causal-quantum-gravity`, `~/ANSE.ASIA/research_universal_solver`). All 14 are already folded
+(`~/ANSE.ASIA/causal-quantum-gravity`, `~/ANSE.ASIA/solver-arc-private`). All 14 are already folded
 into the master-equation box's 2026-07-23 verification addendum.
 
 | Theorem | Equation (root language) | Verified |
@@ -42,12 +42,13 @@ into the master-equation box's 2026-07-23 verification addendum.
 | `InfoLorentz.causal_form_frame_covariant` | Q_v = n₊·n₋ (from the cone's edges) is covariant under frame change — signature comes from the causal order `≺` | ✅ coqchk clean |
 | `InfoLorentzInvariance.box_quad_boost_invariant` | the box quadratic form is invariant under a boost (g²(1−v²)=1) — narrow claim only, not the broader "unification" claim this book refuses elsewhere | ✅ coqchk clean |
 | `InfoMemoryBeforeMass.memory_before_mass` | rate·τ_c = 1; equal τ_c ⇒ identical dynamics regardless of how (M,D) split — **memory (τ_c) precedes mass (M)** | ✅ coqchk clean |
+| `InfoSharedReadoutForcesSharedMemory.shared_readout_forces_shared_memory` / `.memory_iff_readout` / `.readout_cannot_split_mass` | converse of the row above: one agreeing discrete decay readout at dt≠0 ⇒ equal τ_c, whatever (M,D) — Face XI is an **iff**; disclosed limit: shared readout does NOT force shared M (witness (2,1) vs (4,2)) — the readout retains τ_c and nothing finer (2026-08-29) | ✅ Print Assumptions Closed ×8, axiom-free |
 | `InfoMetricIsEnergyReadout.metric_form_is_energy_readout` | qform(L(edges), x) ≡ energy(edges, x) — the metric's Hessian and the energy functional are the same object | ✅ coqchk clean |
 | `InfoQuantumRelativityUnification.spine_dispersion_iff_box_quad_vanishes` | M·ω² = K·λ ⟺ box_quad(...) = 0, and this null-condition survives a boost — narrow dispersion-identity claim only | ✅ coqchk clean |
 | `InfoSeedTorsionGroupAndRankN.rankn_seed_torsion_is_lam_ord` | nonzero torsion witness ⇒ the commutator generates a non-abelian group of rank N (the gauge-algebra seed) | ✅ coqchk clean |
 | `InfoCoercivityBoundedClosure` | wshare/wdeg closure is bounded (coercivity of the potential) | ✅ coqchk clean |
-| `InfoAnalysisLift.clairaut_xy` / `clairaut_yx` (`research_universal_solver/formal`, root `RDL` — **not** the same-named file in `causal-quantum-gravity`, which imports Schwarzschild and is refused elsewhere in the core doc) | ∂²(metric)/∂x∂y = ∂²(metric)/∂y∂x — mixed-partial symmetry of the metric lift | ✅ coqchk clean |
-| `InfoRetainedDistinctionForcesLaplacian.only_LR_passes_all_three` (`research_universal_solver/formal`, root `RDL`, still tagged `_attempt` in that repo's own convention) | among candidate retained-difference operators, **only** `L_R` passes all required structural tests — the exact citation already backing the `L_R` row in the master box, now independently reconfirmed | ✅ coqchk clean |
+| `InfoAnalysisLift.clairaut_xy` / `clairaut_yx` (`solver-arc-private/formal`, root `RDL` — **not** the same-named file in `causal-quantum-gravity`, which imports Schwarzschild and is refused elsewhere in the core doc) | ∂²(metric)/∂x∂y = ∂²(metric)/∂y∂x — mixed-partial symmetry of the metric lift | ✅ coqchk clean |
+| `InfoRetainedDistinctionForcesLaplacian.only_LR_passes_all_three` (`solver-arc-private/formal`, root `RDL`, still tagged `_attempt` in that repo's own convention) | among candidate retained-difference operators, **only** `L_R` passes all required structural tests — the exact citation already backing the `L_R` row in the master box, now independently reconfirmed | ✅ coqchk clean |
 | `InfoSeedUnifiedMasterEquation.seed_master_readout_zero_iff_homogeneous` (same source, `_attempt`) | velocity+coupling+damping combine into one seed readout that vanishes iff the field configuration is homogeneous | ✅ coqchk clean |
 | `InfoScaleGaugeNonReadout.dispersion_gauge_invariant` (same source, `_attempt`) | the dispersion relation's sign/structure is invariant under a scale-gauge transform | ✅ coqchk clean |
 | `InfoSeedArgminActionCost.action_argmin` (same source, `_attempt`) | the selected state minimizes the action (general variational principle) | ✅ coqchk clean |
@@ -63,7 +64,7 @@ read at a different regime/face, not separate theorems. (15 confirmed round 1, 2
 necessity bar: only admit a result if its premises are root-generic, not conditional on a declared
 domain alphabet/architecture.)
 
-**Round-2 correction (independent adversarial review, second Claude session, 2026-07-23):** two
+**Round-2 correction (independent adversarial review, separate reviewer session, 2026-07-23):** two
 candidates initially proposed for promotion — `InfoRationalSO3Curvature` and `InfoOrderedTapeClosure`
 — were caught and reverted before merge. Both files **self-tag as conditional in their own headers**:
 `InfoOrderedTapeClosure.v` states *"HONEST FENCE. CONDITIONAL ALGEBRAIC PASS... Kinematic neutrality
@@ -97,7 +98,7 @@ imports beyond the Coq standard library).
 | ~~`InfoOrderDefectFromComposition`~~ | **promoted to Group A, 2026-07-23 round 2** — see above | (order-defect, non-abelian seed) |
 | `InfoConfinementCertificate` / `InfoCenterConfinement` / `InfoBlockCorrelation` / `InfoAllOrderCharacter` / `InfoSurfaceAutomaton` / `InfoSurfaceUpperAutomaton` | a family of surface-entropy bounds + automaton brackets that close as a computable certificate | (confinement) |
 | `InfoTrialitySpectralFlow` / `InfoUniversalRPSlab` / `InfoFiniteTransferGap` / `InfoRetainedIntertwiner` | a universal reflection-positive slab reads the finite-transfer spectral gap in every sector | (mass gap, universal RP slab) |
-| `InfoRationalSO3Curvature` (`research_universal_solver/formal`, `_attempt`; reverted from a round-2 necessity-promotion attempt — see correction note above) | one concrete rational-rotation pair with nonzero holonomy — proves curvature *exists* for this witness, not a general SO(3)/dimension-3 derivation (file's own words: "a specific pair, not a parametrized theorem") | (SO(3) holonomy witness) |
+| `InfoRationalSO3Curvature` (`solver-arc-private/formal`, `_attempt`; reverted from a round-2 necessity-promotion attempt — see correction note above) | one concrete rational-rotation pair with nonzero holonomy — proves curvature *exists* for this witness, not a general SO(3)/dimension-3 derivation (file's own words: "a specific pair, not a parametrized theorem") | (SO(3) holonomy witness) |
 
 **Important**: Group B is **not** a new master equation — these are theorems that *follow* when `F` is
 squeezed against the Standard-Model alphabet/gates. Do not lift these into `F` as new additive terms —
@@ -107,7 +108,7 @@ that would be exactly the label-inflation this book warns against (§V.20, §V.2
 
 ## Group C — Biology / Health / Epidemic (compiled fresh 2026-07-23 — clean, but still tagged `_attempt` in the source repo)
 
-Source: `research_universal_solver/formal/Info*_attempt.v` (sibling repo, not mirrored into this repo).
+Source: `solver-arc-private/formal/Info*_attempt.v` (sibling repo, not mirrored into this repo).
 
 ⚠️ **Honesty note:** these files have **not been promoted** to a canonical (non-`_attempt`) name in their
 home repo's own convention — meaning they have not gone through a final review pass or been wired into
