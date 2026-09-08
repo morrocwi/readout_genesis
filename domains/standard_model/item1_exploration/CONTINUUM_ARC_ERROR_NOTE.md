@@ -2,7 +2,7 @@
 
 > **Status: RETRACTED / removed. This is an error record kept as a lesson — NOT a live direction.**
 > Founder ruling 2026-07-26: remove the continuum-concept / continuum-equation contamination this
-> session introduced into `research_universal_solver` and `readout_genesis`, keep only this note, and
+> session introduced into `solver-arc-private` and `readout_genesis`, keep only this note, and
 > leave none of it in the core equation stream (Appendix C). This file is that note.
 
 ## 1. What the mistake was
@@ -63,11 +63,11 @@ which the arc abandoned when it collapsed to a hand-built 2×2.
 
 - **Core stream (retract-in-place, numbering kept stable):** `EQ-069`, `EQ-070`, `EQ-071` in all three
   synced files (`readout_genesis/READOUT_GENESIS_CORE.md` Appendix C,
-  `research_universal_solver/EQUATION_LIBRARY_ROOT_TO_SM_STREAM.md`,
-  `readout_universe/EQUATION_LIBRARY_ROOT_TO_SM_STREAM_research_universal_solver.md`) — their content is
+  `solver-arc-private/EQUATION_LIBRARY_ROOT_TO_SM_STREAM.md`,
+  `readout_universe/EQUATION_LIBRARY_ROOT_TO_SM_STREAM_solver-arc-private.md`) — their content is
   replaced by a RETRACTED marker pointing here; the numbers stay so the stream stays stable and EQ-072+
   can continue.
-- **Candidate code (deleted from `research_universal_solver` and `readout_genesis`):**
+- **Candidate code (deleted from `solver-arc-private` and `readout_genesis`):**
   `accumulating_graph_dynamic_range/`, `affine_graph_noncompact_growth/`, `field_sourced_accumulation/`,
   `decelerating_accumulation_profile/`, `derived_deceleration_rate/`, `accumulation_convergence_study/`,
   `fixed_q_diagnostic/`, `dynamic_range_from_degeneracy/`, `principled_generation_mapping/`,

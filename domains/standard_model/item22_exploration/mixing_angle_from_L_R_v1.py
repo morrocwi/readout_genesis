@@ -14,7 +14,7 @@ NOT an imported physics formula -- it is THE root operator this entire project i
 (formal/URCF_RD_All.v lines ~900-1055: energy V x = sum w_ij(x_i-x_j)^2 = x^T L_R x, PSD, kernel
 = constants iff connected -- genuine Th_coqc theorems from delta_R itself, not posited).
 
-CONSTRUCTION (per the deep-search this session ran across both repos -- research_universal_solver
+CONSTRUCTION (per the deep-search this session ran across both repos -- solver-arc-private
 and readout_genesis -- confirming no existing generation-space mixing formalism exists yet, and
 that L_R + a general N-dim eigenproblem solver (engine/systems.py:492 solve_modal) are the closest
 genuinely reusable root-native pieces):

@@ -39,7 +39,7 @@ Rebuilt in generation space per Attempt 1's correction. Founder also gave a stri
 for this specific construction: fitting NUMBERS is fine, but the EQUATION must be root-native (no
 borrowed QM perturbation-theory formula, unlike item 22's earlier openly-borrowed Gatto-Sartori-
 Tonin work, which is fine for its own declared scope). A prior deep-search across both repos
-(`research_universal_solver` and `readout_genesis`) found no existing generation-space mixing
+(`solver-arc-private` and `readout_genesis`) found no existing generation-space mixing
 formalism, but identified `L_R := D_W - W` (docs/root/BORROWED_VS_DERIVED_LEDGER.md row 4,
 genuinely **DERIVED**, `Th_coqc`, not posited) as reusable root-native machinery.
 

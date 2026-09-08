@@ -129,7 +129,7 @@
       "forbidden_claims": ["this is real physiological homeostasis or a clinical reading (Dr, not root-derived)", "this raises the 47.2% strict score -- it backs the already-counted BIO-G3 node, it is not an independent semantic closure"],
       "coq_backing": {
         "status": "green (Th_coqc), re-compiled axiom-clean 2026-07-21",
-        "source": "research_universal_solver/formal/InfoBioHomeostasis_attempt.v",
+        "source": "solver-arc-private/formal/InfoBioHomeostasis_attempt.v",
         "theorems": ["decay_geometric", "homeostasis_balance", "turnover_is_production"],
         "note": "Backs BIO-G3 (living-unit) substrate quality; part of LINE-1 root-native GREEN Coq backing. See PROVENANCE.md."
       }
@@ -144,7 +144,7 @@
       "forbidden_claims": ["this is a real physiological relaxation/recovery process or a clinical reading", "this raises the 47.2% strict score"],
       "coq_backing": {
         "status": "green (Th_coqc), re-compiled axiom-clean 2026-07-21",
-        "source": "research_universal_solver/formal/InfoHealthCausalRelax_attempt.v",
+        "source": "solver-arc-private/formal/InfoHealthCausalRelax_attempt.v",
         "theorems": ["setpoint one-step error relaxation", "n-step error relaxation"],
         "note": "Backs BIO-G3 substrate quality. See PROVENANCE.md."
       }
@@ -159,7 +159,7 @@
       "forbidden_claims": ["this is a real bistable disease state or a clinical reading", "this raises the 47.2% strict score"],
       "coq_backing": {
         "status": "green (Th_coqc), re-compiled axiom-clean 2026-07-21",
-        "source": "research_universal_solver/formal/InfoHealthCuspFold_attempt.v",
+        "source": "solver-arc-private/formal/InfoHealthCuspFold_attempt.v",
         "theorems": ["bistable window", "critical slowing down"],
         "note": "Backs BIO-G3 substrate quality. See PROVENANCE.md."
       }
@@ -174,7 +174,7 @@
       "forbidden_claims": ["this is a real physiological coupling (e.g. hormonal, neural) or a clinical reading", "this raises the 47.2% strict score"],
       "coq_backing": {
         "status": "green (Th_coqc), re-compiled axiom-clean 2026-07-21",
-        "source": "research_universal_solver/formal/InfoCoupledCuspEP3_attempt.v",
+        "source": "solver-arc-private/formal/InfoCoupledCuspEP3_attempt.v",
         "theorems": ["coupling energy", "locked-iff-energy-zero", "one-way-breaks-conservation"],
         "note": "Backs T2 substrate quality. See PROVENANCE.md."
       }

@@ -1,7 +1,7 @@
 ## Genesis of the Universe, Step by Step — Genesis Step-by-Step v3.1
 ### A World-Class AI Equation Book — Standalone Source of Truth (extended edition)
 
-> **Edition:** v3.1 (2026-07-21) · `research_universal_solver` · node N10 (superset over the v3.0
+> **Edition:** v3.1 (2026-07-21) · `solver-arc-private` · node N10 (superset over the v3.0
 > lineage, prepared for consolidation)
 > **Claim boundary:** readout-not-truth. Verified MATH ≠ true physics. Structure can be
 > machine-checked; physical numbers require laboratory measurement. Every sentence in this book that
@@ -5521,7 +5521,7 @@ it is allowed to support a claim above `Dr`.
 ### XII.1 Minimum Smoke Suite
 
 ```bash
-# From repo root: research_universal_solver/
+# From repo root:solver-arc-private
 
 # 1. Package health
 python -c "from anse_spine import NuclearCore, Domain, Spine; print('anse_spine OK')"

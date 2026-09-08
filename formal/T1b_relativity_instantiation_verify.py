@@ -13,7 +13,7 @@ Chain, each link already Th_coqc / already-verified, only the CHAINING is new he
   1. F(v) := obstruction(v, phi_f) = sum_i (v_i - phi_f_i)^2
      -- the relativity domain's OWN retained-load functional (relativity_closure_v0_2.py
      Gate B, used there to select the free path phi_i->phi_f).
-  2. Face 8 (research_universal_solver/formal/RDL_MetricReadout.v, `metric_form_readout`,
+  2. Face 8 solver-arc-privateformal/RDL_MetricReadout.v, `metric_form_readout`,
      Th_coqc, axiom-free): D2dir(F)(x,v,h) = 2h^2 * v^T H v reads off F's Hessian H
      EXACTLY, at every x, every h (location- and resolution-invariant).
   3. T1 (InfoRetentionMetricSkewDecomposition_attempt.v, `retention_skew_quadratic_form_

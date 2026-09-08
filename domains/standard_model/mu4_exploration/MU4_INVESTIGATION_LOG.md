@@ -14,11 +14,11 @@ formally verified (Coq + the twin-repo mirror process), matching the discipline 
 SM-G0.1–G0.6 work earlier this session.
 
 **Correction (2026-07-24, logged for the record):** this session initially reported PR #214
-(research_universal_solver, SM-G0.3/G0.4/G0.5) and PR #29 (readout_genesis mirror) as merged.
+(solver-arc-private, SM-G0.3/G0.4/G0.5) and PR #29 (readout_genesis mirror) as merged.
 They were **not** — both were still `OPEN` on GitHub when checked again before this commit. Root
 cause not fully diagnosed (the merge command may have been run against the wrong PR number, or
 its output wasn't verified at the time). Both were actually merged just now
-(`212b91c`→`e16a8c1` on research_universal_solver's `main`; `304811e` on readout_genesis's
+(`212b91c`→`e16a8c1` on solver-arc-private's `main`; `304811e` on readout_genesis's
 `main`) after the discrepancy was caught. **Lesson for future sessions: always re-verify PR
 merge state with a fresh `gh pr view <n> --json state,mergedAt` after any merge claim, don't
 trust the merge command's own stdout as sufficient confirmation.**

@@ -527,11 +527,11 @@ repo's own line of candidates and a parallel team's line of candidates in the si
 
 | candidate | repo/PR | method | mean error (disclosed run) | status |
 |---|---|---|---|---|
-| operational exchange closure v0.1 | readout_genesis PR #73 / research_universal_solver (this repo, mirrored) | moment-correction + replicate-IV, Reader/Record 5% agreement gate | **0.042948%** (single run), 0.335552% (500-seed mean, σ=1e-5) | **SELECTED — merged to main** |
-| `eiv_corrected_fit_v1.py` (this repo) | research_universal_solver PR #29 | moment-correction only, single tape | 0.63% mean (well-determined subset) | superseded, candidate branch kept for lineage |
-| bias-diagnosis final synthesis | research_universal_solver PR #28 / readout_genesis PR #72 | diagnosis only, no corrected estimator | n/a (diagnosis, not an estimator) | closed — the diagnosis question itself, not `M_n` |
-| RTM v3 synthesis | research_universal_solver PR #27 / readout_genesis PR #70 | naive OLS, both sign conventions reported | n/a (bias undiagnosed at the time) | superseded, candidate branch kept for lineage |
-| RTM v1 | research_universal_solver PR #26 / readout_genesis PR #68 | naive OLS | 20.5% (Reader), bias undiagnosed at the time | superseded, candidate branch kept for lineage |
+| operational exchange closure v0.1 | readout_genesis PR #73 / solver-arc-private (this repo, mirrored) | moment-correction + replicate-IV, Reader/Record 5% agreement gate | **0.042948%** (single run), 0.335552% (500-seed mean, σ=1e-5) | **SELECTED — merged to main** |
+| `eiv_corrected_fit_v1.py` (this repo) | solver-arc-private PR #29 | moment-correction only, single tape | 0.63% mean (well-determined subset) | superseded, candidate branch kept for lineage |
+| bias-diagnosis final synthesis | solver-arc-private PR #28 / readout_genesis PR #72 | diagnosis only, no corrected estimator | n/a (diagnosis, not an estimator) | closed — the diagnosis question itself, not `M_n` |
+| RTM v3 synthesis | solver-arc-private PR #27 / readout_genesis PR #70 | naive OLS, both sign conventions reported | n/a (bias undiagnosed at the time) | superseded, candidate branch kept for lineage |
+| RTM v1 | solver-arc-private PR #26 / readout_genesis PR #68 | naive OLS | 20.5% (Reader), bias undiagnosed at the time | superseded, candidate branch kept for lineage |
 | RTM v0.1 / v0.2 | readout_genesis PR #67 / #69 | naive OLS + semantic locking | n/a | superseded, candidate branches kept for lineage |
 
 **Selection reasoning.** The operational-closure candidate (readout_genesis PR #73) was selected
@@ -568,7 +568,7 @@ under a new "Statistics / estimation theory" section (errors-in-variables attenu
 Spearman 1904 / Fuller 1987; replicate instrumental-variable estimation: Wright 1928 / Reiersøl 1950).
 
 **What REMAINS explicitly OPEN — `M_n` itself is NOT closed, even after this merge.** Re-checked
-against the 5 closure criteria from the bias-diagnosis final synthesis (research_universal_solver
+against the 5 closure criteria from the bias-diagnosis final synthesis (solver-arc-private
 PR #28 / readout_genesis PR #72), now against the merged operational-closure candidate specifically:
 (1) fail-closed noise-robust estimator — MET more strongly than any prior candidate (genuinely
 refuses across 6 disclosed noise levels, tested with real regression tests); (2) multiple
@@ -782,7 +782,7 @@ bridge failed a real test."
 ## Fritzsch D_up bridge, denominator grid search, and the native-lifetime dynamic-range finding, 2026-07-25
 
 Three more candidates, all draft/unmerged, extending the physical-unit-bridge investigation after
-the self-critique above. Mirrors readout_genesis PR #87 (research_universal_solver PR #41).
+the self-critique above. Mirrors readout_genesis PR #87 (solver-arc-private PR #41).
 
 **Fritzsch D_up -> mother-potential shape bridge**: applying the regime-match discipline the
 self-critique demanded, uses `D_up=5.52 GeV` (real, PDG-CKM-fit_calibrated, from
