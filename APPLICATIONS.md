@@ -19,7 +19,7 @@ Status: **external research application; not a registered Genesis domain and not
 
 ### Current proposal map
 
-The EPSC proposal family now runs through `PROP-EPSC-28`.
+The EPSC proposal family now runs through `PROP-EPSC-29`.
 
 - `PROP-EPSC-01..15` — nested refinement, target-indexed omitted-tail bounds, energy/relative-energy adapters, and exact finite RK4-path certification.
 - `PROP-EPSC-16` — **OPEN** scalable/tight high-cutoff continuous-time enclosure.
@@ -35,6 +35,7 @@ The EPSC proposal family now runs through `PROP-EPSC-28`.
 - `PROP-EPSC-26` — row-aware Hadamard tightening.
 - `PROP-EPSC-27` — exact characteristic-zero `49x49` Jacobian and rational preconditioner `A=J_0^{-1}`; reproduced radius between `10^-59` and `10^-58`.
 - `PROP-EPSC-28` — componentwise exact coefficient-tensor/Hessian tightening; reproduced radius between `10^-28` and `10^-27`.
+- `PROP-EPSC-29` — deterministic search over structurally minimal `N=1` shell-row charts followed by exact recertification; the chosen chart improves the exact radius but remains in the same `10^-28` to `10^-27` decade.
 
 These are Toledo **proposal identifiers**, not canonical verified theorem codes.
 
@@ -83,13 +84,14 @@ More precisely:
 - the uniform Cramer/Hadamard certificate gives `10^-7934 < r <= 10^-7933`;
 - retaining one cofactor/Hessian majorant per selected row gives `10^-3878 < r <= 10^-3877`;
 - reconstructing the actual characteristic-zero selected matrix and inverting it exactly gives `1.28 < ||J_0^{-1}||_inf < 1.29` and `10^-59 < r <= 10^-58` with the previous scalar derivative envelope;
-- constructing the exact scaled `52x52x52` quadratic coefficient tensor and propagating componentwise rational derivative majorants gives `10^-28 < r <= 10^-27`, still with `q<=1/2` and with the radius certified to remain inside the declared local box.
+- constructing the exact scaled `52x52x52` quadratic coefficient tensor and propagating componentwise rational derivative majorants gives `10^-28 < r <= 10^-27`, still with `q<=1/2` and with the radius certified to remain inside the declared local box;
+- searching the finite family of structurally minimal shell-row charts with floating arithmetic only as a candidate-selection heuristic, then re-inverting and rechecking the selected chart exactly, gives a strictly larger certified radius than the first-independent chart, but not enough to cross into a larger power-of-ten decade.
 
 The exact tensor reproduction records 2096 nonzero coefficients and an exact induced infinity bilinear row-sum bound of 36000.
 
-The interpretation is important: the very small first radii were largely consequences of deliberately coarse proof envelopes. The later finite certificates remove determinant and scalar-majorant slack without weakening the local inverse criterion.
+The interpretation is important: the very small first radii were largely consequences of deliberately coarse proof envelopes. The later finite certificates remove determinant and scalar-majorant slack without weakening the local inverse criterion. The row-chart search also shows that simply changing which structurally minimal shell rows are selected is not, by itself, the dominant remaining source of conservatism.
 
-However, `10^-28` is still not a practical measurement tolerance. The open inner frontier is a branch-stable, noise-aware, entrywise/local interval certificate that yields a measurement-informative retained-state radius.
+However, `10^-28` is still not a practical measurement tolerance. The open inner frontier is a branch-stable, noise-aware, entrywise/local interval certificate that yields a measurement-informative retained-state radius. A nondirected floating structured interval probe may be used to choose the next exact target scale, but its `q` values are not mathematical certificates and must not be promoted as such.
 
 ## Outer completeness and composition
 
