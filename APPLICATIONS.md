@@ -12,14 +12,14 @@ Status: **external research application; not a registered Genesis root theorem**
 
 | Layer | Repository | Role |
 |---|---|---|
-| General finite-first mathematics | `morrocwi/information-discrete-math` | finite refinement, fail-closed certification, exact interval/inverse primitives |
+| General finite-first mathematics | `morrocwi/information-discrete-math` | finite refinement, fail-closed certification, exact interval/inverse and finite sample-chart primitives |
 | Equation/proposal provenance | `morrocwi/toledo` | EPSC/NSOBS proposal identifiers, lineage, tier/status, later canonical review |
 | Navier–Stokes specialization | `morrocwi/readout-problem-navier-stokes` | finite Fourier-Galerkin analysis, reproduction, observability, EPSC certificates, manuscripts |
 | Interpretation | `morrocwi/readout_genesis` | application map only; does not own the NS mathematics |
 
 ### Current proposal map
 
-The Toledo EPSC lineage now runs through `PROP-EPSC-36`; the newer bridge proposals are proposal/provenance records with placeholder `weld/P.??.v1` codes, not canonical verified theorem codes.
+The Toledo EPSC lineage now runs through `PROP-EPSC-37`; the newer bridge proposals are proposal/provenance records with placeholder `weld/P.??.v1` codes, not canonical verified theorem codes.
 
 - `PROP-EPSC-16` — **OPEN** scalable/tight high-cutoff outer comparison-path certification.
 - `PROP-EPSC-17` — inner/outer orthogonal composition once `rho_N` and `beta_N` are independently certified.
@@ -33,8 +33,9 @@ The Toledo EPSC lineage now runs through `PROP-EPSC-36`; the newer bridge propos
 - `PROP-EPSC-32` — **OPEN** arbitrary-finite-resolution certificate schema `N -> C_N=(S_N,H_N,A_N,B_N,q_N)`.
 - `PROP-EPSC-33` — fixed `N=1` bridge instance: `||x-x_*||_inf<=10^-17`, reproduced `q_1<=0.08058674502845<1/2`.
 - `PROP-EPSC-34` — fixed `N=2` positive bridge instance: `10^-79490<r_2<=10^-79489`, `q_2<=1/2`; mathematically positive but deliberately very conservative.
-- `PROP-EPSC-35` — fixed `N=1`, branch-conditioned **scaled-chart** noise propagation.
-- `PROP-EPSC-36` — **OPEN** raw finite-window/sample -> selected chart uncertainty plus branch capture.
+- `PROP-EPSC-35` — fixed `N=1`, branch-conditioned **scaled-Taylor-chart** noise propagation.
+- `PROP-EPSC-36` — **OPEN** explicit raw finite-sample/window spacing, sample-chart conditioning/noise propagation and branch capture.
+- `PROP-EPSC-37` — fixed `N=1` derivative-free finite-time sample-chart existence: sufficiently small nonzero sample spacing gives a local quotient chart from 49 actual shell-energy values, with no high-order numerical differentiation required.
 
 The NS energy-observability lineage remains distinct. `PROP-NSOBS-12` records exact `N=2` shell-energy earliest-order saturation at `R=30`; `PROP-NSOBS-13` records the three consecutive fixed-finite shell witnesses `N=1,2,3`. `PROP-NSOBS-07` remains OPEN: triad connectivity and three finite witnesses do not prove arbitrary-finite-`N` observable-minor independence.
 
@@ -84,7 +85,7 @@ The programme now separates four logically different questions.
 
 **2. Quantitative inner certification.** On an explicit symmetry-fixed branch, can observation uncertainty be converted into a rigorous retained-state radius `rho_N`?
 
-**3. Measurement interface.** Can raw finite samples/windows be converted into uncertainty for the selected inverse chart and can the correct local branch be certified?
+**3. Measurement interface.** Can actual finite samples/windows be given an explicit, well-conditioned certified observation map with raw uncertainty propagation and correct local branch capture?
 
 **4. Outer completion.** If a continuum target is requested, how much can remain outside the finite retained cutoff, quantified separately by `beta_N`?
 
@@ -104,15 +105,27 @@ q_N<1
 }
 \]
 
-The measurement-ready version inserts the still-partly-open upstream interface:
+At fixed `N=1`, the measurement-side structural route no longer requires reconstructing a 23rd-order derivative jet from noisy data. The application now has
+
+\[
+\boxed{
+\text{finite shell-energy values at finitely many times}
+\to
+\mathcal S_h
+\to
+\text{local quotient observability}
+}
+\]
+
+for every sufficiently small nonzero sample spacing `h`. The still-open measurement-ready version is quantitative:
 
 \[
 \boxed{
 \text{raw finite samples/windows}
 \to
-(H_N\text{ uncertainty},\text{branch certificate})
+(\mathcal S_h\text{ uncertainty},\text{branch certificate},q_h<1)
 \to
-\rho_N.
+\rho_1.
 }
 \]
 
@@ -176,7 +189,7 @@ For `N=2`, the nine-shell reader at `R=30` supports an explicit 245-dimensional 
 
 The tiny `N=2` radius is an existence-scale mathematical certificate, not a practical measurement tolerance. Its significance is that the structural -> square-chart -> positive-quantitative bridge has crossed **two distinct finite resolutions**.
 
-## New partial EPSC-19 closure at N=1
+## Partial EPSC-19 closure at N=1: chart noise
 
 The exact `N=1` center inverse also satisfies
 
@@ -184,7 +197,7 @@ The exact `N=1` center inverse also satisfies
 \|A_1\|_\infty<1.29.
 \]
 
-Using the already-certified conservative branch defect `q_1<=1/2`, if the true state `x` and candidate `z` are both certified to lie in the same `10^-17` local branch and the selected scaled chart satisfies
+Using the already-certified conservative branch defect `q_1<=1/2`, if the true state `x` and candidate `z` are both certified to lie in the same `10^-17` local branch and the selected scaled Taylor chart satisfies
 
 \[
 \|y-H_1(x)\|_\infty\le\sigma,
@@ -200,9 +213,41 @@ then
 }
 \]
 
-This is the application meaning of `PROP-EPSC-35`: **once the correct branch and chart uncertainty are supplied, noise-to-state propagation is no longer open at fixed N=1.**
+This is the application meaning of `PROP-EPSC-35`: **once the correct branch and Taylor-chart uncertainty are supplied, noise-to-state propagation is no longer open at fixed N=1.**
 
-What remains open is upstream and physically important: raw sensor/time-window data are not yet the selected high-order scaled chart. `PROP-EPSC-36` must provide a derivative-free finite sample/window map, a validated flow/Taylor remainder, and branch capture. Therefore `PROP-EPSC-19` and practical `PROP-EPSC-24` remain OPEN.
+## New derivative-free finite-sample bridge at N=1
+
+The upstream structural problem can be reformulated without numerically estimating high-order derivatives. Write the finite shell-energy output of the local Galerkin flow as
+
+\[
+I_s(\phi_t(x))=\sum_{n\ge0}a_{s,n}(x)t^n.
+\]
+
+Define the actual finite sample map
+
+\[
+\mathcal S_h(x)=
+\Bigl(
+I_0(\phi_{0h}(x)),\ldots,I_0(\phi_{23h}(x)),
+I_1(\phi_{0h}(x)),\ldots,I_1(\phi_{23h}(x)),
+I_2(x)
+\Bigr).
+\]
+
+The existing 49-row N=1 Taylor chart consists, up to row order, of all three shell rows at order zero and shell 0/1 rows at orders `1..23`. For the two 24-sample shell blocks, the lowest-order sample-to-Taylor change of basis is a Vandermonde matrix `V_{jn}=j^n`. Because the nodes `0,...,23` are distinct,
+
+\[
+\boxed{
+\det D\mathcal S_h(x_*)
+=c h^{552}+O(h^{553}),
+\qquad
+c=(\det V)^2\det J_{\rm jet}\ne0.
+}
+\]
+
+Thus some `eta>0` exists such that every `0<|h|<eta` gives a local finite-time quotient chart. This is `PROP-EPSC-37`. Its application-level meaning is important but narrow: **high-order numerical differentiation is no longer a structural prerequisite for fixed-N=1 local observability.**
+
+This does not yet make the system measurement-ready. `PROP-EPSC-36` still has to produce an explicit useful sample spacing, validated branch-wide sample Jacobian/remainder, noise-to-state conditioning and branch capture. Extremely small `h` may be mathematically invertible while numerically ill-conditioned, so the next step is not simply “take h -> 0”.
 
 The finite-window transfer identity from `PROP-EPSC-21`,
 
@@ -214,7 +259,7 @@ I_s(t_1)-I_s(t_0)
 -\int_{t_0}^{t_1}F_sdt,
 \]
 
-is one useful derivative-free input to that open measurement-interface problem; it is not itself the selected inverse chart.
+remains a separate derivative-free measurement summary. It is not the same object as the finite sample chart `S_h`.
 
 ## Finite-first meaning of “all N”
 
@@ -234,7 +279,7 @@ N<\infty
 Current ladder:
 
 \[
-N=1:\;\text{structural + tight local quantitative + branch-conditioned chart-noise},
+N=1:\;\text{structural + tight local quantitative + chart-noise + derivative-free finite-sample local existence},
 \]
 
 \[
@@ -245,7 +290,7 @@ N=2:\;\text{structural + conservative positive quantitative},
 N=3:\;\text{structural saturation only}.
 \]
 
-The next high-value tasks are therefore raw-window/sample -> chart plus branch certification at `N=1`, improving `N=2` conditioning, building an explicit quantitative `N=3` branch, and separately proving or refuting the arbitrary-finite-`N` structural minor-independence statement.
+The next high-value tasks are therefore explicit sample-spacing/conditioning/noise/branch certification at `N=1`, improving `N=2` conditioning, building an explicit quantitative `N=3` branch, and separately proving or refuting the arbitrary-finite-`N` structural minor-independence statement.
 
 ## Outer completeness and composition
 
@@ -275,6 +320,6 @@ For invariant energy readers, `G=T^3` is spatial translation. This is `PROP-EPSC
 
 ## What must NOT be imported into Genesis root
 
-The following remain application-local and must not be promoted into `READOUT_GENESIS_CORE.md`: finite Taylor-Green thresholds; claims that any finite cutoff is automatically continuum-complete; claims that local observability equals global reconstruction; claims that a raw Galerkin path equals the continuum projection; claims that continuum ontology has been disproved; claims that transfer connectivity or three fixed cutoffs prove all-resolution saturation; claims that the `10^-17` or `10^-79490` scales are practical physical sensor tolerances; claims of turbulent DNS adequacy from finite tests; claims of global Navier--Stokes regularity or blow-up; or claims that the Clay Millennium problem has been solved.
+The following remain application-local and must not be promoted into `READOUT_GENESIS_CORE.md`: finite Taylor-Green thresholds; claims that any finite cutoff is automatically continuum-complete; claims that local observability equals global reconstruction; claims that a raw Galerkin path equals the continuum projection; claims that continuum ontology has been disproved; claims that transfer connectivity or three fixed cutoffs prove all-resolution saturation; claims that the `10^-17` or `10^-79490` scales are practical physical sensor tolerances; claims that the existential finite-sample `eta` is already a practical sample rate; claims of turbulent DNS adequacy from finite tests; claims of global Navier--Stokes regularity or blow-up; or claims that the Clay Millennium problem has been solved.
 
 Genesis records the interpretation and the boundary. The mathematics remains owned and reproduced in the domain and finite-math repositories.
