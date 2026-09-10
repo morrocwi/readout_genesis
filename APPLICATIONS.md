@@ -19,7 +19,7 @@ Status: **external research application; not a registered Genesis domain and not
 
 ### Current proposal map
 
-The EPSC proposal family now runs through `PROP-EPSC-32`.
+The EPSC proposal family now runs through `PROP-EPSC-33`.
 
 - `PROP-EPSC-01..15` — nested refinement, target-indexed omitted-tail bounds, energy/relative-energy adapters, and exact finite RK4-path certification.
 - `PROP-EPSC-16` — **OPEN** scalable/tight high-cutoff continuous-time outer enclosure.
@@ -35,14 +35,15 @@ The EPSC proposal family now runs through `PROP-EPSC-32`.
 - `PROP-EPSC-30` — fixed-finite-`N` bridge from observability saturation modulo translation to an explicit square nonsingular local observation chart.
 - `PROP-EPSC-31` — quantitative inner-certificate bridge: a certified branch, preconditioner and `q_N<1` convert measurement/forward residual uncertainty into `rho_N`.
 - `PROP-EPSC-32` — **OPEN** arbitrary-finite-resolution constructive programme `N -> C_N=(S_N,H_N,A_N,B_N,q_N)`; this means a finite certificate schema for each finite input `N`, not an assumed completed `N=infinity` object.
+- `PROP-EPSC-33` — fixed finite `N=1` exact centered entrywise local inverse box `||x-x_*||_inf <= 10^-17` with reproduced `q=0.08058674502845<1/2`.
 
 These are Toledo **proposal identifiers**, not canonical verified theorem codes.
 
-The NS energy-observability proposal family remains separate. Its key unresolved all-resolution statement is `PROP-NSOBS-07`: earliest-order generic saturation at every finite resolution. The constructive triad-connectivity obstruction is closed, but sufficient arbitrary-finite-`N` minor nonvanishing/algebraic independence remains open.
+The NS energy-observability family is kept separate. `PROP-NSOBS-12` records exact `N=2` shell-energy earliest-order saturation at `R=30`, and `PROP-NSOBS-13` records the conjunction of exact shell saturation at the three consecutive finite cutoffs `N=1,2,3`. The key unresolved all-resolution statement remains `PROP-NSOBS-07`: earliest-order generic saturation at arbitrary finite resolution. Three finite cases and all-`N` triad connectivity strengthen the evidence but do not prove the arbitrary-finite-`N` minor-independence statement.
 
 ## Two completeness layers and the explicit bridge
 
-The application separates two logically different questions.
+The application separates three logically different questions.
 
 **Inner structural observability:** does a declared finite observation process distinguish the represented finite state, modulo unavoidable symmetry?
 
@@ -61,6 +62,14 @@ For the retained finite state, total and shell-energy readers are invariant unde
 \[
 \operatorname{rank}D\mathcal J_R\le\min(m_N+(m_N-1)R,d_N-3).
 \]
+
+Exact shell-energy reproduction now reaches the structural ceiling at its first admissible order for three consecutive fixed finite cutoffs:
+
+\[
+\boxed{(N,R_I^{min},d_N-3)=(1,23,49),(2,30,245),(3,39,681).}
+\]
+
+The `N=2` focused exact checker uses nine shells and gives rank `241` at `R=29` and rank `245` at `R=30`, so the middle case is both saturated and structurally earliest. This is finite evidence, not induction.
 
 When a fixed finite reader reaches rank `d_N-3` at a state where the translation action is locally free, an explicit transverse three-symmetry gauge leaves a `(d_N-3)`-dimensional slice. Selecting a nonzero square minor on that slice gives a local finite chart `H_N`:
 
@@ -124,17 +133,21 @@ and uses the exact rational center preconditioner. The reproduced defect is
 \boxed{q=0.08058674502845<1/2},
 \]
 
-so the `10^-17` state-space local inverse box is certified. This is substantially stronger than the earlier coarse positive-radius certificates but is still not, by itself, a physical sensor tolerance or a branch-capture theorem.
-
-The interpretation is important: the earliest tiny radii were largely consequences of deliberately coarse proof envelopes. Exact center inversion, componentwise coefficient propagation and centered entrywise enclosure progressively remove proof slack without weakening the fail-closed criterion.
+so the `10^-17` state-space local inverse box is certified and is registered in Toledo as `PROP-EPSC-33`. This is substantially stronger than the earlier coarse positive-radius certificates but is still not, by itself, a physical sensor tolerance or a branch-capture theorem.
 
 The open `N=1` inner frontier is now **measurement readiness**: certify that noisy observations and the reconstructed state lie in the same inverse branch and map a physically interpreted observation uncertainty into a useful `rho_1`.
 
 ## Resolution evidence and the arbitrary-finite-N target
 
-The already-certified exact saturation records include `N=1` total energy, `N=1` shell energy, `N=2` total energy, and `N=3` shell energy. A new exact `N=2` shell-energy checker is being reproduced at the structural minimum `R=30`; until that run finishes successfully it is evidence under test, not a promoted result.
+The exact structural record now includes `N=1` total energy, `N=1` shell energy, `N=2` total energy, `N=2` shell energy, and `N=3` shell energy. The new `N=2` shell result closes the missing structural middle case:
 
-Even if shell saturation is certified at `N=1,2,3`, this remains three finite cases, not a proof of `PROP-NSOBS-07`. The finite-first target is constructive:
+\[
+\operatorname{rank}D\mathcal J_{2,29}=241<245,
+\qquad
+\operatorname{rank}D\mathcal J_{2,30}=245=d_2-3.
+\]
+
+Even with shell saturation certified at `N=1,2,3`, this remains three finite cases, not a proof of `PROP-NSOBS-07`. The finite-first target is constructive:
 
 \[
 \boxed{
@@ -146,6 +159,8 @@ N<\infty
 \]
 
 This is the `PROP-EPSC-32` programme. “All N” means an algorithm/schema that accepts any particular finite `N` and emits a finite proof object; it does not require postulating a completed infinite-resolution state.
+
+The immediate next quantitative replication is therefore not another `N=2` rank computation. It is to take the already-saturated `N=2` shell jet at `R=30`, construct a 245-dimensional translation slice and square chart, and certify a preconditioned branch defect `q_2<1`, producing a fixed-finite `rho_2` certificate analogous to the `N=1` result.
 
 ## Transfer interpretation
 
@@ -235,7 +250,7 @@ If either certificate required for the declared target is absent, the correct st
 
 ## What must NOT be imported into Genesis root
 
-The following remain application-local and must not be promoted into `READOUT_GENESIS_CORE.md`: tested Taylor-Green cutoffs; finite numerical thresholds; claims that any finite cutoff is automatically continuum-complete; claims that local observability equals global reconstruction; claims that a raw Galerkin path equals the continuum projection; claims that continuum ontology has been disproved; claims that transfer connectivity proves all-resolution observability saturation; claims of turbulent DNS adequacy from finite tests; claims of global Navier--Stokes regularity or blow-up; or claims that the Clay Millennium problem has been solved.
+The following remain application-local and must not be promoted into `READOUT_GENESIS_CORE.md`: tested Taylor-Green cutoffs; finite numerical thresholds; claims that any finite cutoff is automatically continuum-complete; claims that local observability equals global reconstruction; claims that a raw Galerkin path equals the continuum projection; claims that continuum ontology has been disproved; claims that transfer connectivity or three fixed cutoffs prove all-resolution observability saturation; claims of turbulent DNS adequacy from finite tests; claims of global Navier--Stokes regularity or blow-up; or claims that the Clay Millennium problem has been solved.
 
 The application-level lesson is now sharper:
 
