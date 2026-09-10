@@ -12,171 +12,123 @@ Status: **external research application; not a registered Genesis domain and not
 
 | Layer | Repository | Role |
 |---|---|---|
-| General discrete mathematics | `morrocwi/information-discrete-math` | finite refinement, nested consistency, fail-closed certification, spectral and terminal energy-budget certificate machinery |
-| Equation/proposal provenance | `morrocwi/toledo` | proposal IDs, lineage, tier/status, later canonical registration if reviewed |
-| Navier–Stokes application | `morrocwi/readout-problem-navier-stokes` | NS-specific Fourier-Galerkin experiment, analytic certificate notes, reproduction, frozen results, claim boundary |
-| Interpretation | `morrocwi/readout_genesis` | explains how the application relates to retained/readout language; does not own the NS mathematics |
+| General discrete mathematics | `morrocwi/information-discrete-math` | finite refinement, fail-closed certification, spectral/energy-budget certificates, relative-energy adapter machinery |
+| Equation/proposal provenance | `morrocwi/toledo` | EPSC proposal IDs, lineage, tier/status, later canonical registration if reviewed |
+| Navier–Stokes application | `morrocwi/readout-problem-navier-stokes` | NS-specific analysis, finite experiments, proof notes, reproduction, manuscript and claim boundary |
+| Interpretation | `morrocwi/readout_genesis` | records the readout interpretation only; does not own the NS mathematics |
 
-### Registered proposal family
+### Toledo proposal family
 
-Toledo registration is split across:
+The live EPSC proposal family is split across Toledo proposal files and currently runs through `PROP-EPSC-15`:
 
-- `registry/proposals/discrete_epsilon_completion.json` — `PROP-EPSC-01..09`;
-- `registry/proposals/discrete_epsilon_completion_terminal_energy.json` — `PROP-EPSC-10..12`.
+- `PROP-EPSC-01` — nested readout consistency defect `delta_K`;
+- `PROP-EPSC-02` — NS Fourier boundary-energy diagnostic;
+- `PROP-EPSC-03` — fail-closed epsilon-completion gate;
+- `PROP-EPSC-04` — target-indexed omitted-information certificate target;
+- `PROP-EPSC-05` — terminal finite-Fourier non-identifiability obstruction;
+- `PROP-EPSC-06` — spectral `H^s -> L2` tail inequality;
+- `PROP-EPSC-07` — Leray-Hopf spacetime Fourier-tail certificate;
+- `PROP-EPSC-08` — Lipschitz readout lift;
+- `PROP-EPSC-09` — conditional terminal `H^s` certificate;
+- `PROP-EPSC-10` — terminal Leray-Hopf energy-budget certificate;
+- `PROP-EPSC-11` — energy-defect floor / energy-equality closure;
+- `PROP-EPSC-12` — Galerkin-to-continuum retained-record adapter obligation;
+- `PROP-EPSC-13` — residual-based Leray relative-energy adapter;
+- `PROP-EPSC-14` — finite unresolved Fourier residual tape;
+- `PROP-EPSC-15` — **OPEN** validated RK4 continuous-time residual enclosure.
 
-The core chain is:
+These are Toledo **proposal identifiers**, not canonical verified theorem codes.
 
-- `PROP-EPSC-01`: Nested Readout Consistency Defect
-  \[
-  \delta_K=\|R_Kx_{K+1}-x_K\|.
-  \]
-- `PROP-EPSC-02`: Navier-Stokes Fourier boundary-energy diagnostic.
-- `PROP-EPSC-03`: fail-closed epsilon-completion acceptance protocol.
-- `PROP-EPSC-04`: target-indexed computable omitted-information certificate.
-- `PROP-EPSC-05`: terminal finite-Fourier-readout non-identifiability obstruction.
-- `PROP-EPSC-06`: spectral `H^s -> L2` tail inequality.
-- `PROP-EPSC-07`: Leray-Hopf spacetime Fourier-tail certificate.
-- `PROP-EPSC-08`: Lipschitz readout lift.
-- `PROP-EPSC-09`: conditional terminal `H^s` certificate.
-- `PROP-EPSC-10`: terminal Leray-Hopf energy-budget tail certificate.
-- `PROP-EPSC-11`: energy-defect floor / energy-equality closure.
-- `PROP-EPSC-12`: **Open** finite-Galerkin to continuum retained-record adapter certificate.
+### What the application established
 
-These remain Toledo **proposal identifiers**, not canonical verified Toledo theorem codes.
-
-### What changed conceptually
-
-The earlier EPSC formulation asked for one undifferentiated object
+The original EPSC question
 
 \[
-\|(I-P_K)x\|\le\beta_K.
+\|(I-P_K)x\|\le\beta_K
 \]
 
-The Navier-Stokes analysis shows that this question is not well posed until the **target norm/readout and admissible class are declared**.
-
-For an unrestricted terminal Fourier state, finite retained coefficients cannot identify the omitted tail: one may add a divergence-free conjugate pair entirely outside the cutoff without changing the retained record. Thus a terminal finite record is not automatically a complete description of the richer target.
-
-For an unforced Leray-Hopf trajectory on the periodic three-torus, however,
+is too coarse unless the target norm/readout and admissible assumptions are declared. For unrestricted terminal Fourier data, retained low modes alone do not identify the omitted tail. For an unforced Leray-Hopf trajectory on the periodic three-torus, however,
 
 \[
 \|(I-P_K)u\|_{L^2(0,T;L^2_x)}
 \le
-\frac{\|u_0\|_2}{\sqrt{2\nu}(K+1)}.
+\frac{\|u_0\|_2}{\sqrt{2\nu}(K+1)},
 \]
 
-The right-hand side tends to zero. This is a genuine omitted-information certificate **for that declared spacetime norm**, not for arbitrary terminal reconstruction.
+so a genuine computable omitted-information certificate exists in that spacetime norm and tends to zero. Lipschitz readouts inherit the corresponding bound.
 
-A Lipschitz readout `Q` inherits the bound
-
-\[
-\|Q(u)-Q(P_Ku)\|\le L_Q\beta_K,
-\]
-
-and the time-averaged field has an `L2` tail bounded by `beta_K/sqrt(T)`.
-
-### Richer retained state: the energy tape
-
-The terminal no-go applies to terminal low-mode coefficients **alone**. It does not say no richer finite record can certify a terminal tail.
-
-The Navier-Stokes energy inequality identifies a useful retained tape:
+A richer terminal retained record can also certify a terminal tail. If `U_0` is a certified upper bound for `||u_0||_2`, `L_K(T)` a certified lower bound for `||P_Ku(T)||_2`, and `D_K(T)` a certified lower bound for `nu int ||grad P_Ku||_2^2 dt`, then
 
 \[
-\mathcal R_K^{EB}
-=
-\left(
-U_0,
-L_K(T),
-\underline D_K(T)
-\right),
-\]
-
-where
-
-- `U_0` is a certified upper bound on the initial `L2` norm;
-- `L_K(T)` is a certified lower bound on the actual retained terminal norm `||P_Ku(T)||_2`;
-- `D_K(T)` is a certified lower bound on retained viscous dissipation `nu int ||grad P_Ku||_2^2 dt`.
-
-Then the NS application proves at analytic (`Dr`) tier
-
-\[
-\boxed{
 \|(I-P_K)u(T)\|_2
 \le
-\left[U_0^2-L_K(T)^2-2\underline D_K(T)\right]^{1/2}
-}
+\left[U_0^2-L_K(T)^2-2D_K(T)\right]^{1/2}
 \]
 
-when the directional certificates are consistent. If the bracket is materially negative, the proper verdict is `HOLD`, not zero tail.
+when the directional certificates are consistent. The asymptotic floor of this energy-budget certificate is the energy-inequality slack; under energy equality that floor is zero.
 
-For exact projections, the squared certificate decomposes as
+### Relative-energy bridge to the finite solver
+
+The latest refinement attacks the gap between a finite Galerkin/RK4 trajectory and the actual continuum solution rather than silently identifying them.
+
+Let `v(t)` be a smooth divergence-free finite Fourier comparison path, let
 
 \[
-(\beta_K^{EB})^2
-=
-\|(I-P_K)u(T)\|_2^2
-+2\nu\int_0^T\|\nabla(I-P_K)u\|_2^2dt
-+\mathcal D_E(T),
+r=\partial_t v+P[(v\cdot\nabla)v]-\nu\Delta v-Pf,
 \]
 
-where `D_E(T)` is the energy-inequality slack. Consequently the asymptotic floor of this certificate is exactly that slack. If energy equality is independently justified, the floor is zero and the terminal certificate closes as `K -> infinity`.
+and define
+
+\[
+A_T=2\int_0^T\|\nabla v\|_\infty dt,
+\qquad
+B_T=\int_0^T\|r\|_{H^{-1}}^2dt.
+\]
+
+The NS application records the standard relative-energy/Gronwall estimate in EPSC form:
+
+\[
+\sup_{0\le t\le T}\|u(t)-v(t)\|_2^2
+\le
+e^{A_T}\left(e_0^2+\frac{B_T}{\nu}\right).
+\]
+
+If `v(T)` is supported in the retained cutoff, the same right-hand side supplies a terminal omitted-tail bound for the actual solution. For a finite Fourier path, the unresolved nonlinear residual outside the retained cube is a finite triad tape, so the snapshot `H^{-1}` residual is finite-computable.
+
+The remaining end-to-end numerical obligation is `PROP-EPSC-15`: construct a validated continuous-time interpolation of the actual floating-point RK4 tape and rigorous upper enclosures
+
+\[
+A_T\le \overline A_T,
+\qquad
+B_T\le \overline B_T.
+\]
+
+Nodewise residual samples or finite-backend agreement are not enough.
 
 ### Genesis interpretation
 
-This application sharpens a central readout discipline without turning the application into ontology:
+This application sharpens a readout discipline without turning it into ontology:
 
-> completeness is completeness **for a declared reader/norm under declared assumptions and a sufficient retained record**.
+> completeness is completeness **for a declared reader/norm, under declared assumptions, from a sufficient retained record plus a proved adapter**.
 
-The retained record is therefore itself part of the mathematical problem. Terminal low modes are insufficient, while low-mode energy plus accumulated dissipation and an initial budget can be sufficient for a rigorous upper bound once linked to the actual continuum projection.
-
-The pattern is
+The current end-to-end chain is
 
 \[
-\text{finite retained record}
-+\text{proved adapter}
-+\text{proved omitted-distinction bound in target }Y
-\Longrightarrow
-\text{epsilon-completeness in }Y.
+\text{finite RK4 tape}
+\xrightarrow{\text{validated interpolation}}
+(\overline A_T,\overline B_T)
+\xrightarrow{\text{relative energy}}
+\beta_K^{RE}
+\xrightarrow{\text{reader/gate}}
+\varepsilon\text{-certificate}.
 \]
 
-Without the required bridge, the verdict remains `HOLD`.
-
-This preserves the Genesis claim-boundary rule: `[finite_diagnostic]` evidence must not be promoted merely because it fits the narrative. The positive certificates are owned by the NS/IDM mathematical layers; Genesis records only their interpretation.
-
-### Current frontier
-
-The sharp next problem is `PROP-EPSC-12`:
-
-```text
-finite Galerkin output
-    -> certified directional adapter error
-actual continuum projected terminal energy + dissipation tape
-    -> terminal energy-budget certificate
-rigorous terminal beta_K
-```
-
-The project's finite Galerkin values cannot be silently substituted for the actual `P_Ku` quantities. A certified Galerkin-to-continuum adapter is required.
+Until the validated interpolation/enclosure step is supplied, a continuum terminal verdict remains `HOLD` for the current numerical RK4 output.
 
 ### What must NOT be imported into the Genesis root
 
-The following remain application-local and must not be written into the root canon as universal facts:
+The following remain application-local: Taylor-Green cutoff values and numerical thresholds; claims that K=5 is continuum-complete; claims that a raw Galerkin trajectory equals the continuum projection; claims that continuum ontology has been disproved; claims that the Clay Navier-Stokes problem has been solved; or claims of turbulent DNS adequacy from the short finite run.
 
-- the recorded Taylor-Green values at K=1..5;
-- the specific numerical diagnostic thresholds;
-- the statement that K=5 is continuum-complete;
-- the claim that every terminal Navier-Stokes state has a finite-record-only `beta_K`;
-- the claim that the project's current finite Galerkin output is already a certified continuum projection;
-- claims that continuum ontology has been disproved;
-- claims that the Clay Navier-Stokes problem has been solved;
-- claims of physical/DNS turbulence adequacy from the short finite run.
+### Current frontier
 
-### What remains open
-
-Two routes to terminal certification are now explicit rather than conflated:
-
-1. a separately certified pointwise `H^s` bound gives
-   \[
-   \|(I-P_K)u(T)\|_2\le\frac{M_s(T)}{(K+1)^s};
-   \]
-2. a certified retained energy/dissipation tape gives the a-posteriori energy-budget bound above.
-
-What is still missing for the existing solver is the certified adapter from its finite recurrence to the actual continuum projected tape. Genesis should preserve this boundary rather than convert partial mathematical closure into a universal claim.
+`PROP-EPSC-15` is the sharp implementation frontier. The analytic relative-energy adapter is available, and the finite residual tape is available; what remains is a validated continuous-time enclosure of the RK4 tape. Genesis preserves that boundary rather than promoting the partial closure into a universal theorem.
