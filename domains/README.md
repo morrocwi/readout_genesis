@@ -48,3 +48,11 @@ A registered domain proves its **structural / formal** layer. It does **not** cl
 semantics until a **calibrated encoding** from retained states to the domain's registry is supplied
 and independently checked. That open obstruction is stated in each release — discoverability of the
 form is not truth of the content.
+
+## External applications — not registered domains
+
+Application studies that use Readout/retention language but have not passed this directory's domain-registration contract stay **outside** the registered-domain table. Their numerical or mathematical claims remain owned by their source repositories.
+
+Current map: [`../APPLICATIONS.md`](../APPLICATIONS.md).
+
+The 2026-09-10 Navier-Stokes **Discrete Epsilon-Completion** lane is listed there as an external `finite_diagnostic` application. Its general algorithm belongs to `morrocwi/information-discrete-math`, its proposal/equation provenance belongs to `morrocwi/toledo`, and its NS evidence belongs to `morrocwi/readout-problem-navier-stokes`. It is **not** a Genesis root theorem and **not** a registered `domains/navier_stokes/` leaf.
