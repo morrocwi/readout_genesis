@@ -55,4 +55,4 @@ Application studies that use Readout/retention language but have not passed this
 
 Current map: [`../APPLICATIONS.md`](../APPLICATIONS.md).
 
-The 2026-09-10 Navier-Stokes **Discrete Epsilon-Completion** lane is listed there as an external `finite_diagnostic` application. Its general algorithm belongs to `morrocwi/information-discrete-math`, its proposal/equation provenance belongs to `morrocwi/toledo`, and its NS evidence belongs to `morrocwi/readout-problem-navier-stokes`. It is **not** a Genesis root theorem and **not** a registered `domains/navier_stokes/` leaf.
+The 2026-09-10 Navier-Stokes **Discrete Epsilon-Completion** lane is listed there as an external application with mixed, explicitly separated tiers: finite diagnostics, standard analytic (`Dr`) certificates, and open adapter obligations through `PROP-EPSC-15`. Its general executable mathematics belongs to `morrocwi/information-discrete-math`, proposal/equation provenance to `morrocwi/toledo`, and NS proofs/evidence/manuscript to `morrocwi/readout-problem-navier-stokes`. It is **not** a Genesis root theorem and **not** a registered `domains/navier_stokes/` leaf.
