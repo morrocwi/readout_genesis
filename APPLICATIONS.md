@@ -4,7 +4,7 @@ This file maps **applications of the Readout/retention programme** without promo
 
 Rule: an external application may cite Genesis concepts, but its mathematical/empirical claims remain owned by the repository where they are proved or tested. Application evidence does not flow backward into `READOUT_GENESIS_CORE.md` automatically.
 
-## Navier–Stokes / Discrete Epsilon-Completion
+## Navier–Stokes / Energy Observability / Discrete Epsilon-Completion
 
 Status: **external research application; not a registered Genesis domain and not a root theorem**.
 
@@ -12,124 +12,137 @@ Status: **external research application; not a registered Genesis domain and not
 
 | Layer | Repository | Role |
 |---|---|---|
-| General discrete mathematics | `morrocwi/information-discrete-math` | finite refinement, fail-closed certification, spectral/energy-budget certificates, relative-energy and exact-tape adapter machinery |
-| Equation/proposal provenance | `morrocwi/toledo` | EPSC proposal IDs, lineage, tier/status, later canonical registration if reviewed |
-| Navier–Stokes application | `morrocwi/readout-problem-navier-stokes` | NS-specific analysis, finite experiments, proof notes, reproduction, manuscript and claim boundary |
+| General discrete mathematics | `morrocwi/information-discrete-math` | finite refinement, fail-closed certification, spectral/energy-budget certificates, relative-energy and exact-tape adapters, observable-to-continuum composition |
+| Equation/proposal provenance | `morrocwi/toledo` | EPSC and NSOBS proposal IDs, lineage, tier/status, later canonical registration if reviewed |
+| Navier–Stokes application | `morrocwi/readout-problem-navier-stokes` | NS-specific observability analysis, finite experiments, proof notes, reproduction, manuscripts and claim boundary |
 | Interpretation | `morrocwi/readout_genesis` | records the readout interpretation only; does not own the NS mathematics |
 
-### Toledo proposal family
+### Toledo proposal families
 
-The live EPSC proposal family currently runs through `PROP-EPSC-16`:
+The EPSC family now runs through `PROP-EPSC-19`:
 
-- `PROP-EPSC-01` — nested readout consistency defect `delta_K`;
-- `PROP-EPSC-02` — NS Fourier boundary-energy diagnostic;
-- `PROP-EPSC-03` — fail-closed epsilon-completion gate;
-- `PROP-EPSC-04` — target-indexed omitted-information certificate target;
-- `PROP-EPSC-05` — terminal finite-Fourier non-identifiability obstruction;
-- `PROP-EPSC-06` — spectral `H^s -> L2` tail inequality;
-- `PROP-EPSC-07` — Leray-Hopf spacetime Fourier-tail certificate;
-- `PROP-EPSC-08` — Lipschitz readout lift;
-- `PROP-EPSC-09` — conditional terminal `H^s` certificate;
-- `PROP-EPSC-10` — terminal Leray-Hopf energy-budget certificate;
-- `PROP-EPSC-11` — energy-defect floor / energy-equality closure;
-- `PROP-EPSC-12` — Galerkin-to-continuum retained-record adapter obligation;
-- `PROP-EPSC-13` — residual-based Leray relative-energy adapter;
-- `PROP-EPSC-14` — finite Fourier residual tape;
-- `PROP-EPSC-15` — exact-dyadic piecewise-linear continuous-time enclosure of a recorded RK4 tape;
-- `PROP-EPSC-16` — **OPEN** scalable/tight high-cutoff certified enclosure.
+- `PROP-EPSC-01..15` — nested-refinement, target-indexed tail, energy/relative-energy and exact-dyadic RK4 path certificate family;
+- `PROP-EPSC-16` — **OPEN** scalable/tight high-cutoff certified enclosure;
+- `PROP-EPSC-17` — observable-to-continuum orthogonal composition certificate;
+- `PROP-EPSC-18` — **OPEN** certified energy-jet inversion radius;
+- `PROP-EPSC-19` — **OPEN** noise-stable measurement-to-continuum certificate.
+
+The NS energy-observability family is registered as `PROP-NSOBS-01..08`:
+
+- `PROP-NSOBS-01` — finite real phase-space dimension;
+- `PROP-NSOBS-02` — scalar total-energy Lie-jet ceiling and minimum structural depth;
+- `PROP-NSOBS-03` — shell-energy Lie-jet ceiling and minimum structural depth;
+- `PROP-NSOBS-04` — positive-viscosity rank universality;
+- `PROP-NSOBS-05` — four exact finite saturation records;
+- `PROP-NSOBS-06` — measurement-channel versus temporal-depth tradeoff;
+- `PROP-NSOBS-07` — **OPEN** all-resolution earliest-order saturation conjecture;
+- `PROP-NSOBS-08` — local finite-state completeness modulo spatial translations at certified saturation cases.
 
 These are Toledo **proposal identifiers**, not canonical verified theorem codes.
 
-### What the application established
+### Two completeness layers
 
-The original EPSC question
+The synthesis distinguishes two different questions.
+
+**Inner completeness:** does the declared observation process determine the represented finite state, modulo unavoidable symmetry?
+
+**Outer completeness:** how much unrepresented continuum information can remain above the cutoff?
+
+For a Fourier cutoff `P_N`, the energy-observability work addresses the first layer. EPSC addresses the second. Neither substitutes for the other.
+
+At the finite observability layer, total and shell energy readers are translation-invariant. Structural rank ceilings are
 
 \[
-\|(I-P_K)x\|\le\beta_K
+\operatorname{rank}D\mathcal E_R\le\min(R+1,d_N-3),
 \]
 
-is too coarse unless the target norm/readout and admissible assumptions are declared. For unrestricted terminal Fourier data, retained low modes alone do not identify the omitted tail. For an unforced Leray-Hopf trajectory on the periodic three-torus, however,
+\[
+\operatorname{rank}D\mathcal J_R\le\min(m_N+(m_N-1)R,d_N-3).
+\]
+
+Exact modular certificates reach the translation ceiling at the earliest structurally allowed order in four recorded reader-resolution cases: `N=1` total and shell energy, `N=2` total energy, and `N=3` shell energy. This yields local quotient-state identifiability in those cases, not a global or noise-stable inverse.
+
+At the outer layer, EPSC provides target-specific omitted-tail bounds. For an unforced Leray-Hopf trajectory,
 
 \[
-\|(I-P_K)u\|_{L^2(0,T;L^2_x)}
+\|(I-P_N)u\|_{L^2(0,T;L^2_x)}
 \le
-\frac{\|u_0\|_2}{\sqrt{2\nu}(K+1)},
+\frac{\|u_0\|_2}{\sqrt{2\nu}(N+1)}.
 \]
 
-so a genuine computable omitted-information certificate exists in that spacetime norm and tends to zero. Lipschitz readouts inherit the corresponding bound.
+A terminal residual-based route uses a certified comparison path and the relative-energy adapter. `PROP-EPSC-15` supplies one exact finite construction from stored binary64 RK4 nodes to a rational piecewise-linear path with certified residual summaries.
 
-A richer terminal retained record can also certify a terminal tail. If `U_0` is a certified upper bound for `||u_0||_2`, `L_K(T)` a certified lower bound for `||P_Ku(T)||_2`, and `D_K(T)` a certified lower bound for `nu int ||grad P_Ku||_2^2 dt`, then
+### Observable-to-continuum composition
+
+The two layers connect only after the finite observation side supplies a **quantitative** retained-state radius.
+
+If a certified inversion gives
 
 \[
-\|(I-P_K)u(T)\|_2
+\inf_{g\in G}\|P_Nu(T)-g\widehat x_N\|_2\le\rho_N
+\]
+
+and EPSC independently gives
+
+\[
+\|(I-P_N)u(T)\|_2\le\beta_N,
+\]
+
+then orthogonality of the retained and omitted Fourier subspaces gives
+
+\[
+\boxed{
+\inf_{g\in G}\|u(T)-g\widehat x_N\|_2
 \le
-\left[U_0^2-L_K(T)^2-2D_K(T)\right]^{1/2}
+\sqrt{\rho_N^2+\beta_N^2}.
+}
 \]
 
-when the directional certificates are consistent. The asymptotic floor of this energy-budget certificate is the energy-inequality slack; under energy equality that floor is zero.
+For the NS energy-reader application, `G=T^3` is spatial translation. This is the application-level result registered as `PROP-EPSC-17`.
 
-### Relative-energy bridge and exact tape enclosure
+The square-root composition matters conceptually: uncertainty inside the retained representation and uncertainty outside it are separate orthogonal budgets. A final tolerance verdict requires both.
 
-Let `v(t)` be a divergence-free finite Fourier comparison path, let
+### Why rank alone is not a certificate
 
-\[
-r=\partial_t v+P[(v\cdot\nabla)v]-\nu\Delta v-Pf,
-\]
+A saturated observation Jacobian establishes local differential identifiability modulo symmetry. It does **not** automatically give a constructive inverse, a certified branch, a condition-number bound, or a retained-state error radius `rho_N` under noisy measurements.
 
-and define
+Therefore `PROP-EPSC-18` remains open. The practical noisy extension `PROP-EPSC-19` remains open as well. The all-resolution saturation conjecture `PROP-NSOBS-07` is another independent open problem.
 
-\[
-A_T=2\int_0^T\|\nabla v\|_\infty dt,
-\qquad
-B_T=\int_0^T\|r\|_{H^{-1}}^2dt.
-\]
-
-The NS application records the standard relative-energy/Gronwall estimate in EPSC form:
-
-\[
-\sup_{0\le t\le T}\|u(t)-v(t)\|_2^2
-\le
-e^{A_T}\left(e_0^2+\frac{B_T}{\nu}\right).
-\]
-
-If `v(T)` is supported in the retained cutoff, the same right-hand side bounds the terminal omitted tail of the actual Leray-Hopf solution.
-
-`PROP-EPSC-15` supplies the previously missing numerical construction for a recorded finite RK4 tape. Each stored binary64 component is interpreted as its **exact dyadic rational**, each node is Leray-projected exactly, and consecutive nodes are joined by a continuous piecewise-linear finite Fourier path `v_h`. Because the Fourier coefficients are affine on each time cell, the quadratic Navier-Stokes residual is a degree-at-most-two polynomial in normalized cell time. Consequently its homogeneous `H^{-1}` norm squared is degree at most four and can be integrated exactly with rational arithmetic. A coefficientwise Fourier `l1` majorant gives a rigorous upper bound for the gradient integral, and the exponential is enclosed from above by an exact rational Taylor/geometric-remainder bound.
-
-The finite path therefore supplies
-
-\[
-A_T\le\overline A_T,
-\qquad
-B_T\le\overline B_T
-\]
-
-without identifying the RK4 recurrence with the exact PDE flow. The path's PDE defect is explicitly paid for in `B_bar`.
+These should not be confused with `PROP-EPSC-16`, which concerns the cost and tightness of the already-valid outer path certificate at larger cutoff and horizon.
 
 ### Genesis interpretation
 
-This application sharpens a readout discipline without turning it into ontology:
+This application sharpens the readout discipline without turning it into ontology:
 
-> completeness is completeness **for a declared reader/norm, under declared assumptions, from a sufficient retained record plus a proved/certified adapter**.
+> completeness has at least two separable components: completeness **inside the chosen representation for a declared reader**, and a proved bound on what the representation **leaves outside**.
 
-The implemented chain is now
+The application-level chain is now
 
 \[
-\text{stored finite RK4 tape}
-\xrightarrow{\text{exact dyadic capture + piecewise-linear path}}
-(\overline A_T,\overline B_T)
-\xrightarrow{\text{relative energy (Dr)}}
-\beta_K^{RE}
-\xrightarrow{\text{reader/gate}}
-\varepsilon\text{-certificate}.
+\text{measurements}
+\to
+\rho_N\text{ for the retained quotient state}
+\to
+\beta_N\text{ for the omitted tail}
+\to
+\sqrt{\rho_N^2+\beta_N^2}
+\to
+\varepsilon\text{-verdict}.
 \]
 
-This is a closure for the **declared finite comparison-path problem**, not a claim that every finite truncation is accurate or that continuum dynamics are ontologically discrete.
+If either certificate is missing, the correct status is `HOLD`.
 
 ### What must NOT be imported into the Genesis root
 
-The following remain application-local: Taylor-Green cutoff values and numerical thresholds; claims that K=5 (or any tested cutoff) is automatically continuum-complete; claims that a raw Galerkin trajectory equals the continuum projection; claims that continuum ontology has been disproved; claims that the Clay Navier-Stokes problem has been solved; claims of turbulent DNS adequacy from a short finite run; or claims that the present conservative certificate will remain tight at arbitrarily large `K` and `T`.
+The following remain application-local: Taylor-Green cutoff values and numerical thresholds; claims that any tested cutoff is automatically continuum-complete; claims that local observability rank equals global/stable reconstruction; claims that a raw Galerkin trajectory equals the continuum projection; claims that continuum ontology has been disproved; claims that the Clay Navier-Stokes problem has been solved; claims of turbulent DNS adequacy from a short finite run; or claims that the current conservative certificate remains tight at arbitrarily large `N` and `T`.
 
-### Current frontier
+### Current application frontiers
 
-The logical enclosure gap formerly labelled `PROP-EPSC-15` now has a concrete finite construction. The next application-local frontier is `PROP-EPSC-16`: make certified `A_bar/B_bar` evaluation scalable and sufficiently tight at larger Fourier cutoffs and longer horizons. Genesis records this boundary but does not promote either the EPSC-15 construction or its future optimisations into root ontology.
+The combined programme now has distinct frontiers rather than one undifferentiated gap:
+
+- `PROP-NSOBS-07`: prove/refute earliest-order generic saturation for every finite Fourier resolution;
+- `PROP-EPSC-18`: construct a quantitative certified inverse from energy jets to a retained-state quotient radius;
+- `PROP-EPSC-19`: propagate measurement/noise/differentiation uncertainty through that inverse and the EPSC tail bound;
+- `PROP-EPSC-16`: independently improve tightness and computational scaling of outer certification at larger cutoff/horizon.
+
+Genesis records these boundaries and their interpretation only. It does not promote them into root ontology.
