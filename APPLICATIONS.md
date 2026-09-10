@@ -12,14 +12,14 @@ Status: **external research application; not a registered Genesis domain and not
 
 | Layer | Repository | Role |
 |---|---|---|
-| General discrete mathematics | `morrocwi/information-discrete-math` | finite refinement, fail-closed certification, spectral/energy-budget certificates, relative-energy adapter machinery |
+| General discrete mathematics | `morrocwi/information-discrete-math` | finite refinement, fail-closed certification, spectral/energy-budget certificates, relative-energy and exact-tape adapter machinery |
 | Equation/proposal provenance | `morrocwi/toledo` | EPSC proposal IDs, lineage, tier/status, later canonical registration if reviewed |
 | Navier–Stokes application | `morrocwi/readout-problem-navier-stokes` | NS-specific analysis, finite experiments, proof notes, reproduction, manuscript and claim boundary |
 | Interpretation | `morrocwi/readout_genesis` | records the readout interpretation only; does not own the NS mathematics |
 
 ### Toledo proposal family
 
-The live EPSC proposal family is split across Toledo proposal files and currently runs through `PROP-EPSC-15`:
+The live EPSC proposal family currently runs through `PROP-EPSC-16`:
 
 - `PROP-EPSC-01` — nested readout consistency defect `delta_K`;
 - `PROP-EPSC-02` — NS Fourier boundary-energy diagnostic;
@@ -34,8 +34,9 @@ The live EPSC proposal family is split across Toledo proposal files and currentl
 - `PROP-EPSC-11` — energy-defect floor / energy-equality closure;
 - `PROP-EPSC-12` — Galerkin-to-continuum retained-record adapter obligation;
 - `PROP-EPSC-13` — residual-based Leray relative-energy adapter;
-- `PROP-EPSC-14` — finite unresolved Fourier residual tape;
-- `PROP-EPSC-15` — **OPEN** validated RK4 continuous-time residual enclosure.
+- `PROP-EPSC-14` — finite Fourier residual tape;
+- `PROP-EPSC-15` — exact-dyadic piecewise-linear continuous-time enclosure of a recorded RK4 tape;
+- `PROP-EPSC-16` — **OPEN** scalable/tight high-cutoff certified enclosure.
 
 These are Toledo **proposal identifiers**, not canonical verified theorem codes.
 
@@ -67,11 +68,9 @@ A richer terminal retained record can also certify a terminal tail. If `U_0` is 
 
 when the directional certificates are consistent. The asymptotic floor of this energy-budget certificate is the energy-inequality slack; under energy equality that floor is zero.
 
-### Relative-energy bridge to the finite solver
+### Relative-energy bridge and exact tape enclosure
 
-The latest refinement attacks the gap between a finite Galerkin/RK4 trajectory and the actual continuum solution rather than silently identifying them.
-
-Let `v(t)` be a smooth divergence-free finite Fourier comparison path, let
+Let `v(t)` be a divergence-free finite Fourier comparison path, let
 
 \[
 r=\partial_t v+P[(v\cdot\nabla)v]-\nu\Delta v-Pf,
@@ -93,42 +92,44 @@ The NS application records the standard relative-energy/Gronwall estimate in EPS
 e^{A_T}\left(e_0^2+\frac{B_T}{\nu}\right).
 \]
 
-If `v(T)` is supported in the retained cutoff, the same right-hand side supplies a terminal omitted-tail bound for the actual solution. For a finite Fourier path, the unresolved nonlinear residual outside the retained cube is a finite triad tape, so the snapshot `H^{-1}` residual is finite-computable.
+If `v(T)` is supported in the retained cutoff, the same right-hand side bounds the terminal omitted tail of the actual Leray-Hopf solution.
 
-The remaining end-to-end numerical obligation is `PROP-EPSC-15`: construct a validated continuous-time interpolation of the actual floating-point RK4 tape and rigorous upper enclosures
+`PROP-EPSC-15` supplies the previously missing numerical construction for a recorded finite RK4 tape. Each stored binary64 component is interpreted as its **exact dyadic rational**, each node is Leray-projected exactly, and consecutive nodes are joined by a continuous piecewise-linear finite Fourier path `v_h`. Because the Fourier coefficients are affine on each time cell, the quadratic Navier-Stokes residual is a degree-at-most-two polynomial in normalized cell time. Consequently its homogeneous `H^{-1}` norm squared is degree at most four and can be integrated exactly with rational arithmetic. A coefficientwise Fourier `l1` majorant gives a rigorous upper bound for the gradient integral, and the exponential is enclosed from above by an exact rational Taylor/geometric-remainder bound.
+
+The finite path therefore supplies
 
 \[
-A_T\le \overline A_T,
+A_T\le\overline A_T,
 \qquad
-B_T\le \overline B_T.
+B_T\le\overline B_T
 \]
 
-Nodewise residual samples or finite-backend agreement are not enough.
+without identifying the RK4 recurrence with the exact PDE flow. The path's PDE defect is explicitly paid for in `B_bar`.
 
 ### Genesis interpretation
 
 This application sharpens a readout discipline without turning it into ontology:
 
-> completeness is completeness **for a declared reader/norm, under declared assumptions, from a sufficient retained record plus a proved adapter**.
+> completeness is completeness **for a declared reader/norm, under declared assumptions, from a sufficient retained record plus a proved/certified adapter**.
 
-The current end-to-end chain is
+The implemented chain is now
 
 \[
-\text{finite RK4 tape}
-\xrightarrow{\text{validated interpolation}}
+\text{stored finite RK4 tape}
+\xrightarrow{\text{exact dyadic capture + piecewise-linear path}}
 (\overline A_T,\overline B_T)
-\xrightarrow{\text{relative energy}}
+\xrightarrow{\text{relative energy (Dr)}}
 \beta_K^{RE}
 \xrightarrow{\text{reader/gate}}
 \varepsilon\text{-certificate}.
 \]
 
-Until the validated interpolation/enclosure step is supplied, a continuum terminal verdict remains `HOLD` for the current numerical RK4 output.
+This is a closure for the **declared finite comparison-path problem**, not a claim that every finite truncation is accurate or that continuum dynamics are ontologically discrete.
 
 ### What must NOT be imported into the Genesis root
 
-The following remain application-local: Taylor-Green cutoff values and numerical thresholds; claims that K=5 is continuum-complete; claims that a raw Galerkin trajectory equals the continuum projection; claims that continuum ontology has been disproved; claims that the Clay Navier-Stokes problem has been solved; or claims of turbulent DNS adequacy from the short finite run.
+The following remain application-local: Taylor-Green cutoff values and numerical thresholds; claims that K=5 (or any tested cutoff) is automatically continuum-complete; claims that a raw Galerkin trajectory equals the continuum projection; claims that continuum ontology has been disproved; claims that the Clay Navier-Stokes problem has been solved; claims of turbulent DNS adequacy from a short finite run; or claims that the present conservative certificate will remain tight at arbitrarily large `K` and `T`.
 
 ### Current frontier
 
-`PROP-EPSC-15` is the sharp implementation frontier. The analytic relative-energy adapter is available, and the finite residual tape is available; what remains is a validated continuous-time enclosure of the RK4 tape. Genesis preserves that boundary rather than promoting the partial closure into a universal theorem.
+The logical enclosure gap formerly labelled `PROP-EPSC-15` now has a concrete finite construction. The next application-local frontier is `PROP-EPSC-16`: make certified `A_bar/B_bar` evaluation scalable and sufficiently tight at larger Fourier cutoffs and longer horizons. Genesis records this boundary but does not promote either the EPSC-15 construction or its future optimisations into root ontology.
