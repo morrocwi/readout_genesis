@@ -12,31 +12,35 @@ Status: **external research application; not a registered Genesis domain and not
 
 | Layer | Repository | Role |
 |---|---|---|
-| General finite-first mathematics | `morrocwi/information-discrete-math` | refinement, fail-closed certification, target-indexed tail bounds, relative-energy and interval-inverse primitives |
+| General finite-first mathematics | `morrocwi/information-discrete-math` | refinement, fail-closed certification, target-indexed tail bounds, relative-energy and exact interval/inverse primitives |
 | Equation/proposal provenance | `morrocwi/toledo` | EPSC/NSOBS proposal identifiers, lineage, tier/status, later canonical review |
 | Navier–Stokes specialization | `morrocwi/readout-problem-navier-stokes` | finite Fourier-Galerkin analysis, reproduction, observability, EPSC certificates, manuscripts |
 | Interpretation | `morrocwi/readout_genesis` | application map only; does not own the NS mathematics |
 
-### Current EPSC proposal map
+### Current proposal map
 
-The EPSC proposal family now runs through `PROP-EPSC-26`.
+The EPSC proposal family now runs through `PROP-EPSC-28`.
 
 - `PROP-EPSC-01..15` — nested refinement, target-indexed omitted-tail bounds, energy/relative-energy adapters, and exact finite RK4-path certification.
 - `PROP-EPSC-16` — **OPEN** scalable/tight high-cutoff continuous-time enclosure.
 - `PROP-EPSC-17` — observable-to-continuum orthogonal composition.
-- `PROP-EPSC-18` — finite retained-state inversion programme. Full `N=1` local inverse existence and a strictly positive quantitative radius are now closed in a conservative sense; a useful measurement-scale radius remains open.
+- `PROP-EPSC-18` — retained finite-state inversion programme. A strictly positive quantitative full-`N=1` radius is now certified; practical measurement-scale and arbitrary-`N` inversion remain open.
 - `PROP-EPSC-19` — **OPEN** full noise-stable measurement-to-continuum certificate.
 - `PROP-EPSC-20` — quantitative reduced three-mode inverse witness.
 - `PROP-EPSC-21` — derivative-free finite-window shell-transfer uncertainty certificate.
-- `PROP-EPSC-22` — full `N=1` 49-dimensional symmetry-slice local inverse existence.
+- `PROP-EPSC-22` — explicit full-`N=1` 49-dimensional symmetry-slice local inverse existence.
 - `PROP-EPSC-23` — exact rational interval/preconditioned inverse criterion.
 - `PROP-EPSC-24` — **OPEN** practically informative `rho_1` for the full `N=1` inverse.
-- `PROP-EPSC-25` — conservative explicit positive full-`N=1` radius from uniform Cramer/Hadamard bounds.
-- `PROP-EPSC-26` — row-aware Hadamard tightening of that radius.
+- `PROP-EPSC-25` — conservative explicit full-`N=1` positive radius from uniform Cramer/Hadamard bounds.
+- `PROP-EPSC-26` — row-aware Hadamard tightening.
+- `PROP-EPSC-27` — exact characteristic-zero `49x49` Jacobian and rational preconditioner `A=J_0^{-1}`; reproduced radius between `10^-59` and `10^-58`.
+- `PROP-EPSC-28` — componentwise exact coefficient-tensor/Hessian tightening; reproduced radius between `10^-28` and `10^-27`.
 
 These are Toledo **proposal identifiers**, not canonical verified theorem codes.
 
-### Two completeness layers
+The NS energy-observability proposal family remains separate. Its key unresolved all-resolution statement is `PROP-NSOBS-07`: earliest-order generic saturation at every finite resolution. The constructive triad-connectivity obstruction is closed, but sufficient all-`N` minor nonvanishing/algebraic independence remains open.
+
+## Two completeness layers
 
 The application separates two logically different questions.
 
@@ -44,7 +48,7 @@ The application separates two logically different questions.
 
 **Outer completeness:** how much information can remain outside the represented finite cutoff in the declared target norm/readout?
 
-For Fourier cutoff `P_N`, energy observability addresses the first layer and EPSC tail/adaptor results address the second. Neither substitutes for the other.
+For Fourier cutoff `P_N`, energy observability addresses the first layer; EPSC tail and adapter results address the second. Neither substitutes for the other.
 
 For the retained finite state, total and shell-energy readers are invariant under spatial translation. The structural ceilings are
 
@@ -56,51 +60,40 @@ For the retained finite state, total and shell-energy readers are invariant unde
 \operatorname{rank}D\mathcal J_R\le\min(m_N+(m_N-1)R,d_N-3).
 \]
 
-Exact modular witnesses reach the translation ceiling at the earliest structurally allowed order in the recorded cases `N=1` total energy, `N=1` shell energy, `N=2` total energy, and `N=3` shell energy. This establishes local finite identifiability modulo translation in those cases, not global injectivity.
+Exact modular witnesses reach the translation ceiling at the earliest structurally allowed order in the recorded cases `N=1` total energy, `N=1` shell energy, `N=2` total energy, and `N=3` shell energy. These are finite local quotient-state results, not global injectivity claims.
 
-### Full N=1 inverse: what is now closed
+## Full N=1 finite inverse: current certified chain
 
-For `N=1`, the finite real Fourier-Galerkin state has dimension 52. Removing the three translation directions gives a 49-dimensional symmetry slice. An explicit 49-by-49 shell-energy Taylor-jet minor is nonzero, so a local real inverse exists on that slice.
+For `N=1`, the finite real Fourier-Galerkin state dimension is 52. Fixing a transverse gauge for the three spatial-translation directions leaves a 49-dimensional slice. An explicit selected `49x49` shell-energy Taylor-jet minor is nonzero, so a local real inverse exists on that slice.
 
-A later finite certificate turns local existence into an explicit positive radius. The first conservative construction used a single worst-row Jacobian/Hessian majorant and gave
-
-\[
-10^{-7934}<r_1\le10^{-7933},
-\qquad
-\|J_0^{-1}(J(x)-J_0)\|_\infty\le\tfrac12.
-\]
-
-`PROP-EPSC-26` keeps one majorant for each selected observation row. If
+Successive fail-closed quantitative certificates then remove distinct sources of proof slack:
 
 \[
-R_j\ge\|J_{0,j*}\|_1,
-\qquad
-H_j\ge\sup_{x\in B}\|D J_{j*}(x)\|_{\infty\to1},
+10^{-7934}
+\longrightarrow
+10^{-3878}
+\longrightarrow
+10^{-59}
+\longrightarrow
+10^{-28}.
 \]
 
-then integer nonzero determinant plus row-wise Hadamard cofactors give
+More precisely:
 
-\[
-\|J_0^{-1}(J(x)-J_0)\|_\infty
-\le
-r\sum_j\left(\prod_{k\ne j}R_k\right)H_j.
-\]
+- the uniform Cramer/Hadamard certificate gives `10^-7934 < r <= 10^-7933`;
+- retaining one cofactor/Hessian majorant per selected row gives `10^-3878 < r <= 10^-3877`;
+- reconstructing the actual characteristic-zero selected matrix and inverting it exactly gives `1.28 < ||J_0^{-1}||_inf < 1.29` and `10^-59 < r <= 10^-58` with the previous scalar derivative envelope;
+- constructing the exact scaled `52x52x52` quadratic coefficient tensor and propagating componentwise rational derivative majorants gives `10^-28 < r <= 10^-27`, still with `q<=1/2` and with the radius certified to remain inside the declared local box.
 
-Choosing
+The exact tensor reproduction records 2096 nonzero coefficients and an exact induced infinity bilinear row-sum bound of 36000.
 
-\[
-\boxed{
- r=\frac{1}{2\sum_j(\prod_{k\ne j}R_k)H_j}
-}
-\]
+The interpretation is important: the very small first radii were largely consequences of deliberately coarse proof envelopes. The later finite certificates remove determinant and scalar-majorant slack without weakening the local inverse criterion.
 
-again gives `q<=1/2`, but removes thousands of decimal orders of avoidable slack from the uniform-row proof. This is a genuine tightening of a rigorous lower bound; it is **not** yet a practical estimate of the actual inverse conditioning.
+However, `10^-28` is still not a practical measurement tolerance. The open inner frontier is a branch-stable, noise-aware, entrywise/local interval certificate that yields a measurement-informative retained-state radius.
 
-The remaining `PROP-EPSC-24` frontier is therefore narrower: construct an actual entrywise interval Jacobian and effective rational preconditioner, certify branch containment, and obtain a measurement-informative `rho_1`.
+## Outer completeness and composition
 
-### Outer omitted-information certificates
-
-For an unforced Leray-Hopf trajectory on the normalized periodic setting used by the NS application,
+For an unforced Leray-Hopf trajectory on the `2*pi` periodic three-torus, the EPSC lane supplies
 
 \[
 \|(I-P_N)u\|_{L^2(0,T;L^2_x)}
@@ -108,45 +101,21 @@ For an unforced Leray-Hopf trajectory on the normalized periodic setting used by
 \frac{\|u_0\|_2}{\sqrt{2\nu}(N+1)}.
 \]
 
-A terminal route uses a certified comparison path `v`, residual
+A terminal route uses a certified comparison path and the residual-based relative-energy adapter. Stored binary64 RK4 nodes can be captured exactly as dyadic rationals and converted into a continuous piecewise-linear comparison path with rigorous finite residual summaries in the declared setting.
 
-\[
-r=\partial_t v+P[(v\cdot\nabla)v]-\nu\Delta v-Pf,
-\]
-
-and relative energy. With
-
-\[
-A_T=2\int_0^T\|\nabla v\|_\infty dt,
-\qquad
-B_T=\int_0^T\|r\|_{H^{-1}}^2dt,
-\]
-
-one obtains the conditional terminal adapter
-
-\[
-\sup_{0\le t\le T}\|u(t)-v(t)\|_2^2
-\le
-e^{A_T}\left(e_0^2+\frac{B_T}{\nu}\right).
-\]
-
-The repository contains an exact finite construction from stored binary64 RK4 nodes to a rational piecewise-linear comparison path with certified continuous-time summaries. This does not imply turbulent DNS adequacy or global regularity.
-
-### Observable-to-continuum composition
-
-If the retained inversion supplies
+If the finite observation side supplies
 
 \[
 \inf_{g\in G}\|P_Nu(T)-g\widehat x_N\|_2\le\rho_N
 \]
 
-and an independent EPSC certificate supplies
+and the omitted-tail side independently supplies
 
 \[
 \|(I-P_N)u(T)\|_2\le\beta_N,
 \]
 
-orthogonality gives
+then orthogonality gives
 
 \[
 \boxed{
@@ -156,11 +125,11 @@ orthogonality gives
 }
 \]
 
-For the NS energy-reader application, `G=T^3` is spatial translation. Retained uncertainty and omitted-tail uncertainty are separate budgets; a final epsilon verdict requires both.
+For invariant energy readers, `G=T^3` is spatial translation. This is the application-level composition registered as `PROP-EPSC-17`.
 
-### Transfer bridge
+## Transfer interpretation
 
-For finite Fourier-Galerkin NS shell energy,
+For finite Fourier-Galerkin Navier-Stokes shell energy,
 
 \[
 \dot I_s=T_s-2\nu sI_s+F_s,
@@ -168,49 +137,36 @@ For finite Fourier-Galerkin NS shell energy,
 \sum_sT_s=0
 \]
 
-for the unforced closed truncation. Hence total energy collapses internal redistribution while shell-energy readers retain it. For prescribed forcing,
+in the unforced closed truncation. Internal transfer therefore preserves total retained energy while redistributing it among shells. For prescribed forcing,
 
 \[
 T=\dot I+2\nu SI-F,
 \]
 
-so `(I,T)` and `(I,dI/dt)` carry the same local rank information; transfer variables expose mechanism but do not manufacture new information.
+so `(I,T)` and `(I,dI/dt)` are an affine reparameterization at first order; transfer variables do not manufacture extra local rank. Their practical value is mechanism visibility and finite-window balance measurement.
 
-Integrated over a window,
-
-\[
-\int_{t_0}^{t_1}T_sdt
-=I_s(t_1)-I_s(t_0)+2\nu s\int_{t_0}^{t_1}I_sdt-\int_{t_0}^{t_1}F_sdt,
-\]
-
-which supports certified transfer summaries without high-order numerical differentiation.
-
-A constructive all-cutoff triad-connectivity lemma removes one kinematic obstruction to the all-`N` saturation problem, but it does not prove the required nonvanishing/algebraic independence of enough observation minors.
-
-### Current fail-closed chain
-
-The intended application chain is
+## Current fail-closed measurement-to-continuum chain
 
 \[
-\text{measurements/windows}
-\to\text{finite observation certificate}
-\to\rho_N
-\to\beta_N
-\to\sqrt{\rho_N^2+\beta_N^2}
-\to\varepsilon\text{-verdict}.
+\text{energy/window measurements}
+\to
+\rho_N\text{ on a certified retained quotient branch}
+\to
+\beta_N\text{ on omitted information}
+\to
+\sqrt{\rho_N^2+\beta_N^2}
+\to
+\varepsilon\text{-verdict}.
 \]
 
-If a required quantitative retained-state certificate or omitted-tail certificate is missing, the correct end-to-end status is `HOLD`.
+At `N=1`, a mathematically positive retained-state radius is no longer open. A **measurement-ready** `rho_1` is still open because robust branch/noise containment has not been certified. Arbitrary-`N` retained inversion is also open. If either the retained-state certificate or the omitted-tail certificate required by a declared target is absent, the correct status remains `HOLD`.
 
-### What must NOT be imported into the Genesis root
+## What must NOT be imported into Genesis root
 
-The following remain application-local and must not be promoted into root ontology: specific Taylor-Green cutoffs or thresholds; claims that any tested cutoff is automatically continuum-complete; claims that local rank implies global/stable reconstruction; claims that a raw Galerkin trajectory equals the continuum projection; claims that continuum mathematics or ontology has been disproved; claims that the Clay Navier-Stokes problem is solved; claims of turbulent DNS adequacy from short finite runs; claims that triad connectivity proves all-`N` saturation; or claims that the present conservative inverse radius is a realistic sensor tolerance.
+The following remain application-local and must not be promoted into `READOUT_GENESIS_CORE.md`: tested Taylor-Green cutoffs; finite numerical thresholds; claims that any finite cutoff is automatically continuum-complete; claims that local observability equals global reconstruction; claims that a raw Galerkin path equals the continuum projection; claims that continuum ontology has been disproved; claims that transfer connectivity proves all-resolution observability saturation; claims of turbulent DNS adequacy from the finite tests; claims of global Navier-Stokes regularity or blow-up; or claims that the Clay Millennium problem has been solved.
 
-### Current frontiers
+The application-level lesson remains:
 
-- `PROP-EPSC-24`: replace conservative determinant/derivative majorants by an effective entrywise interval/Krawczyk certificate and obtain a useful `rho_1`.
-- `PROP-EPSC-19`: propagate measurement/window uncertainty through that inverse and combine it with an EPSC tail certificate.
-- `PROP-NSOBS-07`: prove or refute all-resolution earliest-order observability saturation after the connectivity obstruction has been removed.
-- `PROP-EPSC-16`: improve outer comparison-path certificate tightness and scaling at larger cutoff/horizon.
+> completeness has at least two separable budgets: what the declared reader determines **inside** the chosen finite representation, and what a proved certificate permits to remain **outside** it.
 
-Genesis records these boundaries and their interpretation only. It does not promote them into root ontology.
+Genesis records this interpretation and the current boundary only. The mathematics remains owned and reproduced in the domain and finite-math repositories.
