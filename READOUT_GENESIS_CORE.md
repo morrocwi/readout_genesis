@@ -2481,9 +2481,11 @@ future-equivalence-implies-dynamic-stability weld, question monotonicity, and a 
 intersection theorem, plus a safe finite-refinement termination bound. Nineteen identifiers,
 axiom-free (`coqc` + `Print Assumptions`, CI-verified): `information-discrete-math`
 `formal/IDM_ReaderDomainFoundation.v` at commit `12ca25668fd4392aa17dd250fce6410b5c63dce6`
-(merged PR #129). Toledo provenance: registry issue `morrocwi/toledo#36`, status `PROPOSAL` under
-`TG-RFG-01` — cited here as an external formal artifact, not yet a canonical Toledo code, and this
-pointer asserts nothing about any Clay Millennium question.
+(merged PR #129). Systematic write-up, definitions, per-theorem status, and the explicit freeze
+gate: `information-discrete-math` `docs/READER_DOMAIN_FOUNDATION_V1.md` (status `FREEZE CANDIDATE`,
+not `FROZEN` — F5/F6 gates still open). Toledo provenance: registry issue `morrocwi/toledo#36`,
+status `PROPOSAL` under `TG-RFG-01` — cited here as an external formal artifact, not yet a
+canonical Toledo code, and this pointer asserts nothing about any Clay Millennium question.
 
 ### V.1 QUANTUM — the translation `q_quantum`
 
