@@ -9,6 +9,31 @@
 3. `morrocwi/readout-problem-navier-stokes/CLAY_MULTI_PROBLEM_FINITE_BRIDGE_PROGRAM.md`
 4. `morrocwi/information-discrete-math/docs/UNIVERSAL_FINITE_OBSTRUCTION_UNIFORM_BRIDGE_KERNEL.md`
 5. `morrocwi/toledo/docs/CLAY_BRIDGE_PROGRAM_2026-09-11.md`
+6. `morrocwi/toledo/EQUATION_SOURCE_POLICY.md`, especially the central `TG-RFG-01` reuse-first gate.
+
+## Central cross-repository derivation gate
+
+Readout Genesis MUST participate in, but MUST NOT replace, the canonical Toledo provenance gate:
+
+```text
+Toledo lookup
+    -> Genesis compatibility
+    -> reuse existing object
+    -> derive only the missing piece
+    -> mark PROPOSAL
+```
+
+For mathematical work, Toledo lookup comes first because `morrocwi/toledo` is the authority for existing equation/theorem provenance and status. Genesis compatibility comes second and governs ontology, retention, sufficiency, quotient, translation, lineage and defect interpretation.
+
+Rules:
+
+- if Toledo already contains a usable object, reuse its code/status rather than inventing a Genesis-local equivalent;
+- if an ontological/translation reading conflicts with Genesis, return `HOLD` or state a proposed Genesis revision explicitly;
+- if Toledo has no matching object, derive only the smallest missing piece after the compatibility check and label it `PROPOSAL`;
+- a Genesis sketch, analogy, domain interpretation, or architectural lemma MUST NOT be retroactively presented as an existing Toledo theorem;
+- bypassing the order above is `DRIFT`, not evidence.
+
+Passing this gate controls provenance only. It does not prove a domain theorem or close any Clay obligation.
 
 ## Role boundary
 
