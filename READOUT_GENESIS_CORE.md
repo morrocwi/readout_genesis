@@ -2472,6 +2472,19 @@ biology result. Where V.6 (Biology) below says "domain-discovery engine," this i
 being referenced — general-purpose, applied to biology as its first target, not a biology-specific
 device.
 
+**Formal cross-reference (2026-09, `finite_diagnostic`/`Th_coqc` mixed, external pointer only —
+not restated here):** the reader-relative reading this section describes (a domain is the
+equivalence a declared reader family forces on retained states, not a primitive kind of world) has
+an independently machine-checked finite kernel: an `Eq ⊣ Obs` Galois correspondence between
+experiment families and induced indistinguishability relations, its closure operator, the
+future-equivalence-implies-dynamic-stability weld, question monotonicity, and a joint-question
+intersection theorem, plus a safe finite-refinement termination bound. Nineteen identifiers,
+axiom-free (`coqc` + `Print Assumptions`, CI-verified): `information-discrete-math`
+`formal/IDM_ReaderDomainFoundation.v` at commit `12ca25668fd4392aa17dd250fce6410b5c63dce6`
+(merged PR #129). Toledo provenance: registry issue `morrocwi/toledo#36`, status `PROPOSAL` under
+`TG-RFG-01` — cited here as an external formal artifact, not yet a canonical Toledo code, and this
+pointer asserts nothing about any Clay Millennium question.
+
 ### V.1 QUANTUM — the translation `q_quantum`
 
 ```
