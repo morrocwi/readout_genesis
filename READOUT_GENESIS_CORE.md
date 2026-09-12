@@ -2472,7 +2472,7 @@ biology result. Where V.6 (Biology) below says "domain-discovery engine," this i
 being referenced — general-purpose, applied to biology as its first target, not a biology-specific
 device.
 
-**Formal cross-reference (2026-09, `finite_diagnostic`/`Th_coqc` mixed, external pointer only —
+**Formal cross-reference (2026-09, `Th_coqc`, external pointer only —
 not restated here):** the reader-relative reading this section describes (a domain is the
 equivalence a declared reader family forces on retained states, not a primitive kind of world) has
 an independently machine-checked finite kernel: an `Eq ⊣ Obs` Galois correspondence between
