@@ -25,9 +25,9 @@ retained-distinction, order-parameter, τ_c, M/D, Γ, K, Q_v, ...) — no domain
 ## Group A — Faces of the one master equation `F` (same information, different face)
 
 Source: `causal-quantum-gravity/formal/*.v` (module root `DQG.formal`, compiled from that repo's root with
-`-R . DQG`) + `solver-arc-private/formal/InfoAnalysisLift.v` (module root `RDL`). **These files are
+`-R . DQG`) + `formal/InfoAnalysisLift.v` (solver arc (private)) (module root `RDL`). **These files are
 not mirrored into this repo** — they live in sibling repos on the same machine
-(`~/ANSE.ASIA/causal-quantum-gravity`, `~/ANSE.ASIA/solver-arc-private`). All 14 are already folded
+(`causal-quantum-gravity`, `solver arc (private)`). All 14 are already folded
 into the master-equation box's 2026-07-23 verification addendum.
 
 | Theorem | Equation (root language) | Verified |
@@ -47,8 +47,8 @@ into the master-equation box's 2026-07-23 verification addendum.
 | `InfoQuantumRelativityUnification.spine_dispersion_iff_box_quad_vanishes` | M·ω² = K·λ ⟺ box_quad(...) = 0, and this null-condition survives a boost — narrow dispersion-identity claim only | ✅ coqchk clean |
 | `InfoSeedTorsionGroupAndRankN.rankn_seed_torsion_is_lam_ord` | nonzero torsion witness ⇒ the commutator generates a non-abelian group of rank N (the gauge-algebra seed) | ✅ coqchk clean |
 | `InfoCoercivityBoundedClosure` | wshare/wdeg closure is bounded (coercivity of the potential) | ✅ coqchk clean |
-| `InfoAnalysisLift.clairaut_xy` / `clairaut_yx` (`solver-arc-private/formal`, root `RDL` — **not** the same-named file in `causal-quantum-gravity`, which imports Schwarzschild and is refused elsewhere in the core doc) | ∂²(metric)/∂x∂y = ∂²(metric)/∂y∂x — mixed-partial symmetry of the metric lift | ✅ coqchk clean |
-| `InfoRetainedDistinctionForcesLaplacian.only_LR_passes_all_three` (`solver-arc-private/formal`, root `RDL`, still tagged `_attempt` in that repo's own convention) | among candidate retained-difference operators, **only** `L_R` passes all required structural tests — the exact citation already backing the `L_R` row in the master box, now independently reconfirmed | ✅ coqchk clean |
+| `InfoAnalysisLift.clairaut_xy` / `clairaut_yx` (`formal` (solver arc (private)), root `RDL` — **not** the same-named file in `causal-quantum-gravity`, which imports Schwarzschild and is refused elsewhere in the core doc) | ∂²(metric)/∂x∂y = ∂²(metric)/∂y∂x — mixed-partial symmetry of the metric lift | ✅ coqchk clean |
+| `InfoRetainedDistinctionForcesLaplacian.only_LR_passes_all_three` (`formal` (solver arc (private)), root `RDL`, still tagged `_attempt` in that repo's own convention) | among candidate retained-difference operators, **only** `L_R` passes all required structural tests — the exact citation already backing the `L_R` row in the master box, now independently reconfirmed | ✅ coqchk clean |
 | `InfoSeedUnifiedMasterEquation.seed_master_readout_zero_iff_homogeneous` (same source, `_attempt`) | velocity+coupling+damping combine into one seed readout that vanishes iff the field configuration is homogeneous | ✅ coqchk clean |
 | `InfoScaleGaugeNonReadout.dispersion_gauge_invariant` (same source, `_attempt`) | the dispersion relation's sign/structure is invariant under a scale-gauge transform | ✅ coqchk clean |
 | `InfoSeedArgminActionCost.action_argmin` (same source, `_attempt`) | the selected state minimizes the action (general variational principle) | ✅ coqchk clean |
@@ -98,7 +98,7 @@ imports beyond the Coq standard library).
 | ~~`InfoOrderDefectFromComposition`~~ | **promoted to Group A, 2026-07-23 round 2** — see above | (order-defect, non-abelian seed) |
 | `InfoConfinementCertificate` / `InfoCenterConfinement` / `InfoBlockCorrelation` / `InfoAllOrderCharacter` / `InfoSurfaceAutomaton` / `InfoSurfaceUpperAutomaton` | a family of surface-entropy bounds + automaton brackets that close as a computable certificate | (confinement) |
 | `InfoTrialitySpectralFlow` / `InfoUniversalRPSlab` / `InfoFiniteTransferGap` / `InfoRetainedIntertwiner` | a universal reflection-positive slab reads the finite-transfer spectral gap in every sector | (mass gap, universal RP slab) |
-| `InfoRationalSO3Curvature` (`solver-arc-private/formal`, `_attempt`; reverted from a round-2 necessity-promotion attempt — see correction note above) | one concrete rational-rotation pair with nonzero holonomy — proves curvature *exists* for this witness, not a general SO(3)/dimension-3 derivation (file's own words: "a specific pair, not a parametrized theorem") | (SO(3) holonomy witness) |
+| `InfoRationalSO3Curvature` (`formal` (solver arc (private)), `_attempt`; reverted from a round-2 necessity-promotion attempt — see correction note above) | one concrete rational-rotation pair with nonzero holonomy — proves curvature *exists* for this witness, not a general SO(3)/dimension-3 derivation (file's own words: "a specific pair, not a parametrized theorem") | (SO(3) holonomy witness) |
 
 **Important**: Group B is **not** a new master equation — these are theorems that *follow* when `F` is
 squeezed against the Standard-Model alphabet/gates. Do not lift these into `F` as new additive terms —
@@ -108,7 +108,7 @@ that would be exactly the label-inflation this book warns against (§V.20, §V.2
 
 ## Group C — Biology / Health / Epidemic (compiled fresh 2026-07-23 — clean, but still tagged `_attempt` in the source repo)
 
-Source: `solver-arc-private/formal/Info*_attempt.v` (sibling repo, not mirrored into this repo).
+Source: `formal/Info*_attempt.v` (solver arc (private)) (sibling repo, not mirrored into this repo).
 
 ⚠️ **Honesty note:** these files have **not been promoted** to a canonical (non-`_attempt`) name in their
 home repo's own convention — meaning they have not gone through a final review pass or been wired into

@@ -1,7 +1,7 @@
 ## Genesis of the Universe, Step by Step — Genesis Step-by-Step v3.1
 ### A World-Class AI Equation Book — Standalone Source of Truth (extended edition)
 
-> **Edition:** v3.1 (2026-07-21) · `solver-arc-private` · node N10 (superset over the v3.0
+> **Edition:** v3.1 (2026-07-21) · `solver arc (private)` · node N10 (superset over the v3.0
 > lineage, prepared for consolidation)
 > **Claim boundary:** readout-not-truth. Verified MATH ≠ true physics. Structure can be
 > machine-checked; physical numbers require laboratory measurement. Every sentence in this book that
@@ -181,7 +181,7 @@ results (Standard-Model chain, biology/health) are deliberately **not** in this 
                                                 wdeg closure (InfoCoercivityBoundedClosure)
 
   XVI.   ∂²(metric)/∂x∂y = ∂²(metric)/∂y∂x      mixed-partial (Clairaut) symmetry of the metric
-                                                lift (InfoAnalysisLift — solver-arc-private
+                                                lift (InfoAnalysisLift — solver arc (private)
                                                 copy; NOT the causal-quantum-gravity same-named
                                                 file, which imports Schwarzschild and is refused)
 
@@ -278,7 +278,7 @@ XXIV.  K(X,Y) = XY − YX  ⇒  Jacobi(K)                    (InfoOrderDefectFro
 > `InfoLorentzInvariance` (narrow boost-invariance claim only, not the rejected "unification" claim),
 > `InfoMemoryBeforeMass`, `InfoMetricIsEnergyReadout`, `InfoQuantumRelativityUnification` (narrow
 > dispersion-identity claim only), `InfoSeedTorsionGroupAndRankN`, `InfoCoercivityBoundedClosure`,
-> plus `solver-arc-private/formal/InfoAnalysisLift.v` (module `RDL.InfoAnalysisLift`, the
+> plus `formal/InfoAnalysisLift.v` (solver arc (private)) (module `RDL.InfoAnalysisLift`, the
 > Clairaut-symmetry result — **not** the same-named `causal-quantum-gravity/formal/InfoAnalysisLift.v`
 > file, which this book already refuses elsewhere in this section as importing Schwarzschild; the two
 > repos happen to share a filename for unrelated results, so cite the repo path, never the bare name)
@@ -290,7 +290,7 @@ XXIV.  K(X,Y) = XY − YX  ⇒  Jacobi(K)                    (InfoOrderDefectFro
 > InfoCrossTermDominance,InfoCubicLinearization,InfoCutGrowth,InfoGraphNoether,InfoLorentz,
 > InfoLorentzInvariance,InfoMemoryBeforeMass,InfoMetricIsEnergyReadout,InfoQuantumRelativityUnification,
 > InfoSeedTorsionGroupAndRankN,InfoCoercivityBoundedClosure}.v` (module root `-R . DQG`) plus
-> `solver-arc-private/formal/InfoAnalysisLift.v` (module root `-R . RDL`). The Standard-Model
+> `formal/InfoAnalysisLift.v` (solver arc (private)) (module root `-R . RDL`). The Standard-Model
 > and bio/health names checked the same way this session — deliberately kept **out** of this box for
 > the reason above — plus the still-unverified names, are catalogued in
 > [`ROOT_INFO_LANGUAGE_INVENTORY.md`](ROOT_INFO_LANGUAGE_INVENTORY.md).
@@ -312,7 +312,7 @@ XXIV.  K(X,Y) = XY − YX  ⇒  Jacobi(K)                    (InfoOrderDefectFro
 >   differences), `InfoDiscreteRiemannCommutator` (curvature from the commutator),
 >   `InfoTelegraphHorizonUnification` (the spine's own `λ_c` classical/quantum crossover — Face 3/4
 >   content, a *distinct* object from GR redshift, not a claim of unifying the two). All:
->   `solver-arc-private/formal/Info*_attempt.v` (module root `-R . RDL`) — still tagged
+>   `formal/Info*_attempt.v` (solver arc (private)) (module root `-R . RDL`) — still tagged
 >   `_attempt` in that repo's own naming convention (not yet promoted there), but independently
 >   coqchk'd clean here, no `Axiom`, no `Admitted`.
 > - **1 promoted out of the Standard-Model chain**, because on inspection its premises are root-generic,
@@ -345,7 +345,7 @@ XXIV.  K(X,Y) = XY − YX  ⇒  Jacobi(K)                    (InfoOrderDefectFro
 
 > **Verification addendum, round 3 (2026-08-29) — Face XI closed as an equivalence.** One new
 > necessity-tier witness: `InfoSharedReadoutForcesSharedMemory_attempt.v`
-> (`readout_genesis/formal/` and `solver-arc-private/formal/`, byte-identical; standalone
+> (`readout_genesis/formal/` and `formal/` (solver arc (private)), byte-identical; standalone
 > `QArith` file, no project root needed — the solver twin's CI compiles it under its `-R . RDL`),
 > the **converse** of `InfoMemoryBeforeMass.memory_before_mass`. Theorems
 > `shared_readout_forces_shared_memory` (one agreeing discrete decay readout at a nonzero step
@@ -6380,7 +6380,7 @@ it is allowed to support a claim above `Dr`.
 ### XII.1 Minimum Smoke Suite
 
 ```bash
-# From repo root:solver-arc-private
+# From repo root:
 
 # 1. Package health
 python -c "from anse_spine import NuclearCore, Domain, Spine; print('anse_spine OK')"
@@ -7304,8 +7304,8 @@ future reviewer who confirms any gate should record it in the relevant Part, not
 >
 > **SOT DESIGNATION (2026-07-25, founder-directed): THIS Appendix is now the primary Source of
 > Truth for this equation stream's numbering/tiers/text.** The synced copy lives at
-> `solver-arc-private/EQUATION_LIBRARY_ROOT_TO_SM_STREAM.md` and at
-> `readout_universe/EQUATION_LIBRARY_ROOT_TO_SM_STREAM_solver-arc-private.md` — if either
+> `EQUATION_LIBRARY_ROOT_TO_SM_STREAM.md` (solver arc (private)) and at
+> `readout_universe/EQUATION_LIBRARY_ROOT_TO_SM_STREAM_synced_mirror.md` — if either
 > ever diverges from this Appendix, THIS Appendix wins and the other file should be corrected to
 > match. (Earlier same-day text here said the reverse; the founder explicitly redirected the SOT
 > to this file, the true root canon, and both sibling copies were updated to point back here.)
@@ -7332,7 +7332,7 @@ list, read alone, invites category errors it was never meant to license):**
   algebraic structure is proven for ARBITRARY admissible data; which SPECIFIC object realizes it in
   this project's actual physics remains separate and open — see the two-axis table below.
 - **⚠️ MATERIALIST WORKS/FAILS BIAS (added 2026-07-25, after an AI caught itself committing it twice
-  in one file — full guard in `solver-arc-private/docs/root/ZERO_INFINITY_DUAL_DIAGNOSIS.md`
+  in one file — full guard in `docs/root/ZERO_INFINITY_DUAL_DIAGNOSIS.md` (solver arc (private))
   Part 4b).** Before writing "works / fails / NEGATIVE / success / solved" about ANY entry here or
   any computed result: a `fit_calibrated` constant is NOT a defect (calibrating a graph constant is
   legitimate, DEV-SM-001; horizontal-knowledge stance). Do not judge a result "failed" because it
@@ -7559,7 +7559,7 @@ EQ-064  fit_calibrated (M_joint) / finite_diagnostic (accuracy check) — 2026-0
                      M_hat = (a1ᵀy2 + a2ᵀy1) / (2 a1ᵀa2)     [replicate-IV, preferred]
                      M_joint = 1.0004294772248     (0.042948% error vs the disclosed fixture's
                      known M_true=1; 500-seed sweep mean error 0.335552% at σ=1e-5)
-                     Merged to main, both repos (solver-arc-private, readout_genesis).
+                     Merged to main, both repos (solver arc (private), readout_genesis).
                      Does NOT close EQ-015's M the way EQ-063 does not — this is calibration on a
                      declared synthetic tape, not a root-native derivation.
 
