@@ -1,0 +1,32 @@
+name: Philosophy MEMK Registration
+
+on:
+  push:
+    branches: [feat/register-philosophy-memk-v0.2.0]
+    paths: ['domains/philosophy/**', '.github/workflows/philosophy-memk.yml']
+  pull_request:
+    paths: ['domains/philosophy/**', '.github/workflows/philosophy-memk.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with: {show-progress: false}
+      - name: Rebuild current standalone companion
+        run: python3 -B domains/philosophy/artifacts/rebuild_information_epistemic_foundation_v1_6_0.py
+      - name: Verify checksum manifest
+        working-directory: domains/philosophy
+        run: sha256sum -c CHECKSUMS_SHA256_PHILOSOPHY_MEMK.txt
+      - name: Run primary registration checker
+        run: python3 -B domains/philosophy/philosophy_memk_closure_v0_2_0.py
+      - name: Run independent registration checker
+        run: python3 -B domains/philosophy/checker_philosophy_memk.py
+      - name: Run combined registration suite
+        run: python3 -B domains/philosophy/run_all_tests_philosophy_memk.py

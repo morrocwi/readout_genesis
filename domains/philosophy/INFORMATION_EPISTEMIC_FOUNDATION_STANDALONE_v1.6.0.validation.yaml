@@ -1,0 +1,82 @@
+file: INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md
+version: 1.6.0
+release_date: '2026-07-23'
+registration_role: CURRENT_NORMATIVE_COMPANION_ARTIFACT_FOR_RG_PHILOSOPHY_MEMK_001
+source_ingest:
+  uploaded_name: INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0(1)(2).md
+  sha256: 147a43cecfb5fcaa39386b3fb9b5f1d541e00ef12b068980b74f1b05ecf61968
+  canonicalization: EQUATION_PRESERVING_EDITORIAL_CANONICALIZATION_BEFORE_REGISTRATION
+  replacements:
+  - from: compenmeta_governanceng
+    to: compensating
+    occurrences: 2
+  - from: meta_governancesfies
+    to: satisfies
+    occurrences: 1
+  - from: cesmeta_governanceon
+    to: cessation
+    occurrences: 6
+  - from: Cesmeta_governanceon
+    to: Cessation
+    occurrences: 1
+  - from: meta_governancesfy
+    to: satisfy
+    occurrences: 2
+checks:
+  utf8_decode: PASS
+  embedded_yaml_parse: PASS
+  embedded_document_version: PASS
+  root_lineage: PASS
+  root_blob_lock: PASS
+  domain_anchor: PASS
+  heading_sequence_1_73: PASS
+  belief_layer: PASS
+  normative_knowledge_proposal: PASS
+  conditioned_agency_layer: PASS
+  agency_meta_readout_governance: PASS
+  maker_checker_firewall: PASS
+  calibration_firewall: PASS
+  claim_ceiling: PASS
+  candidate_forgetting_guard: PASS
+  identity_binding_release_separation: PASS
+  task_completion_knowledge: PASS
+  cross_domain_synthesis: PASS
+  pseudocode: PASS
+  mermaid_dag: PASS
+  corruption_token_scan: PASS
+dimensions:
+  lines: 5927
+  characters: 153091
+  bytes: 154653
+hashes:
+  markdown_sha256: ff8cbf6848d93f7579327dc628e25e91801d959669de4235fcdfbcb347f7a926
+  gzip_sha256: a05dabea3dd44c7fc07fddd19246bc382c2c35faef48f73453b0eab77ebc58f1
+archive:
+  encoding: gzip+base64
+  parts: 19
+  part_files:
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part01
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part02
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part03
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part04
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part05
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part06
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part07
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part08
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part09
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part10
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part11
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part12
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part12b
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part12c
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part12d
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part13
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part14
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part15
+  - INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.6.0.md.gz.b64.part16
+  deterministic_gzip_mtime: 0
+claim_status:
+  architecture: ROOT_NATIVE_AGENCY_META_READOUT_GOVERNANCE_ARCHITECTURE_CLOSED_AS_SPECIFICATION
+  target_domain_encoding: UNRESOLVED
+  empirical_calibration: UNRESOLVED
+  external_independent_review: UNRESOLVED

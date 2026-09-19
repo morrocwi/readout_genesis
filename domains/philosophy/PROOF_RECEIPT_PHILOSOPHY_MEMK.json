@@ -1,0 +1,30 @@
+{
+  "domain_id": "RG-PHILOSOPHY-MEMK-001",
+  "release": "0.2.0",
+  "receipt_type": "BOUNDED_STRUCTURAL_REGISTRATION",
+  "status": "PASS_REPRODUCED_LOCALLY",
+  "expected_runner": "python -B run_all_tests_philosophy_memk.py",
+  "local_reproduction": {
+    "result": "PASS: PHILOSOPHY_MEMK_STRUCTURAL_REGISTRATION",
+    "domain_closure": "UNRESOLVED",
+    "empirical_calibration": "UNRESOLVED"
+  },
+  "claims_licensed": [
+    "root-connected architecture",
+    "typed MEMK distinctions",
+    "fail-closed drift contract",
+    "dual structural checker",
+    "explicit unresolved empirical boundary"
+  ],
+  "claims_not_licensed": [
+    "empirical human cognition closure",
+    "physical meaning energy",
+    "literal biological LoRA",
+    "validated awakening truth",
+    "clinical application"
+  ],
+  "source_lock": {
+    "file": "READOUT_GENESIS_CORE.md",
+    "blob_sha": "31e07095addc45aacbaea26523784380d5ce21f1"
+  }
+}

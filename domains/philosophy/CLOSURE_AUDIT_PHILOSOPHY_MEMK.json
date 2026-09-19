@@ -1,0 +1,25 @@
+{
+  "domain_id": "RG-PHILOSOPHY-MEMK-001",
+  "release": "0.2.0",
+  "audit_type": "STRUCTURAL_REGISTRATION_AND_CLAIM_BOUNDARY",
+  "matrix": [
+    {"gate": "root_lineage", "status": "PASS", "weight": 1.0},
+    {"gate": "bundle_completeness", "status": "PASS", "weight": 1.0},
+    {"gate": "drift_contract", "status": "PASS", "weight": 1.0},
+    {"gate": "dual_checker_and_fail_controls", "status": "PASS", "weight": 1.0},
+    {"gate": "candidate_state_sufficiency", "status": "UNRESOLVED", "weight": 1.0},
+    {"gate": "exact_q_MEMK_commutation", "status": "UNRESOLVED", "weight": 1.0},
+    {"gate": "empirical_semantic_calibration", "status": "UNRESOLVED", "weight": 1.0},
+    {"gate": "independent_held_out_human_prediction", "status": "UNRESOLVED", "weight": 1.0}
+  ],
+  "strict_pass": {"passed": 4, "total": 8, "fraction": 0.5},
+  "verdict": "STRUCTURAL_BUNDLE_PASS_DOMAIN_CLOSURE_UNRESOLVED",
+  "registration_status": "PARTIAL_REGISTERED_CANDIDATE",
+  "next_required_evidence": [
+    "a frozen event-resolved tape",
+    "candidate-state sufficiency tests",
+    "a discovered q_MEMK with named defects",
+    "independent semantic calibration",
+    "held-out context/intervention/transport evidence"
+  ]
+}

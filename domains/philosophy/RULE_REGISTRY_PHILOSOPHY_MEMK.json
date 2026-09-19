@@ -1,0 +1,175 @@
+{
+  "domain_id": "RG-PHILOSOPHY-MEMK-001",
+  "version": "0.2.0",
+  "rules": [
+    {
+      "rule_id": "R0_RETAINED_DISTINCTION",
+      "class": "ROOT_THEOREM",
+      "statement": "delta_R = (a sharp b)",
+      "assumptions": [],
+      "parents": [],
+      "forbidden_claims": [
+        "meaning from root",
+        "knowledge from root",
+        "identity from root"
+      ]
+    },
+    {
+      "rule_id": "R1_GRAPH_OPERATOR",
+      "class": "ROOT_THEOREM",
+      "statement": "L_R = D_W - W",
+      "assumptions": [
+        "retained distinction"
+      ],
+      "parents": [
+        "R0_RETAINED_DISTINCTION"
+      ],
+      "forbidden_claims": [
+        "human semantics",
+        "physical energy of meaning"
+      ]
+    },
+    {
+      "rule_id": "P1_DOMAIN_TRANSLATION",
+      "class": "PROTOCOL",
+      "statement": "q_MEMK,n+1 o F_n = F_MEMK,n^sharp o q_MEMK,n",
+      "assumptions": [
+        "candidate state",
+        "declared question",
+        "readout family"
+      ],
+      "parents": [
+        "R1_GRAPH_OPERATOR"
+      ],
+      "forbidden_claims": [
+        "exact closure before a zero defect vector"
+      ]
+    },
+    {
+      "rule_id": "P2_MEANING_AFTER_READOUT",
+      "class": "PROTOCOL",
+      "statement": "mu_n is decoded only after O_MEMK^sharp(q_MEMK(S_n))",
+      "assumptions": [
+        "passed translation/readout gate"
+      ],
+      "parents": [
+        "P1_DOMAIN_TRANSLATION"
+      ],
+      "forbidden_claims": [
+        "meaning as root primitive"
+      ]
+    },
+    {
+      "rule_id": "D1_EXPERIENCE",
+      "class": "DISCOVERED_DOMAIN_LAW",
+      "statement": "E_n = Phi_E(x_n, mu_n, kappa_n, c_n)",
+      "assumptions": [
+        "typed x, mu, kappa, c"
+      ],
+      "parents": [
+        "P2_MEANING_AFTER_READOUT"
+      ],
+      "forbidden_claims": [
+        "universal psychology",
+        "literal chemical bond"
+      ]
+    },
+    {
+      "rule_id": "D2_MEMORY",
+      "class": "DISCOVERED_DOMAIN_LAW",
+      "statement": "Mcal_n = U_M(Mcal_n-1, x_n, mu_n, E_n, c_n, lineage_n, T_n)",
+      "assumptions": [
+        "declared retrieval horizon"
+      ],
+      "parents": [
+        "D1_EXPERIENCE"
+      ],
+      "forbidden_claims": [
+        "memory equals event",
+        "memory equals root tape"
+      ]
+    },
+    {
+      "rule_id": "P3_KNOWLEDGE",
+      "class": "PROTOCOL",
+      "statement": "knowledge requires acceptance and reusable/held-out performance within scope",
+      "assumptions": [
+        "observer metric",
+        "domain",
+        "context",
+        "protocol"
+      ],
+      "parents": [
+        "D2_MEMORY"
+      ],
+      "forbidden_claims": [
+        "consensus alone is truth",
+        "local reuse is global validity"
+      ]
+    },
+    {
+      "rule_id": "D3_INFORMATIONAL_LORA",
+      "class": "NUMERICAL_PROCEDURE",
+      "statement": "DeltaW_j=(alpha_j/r_j)U_jV_j; W_eff=W_0+sum_j lambda_j DeltaW_j; W_0 frozen",
+      "assumptions": [
+        "post-quotient implementation",
+        "frozen split and losses"
+      ],
+      "parents": [
+        "P1_DOMAIN_TRANSLATION",
+        "P2_MEANING_AFTER_READOUT"
+      ],
+      "forbidden_claims": [
+        "literal biological LoRA",
+        "held-out-guided training"
+      ]
+    },
+    {
+      "rule_id": "D4_INFORMATIONAL_WORK",
+      "class": "DISCOVERED_DOMAIN_LAW",
+      "statement": "W_info=sum_n <J_info,n, z_n+1-z_n>_G_MEMK",
+      "assumptions": [
+        "declared positive pairing",
+        "frozen source encoder"
+      ],
+      "parents": [
+        "D3_INFORMATIONAL_LORA"
+      ],
+      "forbidden_claims": [
+        "joules",
+        "physical energy",
+        "intensity implies truth"
+      ]
+    },
+    {
+      "rule_id": "D5_TRANSITION",
+      "class": "DISCOVERED_DOMAIN_LAW",
+      "statement": "transition requires effective informational work to cross a semantic barrier and pass admissibility/invariant gates",
+      "assumptions": [
+        "declared V_sem",
+        "declared path metric",
+        "controls"
+      ],
+      "parents": [
+        "D4_INFORMATIONAL_WORK"
+      ],
+      "forbidden_claims": [
+        "shock equals insight",
+        "experience equals knowledge",
+        "transient equals transformation"
+      ]
+    },
+    {
+      "rule_id": "O1_EXACT_Q_MEMK",
+      "class": "UNRESOLVED",
+      "statement": "exact q_MEMK on real human/social data has not been demonstrated",
+      "assumptions": [],
+      "parents": [
+        "P1_DOMAIN_TRANSLATION"
+      ],
+      "forbidden_claims": [
+        "closed empirical philosophy domain"
+      ]
+    }
+  ]
+}

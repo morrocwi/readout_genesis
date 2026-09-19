@@ -1,0 +1,20 @@
+file: INFORMATION_EPISTEMIC_FOUNDATION_STANDALONE_v1.2.0.md
+version: 1.2.0
+embedded_yaml_parse: PASS
+root_lineage: PASS
+conditioned_agent_layer: PASS
+contact_valence_drive_chain: PASS
+distortion_layer: PASS
+order_defect_layer: PASS
+viability_release_separation: PASS
+null_mode_layer: PASS
+task_completion_knowledge: PASS
+cross_domain_synthesis: PASS
+pseudocode: PASS
+mermaid_dag: PASS
+lines: 3358
+characters: 98406
+markdown_sha256: c9d395ba32ef156199078658ff9951dddbaac069cedbd17ff206d41b40f94a00
+gzip_sha256: 7ed7f7321c6d4fb07dff415ad540d7f6f70a6c43b16cff6b2d83d030db3b85cd
+archive_parts: 4
+claim_status: ARCHITECTURE_COMPLETE_AS_SPECIFICATION; EMPIRICAL_AND_DOCTRINAL_IDENTITY_UNRESOLVED
