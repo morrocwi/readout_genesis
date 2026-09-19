@@ -10,7 +10,7 @@ same; under the same CMB `c, h, Λ` read the same; if they differed the CMB woul
 was checked against the canon. Verdict: conceptually aligned with Face XI (`τ_c equal ⇒ dynamics
 identical`) and the commuting-square doctrine; it contributed **no evidence** and is recorded as a
 reviewer-level hint only (`EPIS-KNOWLEDGE-VALIDATION`). Two things came out of it, both committed
-(`readout_genesis` `9d2031b`, `solver-arc-private` `a86541c`, files byte-identical):
+(`readout_genesis` `9d2031b`, `solver arc (private)` `a86541c`, files byte-identical):
 
 1. **Face XI is now an iff** — `formal/InfoSharedReadoutForcesSharedMemory_attempt.v` (axiom-free,
    8 statements, 5 `Print Assumptions` Closed, passes the twin's `ci_attempts_audit`): one agreeing
@@ -42,7 +42,7 @@ root-native program behind it. Read, in order:
 1. [`item2_exploration/THETA_ROOT_PROGRAM.md`](item2_exploration/THETA_ROOT_PROGRAM.md) —
    the Θ root program (founder ruling `DEC-theta-new-root-2026-0808` + erratum row):
    steps 5.1 → 5.4 ALL DONE (2026-08-08/09), each independently adversarially reviewed
-   before commit, mirrored byte-identically to `solver-arc-private`.
+   before commit, mirrored byte-identically to `solver arc (private)`.
 2. [`item2_exploration/ITEM2_EXPLORATION_LOG.md`](item2_exploration/ITEM2_EXPLORATION_LOG.md)
    — Attempts 1–4 (Attempt 3 = CP-conditional N≥3 machine-checked; Attempt 4 = the 5.4
    admissibility square, half-closed with a proven real-mixing obstruction).
@@ -123,8 +123,8 @@ reduced to ONE sharp question (todo #1 below).
    failed homotopy continuation, not a theorem).
 6. **Push both repos to remotes** — every commit in this arc passed the adversarial
    gate; push itself awaits founder go (commits: readout_genesis `9c921d4`→`710b09b`,
-   solver-arc-private `bc1e91c`→`7cfb64b`).
-7. **Fix solver-arc-private DECISIONS.yaml strict-YAML breakage** (pre-existing, line ~1875; the
+   solver arc (private) `bc1e91c`→`7cfb64b`).
+7. **Fix solver arc (private) DECISIONS.yaml strict-YAML breakage** (pre-existing, line ~1875; the
    anse_sync loader returns `[]` for decisions — the theta rows are appended in current
    convention but nothing materializes).
 8. **Fix twin-repo `make verify-attempts` PRE-EXISTING failures** (discovered 2026-08-09
@@ -240,7 +240,7 @@ named two next versions explicitly:
   `ITEM1_EXPLORATION_LOG.md`, read that file for the complete story, this is only the pointer):**
   `M_n` was CALIBRATED (not derived) via a noise-aware operational estimator (moment-correction +
   replicate-IV), independently reviewed, merged to `main` in both this repo and
-  `solver-arc-private`. The chain was then extended, each step independently reviewed and
+  `solver arc (private)`. The chain was then extended, each step independently reviewed and
   merged: declared U/D/E branch tapes → `Pi0=6.328453553357985` → order-vacuum criterion
   `Pi0>alpha_order` (inherited from the mother potential, not a new dial) → `ORDERED_READY`,
   `r_star=3.823356105009073` → native vacuum amplitude
@@ -255,7 +255,7 @@ named two next versions explicitly:
   scientific-methodology review and is disclosed in the merged code's own `claim_boundary`.
 
   **Three further candidates, all DRAFT/UNMERGED, testing whether any of this matches real
-  physics** (this repo's PR #79, #80, #81; mirrored, unmerged, in `solver-arc-private`):
+  physics** (this repo's PR #79, #80, #81; mirrored, unmerged, in `solver arc (private)`):
   fitting a RD-to-GeV scale from `v=246 GeV` and independently predicting the Higgs mass —
   **FAILS**, 74% error; the same test with ZERO fitted parameters via a mass ratio — **FAILS**,
   identical 74% (an algebraic consequence, not new evidence); an internal (zero-external-input)
@@ -263,7 +263,7 @@ named two next versions explicitly:
   vs curvature-based) — **NOT CONSISTENT**, 94% deviation. All three honestly disclosed, not
   hidden, not merged. A founder-initiated side-investigation into a discrete-vs-apparent-continuum
   bridge found a real, pre-existing, Th_coqc, `tau_c`-parametrized bridge
-  (`docs/root/PERSISTENT_WALK_TELEGRAPH_DERIVATION.md` in `solver-arc-private`) —
+  (`docs/root/PERSISTENT_WALK_TELEGRAPH_DERIVATION.md` in `solver arc (private)`) —
   structural only (same equation form), no numeric GeV conversion, partially discharged — and an
   unresolved internal tension between two of this project's own philosophy docs
   (`ZERO_INFINITY_DUAL_DIAGNOSIS.md`'s readout-vs-readout STANDING GUARD vs. this project's own
@@ -406,7 +406,7 @@ Grouped by priority. "Still necessary?" was checked against the current merged s
 - `CLAIM_BOUNDARY.json` / `DRIFT_CONTRACT.json` — machine-readable fences (v0.2, scoped).
 - `ROOT_TO_SM_DAG.md` / `UNIFIED_FORCE_DAG.md` — DAG maps, two-axis (root vs. declared-architecture).
 - `run_tests.py` — 24 Python verifiers + 26 Coq witnesses, all PASS/Closed; run before any new claim.
-- Both repos (`solver-arc-private` canonical + `readout_genesis` public twin) mirror
+- Both repos (`solver arc (private)` canonical + `readout_genesis` public twin) mirror
   `domains/standard_model/` byte-identically — always edit both, verify with `diff -rq`.
 - `mu4_exploration/MU4_INVESTIGATION_LOG.md` — exploratory research log (item 35 above), not a claim.
 - The build pattern for a new version: exact-Fraction Python verifier (independent recompute of
@@ -417,5 +417,5 @@ Grouped by priority. "Still necessary?" was checked against the current merged s
 
 ## 5. Central tracking
 The 4 P0/root-debt-track headline items (§2 rows 1, 2, 3-9-as-one-line) are also registered in the
-ANSE.ASIA central todo system (solver-arc-privatetools/agent_office/todo.py list`) for visibility outside this
+programme's central todo system (`tools/agent_office/todo.py list`) for visibility outside this
 repo. This file is the authoritative detail; the central todo entries are pointers back here.

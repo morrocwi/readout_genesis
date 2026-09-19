@@ -25,7 +25,7 @@ All five run and PASS under `python3 biology_closure_v0_1.py` (already present, 
 
 ### Green Coq substrate (re-compiled axiom-clean, root-native, 2026-07-21 biology-supplement audit)
 
-Source: `solver-arc-private/formal/` (BIRCA health/bio equations -> discrete axiom-free Coq).
+Source: `formal/` (solver arc (private)) (BIRCA health/bio equations -> discrete axiom-free Coq).
 
 | file | theorems | backs | tier |
 |---|---|---|---|
