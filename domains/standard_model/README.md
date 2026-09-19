@@ -4,9 +4,10 @@
 
 > **This folder is different from `chem/`, `relativity/`, `quantum/`, `biology/`.** Those are
 > *registered* domains with one closure percentage. This is a **DAG of nodes**: each node has its own
-> Python verifier + Coq witness (`run_tests.py` — 24 verifiers + 24 Coq witnesses as of v1.13, all
-> PASS/Closed). There is **no single end-to-end Standard Model verifier by design** — do not read
-> node-level PASS as end-to-end closure, and do not deny the nodes exist either.
+> Python verifier + Coq witness (`run_tests.py` — 25 Python verifiers + 26 Coq witnesses after the
+> retained-transition meter addition; node-level formal witnesses remain independently tiered).
+> There is **no single end-to-end Standard Model verifier by design** — do not read node-level PASS
+> as end-to-end closure, and do not deny the nodes exist either.
 > **End-to-end root-derived Standard Model (unrestricted root) = 0%.**
 
 ## The one rule
@@ -23,6 +24,10 @@ readout**: `Aut(F,O) = { h : O∘h = O, h∘F = F∘h }` — the weld of core §
   reviewed for continued relevance) and the exact next step.
 - **[`INDEX.md`](INDEX.md)** — the version timeline (v0.1→v1.13): every verifier + Coq witness + tier
   + one-line honest status. Kept in lock-step with `run_tests.py`.
+- **[`RETAINED_TRANSITION_METER.md`](RETAINED_TRANSITION_METER.md)** — operational tape instrument:
+  estimate reader/record exchange `M`, held-out and negative-control gates, then compute per-path
+  retained load → `Δ_eff` → `λ` → `Π₀` from one preserved encoding. `calibrated_readout /
+  finite_diagnostic`; measured from the supplied tape, never presented as root-derived.
 - **[`STANDARD_MODEL_CLOSURE.md`](STANDARD_MODEL_CLOSURE.md)** — the node-level closure matrix (ten
   categories, each node individually tiered: `EXACT` / `EXACT_WITHIN_DECLARED_ARCHITECTURE` /
   `CONDITIONAL` / `FINITE_FIXTURE` / `CALIBRATION_ONLY` / `OPEN` / `SUPERSEDED`). Read this before

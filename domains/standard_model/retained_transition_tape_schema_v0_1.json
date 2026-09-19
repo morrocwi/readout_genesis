@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "retained-transition-tape-v0.1",
+  "title": "Retained Transition Tape v0.1",
+  "description": "Segmented reader/record tape for the Retained Transition Meter. Loads are calibrated non-inertial sides of y=M*second_difference(state).",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema", "dt", "samples"],
+  "properties": {
+    "schema": {"const": "retained-transition-tape-v0.1"},
+    "tier": {"type": "string"},
+    "dt": {"type": "number", "exclusiveMinimum": 0},
+    "cost_unit_rd": {"type": "number", "exclusiveMinimum": 0, "default": 1.0},
+    "samples": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["path_id", "branch", "phi", "psi", "reader_load", "record_load"],
+        "properties": {
+          "path_id": {"type": "string", "minLength": 1},
+          "branch": {"type": "string", "minLength": 1},
+          "phi": {"type": "array", "minItems": 1, "items": {"type": "number"}},
+          "psi": {"type": "array", "minItems": 1, "items": {"type": "number"}},
+          "reader_load": {
+            "oneOf": [
+              {"type": "null"},
+              {"type": "array", "minItems": 1, "items": {"type": "number"}}
+            ]
+          },
+          "record_load": {
+            "oneOf": [
+              {"type": "null"},
+              {"type": "array", "minItems": 1, "items": {"type": "number"}}
+            ]
+          }
+        }
+      }
+    }
+  }
+}
